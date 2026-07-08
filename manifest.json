@@ -1,0 +1,1137 @@
+{
+ "models": [
+  {
+   "id": "VAR_d30",
+   "label": "VAR-d30",
+   "type": "image",
+   "task": "Class-conditional ImageNet 256×256",
+   "methods": [
+    "Baseline",
+    "FlexGen",
+    "KIVI",
+    "VARQ"
+   ],
+   "methodLabels": {
+    "Baseline": "Baseline (FP)",
+    "FlexGen": "FlexGen",
+    "KIVI": "KIVI",
+    "VARQ": "VARQ (Ours)"
+   },
+   "bits": [
+    "q3",
+    "q4"
+   ],
+   "bitLabels": {
+    "q3": "3-bit",
+    "q4": "4-bit"
+   },
+   "samples": {
+    "q3": [
+     {
+      "prompt": null,
+      "caption": null,
+      "media": {
+       "Baseline": "samples/VAR_d30/Baseline/q3/group01_class004.png",
+       "FlexGen": "samples/VAR_d30/FlexGen/q3/group01_class004.png",
+       "KIVI": "samples/VAR_d30/KIVI/q3/group01_class004.png",
+       "VARQ": "samples/VAR_d30/VARQ/q3/group01_class004.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": null,
+      "media": {
+       "Baseline": "samples/VAR_d30/Baseline/q3/group02_class048.png",
+       "FlexGen": "samples/VAR_d30/FlexGen/q3/group02_class048.png",
+       "KIVI": "samples/VAR_d30/KIVI/q3/group02_class048.png",
+       "VARQ": "samples/VAR_d30/VARQ/q3/group02_class048.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": null,
+      "media": {
+       "Baseline": "samples/VAR_d30/Baseline/q3/group03_class051.png",
+       "FlexGen": "samples/VAR_d30/FlexGen/q3/group03_class051.png",
+       "KIVI": "samples/VAR_d30/KIVI/q3/group03_class051.png",
+       "VARQ": "samples/VAR_d30/VARQ/q3/group03_class051.png"
+      }
+     }
+    ],
+    "q4": [
+     {
+      "prompt": null,
+      "caption": null,
+      "media": {
+       "Baseline": "samples/VAR_d30/Baseline/q4/group01_class004.png",
+       "FlexGen": "samples/VAR_d30/FlexGen/q4/group01_class004.png",
+       "KIVI": "samples/VAR_d30/KIVI/q4/group01_class004.png",
+       "VARQ": "samples/VAR_d30/VARQ/q4/group01_class004.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": null,
+      "media": {
+       "Baseline": "samples/VAR_d30/Baseline/q4/group02_class048.png",
+       "FlexGen": "samples/VAR_d30/FlexGen/q4/group02_class048.png",
+       "KIVI": "samples/VAR_d30/KIVI/q4/group02_class048.png",
+       "VARQ": "samples/VAR_d30/VARQ/q4/group02_class048.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": null,
+      "media": {
+       "Baseline": "samples/VAR_d30/Baseline/q4/group03_class051.png",
+       "FlexGen": "samples/VAR_d30/FlexGen/q4/group03_class051.png",
+       "KIVI": "samples/VAR_d30/KIVI/q4/group03_class051.png",
+       "VARQ": "samples/VAR_d30/VARQ/q4/group03_class051.png"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "VAR_d24",
+   "label": "VAR-d24",
+   "type": "image",
+   "task": "Class-conditional ImageNet 256×256",
+   "methods": [
+    "Baseline",
+    "FlexGen",
+    "KIVI",
+    "VARQ"
+   ],
+   "methodLabels": {
+    "Baseline": "Baseline (FP)",
+    "FlexGen": "FlexGen",
+    "KIVI": "KIVI",
+    "VARQ": "VARQ (Ours)"
+   },
+   "bits": [
+    "q3",
+    "q4",
+    "q8"
+   ],
+   "bitLabels": {
+    "q3": "3-bit",
+    "q4": "4-bit",
+    "q8": "8-bit"
+   },
+   "samples": {
+    "q3": [
+     {
+      "prompt": null,
+      "caption": "VARQ PSNR 20.8 dB &nbsp;<span class='pos'>(+10.1 dB vs. best baseline)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d24/Baseline/q3/group01_idx00031_iters0_img31.png",
+       "FlexGen": "samples/VAR_d24/FlexGen/q3/group01_idx00031_iters0_img31.png",
+       "KIVI": "samples/VAR_d24/KIVI/q3/group01_idx00031_iters0_img31.png",
+       "VARQ": "samples/VAR_d24/VARQ/q3/group01_idx00031_iters0_img31.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": "VARQ PSNR 17.0 dB &nbsp;<span class='pos'>(+4.7 dB vs. best baseline)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d24/Baseline/q3/group01_idx12500_iters250_img0.png",
+       "FlexGen": "samples/VAR_d24/FlexGen/q3/group01_idx12500_iters250_img0.png",
+       "KIVI": "samples/VAR_d24/KIVI/q3/group01_idx12500_iters250_img0.png",
+       "VARQ": "samples/VAR_d24/VARQ/q3/group01_idx12500_iters250_img0.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": "VARQ PSNR 15.7 dB &nbsp;<span class='pos'>(+6.1 dB vs. best baseline)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d24/Baseline/q3/group01_idx23781_iters475_img31.png",
+       "FlexGen": "samples/VAR_d24/FlexGen/q3/group01_idx23781_iters475_img31.png",
+       "KIVI": "samples/VAR_d24/KIVI/q3/group01_idx23781_iters475_img31.png",
+       "VARQ": "samples/VAR_d24/VARQ/q3/group01_idx23781_iters475_img31.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": "VARQ PSNR 21.4 dB &nbsp;<span class='pos'>(+6.8 dB vs. best baseline)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d24/Baseline/q3/group01_idx37781_iters755_img31.png",
+       "FlexGen": "samples/VAR_d24/FlexGen/q3/group01_idx37781_iters755_img31.png",
+       "KIVI": "samples/VAR_d24/KIVI/q3/group01_idx37781_iters755_img31.png",
+       "VARQ": "samples/VAR_d24/VARQ/q3/group01_idx37781_iters755_img31.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": "VARQ PSNR 20.3 dB &nbsp;<span class='pos'>(+5.8 dB vs. best baseline)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d24/Baseline/q3/group01_idx48750_iters975_img0.png",
+       "FlexGen": "samples/VAR_d24/FlexGen/q3/group01_idx48750_iters975_img0.png",
+       "KIVI": "samples/VAR_d24/KIVI/q3/group01_idx48750_iters975_img0.png",
+       "VARQ": "samples/VAR_d24/VARQ/q3/group01_idx48750_iters975_img0.png"
+      }
+     }
+    ],
+    "q4": [
+     {
+      "prompt": null,
+      "caption": "VARQ PSNR 25.3 dB &nbsp;<span class='pos'>(+7.0 dB vs. best baseline)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d24/Baseline/q4/group01_idx00000_iters0_img0.png",
+       "FlexGen": "samples/VAR_d24/FlexGen/q4/group01_idx00000_iters0_img0.png",
+       "KIVI": "samples/VAR_d24/KIVI/q4/group01_idx00000_iters0_img0.png",
+       "VARQ": "samples/VAR_d24/VARQ/q4/group01_idx00000_iters0_img0.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": "VARQ PSNR 16.8 dB &nbsp;<span class='pos'>(+6.6 dB vs. best baseline)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d24/Baseline/q4/group01_idx15543_iters310_img43.png",
+       "FlexGen": "samples/VAR_d24/FlexGen/q4/group01_idx15543_iters310_img43.png",
+       "KIVI": "samples/VAR_d24/KIVI/q4/group01_idx15543_iters310_img43.png",
+       "VARQ": "samples/VAR_d24/VARQ/q4/group01_idx15543_iters310_img43.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": "VARQ PSNR 20.1 dB &nbsp;<span class='pos'>(+7.0 dB vs. best baseline)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d24/Baseline/q4/group01_idx23031_iters460_img31.png",
+       "FlexGen": "samples/VAR_d24/FlexGen/q4/group01_idx23031_iters460_img31.png",
+       "KIVI": "samples/VAR_d24/KIVI/q4/group01_idx23031_iters460_img31.png",
+       "VARQ": "samples/VAR_d24/VARQ/q4/group01_idx23031_iters460_img31.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": "VARQ PSNR 14.5 dB &nbsp;<span class='pos'>(+9.1 dB vs. best baseline)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d24/Baseline/q4/group01_idx32507_iters650_img7.png",
+       "FlexGen": "samples/VAR_d24/FlexGen/q4/group01_idx32507_iters650_img7.png",
+       "KIVI": "samples/VAR_d24/KIVI/q4/group01_idx32507_iters650_img7.png",
+       "VARQ": "samples/VAR_d24/VARQ/q4/group01_idx32507_iters650_img7.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": "VARQ PSNR 19.7 dB &nbsp;<span class='pos'>(+11.6 dB vs. best baseline)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d24/Baseline/q4/group01_idx49019_iters980_img19.png",
+       "FlexGen": "samples/VAR_d24/FlexGen/q4/group01_idx49019_iters980_img19.png",
+       "KIVI": "samples/VAR_d24/KIVI/q4/group01_idx49019_iters980_img19.png",
+       "VARQ": "samples/VAR_d24/VARQ/q4/group01_idx49019_iters980_img19.png"
+      }
+     }
+    ],
+    "q8": [
+     {
+      "prompt": null,
+      "caption": "VARQ PSNR 30.2 dB &nbsp;<span class='pos'>(+30.2 dB vs. best baseline)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d24/Baseline/q8/group01_idx03519_iters70_img19.png",
+       "VARQ": "samples/VAR_d24/VARQ/q8/group01_idx03519_iters70_img19.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": "VARQ PSNR 27.7 dB &nbsp;<span class='pos'>(+27.7 dB vs. best baseline)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d24/Baseline/q8/group01_idx19781_iters395_img31.png",
+       "VARQ": "samples/VAR_d24/VARQ/q8/group01_idx19781_iters395_img31.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": "VARQ PSNR 25.0 dB &nbsp;<span class='pos'>(+25.0 dB vs. best baseline)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d24/Baseline/q8/group01_idx24750_iters495_img0.png",
+       "VARQ": "samples/VAR_d24/VARQ/q8/group01_idx24750_iters495_img0.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": "VARQ PSNR 29.2 dB &nbsp;<span class='pos'>(+29.2 dB vs. best baseline)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d24/Baseline/q8/group01_idx37281_iters745_img31.png",
+       "VARQ": "samples/VAR_d24/VARQ/q8/group01_idx37281_iters745_img31.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": "VARQ PSNR 33.3 dB &nbsp;<span class='pos'>(+33.3 dB vs. best baseline)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d24/Baseline/q8/group01_idx45531_iters910_img31.png",
+       "VARQ": "samples/VAR_d24/VARQ/q8/group01_idx45531_iters910_img31.png"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "VAR_d20",
+   "label": "VAR-d20",
+   "type": "image",
+   "task": "Class-conditional ImageNet 256×256",
+   "methods": [
+    "Baseline",
+    "FlexGen",
+    "KIVI",
+    "VARQ"
+   ],
+   "methodLabels": {
+    "Baseline": "Baseline (FP)",
+    "FlexGen": "FlexGen",
+    "KIVI": "KIVI",
+    "VARQ": "VARQ (Ours)"
+   },
+   "bits": [
+    "q3",
+    "q4",
+    "q8"
+   ],
+   "bitLabels": {
+    "q3": "3-bit",
+    "q4": "4-bit",
+    "q8": "8-bit"
+   },
+   "samples": {
+    "q3": [
+     {
+      "prompt": null,
+      "caption": "VARQ PSNR 17.0 dB &nbsp;<span class='pos'>(+5.4 dB vs. best baseline)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d20/Baseline/q3/group01_idx09293_iters185_img43.png",
+       "FlexGen": "samples/VAR_d20/FlexGen/q3/group01_idx09293_iters185_img43.png",
+       "KIVI": "samples/VAR_d20/KIVI/q3/group01_idx09293_iters185_img43.png",
+       "VARQ": "samples/VAR_d20/VARQ/q3/group01_idx09293_iters185_img43.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": "VARQ PSNR 17.1 dB &nbsp;<span class='pos'>(+6.3 dB vs. best baseline)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d20/Baseline/q3/group01_idx10781_iters215_img31.png",
+       "FlexGen": "samples/VAR_d20/FlexGen/q3/group01_idx10781_iters215_img31.png",
+       "KIVI": "samples/VAR_d20/KIVI/q3/group01_idx10781_iters215_img31.png",
+       "VARQ": "samples/VAR_d20/VARQ/q3/group01_idx10781_iters215_img31.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": "VARQ PSNR 18.3 dB &nbsp;<span class='pos'>(+8.1 dB vs. best baseline)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d20/Baseline/q3/group01_idx20281_iters405_img31.png",
+       "FlexGen": "samples/VAR_d20/FlexGen/q3/group01_idx20281_iters405_img31.png",
+       "KIVI": "samples/VAR_d20/KIVI/q3/group01_idx20281_iters405_img31.png",
+       "VARQ": "samples/VAR_d20/VARQ/q3/group01_idx20281_iters405_img31.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": "VARQ PSNR 16.5 dB &nbsp;<span class='pos'>(+8.5 dB vs. best baseline)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d20/Baseline/q3/group01_idx32519_iters650_img19.png",
+       "FlexGen": "samples/VAR_d20/FlexGen/q3/group01_idx32519_iters650_img19.png",
+       "KIVI": "samples/VAR_d20/KIVI/q3/group01_idx32519_iters650_img19.png",
+       "VARQ": "samples/VAR_d20/VARQ/q3/group01_idx32519_iters650_img19.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": "VARQ PSNR 17.2 dB &nbsp;<span class='pos'>(+8.1 dB vs. best baseline)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d20/Baseline/q3/group01_idx45000_iters900_img0.png",
+       "FlexGen": "samples/VAR_d20/FlexGen/q3/group01_idx45000_iters900_img0.png",
+       "KIVI": "samples/VAR_d20/KIVI/q3/group01_idx45000_iters900_img0.png",
+       "VARQ": "samples/VAR_d20/VARQ/q3/group01_idx45000_iters900_img0.png"
+      }
+     }
+    ],
+    "q4": [
+     {
+      "prompt": null,
+      "caption": "VARQ PSNR 20.1 dB &nbsp;<span class='pos'>(+9.3 dB vs. best baseline)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d20/Baseline/q4/group01_idx00250_iters5_img0.png",
+       "FlexGen": "samples/VAR_d20/FlexGen/q4/group01_idx00250_iters5_img0.png",
+       "KIVI": "samples/VAR_d20/KIVI/q4/group01_idx00250_iters5_img0.png",
+       "VARQ": "samples/VAR_d20/VARQ/q4/group01_idx00250_iters5_img0.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": "VARQ PSNR 19.7 dB &nbsp;<span class='pos'>(+5.6 dB vs. best baseline)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d20/Baseline/q4/group01_idx10293_iters205_img43.png",
+       "FlexGen": "samples/VAR_d20/FlexGen/q4/group01_idx10293_iters205_img43.png",
+       "KIVI": "samples/VAR_d20/KIVI/q4/group01_idx10293_iters205_img43.png",
+       "VARQ": "samples/VAR_d20/VARQ/q4/group01_idx10293_iters205_img43.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": "VARQ PSNR 15.5 dB &nbsp;<span class='pos'>(+6.3 dB vs. best baseline)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d20/Baseline/q4/group01_idx25019_iters500_img19.png",
+       "FlexGen": "samples/VAR_d20/FlexGen/q4/group01_idx25019_iters500_img19.png",
+       "KIVI": "samples/VAR_d20/KIVI/q4/group01_idx25019_iters500_img19.png",
+       "VARQ": "samples/VAR_d20/VARQ/q4/group01_idx25019_iters500_img19.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": "VARQ PSNR 20.1 dB &nbsp;<span class='pos'>(+16.1 dB vs. best baseline)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d20/Baseline/q4/group01_idx36281_iters725_img31.png",
+       "FlexGen": "samples/VAR_d20/FlexGen/q4/group01_idx36281_iters725_img31.png",
+       "KIVI": "samples/VAR_d20/KIVI/q4/group01_idx36281_iters725_img31.png",
+       "VARQ": "samples/VAR_d20/VARQ/q4/group01_idx36281_iters725_img31.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": "VARQ PSNR 17.7 dB &nbsp;<span class='pos'>(+6.6 dB vs. best baseline)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d20/Baseline/q4/group01_idx42531_iters850_img31.png",
+       "FlexGen": "samples/VAR_d20/FlexGen/q4/group01_idx42531_iters850_img31.png",
+       "KIVI": "samples/VAR_d20/KIVI/q4/group01_idx42531_iters850_img31.png",
+       "VARQ": "samples/VAR_d20/VARQ/q4/group01_idx42531_iters850_img31.png"
+      }
+     }
+    ],
+    "q8": [
+     {
+      "prompt": null,
+      "caption": "VARQ PSNR 28.5 dB &nbsp;<span class='pos'>(+28.5 dB vs. best baseline)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d20/Baseline/q8/group01_idx00031_iters0_img31.png",
+       "VARQ": "samples/VAR_d20/VARQ/q8/group01_idx00031_iters0_img31.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": "VARQ PSNR 29.1 dB &nbsp;<span class='pos'>(+29.1 dB vs. best baseline)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d20/Baseline/q8/group01_idx19500_iters390_img0.png",
+       "VARQ": "samples/VAR_d20/VARQ/q8/group01_idx19500_iters390_img0.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": "VARQ PSNR 28.6 dB &nbsp;<span class='pos'>(+28.6 dB vs. best baseline)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d20/Baseline/q8/group01_idx24281_iters485_img31.png",
+       "VARQ": "samples/VAR_d20/VARQ/q8/group01_idx24281_iters485_img31.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": "VARQ PSNR 31.1 dB &nbsp;<span class='pos'>(+31.1 dB vs. best baseline)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d20/Baseline/q8/group01_idx36250_iters725_img0.png",
+       "VARQ": "samples/VAR_d20/VARQ/q8/group01_idx36250_iters725_img0.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": "VARQ PSNR 31.5 dB &nbsp;<span class='pos'>(+31.5 dB vs. best baseline)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d20/Baseline/q8/group01_idx49019_iters980_img19.png",
+       "VARQ": "samples/VAR_d20/VARQ/q8/group01_idx49019_iters980_img19.png"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "Infinity2B",
+   "label": "Infinity-2B",
+   "type": "image",
+   "task": "Text-to-Image generation",
+   "methods": [
+    "Baseline",
+    "KIVI",
+    "VARQ"
+   ],
+   "methodLabels": {
+    "Baseline": "Baseline (FP)",
+    "KIVI": "KIVI",
+    "VARQ": "VARQ (Ours)"
+   },
+   "bits": [
+    "q3",
+    "q4",
+    "q8"
+   ],
+   "bitLabels": {
+    "q3": "3-bit",
+    "q4": "4-bit",
+    "q8": "8-bit"
+   },
+   "samples": {
+    "q3": [
+     {
+      "prompt": "a futuristic spaceship with a design reminiscent of the iconic Sydney Opera House, featuring multiple white, shell-like structures that form its hull. The vessel hovers above the ground, with a slight iridescent sheen on its surface that reflects the light of a distant sun. It is surrounded by a barren landscape, which contrasts sharply with the spaceship's smooth, curved architecture.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/Infinity2B/Baseline/q3/idx00142.png",
+       "KIVI": "samples/Infinity2B/KIVI/q3/group01_idx00142.png",
+       "VARQ": "samples/Infinity2B/VARQ/q3/group01_idx00142.png"
+      }
+     },
+     {
+      "prompt": "A detailed vector illustration showcasing four separate square compositions, each highlighting different aspects of waste management and recycling processes. The vibrant images feature a variety of flat design icons and pictograms that represent sorting bins, recycling symbols, and cleaning equipment. Each square has a distinct color palette to categorize the type of waste, ranging from organic to plastic, metal, and paper, emphasizing the importance of recycling and proper disposal.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/Infinity2B/Baseline/q3/idx00635.png",
+       "KIVI": "samples/Infinity2B/KIVI/q3/group02_idx00635.png",
+       "VARQ": "samples/Infinity2B/VARQ/q3/group02_idx00635.png"
+      }
+     },
+     {
+      "prompt": "A figure depicted with a dynamic pose: its left arm extends forward while the right arm is elongated back, parallel with its spine. Both legs are positioned closely together in a near vertical line, with the right leg gracefully stacked atop the left. The silhouette reflects a ballet dancer's poise during a challenging balancing act.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/Infinity2B/Baseline/q3/idx01006.png",
+       "KIVI": "samples/Infinity2B/KIVI/q3/group03_idx01006.png",
+       "VARQ": "samples/Infinity2B/VARQ/q3/group03_idx01006.png"
+      }
+     }
+    ],
+    "q4": [
+     {
+      "prompt": "a futuristic spaceship with a design reminiscent of the iconic Sydney Opera House, featuring multiple white, shell-like structures that form its hull. The vessel hovers above the ground, with a slight iridescent sheen on its surface that reflects the light of a distant sun. It is surrounded by a barren landscape, which contrasts sharply with the spaceship's smooth, curved architecture.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/Infinity2B/Baseline/q4/idx00142.png",
+       "VARQ": "samples/Infinity2B/VARQ/q4/group01_idx00142.png"
+      }
+     },
+     {
+      "prompt": "A detailed vector illustration showcasing four separate square compositions, each highlighting different aspects of waste management and recycling processes. The vibrant images feature a variety of flat design icons and pictograms that represent sorting bins, recycling symbols, and cleaning equipment. Each square has a distinct color palette to categorize the type of waste, ranging from organic to plastic, metal, and paper, emphasizing the importance of recycling and proper disposal.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/Infinity2B/Baseline/q4/idx00635.png",
+       "VARQ": "samples/Infinity2B/VARQ/q4/group02_idx00635.png"
+      }
+     },
+     {
+      "prompt": "A figure depicted with a dynamic pose: its left arm extends forward while the right arm is elongated back, parallel with its spine. Both legs are positioned closely together in a near vertical line, with the right leg gracefully stacked atop the left. The silhouette reflects a ballet dancer's poise during a challenging balancing act.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/Infinity2B/Baseline/q4/idx01006.png",
+       "VARQ": "samples/Infinity2B/VARQ/q4/group03_idx01006.png"
+      }
+     }
+    ],
+    "q8": [
+     {
+      "prompt": "a futuristic spaceship with a design reminiscent of the iconic Sydney Opera House, featuring multiple white, shell-like structures that form its hull. The vessel hovers above the ground, with a slight iridescent sheen on its surface that reflects the light of a distant sun. It is surrounded by a barren landscape, which contrasts sharply with the spaceship's smooth, curved architecture.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/Infinity2B/Baseline/q8/idx00142.png",
+       "VARQ": "samples/Infinity2B/VARQ/q8/group01_idx00142.png"
+      }
+     },
+     {
+      "prompt": "A detailed vector illustration showcasing four separate square compositions, each highlighting different aspects of waste management and recycling processes. The vibrant images feature a variety of flat design icons and pictograms that represent sorting bins, recycling symbols, and cleaning equipment. Each square has a distinct color palette to categorize the type of waste, ranging from organic to plastic, metal, and paper, emphasizing the importance of recycling and proper disposal.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/Infinity2B/Baseline/q8/idx00635.png",
+       "VARQ": "samples/Infinity2B/VARQ/q8/group02_idx00635.png"
+      }
+     },
+     {
+      "prompt": "A figure depicted with a dynamic pose: its left arm extends forward while the right arm is elongated back, parallel with its spine. Both legs are positioned closely together in a near vertical line, with the right leg gracefully stacked atop the left. The silhouette reflects a ballet dancer's poise during a challenging balancing act.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/Infinity2B/Baseline/q8/idx01006.png",
+       "VARQ": "samples/Infinity2B/VARQ/q8/group03_idx01006.png"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "Infinity8B",
+   "label": "Infinity-8B",
+   "type": "image",
+   "task": "Text-to-Image generation",
+   "methods": [
+    "Baseline",
+    "VARQ"
+   ],
+   "methodLabels": {
+    "Baseline": "Baseline (FP)",
+    "VARQ": "VARQ (Ours)"
+   },
+   "bits": [
+    "q2",
+    "q3",
+    "q8"
+   ],
+   "bitLabels": {
+    "q2": "2-bit",
+    "q3": "3-bit",
+    "q8": "8-bit"
+   },
+   "samples": {
+    "q2": [
+     {
+      "prompt": "A baffling scene where smoke is inexplicably wafting from the filter end of a cigarette between a person's fingers, rather than the lit end. The cigarette is resting in an ashtray that's placed on a round, glass-topped table. Stray ashes can be seen scattered around the ashtray, highlighting the peculiarity of the situation.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q2/idx00006.png",
+       "VARQ": "samples/Infinity8B/VARQ/q2/group01_idx00006.png"
+      }
+     },
+     {
+      "prompt": "A man with bright red boxing gloves awkwardly attempts to play a glossy black grand piano in the center of a room. Around him, the floor is a polished hardwood, reflecting the soft overhead lighting. Despite the gloves, he appears concentrated, engaged in his unique challenge, with sheet music propped up on the piano's stand.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q2/idx00356.png",
+       "VARQ": "samples/Infinity8B/VARQ/q2/group02_idx00356.png"
+      }
+     },
+     {
+      "prompt": "In the center of a bustling intersection, a large tree with a thick trunk and sprawling branches stands out amidst the concrete. Its green leaves contrast sharply with the grey asphalt roads that converge around it. Traffic lights and street signs are positioned awkwardly around the tree's base, creating an unusual juxtaposition of nature and urban infrastructure.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q2/idx00717.png",
+       "VARQ": "samples/Infinity8B/VARQ/q2/group03_idx00717.png"
+      }
+     }
+    ],
+    "q3": [
+     {
+      "prompt": "A baffling scene where smoke is inexplicably wafting from the filter end of a cigarette between a person's fingers, rather than the lit end. The cigarette is resting in an ashtray that's placed on a round, glass-topped table. Stray ashes can be seen scattered around the ashtray, highlighting the peculiarity of the situation.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q3/idx00006.png",
+       "VARQ": "samples/Infinity8B/VARQ/q3/group01_idx00006.png"
+      }
+     },
+     {
+      "prompt": "A man with bright red boxing gloves awkwardly attempts to play a glossy black grand piano in the center of a room. Around him, the floor is a polished hardwood, reflecting the soft overhead lighting. Despite the gloves, he appears concentrated, engaged in his unique challenge, with sheet music propped up on the piano's stand.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q3/idx00356.png",
+       "VARQ": "samples/Infinity8B/VARQ/q3/group02_idx00356.png"
+      }
+     },
+     {
+      "prompt": "In the center of a bustling intersection, a large tree with a thick trunk and sprawling branches stands out amidst the concrete. Its green leaves contrast sharply with the grey asphalt roads that converge around it. Traffic lights and street signs are positioned awkwardly around the tree's base, creating an unusual juxtaposition of nature and urban infrastructure.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q3/idx00717.png",
+       "VARQ": "samples/Infinity8B/VARQ/q3/group03_idx00717.png"
+      }
+     }
+    ],
+    "q8": [
+     {
+      "prompt": "A baffling scene where smoke is inexplicably wafting from the filter end of a cigarette between a person's fingers, rather than the lit end. The cigarette is resting in an ashtray that's placed on a round, glass-topped table. Stray ashes can be seen scattered around the ashtray, highlighting the peculiarity of the situation.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q8/idx00006.png",
+       "VARQ": "samples/Infinity8B/VARQ/q8/group01_idx00006.png"
+      }
+     },
+     {
+      "prompt": "A man with bright red boxing gloves awkwardly attempts to play a glossy black grand piano in the center of a room. Around him, the floor is a polished hardwood, reflecting the soft overhead lighting. Despite the gloves, he appears concentrated, engaged in his unique challenge, with sheet music propped up on the piano's stand.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q8/idx00356.png",
+       "VARQ": "samples/Infinity8B/VARQ/q8/group02_idx00356.png"
+      }
+     },
+     {
+      "prompt": "In the center of a bustling intersection, a large tree with a thick trunk and sprawling branches stands out amidst the concrete. Its green leaves contrast sharply with the grey asphalt roads that converge around it. Traffic lights and street signs are positioned awkwardly around the tree's base, creating an unusual juxtaposition of nature and urban infrastructure.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q8/idx00717.png",
+       "VARQ": "samples/Infinity8B/VARQ/q8/group03_idx00717.png"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "InfinityStar480p",
+   "label": "InfinityStar-480p",
+   "type": "video",
+   "task": "Text-to-Video generation (480p)",
+   "methods": [
+    "Baseline",
+    "FlexGen",
+    "KIVI",
+    "VARQ"
+   ],
+   "methodLabels": {
+    "Baseline": "Baseline (FP)",
+    "FlexGen": "FlexGen",
+    "KIVI": "KIVI",
+    "VARQ": "VARQ (Ours)"
+   },
+   "bits": [
+    "q3",
+    "q4",
+    "q8"
+   ],
+   "bitLabels": {
+    "q3": "3-bit",
+    "q4": "4-bit",
+    "q8": "8-bit"
+   },
+   "samples": {
+    "q3": [
+     {
+      "prompt": "A girl is peeling an orange",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar480p/Baseline/q3/group01_prompt043_s01.mp4",
+       "FlexGen": "samples/InfinityStar480p/FlexGen/q3/group01_prompt043_s01.mp4",
+       "KIVI": "samples/InfinityStar480p/KIVI/q3/group01_prompt043_s01.mp4",
+       "VARQ": "samples/InfinityStar480p/VARQ/q3/group01_prompt043_s01.mp4"
+      }
+     },
+     {
+      "prompt": "The person's mouth twisted in disgust as he tasted something bitter.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar480p/Baseline/q3/group01_prompt109_s02.mp4",
+       "FlexGen": "samples/InfinityStar480p/FlexGen/q3/group01_prompt109_s02.mp4",
+       "KIVI": "samples/InfinityStar480p/KIVI/q3/group01_prompt109_s02.mp4",
+       "VARQ": "samples/InfinityStar480p/VARQ/q3/group01_prompt109_s02.mp4"
+      }
+     },
+     {
+      "prompt": "A person playing hopscotch on the rings of Saturn.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar480p/Baseline/q3/group01_prompt195_s03.mp4",
+       "FlexGen": "samples/InfinityStar480p/FlexGen/q3/group01_prompt195_s03.mp4",
+       "KIVI": "samples/InfinityStar480p/KIVI/q3/group01_prompt195_s03.mp4",
+       "VARQ": "samples/InfinityStar480p/VARQ/q3/group01_prompt195_s03.mp4"
+      }
+     }
+    ],
+    "q4": [
+     {
+      "prompt": "A man is putting a ring on a woman's finger",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar480p/Baseline/q4/group01_prompt051_s01.mp4",
+       "FlexGen": "samples/InfinityStar480p/FlexGen/q4/group01_prompt051_s01.mp4",
+       "KIVI": "samples/InfinityStar480p/KIVI/q4/group01_prompt051_s01.mp4",
+       "VARQ": "samples/InfinityStar480p/VARQ/q4/group01_prompt051_s01.mp4"
+      }
+     },
+     {
+      "prompt": "A bustling ancient marketplace with merchants selling spices and fabrics.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar480p/Baseline/q4/group01_prompt088_s02.mp4",
+       "FlexGen": "samples/InfinityStar480p/FlexGen/q4/group01_prompt088_s02.mp4",
+       "KIVI": "samples/InfinityStar480p/KIVI/q4/group01_prompt088_s02.mp4",
+       "VARQ": "samples/InfinityStar480p/VARQ/q4/group01_prompt088_s02.mp4"
+      }
+     },
+     {
+      "prompt": "A bird made of fresh oranges rushes out of the orange",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar480p/Baseline/q4/group01_prompt164_s03.mp4",
+       "FlexGen": "samples/InfinityStar480p/FlexGen/q4/group01_prompt164_s03.mp4",
+       "KIVI": "samples/InfinityStar480p/KIVI/q4/group01_prompt164_s03.mp4",
+       "VARQ": "samples/InfinityStar480p/VARQ/q4/group01_prompt164_s03.mp4"
+      }
+     }
+    ],
+    "q8": [
+     {
+      "prompt": "A quaint village nestled in a valley is surrounded by blooming cherry blossoms, with petals drifting through the air as villagers go about their daily activities, adding life to the scene.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar480p/Baseline/q8/group01_prompt029_s01.mp4",
+       "VARQ": "samples/InfinityStar480p/VARQ/q8/group01_prompt029_s01.mp4"
+      }
+     },
+     {
+      "prompt": "Tiltshift of a construction site filled with workers, equipment, and heavy machinery.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar480p/Baseline/q8/group01_prompt130_s02.mp4",
+       "VARQ": "samples/InfinityStar480p/VARQ/q8/group01_prompt130_s02.mp4"
+      }
+     },
+     {
+      "prompt": "A tilt-down from the towering peak of a mountain to the winding path leading up to it.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar480p/Baseline/q8/group01_prompt169_s03.mp4",
+       "VARQ": "samples/InfinityStar480p/VARQ/q8/group01_prompt169_s03.mp4"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "InfinityStar720p",
+   "label": "InfinityStar-720p",
+   "type": "video",
+   "task": "Text-to-Video generation (720p)",
+   "methods": [
+    "Baseline",
+    "FlexGen",
+    "KIVI",
+    "VARQ"
+   ],
+   "methodLabels": {
+    "Baseline": "Baseline (FP)",
+    "FlexGen": "FlexGen",
+    "KIVI": "KIVI",
+    "VARQ": "VARQ (Ours)"
+   },
+   "bits": [
+    "q3",
+    "q4",
+    "q8"
+   ],
+   "bitLabels": {
+    "q3": "3-bit",
+    "q4": "4-bit",
+    "q8": "8-bit"
+   },
+   "samples": {
+    "q3": [
+     {
+      "prompt": "A zoom-out from a detailed shot of an intricate snowflake, pulling back to show a snowy landscape.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar720p/Baseline/q3/group01_prompt108_s01.mp4",
+       "FlexGen": "samples/InfinityStar720p/FlexGen/q3/group01_prompt108_s01.mp4",
+       "KIVI": "samples/InfinityStar720p/KIVI/q3/group01_prompt108_s01.mp4",
+       "VARQ": "samples/InfinityStar720p/VARQ/q3/group01_prompt108_s01.mp4"
+      }
+     },
+     {
+      "prompt": "A person skydiving from a hot air balloon into a sea of clouds.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar720p/Baseline/q3/group01_prompt129_s02.mp4",
+       "FlexGen": "samples/InfinityStar720p/FlexGen/q3/group01_prompt129_s02.mp4",
+       "KIVI": "samples/InfinityStar720p/KIVI/q3/group01_prompt129_s02.mp4",
+       "VARQ": "samples/InfinityStar720p/VARQ/q3/group01_prompt129_s02.mp4"
+      }
+     },
+     {
+      "prompt": "A person playing hopscotch on the rings of Saturn.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar720p/Baseline/q3/group01_prompt195_s03.mp4",
+       "FlexGen": "samples/InfinityStar720p/FlexGen/q3/group01_prompt195_s03.mp4",
+       "KIVI": "samples/InfinityStar720p/KIVI/q3/group01_prompt195_s03.mp4",
+       "VARQ": "samples/InfinityStar720p/VARQ/q3/group01_prompt195_s03.mp4"
+      }
+     }
+    ],
+    "q4": [
+     {
+      "prompt": "A chimp on the sidewalk doing a backflip on a skateboard.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar720p/Baseline/q4/group01_prompt057_s01.mp4",
+       "FlexGen": "samples/InfinityStar720p/FlexGen/q4/group01_prompt057_s01.mp4",
+       "KIVI": "samples/InfinityStar720p/KIVI/q4/group01_prompt057_s01.mp4",
+       "VARQ": "samples/InfinityStar720p/VARQ/q4/group01_prompt057_s01.mp4"
+      }
+     },
+     {
+      "prompt": "A person playing chess with a robot on a floating platform above the ocean.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar720p/Baseline/q4/group01_prompt071_s02.mp4",
+       "FlexGen": "samples/InfinityStar720p/FlexGen/q4/group01_prompt071_s02.mp4",
+       "KIVI": "samples/InfinityStar720p/KIVI/q4/group01_prompt071_s02.mp4",
+       "VARQ": "samples/InfinityStar720p/VARQ/q4/group01_prompt071_s02.mp4"
+      }
+     },
+     {
+      "prompt": "A martial artist breaking a board with a powerful punch.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar720p/Baseline/q4/group01_prompt154_s03.mp4",
+       "FlexGen": "samples/InfinityStar720p/FlexGen/q4/group01_prompt154_s03.mp4",
+       "KIVI": "samples/InfinityStar720p/KIVI/q4/group01_prompt154_s03.mp4",
+       "VARQ": "samples/InfinityStar720p/VARQ/q4/group01_prompt154_s03.mp4"
+      }
+     }
+    ],
+    "q8": [
+     {
+      "prompt": "a woman wearing blue jeans and a white t shirt taking a pleasant stroll in Mumbai India during a beautiful sunset",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar720p/Baseline/q8/group01_prompt012_s01.mp4",
+       "VARQ": "samples/InfinityStar720p/VARQ/q8/group01_prompt012_s01.mp4"
+      }
+     },
+     {
+      "prompt": "Tiltshift of a construction site filled with workers, equipment, and heavy machinery.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar720p/Baseline/q8/group01_prompt130_s02.mp4",
+       "VARQ": "samples/InfinityStar720p/VARQ/q8/group01_prompt130_s02.mp4"
+      }
+     },
+     {
+      "prompt": "A tilt-down from the towering peak of a mountain to the winding path leading up to it.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar720p/Baseline/q8/group01_prompt169_s03.mp4",
+       "VARQ": "samples/InfinityStar720p/VARQ/q8/group01_prompt169_s03.mp4"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "self_forcing",
+   "label": "Self-Forcing",
+   "type": "video",
+   "task": "Streaming autoregressive video",
+   "methods": [
+    "Baseline",
+    "FlexGen",
+    "KIVI",
+    "VARQ"
+   ],
+   "methodLabels": {
+    "Baseline": "Baseline (FP)",
+    "FlexGen": "FlexGen",
+    "KIVI": "KIVI",
+    "VARQ": "VARQ (Ours)"
+   },
+   "bits": [
+    "q6"
+   ],
+   "bitLabels": {
+    "q6": "6-bit"
+   },
+   "samples": {
+    "q6": [
+     {
+      "prompt": "a toy robot wearing a green dress and a sun hat taking a pleasant stroll in Antarctica during a beautiful sunset",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q6/group01_prompt018_s01.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q6/group01_prompt018_s01.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q6/group01_prompt018_s01.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q6/group01_prompt018_s01.mp4"
+      }
+     },
+     {
+      "prompt": "Cinematic trailer for a group of adventurous puppies exploring ruins in the sky",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q6/group01_prompt032_s02.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q6/group01_prompt032_s02.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q6/group01_prompt032_s02.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q6/group01_prompt032_s02.mp4"
+      }
+     },
+     {
+      "prompt": "A push-in through a garden archway, revealing a secret, tranquil garden filled with blooming flowers.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q6/group01_prompt047_s03.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q6/group01_prompt047_s03.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q6/group01_prompt047_s03.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q6/group01_prompt047_s03.mp4"
+      }
+     },
+     {
+      "prompt": "a giant duck walks through the streets in Boston",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q6/group02_prompt079_s01.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q6/group02_prompt079_s01.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q6/group02_prompt079_s01.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q6/group02_prompt079_s01.mp4"
+      }
+     },
+     {
+      "prompt": "A little boy is riding a dragon in the sky to a castle",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q6/group02_prompt101_s02.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q6/group02_prompt101_s02.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q6/group02_prompt101_s02.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q6/group02_prompt101_s02.mp4"
+      }
+     },
+     {
+      "prompt": "A truck right through a tranquil garden, moving past blooming flowers, trees, and a small fountain.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q6/group02_prompt111_s03.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q6/group02_prompt111_s03.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q6/group02_prompt111_s03.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q6/group02_prompt111_s03.mp4"
+      }
+     },
+     {
+      "prompt": "A peacock wearing a crown, sitting on a throne and holding court with other animals.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q6/group03_prompt138_s01.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q6/group03_prompt138_s01.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q6/group03_prompt138_s01.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q6/group03_prompt138_s01.mp4"
+      }
+     },
+     {
+      "prompt": "A person on a scooter colliding with a park bench, the scooter tipping over.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q6/group03_prompt167_s02.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q6/group03_prompt167_s02.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q6/group03_prompt167_s02.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q6/group03_prompt167_s02.mp4"
+      }
+     },
+     {
+      "prompt": "A man pushes away a huge stone with superhuman strength.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q6/group03_prompt188_s03.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q6/group03_prompt188_s03.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q6/group03_prompt188_s03.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q6/group03_prompt188_s03.mp4"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "longlive",
+   "label": "LongLive",
+   "type": "video",
+   "task": "Long-horizon video generation",
+   "methods": [
+    "Baseline",
+    "FlexGen",
+    "KIVI",
+    "VARQ"
+   ],
+   "methodLabels": {
+    "Baseline": "Baseline (FP)",
+    "FlexGen": "FlexGen",
+    "KIVI": "KIVI",
+    "VARQ": "VARQ (Ours)"
+   },
+   "bits": [
+    "q6"
+   ],
+   "bitLabels": {
+    "q6": "6-bit"
+   },
+   "samples": {
+    "q6": [
+     {
+      "prompt": "A middle-aged sad bald man becomes happy as a wig of curly hair and sunglasses fall suddenly on his head.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/group01_prompt009_s01.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/group01_prompt009_s01.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/group01_prompt009_s01.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/group01_prompt009_s01.mp4"
+      }
+     },
+     {
+      "prompt": "a man BASE jumping over tropical hawaii waters. His pet macaw flies alongside him",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/group01_prompt041_s02.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/group01_prompt041_s02.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/group01_prompt041_s02.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/group01_prompt041_s02.mp4"
+      }
+     },
+     {
+      "prompt": "An aerial shot of a field of blooming wildflowers, creating a patchwork of colors in the landscape.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/group01_prompt052_s03.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/group01_prompt052_s03.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/group01_prompt052_s03.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/group01_prompt052_s03.mp4"
+      }
+     },
+     {
+      "prompt": "A cook flipping pancakes on a griddle.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/group02_prompt081_s01.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/group02_prompt081_s01.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/group02_prompt081_s01.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/group02_prompt081_s01.mp4"
+      }
+     },
+     {
+      "prompt": "A slow cinematic push in on an ostrich standing in a 1980s kitchen.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/group02_prompt092_s02.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/group02_prompt092_s02.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/group02_prompt092_s02.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/group02_prompt092_s02.mp4"
+      }
+     },
+     {
+      "prompt": "In an ancient library, books float and glow as they drift through the air, occasionally landing softly on the tables, where curious individuals reach out to read their contents.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/group02_prompt122_s03.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/group02_prompt122_s03.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/group02_prompt122_s03.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/group02_prompt122_s03.mp4"
+      }
+     },
+     {
+      "prompt": "New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/group03_prompt153_s01.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/group03_prompt153_s01.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/group03_prompt153_s01.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/group03_prompt153_s01.mp4"
+      }
+     },
+     {
+      "prompt": "A bear wearing a superhero cape, flying through the sky over a bustling city.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/group03_prompt165_s02.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/group03_prompt165_s02.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/group03_prompt165_s02.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/group03_prompt165_s02.mp4"
+      }
+     },
+     {
+      "prompt": "A goat operating a food truck, serving gourmet grilled cheese sandwiches to a line of animals.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/group03_prompt190_s03.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/group03_prompt190_s03.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/group03_prompt190_s03.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/group03_prompt190_s03.mp4"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}

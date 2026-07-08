@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VARQ: Training-Free KV-Cache Quantization for Visual Autoregressive Generation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">VARQ</a>
+            <ul class="nav-menu">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#demo">Demo</a></li>
+                <li><a href="#method">Method</a></li>
+                <li><a href="#code">Code</a></li>
+                <li><a href="#citation">Citation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="title">VARQ</h1>
+            <h2 class="subtitle">Training-Free KV-Cache Quantization for Visual Autoregressive Generation</h2>
+
+            <div class="authors">
+                <div class="author-row">
+                    <span class="author">Anonymous Authors</span>
+                </div>
+            </div>
+
+            <div class="affiliations">
+                <span>Under review</span>
+            </div>
+
+            <div class="links">
+                <a href="#" class="btn btn-secondary">
+                    <i class="fas fa-file-pdf"></i> Paper (Coming Soon)
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    <i class="fab fa-github"></i> Code (Coming Soon)
+                </a>
+                <a href="#demo" class="btn btn-primary">
+                    <i class="fas fa-images"></i> View Demo
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Overview / Teaser Section -->
+    <section id="overview" class="teaser">
+        <div class="container">
+            <p class="teaser-caption" style="margin-top:0">
+                <strong>VARQ</strong> is a training-free, plug-in <strong>KV-cache quantizer</strong> for visual
+                autoregressive (VAR) generators. It compresses the key/value cache to
+                <strong>2&ndash;8 bits</strong> while preserving fidelity far better than prior post-hoc
+                quantizers (KIVI, FlexGen/GPTQ), across class-conditional image, text-to-image, and
+                autoregressive video models.
+            </p>
+            <div class="stat-row">
+                <div class="stat-card">
+                    <div class="stat-num">9</div>
+                    <div class="stat-label">model families<br>VAR · Infinity · InfinityStar · Self-Forcing · LongLive</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">2&ndash;8 bit</div>
+                    <div class="stat-label">KV-cache precision<br>aggressive low-bit compression</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">+7&ndash;12 dB</div>
+                    <div class="stat-label">PSNR vs. best baseline<br>on shown VAR samples at 3&ndash;4 bit</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-play-circle"></i> Qualitative Comparison
+            </h2>
+            <p class="section-description">
+                Same prompt / class, same bit-width &mdash; only the KV-cache quantizer differs.
+                Pick a model and precision to compare <strong>Baseline (FP)</strong>, prior methods, and
+                <strong>VARQ (Ours)</strong> side by side.
+            </p>
+
+            <!-- Model selector -->
+            <div class="selector-block">
+                <span class="selector-label">Model</span>
+                <div id="model-tabs" class="pill-group"></div>
+            </div>
+            <!-- Bit selector -->
+            <div class="selector-block">
+                <span class="selector-label">KV-cache bits</span>
+                <div id="bit-tabs" class="pill-group"></div>
+            </div>
+
+            <p id="model-task" class="model-task"></p>
+
+            <!-- Video playback speed control (videos only) -->
+            <div id="speed-control" class="speed-control" style="display:none">
+                <span class="speed-label">Playback Speed:</span>
+                <div class="speed-buttons">
+                    <button class="speed-btn" data-speed="1">1&times;</button>
+                    <button class="speed-btn active" data-speed="1.5">1.5&times;</button>
+                    <button class="speed-btn" data-speed="2">2&times;</button>
+                </div>
+            </div>
+
+            <div id="gallery"></div>
+        </div>
+    </section>
+
+    <!-- Method Section -->
+    <section id="method" class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-microchip"></i> Why VARQ
+            </h2>
+            <p class="section-description">
+                Visual autoregressive models spend most of their memory and bandwidth on the KV cache.
+                VARQ makes that cache cheap without retraining and without a quality collapse at low bit-widths.
+            </p>
+
+            <div class="kernel-features">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Training-Free</h3>
+                    <p>A drop-in quantizer &mdash; no fine-tuning, no calibration on the target model required.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-memory"></i></div>
+                    <h3>Low-Bit KV Cache</h3>
+                    <p>Compresses keys and values down to 2&ndash;8 bits, shrinking cache memory and bandwidth.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-crosshairs"></i></div>
+                    <h3>Fidelity Preserving</h3>
+                    <p>Substantially higher PSNR than KIVI and FlexGen at the same precision, avoiding artifacts.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-layer-group"></i></div>
+                    <h3>Broadly Applicable</h3>
+                    <p>One method across class-conditional, text-to-image, and streaming video AR generators.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Section -->
+    <section id="code" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fab fa-github"></i> Code
+            </h2>
+            <div class="coming-soon-box">
+                <i class="fas fa-clock"></i>
+                <h3>Coming Soon</h3>
+                <p>Source code and quantization kernels will be released.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Citation Section -->
+    <section id="citation" class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-quote-left"></i> Citation
+            </h2>
+            <div class="citation-box">
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>BibTeX</span>
+                        <button class="copy-btn" onclick="copyCode(this)">
+                            <i class="fas fa-copy"></i> Copy
+                        </button>
+                    </div>
+                    <pre><code>@article{varq2026,
+  title={VARQ: Training-Free KV-Cache Quantization for Visual Autoregressive Generation},
+  author={Anonymous},
+  journal={Under review},
+  year={2026}
+}</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 VARQ. All rights reserved.</p>
+            <p><a href="#overview">Overview</a> | <a href="#demo">Demo</a> | <a href="#citation">Citation</a></p>
+        </div>
+    </footer>
+
+    <script src="static/gallery.js"></script>
+</body>
+</html>
