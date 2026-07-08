@@ -12,7 +12,7 @@
     "VARQ"
    ],
    "methodLabels": {
-    "Baseline": "Baseline (FP)",
+    "Baseline": "Baseline (BF16)",
     "FlexGen": "FlexGen",
     "KIVI": "KIVI",
     "VARQ": "VARQ (Ours)"
@@ -164,7 +164,7 @@
     "VARQ"
    ],
    "methodLabels": {
-    "Baseline": "Baseline (FP)",
+    "Baseline": "Baseline (BF16)",
     "FlexGen": "FlexGen",
     "KIVI": "KIVI",
     "VARQ": "VARQ (Ours)"
@@ -316,7 +316,7 @@
     "VARQ"
    ],
    "methodLabels": {
-    "Baseline": "Baseline (FP)",
+    "Baseline": "Baseline (BF16)",
     "FlexGen": "FlexGen",
     "KIVI": "KIVI",
     "VARQ": "VARQ (Ours)"
@@ -467,7 +467,7 @@
     "VARQ"
    ],
    "methodLabels": {
-    "Baseline": "Baseline (FP)",
+    "Baseline": "Baseline (BF16)",
     "KIVI": "KIVI",
     "VARQ": "VARQ (Ours)"
    },
@@ -575,7 +575,7 @@
     "VARQ"
    ],
    "methodLabels": {
-    "Baseline": "Baseline (FP)",
+    "Baseline": "Baseline (BF16)",
     "VARQ": "VARQ (Ours)"
    },
    "bits": [
@@ -681,7 +681,7 @@
     "VARQ"
    ],
    "methodLabels": {
-    "Baseline": "Baseline (FP)",
+    "Baseline": "Baseline (BF16)",
     "FlexGen": "FlexGen",
     "KIVI": "KIVI",
     "VARQ": "VARQ (Ours)"
@@ -801,7 +801,7 @@
     "VARQ"
    ],
    "methodLabels": {
-    "Baseline": "Baseline (FP)",
+    "Baseline": "Baseline (BF16)",
     "FlexGen": "FlexGen",
     "KIVI": "KIVI",
     "VARQ": "VARQ (Ours)"
@@ -921,7 +921,7 @@
     "VARQ"
    ],
    "methodLabels": {
-    "Baseline": "Baseline (FP)",
+    "Baseline": "Baseline (BF16)",
     "FlexGen": "FlexGen",
     "KIVI": "KIVI",
     "VARQ": "VARQ (Ours)"
@@ -1039,7 +1039,7 @@
     "VARQ"
    ],
    "methodLabels": {
-    "Baseline": "Baseline (FP)",
+    "Baseline": "Baseline (BF16)",
     "FlexGen": "FlexGen",
     "KIVI": "KIVI",
     "VARQ": "VARQ (Ours)"

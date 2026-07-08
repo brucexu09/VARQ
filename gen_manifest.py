@@ -18,7 +18,7 @@ MODELS = [
     ("longlive", "LongLive", "video", "Long-horizon video generation"),
 ]
 METHOD_ORDER = ["Baseline", "FlexGen", "KIVI", "VARQ"]
-METHOD_LABEL = {"Baseline": "Baseline (FP)", "FlexGen": "FlexGen", "KIVI": "KIVI", "VARQ": "VARQ (Ours)"}
+METHOD_LABEL = {"Baseline": "Baseline (BF16)", "FlexGen": "FlexGen", "KIVI": "KIVI", "VARQ": "VARQ (Ours)"}
 
 def qlabel(q):
     m = re.match(r"q(\d+)", q)
