@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="static/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26' font-weight='bold' fill='%236366f1'>Q</text></svg>">
 </head>
 <body>
     <!-- Navigation -->
@@ -31,13 +32,24 @@
 
             <div class="authors">
                 <div class="author-row">
-                    <span class="author">Anonymous Authors</span>
+                    <span class="author"><a href="https://boxunxu.top">Boxun Xu</a><sup>1,†</sup></span>
+                    <span class="author">Jiaji Lu<sup>1,†</sup></span>
+                    <span class="author">Yuxuan Yin<sup>1</sup></span>
+                    <span class="author">Zihu Wang<sup>1</sup></span>
+                </div>
+                <div class="author-row">
+                    <span class="author">Ziyue Liu<sup>1</sup></span>
+                    <span class="author">Yu Wang<sup>1</sup></span>
+                    <span class="author">Zirui Liu<sup>2</sup></span>
+                    <span class="author"><a href="https://engineering.ucsb.edu/people/peng-li">Peng Li</a><sup>1</sup></span>
                 </div>
             </div>
 
             <div class="affiliations">
-                <span>Under review</span>
+                <span><sup>1</sup>University of California, Santa Barbara</span>
+                <span><sup>2</sup>University of Minnesota</span>
             </div>
+            <p class="equal-contrib"><sup>†</sup>Equal contribution &nbsp;·&nbsp; <a href="mailto:boxunxu@ucsb.edu">boxunxu@ucsb.edu</a></p>
 
             <div class="links">
                 <a href="#" class="btn btn-secondary">
@@ -73,8 +85,8 @@
                     <div class="stat-label">KV-cache precision<br>aggressive low-bit compression</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-num">+7&ndash;12 dB</div>
-                    <div class="stat-label">PSNR vs. best baseline<br>on shown VAR samples at 3&ndash;4 bit</div>
+                    <div class="stat-num">up to +16 dB</div>
+                    <div class="stat-label">PSNR over the best prior quantizer<br>on VAR image models at 3&ndash;4 bit</div>
                 </div>
             </div>
         </div>
@@ -89,7 +101,8 @@
             <p class="section-description">
                 Same prompt / class, same bit-width &mdash; only the KV-cache quantizer differs.
                 Pick a model and precision to compare <strong>Baseline (FP)</strong>, prior methods, and
-                <strong>VARQ (Ours)</strong> side by side.
+                <strong>VARQ (Ours)</strong> side by side. The <strong>VAR image models</strong> at 3&ndash;4 bit
+                show the largest gap: VARQ stays faithful to the baseline while KIVI and FlexGen collapse.
             </p>
 
             <!-- Model selector -->
@@ -183,9 +196,9 @@
                             <i class="fas fa-copy"></i> Copy
                         </button>
                     </div>
-                    <pre><code>@article{varq2026,
+                    <pre><code>@article{xu2026varq,
   title={VARQ: Training-Free KV-Cache Quantization for Visual Autoregressive Generation},
-  author={Anonymous},
+  author={Xu, Boxun and Lu, Jiaji and Yin, Yuxuan and Wang, Zihu and Liu, Ziyue and Wang, Yu and Liu, Zirui and Li, Peng},
   journal={Under review},
   year={2026}
 }</code></pre>

@@ -1374,3 +1374,6 @@ a:hover {
     text-align: center; margin-top: 12px; font-size: 0.9rem; color: var(--text-secondary);
 }
 .cmp-caption .pos { color: var(--ours-dark); font-weight: 600; }
+
+.equal-contrib { color: var(--text-muted); font-size: 0.9rem; margin: 6px 0 24px; }
+.equal-contrib sup { color: var(--primary-color); font-weight: 600; }

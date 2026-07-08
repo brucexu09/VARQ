@@ -29,64 +29,124 @@
     "q3": [
      {
       "prompt": null,
-      "caption": null,
+      "caption": "VARQ <b>18.4 dB</b> &nbsp;·&nbsp; KIVI 11.1 &nbsp;·&nbsp; FlexGen 11.3 &nbsp;<span class='pos'>(+7.0 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/VAR_d30/Baseline/q3/group01_class004.png",
-       "FlexGen": "samples/VAR_d30/FlexGen/q3/group01_class004.png",
-       "KIVI": "samples/VAR_d30/KIVI/q3/group01_class004.png",
-       "VARQ": "samples/VAR_d30/VARQ/q3/group01_class004.png"
+       "Baseline": "samples/VAR_d30/Baseline/q3/iters583_img24.png",
+       "FlexGen": "samples/VAR_d30/FlexGen/q3/iters583_img24.png",
+       "KIVI": "samples/VAR_d30/KIVI/q3/iters583_img24.png",
+       "VARQ": "samples/VAR_d30/VARQ/q3/iters583_img24.png"
       }
      },
      {
       "prompt": null,
-      "caption": null,
+      "caption": "VARQ <b>18.4 dB</b> &nbsp;·&nbsp; KIVI 12.3 &nbsp;·&nbsp; FlexGen 11.3 &nbsp;<span class='pos'>(+6.1 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/VAR_d30/Baseline/q3/group02_class048.png",
-       "FlexGen": "samples/VAR_d30/FlexGen/q3/group02_class048.png",
-       "KIVI": "samples/VAR_d30/KIVI/q3/group02_class048.png",
-       "VARQ": "samples/VAR_d30/VARQ/q3/group02_class048.png"
+       "Baseline": "samples/VAR_d30/Baseline/q3/iters237_img30.png",
+       "FlexGen": "samples/VAR_d30/FlexGen/q3/iters237_img30.png",
+       "KIVI": "samples/VAR_d30/KIVI/q3/iters237_img30.png",
+       "VARQ": "samples/VAR_d30/VARQ/q3/iters237_img30.png"
       }
      },
      {
       "prompt": null,
-      "caption": null,
+      "caption": "VARQ <b>20.3 dB</b> &nbsp;·&nbsp; KIVI 15.0 &nbsp;·&nbsp; FlexGen 15.0 &nbsp;<span class='pos'>(+5.2 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/VAR_d30/Baseline/q3/group03_class051.png",
-       "FlexGen": "samples/VAR_d30/FlexGen/q3/group03_class051.png",
-       "KIVI": "samples/VAR_d30/KIVI/q3/group03_class051.png",
-       "VARQ": "samples/VAR_d30/VARQ/q3/group03_class051.png"
+       "Baseline": "samples/VAR_d30/Baseline/q3/iters914_img18.png",
+       "FlexGen": "samples/VAR_d30/FlexGen/q3/iters914_img18.png",
+       "KIVI": "samples/VAR_d30/KIVI/q3/iters914_img18.png",
+       "VARQ": "samples/VAR_d30/VARQ/q3/iters914_img18.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": "VARQ <b>18.1 dB</b> &nbsp;·&nbsp; KIVI 11.8 &nbsp;·&nbsp; FlexGen 13.0 &nbsp;<span class='pos'>(+5.1 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d30/Baseline/q3/iters618_img41.png",
+       "FlexGen": "samples/VAR_d30/FlexGen/q3/iters618_img41.png",
+       "KIVI": "samples/VAR_d30/KIVI/q3/iters618_img41.png",
+       "VARQ": "samples/VAR_d30/VARQ/q3/iters618_img41.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": "VARQ <b>19.2 dB</b> &nbsp;·&nbsp; KIVI 14.9 &nbsp;·&nbsp; FlexGen 14.2 &nbsp;<span class='pos'>(+4.3 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d30/Baseline/q3/iters3_img30.png",
+       "FlexGen": "samples/VAR_d30/FlexGen/q3/iters3_img30.png",
+       "KIVI": "samples/VAR_d30/KIVI/q3/iters3_img30.png",
+       "VARQ": "samples/VAR_d30/VARQ/q3/iters3_img30.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": "VARQ <b>18.6 dB</b> &nbsp;·&nbsp; KIVI 13.4 &nbsp;·&nbsp; FlexGen 14.4 &nbsp;<span class='pos'>(+4.3 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d30/Baseline/q3/iters849_img31.png",
+       "FlexGen": "samples/VAR_d30/FlexGen/q3/iters849_img31.png",
+       "KIVI": "samples/VAR_d30/KIVI/q3/iters849_img31.png",
+       "VARQ": "samples/VAR_d30/VARQ/q3/iters849_img31.png"
       }
      }
     ],
     "q4": [
      {
       "prompt": null,
-      "caption": null,
+      "caption": "VARQ <b>21.8 dB</b> &nbsp;·&nbsp; KIVI 14.1 &nbsp;·&nbsp; FlexGen 14.9 &nbsp;<span class='pos'>(+6.8 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/VAR_d30/Baseline/q4/group01_class004.png",
-       "FlexGen": "samples/VAR_d30/FlexGen/q4/group01_class004.png",
-       "KIVI": "samples/VAR_d30/KIVI/q4/group01_class004.png",
-       "VARQ": "samples/VAR_d30/VARQ/q4/group01_class004.png"
+       "Baseline": "samples/VAR_d30/Baseline/q4/iters904_img23.png",
+       "FlexGen": "samples/VAR_d30/FlexGen/q4/iters904_img23.png",
+       "KIVI": "samples/VAR_d30/KIVI/q4/iters904_img23.png",
+       "VARQ": "samples/VAR_d30/VARQ/q4/iters904_img23.png"
       }
      },
      {
       "prompt": null,
-      "caption": null,
+      "caption": "VARQ <b>20.1 dB</b> &nbsp;·&nbsp; KIVI 12.3 &nbsp;·&nbsp; FlexGen 13.8 &nbsp;<span class='pos'>(+6.3 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/VAR_d30/Baseline/q4/group02_class048.png",
-       "FlexGen": "samples/VAR_d30/FlexGen/q4/group02_class048.png",
-       "KIVI": "samples/VAR_d30/KIVI/q4/group02_class048.png",
-       "VARQ": "samples/VAR_d30/VARQ/q4/group02_class048.png"
+       "Baseline": "samples/VAR_d30/Baseline/q4/iters861_img36.png",
+       "FlexGen": "samples/VAR_d30/FlexGen/q4/iters861_img36.png",
+       "KIVI": "samples/VAR_d30/KIVI/q4/iters861_img36.png",
+       "VARQ": "samples/VAR_d30/VARQ/q4/iters861_img36.png"
       }
      },
      {
       "prompt": null,
-      "caption": null,
+      "caption": "VARQ <b>27.0 dB</b> &nbsp;·&nbsp; KIVI 21.0 &nbsp;·&nbsp; FlexGen 20.9 &nbsp;<span class='pos'>(+6.0 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/VAR_d30/Baseline/q4/group03_class051.png",
-       "FlexGen": "samples/VAR_d30/FlexGen/q4/group03_class051.png",
-       "KIVI": "samples/VAR_d30/KIVI/q4/group03_class051.png",
-       "VARQ": "samples/VAR_d30/VARQ/q4/group03_class051.png"
+       "Baseline": "samples/VAR_d30/Baseline/q4/iters70_img15.png",
+       "FlexGen": "samples/VAR_d30/FlexGen/q4/iters70_img15.png",
+       "KIVI": "samples/VAR_d30/KIVI/q4/iters70_img15.png",
+       "VARQ": "samples/VAR_d30/VARQ/q4/iters70_img15.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": "VARQ <b>19.2 dB</b> &nbsp;·&nbsp; KIVI 13.3 &nbsp;·&nbsp; FlexGen 13.6 &nbsp;<span class='pos'>(+5.6 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d30/Baseline/q4/iters175_img41.png",
+       "FlexGen": "samples/VAR_d30/FlexGen/q4/iters175_img41.png",
+       "KIVI": "samples/VAR_d30/KIVI/q4/iters175_img41.png",
+       "VARQ": "samples/VAR_d30/VARQ/q4/iters175_img41.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": "VARQ <b>23.2 dB</b> &nbsp;·&nbsp; KIVI 16.8 &nbsp;·&nbsp; FlexGen 17.7 &nbsp;<span class='pos'>(+5.4 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d30/Baseline/q4/iters78_img13.png",
+       "FlexGen": "samples/VAR_d30/FlexGen/q4/iters78_img13.png",
+       "KIVI": "samples/VAR_d30/KIVI/q4/iters78_img13.png",
+       "VARQ": "samples/VAR_d30/VARQ/q4/iters78_img13.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": "VARQ <b>18.3 dB</b> &nbsp;·&nbsp; KIVI 13.6 &nbsp;·&nbsp; FlexGen 12.5 &nbsp;<span class='pos'>(+4.8 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d30/Baseline/q4/iters646_img35.png",
+       "FlexGen": "samples/VAR_d30/FlexGen/q4/iters646_img35.png",
+       "KIVI": "samples/VAR_d30/KIVI/q4/iters646_img35.png",
+       "VARQ": "samples/VAR_d30/VARQ/q4/iters646_img35.png"
       }
      }
     ]
@@ -111,158 +171,134 @@
    },
    "bits": [
     "q3",
-    "q4",
-    "q8"
+    "q4"
    ],
    "bitLabels": {
     "q3": "3-bit",
-    "q4": "4-bit",
-    "q8": "8-bit"
+    "q4": "4-bit"
    },
    "samples": {
     "q3": [
      {
       "prompt": null,
-      "caption": "VARQ PSNR 20.8 dB &nbsp;<span class='pos'>(+10.1 dB vs. best baseline)</span>",
+      "caption": "VARQ <b>19.4 dB</b> &nbsp;·&nbsp; KIVI 3.2 &nbsp;·&nbsp; FlexGen 3.2 &nbsp;<span class='pos'>(+16.2 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/VAR_d24/Baseline/q3/group01_idx00031_iters0_img31.png",
-       "FlexGen": "samples/VAR_d24/FlexGen/q3/group01_idx00031_iters0_img31.png",
-       "KIVI": "samples/VAR_d24/KIVI/q3/group01_idx00031_iters0_img31.png",
-       "VARQ": "samples/VAR_d24/VARQ/q3/group01_idx00031_iters0_img31.png"
+       "Baseline": "samples/VAR_d24/Baseline/q3/iters319_img31.png",
+       "FlexGen": "samples/VAR_d24/FlexGen/q3/iters319_img31.png",
+       "KIVI": "samples/VAR_d24/KIVI/q3/iters319_img31.png",
+       "VARQ": "samples/VAR_d24/VARQ/q3/iters319_img31.png"
       }
      },
      {
       "prompt": null,
-      "caption": "VARQ PSNR 17.0 dB &nbsp;<span class='pos'>(+4.7 dB vs. best baseline)</span>",
+      "caption": "VARQ <b>22.9 dB</b> &nbsp;·&nbsp; KIVI 7.3 &nbsp;·&nbsp; FlexGen 7.8 &nbsp;<span class='pos'>(+15.1 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/VAR_d24/Baseline/q3/group01_idx12500_iters250_img0.png",
-       "FlexGen": "samples/VAR_d24/FlexGen/q3/group01_idx12500_iters250_img0.png",
-       "KIVI": "samples/VAR_d24/KIVI/q3/group01_idx12500_iters250_img0.png",
-       "VARQ": "samples/VAR_d24/VARQ/q3/group01_idx12500_iters250_img0.png"
+       "Baseline": "samples/VAR_d24/Baseline/q3/iters4_img8.png",
+       "FlexGen": "samples/VAR_d24/FlexGen/q3/iters4_img8.png",
+       "KIVI": "samples/VAR_d24/KIVI/q3/iters4_img8.png",
+       "VARQ": "samples/VAR_d24/VARQ/q3/iters4_img8.png"
       }
      },
      {
       "prompt": null,
-      "caption": "VARQ PSNR 15.7 dB &nbsp;<span class='pos'>(+6.1 dB vs. best baseline)</span>",
+      "caption": "VARQ <b>18.6 dB</b> &nbsp;·&nbsp; KIVI 7.7 &nbsp;·&nbsp; FlexGen 6.1 &nbsp;<span class='pos'>(+10.8 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/VAR_d24/Baseline/q3/group01_idx23781_iters475_img31.png",
-       "FlexGen": "samples/VAR_d24/FlexGen/q3/group01_idx23781_iters475_img31.png",
-       "KIVI": "samples/VAR_d24/KIVI/q3/group01_idx23781_iters475_img31.png",
-       "VARQ": "samples/VAR_d24/VARQ/q3/group01_idx23781_iters475_img31.png"
+       "Baseline": "samples/VAR_d24/Baseline/q3/iters111_img11.png",
+       "FlexGen": "samples/VAR_d24/FlexGen/q3/iters111_img11.png",
+       "KIVI": "samples/VAR_d24/KIVI/q3/iters111_img11.png",
+       "VARQ": "samples/VAR_d24/VARQ/q3/iters111_img11.png"
       }
      },
      {
       "prompt": null,
-      "caption": "VARQ PSNR 21.4 dB &nbsp;<span class='pos'>(+6.8 dB vs. best baseline)</span>",
+      "caption": "VARQ <b>20.6 dB</b> &nbsp;·&nbsp; KIVI 14.9 &nbsp;·&nbsp; FlexGen 9.3 &nbsp;<span class='pos'>(+5.7 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/VAR_d24/Baseline/q3/group01_idx37781_iters755_img31.png",
-       "FlexGen": "samples/VAR_d24/FlexGen/q3/group01_idx37781_iters755_img31.png",
-       "KIVI": "samples/VAR_d24/KIVI/q3/group01_idx37781_iters755_img31.png",
-       "VARQ": "samples/VAR_d24/VARQ/q3/group01_idx37781_iters755_img31.png"
+       "Baseline": "samples/VAR_d24/Baseline/q3/iters980_img21.png",
+       "FlexGen": "samples/VAR_d24/FlexGen/q3/iters980_img21.png",
+       "KIVI": "samples/VAR_d24/KIVI/q3/iters980_img21.png",
+       "VARQ": "samples/VAR_d24/VARQ/q3/iters980_img21.png"
       }
      },
      {
       "prompt": null,
-      "caption": "VARQ PSNR 20.3 dB &nbsp;<span class='pos'>(+5.8 dB vs. best baseline)</span>",
+      "caption": "VARQ <b>19.1 dB</b> &nbsp;·&nbsp; KIVI 14.2 &nbsp;·&nbsp; FlexGen 13.4 &nbsp;<span class='pos'>(+4.9 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/VAR_d24/Baseline/q3/group01_idx48750_iters975_img0.png",
-       "FlexGen": "samples/VAR_d24/FlexGen/q3/group01_idx48750_iters975_img0.png",
-       "KIVI": "samples/VAR_d24/KIVI/q3/group01_idx48750_iters975_img0.png",
-       "VARQ": "samples/VAR_d24/VARQ/q3/group01_idx48750_iters975_img0.png"
+       "Baseline": "samples/VAR_d24/Baseline/q3/iters265_img23.png",
+       "FlexGen": "samples/VAR_d24/FlexGen/q3/iters265_img23.png",
+       "KIVI": "samples/VAR_d24/KIVI/q3/iters265_img23.png",
+       "VARQ": "samples/VAR_d24/VARQ/q3/iters265_img23.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": "VARQ <b>19.8 dB</b> &nbsp;·&nbsp; KIVI 16.3 &nbsp;·&nbsp; FlexGen 14.8 &nbsp;<span class='pos'>(+3.5 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d24/Baseline/q3/iters895_img44.png",
+       "FlexGen": "samples/VAR_d24/FlexGen/q3/iters895_img44.png",
+       "KIVI": "samples/VAR_d24/KIVI/q3/iters895_img44.png",
+       "VARQ": "samples/VAR_d24/VARQ/q3/iters895_img44.png"
       }
      }
     ],
     "q4": [
      {
       "prompt": null,
-      "caption": "VARQ PSNR 25.3 dB &nbsp;<span class='pos'>(+7.0 dB vs. best baseline)</span>",
+      "caption": "VARQ <b>18.8 dB</b> &nbsp;·&nbsp; KIVI 8.2 &nbsp;·&nbsp; FlexGen 7.3 &nbsp;<span class='pos'>(+10.6 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/VAR_d24/Baseline/q4/group01_idx00000_iters0_img0.png",
-       "FlexGen": "samples/VAR_d24/FlexGen/q4/group01_idx00000_iters0_img0.png",
-       "KIVI": "samples/VAR_d24/KIVI/q4/group01_idx00000_iters0_img0.png",
-       "VARQ": "samples/VAR_d24/VARQ/q4/group01_idx00000_iters0_img0.png"
+       "Baseline": "samples/VAR_d24/Baseline/q4/iters269_img26.png",
+       "FlexGen": "samples/VAR_d24/FlexGen/q4/iters269_img26.png",
+       "KIVI": "samples/VAR_d24/KIVI/q4/iters269_img26.png",
+       "VARQ": "samples/VAR_d24/VARQ/q4/iters269_img26.png"
       }
      },
      {
       "prompt": null,
-      "caption": "VARQ PSNR 16.8 dB &nbsp;<span class='pos'>(+6.6 dB vs. best baseline)</span>",
+      "caption": "VARQ <b>18.8 dB</b> &nbsp;·&nbsp; KIVI 8.2 &nbsp;·&nbsp; FlexGen 8.0 &nbsp;<span class='pos'>(+10.6 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/VAR_d24/Baseline/q4/group01_idx15543_iters310_img43.png",
-       "FlexGen": "samples/VAR_d24/FlexGen/q4/group01_idx15543_iters310_img43.png",
-       "KIVI": "samples/VAR_d24/KIVI/q4/group01_idx15543_iters310_img43.png",
-       "VARQ": "samples/VAR_d24/VARQ/q4/group01_idx15543_iters310_img43.png"
+       "Baseline": "samples/VAR_d24/Baseline/q4/iters969_img44.png",
+       "FlexGen": "samples/VAR_d24/FlexGen/q4/iters969_img44.png",
+       "KIVI": "samples/VAR_d24/KIVI/q4/iters969_img44.png",
+       "VARQ": "samples/VAR_d24/VARQ/q4/iters969_img44.png"
       }
      },
      {
       "prompt": null,
-      "caption": "VARQ PSNR 20.1 dB &nbsp;<span class='pos'>(+7.0 dB vs. best baseline)</span>",
+      "caption": "VARQ <b>20.1 dB</b> &nbsp;·&nbsp; KIVI 9.8 &nbsp;·&nbsp; FlexGen 12.2 &nbsp;<span class='pos'>(+7.9 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/VAR_d24/Baseline/q4/group01_idx23031_iters460_img31.png",
-       "FlexGen": "samples/VAR_d24/FlexGen/q4/group01_idx23031_iters460_img31.png",
-       "KIVI": "samples/VAR_d24/KIVI/q4/group01_idx23031_iters460_img31.png",
-       "VARQ": "samples/VAR_d24/VARQ/q4/group01_idx23031_iters460_img31.png"
+       "Baseline": "samples/VAR_d24/Baseline/q4/iters549_img22.png",
+       "FlexGen": "samples/VAR_d24/FlexGen/q4/iters549_img22.png",
+       "KIVI": "samples/VAR_d24/KIVI/q4/iters549_img22.png",
+       "VARQ": "samples/VAR_d24/VARQ/q4/iters549_img22.png"
       }
      },
      {
       "prompt": null,
-      "caption": "VARQ PSNR 14.5 dB &nbsp;<span class='pos'>(+9.1 dB vs. best baseline)</span>",
+      "caption": "VARQ <b>18.7 dB</b> &nbsp;·&nbsp; KIVI 13.6 &nbsp;·&nbsp; FlexGen 13.2 &nbsp;<span class='pos'>(+5.1 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/VAR_d24/Baseline/q4/group01_idx32507_iters650_img7.png",
-       "FlexGen": "samples/VAR_d24/FlexGen/q4/group01_idx32507_iters650_img7.png",
-       "KIVI": "samples/VAR_d24/KIVI/q4/group01_idx32507_iters650_img7.png",
-       "VARQ": "samples/VAR_d24/VARQ/q4/group01_idx32507_iters650_img7.png"
+       "Baseline": "samples/VAR_d24/Baseline/q4/iters739_img21.png",
+       "FlexGen": "samples/VAR_d24/FlexGen/q4/iters739_img21.png",
+       "KIVI": "samples/VAR_d24/KIVI/q4/iters739_img21.png",
+       "VARQ": "samples/VAR_d24/VARQ/q4/iters739_img21.png"
       }
      },
      {
       "prompt": null,
-      "caption": "VARQ PSNR 19.7 dB &nbsp;<span class='pos'>(+11.6 dB vs. best baseline)</span>",
+      "caption": "VARQ <b>20.5 dB</b> &nbsp;·&nbsp; KIVI 15.6 &nbsp;·&nbsp; FlexGen 13.4 &nbsp;<span class='pos'>(+4.9 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/VAR_d24/Baseline/q4/group01_idx49019_iters980_img19.png",
-       "FlexGen": "samples/VAR_d24/FlexGen/q4/group01_idx49019_iters980_img19.png",
-       "KIVI": "samples/VAR_d24/KIVI/q4/group01_idx49019_iters980_img19.png",
-       "VARQ": "samples/VAR_d24/VARQ/q4/group01_idx49019_iters980_img19.png"
-      }
-     }
-    ],
-    "q8": [
-     {
-      "prompt": null,
-      "caption": "VARQ PSNR 30.2 dB &nbsp;<span class='pos'>(+30.2 dB vs. best baseline)</span>",
-      "media": {
-       "Baseline": "samples/VAR_d24/Baseline/q8/group01_idx03519_iters70_img19.png",
-       "VARQ": "samples/VAR_d24/VARQ/q8/group01_idx03519_iters70_img19.png"
+       "Baseline": "samples/VAR_d24/Baseline/q4/iters642_img8.png",
+       "FlexGen": "samples/VAR_d24/FlexGen/q4/iters642_img8.png",
+       "KIVI": "samples/VAR_d24/KIVI/q4/iters642_img8.png",
+       "VARQ": "samples/VAR_d24/VARQ/q4/iters642_img8.png"
       }
      },
      {
       "prompt": null,
-      "caption": "VARQ PSNR 27.7 dB &nbsp;<span class='pos'>(+27.7 dB vs. best baseline)</span>",
+      "caption": "VARQ <b>22.8 dB</b> &nbsp;·&nbsp; KIVI 17.4 &nbsp;·&nbsp; FlexGen 18.5 &nbsp;<span class='pos'>(+4.3 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/VAR_d24/Baseline/q8/group01_idx19781_iters395_img31.png",
-       "VARQ": "samples/VAR_d24/VARQ/q8/group01_idx19781_iters395_img31.png"
-      }
-     },
-     {
-      "prompt": null,
-      "caption": "VARQ PSNR 25.0 dB &nbsp;<span class='pos'>(+25.0 dB vs. best baseline)</span>",
-      "media": {
-       "Baseline": "samples/VAR_d24/Baseline/q8/group01_idx24750_iters495_img0.png",
-       "VARQ": "samples/VAR_d24/VARQ/q8/group01_idx24750_iters495_img0.png"
-      }
-     },
-     {
-      "prompt": null,
-      "caption": "VARQ PSNR 29.2 dB &nbsp;<span class='pos'>(+29.2 dB vs. best baseline)</span>",
-      "media": {
-       "Baseline": "samples/VAR_d24/Baseline/q8/group01_idx37281_iters745_img31.png",
-       "VARQ": "samples/VAR_d24/VARQ/q8/group01_idx37281_iters745_img31.png"
-      }
-     },
-     {
-      "prompt": null,
-      "caption": "VARQ PSNR 33.3 dB &nbsp;<span class='pos'>(+33.3 dB vs. best baseline)</span>",
-      "media": {
-       "Baseline": "samples/VAR_d24/Baseline/q8/group01_idx45531_iters910_img31.png",
-       "VARQ": "samples/VAR_d24/VARQ/q8/group01_idx45531_iters910_img31.png"
+       "Baseline": "samples/VAR_d24/Baseline/q4/iters75_img40.png",
+       "FlexGen": "samples/VAR_d24/FlexGen/q4/iters75_img40.png",
+       "KIVI": "samples/VAR_d24/KIVI/q4/iters75_img40.png",
+       "VARQ": "samples/VAR_d24/VARQ/q4/iters75_img40.png"
       }
      }
     ]
@@ -287,158 +323,134 @@
    },
    "bits": [
     "q3",
-    "q4",
-    "q8"
+    "q4"
    ],
    "bitLabels": {
     "q3": "3-bit",
-    "q4": "4-bit",
-    "q8": "8-bit"
+    "q4": "4-bit"
    },
    "samples": {
     "q3": [
      {
       "prompt": null,
-      "caption": "VARQ PSNR 17.0 dB &nbsp;<span class='pos'>(+5.4 dB vs. best baseline)</span>",
+      "caption": "VARQ <b>18.8 dB</b> &nbsp;·&nbsp; KIVI 9.1 &nbsp;·&nbsp; FlexGen 6.6 &nbsp;<span class='pos'>(+9.7 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/VAR_d20/Baseline/q3/group01_idx09293_iters185_img43.png",
-       "FlexGen": "samples/VAR_d20/FlexGen/q3/group01_idx09293_iters185_img43.png",
-       "KIVI": "samples/VAR_d20/KIVI/q3/group01_idx09293_iters185_img43.png",
-       "VARQ": "samples/VAR_d20/VARQ/q3/group01_idx09293_iters185_img43.png"
+       "Baseline": "samples/VAR_d20/Baseline/q3/iters481_img22.png",
+       "FlexGen": "samples/VAR_d20/FlexGen/q3/iters481_img22.png",
+       "KIVI": "samples/VAR_d20/KIVI/q3/iters481_img22.png",
+       "VARQ": "samples/VAR_d20/VARQ/q3/iters481_img22.png"
       }
      },
      {
       "prompt": null,
-      "caption": "VARQ PSNR 17.1 dB &nbsp;<span class='pos'>(+6.3 dB vs. best baseline)</span>",
+      "caption": "VARQ <b>21.1 dB</b> &nbsp;·&nbsp; KIVI 8.0 &nbsp;·&nbsp; FlexGen 12.3 &nbsp;<span class='pos'>(+8.8 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/VAR_d20/Baseline/q3/group01_idx10781_iters215_img31.png",
-       "FlexGen": "samples/VAR_d20/FlexGen/q3/group01_idx10781_iters215_img31.png",
-       "KIVI": "samples/VAR_d20/KIVI/q3/group01_idx10781_iters215_img31.png",
-       "VARQ": "samples/VAR_d20/VARQ/q3/group01_idx10781_iters215_img31.png"
+       "Baseline": "samples/VAR_d20/Baseline/q3/iters961_img44.png",
+       "FlexGen": "samples/VAR_d20/FlexGen/q3/iters961_img44.png",
+       "KIVI": "samples/VAR_d20/KIVI/q3/iters961_img44.png",
+       "VARQ": "samples/VAR_d20/VARQ/q3/iters961_img44.png"
       }
      },
      {
       "prompt": null,
-      "caption": "VARQ PSNR 18.3 dB &nbsp;<span class='pos'>(+8.1 dB vs. best baseline)</span>",
+      "caption": "VARQ <b>18.5 dB</b> &nbsp;·&nbsp; KIVI 10.8 &nbsp;·&nbsp; FlexGen 10.0 &nbsp;<span class='pos'>(+7.7 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/VAR_d20/Baseline/q3/group01_idx20281_iters405_img31.png",
-       "FlexGen": "samples/VAR_d20/FlexGen/q3/group01_idx20281_iters405_img31.png",
-       "KIVI": "samples/VAR_d20/KIVI/q3/group01_idx20281_iters405_img31.png",
-       "VARQ": "samples/VAR_d20/VARQ/q3/group01_idx20281_iters405_img31.png"
+       "Baseline": "samples/VAR_d20/Baseline/q3/iters385_img35.png",
+       "FlexGen": "samples/VAR_d20/FlexGen/q3/iters385_img35.png",
+       "KIVI": "samples/VAR_d20/KIVI/q3/iters385_img35.png",
+       "VARQ": "samples/VAR_d20/VARQ/q3/iters385_img35.png"
       }
      },
      {
       "prompt": null,
-      "caption": "VARQ PSNR 16.5 dB &nbsp;<span class='pos'>(+8.5 dB vs. best baseline)</span>",
+      "caption": "VARQ <b>18.6 dB</b> &nbsp;·&nbsp; KIVI 11.1 &nbsp;·&nbsp; FlexGen 9.2 &nbsp;<span class='pos'>(+7.5 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/VAR_d20/Baseline/q3/group01_idx32519_iters650_img19.png",
-       "FlexGen": "samples/VAR_d20/FlexGen/q3/group01_idx32519_iters650_img19.png",
-       "KIVI": "samples/VAR_d20/KIVI/q3/group01_idx32519_iters650_img19.png",
-       "VARQ": "samples/VAR_d20/VARQ/q3/group01_idx32519_iters650_img19.png"
+       "Baseline": "samples/VAR_d20/Baseline/q3/iters394_img4.png",
+       "FlexGen": "samples/VAR_d20/FlexGen/q3/iters394_img4.png",
+       "KIVI": "samples/VAR_d20/KIVI/q3/iters394_img4.png",
+       "VARQ": "samples/VAR_d20/VARQ/q3/iters394_img4.png"
       }
      },
      {
       "prompt": null,
-      "caption": "VARQ PSNR 17.2 dB &nbsp;<span class='pos'>(+8.1 dB vs. best baseline)</span>",
+      "caption": "VARQ <b>18.1 dB</b> &nbsp;·&nbsp; KIVI 6.7 &nbsp;·&nbsp; FlexGen 10.8 &nbsp;<span class='pos'>(+7.3 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/VAR_d20/Baseline/q3/group01_idx45000_iters900_img0.png",
-       "FlexGen": "samples/VAR_d20/FlexGen/q3/group01_idx45000_iters900_img0.png",
-       "KIVI": "samples/VAR_d20/KIVI/q3/group01_idx45000_iters900_img0.png",
-       "VARQ": "samples/VAR_d20/VARQ/q3/group01_idx45000_iters900_img0.png"
+       "Baseline": "samples/VAR_d20/Baseline/q3/iters314_img42.png",
+       "FlexGen": "samples/VAR_d20/FlexGen/q3/iters314_img42.png",
+       "KIVI": "samples/VAR_d20/KIVI/q3/iters314_img42.png",
+       "VARQ": "samples/VAR_d20/VARQ/q3/iters314_img42.png"
+      }
+     },
+     {
+      "prompt": null,
+      "caption": "VARQ <b>19.9 dB</b> &nbsp;·&nbsp; KIVI 10.0 &nbsp;·&nbsp; FlexGen 13.1 &nbsp;<span class='pos'>(+6.8 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/VAR_d20/Baseline/q3/iters669_img0.png",
+       "FlexGen": "samples/VAR_d20/FlexGen/q3/iters669_img0.png",
+       "KIVI": "samples/VAR_d20/KIVI/q3/iters669_img0.png",
+       "VARQ": "samples/VAR_d20/VARQ/q3/iters669_img0.png"
       }
      }
     ],
     "q4": [
      {
       "prompt": null,
-      "caption": "VARQ PSNR 20.1 dB &nbsp;<span class='pos'>(+9.3 dB vs. best baseline)</span>",
+      "caption": "VARQ <b>19.5 dB</b> &nbsp;·&nbsp; KIVI 7.6 &nbsp;·&nbsp; FlexGen 7.5 &nbsp;<span class='pos'>(+11.9 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/VAR_d20/Baseline/q4/group01_idx00250_iters5_img0.png",
-       "FlexGen": "samples/VAR_d20/FlexGen/q4/group01_idx00250_iters5_img0.png",
-       "KIVI": "samples/VAR_d20/KIVI/q4/group01_idx00250_iters5_img0.png",
-       "VARQ": "samples/VAR_d20/VARQ/q4/group01_idx00250_iters5_img0.png"
+       "Baseline": "samples/VAR_d20/Baseline/q4/iters861_img20.png",
+       "FlexGen": "samples/VAR_d20/FlexGen/q4/iters861_img20.png",
+       "KIVI": "samples/VAR_d20/KIVI/q4/iters861_img20.png",
+       "VARQ": "samples/VAR_d20/VARQ/q4/iters861_img20.png"
       }
      },
      {
       "prompt": null,
-      "caption": "VARQ PSNR 19.7 dB &nbsp;<span class='pos'>(+5.6 dB vs. best baseline)</span>",
+      "caption": "VARQ <b>18.4 dB</b> &nbsp;·&nbsp; KIVI 7.4 &nbsp;·&nbsp; FlexGen 6.1 &nbsp;<span class='pos'>(+10.9 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/VAR_d20/Baseline/q4/group01_idx10293_iters205_img43.png",
-       "FlexGen": "samples/VAR_d20/FlexGen/q4/group01_idx10293_iters205_img43.png",
-       "KIVI": "samples/VAR_d20/KIVI/q4/group01_idx10293_iters205_img43.png",
-       "VARQ": "samples/VAR_d20/VARQ/q4/group01_idx10293_iters205_img43.png"
+       "Baseline": "samples/VAR_d20/Baseline/q4/iters685_img22.png",
+       "FlexGen": "samples/VAR_d20/FlexGen/q4/iters685_img22.png",
+       "KIVI": "samples/VAR_d20/KIVI/q4/iters685_img22.png",
+       "VARQ": "samples/VAR_d20/VARQ/q4/iters685_img22.png"
       }
      },
      {
       "prompt": null,
-      "caption": "VARQ PSNR 15.5 dB &nbsp;<span class='pos'>(+6.3 dB vs. best baseline)</span>",
+      "caption": "VARQ <b>20.6 dB</b> &nbsp;·&nbsp; KIVI 11.9 &nbsp;·&nbsp; FlexGen 9.5 &nbsp;<span class='pos'>(+8.7 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/VAR_d20/Baseline/q4/group01_idx25019_iters500_img19.png",
-       "FlexGen": "samples/VAR_d20/FlexGen/q4/group01_idx25019_iters500_img19.png",
-       "KIVI": "samples/VAR_d20/KIVI/q4/group01_idx25019_iters500_img19.png",
-       "VARQ": "samples/VAR_d20/VARQ/q4/group01_idx25019_iters500_img19.png"
+       "Baseline": "samples/VAR_d20/Baseline/q4/iters525_img48.png",
+       "FlexGen": "samples/VAR_d20/FlexGen/q4/iters525_img48.png",
+       "KIVI": "samples/VAR_d20/KIVI/q4/iters525_img48.png",
+       "VARQ": "samples/VAR_d20/VARQ/q4/iters525_img48.png"
       }
      },
      {
       "prompt": null,
-      "caption": "VARQ PSNR 20.1 dB &nbsp;<span class='pos'>(+16.1 dB vs. best baseline)</span>",
+      "caption": "VARQ <b>18.2 dB</b> &nbsp;·&nbsp; KIVI 9.6 &nbsp;·&nbsp; FlexGen 4.6 &nbsp;<span class='pos'>(+8.6 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/VAR_d20/Baseline/q4/group01_idx36281_iters725_img31.png",
-       "FlexGen": "samples/VAR_d20/FlexGen/q4/group01_idx36281_iters725_img31.png",
-       "KIVI": "samples/VAR_d20/KIVI/q4/group01_idx36281_iters725_img31.png",
-       "VARQ": "samples/VAR_d20/VARQ/q4/group01_idx36281_iters725_img31.png"
+       "Baseline": "samples/VAR_d20/Baseline/q4/iters904_img8.png",
+       "FlexGen": "samples/VAR_d20/FlexGen/q4/iters904_img8.png",
+       "KIVI": "samples/VAR_d20/KIVI/q4/iters904_img8.png",
+       "VARQ": "samples/VAR_d20/VARQ/q4/iters904_img8.png"
       }
      },
      {
       "prompt": null,
-      "caption": "VARQ PSNR 17.7 dB &nbsp;<span class='pos'>(+6.6 dB vs. best baseline)</span>",
+      "caption": "VARQ <b>18.7 dB</b> &nbsp;·&nbsp; KIVI 11.9 &nbsp;·&nbsp; FlexGen 12.6 &nbsp;<span class='pos'>(+6.1 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/VAR_d20/Baseline/q4/group01_idx42531_iters850_img31.png",
-       "FlexGen": "samples/VAR_d20/FlexGen/q4/group01_idx42531_iters850_img31.png",
-       "KIVI": "samples/VAR_d20/KIVI/q4/group01_idx42531_iters850_img31.png",
-       "VARQ": "samples/VAR_d20/VARQ/q4/group01_idx42531_iters850_img31.png"
-      }
-     }
-    ],
-    "q8": [
-     {
-      "prompt": null,
-      "caption": "VARQ PSNR 28.5 dB &nbsp;<span class='pos'>(+28.5 dB vs. best baseline)</span>",
-      "media": {
-       "Baseline": "samples/VAR_d20/Baseline/q8/group01_idx00031_iters0_img31.png",
-       "VARQ": "samples/VAR_d20/VARQ/q8/group01_idx00031_iters0_img31.png"
+       "Baseline": "samples/VAR_d20/Baseline/q4/iters956_img37.png",
+       "FlexGen": "samples/VAR_d20/FlexGen/q4/iters956_img37.png",
+       "KIVI": "samples/VAR_d20/KIVI/q4/iters956_img37.png",
+       "VARQ": "samples/VAR_d20/VARQ/q4/iters956_img37.png"
       }
      },
      {
       "prompt": null,
-      "caption": "VARQ PSNR 29.1 dB &nbsp;<span class='pos'>(+29.1 dB vs. best baseline)</span>",
+      "caption": "VARQ <b>18.3 dB</b> &nbsp;·&nbsp; KIVI 11.4 &nbsp;·&nbsp; FlexGen 12.4 &nbsp;<span class='pos'>(+5.9 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/VAR_d20/Baseline/q8/group01_idx19500_iters390_img0.png",
-       "VARQ": "samples/VAR_d20/VARQ/q8/group01_idx19500_iters390_img0.png"
-      }
-     },
-     {
-      "prompt": null,
-      "caption": "VARQ PSNR 28.6 dB &nbsp;<span class='pos'>(+28.6 dB vs. best baseline)</span>",
-      "media": {
-       "Baseline": "samples/VAR_d20/Baseline/q8/group01_idx24281_iters485_img31.png",
-       "VARQ": "samples/VAR_d20/VARQ/q8/group01_idx24281_iters485_img31.png"
-      }
-     },
-     {
-      "prompt": null,
-      "caption": "VARQ PSNR 31.1 dB &nbsp;<span class='pos'>(+31.1 dB vs. best baseline)</span>",
-      "media": {
-       "Baseline": "samples/VAR_d20/Baseline/q8/group01_idx36250_iters725_img0.png",
-       "VARQ": "samples/VAR_d20/VARQ/q8/group01_idx36250_iters725_img0.png"
-      }
-     },
-     {
-      "prompt": null,
-      "caption": "VARQ PSNR 31.5 dB &nbsp;<span class='pos'>(+31.5 dB vs. best baseline)</span>",
-      "media": {
-       "Baseline": "samples/VAR_d20/Baseline/q8/group01_idx49019_iters980_img19.png",
-       "VARQ": "samples/VAR_d20/VARQ/q8/group01_idx49019_iters980_img19.png"
+       "Baseline": "samples/VAR_d20/Baseline/q4/iters572_img12.png",
+       "FlexGen": "samples/VAR_d20/FlexGen/q4/iters572_img12.png",
+       "KIVI": "samples/VAR_d20/KIVI/q4/iters572_img12.png",
+       "VARQ": "samples/VAR_d20/VARQ/q4/iters572_img12.png"
       }
      }
     ]
@@ -697,16 +709,6 @@
       }
      },
      {
-      "prompt": "The person's mouth twisted in disgust as he tasted something bitter.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/InfinityStar480p/Baseline/q3/group01_prompt109_s02.mp4",
-       "FlexGen": "samples/InfinityStar480p/FlexGen/q3/group01_prompt109_s02.mp4",
-       "KIVI": "samples/InfinityStar480p/KIVI/q3/group01_prompt109_s02.mp4",
-       "VARQ": "samples/InfinityStar480p/VARQ/q3/group01_prompt109_s02.mp4"
-      }
-     },
-     {
       "prompt": "A person playing hopscotch on the rings of Saturn.",
       "caption": null,
       "media": {
@@ -715,9 +717,29 @@
        "KIVI": "samples/InfinityStar480p/KIVI/q3/group01_prompt195_s03.mp4",
        "VARQ": "samples/InfinityStar480p/VARQ/q3/group01_prompt195_s03.mp4"
       }
+     },
+     {
+      "prompt": "The person's mouth twisted in disgust as he tasted something bitter.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar480p/Baseline/q3/group01_prompt109_s02.mp4",
+       "FlexGen": "samples/InfinityStar480p/FlexGen/q3/group01_prompt109_s02.mp4",
+       "KIVI": "samples/InfinityStar480p/KIVI/q3/group01_prompt109_s02.mp4",
+       "VARQ": "samples/InfinityStar480p/VARQ/q3/group01_prompt109_s02.mp4"
+      }
      }
     ],
     "q4": [
+     {
+      "prompt": "A bird made of fresh oranges rushes out of the orange",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar480p/Baseline/q4/group01_prompt164_s03.mp4",
+       "FlexGen": "samples/InfinityStar480p/FlexGen/q4/group01_prompt164_s03.mp4",
+       "KIVI": "samples/InfinityStar480p/KIVI/q4/group01_prompt164_s03.mp4",
+       "VARQ": "samples/InfinityStar480p/VARQ/q4/group01_prompt164_s03.mp4"
+      }
+     },
      {
       "prompt": "A man is putting a ring on a woman's finger",
       "caption": null,
@@ -736,16 +758,6 @@
        "FlexGen": "samples/InfinityStar480p/FlexGen/q4/group01_prompt088_s02.mp4",
        "KIVI": "samples/InfinityStar480p/KIVI/q4/group01_prompt088_s02.mp4",
        "VARQ": "samples/InfinityStar480p/VARQ/q4/group01_prompt088_s02.mp4"
-      }
-     },
-     {
-      "prompt": "A bird made of fresh oranges rushes out of the orange",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/InfinityStar480p/Baseline/q4/group01_prompt164_s03.mp4",
-       "FlexGen": "samples/InfinityStar480p/FlexGen/q4/group01_prompt164_s03.mp4",
-       "KIVI": "samples/InfinityStar480p/KIVI/q4/group01_prompt164_s03.mp4",
-       "VARQ": "samples/InfinityStar480p/VARQ/q4/group01_prompt164_s03.mp4"
       }
      }
     ],
@@ -807,13 +819,13 @@
    "samples": {
     "q3": [
      {
-      "prompt": "A zoom-out from a detailed shot of an intricate snowflake, pulling back to show a snowy landscape.",
+      "prompt": "A person playing hopscotch on the rings of Saturn.",
       "caption": null,
       "media": {
-       "Baseline": "samples/InfinityStar720p/Baseline/q3/group01_prompt108_s01.mp4",
-       "FlexGen": "samples/InfinityStar720p/FlexGen/q3/group01_prompt108_s01.mp4",
-       "KIVI": "samples/InfinityStar720p/KIVI/q3/group01_prompt108_s01.mp4",
-       "VARQ": "samples/InfinityStar720p/VARQ/q3/group01_prompt108_s01.mp4"
+       "Baseline": "samples/InfinityStar720p/Baseline/q3/group01_prompt195_s03.mp4",
+       "FlexGen": "samples/InfinityStar720p/FlexGen/q3/group01_prompt195_s03.mp4",
+       "KIVI": "samples/InfinityStar720p/KIVI/q3/group01_prompt195_s03.mp4",
+       "VARQ": "samples/InfinityStar720p/VARQ/q3/group01_prompt195_s03.mp4"
       }
      },
      {
@@ -827,27 +839,17 @@
       }
      },
      {
-      "prompt": "A person playing hopscotch on the rings of Saturn.",
+      "prompt": "A zoom-out from a detailed shot of an intricate snowflake, pulling back to show a snowy landscape.",
       "caption": null,
       "media": {
-       "Baseline": "samples/InfinityStar720p/Baseline/q3/group01_prompt195_s03.mp4",
-       "FlexGen": "samples/InfinityStar720p/FlexGen/q3/group01_prompt195_s03.mp4",
-       "KIVI": "samples/InfinityStar720p/KIVI/q3/group01_prompt195_s03.mp4",
-       "VARQ": "samples/InfinityStar720p/VARQ/q3/group01_prompt195_s03.mp4"
+       "Baseline": "samples/InfinityStar720p/Baseline/q3/group01_prompt108_s01.mp4",
+       "FlexGen": "samples/InfinityStar720p/FlexGen/q3/group01_prompt108_s01.mp4",
+       "KIVI": "samples/InfinityStar720p/KIVI/q3/group01_prompt108_s01.mp4",
+       "VARQ": "samples/InfinityStar720p/VARQ/q3/group01_prompt108_s01.mp4"
       }
      }
     ],
     "q4": [
-     {
-      "prompt": "A chimp on the sidewalk doing a backflip on a skateboard.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/InfinityStar720p/Baseline/q4/group01_prompt057_s01.mp4",
-       "FlexGen": "samples/InfinityStar720p/FlexGen/q4/group01_prompt057_s01.mp4",
-       "KIVI": "samples/InfinityStar720p/KIVI/q4/group01_prompt057_s01.mp4",
-       "VARQ": "samples/InfinityStar720p/VARQ/q4/group01_prompt057_s01.mp4"
-      }
-     },
      {
       "prompt": "A person playing chess with a robot on a floating platform above the ocean.",
       "caption": null,
@@ -856,6 +858,16 @@
        "FlexGen": "samples/InfinityStar720p/FlexGen/q4/group01_prompt071_s02.mp4",
        "KIVI": "samples/InfinityStar720p/KIVI/q4/group01_prompt071_s02.mp4",
        "VARQ": "samples/InfinityStar720p/VARQ/q4/group01_prompt071_s02.mp4"
+      }
+     },
+     {
+      "prompt": "A chimp on the sidewalk doing a backflip on a skateboard.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar720p/Baseline/q4/group01_prompt057_s01.mp4",
+       "FlexGen": "samples/InfinityStar720p/FlexGen/q4/group01_prompt057_s01.mp4",
+       "KIVI": "samples/InfinityStar720p/KIVI/q4/group01_prompt057_s01.mp4",
+       "VARQ": "samples/InfinityStar720p/VARQ/q4/group01_prompt057_s01.mp4"
       }
      },
      {
@@ -923,36 +935,6 @@
    "samples": {
     "q6": [
      {
-      "prompt": "a toy robot wearing a green dress and a sun hat taking a pleasant stroll in Antarctica during a beautiful sunset",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/self_forcing/Baseline/q6/group01_prompt018_s01.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q6/group01_prompt018_s01.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q6/group01_prompt018_s01.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q6/group01_prompt018_s01.mp4"
-      }
-     },
-     {
-      "prompt": "Cinematic trailer for a group of adventurous puppies exploring ruins in the sky",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/self_forcing/Baseline/q6/group01_prompt032_s02.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q6/group01_prompt032_s02.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q6/group01_prompt032_s02.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q6/group01_prompt032_s02.mp4"
-      }
-     },
-     {
-      "prompt": "A push-in through a garden archway, revealing a secret, tranquil garden filled with blooming flowers.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/self_forcing/Baseline/q6/group01_prompt047_s03.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q6/group01_prompt047_s03.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q6/group01_prompt047_s03.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q6/group01_prompt047_s03.mp4"
-      }
-     },
-     {
       "prompt": "a giant duck walks through the streets in Boston",
       "caption": null,
       "media": {
@@ -973,23 +955,13 @@
       }
      },
      {
-      "prompt": "A truck right through a tranquil garden, moving past blooming flowers, trees, and a small fountain.",
+      "prompt": "Cinematic trailer for a group of adventurous puppies exploring ruins in the sky",
       "caption": null,
       "media": {
-       "Baseline": "samples/self_forcing/Baseline/q6/group02_prompt111_s03.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q6/group02_prompt111_s03.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q6/group02_prompt111_s03.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q6/group02_prompt111_s03.mp4"
-      }
-     },
-     {
-      "prompt": "A peacock wearing a crown, sitting on a throne and holding court with other animals.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/self_forcing/Baseline/q6/group03_prompt138_s01.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q6/group03_prompt138_s01.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q6/group03_prompt138_s01.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q6/group03_prompt138_s01.mp4"
+       "Baseline": "samples/self_forcing/Baseline/q6/group01_prompt032_s02.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q6/group01_prompt032_s02.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q6/group01_prompt032_s02.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q6/group01_prompt032_s02.mp4"
       }
      },
      {
@@ -1010,6 +982,46 @@
        "FlexGen": "samples/self_forcing/FlexGen/q6/group03_prompt188_s03.mp4",
        "KIVI": "samples/self_forcing/KIVI/q6/group03_prompt188_s03.mp4",
        "VARQ": "samples/self_forcing/VARQ/q6/group03_prompt188_s03.mp4"
+      }
+     },
+     {
+      "prompt": "A push-in through a garden archway, revealing a secret, tranquil garden filled with blooming flowers.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q6/group01_prompt047_s03.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q6/group01_prompt047_s03.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q6/group01_prompt047_s03.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q6/group01_prompt047_s03.mp4"
+      }
+     },
+     {
+      "prompt": "A peacock wearing a crown, sitting on a throne and holding court with other animals.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q6/group03_prompt138_s01.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q6/group03_prompt138_s01.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q6/group03_prompt138_s01.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q6/group03_prompt138_s01.mp4"
+      }
+     },
+     {
+      "prompt": "A truck right through a tranquil garden, moving past blooming flowers, trees, and a small fountain.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q6/group02_prompt111_s03.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q6/group02_prompt111_s03.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q6/group02_prompt111_s03.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q6/group02_prompt111_s03.mp4"
+      }
+     },
+     {
+      "prompt": "a toy robot wearing a green dress and a sun hat taking a pleasant stroll in Antarctica during a beautiful sunset",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q6/group01_prompt018_s01.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q6/group01_prompt018_s01.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q6/group01_prompt018_s01.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q6/group01_prompt018_s01.mp4"
       }
      }
     ]
@@ -1041,13 +1053,33 @@
    "samples": {
     "q6": [
      {
-      "prompt": "A middle-aged sad bald man becomes happy as a wig of curly hair and sunglasses fall suddenly on his head.",
+      "prompt": "A cook flipping pancakes on a griddle.",
       "caption": null,
       "media": {
-       "Baseline": "samples/longlive/Baseline/q6/group01_prompt009_s01.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q6/group01_prompt009_s01.mp4",
-       "KIVI": "samples/longlive/KIVI/q6/group01_prompt009_s01.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/group01_prompt009_s01.mp4"
+       "Baseline": "samples/longlive/Baseline/q6/group02_prompt081_s01.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/group02_prompt081_s01.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/group02_prompt081_s01.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/group02_prompt081_s01.mp4"
+      }
+     },
+     {
+      "prompt": "A bear wearing a superhero cape, flying through the sky over a bustling city.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/group03_prompt165_s02.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/group03_prompt165_s02.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/group03_prompt165_s02.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/group03_prompt165_s02.mp4"
+      }
+     },
+     {
+      "prompt": "New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/group03_prompt153_s01.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/group03_prompt153_s01.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/group03_prompt153_s01.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/group03_prompt153_s01.mp4"
       }
      },
      {
@@ -1071,23 +1103,23 @@
       }
      },
      {
-      "prompt": "A cook flipping pancakes on a griddle.",
+      "prompt": "A goat operating a food truck, serving gourmet grilled cheese sandwiches to a line of animals.",
       "caption": null,
       "media": {
-       "Baseline": "samples/longlive/Baseline/q6/group02_prompt081_s01.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q6/group02_prompt081_s01.mp4",
-       "KIVI": "samples/longlive/KIVI/q6/group02_prompt081_s01.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/group02_prompt081_s01.mp4"
+       "Baseline": "samples/longlive/Baseline/q6/group03_prompt190_s03.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/group03_prompt190_s03.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/group03_prompt190_s03.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/group03_prompt190_s03.mp4"
       }
      },
      {
-      "prompt": "A slow cinematic push in on an ostrich standing in a 1980s kitchen.",
+      "prompt": "A middle-aged sad bald man becomes happy as a wig of curly hair and sunglasses fall suddenly on his head.",
       "caption": null,
       "media": {
-       "Baseline": "samples/longlive/Baseline/q6/group02_prompt092_s02.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q6/group02_prompt092_s02.mp4",
-       "KIVI": "samples/longlive/KIVI/q6/group02_prompt092_s02.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/group02_prompt092_s02.mp4"
+       "Baseline": "samples/longlive/Baseline/q6/group01_prompt009_s01.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/group01_prompt009_s01.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/group01_prompt009_s01.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/group01_prompt009_s01.mp4"
       }
      },
      {
@@ -1101,33 +1133,13 @@
       }
      },
      {
-      "prompt": "New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York.",
+      "prompt": "A slow cinematic push in on an ostrich standing in a 1980s kitchen.",
       "caption": null,
       "media": {
-       "Baseline": "samples/longlive/Baseline/q6/group03_prompt153_s01.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q6/group03_prompt153_s01.mp4",
-       "KIVI": "samples/longlive/KIVI/q6/group03_prompt153_s01.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/group03_prompt153_s01.mp4"
-      }
-     },
-     {
-      "prompt": "A bear wearing a superhero cape, flying through the sky over a bustling city.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/longlive/Baseline/q6/group03_prompt165_s02.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q6/group03_prompt165_s02.mp4",
-       "KIVI": "samples/longlive/KIVI/q6/group03_prompt165_s02.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/group03_prompt165_s02.mp4"
-      }
-     },
-     {
-      "prompt": "A goat operating a food truck, serving gourmet grilled cheese sandwiches to a line of animals.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/longlive/Baseline/q6/group03_prompt190_s03.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q6/group03_prompt190_s03.mp4",
-       "KIVI": "samples/longlive/KIVI/q6/group03_prompt190_s03.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/group03_prompt190_s03.mp4"
+       "Baseline": "samples/longlive/Baseline/q6/group02_prompt092_s02.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/group02_prompt092_s02.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/group02_prompt092_s02.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/group02_prompt092_s02.mp4"
       }
      }
     ]
