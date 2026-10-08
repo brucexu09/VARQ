@@ -126,3 +126,27 @@ select {font-size:13px;}
 .algorithm-grid a {color:var(--accent);text-decoration:underline;}
 .math-line {font-family:Georgia,serif;font-size:20px!important;color:var(--ink)!important;padding:10px 0;}
 @media(max-width:700px){.shared-flow{padding:16px 12px;margin-top:28px}.flow-caption-top{display:block}.flow-caption-top>span:last-child{display:block;font-size:9px;margin-top:5px}.shared-flow img{min-width:620px}.shared-flow{overflow-x:auto}.shared-flow figcaption{font-size:10px;min-width:260px}.algorithm-grid{grid-template-columns:1fr;gap:8px}.grouping-demo h3{font-size:25px}}
+.ablation-evidence {display:grid;grid-template-columns:1fr 1.25fr;gap:50px;align-items:center;padding:40px 0;border-bottom:1px solid var(--line);}
+.ablation-evidence h3 {font-size:26px;line-height:1.25;margin-bottom:16px;}
+.ablation-evidence p {font-size:14px;color:var(--muted);}
+.ablation-evidence .small-note {font-size:11px;margin-top:10px;}
+.ablation-evidence caption {font-size:12px;text-align:left;margin-bottom:12px;}
+.ablation-evidence table {font-size:13px;width:100%;}
+.ablation-evidence th,.ablation-evidence td {padding:12px 10px;}
+.ablation-evidence small {font-size:10px;color:var(--muted);font-weight:400;}
+.attribution-section {margin-top:0;border-top:1px solid var(--line);}
+.attribution-heading {max-width:none;display:grid;grid-template-columns:1fr 1fr;column-gap:65px;align-items:start;margin-bottom:35px;}
+.attribution-heading>.eyebrow {grid-column:1/-1;}
+.attribution-heading h2 {font-size:36px;margin:0;}
+.attribution-heading>p:not(.eyebrow) {font-size:15px;line-height:1.65;margin:0;}
+.attribution-row {gap:45px;padding-block:32px;}
+.attribution-copy h3 {font-size:25px;line-height:1.25;}
+.attribution-copy p {font-size:14px;line-height:1.75;}
+.attribution-figure figcaption {font-size:11px;line-height:1.65;}
+.projection-chain {border-radius:4px;}
+.projection-chain p {font-size:12px;}
+.projection-chain h4 {font-size:14px;}
+.attribution-conclusion {border-radius:4px;padding:24px 28px;}
+.attribution-conclusion p {font-size:14px;}
+.attribution-conclusion h3 {font-size:23px;}
+@media(max-width:700px){.ablation-evidence{grid-template-columns:1fr;gap:22px;padding:28px 0}.ablation-evidence table{font-size:11px}.ablation-evidence th,.ablation-evidence td{padding:10px 6px}.attribution-heading{grid-template-columns:1fr;gap:17px}.attribution-heading h2{font-size:30px}.attribution-heading>p:not(.eyebrow){font-size:14px}.attribution-row{gap:23px;padding-block:25px}.attribution-copy h3{font-size:23px}.attribution-conclusion{padding:20px}.attribution-conclusion h3{font-size:21px}}

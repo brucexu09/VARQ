@@ -62,11 +62,88 @@
 </div>
 <div class="intro-copy"><p><strong>Visual autoregression advances in blocks.</strong> Next-scale models predict a resolution scale at a time; next-frame models extend a video through time. VAR-Q uses the blocks supplied by each model’s generation loop.</p><p>Across both paradigms, KV magnitudes have a shared <strong>channel × block structure</strong>: a small set of channels carries large values, and their magnitudes shift between blocks. Quantization groups should follow both axes.</p><p class="formulation-note"><strong>The next-block view.</strong> A block denotes the visual tokens emitted at one decoding step. Here, it unifies the scale and frame settings evaluated in the paper.</p></div>
 </div>
-<figure class="shared-flow wrap"><div class="flow-caption-top"><span class="margin-label">A common representation</span><span>Next-scale / next-frame → channel × block → packed KV</span></div><img alt="Next-scale and next-frame decoding feed a common channel-by-block KV cache. One scale factor covers each channel within a block; low-bit values are packed into INT32 containers." height="330" src="assets/shared-block-structure.svg" width="1120"/><figcaption>Conceptual schematic of the grouping rule in §3.4. Block sizes and colors are illustrative; measured cache magnitudes appear below.</figcaption></figure></section>
+<figure class="shared-flow wrap"><div class="flow-caption-top"><span class="margin-label">A common representation</span><span>Next-scale / next-frame → channel × block → packed KV</span></div><img alt="Next-scale and next-frame decoding feed a common channel-by-block KV cache. One scale factor covers each channel within a block; low-bit values are packed into INT32 containers." height="330" src="assets/shared-block-structure.svg" width="1120"/><figcaption>Conceptual schematic of the grouping rule in §3.4. Block sizes and colors are illustrative; measured cache magnitudes appear below.</figcaption></figure></section><section aria-labelledby="method-title" class="section method-section" id="method">
+<div class="wrap">
+<div class="section-heading">
+<div>
+<p class="eyebrow">01 / The method</p>
+<h2 id="method-title">Quantize where the structure is.</h2>
+</div>
+<p>A channel × block view of the KV cache<br/>explains where quantization groups belong.</p>
+</div>
+<div class="findings">
+<article>
+<span class="finding-number">01</span>
+<h3>A few channels matter.</h3>
+<p>
+                Masking just the top 0.5% of channels in LongLive collapses generation. Masking ten times as many inlier channels leaves quality
+                largely intact.
+              </p>
+</article>
+<article>
+<span class="finding-number">02</span>
+<h3>The structure is two-dimensional.</h3>
+<p>
+                Large magnitudes persist along feature channels and shift across generation blocks. Grouping along only one axis misses part of the
+                structure.
+              </p>
+</article>
+<article>
+<span class="finding-number">03</span>
+<h3>The boundaries are already there.</h3>
+<p>A scale or frame defines a block. VAR-Q reuses these boundaries, with no outlier detection, calibration data, or retraining.</p>
+</article>
+</div>
+<figure class="paper-figure structure-figure">
+<a data-caption="Measured KV-cache structure across five visual AR models · Figure 4" data-zoom="" href="assets/cache-structure.webp"><img alt="Measured K and V cache magnitudes across five visual autoregressive models show persistent channel stripes and shifts across blocks." height="787" loading="lazy" src="assets/cache-structure.webp" width="2400"/></a>
+<figcaption>
+<strong>The measured structure.</strong> Median absolute K and V values across five visual AR models. Color scales are per-panel. Figure
+              4 of the paper.
+            </figcaption>
+</figure><div class="grouping-demo">
+<div>
+<p class="eyebrow">Explore the grouping</p>
+<h3>One scale factor per<br/>channel–block group.</h3>
+<p aria-live="polite" id="group-description">
+                VAR-Q separates feature channels and generation blocks, so each group follows both axes of the cache.
+              </p>
+<div aria-label="Quantization grouping" class="group-options" role="group">
+<button aria-pressed="false" data-group="tensor" type="button">Per-tensor</button><button aria-pressed="false" data-group="channel" type="button">Per-channel</button><button aria-pressed="true" data-group="joint" type="button">Channel × block <span>VAR-Q</span></button>
+</div>
+<p class="small-note">Illustrative grouping diagram. Colors are schematic, not measured activations.</p>
+</div>
+<div class="matrix-area">
+<span class="axis-title">Feature channels →</span>
+<div class="matrix-row">
+<span class="axis-side">Generation blocks →</span>
+<div aria-label="Schematic cache with sixteen channels and three generation blocks; each channel within each block is a separate quantization group." class="cache-matrix joint" id="cache-matrix" role="img"></div>
+<div class="block-labels"><span>Block 1</span><span>Block 2</span><span>Block 3</span></div>
+</div>
+<div class="matrix-legend"><span>Low magnitude</span><span class="color-scale"></span><span>High magnitude</span></div>
+</div>
+</div><details class="algorithm-details"><summary>Algorithm details: scale factors, block boundaries, and the sub-block ratio</summary><div class="algorithm-grid"><div><h4>The quantization unit</h4><p>For block <em>b</em> and feature channel <em>c</em>, VAR-Q applies uniform symmetric quantization to the tokens in that group, with one scale factor. The same grouping rule is used for K and V.</p><p class="math-line">K = {K<sup>(b)</sup>}<sub>b=1…B</sub>,   K<sup>(b)</sup> ∈ ℝ<sup>n<sub>b</sub> × D</sup></p></div><div><h4>Optional finer groups</h4><p>The default sub-block ratio is <strong>r = 1</strong>. A block of length L is split into ⌈L / (r L<sub>max</sub>)⌉ sub-blocks. Smaller r refines grouping within existing boundaries.</p><p>In next-scale decoding, the largest scales are affected first; in next-frame decoding, equal-size blocks are partitioned uniformly. <a href="/assets/pdf/VAR-Q.pdf#page=6">§3.4 ↗</a></p></div></div></details><div class="ablation-evidence"><div><p class="eyebrow">Controlled evidence · Table 5</p><h3>Both axes earn their place.</h3><p>Removing the channel axis sharply degrades generation. Keeping channels but removing block boundaries also loses quality—on both a next-scale and a next-frame model.</p></div><div class="table-wrap"><table><caption>Grouping ablation · INT4 KV cache</caption><thead><tr><th scope="col">Grouping</th><th scope="col">VAR-d30<br/><small>FID ↓</small></th><th scope="col">Self-Forcing<br/><small>VBench Total ↑</small></th></tr></thead><tbody><tr class="highlight"><th scope="row">Channel × block</th><td>1.97</td><td>80.99</td></tr><tr><th scope="row">Without block axis</th><td>2.83</td><td>79.38</td></tr><tr><th scope="row">Without channel axis</th><td>12.07</td><td>67.22</td></tr></tbody></table><p class="small-note">Metrics are compared within each column. <a href="/assets/pdf/VAR-Q.pdf#page=9">Full ablation →</a></p></div></div>
+
+<div class="pipeline">
+<div>
+<p class="eyebrow">From algorithm to memory savings</p>
+<h3>Quantize. Pack. Retrieve.</h3>
+<p>
+                VAR-Q quantizes the cache per channel and block, then packs low-bit values into INT32 storage. Before attention, cached values are
+                unpacked and dequantized to BF16. Packing turns reduced precision into real KV-memory savings.
+              </p>
+<a class="inline-link" href="/assets/pdf/VAR-Q.pdf#page=6">Read the algorithm <span aria-hidden="true">↗</span></a>
+</div>
+<figure>
+<a data-caption="VAR-Q quantization and bit-packing pipeline · Figure 8" data-zoom="" href="assets/pipeline.webp"><img alt="VAR-Q pipeline: quantize K and V, pack into INT32 with scale factors, store in HBM, then unpack for attention." height="404" loading="lazy" src="assets/pipeline.webp" width="784"/></a>
+<figcaption>Figure 8 · Algorithm and system support</figcaption>
+</figure>
+</div>
+</div>
+</section>
 <section aria-labelledby="results-title" class="section wrap" id="results">
 <div class="section-heading">
 <div>
-<p class="eyebrow">01 / Generation quality</p>
+<p class="eyebrow">02 / Qualitative evidence</p>
 <h2 id="results-title">Inspect generation, in motion.</h2>
 </div>
 <p>Next-scale images and video. Next-frame video.<br/>Compare low-bit caches with BF16 across both paradigms.</p>
@@ -154,75 +231,11 @@
 </figure>
 </div>
 </details>
-</section>
-<section aria-labelledby="method-title" class="section method-section" id="method">
-<div class="wrap">
-<div class="section-heading">
-<div>
-<p class="eyebrow">02 / The method</p>
-<h2 id="method-title">Quantize where the structure is.</h2>
-</div>
-<p>A channel × block view of the KV cache<br/>explains where quantization groups belong.</p>
-</div>
-<div class="findings">
-<article>
-<span class="finding-number">01</span>
-<h3>A few channels matter.</h3>
-<p>
-                Masking just the top 0.5% of channels in LongLive collapses generation. Masking ten times as many inlier channels leaves quality
-                largely intact.
-              </p>
-</article>
-<article>
-<span class="finding-number">02</span>
-<h3>The structure is two-dimensional.</h3>
-<p>
-                Large magnitudes persist along feature channels and shift across generation blocks. Grouping along only one axis misses part of the
-                structure.
-              </p>
-</article>
-<article>
-<span class="finding-number">03</span>
-<h3>The boundaries are already there.</h3>
-<p>A scale or frame defines a block. VAR-Q reuses these boundaries, with no outlier detection, calibration data, or retraining.</p>
-</article>
-</div>
-<figure class="paper-figure structure-figure">
-<a data-caption="Measured KV-cache structure across five visual AR models · Figure 4" data-zoom="" href="assets/cache-structure.webp"><img alt="Measured K and V cache magnitudes across five visual autoregressive models show persistent channel stripes and shifts across blocks." height="787" loading="lazy" src="assets/cache-structure.webp" width="2400"/></a>
-<figcaption>
-<strong>The measured structure.</strong> Median absolute K and V values across five visual AR models. Color scales are per-panel. Figure
-              4 of the paper.
-            </figcaption>
-</figure><div class="grouping-demo">
-<div>
-<p class="eyebrow">Explore the grouping</p>
-<h3>One scale factor per<br/>channel–block group.</h3>
-<p aria-live="polite" id="group-description">
-                VAR-Q separates feature channels and generation blocks, so each group follows both axes of the cache.
-              </p>
-<div aria-label="Quantization grouping" class="group-options" role="group">
-<button aria-pressed="false" data-group="tensor" type="button">Per-tensor</button><button aria-pressed="false" data-group="channel" type="button">Per-channel</button><button aria-pressed="true" data-group="joint" type="button">Channel × block <span>VAR-Q</span></button>
-</div>
-<p class="small-note">Illustrative grouping diagram. Colors are schematic, not measured activations.</p>
-</div>
-<div class="matrix-area">
-<span class="axis-title">Feature channels →</span>
-<div class="matrix-row">
-<span class="axis-side">Generation blocks →</span>
-<div aria-label="Schematic cache with sixteen channels and three generation blocks; each channel within each block is a separate quantization group." class="cache-matrix joint" id="cache-matrix" role="img"></div>
-<div class="block-labels"><span>Block 1</span><span>Block 2</span><span>Block 3</span></div>
-</div>
-<div class="matrix-legend"><span>Low magnitude</span><span class="color-scale"></span><span>High magnitude</span></div>
-</div>
-</div><details class="algorithm-details"><summary>Algorithm details: scale factors, block boundaries, and the sub-block ratio</summary><div class="algorithm-grid"><div><h4>The quantization unit</h4><p>For block <em>b</em> and feature channel <em>c</em>, VAR-Q applies uniform symmetric quantization to the tokens in that group, with one scale factor. The same grouping rule is used for K and V.</p><p class="math-line">K = {K<sup>(b)</sup>}<sub>b=1…B</sub>,   K<sup>(b)</sup> ∈ ℝ<sup>n<sub>b</sub> × D</sup></p></div><div><h4>Optional finer groups</h4><p>The default sub-block ratio is <strong>r = 1</strong>. A block of length L is split into ⌈L / (r L<sub>max</sub>)⌉ sub-blocks. Smaller r refines grouping within existing boundaries.</p><p>In next-scale decoding, the largest scales are affected first; in next-frame decoding, equal-size blocks are partitioned uniformly. <a href="/assets/pdf/VAR-Q.pdf#page=6">§3.4 ↗</a></p></div></div></details>
-<section aria-labelledby="attribution-title" class="attribution-section" id="attribution">
+</section><section aria-labelledby="attribution-title" class="section wrap attribution-section" id="attribution">
 <div class="attribution-heading">
-<p class="eyebrow">Mechanistic attribution · Section 3.3</p>
-<h2 id="attribution-title">Where do the outliers come from?</h2>
-<p>
-                The two-axis pattern has a mechanism behind it. We trace the key cache through its projection chain, then separate persistent channel
-                structure from position-dependent block dynamics.
-              </p>
+<p class="eyebrow">03 / Mechanistic attribution · §3.3</p>
+<h2 id="attribution-title">From observations to mechanisms.</h2>
+<p>Why does the channel × block pattern emerge? Three experiments separate prompt-dependent outliers, persistent channel imbalance, and position-dependent magnitude shifts.</p>
 </div>
 <article class="attribution-row persistence-row">
 <div class="attribution-copy">
@@ -333,27 +346,10 @@
 </div>
 </section>
 
-<div class="pipeline">
-<div>
-<p class="eyebrow">From algorithm to memory savings</p>
-<h3>Quantize. Pack. Retrieve.</h3>
-<p>
-                VAR-Q quantizes the cache per channel and block, then packs low-bit values into INT32 storage. Before attention, cached values are
-                unpacked and dequantized to BF16. Packing turns reduced precision into real KV-memory savings.
-              </p>
-<a class="inline-link" href="/assets/pdf/VAR-Q.pdf#page=6">Read the algorithm <span aria-hidden="true">↗</span></a>
-</div>
-<figure>
-<a data-caption="VAR-Q quantization and bit-packing pipeline · Figure 8" data-zoom="" href="assets/pipeline.webp"><img alt="VAR-Q pipeline: quantize K and V, pack into INT32 with scale factors, store in HBM, then unpack for attention." height="404" loading="lazy" src="assets/pipeline.webp" width="784"/></a>
-<figcaption>Figure 8 · Algorithm and system support</figcaption>
-</figure>
-</div>
-</div>
-</section>
 <section aria-labelledby="benchmarks-title" class="section wrap" id="benchmarks">
 <div class="section-heading">
 <div>
-<p class="eyebrow">03 / The numbers</p>
+<p class="eyebrow">04 / Quantitative evidence</p>
 <h2 id="benchmarks-title">Quality, alongside<br/>the memory it costs.</h2>
 </div>
 <p>Reported quality and cache memory,<br/>with the configuration kept in view.</p>
@@ -432,7 +428,7 @@
 <section aria-labelledby="code-title" class="section code-section" id="code">
 <div class="wrap code-grid">
 <div>
-<p class="eyebrow">04 / Get started</p>
+<p class="eyebrow">Implementation</p>
 <h2 id="code-title">Bring VAR-Q<br/>to your pipeline.</h2>
 <p>
               The public repository provides the core quantization and packing utilities, plus VAR and Infinity examples. Start with the
