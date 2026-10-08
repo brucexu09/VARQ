@@ -16,7 +16,7 @@
 <link href="style.css" rel="stylesheet"/>
 <script defer="" src="app.js"></script>
 <script defer="" src="gallery.js"></script>
-</head>
+<link href="research.css" rel="stylesheet"/></head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
@@ -27,27 +27,13 @@
 </nav>
 </header>
 <main id="main">
-<section aria-labelledby="paper-title" class="hero wrap">
-<p class="eyebrow"><span class="dot"></span> Next-scale + Next-frame <span class="eyebrow-divider">/</span> NeurIPS 2026</p>
-<h1 id="paper-title">
-<span class="hero-name"><img alt="" class="hero-symbol" height="72" src="assets/varq-symbol.svg" width="72"/>VAR-Q</span><span class="paper-title">Tuning-free KV Cache Quantization<br class="desktop-break"/>
-            for Visual Autoregressive<br class="desktop-break"/>
-            Image and Video Generation</span>
-</h1>
-<p class="hero-summary"><strong>One cache structure. Two generation paradigms.</strong> A tuning-free quantization rule for the channels and blocks shared by next-scale and next-frame generation.</p>
-<p class="authors">
-<a href="/">Boxun Xu<sup>1,†</sup></a><span>Jiaji Lu<sup>1,†</sup></span><span>Yuxuan Yin<sup>1</sup></span><span>Zihu Wang<sup>1</sup></span><span>Ziyue Liu<sup>1</sup></span><span>Yu Wang<sup>1</sup></span><span>Zirui Liu<sup>2</sup></span><span>Peng Li<sup>1</sup></span>
-</p>
-<p class="affiliations">
-<span><sup>1</sup> University of California, Santa Barbara</span><span><sup>2</sup> University of Minnesota</span>
-</p>
-<p class="equal">† Equal contribution · NeurIPS 2026</p>
-<div class="actions">
+<section aria-labelledby="paper-title" class="hero wrap"><div class="hero-editorial"><div class="hero-lead"><p class="eyebrow">NeurIPS 2026 <span class="eyebrow-divider">/</span> Visual autoregressive generation</p><div class="hero-brand"><img alt="" height="48" src="assets/varq-symbol.svg" width="48"/><span>VAR-Q</span></div><h2 class="display-title">Across scales.<br/>Across frames.<br/><span>One quantization rule.</span></h2><p class="hero-summary">Tuning-free KV cache quantization built around the <strong>channel × block</strong> structure of visual autoregression.</p><div class="actions">
 <a class="button primary" href="/assets/pdf/VAR-Q.pdf">Read the paper <span aria-hidden="true">↗</span></a><a class="button" href="https://github.com/lujiaji/VAR-Q">View code <span aria-hidden="true">↗</span></a><a class="button text-button" href="#citation">Cite this work <span aria-hidden="true">↓</span></a>
-</div>
-
-
-<div aria-label="Paper highlights" class="stats">
+</div></div><div class="paper-meta"><span class="margin-label">The paper</span><h1 id="paper-title">VAR-Q: Tuning-free KV Cache Quantization for Visual Autoregressive Image and Video Generation</h1><p class="authors">
+<a href="/">Boxun Xu<sup>1,†</sup></a><span>Jiaji Lu<sup>1,†</sup></span><span>Yuxuan Yin<sup>1</sup></span><span>Zihu Wang<sup>1</sup></span><span>Ziyue Liu<sup>1</sup></span><span>Yu Wang<sup>1</sup></span><span>Zirui Liu<sup>2</sup></span><span>Peng Li<sup>1</sup></span>
+</p><p class="affiliations">
+<span><sup>1</sup> University of California, Santa Barbara</span><span><sup>2</sup> University of Minnesota</span>
+</p><p class="equal">† Equal contribution</p><div class="paper-scope"><span>Next-scale <small>Images + video</small></span><span>Next-frame <small>Video</small></span></div><a class="inline-link" href="#overview">Read the core idea <span aria-hidden="true">↘</span></a></div></div></section><div aria-label="Paper highlights" class="stats wrap research-stats">
 <div>
 <strong>78.5<span>%</span></strong>
 <p>less KV memory, up to*</p>
@@ -64,12 +50,10 @@
 <strong>0</strong>
 <p>calibration or retraining steps</p>
 </div>
-</div>
-<p class="metric-note">
+</div><p class="metric-note wrap">
           *Summary results reported in the paper. Gains depend on the model and precision; the batch-size result uses a single NVIDIA A100 80GB. See
           the configurations below.
         </p>
-</section>
 <section aria-labelledby="overview-title" class="section intro-section" id="overview">
 <div class="wrap intro-grid">
 <div>
