@@ -99,7 +99,7 @@ document.querySelectorAll("[data-group]").forEach((button) => {
 
 const benchmarks = {
   infinity: {
-    setting: "Text-to-image · batch size 6 · Table 2",
+    setting: "Next-scale image · batch size 6 · Table 2",
     caption: "DPG score ↑ · Infinity-8B",
     bits: "INT4",
     saving: "74.75",

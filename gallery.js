@@ -14,6 +14,7 @@
   let playing = false;
   let generation = 0;
   const selectedModel = () => models.find((model) => model.id === modelSelect.value);
+  const paradigm = (model) => (["self_forcing", "longlive"].includes(model.id) ? "Next-frame" : "Next-scale");
   function options(select, entries, preferred) {
     select.replaceChildren();
     entries.forEach(([value, label]) => {
@@ -49,7 +50,9 @@
     const sample = model.samples[bitSelect.value]?.[Number(sampleSelect.value)];
     const isVideo = model.type === "video";
     document.querySelector("#gallery-playback").hidden = !isVideo;
-    document.querySelector("#gallery-task").textContent = `${model.label} · ${model.task} · ${model.bitLabels[bitSelect.value]} KV cache`;
+    document.querySelector("#gallery-task").textContent = `${paradigm(model)} · ${model.label} · ${model.task} · ${
+      model.bitLabels[bitSelect.value]
+    } KV cache`;
     document.querySelector("#gallery-prompt").textContent = sample?.prompt
       ? `“${sample.prompt}”`
       : `${model.task} — sample ${Number(sampleSelect.value) + 1}`;
@@ -193,11 +196,22 @@
     })
     .then((data) => {
       models = data.models;
-      options(
-        modelSelect,
-        models.map((model) => [model.id, model.label]),
-        "Infinity8B",
-      );
+      modelSelect.replaceChildren();
+      ["Next-scale", "Next-frame"].forEach((name) => {
+        const group = document.createElement("optgroup");
+        group.label = name === "Next-scale" ? "Next-scale · Images & video" : "Next-frame · Video";
+        models
+          .filter((model) => paradigm(model) === name)
+          .forEach((model) => {
+            const option = document.createElement("option");
+            option.value = model.id;
+            option.textContent = model.label;
+            group.append(option);
+          });
+        modelSelect.append(group);
+      });
+      modelSelect.value = "Infinity8B";
+      modelSelect.disabled = false;
       renderModel();
     })
     .catch(() => {

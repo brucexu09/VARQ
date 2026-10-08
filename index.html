@@ -6,15 +6,12 @@
     <title>VAR-Q · Tuning-free KV Cache Quantization for Visual Generation</title>
     <meta
       name="description"
-      content="Tuning-free KV cache quantization for autoregressive image and video generation. One channel × block grouping rule, evaluated across nine visual AR models."
+      content="Tuning-free KV cache quantization for autoregressive image and video generation. One channel × block grouping rule across next-scale and next-frame generation, evaluated on nine visual AR models."
     />
     <meta name="theme-color" content="#f8f9fc" />
     <link rel="canonical" href="https://boxunxu.top/VARQ/" />
     <meta property="og:title" content="VAR-Q: Tuning-free KV Cache Quantization" />
-    <meta
-      property="og:description"
-      content="Low-bit KV caches for visual autoregressive image and video generation, without calibration or retraining."
-    />
+    <meta property="og:description" content="One tuning-free KV quantization rule for next-scale and next-frame visual autoregressive generation." />
     <meta property="og:url" content="https://boxunxu.top/VARQ/" />
     <meta property="og:type" content="website" />
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
@@ -36,7 +33,7 @@
     </header>
     <main id="main">
       <section class="hero wrap" aria-labelledby="paper-title">
-        <p class="eyebrow"><span class="dot"></span> Image & video generation <span class="eyebrow-divider">/</span> NeurIPS 2026</p>
+        <p class="eyebrow"><span class="dot"></span> Next-scale + Next-frame <span class="eyebrow-divider">/</span> NeurIPS 2026</p>
         <h1 id="paper-title">
           <span class="hero-name"><img src="assets/varq-symbol.svg" class="hero-symbol" width="72" height="72" alt="" />VAR-Q</span
           ><span class="paper-title"
@@ -46,8 +43,7 @@
           >
         </h1>
         <p class="hero-summary">
-          Low-bit visual memory.<br class="mobile-break" />
-          No calibration. No retraining.
+          <strong>One quantization rule. Two visual AR paradigms.</strong><br />Next-scale and next-frame generation, unified by their blocks.
         </p>
         <p class="authors">
           <a href="/">Boxun Xu<sup>1,†</sup></a
@@ -68,9 +64,42 @@
           ><a class="button" href="https://github.com/lujiaji/VAR-Q">View code <span aria-hidden="true">↗</span></a
           ><a class="button text-button" href="#citation">Cite this work <span aria-hidden="true">↓</span></a>
         </div>
+        <div class="paradigm-map" aria-label="Next-scale and next-frame share a block-wise formulation">
+          <div class="paradigm-grid">
+            <article class="paradigm-card">
+              <div class="paradigm-label">
+                <h2>Next-scale</h2>
+                <span>Images &amp; video</span>
+              </div>
+              <div class="block-sequence scale-sequence" aria-hidden="true">
+                <span class="scale-block scale-one"></span><span class="sequence-arrow">→</span><span class="scale-block scale-two"></span
+                ><span class="sequence-arrow">→</span><span class="scale-block scale-three"></span>
+              </div>
+              <p>One block = one resolution scale</p>
+              <small>VAR · Infinity · InfinityStar</small>
+            </article>
+            <article class="paradigm-card">
+              <div class="paradigm-label">
+                <h2>Next-frame</h2>
+                <span>Video</span>
+              </div>
+              <div class="block-sequence frame-sequence" aria-hidden="true">
+                <span class="frame-block"><i></i><i></i><i></i></span><span class="sequence-arrow">→</span
+                ><span class="frame-block"><i></i><i></i><i></i></span><span class="sequence-arrow">→</span
+                ><span class="frame-block"><i></i><i></i><i></i></span>
+              </div>
+              <p>One block = one frame</p>
+              <small>Self-Forcing · LongLive</small>
+            </article>
+          </div>
+          <p class="paradigm-bridge">
+            <span>Shared abstraction</span><strong>Block-wise visual autoregression</strong><span class="bridge-arrow" aria-hidden="true">→</span
+            ><strong>Channel × block KV quantization</strong>
+          </p>
+        </div>
         <figure class="hero-figure">
           <div class="figure-heading">
-            <span><strong>How much can 2 bits preserve?</strong><span class="figure-sub">Infinity-8B · Image generation</span></span
+            <span><strong>How much can 2 bits preserve?</strong><span class="figure-sub">Infinity-8B · Next-scale image generation</span></span
             ><span class="precision-tag">KV cache: BF16 → INT2</span>
           </div>
           <div class="comparison-grid">
@@ -139,18 +168,21 @@
       <section class="section intro-section" aria-labelledby="overview-title">
         <div class="wrap intro-grid">
           <div>
-            <p class="eyebrow">The idea</p>
-            <h2 id="overview-title">Visual generation has<br />a memory problem.</h2>
+            <p class="eyebrow">A shared formulation</p>
+            <h2 id="overview-title">Two paradigms.<br />The next block.</h2>
           </div>
           <div class="intro-copy">
             <p>
-              As autoregressive models generate higher-resolution images and longer videos, their key–value caches can grow larger than the model
-              weights. Quantization reduces this footprint, but grouping rules developed for language models can damage visual generation.
+              <strong>Next-scale predicts the next resolution scale; next-frame predicts the next frame.</strong> Both advance through coherent blocks
+              of visual tokens. Next-scale spans image and video generation, while next-frame extends a video through time.
             </p>
             <p>
-              <strong>VAR-Q follows the structure of visual memory.</strong> It quantizes each feature channel within each generation block—a scale or
-              a frame—using boundaries already provided by the generation loop. The same rule applies to both keys and values, across next-scale and
-              next-frame generation.
+              <strong>“Next-block” describes the common decoding unit:</strong> a resolution scale or a frame. As these blocks accumulate, their KV
+              caches can grow larger than the model weights.
+            </p>
+            <p>
+              <strong>VAR-Q quantizes the cache along the same channel × block axes in both paradigms.</strong> The generation loop supplies the block
+              boundaries. This shared structure makes one tuning-free grouping rule applicable across scales and frames, for both keys and values.
             </p>
           </div>
         </div>
@@ -160,9 +192,9 @@
         <div class="section-heading">
           <div>
             <p class="eyebrow">01 / Generation quality</p>
-            <h2 id="results-title">See what stays.</h2>
+            <h2 id="results-title">Across scales. Across frames.</h2>
           </div>
-          <p>From image details to video trajectories,<br />compare low-bit caches with BF16.</p>
+          <p>Next-scale images and video. Next-frame video.<br />Compare low-bit caches with BF16 across both paradigms.</p>
         </div>
         <div class="inspection-grid" id="image-comparison">
           <div class="compare-tool">
@@ -252,7 +284,7 @@
             <div class="subsection-heading">
               <div>
                 <p class="eyebrow">Across time</p>
-                <h3>One rule. Two video paradigms.</h3>
+                <h3>Next-scale and next-frame video.</h3>
               </div>
               <label class="select-label"
                 >Video model<select id="video-model">
@@ -539,13 +571,13 @@
         <div class="benchmark-controls">
           <label class="select-label"
             >Benchmark<select id="benchmark-model">
-              <option value="infinity">Infinity-8B · Image · INT4</option>
-              <option value="infinitystar">InfinityStar-8B · Video · INT3</option>
-              <option value="selfforcing">Self-Forcing-1.3B · Video · INT4</option>
-              <option value="longlive">LongLive-1.3B · Video · INT4</option>
+              <option value="infinity">Next-scale · Infinity-8B · INT4</option>
+              <option value="infinitystar">Next-scale · InfinityStar-8B · INT3</option>
+              <option value="selfforcing">Next-frame · Self-Forcing-1.3B · INT4</option>
+              <option value="longlive">Next-frame · LongLive-1.3B · INT4</option>
             </select></label
           >
-          <p id="benchmark-setting" aria-live="polite">Text-to-image · batch size 6 · Table 2</p>
+          <p id="benchmark-setting" aria-live="polite">Next-scale image · batch size 6 · Table 2</p>
         </div>
         <div class="benchmark-panel">
           <div class="memory-chart">
