@@ -1,392 +1,1201 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>VAR-Q · Tuning-free KV Cache Quantization for Visual Generation</title>
-<meta content="Tuning-free KV cache quantization for autoregressive image and video generation. One channel × block grouping rule across next-scale and next-frame generation, evaluated on nine visual AR models." name="description"/>
-<meta content="#f8f9fc" name="theme-color"/>
-<link href="https://boxunxu.top/VARQ/" rel="canonical"/>
-<meta content="VAR-Q: Tuning-free KV Cache Quantization" property="og:title"/>
-<meta content="One tuning-free KV quantization rule for next-scale and next-frame visual autoregressive generation." property="og:description"/>
-<meta content="https://boxunxu.top/VARQ/" property="og:url"/>
-<meta content="website" property="og:type"/>
-<link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="style.css" rel="stylesheet"/>
-<script defer="" src="app.js"></script>
-<script defer="" src="gallery.js"></script>
-<link href="research.css" rel="stylesheet"/><script defer="" src="showcase.js"></script><script defer="" src="results.js"></script></head>
-<body>
-<a class="skip" href="#main">Skip to content</a>
-<header class="site-header">
-<nav aria-label="Main navigation" class="nav wrap">
-<a class="wordmark" href="#"><img alt="" class="brand-symbol" height="30" src="assets/varq-symbol.svg" width="30"/>VAR-Q</a>
-<div class="nav-links"><a href="#showcase">Videos</a><a href="#overview">Idea</a><a href="#method">Method</a><a href="#benchmarks">Results</a><a href="#code">Code</a></div>
-<a class="home-link" href="/">Boxun Xu <span aria-hidden="true">↗</span></a>
-</nav>
-</header>
-<main id="main">
-<section aria-labelledby="paper-title" class="hero wrap"><div class="hero-editorial"><div class="hero-lead"><p class="eyebrow">NeurIPS 2026 <span class="eyebrow-divider">/</span> Visual autoregressive generation</p><div class="hero-brand"><img alt="" height="48" src="assets/varq-symbol.svg" width="48"/><span>VAR-Q</span></div><h2 class="display-title">Across scales.<br/>Across frames.<br/><span>One quantization rule.</span></h2><p class="hero-summary">Tuning-free KV cache quantization built around the <strong>channel × block</strong> structure of visual autoregression.</p><div class="actions">
-<a class="button primary" href="/assets/pdf/VAR-Q.pdf">Read the paper <span aria-hidden="true">↗</span></a><a class="button" href="https://github.com/lujiaji/VAR-Q">View code <span aria-hidden="true">↗</span></a><a class="button text-button" href="#citation">Cite this work <span aria-hidden="true">↓</span></a>
-</div></div><div class="paper-meta"><span class="margin-label">The paper</span><h1 id="paper-title">VAR-Q: Tuning-free KV Cache Quantization for Visual Autoregressive Image and Video Generation</h1><p class="authors">
-<a href="/">Boxun Xu<sup>1,†</sup></a><span>Jiaji Lu<sup>1,†</sup></span><span>Yuxuan Yin<sup>1</sup></span><span>Zihu Wang<sup>1</sup></span><span>Ziyue Liu<sup>1</sup></span><span>Yu Wang<sup>1</sup></span><span>Zirui Liu<sup>2</sup></span><span>Peng Li<sup>1</sup></span>
-</p><p class="affiliations">
-<span><sup>1</sup> University of California, Santa Barbara</span><span><sup>2</sup> University of Minnesota</span>
-</p><p class="equal">† Equal contribution</p><div class="paper-scope"><span>Next-scale <small>Images + video</small></span><span>Next-frame <small>Video</small></span></div><a class="inline-link" href="#overview">Read the core idea <span aria-hidden="true">↘</span></a></div></div></section><section aria-labelledby="showcase-title" class="showcase wrap" id="showcase"><div class="showcase-heading"><h2 id="showcase-title">Two paradigms. In motion.</h2><p>Original generated videos · synchronized BF16 / VAR-Q pairs</p></div><div class="showcase-grid"><article class="feature-card" data-feature="scale"><div class="feature-top"><div><span class="paradigm-tag scale">Next-scale</span><h3>InfinityStar · 720p</h3></div><span class="feature-index">01 / 03</span></div><div class="feature-pair"><figure class="feature-video"><figcaption>BF16 reference</figcaption><video aria-label="InfinityStar · 720p BF16 reference: A person skydiving from a hot air balloon into a sea of clouds." data-src="samples/InfinityStar720p/Baseline/q3/group01_prompt129_s02.mp4" loop="" muted="" playsinline="" poster="assets/posters/scale-0-Baseline.webp" preload="none"></video></figure><figure class="feature-video feature-ours"><figcaption>VAR-Q · 3-bit</figcaption><video aria-label="InfinityStar · 720p VAR-Q · 3-bit: A person skydiving from a hot air balloon into a sea of clouds." data-src="samples/InfinityStar720p/VARQ/q3/group01_prompt129_s02.mp4" loop="" muted="" playsinline="" poster="assets/posters/scale-0-VARQ.webp" preload="none"></video></figure></div><div class="feature-controls"><button aria-label="Play InfinityStar · 720p comparison" class="feature-play" disabled="" type="button">Play pair</button><label class="feature-select"><span class="sr-only">InfinityStar · 720p sample</span><select disabled=""><option value="0">Above the clouds</option><option value="1">Rings of Saturn</option><option value="2">A snowflake, up close</option></select></label><output class="feature-time">0.0 s</output></div><label class="sr-only" for="seek-scale">InfinityStar · 720p shared timeline</label><input class="feature-seek" disabled="" id="seek-scale" max="1" min="0" step=".05" type="range" value="0"/><p class="feature-prompt">A person skydiving from a hot air balloon into a sea of clouds.</p><p class="feature-status sr-only" role="status"></p><noscript><a href="samples/InfinityStar720p/VARQ/q3/group01_prompt129_s02.mp4">Watch the VAR-Q video</a></noscript></article><article class="feature-card" data-feature="frame"><div class="feature-top"><div><span class="paradigm-tag frame">Next-frame</span><h3>Self-Forcing</h3></div><span class="feature-index">01 / 03</span></div><div class="feature-pair"><figure class="feature-video"><figcaption>BF16 reference</figcaption><video aria-label="Self-Forcing BF16 reference: A little boy is riding a dragon in the sky to a castle" data-src="samples/self_forcing/Baseline/q6/group02_prompt101_s02.mp4" loop="" muted="" playsinline="" poster="assets/posters/frame-0-Baseline.webp" preload="none"></video></figure><figure class="feature-video feature-ours"><figcaption>VAR-Q · 6-bit</figcaption><video aria-label="Self-Forcing VAR-Q · 6-bit: A little boy is riding a dragon in the sky to a castle" data-src="samples/self_forcing/VARQ/q6/group02_prompt101_s02.mp4" loop="" muted="" playsinline="" poster="assets/posters/frame-0-VARQ.webp" preload="none"></video></figure></div><div class="feature-controls"><button aria-label="Play Self-Forcing comparison" class="feature-play" disabled="" type="button">Play pair</button><label class="feature-select"><span class="sr-only">Self-Forcing sample</span><select disabled=""><option value="0">A ride through the sky</option><option value="1">A giant duck in Boston</option><option value="2">Through the garden gate</option></select></label><output class="feature-time">0.0 s</output></div><label class="sr-only" for="seek-frame">Self-Forcing shared timeline</label><input class="feature-seek" disabled="" id="seek-frame" max="1" min="0" step=".05" type="range" value="0"/><p class="feature-prompt">A little boy is riding a dragon in the sky to a castle</p><p class="feature-status sr-only" role="status"></p><noscript><a href="samples/self_forcing/VARQ/q6/group02_prompt101_s02.mp4">Watch the VAR-Q video</a></noscript></article></div><div class="showcase-foot"><p>Same model and prompt within each pair. Precision labels describe the KV cache.</p><a href="#demo">Explore all models &amp; baselines ↗</a></div></section><div aria-label="Paper highlights" class="stats wrap research-stats">
-<div>
-<strong>78.5<span>%</span></strong>
-<p>less KV memory, up to*</p>
-</div>
-<div>
-<strong>6<span>×</span></strong>
-<p>larger inference batches, up to*</p>
-</div>
-<div>
-<strong>9</strong>
-<p>visual AR models evaluated</p>
-</div>
-<div>
-<strong>0</strong>
-<p>calibration or retraining steps</p>
-</div>
-</div><p class="metric-note wrap">
-          *Summary results reported in the paper. Gains depend on the model and precision; the batch-size result uses a single NVIDIA A100 80GB. See
-          the configurations below.
-        </p>
-<section aria-labelledby="overview-title" class="section intro-section" id="overview">
-<div class="wrap intro-grid">
-<div>
-<p class="eyebrow">A shared formulation</p>
-<h2 id="overview-title">Different generation steps.<br/>The same cache structure.</h2>
-</div>
-<div class="intro-copy"><p><strong>Visual autoregression advances in blocks.</strong> Next-scale models predict a resolution scale at a time; next-frame models extend a video through time. VAR-Q uses the blocks supplied by each model’s generation loop.</p><p>Across both paradigms, KV magnitudes have a shared <strong>channel × block structure</strong>: a small set of channels carries large values, and their magnitudes shift between blocks. Quantization groups should follow both axes.</p><p class="formulation-note"><strong>The next-block view.</strong> A block denotes the visual tokens emitted at one decoding step. Here, it unifies the scale and frame settings evaluated in the paper.</p></div>
-</div>
-<figure class="shared-flow wrap"><div class="flow-caption-top"><span class="margin-label">A common representation</span><span>Next-scale / next-frame → channel × block → packed KV</span></div><img alt="Next-scale and next-frame decoding feed a common channel-by-block KV cache. One scale factor covers each channel within a block; low-bit values are packed into INT32 containers." height="330" src="assets/shared-block-structure.svg" width="1120"/><figcaption>Conceptual schematic of the grouping rule in §3.4. Block sizes and colors are illustrative; measured cache magnitudes appear below.</figcaption></figure></section><section aria-labelledby="method-title" class="section method-section" id="method">
-<div class="wrap">
-<div class="section-heading">
-<div>
-<p class="eyebrow">01 / The method</p>
-<h2 id="method-title">Quantize where the structure is.</h2>
-</div>
-<p>A channel × block view of the KV cache<br/>explains where quantization groups belong.</p>
-</div>
-<div class="findings">
-<article>
-<span class="finding-number">01</span>
-<h3>A few channels matter.</h3>
-<p>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>VAR-Q · Tuning-free KV Cache Quantization for Visual Generation</title>
+    <meta
+      content="Tuning-free KV cache quantization for autoregressive image and video generation. One channel × block grouping rule across next-scale and next-frame generation, evaluated on nine visual AR models."
+      name="description"
+    />
+    <meta content="#f8f9fc" name="theme-color" />
+    <link href="https://boxunxu.top/VARQ/" rel="canonical" />
+    <meta content="VAR-Q: Tuning-free KV Cache Quantization" property="og:title" />
+    <meta content="One tuning-free KV quantization rule for next-scale and next-frame visual autoregressive generation." property="og:description" />
+    <meta content="https://boxunxu.top/VARQ/" property="og:url" />
+    <meta content="website" property="og:type" />
+    <link href="assets/favicon.svg" rel="icon" type="image/svg+xml" />
+    <link href="style.css" rel="stylesheet" />
+    <script defer="" src="app.js"></script>
+    <script defer="" src="gallery.js"></script>
+    <link href="research.css" rel="stylesheet" />
+    <script defer="" src="showcase.js"></script>
+    <script defer="" src="results.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <nav aria-label="Main navigation" class="nav wrap">
+        <a class="wordmark" href="#"><img alt="" class="brand-symbol" height="30" src="assets/varq-symbol.svg" width="30" />VAR-Q</a>
+        <div class="nav-links">
+          <a href="#showcase">Videos</a><a href="#overview">Idea</a><a href="#method">Method</a><a href="#benchmarks">Results</a
+          ><a href="#code">Code</a>
+        </div>
+        <a class="home-link" href="/">Boxun Xu <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+    <main id="main">
+      <section aria-labelledby="paper-title" class="hero wrap">
+        <div class="hero-editorial">
+          <div class="hero-lead">
+            <p class="eyebrow">NeurIPS 2026 <span class="eyebrow-divider">/</span> Visual autoregressive generation</p>
+            <div class="hero-brand"><img alt="" height="48" src="assets/varq-symbol.svg" width="48" /><span>VAR-Q</span></div>
+            <h2 class="display-title">Across scales.<br />Across frames.<br /><span>One quantization rule.</span></h2>
+            <p class="hero-summary">
+              Tuning-free KV cache quantization built around the <strong>channel × block</strong> structure of visual autoregression.
+            </p>
+            <div class="actions">
+              <a class="button primary" href="/assets/pdf/VAR-Q.pdf">Read the paper <span aria-hidden="true">↗</span></a
+              ><a class="button" href="https://github.com/lujiaji/VAR-Q">View code <span aria-hidden="true">↗</span></a
+              ><a class="button text-button" href="#citation">Cite this work <span aria-hidden="true">↓</span></a>
+            </div>
+          </div>
+          <div class="paper-meta">
+            <span class="margin-label">The paper</span>
+            <h1 id="paper-title">VAR-Q: Tuning-free KV Cache Quantization for Visual Autoregressive Image and Video Generation</h1>
+            <p class="authors">
+              <a href="/">Boxun Xu<sup>1,†</sup></a
+              ><span>Jiaji Lu<sup>1,†</sup></span
+              ><span>Yuxuan Yin<sup>1</sup></span
+              ><span>Zihu Wang<sup>1</sup></span
+              ><span>Ziyue Liu<sup>1</sup></span
+              ><span>Yu Wang<sup>1</sup></span
+              ><span>Zirui Liu<sup>2</sup></span
+              ><span>Peng Li<sup>1</sup></span>
+            </p>
+            <p class="affiliations">
+              <span><sup>1</sup> University of California, Santa Barbara</span><span><sup>2</sup> University of Minnesota</span>
+            </p>
+            <p class="equal">† Equal contribution</p>
+            <div class="paper-scope">
+              <span>Next-scale <small>Images + video</small></span
+              ><span>Next-frame <small>Video</small></span>
+            </div>
+            <a class="inline-link" href="#overview">Read the core idea <span aria-hidden="true">↘</span></a>
+          </div>
+        </div>
+      </section>
+      <section aria-labelledby="showcase-title" class="showcase wrap" id="showcase">
+        <div class="showcase-heading">
+          <h2 id="showcase-title">Two paradigms. In motion.</h2>
+          <p>Original generated videos · synchronized BF16 / VAR-Q pairs</p>
+        </div>
+        <div class="showcase-grid">
+          <article class="feature-card" data-feature="scale">
+            <div class="feature-top">
+              <div>
+                <span class="paradigm-tag scale">Next-scale</span>
+                <h3>InfinityStar · 720p</h3>
+              </div>
+              <span class="feature-index">01 / 03</span>
+            </div>
+            <div class="feature-pair">
+              <figure class="feature-video">
+                <figcaption>BF16 reference</figcaption>
+                <video
+                  aria-label="InfinityStar · 720p BF16 reference: A person skydiving from a hot air balloon into a sea of clouds."
+                  data-src="samples/InfinityStar720p/Baseline/q3/group01_prompt129_s02.mp4"
+                  loop=""
+                  muted=""
+                  playsinline=""
+                  poster="assets/posters/scale-0-Baseline.webp"
+                  preload="none"
+                ></video>
+              </figure>
+              <figure class="feature-video feature-ours">
+                <figcaption>VAR-Q · 3-bit</figcaption>
+                <video
+                  aria-label="InfinityStar · 720p VAR-Q · 3-bit: A person skydiving from a hot air balloon into a sea of clouds."
+                  data-src="samples/InfinityStar720p/VARQ/q3/group01_prompt129_s02.mp4"
+                  loop=""
+                  muted=""
+                  playsinline=""
+                  poster="assets/posters/scale-0-VARQ.webp"
+                  preload="none"
+                ></video>
+              </figure>
+            </div>
+            <div class="feature-controls">
+              <button aria-label="Play InfinityStar · 720p comparison" class="feature-play" disabled="" type="button">Play pair</button
+              ><label class="feature-select"
+                ><span class="sr-only">InfinityStar · 720p sample</span
+                ><select disabled="">
+                  <option value="0">Above the clouds</option>
+                  <option value="1">Rings of Saturn</option>
+                  <option value="2">A snowflake, up close</option>
+                </select></label
+              ><output class="feature-time">0.0 s</output>
+            </div>
+            <label class="sr-only" for="seek-scale">InfinityStar · 720p shared timeline</label
+            ><input class="feature-seek" disabled="" id="seek-scale" max="1" min="0" step=".05" type="range" value="0" />
+            <p class="feature-prompt">A person skydiving from a hot air balloon into a sea of clouds.</p>
+            <p class="feature-status sr-only" role="status"></p>
+            <noscript><a href="samples/InfinityStar720p/VARQ/q3/group01_prompt129_s02.mp4">Watch the VAR-Q video</a></noscript>
+          </article>
+          <article class="feature-card" data-feature="frame">
+            <div class="feature-top">
+              <div>
+                <span class="paradigm-tag frame">Next-frame</span>
+                <h3>Self-Forcing</h3>
+              </div>
+              <span class="feature-index">01 / 03</span>
+            </div>
+            <div class="feature-pair">
+              <figure class="feature-video">
+                <figcaption>BF16 reference</figcaption>
+                <video
+                  aria-label="Self-Forcing BF16 reference: A little boy is riding a dragon in the sky to a castle"
+                  data-src="samples/self_forcing/Baseline/q6/group02_prompt101_s02.mp4"
+                  loop=""
+                  muted=""
+                  playsinline=""
+                  poster="assets/posters/frame-0-Baseline.webp"
+                  preload="none"
+                ></video>
+              </figure>
+              <figure class="feature-video feature-ours">
+                <figcaption>VAR-Q · 6-bit</figcaption>
+                <video
+                  aria-label="Self-Forcing VAR-Q · 6-bit: A little boy is riding a dragon in the sky to a castle"
+                  data-src="samples/self_forcing/VARQ/q6/group02_prompt101_s02.mp4"
+                  loop=""
+                  muted=""
+                  playsinline=""
+                  poster="assets/posters/frame-0-VARQ.webp"
+                  preload="none"
+                ></video>
+              </figure>
+            </div>
+            <div class="feature-controls">
+              <button aria-label="Play Self-Forcing comparison" class="feature-play" disabled="" type="button">Play pair</button
+              ><label class="feature-select"
+                ><span class="sr-only">Self-Forcing sample</span
+                ><select disabled="">
+                  <option value="0">A ride through the sky</option>
+                  <option value="1">A giant duck in Boston</option>
+                  <option value="2">Through the garden gate</option>
+                </select></label
+              ><output class="feature-time">0.0 s</output>
+            </div>
+            <label class="sr-only" for="seek-frame">Self-Forcing shared timeline</label
+            ><input class="feature-seek" disabled="" id="seek-frame" max="1" min="0" step=".05" type="range" value="0" />
+            <p class="feature-prompt">A little boy is riding a dragon in the sky to a castle</p>
+            <p class="feature-status sr-only" role="status"></p>
+            <noscript><a href="samples/self_forcing/VARQ/q6/group02_prompt101_s02.mp4">Watch the VAR-Q video</a></noscript>
+          </article>
+        </div>
+        <div class="showcase-foot">
+          <p>Same model and prompt within each pair. Precision labels describe the KV cache.</p>
+          <a href="#demo">Explore all models &amp; baselines ↗</a>
+        </div>
+      </section>
+      <div aria-label="Paper highlights" class="stats wrap research-stats">
+        <div>
+          <strong>2</strong>
+          <p>visual AR paradigms</p>
+        </div>
+        <div>
+          <strong>9</strong>
+          <p>model configurations</p>
+        </div>
+        <div>
+          <strong>74.88<span>%</span></strong>
+          <p>less KV memory · next-frame INT4</p>
+        </div>
+        <div>
+          <strong>0</strong>
+          <p>calibration or retraining steps</p>
+        </div>
+      </div>
+      <p class="metric-note wrap">
+        Self-Forcing and LongLive at INT4, at the same batch sizes as BF16. Quality tradeoffs and all configurations are available in the
+        <a href="#benchmarks">results explorer ↗</a>.
+      </p>
+      <section aria-labelledby="overview-title" class="section intro-section" id="overview">
+        <div class="wrap intro-grid">
+          <div>
+            <p class="eyebrow">A shared formulation</p>
+            <h2 id="overview-title">Different generation steps.<br />The same cache structure.</h2>
+          </div>
+          <div class="intro-copy">
+            <p>
+              <strong>Visual autoregression advances in blocks.</strong> Next-scale models predict a resolution scale at a time; next-frame models
+              extend a video through time. VAR-Q uses the blocks supplied by each model’s generation loop.
+            </p>
+            <p>
+              Across both paradigms, KV magnitudes have a shared <strong>channel × block structure</strong>: a small set of channels carries large
+              values, and their magnitudes shift between blocks. Quantization groups should follow both axes.
+            </p>
+            <p class="formulation-note">
+              <strong>The next-block view.</strong> A block denotes the visual tokens emitted at one decoding step. Here, it unifies the scale and
+              frame settings evaluated in the paper.
+            </p>
+          </div>
+        </div>
+        <figure class="shared-flow wrap">
+          <div class="flow-caption-top">
+            <span class="margin-label">A common representation</span><span>Next-scale / next-frame → channel × block → packed KV</span>
+          </div>
+          <img
+            alt="Next-scale and next-frame decoding feed a common channel-by-block KV cache. One scale factor covers each channel within a block; low-bit values are packed into INT32 containers."
+            height="330"
+            src="assets/shared-block-structure.svg"
+            width="1120"
+          />
+          <figcaption>
+            Conceptual schematic of the grouping rule in §3.4. Block sizes and colors are illustrative; measured cache magnitudes appear below.
+          </figcaption>
+        </figure>
+      </section>
+      <section aria-labelledby="method-title" class="section method-section" id="method">
+        <div class="wrap">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">01 / The method</p>
+              <h2 id="method-title">Quantize where the structure is.</h2>
+            </div>
+            <p>A channel × block view of the KV cache<br />explains where quantization groups belong.</p>
+          </div>
+          <div class="findings">
+            <article>
+              <span class="finding-number">01</span>
+              <h3>A few channels matter.</h3>
+              <p>
                 Masking just the top 0.5% of channels in LongLive collapses generation. Masking ten times as many inlier channels leaves quality
                 largely intact.
               </p>
-</article>
-<article>
-<span class="finding-number">02</span>
-<h3>The structure is two-dimensional.</h3>
-<p>
+            </article>
+            <article>
+              <span class="finding-number">02</span>
+              <h3>The structure is two-dimensional.</h3>
+              <p>
                 Large magnitudes persist along feature channels and shift across generation blocks. Grouping along only one axis misses part of the
                 structure.
               </p>
-</article>
-<article>
-<span class="finding-number">03</span>
-<h3>The boundaries are already there.</h3>
-<p>A scale or frame defines a block. VAR-Q reuses these boundaries, with no outlier detection, calibration data, or retraining.</p>
-</article>
-</div>
-<figure class="paper-figure structure-figure">
-<a data-caption="Measured KV-cache structure across five visual AR models · Figure 4" data-zoom="" href="assets/cache-structure.webp"><img alt="Measured K and V cache magnitudes across five visual autoregressive models show persistent channel stripes and shifts across blocks." height="787" loading="lazy" src="assets/cache-structure.webp" width="2400"/></a>
-<figcaption>
-<strong>The measured structure.</strong> Median absolute K and V values across five visual AR models. Color scales are per-panel. Figure
+            </article>
+            <article>
+              <span class="finding-number">03</span>
+              <h3>The boundaries are already there.</h3>
+              <p>A scale or frame defines a block. VAR-Q reuses these boundaries, with no outlier detection, calibration data, or retraining.</p>
+            </article>
+          </div>
+          <figure class="paper-figure structure-figure">
+            <a data-caption="Measured KV-cache structure across five visual AR models · Figure 4" data-zoom="" href="assets/cache-structure.webp"
+              ><img
+                alt="Measured K and V cache magnitudes across five visual autoregressive models show persistent channel stripes and shifts across blocks."
+                height="787"
+                loading="lazy"
+                src="assets/cache-structure.webp"
+                width="2400"
+            /></a>
+            <figcaption>
+              <strong>The measured structure.</strong> Median absolute K and V values across five visual AR models. Color scales are per-panel. Figure
               4 of the paper.
             </figcaption>
-</figure><div class="grouping-demo">
-<div>
-<p class="eyebrow">Explore the grouping</p>
-<h3>One scale factor per<br/>channel–block group.</h3>
-<p aria-live="polite" id="group-description">
+          </figure>
+          <div class="grouping-demo">
+            <div>
+              <p class="eyebrow">Explore the grouping</p>
+              <h3>One scale factor per<br />channel–block group.</h3>
+              <p aria-live="polite" id="group-description">
                 VAR-Q separates feature channels and generation blocks, so each group follows both axes of the cache.
               </p>
-<div aria-label="Quantization grouping" class="group-options" role="group">
-<button aria-pressed="false" data-group="tensor" type="button">Per-tensor</button><button aria-pressed="false" data-group="channel" type="button">Per-channel</button><button aria-pressed="true" data-group="joint" type="button">Channel × block <span>VAR-Q</span></button>
-</div>
-<p class="small-note">Illustrative grouping diagram. Colors are schematic, not measured activations.</p>
-</div>
-<div class="matrix-area">
-<span class="axis-title">Feature channels →</span>
-<div class="matrix-row">
-<span class="axis-side">Generation blocks →</span>
-<div aria-label="Schematic cache with sixteen channels and three generation blocks; each channel within each block is a separate quantization group." class="cache-matrix joint" id="cache-matrix" role="img"></div>
-<div class="block-labels"><span>Block 1</span><span>Block 2</span><span>Block 3</span></div>
-</div>
-<div class="matrix-legend"><span>Low magnitude</span><span class="color-scale"></span><span>High magnitude</span></div>
-</div>
-</div><details class="evidence-table"><summary>Reconstruction and attention errors improve along both axes · Table 1</summary><div aria-label="Table 1 · Infinity-2B · INT4 · relative errors (%)" class="metrics-scroll" role="region" tabindex="0"><table><caption>Table 1 · Infinity-2B · INT4 · relative errors (%)</caption><thead><tr><th scope="col">Grouping</th><th scope="col">K error ↓</th><th scope="col">V error ↓</th><th scope="col">Attention error ↓</th><th scope="col">Output error ↓</th></tr></thead><tbody><tr><th scope="row">Per-tensor</th><td>24.01</td><td>43.54</td><td>29.20</td><td>32.32</td></tr><tr><th scope="row">Per-block</th><td>21.59</td><td>32.93</td><td>26.36</td><td>22.78</td></tr><tr><th scope="row">Per-channel</th><td>12.11</td><td>18.07</td><td>16.17</td><td>13.13</td></tr><tr class="highlight"><th scope="row">Channel × block</th><td>10.04</td><td>15.28</td><td>13.38</td><td>10.13</td></tr></tbody></table></div><p>Relative Frobenius error: ε<sub>X</sub> = ‖X − X′‖<sub>F</sub> / ‖X‖<sub>F</sub>. Joint grouping gives the lowest error in all four columns. <a href="/assets/pdf/VAR-Q.pdf#page=4">Source ↗</a></p></details><details class="algorithm-details"><summary>Algorithm details: scale factors, block boundaries, and the sub-block ratio</summary><div class="algorithm-grid"><div><h4>The quantization unit</h4><p>For block <em>b</em> and feature channel <em>c</em>, VAR-Q applies uniform symmetric quantization to the tokens in that group, with one scale factor. The same grouping rule is used for K and V.</p><p class="math-line">K = {K<sup>(b)</sup>}<sub>b=1…B</sub>,   K<sup>(b)</sup> ∈ ℝ<sup>n<sub>b</sub> × D</sup></p></div><div><h4>Optional finer groups</h4><p>The default sub-block ratio is <strong>r = 1</strong>. A block of length L is split into ⌈L / (r L<sub>max</sub>)⌉ sub-blocks. Smaller r refines grouping within existing boundaries.</p><p>In next-scale decoding, the largest scales are affected first; in next-frame decoding, equal-size blocks are partitioned uniformly. <a href="/assets/pdf/VAR-Q.pdf#page=6">§3.4 ↗</a></p></div></div></details><div class="ablation-evidence"><div><p class="eyebrow">Controlled evidence · Table 5</p><h3>Both axes earn their place.</h3><p>Removing the channel axis sharply degrades generation. Keeping channels but removing block boundaries also loses quality—on both a next-scale and a next-frame model.</p></div><div class="table-wrap"><table><caption>Grouping ablation · INT4 KV cache</caption><thead><tr><th scope="col">Grouping</th><th scope="col">VAR-d30<br/><small>FID ↓</small></th><th scope="col">Self-Forcing<br/><small>VBench Total ↑</small></th></tr></thead><tbody><tr class="highlight"><th scope="row">Channel × block</th><td>1.97</td><td>80.99</td></tr><tr><th scope="row">Without block axis</th><td>2.83</td><td>79.38</td></tr><tr><th scope="row">Without channel axis</th><td>12.07</td><td>67.22</td></tr></tbody></table><p class="small-note">Metrics are compared within each column. <a href="/assets/pdf/VAR-Q.pdf#page=9">Full ablation →</a></p></div></div><details class="evidence-table"><summary>Full grouping and boundary-alignment ablations · Tables 5–6</summary><div aria-label="Table 5 · INT4 · VAR-d30 (VAR) and Self-Forcing (SF)" class="metrics-scroll" role="region" tabindex="0"><table><caption>Table 5 · INT4 · VAR-d30 (VAR) and Self-Forcing (SF)</caption><thead><tr><th scope="col">Grouping</th><th scope="col">VAR FID ↓</th><th scope="col">IS ↑</th><th scope="col">PSNR ↑</th><th scope="col">SSIM ↑</th><th scope="col">LPIPS ↓</th><th scope="col">VAR KV (GB) ↓</th><th scope="col">SF Subject ↑</th><th scope="col">Dynamic ↑</th><th scope="col">Aesthetic ↑</th><th scope="col">Total ↑</th><th scope="col">SF KV (GB) ↓</th></tr></thead><tbody><tr><th scope="row">Without block axis</th><td>2.83</td><td>292.13</td><td>12.07</td><td>0.257</td><td>0.538</td><td>9.45</td><td>88.49</td><td>69.00</td><td>54.51</td><td>79.38</td><td>16.90</td></tr><tr><th scope="row">Without channel axis</th><td>12.07</td><td>159.52</td><td>10.42</td><td>0.198</td><td>0.645</td><td>9.34</td><td>79.17</td><td>27.00</td><td>33.86</td><td>67.22</td><td>16.87</td></tr><tr><th scope="row">Per-token &amp; per-head</th><td>2.21</td><td>292.12</td><td>11.97</td><td>0.261</td><td>0.545</td><td>10.51</td><td>90.18</td><td>67.00</td><td>54.96</td><td>79.46</td><td>17.93</td></tr><tr><th scope="row">Per-token</th><td>7.13</td><td>203.50</td><td>10.51</td><td>0.208</td><td>0.635</td><td>9.38</td><td>78.55</td><td>25.50</td><td>39.51</td><td>67.72</td><td>16.96</td></tr><tr class="highlight"><th scope="row">VAR-Q (full)</th><td>1.97</td><td>323.67</td><td>13.54</td><td>0.312</td><td>0.437</td><td>10.44</td><td>91.28</td><td>75.50</td><td>57.40</td><td>80.99</td><td>16.95</td></tr></tbody></table></div><p>Same number and sizes of groups, shifted by half a block: misalignment lowers Self-Forcing quality by 0.45 points in this controlled experiment.</p><div aria-label="Table 6 · Boundary alignment ablation" class="metrics-scroll" role="region" tabindex="0"><table><caption>Table 6 · Boundary alignment ablation</caption><thead><tr><th scope="col">Boundary placement</th><th scope="col">Subject ↑</th><th scope="col">Dynamic ↑</th><th scope="col">Aesthetic ↑</th><th scope="col">Quality ↑</th></tr></thead><tbody><tr><th scope="row">Misaligned</th><td>90.80</td><td>73.50</td><td>56.75</td><td>80.46</td></tr><tr class="highlight"><th scope="row">Aligned</th><td>91.23</td><td>74.50</td><td>57.41</td><td>80.91</td></tr></tbody></table></div><p>Table 6 is a separate alignment experiment; its aligned score is not substituted for Table 5’s full-method score. <a href="/assets/pdf/VAR-Q.pdf#page=9">Source ↗</a></p></details>
-<div class="pipeline">
-<div>
-<p class="eyebrow">From algorithm to memory savings</p>
-<h3>Quantize. Pack. Retrieve.</h3>
-<p>
+              <div aria-label="Quantization grouping" class="group-options" role="group">
+                <button aria-pressed="false" data-group="tensor" type="button">Per-tensor</button
+                ><button aria-pressed="false" data-group="channel" type="button">Per-channel</button
+                ><button aria-pressed="true" data-group="joint" type="button">Channel × block <span>VAR-Q</span></button>
+              </div>
+              <p class="small-note">Illustrative grouping diagram. Colors are schematic, not measured activations.</p>
+            </div>
+            <div class="matrix-area">
+              <span class="axis-title">Feature channels →</span>
+              <div class="matrix-row">
+                <span class="axis-side">Generation blocks →</span>
+                <div
+                  aria-label="Schematic cache with sixteen channels and three generation blocks; each channel within each block is a separate quantization group."
+                  class="cache-matrix joint"
+                  id="cache-matrix"
+                  role="img"
+                ></div>
+                <div class="block-labels"><span>Block 1</span><span>Block 2</span><span>Block 3</span></div>
+              </div>
+              <div class="matrix-legend"><span>Low magnitude</span><span class="color-scale"></span><span>High magnitude</span></div>
+            </div>
+          </div>
+          <details class="evidence-table">
+            <summary>Reconstruction and attention errors improve along both axes · Table 1</summary>
+            <div aria-label="Table 1 · Infinity-2B · INT4 · relative errors (%)" class="metrics-scroll" role="region" tabindex="0">
+              <table>
+                <caption>
+                  Table 1 · Infinity-2B · INT4 · relative errors (%)
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Grouping</th>
+                    <th scope="col">K error ↓</th>
+                    <th scope="col">V error ↓</th>
+                    <th scope="col">Attention error ↓</th>
+                    <th scope="col">Output error ↓</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Per-tensor</th>
+                    <td>24.01</td>
+                    <td>43.54</td>
+                    <td>29.20</td>
+                    <td>32.32</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Per-block</th>
+                    <td>21.59</td>
+                    <td>32.93</td>
+                    <td>26.36</td>
+                    <td>22.78</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Per-channel</th>
+                    <td>12.11</td>
+                    <td>18.07</td>
+                    <td>16.17</td>
+                    <td>13.13</td>
+                  </tr>
+                  <tr class="highlight">
+                    <th scope="row">Channel × block</th>
+                    <td>10.04</td>
+                    <td>15.28</td>
+                    <td>13.38</td>
+                    <td>10.13</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              Relative Frobenius error: ε<sub>X</sub> = ‖X − X′‖<sub>F</sub> / ‖X‖<sub>F</sub>. Joint grouping gives the lowest error in all four
+              columns. <a href="/assets/pdf/VAR-Q.pdf#page=4">Source ↗</a>
+            </p>
+          </details>
+          <details class="algorithm-details">
+            <summary>Algorithm details: scale factors, block boundaries, and the sub-block ratio</summary>
+            <div class="algorithm-grid">
+              <div>
+                <h4>The quantization unit</h4>
+                <p>
+                  For block <em>b</em> and feature channel <em>c</em>, VAR-Q applies uniform symmetric quantization to the tokens in that group, with
+                  one scale factor. The same grouping rule is used for K and V.
+                </p>
+                <p class="math-line">
+                  K = {K<sup>(b)</sup>}<sub>b=1…B</sub>,   K<sup>(b)</sup> ∈ ℝ<sup>n<sub>b</sub> × D</sup>
+                </p>
+              </div>
+              <div>
+                <h4>Optional finer groups</h4>
+                <p>
+                  The default sub-block ratio is <strong>r = 1</strong>. A block of length L is split into ⌈L / (r L<sub>max</sub>)⌉ sub-blocks.
+                  Smaller r refines grouping within existing boundaries.
+                </p>
+                <p>
+                  In next-scale decoding, the largest scales are affected first; in next-frame decoding, equal-size blocks are partitioned uniformly.
+                  <a href="/assets/pdf/VAR-Q.pdf#page=6">§3.4 ↗</a>
+                </p>
+              </div>
+            </div>
+          </details>
+          <div class="ablation-evidence">
+            <div>
+              <p class="eyebrow">Controlled evidence · Table 5</p>
+              <h3>Both axes earn their place.</h3>
+              <p>
+                Removing the channel axis sharply degrades generation. Keeping channels but removing block boundaries also loses quality—on both a
+                next-scale and a next-frame model.
+              </p>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <caption>
+                  Grouping ablation · INT4 KV cache
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Grouping</th>
+                    <th scope="col">VAR-d30<br /><small>FID ↓</small></th>
+                    <th scope="col">Self-Forcing<br /><small>VBench Total ↑</small></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="highlight">
+                    <th scope="row">Channel × block</th>
+                    <td>1.97</td>
+                    <td>80.99</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Without block axis</th>
+                    <td>2.83</td>
+                    <td>79.38</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Without channel axis</th>
+                    <td>12.07</td>
+                    <td>67.22</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="small-note">Metrics are compared within each column. <a href="/assets/pdf/VAR-Q.pdf#page=9">Full ablation →</a></p>
+            </div>
+          </div>
+          <details class="evidence-table">
+            <summary>Full grouping and boundary-alignment ablations · Tables 5–6</summary>
+            <div aria-label="Table 5 · INT4 · VAR-d30 (VAR) and Self-Forcing (SF)" class="metrics-scroll" role="region" tabindex="0">
+              <table>
+                <caption>
+                  Table 5 · INT4 · VAR-d30 (VAR) and Self-Forcing (SF)
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Grouping</th>
+                    <th scope="col">VAR FID ↓</th>
+                    <th scope="col">IS ↑</th>
+                    <th scope="col">PSNR ↑</th>
+                    <th scope="col">SSIM ↑</th>
+                    <th scope="col">LPIPS ↓</th>
+                    <th scope="col">VAR KV (GB) ↓</th>
+                    <th scope="col">SF Subject ↑</th>
+                    <th scope="col">Dynamic ↑</th>
+                    <th scope="col">Aesthetic ↑</th>
+                    <th scope="col">Total ↑</th>
+                    <th scope="col">SF KV (GB) ↓</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Without block axis</th>
+                    <td>2.83</td>
+                    <td>292.13</td>
+                    <td>12.07</td>
+                    <td>0.257</td>
+                    <td>0.538</td>
+                    <td>9.45</td>
+                    <td>88.49</td>
+                    <td>69.00</td>
+                    <td>54.51</td>
+                    <td>79.38</td>
+                    <td>16.90</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Without channel axis</th>
+                    <td>12.07</td>
+                    <td>159.52</td>
+                    <td>10.42</td>
+                    <td>0.198</td>
+                    <td>0.645</td>
+                    <td>9.34</td>
+                    <td>79.17</td>
+                    <td>27.00</td>
+                    <td>33.86</td>
+                    <td>67.22</td>
+                    <td>16.87</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Per-token &amp; per-head</th>
+                    <td>2.21</td>
+                    <td>292.12</td>
+                    <td>11.97</td>
+                    <td>0.261</td>
+                    <td>0.545</td>
+                    <td>10.51</td>
+                    <td>90.18</td>
+                    <td>67.00</td>
+                    <td>54.96</td>
+                    <td>79.46</td>
+                    <td>17.93</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Per-token</th>
+                    <td>7.13</td>
+                    <td>203.50</td>
+                    <td>10.51</td>
+                    <td>0.208</td>
+                    <td>0.635</td>
+                    <td>9.38</td>
+                    <td>78.55</td>
+                    <td>25.50</td>
+                    <td>39.51</td>
+                    <td>67.72</td>
+                    <td>16.96</td>
+                  </tr>
+                  <tr class="highlight">
+                    <th scope="row">VAR-Q (full)</th>
+                    <td>1.97</td>
+                    <td>323.67</td>
+                    <td>13.54</td>
+                    <td>0.312</td>
+                    <td>0.437</td>
+                    <td>10.44</td>
+                    <td>91.28</td>
+                    <td>75.50</td>
+                    <td>57.40</td>
+                    <td>80.99</td>
+                    <td>16.95</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              Same number and sizes of groups, shifted by half a block: misalignment lowers Self-Forcing quality by 0.45 points in this controlled
+              experiment.
+            </p>
+            <div aria-label="Table 6 · Boundary alignment ablation" class="metrics-scroll" role="region" tabindex="0">
+              <table>
+                <caption>
+                  Table 6 · Boundary alignment ablation
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Boundary placement</th>
+                    <th scope="col">Subject ↑</th>
+                    <th scope="col">Dynamic ↑</th>
+                    <th scope="col">Aesthetic ↑</th>
+                    <th scope="col">Quality ↑</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Misaligned</th>
+                    <td>90.80</td>
+                    <td>73.50</td>
+                    <td>56.75</td>
+                    <td>80.46</td>
+                  </tr>
+                  <tr class="highlight">
+                    <th scope="row">Aligned</th>
+                    <td>91.23</td>
+                    <td>74.50</td>
+                    <td>57.41</td>
+                    <td>80.91</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              Table 6 is a separate alignment experiment; its aligned score is not substituted for Table 5’s full-method score.
+              <a href="/assets/pdf/VAR-Q.pdf#page=9">Source ↗</a>
+            </p>
+          </details>
+          <div class="pipeline">
+            <div>
+              <p class="eyebrow">From algorithm to memory savings</p>
+              <h3>Quantize. Pack. Retrieve.</h3>
+              <p>
                 VAR-Q quantizes the cache per channel and block, then packs low-bit values into INT32 storage. Before attention, cached values are
                 unpacked and dequantized to BF16. Packing turns reduced precision into real KV-memory savings.
               </p>
-<a class="inline-link" href="/assets/pdf/VAR-Q.pdf#page=6">Read the algorithm <span aria-hidden="true">↗</span></a>
-</div>
-<figure>
-<a data-caption="VAR-Q quantization and bit-packing pipeline · Figure 8" data-zoom="" href="assets/pipeline.webp"><img alt="VAR-Q pipeline: quantize K and V, pack into INT32 with scale factors, store in HBM, then unpack for attention." height="404" loading="lazy" src="assets/pipeline.webp" width="784"/></a>
-<figcaption>Figure 8 · Algorithm and system support</figcaption>
-</figure>
-</div>
-</div>
-</section>
-<section aria-labelledby="results-title" class="section wrap" id="results">
-<div class="section-heading">
-<div>
-<p class="eyebrow">02 / Qualitative evidence</p>
-<h2 id="results-title">Inspect generation, in motion.</h2>
-</div>
-<p>Next-scale images and video. Next-frame video.<br/>Compare low-bit caches with BF16 across both paradigms.</p>
-</div><div class="long-showcase"><div class="long-intro"><p class="eyebrow">Long-horizon generation</p><h3>Follow the scene<br/>through time.</h3><p>LongLive extends the next-frame setting to longer sequences. Compare motion and scene consistency with both videos on the same timeline.</p><p class="small-note">These clips use 6-bit KV caches. The paper separately reports INT4 and INT6 results.</p><a class="inline-link" href="#benchmarks">See the measured tradeoff ↗</a></div><article class="feature-card" data-feature="long"><div class="feature-top"><div><span class="paradigm-tag long">Next-frame</span><h3>LongLive</h3></div><span class="feature-index">01 / 03</span></div><div class="feature-pair"><figure class="feature-video"><figcaption>BF16 reference</figcaption><video aria-label="LongLive BF16 reference: New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York." data-src="samples/longlive/Baseline/q6/group03_prompt153_s01.mp4" loop="" muted="" playsinline="" poster="assets/posters/long-0-Baseline.webp" preload="none"></video></figure><figure class="feature-video feature-ours"><figcaption>VAR-Q · 6-bit</figcaption><video aria-label="LongLive VAR-Q · 6-bit: New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York." data-src="samples/longlive/VARQ/q6/group03_prompt153_s01.mp4" loop="" muted="" playsinline="" poster="assets/posters/long-0-VARQ.webp" preload="none"></video></figure></div><div class="feature-controls"><button aria-label="Play LongLive comparison" class="feature-play" disabled="" type="button">Play pair</button><label class="feature-select"><span class="sr-only">LongLive sample</span><select disabled=""><option value="0">An underwater New York</option><option value="1">The floating library</option><option value="2">Fields of wildflowers</option></select></label><output class="feature-time">0.0 s</output></div><label class="sr-only" for="seek-long">LongLive shared timeline</label><input class="feature-seek" disabled="" id="seek-long" max="1" min="0" step=".05" type="range" value="0"/><p class="feature-prompt">New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York.</p><p class="feature-status sr-only" role="status"></p><noscript><a href="samples/longlive/VARQ/q6/group03_prompt153_s01.mp4">Watch the VAR-Q video</a></noscript></article></div>
-<div aria-labelledby="gallery-title" class="live-gallery" id="demo">
-<div class="subsection-heading">
-<div>
-<p class="eyebrow">Explore the samples</p>
-<h3 id="gallery-title">Compare every method, on the same timeline.</h3>
-</div>
-<p class="small-note">Original project samples · BF16 reference and low-bit methods</p>
-</div>
-<div class="gallery-selectors">
-<label class="select-label">Model<select disabled="" id="gallery-model">
-<option>Loading models…</option>
-</select></label>
-<label class="select-label">KV precision<select disabled="" id="gallery-bit">
-<option>—</option>
-</select></label>
-<label class="select-label">Sample<select disabled="" id="gallery-sample">
-<option>—</option>
-</select></label>
-</div>
-<p class="gallery-task" id="gallery-task"></p>
-<p class="gallery-prompt" id="gallery-prompt"></p>
-<div class="gallery-media" id="gallery-media"></div>
-<div class="gallery-playback" hidden="" id="gallery-playback">
-<button class="button primary" id="gallery-play" type="button">Play all</button><button class="button" id="gallery-restart" type="button">Restart</button>
-<label class="select-label speed-label">Speed<select id="gallery-speed">
-<option value="0.5">0.5×</option>
-<option selected="" value="1">1×</option>
-<option value="1.5">1.5×</option>
-<option value="2">2×</option>
-</select></label>
-<label class="video-seek-label" for="gallery-seek">Shared timeline <output id="gallery-time">0.0 s</output><input disabled="" id="gallery-seek" max="1" min="0" step="0.05" type="range" value="0"/></label>
-</div>
-<p class="small-note" id="gallery-status" role="status">Loading the sample index…</p>
-<noscript><p class="small-note">
+              <a class="inline-link" href="/assets/pdf/VAR-Q.pdf#page=6">Read the algorithm <span aria-hidden="true">↗</span></a>
+            </div>
+            <figure>
+              <a data-caption="VAR-Q quantization and bit-packing pipeline · Figure 8" data-zoom="" href="assets/pipeline.webp"
+                ><img
+                  alt="VAR-Q pipeline: quantize K and V, pack into INT32 with scale factors, store in HBM, then unpack for attention."
+                  height="404"
+                  loading="lazy"
+                  src="assets/pipeline.webp"
+                  width="784"
+              /></a>
+              <figcaption>Figure 8 · Algorithm and system support</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+      <section aria-labelledby="results-title" class="section wrap" id="results">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">02 / Qualitative evidence</p>
+            <h2 id="results-title">Inspect generation, in motion.</h2>
+          </div>
+          <p>Next-scale images and video. Next-frame video.<br />Compare low-bit caches with BF16 across both paradigms.</p>
+        </div>
+        <div class="long-showcase">
+          <div class="long-intro">
+            <p class="eyebrow">Long-horizon generation</p>
+            <h3>Follow the scene<br />through time.</h3>
+            <p>
+              LongLive extends the next-frame setting to longer sequences. Compare motion and scene consistency with both videos on the same timeline.
+            </p>
+            <p class="small-note">These clips use 6-bit KV caches. The paper separately reports INT4 and INT6 results.</p>
+            <a class="inline-link" href="#benchmarks">See the measured tradeoff ↗</a>
+          </div>
+          <article class="feature-card" data-feature="long">
+            <div class="feature-top">
+              <div>
+                <span class="paradigm-tag long">Next-frame</span>
+                <h3>LongLive</h3>
+              </div>
+              <span class="feature-index">01 / 03</span>
+            </div>
+            <div class="feature-pair">
+              <figure class="feature-video">
+                <figcaption>BF16 reference</figcaption>
+                <video
+                  aria-label="LongLive BF16 reference: New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York."
+                  data-src="samples/longlive/Baseline/q6/group03_prompt153_s01.mp4"
+                  loop=""
+                  muted=""
+                  playsinline=""
+                  poster="assets/posters/long-0-Baseline.webp"
+                  preload="none"
+                ></video>
+              </figure>
+              <figure class="feature-video feature-ours">
+                <figcaption>VAR-Q · 6-bit</figcaption>
+                <video
+                  aria-label="LongLive VAR-Q · 6-bit: New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York."
+                  data-src="samples/longlive/VARQ/q6/group03_prompt153_s01.mp4"
+                  loop=""
+                  muted=""
+                  playsinline=""
+                  poster="assets/posters/long-0-VARQ.webp"
+                  preload="none"
+                ></video>
+              </figure>
+            </div>
+            <div class="feature-controls">
+              <button aria-label="Play LongLive comparison" class="feature-play" disabled="" type="button">Play pair</button
+              ><label class="feature-select"
+                ><span class="sr-only">LongLive sample</span
+                ><select disabled="">
+                  <option value="0">An underwater New York</option>
+                  <option value="1">The floating library</option>
+                  <option value="2">Fields of wildflowers</option>
+                </select></label
+              ><output class="feature-time">0.0 s</output>
+            </div>
+            <label class="sr-only" for="seek-long">LongLive shared timeline</label
+            ><input class="feature-seek" disabled="" id="seek-long" max="1" min="0" step=".05" type="range" value="0" />
+            <p class="feature-prompt">
+              New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York.
+            </p>
+            <p class="feature-status sr-only" role="status"></p>
+            <noscript><a href="samples/longlive/VARQ/q6/group03_prompt153_s01.mp4">Watch the VAR-Q video</a></noscript>
+          </article>
+        </div>
+        <div aria-labelledby="gallery-title" class="live-gallery" id="demo">
+          <div class="subsection-heading">
+            <div>
+              <p class="eyebrow">Explore the samples</p>
+              <h3 id="gallery-title">Compare every method, on the same timeline.</h3>
+            </div>
+            <p class="small-note">Original project samples · BF16 reference and low-bit methods</p>
+          </div>
+          <div class="gallery-selectors">
+            <label class="select-label"
+              >Model<select disabled="" id="gallery-model">
+                <option>Loading models…</option>
+              </select></label
+            >
+            <label class="select-label"
+              >KV precision<select disabled="" id="gallery-bit">
+                <option>—</option>
+              </select></label
+            >
+            <label class="select-label"
+              >Sample<select disabled="" id="gallery-sample">
+                <option>—</option>
+              </select></label
+            >
+          </div>
+          <p class="gallery-task" id="gallery-task"></p>
+          <p class="gallery-prompt" id="gallery-prompt"></p>
+          <div class="gallery-media" id="gallery-media"></div>
+          <div class="gallery-playback" hidden="" id="gallery-playback">
+            <button class="button primary" id="gallery-play" type="button">Play all</button
+            ><button class="button" id="gallery-restart" type="button">Restart</button>
+            <label class="select-label speed-label"
+              >Speed<select id="gallery-speed">
+                <option value="0.5">0.5×</option>
+                <option selected="" value="1">1×</option>
+                <option value="1.5">1.5×</option>
+                <option value="2">2×</option>
+              </select></label
+            >
+            <label class="video-seek-label" for="gallery-seek"
+              >Shared timeline <output id="gallery-time">0.0 s</output
+              ><input disabled="" id="gallery-seek" max="1" min="0" step="0.05" type="range" value="0"
+            /></label>
+          </div>
+          <p class="small-note" id="gallery-status" role="status">Loading the sample index…</p>
+          <noscript
+            ><p class="small-note">
               Enable JavaScript to browse the complete sample gallery. The paper figures above and below remain available.
-            </p></noscript>
-</div><div class="inspection-grid" id="image-comparison">
-<div class="compare-tool">
-<div class="compare-image" style="--split: 50%">
-<img alt="BF16 reference image" height="800" src="assets/cats-bf16.webp" width="800"/>
-<div class="compare-overlay"><img alt="VAR-Q at INT2" height="800" id="compare-target" src="assets/cats-varq.webp" width="800"/></div>
-<span class="image-badge left" id="compare-name">VAR-Q · INT2</span><span class="image-badge right">BF16</span><span aria-hidden="true" class="compare-line"><span>↔</span></span>
-</div>
-<label class="range-label" for="comparison-range">Drag to compare <span>Low-bit output / BF16 reference</span></label><input aria-label="Comparison split position" id="comparison-range" max="100" min="0" type="range" value="50"/>
-</div>
-<div class="inspection-copy">
-<span class="precision-tag">Infinity-8B · INT2</span>
-<h3>Keep the words.<br/>Keep the composition.</h3>
-<p>
+            </p></noscript
+          >
+        </div>
+        <div class="inspection-grid" id="image-comparison">
+          <div class="compare-tool">
+            <div class="compare-image" style="--split: 50%">
+              <img alt="BF16 reference image" height="800" src="assets/cats-bf16.webp" width="800" />
+              <div class="compare-overlay"><img alt="VAR-Q at INT2" height="800" id="compare-target" src="assets/cats-varq.webp" width="800" /></div>
+              <span class="image-badge left" id="compare-name">VAR-Q · INT2</span><span class="image-badge right">BF16</span
+              ><span aria-hidden="true" class="compare-line"><span>↔</span></span>
+            </div>
+            <label class="range-label" for="comparison-range">Drag to compare <span>Low-bit output / BF16 reference</span></label
+            ><input aria-label="Comparison split position" id="comparison-range" max="100" min="0" type="range" value="50" />
+          </div>
+          <div class="inspection-copy">
+            <span class="precision-tag">Infinity-8B · INT2</span>
+            <h3>Keep the words.<br />Keep the composition.</h3>
+            <p>
               Examine the whiteboard text and the position of the cats. Switch methods to compare each low-bit output against the same BF16 reference.
             </p>
-<div aria-label="Image comparison method" class="segmented" role="group">
-<button aria-pressed="true" data-compare="varq" type="button">VAR-Q</button><button aria-pressed="false" data-compare="kivi" type="button">KIVI</button><button aria-pressed="false" data-compare="flexgen" type="button">FlexGen</button>
-</div>
-<p class="small-note">
+            <div aria-label="Image comparison method" class="segmented" role="group">
+              <button aria-pressed="true" data-compare="varq" type="button">VAR-Q</button
+              ><button aria-pressed="false" data-compare="kivi" type="button">KIVI</button
+              ><button aria-pressed="false" data-compare="flexgen" type="button">FlexGen</button>
+            </div>
+            <p class="small-note">
               A selected example from Figure 1. Quantitative INT2 results and their quality tradeoffs are reported in Table 2 of the paper.
             </p>
-<a class="inline-link" data-caption="Infinity-8B at INT2 · Full comparison from Figure 26" data-zoom="" href="assets/infinity-int2.webp">More image examples <span aria-hidden="true">↗</span></a>
-</div>
-</div>
-<details class="paper-examples">
-<summary>Video frame comparisons from the paper</summary>
-<div class="video-section">
-<div class="subsection-heading">
-<div>
-<p class="eyebrow">Across time</p>
-<h3>Next-scale and next-frame video.</h3>
-</div>
-<label class="select-label">Video model<select id="video-model">
-<option value="selfforcing">Self-Forcing · INT4</option>
-<option value="infinitystar">InfinityStar · INT3</option>
-<option value="longlive">LongLive · INT4</option>
-</select></label>
-</div>
-<figure class="paper-figure">
-<a data-caption="Self-Forcing at INT4 · Figure 39" data-zoom="" href="assets/selfforcing-int4.webp" id="video-link"><img alt="Self-Forcing INT4: four sampled frames for BF16, FlexGen, KIVI and VAR-Q, showing skyscrapers transforming into a robot." height="1195" id="video-figure" loading="lazy" src="assets/selfforcing-int4.webp" width="2000"/></a>
-<figcaption>
-<span id="video-caption">Self-Forcing · Next-frame generation · INT4 KV cache · Figure 39.</span> Sampled video frames from the paper;
+            <a class="inline-link" data-caption="Infinity-8B at INT2 · Full comparison from Figure 26" data-zoom="" href="assets/infinity-int2.webp"
+              >More image examples <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </div>
+        <details class="paper-examples">
+          <summary>Video frame comparisons from the paper</summary>
+          <div class="video-section">
+            <div class="subsection-heading">
+              <div>
+                <p class="eyebrow">Across time</p>
+                <h3>Next-scale and next-frame video.</h3>
+              </div>
+              <label class="select-label"
+                >Video model<select id="video-model">
+                  <option value="selfforcing">Self-Forcing · INT4</option>
+                  <option value="infinitystar">InfinityStar · INT3</option>
+                  <option value="longlive">LongLive · INT4</option>
+                </select></label
+              >
+            </div>
+            <figure class="paper-figure">
+              <a data-caption="Self-Forcing at INT4 · Figure 39" data-zoom="" href="assets/selfforcing-int4.webp" id="video-link"
+                ><img
+                  alt="Self-Forcing INT4: four sampled frames for BF16, FlexGen, KIVI and VAR-Q, showing skyscrapers transforming into a robot."
+                  height="1195"
+                  id="video-figure"
+                  loading="lazy"
+                  src="assets/selfforcing-int4.webp"
+                  width="2000"
+              /></a>
+              <figcaption>
+                <span id="video-caption">Self-Forcing · Next-frame generation · INT4 KV cache · Figure 39.</span> Sampled video frames from the paper;
                 select the figure to enlarge.
               </figcaption>
-</figure>
-</div>
-</details>
-</section><section aria-labelledby="attribution-title" class="section wrap attribution-section" id="attribution">
-<div class="attribution-heading">
-<p class="eyebrow">03 / Mechanistic attribution · §3.3</p>
-<h2 id="attribution-title">From observations to mechanisms.</h2>
-<p>Why does the channel × block pattern emerge? Three experiments separate prompt-dependent outliers, persistent channel imbalance, and position-dependent magnitude shifts.</p>
-</div>
-<article class="attribution-row persistence-row">
-<div class="attribution-copy">
-<p class="evidence-label">01 / Architecture or input?</p>
-<h3>K and V share a structure,<br/>but not the same source.</h3>
-<p>
-                  If outlier channels are tied to the architecture, they should recur across different prompts. Among the top 1% of channels,
-                  <strong>53–62% of K outliers persist across all 10 prompts</strong>, compared with only <strong>7–14% for V</strong>.
-                </p>
-<p>
-                  This supports a persistent architectural component in K. V outlier identity changes much more with the input. The remaining
-                  experiments trace this architectural component through the K projection chain.
-                </p>
-</div>
-<figure class="attribution-figure persistence-figure">
-<a data-caption="Cross-prompt outlier persistence in K and V · Figure 5" data-zoom="" href="assets/attribution-persistence.webp"><img alt="At ten prompts, K versus V outlier persistence is 0.54 versus 0.14 on Self-Forcing, 0.53 versus 0.12 on LongLive, and 0.62 versus 0.07 on InfinityStar." height="532" loading="lazy" src="assets/attribution-persistence.webp" width="840"/></a>
-<figcaption>
-<strong>Cross-prompt persistence.</strong> Fraction of one prompt’s top-1% outlier channels that remain outliers under every prompt.
-                  Figure 5.
-                </figcaption>
-</figure>
-</article>
-<article class="attribution-channel">
-<div class="attribution-row channel-intro">
-<div class="attribution-copy">
-<p class="evidence-label">02 / The channel axis</p>
-<h3>Three operations compound<br/>the K outlier structure.</h3>
-</div>
-<p class="channel-intro-copy">
-                  Projection weights seed the imbalance. Normalization gains can amplify it. RoPE redistributes it between paired channels. Each stage
-                  contributes to predicting which channels become outliers.
-                </p>
-</div>
-<div aria-label="Key projection attribution chain" class="projection-chain">
-<div>
-<span class="chain-symbol">W<sub>K</sub></span>
-<h4>Seed</h4>
-<p>Heavy-tailed row norms in the key projection create an initial channel-magnitude imbalance.</p>
-</div>
-<span aria-hidden="true" class="chain-arrow">→</span>
-<div>
-<span class="chain-symbol">γ<sub>K</sub></span>
-<h4>Amplify</h4>
-<p>Where post-projection RMSNorm is present, its learned channel gains amplify this imbalance.</p>
-</div>
-<span aria-hidden="true" class="chain-arrow">→</span>
-<div>
-<span class="chain-symbol">RoPE</span>
-<h4>Redistribute</h4>
-<p>Rotation scatters magnitude between paired channels while preserving each pair’s ℓ<sub>2</sub> norm.</p>
-</div>
-</div>
-<div class="attribution-row channel-evidence">
-<div class="attribution-copy">
-<p class="evidence-label">The evidence</p>
-<p>
-                    At the top 1%, <strong>W<sub>K</sub> alone recovers 35–42% of final K outliers</strong>. Adding γ<sub>K</sub> improves recall;
-                    including RoPE scattering brings the full chain to <strong>55–63× random recall</strong>.
-                  </p>
-<p>
-                    As a control, W<sub>V</sub> predicts V outliers at only 5–6× random recall. Weight structure explains much more of K’s outlier
-                    identity than V’s.
-                  </p>
-</div>
-<figure class="attribution-figure">
-<a data-caption="Progressive attribution of K outliers: projection weights, RMSNorm gain, and RoPE scattering · Figure 6" data-zoom="" href="assets/attribution-channel.webp"><img alt="Outlier recall across Self-Forcing, LongLive, and InfinityStar increases as key projection weights, normalization gains and RoPE scattering are included. Full-chain recall at the top 1 percent is 57, 55, and 63 times random." height="656" loading="lazy" src="assets/attribution-channel.webp" width="1912"/></a>
-<figcaption>
-<strong>Progressive attribution.</strong> Recall of final outlier channels as projection-chain components are added; W<sub>V</sub>
-                    is the control. Multipliers are relative to random recall at the same selection rate. Figure 6.
-                  </figcaption>
-</figure>
-</div>
-</article>
-<article class="attribution-row rope-row">
-<div class="attribution-copy">
-<p class="evidence-label">03 / The block axis</p>
-<h3>RoPE moves magnitude<br/>between channels over time.</h3>
-<p>
-                  RoPE’s angle changes with position. For a paired set of K channels, this produces cosine and sine modulation: one channel can become
-                  large while its partner becomes small, even without a change in the underlying input amplitude.
-                </p>
-<div aria-label="Paired channel magnitudes are M times the absolute cosine and sine of theta" class="rope-equations">
-<span>|K<sub>2i</sub>| = M |cos θ|</span><span>|K<sub>2i+1</sub>| = M |sin θ|</span><small>θ = bω<sub>i</sub> + φ · b is the block index</small>
-</div>
-<p>
-                  The pair’s per-token ℓ<sub>2</sub> norm is conserved. Individual channel magnitudes are not.
-                  <strong>Fast-rotating pairs produce stronger cross-block swings</strong>; slow pairs remain comparatively stable.
-                </p>
-</div>
-<figure class="attribution-figure">
-<a data-caption="RoPE-attributable block outliers and paired-channel magnitude trajectories on Self-Forcing · Figure 7" data-zoom="" href="assets/attribution-rope.webp"><img alt="Self-Forcing: RoPE-attributable outliers concentrate in low-index fast-rotating channel pairs. The two channel magnitudes oscillate in anti-phase across frames while their pair envelope remains approximately flat." height="616" loading="lazy" src="assets/attribution-rope.webp" width="1912"/></a>
-<figcaption>
-<strong>RoPE isolates a block-axis mechanism.</strong> On Self-Forcing, attributable outliers concentrate in fast-rotating pairs
-                  (left). Paired channel maxima swap magnitude while the pair envelope stays approximately flat (right). Figure 7.
-                </figcaption>
-</figure>
-</article><details class="evidence-table"><summary>Where to quantize: after RoPE · Table 7</summary><div aria-label="Table 7 · Self-Forcing · Quantization before vs. after RoPE" class="metrics-scroll" role="region" tabindex="0"><table><caption>Table 7 · Self-Forcing · Quantization before vs. after RoPE</caption><thead><tr><th scope="col">Quantization point</th><th scope="col">Precision</th><th scope="col">Subject ↑</th><th scope="col">Background ↑</th><th scope="col">Dynamic ↑</th><th scope="col">Aesthetic ↑</th><th scope="col">Quality ↑</th><th scope="col">KV (GB) ↓</th></tr></thead><tbody><tr><th scope="row">Pre-RoPE</th><td>INT6</td><td>93.63</td><td>93.97</td><td>74.50</td><td>60.00</td><td>82.93</td><td>27.50</td></tr><tr class="highlight"><th scope="row">Post-RoPE</th><td>INT6</td><td>93.96</td><td>94.76</td><td>76.50</td><td>61.25</td><td>83.34</td><td>27.50</td></tr></tbody></table></div><p>At the same memory footprint (59.25% below BF16), post-RoPE quantization scores higher on every metric reported in this ablation. <a href="/assets/pdf/VAR-Q.pdf#page=19">Appendix F ↗</a></p></details>
-<div class="attribution-conclusion">
-<span aria-hidden="true" class="conclusion-mark">↳</span>
-<div>
-<h3>Different mechanisms. One grouping rule.</h3>
-<p>
-                  Persistent channel imbalance motivates <strong>per-channel</strong> grouping. Cross-block magnitude shifts motivate
-                  <strong>block-aligned</strong> boundaries. V has weaker architectural attribution, but shares the measured two-axis structure—so
-                  VAR-Q applies the same channel × block rule to both caches.
-                </p>
-</div>
-</div>
-</section>
-<section aria-labelledby="benchmarks-title" class="section wrap" id="benchmarks"><div class="section-heading">
-<div>
-<p class="eyebrow">04 / Quantitative evidence</p>
-<h2 id="benchmarks-title">Quality, alongside<br/>the memory it costs.</h2>
-</div>
-<p>Reported quality and cache memory,<br/>with the configuration kept in view.</p>
-</div><div class="result-highlights"><article><span>Next-scale · 720p · INT3</span><strong>79.15% <small>less KV memory</small></strong><p>InfinityStar: 80.59 VBench vs. 82.33 BF16.</p></article><article><span>Next-frame · 30 s · INT6</span><strong>59.25% <small>less KV memory</small></strong><p>LongLive: 80.94 VBench vs. 80.92 BF16.</p></article><article><span>Next-frame · 5 s · INT4</span><strong>74.88% <small>less KV memory</small></strong><p>Self-Forcing: 80.99 VBench vs. 82.94 BF16.</p></article></div><div class="results-explorer"><div class="explorer-top"><div><p class="eyebrow">Tables 2–4 · 9 configurations · 64 reported rows</p><h3>Explore the complete results.</h3></div><a class="inline-link" download="" href="results-data.json">Download data ↧</a></div><div class="results-filters"><label>Model &amp; setting<select disabled="" id="result-model"><option>Loading results…</option></select></label><label>KV precision<select disabled="" id="result-precision"><option>—</option></select></label><label>Quality metric<select disabled="" id="result-metric"><option>—</option></select></label></div><div class="results-context"><p id="result-setting"></p><a href="/assets/pdf/VAR-Q.pdf#page=8" id="result-source">Paper table ↗</a></div><div class="result-reading"><span>KV memory <small>GB · lower is better</small></span><span id="result-metric-label">Quality</span><span>Δ vs. BF16</span></div><div aria-live="polite" id="result-bars"></div><div class="results-notes"><p>Memory includes scale-factor overhead at the listed batch size. Δ is the raw metric difference from BF16; arrows indicate whether higher or lower is better. Missing configurations were not reported.</p><button class="copy-button" disabled="" id="result-csv" type="button">Export this model · CSV ↧</button></div><details class="full-metrics" open=""><summary>All reported metrics for this model</summary><p class="small-note">Use the precision filter above; scroll horizontally to inspect every metric. BF16 remains visible as the reference.</p><div aria-label="All reported metrics, horizontally scrollable" class="metrics-scroll" role="region" tabindex="0"><table id="result-table"></table></div></details><p class="small-note" id="result-status" role="status">Loading the paper’s numerical results…</p><noscript><p><a href="results-data.json">Download all 64 result rows</a> or <a href="/assets/pdf/VAR-Q.pdf#page=7">read Tables 2–4 in the paper</a>.</p></noscript></div></section>
-<section aria-labelledby="code-title" class="section code-section" id="code">
-<div class="wrap code-grid">
-<div>
-<p class="eyebrow">Implementation</p>
-<h2 id="code-title">Bring VAR-Q<br/>to your pipeline.</h2>
-<p>
+            </figure>
+          </div>
+        </details>
+      </section>
+      <section aria-labelledby="attribution-title" class="section wrap attribution-section" id="attribution">
+        <div class="attribution-heading">
+          <p class="eyebrow">03 / Mechanistic attribution · §3.3</p>
+          <h2 id="attribution-title">From observations to mechanisms.</h2>
+          <p>
+            Why does the channel × block pattern emerge? Three experiments separate prompt-dependent outliers, persistent channel imbalance, and
+            position-dependent magnitude shifts.
+          </p>
+        </div>
+        <article class="attribution-row persistence-row">
+          <div class="attribution-copy">
+            <p class="evidence-label">01 / Architecture or input?</p>
+            <h3>K and V share a structure,<br />but not the same source.</h3>
+            <p>
+              If outlier channels are tied to the architecture, they should recur across different prompts. Among the top 1% of channels,
+              <strong>53–62% of K outliers persist across all 10 prompts</strong>, compared with only <strong>7–14% for V</strong>.
+            </p>
+            <p>
+              This supports a persistent architectural component in K. V outlier identity changes much more with the input. The remaining experiments
+              trace this architectural component through the K projection chain.
+            </p>
+          </div>
+          <figure class="attribution-figure persistence-figure">
+            <a data-caption="Cross-prompt outlier persistence in K and V · Figure 5" data-zoom="" href="assets/attribution-persistence.webp"
+              ><img
+                alt="At ten prompts, K versus V outlier persistence is 0.54 versus 0.14 on Self-Forcing, 0.53 versus 0.12 on LongLive, and 0.62 versus 0.07 on InfinityStar."
+                height="532"
+                loading="lazy"
+                src="assets/attribution-persistence.webp"
+                width="840"
+            /></a>
+            <figcaption>
+              <strong>Cross-prompt persistence.</strong> Fraction of one prompt’s top-1% outlier channels that remain outliers under every prompt.
+              Figure 5.
+            </figcaption>
+          </figure>
+        </article>
+        <article class="attribution-channel">
+          <div class="attribution-row channel-intro">
+            <div class="attribution-copy">
+              <p class="evidence-label">02 / The channel axis</p>
+              <h3>Three operations compound<br />the K outlier structure.</h3>
+            </div>
+            <p class="channel-intro-copy">
+              Projection weights seed the imbalance. Normalization gains can amplify it. RoPE redistributes it between paired channels. Each stage
+              contributes to predicting which channels become outliers.
+            </p>
+          </div>
+          <div aria-label="Key projection attribution chain" class="projection-chain">
+            <div>
+              <span class="chain-symbol">W<sub>K</sub></span>
+              <h4>Seed</h4>
+              <p>Heavy-tailed row norms in the key projection create an initial channel-magnitude imbalance.</p>
+            </div>
+            <span aria-hidden="true" class="chain-arrow">→</span>
+            <div>
+              <span class="chain-symbol">γ<sub>K</sub></span>
+              <h4>Amplify</h4>
+              <p>Where post-projection RMSNorm is present, its learned channel gains amplify this imbalance.</p>
+            </div>
+            <span aria-hidden="true" class="chain-arrow">→</span>
+            <div>
+              <span class="chain-symbol">RoPE</span>
+              <h4>Redistribute</h4>
+              <p>Rotation scatters magnitude between paired channels while preserving each pair’s ℓ<sub>2</sub> norm.</p>
+            </div>
+          </div>
+          <div class="attribution-row channel-evidence">
+            <div class="attribution-copy">
+              <p class="evidence-label">The evidence</p>
+              <p>
+                At the top 1%, <strong>W<sub>K</sub> alone recovers 35–42% of final K outliers</strong>. Adding γ<sub>K</sub> improves recall;
+                including RoPE scattering brings the full chain to <strong>55–63× random recall</strong>.
+              </p>
+              <p>
+                As a control, W<sub>V</sub> predicts V outliers at only 5–6× random recall. Weight structure explains much more of K’s outlier
+                identity than V’s.
+              </p>
+            </div>
+            <figure class="attribution-figure">
+              <a
+                data-caption="Progressive attribution of K outliers: projection weights, RMSNorm gain, and RoPE scattering · Figure 6"
+                data-zoom=""
+                href="assets/attribution-channel.webp"
+                ><img
+                  alt="Outlier recall across Self-Forcing, LongLive, and InfinityStar increases as key projection weights, normalization gains and RoPE scattering are included. Full-chain recall at the top 1 percent is 57, 55, and 63 times random."
+                  height="656"
+                  loading="lazy"
+                  src="assets/attribution-channel.webp"
+                  width="1912"
+              /></a>
+              <figcaption>
+                <strong>Progressive attribution.</strong> Recall of final outlier channels as projection-chain components are added; W<sub>V</sub>
+                is the control. Multipliers are relative to random recall at the same selection rate. Figure 6.
+              </figcaption>
+            </figure>
+          </div>
+        </article>
+        <article class="attribution-row rope-row">
+          <div class="attribution-copy">
+            <p class="evidence-label">03 / The block axis</p>
+            <h3>RoPE moves magnitude<br />between channels over time.</h3>
+            <p>
+              RoPE’s angle changes with position. For a paired set of K channels, this produces cosine and sine modulation: one channel can become
+              large while its partner becomes small, even without a change in the underlying input amplitude.
+            </p>
+            <div aria-label="Paired channel magnitudes are M times the absolute cosine and sine of theta" class="rope-equations">
+              <span>|K<sub>2i</sub>| = M |cos θ|</span><span>|K<sub>2i+1</sub>| = M |sin θ|</span
+              ><small>θ = bω<sub>i</sub> + φ · b is the block index</small>
+            </div>
+            <p>
+              The pair’s per-token ℓ<sub>2</sub> norm is conserved. Individual channel magnitudes are not.
+              <strong>Fast-rotating pairs produce stronger cross-block swings</strong>; slow pairs remain comparatively stable.
+            </p>
+          </div>
+          <figure class="attribution-figure">
+            <a
+              data-caption="RoPE-attributable block outliers and paired-channel magnitude trajectories on Self-Forcing · Figure 7"
+              data-zoom=""
+              href="assets/attribution-rope.webp"
+              ><img
+                alt="Self-Forcing: RoPE-attributable outliers concentrate in low-index fast-rotating channel pairs. The two channel magnitudes oscillate in anti-phase across frames while their pair envelope remains approximately flat."
+                height="616"
+                loading="lazy"
+                src="assets/attribution-rope.webp"
+                width="1912"
+            /></a>
+            <figcaption>
+              <strong>RoPE isolates a block-axis mechanism.</strong> On Self-Forcing, attributable outliers concentrate in fast-rotating pairs (left).
+              Paired channel maxima swap magnitude while the pair envelope stays approximately flat (right). Figure 7.
+            </figcaption>
+          </figure>
+        </article>
+        <details class="evidence-table">
+          <summary>Where to quantize: after RoPE · Table 7</summary>
+          <div aria-label="Table 7 · Self-Forcing · Quantization before vs. after RoPE" class="metrics-scroll" role="region" tabindex="0">
+            <table>
+              <caption>
+                Table 7 · Self-Forcing · Quantization before vs. after RoPE
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Quantization point</th>
+                  <th scope="col">Precision</th>
+                  <th scope="col">Subject ↑</th>
+                  <th scope="col">Background ↑</th>
+                  <th scope="col">Dynamic ↑</th>
+                  <th scope="col">Aesthetic ↑</th>
+                  <th scope="col">Quality ↑</th>
+                  <th scope="col">KV (GB) ↓</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Pre-RoPE</th>
+                  <td>INT6</td>
+                  <td>93.63</td>
+                  <td>93.97</td>
+                  <td>74.50</td>
+                  <td>60.00</td>
+                  <td>82.93</td>
+                  <td>27.50</td>
+                </tr>
+                <tr class="highlight">
+                  <th scope="row">Post-RoPE</th>
+                  <td>INT6</td>
+                  <td>93.96</td>
+                  <td>94.76</td>
+                  <td>76.50</td>
+                  <td>61.25</td>
+                  <td>83.34</td>
+                  <td>27.50</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            At the same memory footprint (59.25% below BF16), post-RoPE quantization scores higher on every metric reported in this ablation.
+            <a href="/assets/pdf/VAR-Q.pdf#page=19">Appendix F ↗</a>
+          </p>
+        </details>
+        <div class="attribution-conclusion">
+          <span aria-hidden="true" class="conclusion-mark">↳</span>
+          <div>
+            <h3>Different mechanisms. One grouping rule.</h3>
+            <p>
+              Persistent channel imbalance motivates <strong>per-channel</strong> grouping. Cross-block magnitude shifts motivate
+              <strong>block-aligned</strong> boundaries. V has weaker architectural attribution, but shares the measured two-axis structure—so VAR-Q
+              applies the same channel × block rule to both caches.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section aria-labelledby="benchmarks-title" class="section wrap" id="benchmarks">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">04 / Quantitative evidence</p>
+            <h2 id="benchmarks-title">Quality, alongside<br />the memory it costs.</h2>
+          </div>
+          <p>Reported quality and cache memory,<br />with the configuration kept in view.</p>
+        </div>
+        <div class="result-highlights">
+          <article>
+            <span>Next-scale · 720p · INT3</span><strong>79.15% <small>less KV memory</small></strong>
+            <p>InfinityStar: 80.59 VBench vs. 82.33 BF16.</p>
+          </article>
+          <article>
+            <span>Next-frame · 30 s · INT6</span><strong>59.25% <small>less KV memory</small></strong>
+            <p>LongLive: 80.94 VBench vs. 80.92 BF16.</p>
+          </article>
+          <article>
+            <span>Next-frame · 5 s · INT4</span><strong>74.88% <small>less KV memory</small></strong>
+            <p>Self-Forcing: 80.99 VBench vs. 82.94 BF16.</p>
+          </article>
+        </div>
+        <div class="results-explorer">
+          <div class="explorer-top">
+            <div>
+              <p class="eyebrow">Tables 2–4 · 9 configurations · 64 reported rows</p>
+              <h3>Explore the complete results.</h3>
+            </div>
+            <a class="inline-link" download="" href="results-data.json">Download data ↧</a>
+          </div>
+          <div class="results-filters">
+            <label
+              >Model &amp; setting<select disabled="" id="result-model">
+                <option>Loading results…</option>
+              </select></label
+            ><label
+              >KV precision<select disabled="" id="result-precision">
+                <option>—</option>
+              </select></label
+            ><label
+              >Quality metric<select disabled="" id="result-metric">
+                <option>—</option>
+              </select></label
+            >
+          </div>
+          <div class="results-context">
+            <p id="result-setting"></p>
+            <a href="/assets/pdf/VAR-Q.pdf#page=8" id="result-source">Paper table ↗</a>
+          </div>
+          <div class="result-reading">
+            <span>KV memory <small>GB · lower is better</small></span
+            ><span id="result-metric-label">Quality</span><span>Δ vs. BF16</span>
+          </div>
+          <div aria-live="polite" id="result-bars"></div>
+          <div class="results-notes">
+            <p>
+              Memory includes scale-factor overhead at the listed batch size. Δ is the raw metric difference from BF16; arrows indicate whether higher
+              or lower is better. Missing configurations were not reported.
+            </p>
+            <button class="copy-button" disabled="" id="result-csv" type="button">Export this model · CSV ↧</button>
+          </div>
+          <details class="full-metrics" open="">
+            <summary>All reported metrics for this model</summary>
+            <p class="small-note">
+              Use the precision filter above; scroll horizontally to inspect every metric. BF16 remains visible as the reference.
+            </p>
+            <div aria-label="All reported metrics, horizontally scrollable" class="metrics-scroll" role="region" tabindex="0">
+              <table id="result-table"></table>
+            </div>
+          </details>
+          <p class="small-note" id="result-status" role="status">Loading the paper’s numerical results…</p>
+          <noscript
+            ><p>
+              <a href="results-data.json">Download all 64 result rows</a> or <a href="/assets/pdf/VAR-Q.pdf#page=7">read Tables 2–4 in the paper</a>.
+            </p></noscript
+          >
+        </div>
+        <details class="protocol-details">
+          <summary>Evaluation protocol and metric guide</summary>
+          <div class="protocol-grid">
+            <article>
+              <h4>Generation quality vs. sample fidelity</h4>
+              <p>
+                VAR uses FID, IS, Precision, and Recall for distribution-level quality. PSNR, SSIM, and LPIPS compare against matched-seed BF16
+                outputs. Infinity uses GenEval and DPG for compositional and prompt alignment.
+              </p>
+            </article>
+            <article>
+              <h4>Video quality</h4>
+              <p>
+                VBench reports temporal, perceptual, and consistency dimensions. Tables 3 and 4 expose the dimensions reported for each model. Table 4
+                additionally includes visual, dynamic, and text-alignment ratings from Claude Opus 4.7 as a VLM judge.
+              </p>
+            </article>
+            <article>
+              <h4>A shared memory comparison</h4>
+              <p>
+                All compared quantization methods use the same packing kernels. Reported KV memory includes scale factors. Experiments use NVIDIA A100
+                80 GB; cache savings and batch capacity are distinct from inference speed.
+              </p>
+            </article>
+            <article>
+              <h4>Prompts and reproducibility</h4>
+              <p>
+                The video evaluation uses MovieGen prompts. The paper lists all 200 evaluation prompts with their original line IDs in Appendix H,
+                Table 8. The website’s clips are selected qualitative examples.
+              </p>
+              <a href="/assets/pdf/VAR-Q.pdf#page=38">Read the complete prompt list ↗</a>
+            </article>
+          </div>
+          <p class="small-note"><a href="/assets/pdf/VAR-Q.pdf#page=6">Experimental setup · §4 ↗</a></p>
+        </details>
+      </section>
+      <section aria-labelledby="context-title" class="section wrap related-section" id="context">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Research context</p>
+            <h2 id="context-title">Where VAR-Q fits.</h2>
+          </div>
+          <p>Generation backbones define the blocks. VAR-Q studies and quantizes the KV cache they leave behind.</p>
+        </div>
+        <div class="related-list">
+          <a href="https://arxiv.org/abs/2404.02905"
+            ><span class="reference-number">01</span>
+            <div>
+              <h3>VAR</h3>
+              <p>Coarse-to-fine next-scale prediction for image generation.</p>
+            </div>
+            <span>Next-scale ↗</span></a
+          ><a href="https://arxiv.org/abs/2412.04431"
+            ><span class="reference-number">02</span>
+            <div>
+              <h3>Infinity</h3>
+              <p>Bitwise autoregressive modeling for high-resolution images.</p>
+            </div>
+            <span>Next-scale ↗</span></a
+          ><a href="https://arxiv.org/abs/2511.04675"
+            ><span class="reference-number">03</span>
+            <div>
+              <h3>InfinityStar</h3>
+              <p>Spacetime pyramids extend scale-wise prediction to video.</p>
+            </div>
+            <span>Next-scale video ↗</span></a
+          ><a href="https://self-forcing.github.io/"
+            ><span class="reference-number">04</span>
+            <div>
+              <h3>Self Forcing</h3>
+              <p>Autoregressive rollout with KV caching during training.</p>
+            </div>
+            <span>Next-frame ↗</span></a
+          ><a href="https://nvlabs.github.io/LongLive/"
+            ><span class="reference-number">05</span>
+            <div>
+              <h3>LongLive</h3>
+              <p>Causal video generation extended to long, interactive sequences.</p>
+            </div>
+            <span>Next-frame ↗</span></a
+          ><a href="https://arxiv.org/abs/2402.02750"
+            ><span class="reference-number">06</span>
+            <div>
+              <h3>KIVI</h3>
+              <p>LLM KV quantization with per-channel keys and per-token values; a comparison baseline in VAR-Q.</p>
+            </div>
+            <span>KV quantization ↗</span></a
+          >
+        </div>
+        <p class="small-note related-note">
+          Model descriptions refer to the linked original work. All VAR-Q measurements on this page come from the VAR-Q paper and its sample
+          collection.
+        </p>
+      </section>
+      <section aria-labelledby="code-title" class="section code-section" id="code">
+        <div class="wrap code-grid">
+          <div>
+            <p class="eyebrow">Implementation</p>
+            <h2 id="code-title">Bring VAR-Q<br />to your pipeline.</h2>
+            <p>
               The public repository provides the core quantization and packing utilities, plus VAR and Infinity examples. Start with the
               model-specific notebooks and follow the repository’s environment and checkpoint instructions.
             </p>
-<a class="button primary" href="https://github.com/lujiaji/VAR-Q">Explore the repository <span aria-hidden="true">↗</span></a>
-</div>
-<div class="code-card">
-<div class="code-top"><span>Get the code</span><button class="copy-button" data-copy="clone-code" type="button">Copy</button></div>
-<pre><code id="clone-code">git clone https://github.com/lujiaji/VAR-Q.git
+            <a class="button primary" href="https://github.com/lujiaji/VAR-Q">Explore the repository <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="code-card">
+            <div class="code-top"><span>Get the code</span><button class="copy-button" data-copy="clone-code" type="button">Copy</button></div>
+            <pre><code id="clone-code">git clone https://github.com/lujiaji/VAR-Q.git
 cd VAR-Q</code></pre>
-<div class="notebook-links">
-<a href="https://github.com/lujiaji/VAR-Q/blob/main/scripts/inference_single_VAR.ipynb">VAR inference notebook <span>↗</span></a><a href="https://github.com/lujiaji/VAR-Q/blob/main/scripts/inference_single_Infinity.ipynb">Infinity inference notebook <span>↗</span></a><a href="https://github.com/lujiaji/VAR-Q/tree/main/VAR_Q">Quantization &amp; packing utilities <span>↗</span></a>
-</div>
-<p class="small-note">
+            <div class="notebook-links">
+              <a href="https://github.com/lujiaji/VAR-Q/blob/main/scripts/inference_single_VAR.ipynb">VAR inference notebook <span>↗</span></a
+              ><a href="https://github.com/lujiaji/VAR-Q/blob/main/scripts/inference_single_Infinity.ipynb"
+                >Infinity inference notebook <span>↗</span></a
+              ><a href="https://github.com/lujiaji/VAR-Q/tree/main/VAR_Q">Quantization &amp; packing utilities <span>↗</span></a>
+            </div>
+            <p class="small-note">
               The paper evaluates image and video models. The linked public quick-start currently documents VAR and Infinity image generation.
             </p>
-</div>
-</div>
-</section>
-<section aria-labelledby="citation-title" class="section wrap citation-section" id="citation">
-<div>
-<p class="eyebrow">Reference</p>
-<h2 id="citation-title">Citation</h2>
-<p>If VAR-Q is useful for your research,<br/>please cite the paper.</p>
-<a class="inline-link" href="mailto:boxunxu@ucsb.edu">Contact the authors ↗</a>
-</div>
-<div class="citation-card">
-<div class="code-top">
-<span>BibTeX · NeurIPS 2026</span><button class="copy-button" data-copy="bibtex" type="button">Copy BibTeX</button>
-</div>
-<pre><code id="bibtex">@inproceedings{xu2026varq,
+          </div>
+        </div>
+      </section>
+      <section aria-labelledby="citation-title" class="section wrap citation-section" id="citation">
+        <div>
+          <p class="eyebrow">Reference</p>
+          <h2 id="citation-title">Citation</h2>
+          <p>If VAR-Q is useful for your research,<br />please cite the paper.</p>
+          <a class="inline-link" href="mailto:boxunxu@ucsb.edu">Contact the authors ↗</a>
+        </div>
+        <div class="citation-card">
+          <div class="code-top">
+            <span>BibTeX · NeurIPS 2026</span><button class="copy-button" data-copy="bibtex" type="button">Copy BibTeX</button>
+          </div>
+          <pre><code id="bibtex">@inproceedings{xu2026varq,
   title = {VAR-Q: Tuning-free KV Cache Quantization
            for Visual Autoregressive Image and Video Generation},
   author = {Boxun Xu and Jiaji Lu and Yuxuan Yin and
@@ -396,21 +1205,21 @@ cd VAR-Q</code></pre>
   booktitle = {Advances in Neural Information Processing Systems},
   url = {https://boxunxu.top/assets/pdf/VAR-Q.pdf}
 }</code></pre>
-</div>
-</section>
-</main>
-<footer class="wrap footer">
-<a class="wordmark" href="#"><img alt="" class="brand-symbol" height="28" src="assets/varq-symbol.svg" width="28"/>VAR-Q</a>
-<p>University of California, Santa Barbara · University of Minnesota</p>
-<a href="/">Back to Boxun Xu ↗</a>
-</footer>
-<dialog aria-label="Enlarged research figure" id="figure-dialog">
-<div class="dialog-bar">
-<p id="dialog-caption"></p>
-<button aria-label="Close enlarged figure" id="close-dialog" type="button">Close ×</button>
-</div>
-<img alt="" id="dialog-image"/>
-</dialog>
-<p class="sr-only" id="copy-status" role="status"></p>
-</body>
+        </div>
+      </section>
+    </main>
+    <footer class="wrap footer">
+      <a class="wordmark" href="#"><img alt="" class="brand-symbol" height="28" src="assets/varq-symbol.svg" width="28" />VAR-Q</a>
+      <p>University of California, Santa Barbara · University of Minnesota</p>
+      <a href="/">Back to Boxun Xu ↗</a>
+    </footer>
+    <dialog aria-label="Enlarged research figure" id="figure-dialog">
+      <div class="dialog-bar">
+        <p id="dialog-caption"></p>
+        <button aria-label="Close enlarged figure" id="close-dialog" type="button">Close ×</button>
+      </div>
+      <img alt="" id="dialog-image" />
+    </dialog>
+    <p class="sr-only" id="copy-status" role="status"></p>
+  </body>
 </html>

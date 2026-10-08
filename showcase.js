@@ -47,7 +47,9 @@
           load();
           const current = ++revision;
           const startAt = players[0].ended ? 0 : players[0].currentTime;
-          players.forEach((video) => { if (video.readyState >= 1) video.currentTime = startAt; });
+          players.forEach((video) => {
+            if (video.readyState >= 1) video.currentTime = startAt;
+          });
           active = true;
           play.textContent = "Pause pair";
           play.setAttribute("aria-label", `Pause ${config.model} comparison`);
@@ -80,7 +82,9 @@
           video.addEventListener("ended", () => {
             if (!active) return;
             pause();
-            players.forEach((v) => { v.currentTime = 0; });
+            players.forEach((v) => {
+              v.currentTime = 0;
+            });
             if (wanted && visible) start();
           });
         });
@@ -96,7 +100,8 @@
         play.addEventListener("click", () => {
           wanted = !active;
           revision += 1;
-          if (active) pause(); else start();
+          if (active) pause();
+          else start();
         });
         select.addEventListener("change", () => {
           revision += 1;
@@ -112,7 +117,10 @@
             video.setAttribute("aria-label", `${config.model} ${method === "VARQ" ? "VAR-Q " + config.bits : "BF16 reference"}: ${clip.prompt}`);
             video.load();
           });
-          card.querySelector(".feature-index").textContent = `${String(index + 1).padStart(2, "0")} / ${String(config.clips.length).padStart(2, "0")}`;
+          card.querySelector(".feature-index").textContent = `${String(index + 1).padStart(2, "0")} / ${String(config.clips.length).padStart(
+            2,
+            "0",
+          )}`;
           card.querySelector(".feature-prompt").textContent = clip.prompt;
           time.textContent = "0.0 s";
           seek.value = "0";
@@ -124,21 +132,38 @@
         });
         seek.addEventListener("input", () => {
           const t = Number(seek.value);
-          players.forEach((v) => { if (v.readyState >= 1) v.currentTime = t; });
+          players.forEach((v) => {
+            if (v.readyState >= 1) v.currentTime = t;
+          });
           time.textContent = `${t.toFixed(1)} s`;
         });
         const controller = {
-          pauseForPage() { revision += 1; pause(); },
-          resumeForPage() { if (wanted && visible) start(); },
-          reduceMotion() { wanted = false; revision += 1; pause(); },
+          pauseForPage() {
+            revision += 1;
+            pause();
+          },
+          resumeForPage() {
+            if (wanted && visible) start();
+          },
+          reduceMotion() {
+            wanted = false;
+            revision += 1;
+            pause();
+          },
         };
         controllers.push(controller);
-        new IntersectionObserver(([entry]) => {
-          visible = entry.isIntersecting;
-          if (visible) {
-            if (wanted) start();
-          } else { revision += 1; pause(); }
-        }, { threshold: 0.25 }).observe(card);
+        new IntersectionObserver(
+          ([entry]) => {
+            visible = entry.isIntersecting;
+            if (visible) {
+              if (wanted) start();
+            } else {
+              revision += 1;
+              pause();
+            }
+          },
+          { threshold: 0.25 },
+        ).observe(card);
       });
     })
     .catch(() => {
@@ -146,9 +171,14 @@
         const status = card.querySelector(".feature-status");
         status.textContent = "Paired controls unavailable. Use the individual video controls below.";
         status.classList.remove("sr-only");
-        card.querySelectorAll("video").forEach((video) => { video.src = video.dataset.src; video.controls = true; });
+        card.querySelectorAll("video").forEach((video) => {
+          video.src = video.dataset.src;
+          video.controls = true;
+        });
       });
     });
-  document.addEventListener("visibilitychange", () => controllers.forEach((c) => document.hidden ? c.pauseForPage() : c.resumeForPage()));
-  reducedMotion.addEventListener("change", () => { if (reducedMotion.matches) controllers.forEach((c) => c.reduceMotion()); });
+  document.addEventListener("visibilitychange", () => controllers.forEach((c) => (document.hidden ? c.pauseForPage() : c.resumeForPage())));
+  reducedMotion.addEventListener("change", () => {
+    if (reducedMotion.matches) controllers.forEach((c) => c.reduceMotion());
+  });
 })();
