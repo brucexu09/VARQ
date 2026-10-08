@@ -62,7 +62,7 @@
 </div>
 <div class="intro-copy"><p><strong>Visual autoregression advances in blocks.</strong> Next-scale models predict a resolution scale at a time; next-frame models extend a video through time. VAR-Q uses the blocks supplied by each model’s generation loop.</p><p>Across both paradigms, KV magnitudes have a shared <strong>channel × block structure</strong>: a small set of channels carries large values, and their magnitudes shift between blocks. Quantization groups should follow both axes.</p><p class="formulation-note"><strong>The next-block view.</strong> A block denotes the visual tokens emitted at one decoding step. Here, it unifies the scale and frame settings evaluated in the paper.</p></div>
 </div>
-</section>
+<figure class="shared-flow wrap"><div class="flow-caption-top"><span class="margin-label">A common representation</span><span>Next-scale / next-frame → channel × block → packed KV</span></div><img alt="Next-scale and next-frame decoding feed a common channel-by-block KV cache. One scale factor covers each channel within a block; low-bit values are packed into INT32 containers." height="330" src="assets/shared-block-structure.svg" width="1120"/><figcaption>Conceptual schematic of the grouping rule in §3.4. Block sizes and colors are illustrative; measured cache magnitudes appear below.</figcaption></figure></section>
 <section aria-labelledby="results-title" class="section wrap" id="results">
 <div class="section-heading">
 <div>
@@ -71,7 +71,6 @@
 </div>
 <p>Next-scale images and video. Next-frame video.<br/>Compare low-bit caches with BF16 across both paradigms.</p>
 </div><div class="long-showcase"><div class="long-intro"><p class="eyebrow">Long-horizon generation</p><h3>Follow the scene<br/>through time.</h3><p>LongLive extends the next-frame setting to longer sequences. Compare motion and scene consistency with both videos on the same timeline.</p><p class="small-note">These clips use 6-bit KV caches. The paper separately reports INT4 and INT6 results.</p><a class="inline-link" href="#benchmarks">See the measured tradeoff ↗</a></div><article class="feature-card" data-feature="long"><div class="feature-top"><div><span class="paradigm-tag long">Next-frame</span><h3>LongLive</h3></div><span class="feature-index">01 / 03</span></div><div class="feature-pair"><figure class="feature-video"><figcaption>BF16 reference</figcaption><video aria-label="LongLive BF16 reference: New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York." data-src="samples/longlive/Baseline/q6/group03_prompt153_s01.mp4" loop="" muted="" playsinline="" poster="assets/posters/long-0-Baseline.webp" preload="none"></video></figure><figure class="feature-video feature-ours"><figcaption>VAR-Q · 6-bit</figcaption><video aria-label="LongLive VAR-Q · 6-bit: New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York." data-src="samples/longlive/VARQ/q6/group03_prompt153_s01.mp4" loop="" muted="" playsinline="" poster="assets/posters/long-0-VARQ.webp" preload="none"></video></figure></div><div class="feature-controls"><button aria-label="Play LongLive comparison" class="feature-play" disabled="" type="button">Play pair</button><label class="feature-select"><span class="sr-only">LongLive sample</span><select disabled=""><option value="0">An underwater New York</option><option value="1">The floating library</option><option value="2">Fields of wildflowers</option></select></label><output class="feature-time">0.0 s</output></div><label class="sr-only" for="seek-long">LongLive shared timeline</label><input class="feature-seek" disabled="" id="seek-long" max="1" min="0" step=".05" type="range" value="0"/><p class="feature-prompt">New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York.</p><p class="feature-status sr-only" role="status"></p><noscript><a href="samples/longlive/VARQ/q6/group03_prompt153_s01.mp4">Watch the VAR-Q video</a></noscript></article></div>
-
 <div aria-labelledby="gallery-title" class="live-gallery" id="demo">
 <div class="subsection-heading">
 <div>
@@ -194,7 +193,28 @@
 <strong>The measured structure.</strong> Median absolute K and V values across five visual AR models. Color scales are per-panel. Figure
               4 of the paper.
             </figcaption>
-</figure>
+</figure><div class="grouping-demo">
+<div>
+<p class="eyebrow">Explore the grouping</p>
+<h3>One scale factor per<br/>channel–block group.</h3>
+<p aria-live="polite" id="group-description">
+                VAR-Q separates feature channels and generation blocks, so each group follows both axes of the cache.
+              </p>
+<div aria-label="Quantization grouping" class="group-options" role="group">
+<button aria-pressed="false" data-group="tensor" type="button">Per-tensor</button><button aria-pressed="false" data-group="channel" type="button">Per-channel</button><button aria-pressed="true" data-group="joint" type="button">Channel × block <span>VAR-Q</span></button>
+</div>
+<p class="small-note">Illustrative grouping diagram. Colors are schematic, not measured activations.</p>
+</div>
+<div class="matrix-area">
+<span class="axis-title">Feature channels →</span>
+<div class="matrix-row">
+<span class="axis-side">Generation blocks →</span>
+<div aria-label="Schematic cache with sixteen channels and three generation blocks; each channel within each block is a separate quantization group." class="cache-matrix joint" id="cache-matrix" role="img"></div>
+<div class="block-labels"><span>Block 1</span><span>Block 2</span><span>Block 3</span></div>
+</div>
+<div class="matrix-legend"><span>Low magnitude</span><span class="color-scale"></span><span>High magnitude</span></div>
+</div>
+</div><details class="algorithm-details"><summary>Algorithm details: scale factors, block boundaries, and the sub-block ratio</summary><div class="algorithm-grid"><div><h4>The quantization unit</h4><p>For block <em>b</em> and feature channel <em>c</em>, VAR-Q applies uniform symmetric quantization to the tokens in that group, with one scale factor. The same grouping rule is used for K and V.</p><p class="math-line">K = {K<sup>(b)</sup>}<sub>b=1…B</sub>,   K<sup>(b)</sup> ∈ ℝ<sup>n<sub>b</sub> × D</sup></p></div><div><h4>Optional finer groups</h4><p>The default sub-block ratio is <strong>r = 1</strong>. A block of length L is split into ⌈L / (r L<sub>max</sub>)⌉ sub-blocks. Smaller r refines grouping within existing boundaries.</p><p>In next-scale decoding, the largest scales are affected first; in next-frame decoding, equal-size blocks are partitioned uniformly. <a href="/assets/pdf/VAR-Q.pdf#page=6">§3.4 ↗</a></p></div></div></details>
 <section aria-labelledby="attribution-title" class="attribution-section" id="attribution">
 <div class="attribution-heading">
 <p class="eyebrow">Mechanistic attribution · Section 3.3</p>
@@ -312,28 +332,7 @@
 </div>
 </div>
 </section>
-<div class="grouping-demo">
-<div>
-<p class="eyebrow">Explore the grouping</p>
-<h3>One scale factor per<br/>channel–block group.</h3>
-<p aria-live="polite" id="group-description">
-                VAR-Q separates feature channels and generation blocks, so each group follows both axes of the cache.
-              </p>
-<div aria-label="Quantization grouping" class="group-options" role="group">
-<button aria-pressed="false" data-group="tensor" type="button">Per-tensor</button><button aria-pressed="false" data-group="channel" type="button">Per-channel</button><button aria-pressed="true" data-group="joint" type="button">Channel × block <span>VAR-Q</span></button>
-</div>
-<p class="small-note">Illustrative grouping diagram. Colors are schematic, not measured activations.</p>
-</div>
-<div class="matrix-area">
-<span class="axis-title">Feature channels →</span>
-<div class="matrix-row">
-<span class="axis-side">Generation blocks →</span>
-<div aria-label="Schematic cache with sixteen channels and three generation blocks; each channel within each block is a separate quantization group." class="cache-matrix joint" id="cache-matrix" role="img"></div>
-<div class="block-labels"><span>Block 1</span><span>Block 2</span><span>Block 3</span></div>
-</div>
-<div class="matrix-legend"><span>Low magnitude</span><span class="color-scale"></span><span>High magnitude</span></div>
-</div>
-</div>
+
 <div class="pipeline">
 <div>
 <p class="eyebrow">From algorithm to memory savings</p>
