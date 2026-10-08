@@ -254,11 +254,1343 @@
           </figcaption>
         </figure>
       </section>
+      <section aria-labelledby="benchmarks-title" class="section wrap" id="benchmarks">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">01 / Quantitative evidence</p>
+            <h2 id="benchmarks-title">Quality, alongside<br />the memory it costs.</h2>
+          </div>
+          <p>Reported quality and cache memory,<br />with the configuration kept in view.</p>
+        </div>
+        <nav aria-label="Paper table index" class="table-directory">
+          <span>All paper tables</span><a href="#table-1">1 · Quantization errors</a><a href="#complete-results">2–4 · Generation results</a
+          ><a href="#tables-5-6">5–6 · Grouping &amp; alignment</a><a href="#table-7">7 · RoPE placement</a
+          ><a href="/assets/pdf/VAR-Q.pdf#page=38">8 · Evaluation prompts ↗</a>
+        </nav>
+        <div class="result-highlights">
+          <article>
+            <span>Next-scale · 720p · INT3</span><strong>79.15% <small>less KV memory</small></strong>
+            <p>InfinityStar: 80.59 VBench vs. 82.33 BF16.</p>
+          </article>
+          <article>
+            <span>Next-frame · 30 s · INT6</span><strong>59.25% <small>less KV memory</small></strong>
+            <p>LongLive: 80.94 VBench vs. 80.92 BF16.</p>
+          </article>
+          <article>
+            <span>Next-frame · 5 s · INT4</span><strong>74.88% <small>less KV memory</small></strong>
+            <p>Self-Forcing: 80.99 VBench vs. 82.94 BF16.</p>
+          </article>
+        </div>
+        <div class="all-models-overview">
+          <div class="paper-table-heading">
+            <div>
+              <p class="eyebrow">One rule · all nine configurations</p>
+              <h3>At INT4, across both paradigms.</h3>
+            </div>
+            <p>Every model is shown. Compare each metric within its own row.</p>
+          </div>
+          <div aria-label="INT4 results across all nine configurations" class="metrics-scroll" role="region" tabindex="0">
+            <table>
+              <caption>
+                Tables 2–4 · VAR-Q INT4 vs. BF16 · KV memory at the batch sizes reported in the paper
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Model / setting</th>
+                  <th scope="col">Quality metric</th>
+                  <th scope="col">BF16</th>
+                  <th scope="col">VAR-Q · INT4</th>
+                  <th scope="col">KV (GB) · BF16 → VAR-Q</th>
+                  <th scope="col">KV saved</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">VAR-d20<small>Next-scale</small></th>
+                  <td>FID ↓</td>
+                  <td>4.11</td>
+                  <td class="ours-value">3.44</td>
+                  <td>16.60 → <strong>4.64</strong></td>
+                  <td>72.06%</td>
+                </tr>
+                <tr>
+                  <th scope="row">VAR-d24<small>Next-scale</small></th>
+                  <td>FID ↓</td>
+                  <td>2.97</td>
+                  <td class="ours-value">2.52</td>
+                  <td>23.91 → <strong>6.68</strong></td>
+                  <td>72.06%</td>
+                </tr>
+                <tr>
+                  <th scope="row">VAR-d30<small>Next-scale</small></th>
+                  <td>FID ↓</td>
+                  <td>2.07</td>
+                  <td class="ours-value">1.97</td>
+                  <td>37.35 → <strong>10.44</strong></td>
+                  <td>72.06%</td>
+                </tr>
+                <tr>
+                  <th scope="row">Infinity-2B<small>Next-scale</small></th>
+                  <td>GenEval Overall ↑</td>
+                  <td>69.61</td>
+                  <td class="ours-value">69.35</td>
+                  <td>41.10 → <strong>10.38</strong></td>
+                  <td>74.75%</td>
+                </tr>
+                <tr>
+                  <th scope="row">Infinity-8B<small>Next-scale</small></th>
+                  <td>GenEval Overall ↑</td>
+                  <td>83.54</td>
+                  <td class="ours-value">83.67</td>
+                  <td>67.43 → <strong>17.03</strong></td>
+                  <td>74.75%</td>
+                </tr>
+                <tr>
+                  <th scope="row">InfinityStar · 720p<small>Next-scale</small></th>
+                  <td>Total Quality ↑</td>
+                  <td>82.33</td>
+                  <td class="ours-value">81.66</td>
+                  <td>62.72 → <strong>16.00</strong></td>
+                  <td>74.49%</td>
+                </tr>
+                <tr>
+                  <th scope="row">InfinityStar · 480p<small>Next-scale</small></th>
+                  <td>Total Quality ↑</td>
+                  <td>81.30</td>
+                  <td class="ours-value">81.32</td>
+                  <td>55.87 → <strong>14.60</strong></td>
+                  <td>73.86%</td>
+                </tr>
+                <tr>
+                  <th scope="row">Self-Forcing<small>Next-frame</small></th>
+                  <td>Total Quality ↑</td>
+                  <td>82.94</td>
+                  <td class="ours-value">80.99</td>
+                  <td>67.49 → <strong>16.95</strong></td>
+                  <td>74.88%</td>
+                </tr>
+                <tr>
+                  <th scope="row">LongLive<small>Next-frame</small></th>
+                  <td>Total Quality ↑</td>
+                  <td>80.92</td>
+                  <td class="ours-value">79.60</td>
+                  <td>64.28 → <strong>16.15</strong></td>
+                  <td>74.88%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="small-note">
+            FID ↓ for VAR; GenEval Overall ↑ for Infinity; VBench Total Quality ↑ for video models. Full metrics, precisions, and baselines are
+            reproduced below.
+          </p>
+        </div>
+        <div class="full-paper-results" id="complete-results">
+          <div class="full-results-intro">
+            <h3>The paper tables, in full.</h3>
+            <p>64 rows. Every reported metric. No model selection required.</p>
+          </div>
+          <nav aria-label="Complete result tables" class="paper-table-tabs">
+            <a href="#full-table-3">Table 3 · Next-scale video</a><a href="#full-table-4">Table 4 · Next-frame video</a
+            ><a href="#full-table-2a">Table 2a · VAR images</a><a href="#full-table-2b">Table 2b · Infinity images</a>
+          </nav>
+          <article class="paper-result-block" id="full-table-3">
+            <div class="paper-table-heading">
+              <div>
+                <p class="eyebrow">Table 3 · complete results</p>
+                <h3>Next-scale video: the low-bit gap widens at 720p.</h3>
+              </div>
+              <a href="/assets/pdf/VAR-Q.pdf#page=8">Source table ↗</a>
+            </div>
+            <p class="table-takeaway">
+              At INT3 on InfinityStar-720p, VAR-Q reaches 80.59 VBench Total versus 75.46 for KIVI and 79.95 for FlexGen. Compare all eight reported
+              quality dimensions below.
+            </p>
+            <div aria-label="Complete paper Table 3" class="metrics-scroll" role="region" tabindex="0">
+              <table data-paper-table="3">
+                <caption>
+                  Table 3 · all reported configurations and metrics · horizontal scroll reveals additional columns
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Method</th>
+                    <th scope="col">KV precision</th>
+                    <th scope="col">Subject Consistency ↑</th>
+                    <th scope="col">Background Consistency ↑</th>
+                    <th scope="col">Temporal Flickering ↑</th>
+                    <th scope="col">Motion Smoothness ↑</th>
+                    <th scope="col">Dynamic Degree ↑</th>
+                    <th scope="col">Aesthetic Quality ↑</th>
+                    <th scope="col">Imaging Quality ↑</th>
+                    <th scope="col">Total Quality ↑</th>
+                    <th scope="col">KV (GB) ↓</th>
+                    <th scope="col">KV saved</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="model-divider">
+                    <th colspan="12" scope="rowgroup">InfinityStar · Next-scale video · 720p / 8B · 720p · batch 3</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">BF16</th>
+                    <td>BF16</td>
+                    <td>93.69</td>
+                    <td>94.62</td>
+                    <td>97.71</td>
+                    <td>98.86</td>
+                    <td>67.50</td>
+                    <td>58.49</td>
+                    <td>66.79</td>
+                    <td>82.33</td>
+                    <td>62.72</td>
+                    <td>—</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">FlexGen</th>
+                    <td>INT4</td>
+                    <td>93.83</td>
+                    <td>94.76</td>
+                    <td>97.83</td>
+                    <td>98.91</td>
+                    <td>63.00</td>
+                    <td>55.50</td>
+                    <td>64.80</td>
+                    <td>80.11</td>
+                    <td>16.48</td>
+                    <td>73.72%</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">KIVI</th>
+                    <td>INT4</td>
+                    <td>92.01</td>
+                    <td>94.61</td>
+                    <td>97.27</td>
+                    <td>98.70</td>
+                    <td>68.00</td>
+                    <td>56.12</td>
+                    <td>63.60</td>
+                    <td>81.24</td>
+                    <td>16.73</td>
+                    <td>73.33%</td>
+                  </tr>
+                  <tr class="highlight">
+                    <th scope="row">VAR-Q</th>
+                    <td>INT4</td>
+                    <td>92.65</td>
+                    <td>94.09</td>
+                    <td>97.37</td>
+                    <td>98.59</td>
+                    <td>74.50</td>
+                    <td>56.87</td>
+                    <td>64.35</td>
+                    <td>81.66</td>
+                    <td>16.00</td>
+                    <td>74.49%</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">FlexGen</th>
+                    <td>INT3</td>
+                    <td>90.12</td>
+                    <td>92.68</td>
+                    <td>97.84</td>
+                    <td>96.91</td>
+                    <td>62.00</td>
+                    <td>56.01</td>
+                    <td>60.48</td>
+                    <td>79.95</td>
+                    <td>13.56</td>
+                    <td>78.37%</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">KIVI</th>
+                    <td>INT3</td>
+                    <td>90.45</td>
+                    <td>90.42</td>
+                    <td>97.65</td>
+                    <td>96.79</td>
+                    <td>74.00</td>
+                    <td>50.97</td>
+                    <td>61.92</td>
+                    <td>75.46</td>
+                    <td>13.81</td>
+                    <td>77.99%</td>
+                  </tr>
+                  <tr class="highlight">
+                    <th scope="row">VAR-Q</th>
+                    <td>INT3</td>
+                    <td>91.41</td>
+                    <td>93.56</td>
+                    <td>97.25</td>
+                    <td>98.37</td>
+                    <td>75.00</td>
+                    <td>55.55</td>
+                    <td>61.75</td>
+                    <td>80.59</td>
+                    <td>13.08</td>
+                    <td>79.15%</td>
+                  </tr>
+                  <tr class="model-divider">
+                    <th colspan="12" scope="rowgroup">InfinityStar · Next-scale video · 480p / 8B · 480p · batch 6</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">BF16</th>
+                    <td>BF16</td>
+                    <td>93.01</td>
+                    <td>94.53</td>
+                    <td>97.25</td>
+                    <td>98.68</td>
+                    <td>66.00</td>
+                    <td>58.13</td>
+                    <td>64.01</td>
+                    <td>81.30</td>
+                    <td>55.87</td>
+                    <td>—</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">FlexGen</th>
+                    <td>INT4</td>
+                    <td>90.59</td>
+                    <td>94.39</td>
+                    <td>95.16</td>
+                    <td>98.64</td>
+                    <td>66.50</td>
+                    <td>56.48</td>
+                    <td>62.14</td>
+                    <td>78.94</td>
+                    <td>15.03</td>
+                    <td>73.10%</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">KIVI</th>
+                    <td>INT4</td>
+                    <td>92.44</td>
+                    <td>94.42</td>
+                    <td>96.65</td>
+                    <td>97.79</td>
+                    <td>64.00</td>
+                    <td>56.97</td>
+                    <td>62.92</td>
+                    <td>80.46</td>
+                    <td>15.25</td>
+                    <td>72.71%</td>
+                  </tr>
+                  <tr class="highlight">
+                    <th scope="row">VAR-Q</th>
+                    <td>INT4</td>
+                    <td>92.75</td>
+                    <td>94.51</td>
+                    <td>97.21</td>
+                    <td>98.67</td>
+                    <td>68.50</td>
+                    <td>57.84</td>
+                    <td>63.62</td>
+                    <td>81.32</td>
+                    <td>14.60</td>
+                    <td>73.86%</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">FlexGen</th>
+                    <td>INT3</td>
+                    <td>91.89</td>
+                    <td>93.91</td>
+                    <td>97.24</td>
+                    <td>98.62</td>
+                    <td>64.00</td>
+                    <td>57.54</td>
+                    <td>63.69</td>
+                    <td>80.64</td>
+                    <td>12.45</td>
+                    <td>77.71%</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">KIVI</th>
+                    <td>INT3</td>
+                    <td>93.01</td>
+                    <td>94.46</td>
+                    <td>97.33</td>
+                    <td>98.71</td>
+                    <td>64.00</td>
+                    <td>57.79</td>
+                    <td>63.56</td>
+                    <td>78.05</td>
+                    <td>12.67</td>
+                    <td>77.33%</td>
+                  </tr>
+                  <tr class="highlight">
+                    <th scope="row">VAR-Q</th>
+                    <td>INT3</td>
+                    <td>92.86</td>
+                    <td>94.30</td>
+                    <td>97.26</td>
+                    <td>98.64</td>
+                    <td>65.50</td>
+                    <td>57.52</td>
+                    <td>63.37</td>
+                    <td>80.98</td>
+                    <td>12.03</td>
+                    <td>78.47%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+          <article class="paper-result-block" id="full-table-4">
+            <div class="paper-table-heading">
+              <div>
+                <p class="eyebrow">Table 4 · complete results</p>
+                <h3>Next-frame video: quality and memory at INT6 and INT4.</h3>
+              </div>
+              <a href="/assets/pdf/VAR-Q.pdf#page=8">Source table ↗</a>
+            </div>
+            <p class="table-takeaway">
+              INT6 closely tracks BF16 Total Quality on both durations. INT4 saves more memory, with an explicit quality tradeoff. The VLM-judge
+              columns provide a complementary view.
+            </p>
+            <div aria-label="Complete paper Table 4" class="metrics-scroll" role="region" tabindex="0">
+              <table data-paper-table="4">
+                <caption>
+                  Table 4 · all reported configurations and metrics · horizontal scroll reveals additional columns
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Method</th>
+                    <th scope="col">KV precision</th>
+                    <th scope="col">Subject Consistency ↑</th>
+                    <th scope="col">Background Consistency ↑</th>
+                    <th scope="col">Motion Smoothness ↑</th>
+                    <th scope="col">Dynamic Degree ↑</th>
+                    <th scope="col">Aesthetic Quality ↑</th>
+                    <th scope="col">Total Quality ↑</th>
+                    <th scope="col">Opus Visual ↑</th>
+                    <th scope="col">Opus Dynamic ↑</th>
+                    <th scope="col">Opus Text ↑</th>
+                    <th scope="col">KV (GB) ↓</th>
+                    <th scope="col">KV saved</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="model-divider">
+                    <th colspan="13" scope="rowgroup">Self-Forcing · Next-frame video / 1.3B · 5-second clips · batch 12</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">BF16</th>
+                    <td>BF16</td>
+                    <td>93.57</td>
+                    <td>94.07</td>
+                    <td>98.43</td>
+                    <td>75.00</td>
+                    <td>60.07</td>
+                    <td>82.94</td>
+                    <td>3.81</td>
+                    <td>3.10</td>
+                    <td>3.62</td>
+                    <td>67.49</td>
+                    <td>—</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">FlexGen</th>
+                    <td>INT6</td>
+                    <td>93.52</td>
+                    <td>94.11</td>
+                    <td>98.44</td>
+                    <td>76.00</td>
+                    <td>60.02</td>
+                    <td>82.98</td>
+                    <td>3.79</td>
+                    <td>3.15</td>
+                    <td>3.73</td>
+                    <td>27.95</td>
+                    <td>58.59%</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">KIVI</th>
+                    <td>INT6</td>
+                    <td>93.58</td>
+                    <td>94.12</td>
+                    <td>98.49</td>
+                    <td>73.00</td>
+                    <td>60.07</td>
+                    <td>82.85</td>
+                    <td>3.82</td>
+                    <td>3.14</td>
+                    <td>3.63</td>
+                    <td>28.22</td>
+                    <td>58.18%</td>
+                  </tr>
+                  <tr class="highlight">
+                    <th scope="row">VAR-Q</th>
+                    <td>INT6</td>
+                    <td>93.96</td>
+                    <td>94.76</td>
+                    <td>98.49</td>
+                    <td>76.50</td>
+                    <td>61.25</td>
+                    <td>83.34</td>
+                    <td>3.89</td>
+                    <td>3.17</td>
+                    <td>3.62</td>
+                    <td>27.50</td>
+                    <td>59.25%</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">FlexGen</th>
+                    <td>INT4</td>
+                    <td>86.39</td>
+                    <td>85.84</td>
+                    <td>95.40</td>
+                    <td>73.00</td>
+                    <td>57.39</td>
+                    <td>75.91</td>
+                    <td>3.60</td>
+                    <td>3.40</td>
+                    <td>3.75</td>
+                    <td>17.40</td>
+                    <td>74.22%</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">KIVI</th>
+                    <td>INT4</td>
+                    <td>90.53</td>
+                    <td>91.86</td>
+                    <td>98.29</td>
+                    <td>74.50</td>
+                    <td>57.64</td>
+                    <td>80.33</td>
+                    <td>3.54</td>
+                    <td>3.44</td>
+                    <td>3.76</td>
+                    <td>17.68</td>
+                    <td>73.81%</td>
+                  </tr>
+                  <tr class="highlight">
+                    <th scope="row">VAR-Q</th>
+                    <td>INT4</td>
+                    <td>91.28</td>
+                    <td>92.55</td>
+                    <td>98.35</td>
+                    <td>75.50</td>
+                    <td>57.40</td>
+                    <td>80.99</td>
+                    <td>3.55</td>
+                    <td>3.50</td>
+                    <td>3.73</td>
+                    <td>16.95</td>
+                    <td>74.88%</td>
+                  </tr>
+                  <tr class="model-divider">
+                    <th colspan="13" scope="rowgroup">LongLive · Next-frame video / 1.3B · 30-second clips · batch 20</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">BF16</th>
+                    <td>BF16</td>
+                    <td>91.44</td>
+                    <td>93.83</td>
+                    <td>98.94</td>
+                    <td>44.50</td>
+                    <td>60.74</td>
+                    <td>80.92</td>
+                    <td>3.75</td>
+                    <td>3.25</td>
+                    <td>3.69</td>
+                    <td>64.28</td>
+                    <td>—</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">FlexGen</th>
+                    <td>INT6</td>
+                    <td>91.33</td>
+                    <td>93.49</td>
+                    <td>98.95</td>
+                    <td>46.50</td>
+                    <td>60.29</td>
+                    <td>80.60</td>
+                    <td>3.78</td>
+                    <td>3.33</td>
+                    <td>3.78</td>
+                    <td>26.62</td>
+                    <td>58.59%</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">KIVI</th>
+                    <td>INT6</td>
+                    <td>91.14</td>
+                    <td>93.45</td>
+                    <td>98.94</td>
+                    <td>43.50</td>
+                    <td>60.36</td>
+                    <td>80.65</td>
+                    <td>3.73</td>
+                    <td>3.27</td>
+                    <td>3.70</td>
+                    <td>26.88</td>
+                    <td>58.18%</td>
+                  </tr>
+                  <tr class="highlight">
+                    <th scope="row">VAR-Q</th>
+                    <td>INT6</td>
+                    <td>91.26</td>
+                    <td>93.57</td>
+                    <td>98.93</td>
+                    <td>47.50</td>
+                    <td>60.17</td>
+                    <td>80.94</td>
+                    <td>3.84</td>
+                    <td>3.31</td>
+                    <td>3.71</td>
+                    <td>26.19</td>
+                    <td>59.25%</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">FlexGen</th>
+                    <td>INT4</td>
+                    <td>86.72</td>
+                    <td>90.19</td>
+                    <td>95.83</td>
+                    <td>45.00</td>
+                    <td>55.16</td>
+                    <td>76.59</td>
+                    <td>3.48</td>
+                    <td>3.48</td>
+                    <td>3.77</td>
+                    <td>16.57</td>
+                    <td>74.22%</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">KIVI</th>
+                    <td>INT4</td>
+                    <td>85.83</td>
+                    <td>92.09</td>
+                    <td>97.80</td>
+                    <td>49.50</td>
+                    <td>56.59</td>
+                    <td>78.95</td>
+                    <td>3.48</td>
+                    <td>3.55</td>
+                    <td>3.79</td>
+                    <td>16.84</td>
+                    <td>73.81%</td>
+                  </tr>
+                  <tr class="highlight">
+                    <th scope="row">VAR-Q</th>
+                    <td>INT4</td>
+                    <td>88.39</td>
+                    <td>91.97</td>
+                    <td>98.80</td>
+                    <td>47.50</td>
+                    <td>57.11</td>
+                    <td>79.60</td>
+                    <td>3.54</td>
+                    <td>3.57</td>
+                    <td>3.80</td>
+                    <td>16.15</td>
+                    <td>74.88%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+          <article class="paper-result-block" id="full-table-2a">
+            <div class="paper-table-heading">
+              <div>
+                <p class="eyebrow">Table 2a · complete results</p>
+                <h3>Next-scale images: distribution quality and fidelity.</h3>
+              </div>
+              <a href="/assets/pdf/VAR-Q.pdf#page=7">Source table ↗</a>
+            </div>
+            <p class="table-takeaway">
+              FID measures the output distribution; PSNR, SSIM, and LPIPS measure fidelity to matched-seed BF16 outputs. Both are needed to judge
+              quantization.
+            </p>
+            <div aria-label="Complete paper Table 2a" class="metrics-scroll" role="region" tabindex="0">
+              <table data-paper-table="2a">
+                <caption>
+                  Table 2a · all reported configurations and metrics · horizontal scroll reveals additional columns
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Method</th>
+                    <th scope="col">KV precision</th>
+                    <th scope="col">FID ↓</th>
+                    <th scope="col">IS ↑</th>
+                    <th scope="col">Precision ↑</th>
+                    <th scope="col">Recall ↑</th>
+                    <th scope="col">PSNR ↑</th>
+                    <th scope="col">SSIM ↑</th>
+                    <th scope="col">LPIPS ↓</th>
+                    <th scope="col">KV (GB) ↓</th>
+                    <th scope="col">KV saved</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="model-divider">
+                    <th colspan="11" scope="rowgroup">VAR-d20 · Next-scale image / 600M · ImageNet 256×256 · batch 128</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">BF16</th>
+                    <td>BF16</td>
+                    <td>4.11</td>
+                    <td>357.32</td>
+                    <td>0.8650</td>
+                    <td>0.5160</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>16.60</td>
+                    <td>—</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">FlexGen</th>
+                    <td>INT4</td>
+                    <td>4.03</td>
+                    <td>325.39</td>
+                    <td>0.8326</td>
+                    <td>0.5230</td>
+                    <td>11.84</td>
+                    <td>0.264</td>
+                    <td>0.553</td>
+                    <td>4.29</td>
+                    <td>74.14%</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">KIVI</th>
+                    <td>INT4</td>
+                    <td>3.55</td>
+                    <td>341.52</td>
+                    <td>0.8458</td>
+                    <td>0.5363</td>
+                    <td>11.81</td>
+                    <td>0.256</td>
+                    <td>0.552</td>
+                    <td>4.65</td>
+                    <td>71.97%</td>
+                  </tr>
+                  <tr class="highlight">
+                    <th scope="row">VAR-Q</th>
+                    <td>INT4</td>
+                    <td>3.44</td>
+                    <td>342.77</td>
+                    <td>0.8502</td>
+                    <td>0.5281</td>
+                    <td>13.22</td>
+                    <td>0.308</td>
+                    <td>0.462</td>
+                    <td>4.64</td>
+                    <td>72.06%</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">FlexGen</th>
+                    <td>INT3</td>
+                    <td>15.33</td>
+                    <td>139.59</td>
+                    <td>0.5944</td>
+                    <td>0.6308</td>
+                    <td>10.35</td>
+                    <td>0.212</td>
+                    <td>0.650</td>
+                    <td>3.46</td>
+                    <td>79.14%</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">KIVI</th>
+                    <td>INT3</td>
+                    <td>6.36</td>
+                    <td>233.84</td>
+                    <td>0.7260</td>
+                    <td>0.5748</td>
+                    <td>9.88</td>
+                    <td>0.187</td>
+                    <td>0.662</td>
+                    <td>3.82</td>
+                    <td>76.97%</td>
+                  </tr>
+                  <tr class="highlight">
+                    <th scope="row">VAR-Q</th>
+                    <td>INT3</td>
+                    <td>3.77</td>
+                    <td>262.24</td>
+                    <td>0.7706</td>
+                    <td>0.5767</td>
+                    <td>12.24</td>
+                    <td>0.266</td>
+                    <td>0.538</td>
+                    <td>3.81</td>
+                    <td>77.06%</td>
+                  </tr>
+                  <tr class="model-divider">
+                    <th colspan="11" scope="rowgroup">VAR-d24 · Next-scale image / 1.0B · ImageNet 256×256 · batch 128</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">BF16</th>
+                    <td>BF16</td>
+                    <td>2.97</td>
+                    <td>357.24</td>
+                    <td>0.8444</td>
+                    <td>0.5605</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>23.91</td>
+                    <td>—</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">FlexGen</th>
+                    <td>INT4</td>
+                    <td>2.74</td>
+                    <td>325.69</td>
+                    <td>0.8175</td>
+                    <td>0.5816</td>
+                    <td>11.78</td>
+                    <td>0.256</td>
+                    <td>0.560</td>
+                    <td>6.18</td>
+                    <td>74.14%</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">KIVI</th>
+                    <td>INT4</td>
+                    <td>2.56</td>
+                    <td>340.55</td>
+                    <td>0.8295</td>
+                    <td>0.5786</td>
+                    <td>11.92</td>
+                    <td>0.268</td>
+                    <td>0.545</td>
+                    <td>6.70</td>
+                    <td>71.97%</td>
+                  </tr>
+                  <tr class="highlight">
+                    <th scope="row">VAR-Q</th>
+                    <td>INT4</td>
+                    <td>2.52</td>
+                    <td>341.60</td>
+                    <td>0.8321</td>
+                    <td>0.5718</td>
+                    <td>13.03</td>
+                    <td>0.296</td>
+                    <td>0.479</td>
+                    <td>6.68</td>
+                    <td>72.06%</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">FlexGen</th>
+                    <td>INT3</td>
+                    <td>14.91</td>
+                    <td>144.09</td>
+                    <td>0.6066</td>
+                    <td>0.6424</td>
+                    <td>10.63</td>
+                    <td>0.201</td>
+                    <td>0.643</td>
+                    <td>4.99</td>
+                    <td>79.14%</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">KIVI</th>
+                    <td>INT3</td>
+                    <td>4.29</td>
+                    <td>239.40</td>
+                    <td>0.7271</td>
+                    <td>0.6340</td>
+                    <td>10.88</td>
+                    <td>0.226</td>
+                    <td>0.631</td>
+                    <td>5.51</td>
+                    <td>76.97%</td>
+                  </tr>
+                  <tr class="highlight">
+                    <th scope="row">VAR-Q</th>
+                    <td>INT3</td>
+                    <td>3.60</td>
+                    <td>258.33</td>
+                    <td>0.7477</td>
+                    <td>0.6130</td>
+                    <td>11.90</td>
+                    <td>0.252</td>
+                    <td>0.558</td>
+                    <td>5.48</td>
+                    <td>77.06%</td>
+                  </tr>
+                  <tr class="model-divider">
+                    <th colspan="11" scope="rowgroup">VAR-d30 · Next-scale image / 2.0B · ImageNet 256×256 · batch 128</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">BF16</th>
+                    <td>BF16</td>
+                    <td>2.07</td>
+                    <td>335.10</td>
+                    <td>0.8260</td>
+                    <td>0.5812</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>37.35</td>
+                    <td>—</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">FlexGen</th>
+                    <td>INT4</td>
+                    <td>2.00</td>
+                    <td>307.92</td>
+                    <td>0.8061</td>
+                    <td>0.6006</td>
+                    <td>12.47</td>
+                    <td>0.277</td>
+                    <td>0.510</td>
+                    <td>9.66</td>
+                    <td>74.14%</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">KIVI</th>
+                    <td>INT4</td>
+                    <td>1.99</td>
+                    <td>321.46</td>
+                    <td>0.8162</td>
+                    <td>0.5974</td>
+                    <td>12.86</td>
+                    <td>0.290</td>
+                    <td>0.484</td>
+                    <td>10.47</td>
+                    <td>71.97%</td>
+                  </tr>
+                  <tr class="highlight">
+                    <th scope="row">VAR-Q</th>
+                    <td>INT4</td>
+                    <td>1.97</td>
+                    <td>323.67</td>
+                    <td>0.8156</td>
+                    <td>0.5961</td>
+                    <td>13.54</td>
+                    <td>0.312</td>
+                    <td>0.437</td>
+                    <td>10.44</td>
+                    <td>72.06%</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">FlexGen</th>
+                    <td>INT3</td>
+                    <td>9.52</td>
+                    <td>180.57</td>
+                    <td>0.6738</td>
+                    <td>0.6417</td>
+                    <td>11.33</td>
+                    <td>0.232</td>
+                    <td>0.597</td>
+                    <td>7.79</td>
+                    <td>79.14%</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">KIVI</th>
+                    <td>INT3</td>
+                    <td>3.26</td>
+                    <td>264.93</td>
+                    <td>0.7536</td>
+                    <td>0.6189</td>
+                    <td>11.69</td>
+                    <td>0.249</td>
+                    <td>0.573</td>
+                    <td>8.60</td>
+                    <td>76.97%</td>
+                  </tr>
+                  <tr class="highlight">
+                    <th scope="row">VAR-Q</th>
+                    <td>INT3</td>
+                    <td>3.05</td>
+                    <td>268.16</td>
+                    <td>0.7612</td>
+                    <td>0.6307</td>
+                    <td>12.41</td>
+                    <td>0.270</td>
+                    <td>0.517</td>
+                    <td>8.57</td>
+                    <td>77.06%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+          <article class="paper-result-block" id="full-table-2b">
+            <div class="paper-table-heading">
+              <div>
+                <p class="eyebrow">Table 2b · complete results</p>
+                <h3>Text-to-image: inspect compositional alignment.</h3>
+              </div>
+              <a href="/assets/pdf/VAR-Q.pdf#page=7">Source table ↗</a>
+            </div>
+            <p class="table-takeaway">
+              GenEval and DPG expose different aspects of prompt following. All reported INT8, INT4, INT3, and INT2 configurations are included, where
+              available.
+            </p>
+            <div aria-label="Complete paper Table 2b" class="metrics-scroll" role="region" tabindex="0">
+              <table data-paper-table="2b">
+                <caption>
+                  Table 2b · all reported configurations and metrics · horizontal scroll reveals additional columns
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Method</th>
+                    <th scope="col">KV precision</th>
+                    <th scope="col">GenEval Two-Object ↑</th>
+                    <th scope="col">GenEval Position ↑</th>
+                    <th scope="col">GenEval Color ↑</th>
+                    <th scope="col">GenEval Overall ↑</th>
+                    <th scope="col">DPG Entity ↑</th>
+                    <th scope="col">DPG Relation ↑</th>
+                    <th scope="col">DPG Attribute ↑</th>
+                    <th scope="col">DPG Global ↑</th>
+                    <th scope="col">DPG Other ↑</th>
+                    <th scope="col">DPG Overall ↑</th>
+                    <th scope="col">KV (GB) ↓</th>
+                    <th scope="col">KV saved</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="model-divider">
+                    <th colspan="14" scope="rowgroup">Infinity-2B · Next-scale image / Text-to-image · batch 8</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">BF16</th>
+                    <td>BF16</td>
+                    <td>80.61</td>
+                    <td>25.51</td>
+                    <td>88.03</td>
+                    <td>69.61</td>
+                    <td>86.55</td>
+                    <td>89.51</td>
+                    <td>86.62</td>
+                    <td>83.24</td>
+                    <td>90.14</td>
+                    <td>81.97</td>
+                    <td>41.10</td>
+                    <td>—</td>
+                  </tr>
+                  <tr class="highlight">
+                    <th scope="row">VAR-Q</th>
+                    <td>INT8</td>
+                    <td>79.34</td>
+                    <td>26.26</td>
+                    <td>87.23</td>
+                    <td>69.06</td>
+                    <td>87.69</td>
+                    <td>89.39</td>
+                    <td>88.70</td>
+                    <td>86.40</td>
+                    <td>85.85</td>
+                    <td>82.21</td>
+                    <td>20.65</td>
+                    <td>49.75%</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">FlexGen</th>
+                    <td>INT4</td>
+                    <td>78.57</td>
+                    <td>24.75</td>
+                    <td>54.50</td>
+                    <td>67.75</td>
+                    <td>87.39</td>
+                    <td>91.56</td>
+                    <td>85.38</td>
+                    <td>82.24</td>
+                    <td>82.04</td>
+                    <td>81.01</td>
+                    <td>10.60</td>
+                    <td>74.22%</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">KIVI</th>
+                    <td>INT4</td>
+                    <td>80.61</td>
+                    <td>24.49</td>
+                    <td>87.23</td>
+                    <td>67.48</td>
+                    <td>88.18</td>
+                    <td>91.13</td>
+                    <td>86.51</td>
+                    <td>83.18</td>
+                    <td>80.81</td>
+                    <td>80.04</td>
+                    <td>10.78</td>
+                    <td>73.76%</td>
+                  </tr>
+                  <tr class="highlight">
+                    <th scope="row">VAR-Q</th>
+                    <td>INT4</td>
+                    <td>79.34</td>
+                    <td>26.01</td>
+                    <td>86.97</td>
+                    <td>69.35</td>
+                    <td>87.24</td>
+                    <td>89.60</td>
+                    <td>87.43</td>
+                    <td>86.75</td>
+                    <td>90.13</td>
+                    <td>82.02</td>
+                    <td>10.38</td>
+                    <td>74.75%</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">KIVI</th>
+                    <td>INT3</td>
+                    <td>77.30</td>
+                    <td>26.26</td>
+                    <td>86.70</td>
+                    <td>67.56</td>
+                    <td>87.12</td>
+                    <td>92.39</td>
+                    <td>85.66</td>
+                    <td>82.94</td>
+                    <td>79.31</td>
+                    <td>80.76</td>
+                    <td>8.73</td>
+                    <td>78.76%</td>
+                  </tr>
+                  <tr class="highlight">
+                    <th scope="row">VAR-Q</th>
+                    <td>INT3</td>
+                    <td>78.32</td>
+                    <td>24.24</td>
+                    <td>88.03</td>
+                    <td>68.04</td>
+                    <td>87.74</td>
+                    <td>89.92</td>
+                    <td>87.01</td>
+                    <td>85.13</td>
+                    <td>87.01</td>
+                    <td>81.18</td>
+                    <td>8.32</td>
+                    <td>79.75%</td>
+                  </tr>
+                  <tr class="model-divider">
+                    <th colspan="14" scope="rowgroup">Infinity-8B · Next-scale image / Text-to-image · batch 6</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">BF16</th>
+                    <td>BF16</td>
+                    <td>95.41</td>
+                    <td>62.12</td>
+                    <td>90.43</td>
+                    <td>83.54</td>
+                    <td>88.27</td>
+                    <td>89.30</td>
+                    <td>91.57</td>
+                    <td>92.83</td>
+                    <td>88.61</td>
+                    <td>85.72</td>
+                    <td>67.43</td>
+                    <td>—</td>
+                  </tr>
+                  <tr class="highlight">
+                    <th scope="row">VAR-Q</th>
+                    <td>INT8</td>
+                    <td>96.43</td>
+                    <td>62.88</td>
+                    <td>89.89</td>
+                    <td>84.00</td>
+                    <td>90.57</td>
+                    <td>92.57</td>
+                    <td>89.23</td>
+                    <td>87.12</td>
+                    <td>92.68</td>
+                    <td>85.97</td>
+                    <td>33.88</td>
+                    <td>49.75%</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">FlexGen</th>
+                    <td>INT4</td>
+                    <td>95.41</td>
+                    <td>60.89</td>
+                    <td>89.02</td>
+                    <td>82.45</td>
+                    <td>90.75</td>
+                    <td>92.33</td>
+                    <td>89.15</td>
+                    <td>85.04</td>
+                    <td>84.49</td>
+                    <td>84.58</td>
+                    <td>17.38</td>
+                    <td>74.22%</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">KIVI</th>
+                    <td>INT4</td>
+                    <td>95.66</td>
+                    <td>65.40</td>
+                    <td>91.22</td>
+                    <td>83.26</td>
+                    <td>91.13</td>
+                    <td>94.10</td>
+                    <td>88.93</td>
+                    <td>85.67</td>
+                    <td>82.04</td>
+                    <td>85.74</td>
+                    <td>17.69</td>
+                    <td>73.76%</td>
+                  </tr>
+                  <tr class="highlight">
+                    <th scope="row">VAR-Q</th>
+                    <td>INT4</td>
+                    <td>95.92</td>
+                    <td>63.64</td>
+                    <td>91.49</td>
+                    <td>83.67</td>
+                    <td>90.70</td>
+                    <td>91.99</td>
+                    <td>91.07</td>
+                    <td>87.47</td>
+                    <td>89.23</td>
+                    <td>85.90</td>
+                    <td>17.03</td>
+                    <td>74.75%</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">KIVI</th>
+                    <td>INT3</td>
+                    <td>95.66</td>
+                    <td>63.38</td>
+                    <td>91.49</td>
+                    <td>82.75</td>
+                    <td>87.74</td>
+                    <td>94.33</td>
+                    <td>88.97</td>
+                    <td>84.05</td>
+                    <td>85.71</td>
+                    <td>84.89</td>
+                    <td>14.32</td>
+                    <td>78.76%</td>
+                  </tr>
+                  <tr class="highlight">
+                    <th scope="row">VAR-Q</th>
+                    <td>INT3</td>
+                    <td>95.41</td>
+                    <td>63.13</td>
+                    <td>90.69</td>
+                    <td>83.28</td>
+                    <td>89.65</td>
+                    <td>88.84</td>
+                    <td>90.82</td>
+                    <td>89.16</td>
+                    <td>91.80</td>
+                    <td>85.89</td>
+                    <td>13.65</td>
+                    <td>79.75%</td>
+                  </tr>
+                  <tr class="highlight">
+                    <th scope="row">VAR-Q</th>
+                    <td>INT2</td>
+                    <td>85.97</td>
+                    <td>56.57</td>
+                    <td>86.70</td>
+                    <td>74.38</td>
+                    <td>87.80</td>
+                    <td>90.09</td>
+                    <td>89.31</td>
+                    <td>91.22</td>
+                    <td>88.12</td>
+                    <td>83.83</td>
+                    <td>8.60</td>
+                    <td>87.25%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+        </div>
+        <div class="results-explorer" id="tables-2-4">
+          <div class="explorer-top">
+            <div>
+              <p class="eyebrow">Interactive comparison · metric selection &amp; CSV export</p>
+              <h3>Focus on one configuration.</h3>
+            </div>
+            <a class="inline-link" download="" href="results-data.json">Download data ↧</a>
+          </div>
+          <div class="results-filters">
+            <label
+              >Model &amp; setting<select disabled="" id="result-model">
+                <option>Loading results…</option>
+              </select></label
+            ><label
+              >KV precision<select disabled="" id="result-precision">
+                <option>—</option>
+              </select></label
+            ><label
+              >Quality metric<select disabled="" id="result-metric">
+                <option>—</option>
+              </select></label
+            >
+          </div>
+          <div class="results-context">
+            <p id="result-setting"></p>
+            <a href="/assets/pdf/VAR-Q.pdf#page=8" id="result-source">Paper table ↗</a>
+          </div>
+          <div class="result-reading">
+            <span>KV memory <small>GB · lower is better</small></span
+            ><span id="result-metric-label">Quality</span><span>Δ vs. BF16</span>
+          </div>
+          <div aria-live="polite" id="result-bars"></div>
+          <div class="results-notes">
+            <p>
+              Memory includes scale-factor overhead at the listed batch size. Δ is the raw metric difference from BF16; arrows indicate whether higher
+              or lower is better. Missing configurations were not reported.
+            </p>
+            <button class="copy-button" disabled="" id="result-csv" type="button">Export this model · CSV ↧</button>
+          </div>
+          <details class="full-metrics" open="">
+            <summary>All reported metrics for this model</summary>
+            <p class="small-note">
+              Use the precision filter above; scroll horizontally to inspect every metric. BF16 remains visible as the reference.
+            </p>
+            <div aria-label="All reported metrics, horizontally scrollable" class="metrics-scroll" role="region" tabindex="0">
+              <table id="result-table"></table>
+            </div>
+          </details>
+          <p class="small-note" id="result-status" role="status">Loading the paper’s numerical results…</p>
+          <noscript
+            ><p>
+              <a href="results-data.json">Download all 64 result rows</a> or <a href="/assets/pdf/VAR-Q.pdf#page=7">read Tables 2–4 in the paper</a>.
+            </p></noscript
+          >
+        </div>
+        <details class="protocol-details">
+          <summary>Evaluation protocol and metric guide</summary>
+          <div class="protocol-grid">
+            <article>
+              <h4>Generation quality vs. sample fidelity</h4>
+              <p>
+                VAR uses FID, IS, Precision, and Recall for distribution-level quality. PSNR, SSIM, and LPIPS compare against matched-seed BF16
+                outputs. Infinity uses GenEval and DPG for compositional and prompt alignment.
+              </p>
+            </article>
+            <article>
+              <h4>Video quality</h4>
+              <p>
+                VBench reports temporal, perceptual, and consistency dimensions. Tables 3 and 4 expose the dimensions reported for each model. Table 4
+                additionally includes visual, dynamic, and text-alignment ratings from Claude Opus 4.7 as a VLM judge.
+              </p>
+            </article>
+            <article>
+              <h4>A shared memory comparison</h4>
+              <p>
+                All compared quantization methods use the same packing kernels. Reported KV memory includes scale factors. Experiments use NVIDIA A100
+                80 GB; cache savings and batch capacity are distinct from inference speed.
+              </p>
+            </article>
+            <article>
+              <h4>Prompts and reproducibility</h4>
+              <p>
+                The video evaluation uses MovieGen prompts. The paper lists all 200 evaluation prompts with their original line IDs in Appendix H,
+                Table 8. The website’s clips are selected qualitative examples.
+              </p>
+              <a href="/assets/pdf/VAR-Q.pdf#page=38">Read the complete prompt list ↗</a>
+            </article>
+          </div>
+          <p class="small-note"><a href="/assets/pdf/VAR-Q.pdf#page=6">Experimental setup · §4 ↗</a></p>
+        </details>
+      </section>
       <section aria-labelledby="method-title" class="section method-section" id="method">
         <div class="wrap">
           <div class="section-heading">
             <div>
-              <p class="eyebrow">01 / The method</p>
+              <p class="eyebrow">02 / The method</p>
               <h2 id="method-title">Quantize where the structure is.</h2>
             </div>
             <p>A channel × block view of the KV cache<br />explains where quantization groups belong.</p>
@@ -329,8 +1661,12 @@
               <div class="matrix-legend"><span>Low magnitude</span><span class="color-scale"></span><span>High magnitude</span></div>
             </div>
           </div>
-          <details class="evidence-table" id="table-1">
-            <summary>Reconstruction and attention errors improve along both axes · Table 1</summary>
+          <section class="evidence-table" id="table-1">
+            <h3 class="evidence-table-title">Table 1 · Aligning both axes reduces quantization error.</h3>
+            <p class="evidence-lede">
+              Attention-output error falls from <strong>32.32% to 10.13%</strong> when moving from per-tensor to channel × block grouping. The joint
+              rule has the lowest error in every reported column.
+            </p>
             <div aria-label="Table 1 · Infinity-2B · INT4 · relative errors (%)" class="metrics-scroll" role="region" tabindex="0">
               <table>
                 <caption>
@@ -381,7 +1717,7 @@
               Relative Frobenius error: ε<sub>X</sub> = ‖X − X′‖<sub>F</sub> / ‖X‖<sub>F</sub>. Joint grouping gives the lowest error in all four
               columns. <a href="/assets/pdf/VAR-Q.pdf#page=4">Source ↗</a>
             </p>
-          </details>
+          </section>
           <details class="algorithm-details">
             <summary>Algorithm details: scale factors, block boundaries, and the sub-block ratio</summary>
             <div class="algorithm-grid">
@@ -450,8 +1786,8 @@
               <p class="small-note">Metrics are compared within each column. <a href="/assets/pdf/VAR-Q.pdf#page=9">Full ablation →</a></p>
             </div>
           </div>
-          <details class="evidence-table" id="tables-5-6">
-            <summary>Full grouping and boundary-alignment ablations · Tables 5–6</summary>
+          <section class="evidence-table" id="tables-5-6">
+            <h3 class="evidence-table-title">Tables 5–6 · Test the grouping rule, then test its boundaries.</h3>
             <div aria-label="Table 5 · INT4 · VAR-d30 (VAR) and Self-Forcing (SF)" class="metrics-scroll" role="region" tabindex="0">
               <table>
                 <caption>
@@ -587,7 +1923,7 @@
               Table 6 is a separate alignment experiment; its aligned score is not substituted for Table 5’s full-method score.
               <a href="/assets/pdf/VAR-Q.pdf#page=9">Source ↗</a>
             </p>
-          </details>
+          </section>
           <div class="pipeline">
             <div>
               <p class="eyebrow">From algorithm to memory savings</p>
@@ -615,7 +1951,7 @@
       <section aria-labelledby="results-title" class="section wrap" id="results">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">02 / Qualitative evidence</p>
+            <p class="eyebrow">03 / Qualitative evidence</p>
             <h2 id="results-title">Inspect generation, in motion.</h2>
           </div>
           <p>Next-scale images and video. Next-frame video.<br />Compare low-bit caches with BF16 across both paradigms.</p>
@@ -803,7 +2139,7 @@
       </section>
       <section aria-labelledby="attribution-title" class="section wrap attribution-section" id="attribution">
         <div class="attribution-heading">
-          <p class="eyebrow">03 / Mechanistic attribution · §3.3</p>
+          <p class="eyebrow">04 / Mechanistic attribution · §3.3</p>
           <h2 id="attribution-title">From observations to mechanisms.</h2>
           <p>
             Why does the channel × block pattern emerge? Three experiments separate prompt-dependent outliers, persistent channel imbalance, and
@@ -934,8 +2270,11 @@
             </figcaption>
           </figure>
         </article>
-        <details class="evidence-table" id="table-7">
-          <summary>Where to quantize: after RoPE · Table 7</summary>
+        <section class="evidence-table" id="table-7">
+          <h3 class="evidence-table-title">Table 7 · Quantize the representation consumed by attention.</h3>
+          <p class="evidence-lede">
+            Post-RoPE quantization improves Total Quality from <strong>82.93 to 83.34</strong> at the same <strong>27.50 GB</strong> KV footprint.
+          </p>
           <div aria-label="Table 7 · Self-Forcing · Quantization before vs. after RoPE" class="metrics-scroll" role="region" tabindex="0">
             <table>
               <caption>
@@ -981,7 +2320,7 @@
             At the same memory footprint (59.25% below BF16), post-RoPE quantization scores higher on every metric reported in this ablation.
             <a href="/assets/pdf/VAR-Q.pdf#page=19">Appendix F ↗</a>
           </p>
-        </details>
+        </section>
         <div class="attribution-conclusion">
           <span aria-hidden="true" class="conclusion-mark">↳</span>
           <div>
@@ -994,124 +2333,7 @@
           </div>
         </div>
       </section>
-      <section aria-labelledby="benchmarks-title" class="section wrap" id="benchmarks">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">04 / Quantitative evidence</p>
-            <h2 id="benchmarks-title">Quality, alongside<br />the memory it costs.</h2>
-          </div>
-          <p>Reported quality and cache memory,<br />with the configuration kept in view.</p>
-        </div>
-        <nav aria-label="Paper table index" class="table-directory">
-          <span>All paper tables</span><a href="#table-1">1 · Quantization errors</a><a href="#tables-2-4">2–4 · Generation results</a
-          ><a href="#tables-5-6">5–6 · Grouping &amp; alignment</a><a href="#table-7">7 · RoPE placement</a
-          ><a href="/assets/pdf/VAR-Q.pdf#page=38">8 · Evaluation prompts ↗</a>
-        </nav>
-        <div class="result-highlights">
-          <article>
-            <span>Next-scale · 720p · INT3</span><strong>79.15% <small>less KV memory</small></strong>
-            <p>InfinityStar: 80.59 VBench vs. 82.33 BF16.</p>
-          </article>
-          <article>
-            <span>Next-frame · 30 s · INT6</span><strong>59.25% <small>less KV memory</small></strong>
-            <p>LongLive: 80.94 VBench vs. 80.92 BF16.</p>
-          </article>
-          <article>
-            <span>Next-frame · 5 s · INT4</span><strong>74.88% <small>less KV memory</small></strong>
-            <p>Self-Forcing: 80.99 VBench vs. 82.94 BF16.</p>
-          </article>
-        </div>
-        <div class="results-explorer" id="tables-2-4">
-          <div class="explorer-top">
-            <div>
-              <p class="eyebrow">Tables 2–4 · 9 configurations · 64 reported rows</p>
-              <h3>Explore the complete results.</h3>
-            </div>
-            <a class="inline-link" download="" href="results-data.json">Download data ↧</a>
-          </div>
-          <div class="results-filters">
-            <label
-              >Model &amp; setting<select disabled="" id="result-model">
-                <option>Loading results…</option>
-              </select></label
-            ><label
-              >KV precision<select disabled="" id="result-precision">
-                <option>—</option>
-              </select></label
-            ><label
-              >Quality metric<select disabled="" id="result-metric">
-                <option>—</option>
-              </select></label
-            >
-          </div>
-          <div class="results-context">
-            <p id="result-setting"></p>
-            <a href="/assets/pdf/VAR-Q.pdf#page=8" id="result-source">Paper table ↗</a>
-          </div>
-          <div class="result-reading">
-            <span>KV memory <small>GB · lower is better</small></span
-            ><span id="result-metric-label">Quality</span><span>Δ vs. BF16</span>
-          </div>
-          <div aria-live="polite" id="result-bars"></div>
-          <div class="results-notes">
-            <p>
-              Memory includes scale-factor overhead at the listed batch size. Δ is the raw metric difference from BF16; arrows indicate whether higher
-              or lower is better. Missing configurations were not reported.
-            </p>
-            <button class="copy-button" disabled="" id="result-csv" type="button">Export this model · CSV ↧</button>
-          </div>
-          <details class="full-metrics" open="">
-            <summary>All reported metrics for this model</summary>
-            <p class="small-note">
-              Use the precision filter above; scroll horizontally to inspect every metric. BF16 remains visible as the reference.
-            </p>
-            <div aria-label="All reported metrics, horizontally scrollable" class="metrics-scroll" role="region" tabindex="0">
-              <table id="result-table"></table>
-            </div>
-          </details>
-          <p class="small-note" id="result-status" role="status">Loading the paper’s numerical results…</p>
-          <noscript
-            ><p>
-              <a href="results-data.json">Download all 64 result rows</a> or <a href="/assets/pdf/VAR-Q.pdf#page=7">read Tables 2–4 in the paper</a>.
-            </p></noscript
-          >
-        </div>
-        <details class="protocol-details">
-          <summary>Evaluation protocol and metric guide</summary>
-          <div class="protocol-grid">
-            <article>
-              <h4>Generation quality vs. sample fidelity</h4>
-              <p>
-                VAR uses FID, IS, Precision, and Recall for distribution-level quality. PSNR, SSIM, and LPIPS compare against matched-seed BF16
-                outputs. Infinity uses GenEval and DPG for compositional and prompt alignment.
-              </p>
-            </article>
-            <article>
-              <h4>Video quality</h4>
-              <p>
-                VBench reports temporal, perceptual, and consistency dimensions. Tables 3 and 4 expose the dimensions reported for each model. Table 4
-                additionally includes visual, dynamic, and text-alignment ratings from Claude Opus 4.7 as a VLM judge.
-              </p>
-            </article>
-            <article>
-              <h4>A shared memory comparison</h4>
-              <p>
-                All compared quantization methods use the same packing kernels. Reported KV memory includes scale factors. Experiments use NVIDIA A100
-                80 GB; cache savings and batch capacity are distinct from inference speed.
-              </p>
-            </article>
-            <article>
-              <h4>Prompts and reproducibility</h4>
-              <p>
-                The video evaluation uses MovieGen prompts. The paper lists all 200 evaluation prompts with their original line IDs in Appendix H,
-                Table 8. The website’s clips are selected qualitative examples.
-              </p>
-              <a href="/assets/pdf/VAR-Q.pdf#page=38">Read the complete prompt list ↗</a>
-            </article>
-          </div>
-          <p class="small-note"><a href="/assets/pdf/VAR-Q.pdf#page=6">Experimental setup · §4 ↗</a></p>
-        </details>
-      </section>
+
       <section aria-labelledby="context-title" class="section wrap related-section" id="context">
         <div class="section-heading">
           <div>
