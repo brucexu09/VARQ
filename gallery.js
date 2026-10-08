@@ -210,7 +210,7 @@
           });
         modelSelect.append(group);
       });
-      modelSelect.value = "Infinity8B";
+      modelSelect.value = "InfinityStar720p";
       modelSelect.disabled = false;
       renderModel();
     })

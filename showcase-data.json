@@ -1,0 +1,131 @@
+{
+  "scale": {
+    "model": "InfinityStar \u00b7 720p",
+    "paradigm": "Next-scale",
+    "bits": "3-bit",
+    "clips": [
+      {
+        "title": "Above the clouds",
+        "prompt": "A person skydiving from a hot air balloon into a sea of clouds.",
+        "sources": {
+          "Baseline": "samples/InfinityStar720p/Baseline/q3/group01_prompt129_s02.mp4",
+          "VARQ": "samples/InfinityStar720p/VARQ/q3/group01_prompt129_s02.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/scale-0-Baseline.webp",
+          "VARQ": "assets/posters/scale-0-VARQ.webp"
+        }
+      },
+      {
+        "title": "Rings of Saturn",
+        "prompt": "A person playing hopscotch on the rings of Saturn.",
+        "sources": {
+          "Baseline": "samples/InfinityStar720p/Baseline/q3/group01_prompt195_s03.mp4",
+          "VARQ": "samples/InfinityStar720p/VARQ/q3/group01_prompt195_s03.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/scale-1-Baseline.webp",
+          "VARQ": "assets/posters/scale-1-VARQ.webp"
+        }
+      },
+      {
+        "title": "A snowflake, up close",
+        "prompt": "A zoom-out from a detailed shot of an intricate snowflake, pulling back to show a snowy landscape.",
+        "sources": {
+          "Baseline": "samples/InfinityStar720p/Baseline/q3/group01_prompt108_s01.mp4",
+          "VARQ": "samples/InfinityStar720p/VARQ/q3/group01_prompt108_s01.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/scale-2-Baseline.webp",
+          "VARQ": "assets/posters/scale-2-VARQ.webp"
+        }
+      }
+    ]
+  },
+  "frame": {
+    "model": "Self-Forcing",
+    "paradigm": "Next-frame",
+    "bits": "6-bit",
+    "clips": [
+      {
+        "title": "A ride through the sky",
+        "prompt": "A little boy is riding a dragon in the sky to a castle",
+        "sources": {
+          "Baseline": "samples/self_forcing/Baseline/q6/group02_prompt101_s02.mp4",
+          "VARQ": "samples/self_forcing/VARQ/q6/group02_prompt101_s02.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/frame-0-Baseline.webp",
+          "VARQ": "assets/posters/frame-0-VARQ.webp"
+        }
+      },
+      {
+        "title": "A giant duck in Boston",
+        "prompt": "a giant duck walks through the streets in Boston",
+        "sources": {
+          "Baseline": "samples/self_forcing/Baseline/q6/group02_prompt079_s01.mp4",
+          "VARQ": "samples/self_forcing/VARQ/q6/group02_prompt079_s01.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/frame-1-Baseline.webp",
+          "VARQ": "assets/posters/frame-1-VARQ.webp"
+        }
+      },
+      {
+        "title": "Through the garden gate",
+        "prompt": "A push-in through a garden archway, revealing a secret, tranquil garden filled with blooming flowers.",
+        "sources": {
+          "Baseline": "samples/self_forcing/Baseline/q6/group01_prompt047_s03.mp4",
+          "VARQ": "samples/self_forcing/VARQ/q6/group01_prompt047_s03.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/frame-2-Baseline.webp",
+          "VARQ": "assets/posters/frame-2-VARQ.webp"
+        }
+      }
+    ]
+  },
+  "long": {
+    "model": "LongLive",
+    "paradigm": "Next-frame",
+    "bits": "6-bit",
+    "clips": [
+      {
+        "title": "An underwater New York",
+        "prompt": "New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York.",
+        "sources": {
+          "Baseline": "samples/longlive/Baseline/q6/group03_prompt153_s01.mp4",
+          "VARQ": "samples/longlive/VARQ/q6/group03_prompt153_s01.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/long-0-Baseline.webp",
+          "VARQ": "assets/posters/long-0-VARQ.webp"
+        }
+      },
+      {
+        "title": "The floating library",
+        "prompt": "In an ancient library, books float and glow as they drift through the air, occasionally landing softly on the tables, where curious individuals reach out to read their contents.",
+        "sources": {
+          "Baseline": "samples/longlive/Baseline/q6/group02_prompt122_s03.mp4",
+          "VARQ": "samples/longlive/VARQ/q6/group02_prompt122_s03.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/long-1-Baseline.webp",
+          "VARQ": "assets/posters/long-1-VARQ.webp"
+        }
+      },
+      {
+        "title": "Fields of wildflowers",
+        "prompt": "An aerial shot of a field of blooming wildflowers, creating a patchwork of colors in the landscape.",
+        "sources": {
+          "Baseline": "samples/longlive/Baseline/q6/group01_prompt052_s03.mp4",
+          "VARQ": "samples/longlive/VARQ/q6/group01_prompt052_s03.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/long-2-Baseline.webp",
+          "VARQ": "assets/posters/long-2-VARQ.webp"
+        }
+      }
+    ]
+  }
+}

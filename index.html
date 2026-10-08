@@ -16,7 +16,7 @@
 <link href="style.css" rel="stylesheet"/>
 <script defer="" src="app.js"></script>
 <script defer="" src="gallery.js"></script>
-<link href="research.css" rel="stylesheet"/></head>
+<link href="research.css" rel="stylesheet"/><script defer="" src="showcase.js"></script></head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
@@ -33,7 +33,7 @@
 <a href="/">Boxun Xu<sup>1,†</sup></a><span>Jiaji Lu<sup>1,†</sup></span><span>Yuxuan Yin<sup>1</sup></span><span>Zihu Wang<sup>1</sup></span><span>Ziyue Liu<sup>1</sup></span><span>Yu Wang<sup>1</sup></span><span>Zirui Liu<sup>2</sup></span><span>Peng Li<sup>1</sup></span>
 </p><p class="affiliations">
 <span><sup>1</sup> University of California, Santa Barbara</span><span><sup>2</sup> University of Minnesota</span>
-</p><p class="equal">† Equal contribution</p><div class="paper-scope"><span>Next-scale <small>Images + video</small></span><span>Next-frame <small>Video</small></span></div><a class="inline-link" href="#overview">Read the core idea <span aria-hidden="true">↘</span></a></div></div></section><div aria-label="Paper highlights" class="stats wrap research-stats">
+</p><p class="equal">† Equal contribution</p><div class="paper-scope"><span>Next-scale <small>Images + video</small></span><span>Next-frame <small>Video</small></span></div><a class="inline-link" href="#overview">Read the core idea <span aria-hidden="true">↘</span></a></div></div></section><section aria-labelledby="showcase-title" class="showcase wrap" id="showcase"><div class="showcase-heading"><h2 id="showcase-title">Two paradigms. In motion.</h2><p>Original generated videos · synchronized BF16 / VAR-Q pairs</p></div><div class="showcase-grid"><article class="feature-card" data-feature="scale"><div class="feature-top"><div><span class="paradigm-tag scale">Next-scale</span><h3>InfinityStar · 720p</h3></div><span class="feature-index">01 / 03</span></div><div class="feature-pair"><figure class="feature-video"><figcaption>BF16 reference</figcaption><video aria-label="InfinityStar · 720p BF16 reference: A person skydiving from a hot air balloon into a sea of clouds." data-src="samples/InfinityStar720p/Baseline/q3/group01_prompt129_s02.mp4" loop="" muted="" playsinline="" poster="assets/posters/scale-0-Baseline.webp" preload="none"></video></figure><figure class="feature-video feature-ours"><figcaption>VAR-Q · 3-bit</figcaption><video aria-label="InfinityStar · 720p VAR-Q · 3-bit: A person skydiving from a hot air balloon into a sea of clouds." data-src="samples/InfinityStar720p/VARQ/q3/group01_prompt129_s02.mp4" loop="" muted="" playsinline="" poster="assets/posters/scale-0-VARQ.webp" preload="none"></video></figure></div><div class="feature-controls"><button aria-label="Play InfinityStar · 720p comparison" class="feature-play" disabled="" type="button">Play pair</button><label class="feature-select"><span class="sr-only">InfinityStar · 720p sample</span><select disabled=""><option value="0">Above the clouds</option><option value="1">Rings of Saturn</option><option value="2">A snowflake, up close</option></select></label><output class="feature-time">0.0 s</output></div><label class="sr-only" for="seek-scale">InfinityStar · 720p shared timeline</label><input class="feature-seek" disabled="" id="seek-scale" max="1" min="0" step=".05" type="range" value="0"/><p class="feature-prompt">A person skydiving from a hot air balloon into a sea of clouds.</p><p class="feature-status sr-only" role="status"></p><noscript><a href="samples/InfinityStar720p/VARQ/q3/group01_prompt129_s02.mp4">Watch the VAR-Q video</a></noscript></article><article class="feature-card" data-feature="frame"><div class="feature-top"><div><span class="paradigm-tag frame">Next-frame</span><h3>Self-Forcing</h3></div><span class="feature-index">01 / 03</span></div><div class="feature-pair"><figure class="feature-video"><figcaption>BF16 reference</figcaption><video aria-label="Self-Forcing BF16 reference: A little boy is riding a dragon in the sky to a castle" data-src="samples/self_forcing/Baseline/q6/group02_prompt101_s02.mp4" loop="" muted="" playsinline="" poster="assets/posters/frame-0-Baseline.webp" preload="none"></video></figure><figure class="feature-video feature-ours"><figcaption>VAR-Q · 6-bit</figcaption><video aria-label="Self-Forcing VAR-Q · 6-bit: A little boy is riding a dragon in the sky to a castle" data-src="samples/self_forcing/VARQ/q6/group02_prompt101_s02.mp4" loop="" muted="" playsinline="" poster="assets/posters/frame-0-VARQ.webp" preload="none"></video></figure></div><div class="feature-controls"><button aria-label="Play Self-Forcing comparison" class="feature-play" disabled="" type="button">Play pair</button><label class="feature-select"><span class="sr-only">Self-Forcing sample</span><select disabled=""><option value="0">A ride through the sky</option><option value="1">A giant duck in Boston</option><option value="2">Through the garden gate</option></select></label><output class="feature-time">0.0 s</output></div><label class="sr-only" for="seek-frame">Self-Forcing shared timeline</label><input class="feature-seek" disabled="" id="seek-frame" max="1" min="0" step=".05" type="range" value="0"/><p class="feature-prompt">A little boy is riding a dragon in the sky to a castle</p><p class="feature-status sr-only" role="status"></p><noscript><a href="samples/self_forcing/VARQ/q6/group02_prompt101_s02.mp4">Watch the VAR-Q video</a></noscript></article></div><div class="showcase-foot"><p>Same model and prompt within each pair. Precision labels describe the KV cache.</p><a href="#demo">Explore all models &amp; baselines ↗</a></div></section><div aria-label="Paper highlights" class="stats wrap research-stats">
 <div>
 <strong>78.5<span>%</span></strong>
 <p>less KV memory, up to*</p>
@@ -70,36 +70,13 @@
 <h2 id="results-title">Inspect generation, in motion.</h2>
 </div>
 <p>Next-scale images and video. Next-frame video.<br/>Compare low-bit caches with BF16 across both paradigms.</p>
-</div>
-<div class="inspection-grid" id="image-comparison">
-<div class="compare-tool">
-<div class="compare-image" style="--split: 50%">
-<img alt="BF16 reference image" height="800" src="assets/cats-bf16.webp" width="800"/>
-<div class="compare-overlay"><img alt="VAR-Q at INT2" height="800" id="compare-target" src="assets/cats-varq.webp" width="800"/></div>
-<span class="image-badge left" id="compare-name">VAR-Q · INT2</span><span class="image-badge right">BF16</span><span aria-hidden="true" class="compare-line"><span>↔</span></span>
-</div>
-<label class="range-label" for="comparison-range">Drag to compare <span>Low-bit output / BF16 reference</span></label><input aria-label="Comparison split position" id="comparison-range" max="100" min="0" type="range" value="50"/>
-</div>
-<div class="inspection-copy">
-<span class="precision-tag">Infinity-8B · INT2</span>
-<h3>Keep the words.<br/>Keep the composition.</h3>
-<p>
-              Examine the whiteboard text and the position of the cats. Switch methods to compare each low-bit output against the same BF16 reference.
-            </p>
-<div aria-label="Image comparison method" class="segmented" role="group">
-<button aria-pressed="true" data-compare="varq" type="button">VAR-Q</button><button aria-pressed="false" data-compare="kivi" type="button">KIVI</button><button aria-pressed="false" data-compare="flexgen" type="button">FlexGen</button>
-</div>
-<p class="small-note">
-              A selected example from Figure 1. Quantitative INT2 results and their quality tradeoffs are reported in Table 2 of the paper.
-            </p>
-<a class="inline-link" data-caption="Infinity-8B at INT2 · Full comparison from Figure 26" data-zoom="" href="assets/infinity-int2.webp">More image examples <span aria-hidden="true">↗</span></a>
-</div>
-</div>
+</div><div class="long-showcase"><div class="long-intro"><p class="eyebrow">Long-horizon generation</p><h3>Follow the scene<br/>through time.</h3><p>LongLive extends the next-frame setting to longer sequences. Compare motion and scene consistency with both videos on the same timeline.</p><p class="small-note">These clips use 6-bit KV caches. The paper separately reports INT4 and INT6 results.</p><a class="inline-link" href="#benchmarks">See the measured tradeoff ↗</a></div><article class="feature-card" data-feature="long"><div class="feature-top"><div><span class="paradigm-tag long">Next-frame</span><h3>LongLive</h3></div><span class="feature-index">01 / 03</span></div><div class="feature-pair"><figure class="feature-video"><figcaption>BF16 reference</figcaption><video aria-label="LongLive BF16 reference: New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York." data-src="samples/longlive/Baseline/q6/group03_prompt153_s01.mp4" loop="" muted="" playsinline="" poster="assets/posters/long-0-Baseline.webp" preload="none"></video></figure><figure class="feature-video feature-ours"><figcaption>VAR-Q · 6-bit</figcaption><video aria-label="LongLive VAR-Q · 6-bit: New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York." data-src="samples/longlive/VARQ/q6/group03_prompt153_s01.mp4" loop="" muted="" playsinline="" poster="assets/posters/long-0-VARQ.webp" preload="none"></video></figure></div><div class="feature-controls"><button aria-label="Play LongLive comparison" class="feature-play" disabled="" type="button">Play pair</button><label class="feature-select"><span class="sr-only">LongLive sample</span><select disabled=""><option value="0">An underwater New York</option><option value="1">The floating library</option><option value="2">Fields of wildflowers</option></select></label><output class="feature-time">0.0 s</output></div><label class="sr-only" for="seek-long">LongLive shared timeline</label><input class="feature-seek" disabled="" id="seek-long" max="1" min="0" step=".05" type="range" value="0"/><p class="feature-prompt">New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York.</p><p class="feature-status sr-only" role="status"></p><noscript><a href="samples/longlive/VARQ/q6/group03_prompt153_s01.mp4">Watch the VAR-Q video</a></noscript></article></div>
+
 <div aria-labelledby="gallery-title" class="live-gallery" id="demo">
 <div class="subsection-heading">
 <div>
 <p class="eyebrow">Explore the samples</p>
-<h3 id="gallery-title">The full sample collection</h3>
+<h3 id="gallery-title">Compare every method, on the same timeline.</h3>
 </div>
 <p class="small-note">Original project samples · BF16 reference and low-bit methods</p>
 </div>
@@ -131,6 +108,29 @@
 <noscript><p class="small-note">
               Enable JavaScript to browse the complete sample gallery. The paper figures above and below remain available.
             </p></noscript>
+</div><div class="inspection-grid" id="image-comparison">
+<div class="compare-tool">
+<div class="compare-image" style="--split: 50%">
+<img alt="BF16 reference image" height="800" src="assets/cats-bf16.webp" width="800"/>
+<div class="compare-overlay"><img alt="VAR-Q at INT2" height="800" id="compare-target" src="assets/cats-varq.webp" width="800"/></div>
+<span class="image-badge left" id="compare-name">VAR-Q · INT2</span><span class="image-badge right">BF16</span><span aria-hidden="true" class="compare-line"><span>↔</span></span>
+</div>
+<label class="range-label" for="comparison-range">Drag to compare <span>Low-bit output / BF16 reference</span></label><input aria-label="Comparison split position" id="comparison-range" max="100" min="0" type="range" value="50"/>
+</div>
+<div class="inspection-copy">
+<span class="precision-tag">Infinity-8B · INT2</span>
+<h3>Keep the words.<br/>Keep the composition.</h3>
+<p>
+              Examine the whiteboard text and the position of the cats. Switch methods to compare each low-bit output against the same BF16 reference.
+            </p>
+<div aria-label="Image comparison method" class="segmented" role="group">
+<button aria-pressed="true" data-compare="varq" type="button">VAR-Q</button><button aria-pressed="false" data-compare="kivi" type="button">KIVI</button><button aria-pressed="false" data-compare="flexgen" type="button">FlexGen</button>
+</div>
+<p class="small-note">
+              A selected example from Figure 1. Quantitative INT2 results and their quality tradeoffs are reported in Table 2 of the paper.
+            </p>
+<a class="inline-link" data-caption="Infinity-8B at INT2 · Full comparison from Figure 26" data-zoom="" href="assets/infinity-int2.webp">More image examples <span aria-hidden="true">↗</span></a>
+</div>
 </div>
 <details class="paper-examples">
 <summary>Video frame comparisons from the paper</summary>
