@@ -29,8 +29,8 @@
       <nav aria-label="Main navigation" class="nav wrap">
         <a class="wordmark" href="#"><img alt="" class="brand-symbol" height="30" src="assets/varq-symbol.svg" width="30" />VAR-Q</a>
         <div class="nav-links">
-          <a href="#showcase">Videos</a><a href="#overview">Idea</a><a href="#method">Method</a><a href="#benchmarks">Results</a
-          ><a href="#code">Code</a>
+          <a href="#showcase">Videos</a><a href="#overview">Idea</a><a href="#method">Method</a><a href="#attribution">Attribution</a
+          ><a href="#benchmarks">Results</a><a href="#code">Code</a>
         </div>
         <a class="home-link" href="/">Boxun Xu <span aria-hidden="true">↗</span></a>
       </nav>
@@ -94,6 +94,7 @@
               <figure class="feature-video">
                 <figcaption>BF16 reference</figcaption>
                 <video
+                  aria-describedby="showcase-note"
                   aria-label="InfinityStar · 720p BF16 reference: A person skydiving from a hot air balloon into a sea of clouds."
                   data-src="samples/InfinityStar720p/Baseline/q3/group01_prompt129_s02.mp4"
                   loop=""
@@ -106,6 +107,7 @@
               <figure class="feature-video feature-ours">
                 <figcaption>VAR-Q · 3-bit</figcaption>
                 <video
+                  aria-describedby="showcase-note"
                   aria-label="InfinityStar · 720p VAR-Q · 3-bit: A person skydiving from a hot air balloon into a sea of clouds."
                   data-src="samples/InfinityStar720p/VARQ/q3/group01_prompt129_s02.mp4"
                   loop=""
@@ -145,6 +147,7 @@
               <figure class="feature-video">
                 <figcaption>BF16 reference</figcaption>
                 <video
+                  aria-describedby="showcase-note"
                   aria-label="Self-Forcing BF16 reference: A little boy is riding a dragon in the sky to a castle"
                   data-src="samples/self_forcing/Baseline/q6/group02_prompt101_s02.mp4"
                   loop=""
@@ -157,6 +160,7 @@
               <figure class="feature-video feature-ours">
                 <figcaption>VAR-Q · 6-bit</figcaption>
                 <video
+                  aria-describedby="showcase-note"
                   aria-label="Self-Forcing VAR-Q · 6-bit: A little boy is riding a dragon in the sky to a castle"
                   data-src="samples/self_forcing/VARQ/q6/group02_prompt101_s02.mp4"
                   loop=""
@@ -186,7 +190,7 @@
           </article>
         </div>
         <div class="showcase-foot">
-          <p>Same model and prompt within each pair. Precision labels describe the KV cache.</p>
+          <p id="showcase-note">Same model and prompt within each pair. Precision labels describe the KV cache.</p>
           <a href="#demo">Explore all models &amp; baselines ↗</a>
         </div>
       </section>
@@ -237,12 +241,14 @@
           <div class="flow-caption-top">
             <span class="margin-label">A common representation</span><span>Next-scale / next-frame → channel × block → packed KV</span>
           </div>
-          <img
-            alt="Next-scale and next-frame decoding feed a common channel-by-block KV cache. One scale factor covers each channel within a block; low-bit values are packed into INT32 containers."
-            height="330"
-            src="assets/shared-block-structure.svg"
-            width="1120"
-          />
+          <picture
+            ><source media="(max-width: 700px)" srcset="assets/shared-block-mobile.svg" />
+            <img
+              alt="Next-scale and next-frame decoding feed a common channel-by-block KV cache. One scale factor covers each channel within a block; low-bit values are packed into INT32 containers."
+              height="330"
+              src="assets/shared-block-structure.svg"
+              width="1120"
+          /></picture>
           <figcaption>
             Conceptual schematic of the grouping rule in §3.4. Block sizes and colors are illustrative; measured cache magnitudes appear below.
           </figcaption>
@@ -636,6 +642,7 @@
               <figure class="feature-video">
                 <figcaption>BF16 reference</figcaption>
                 <video
+                  aria-describedby="showcase-note"
                   aria-label="LongLive BF16 reference: New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York."
                   data-src="samples/longlive/Baseline/q6/group03_prompt153_s01.mp4"
                   loop=""
@@ -648,6 +655,7 @@
               <figure class="feature-video feature-ours">
                 <figcaption>VAR-Q · 6-bit</figcaption>
                 <video
+                  aria-describedby="showcase-note"
                   aria-label="LongLive VAR-Q · 6-bit: New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York."
                   data-src="samples/longlive/VARQ/q6/group03_prompt153_s01.mp4"
                   loop=""
