@@ -16,7 +16,7 @@
 <link href="style.css" rel="stylesheet"/>
 <script defer="" src="app.js"></script>
 <script defer="" src="gallery.js"></script>
-<link href="research.css" rel="stylesheet"/><script defer="" src="showcase.js"></script></head>
+<link href="research.css" rel="stylesheet"/><script defer="" src="showcase.js"></script><script defer="" src="results.js"></script></head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
@@ -121,8 +121,7 @@
 </div>
 <div class="matrix-legend"><span>Low magnitude</span><span class="color-scale"></span><span>High magnitude</span></div>
 </div>
-</div><details class="algorithm-details"><summary>Algorithm details: scale factors, block boundaries, and the sub-block ratio</summary><div class="algorithm-grid"><div><h4>The quantization unit</h4><p>For block <em>b</em> and feature channel <em>c</em>, VAR-Q applies uniform symmetric quantization to the tokens in that group, with one scale factor. The same grouping rule is used for K and V.</p><p class="math-line">K = {K<sup>(b)</sup>}<sub>b=1…B</sub>,   K<sup>(b)</sup> ∈ ℝ<sup>n<sub>b</sub> × D</sup></p></div><div><h4>Optional finer groups</h4><p>The default sub-block ratio is <strong>r = 1</strong>. A block of length L is split into ⌈L / (r L<sub>max</sub>)⌉ sub-blocks. Smaller r refines grouping within existing boundaries.</p><p>In next-scale decoding, the largest scales are affected first; in next-frame decoding, equal-size blocks are partitioned uniformly. <a href="/assets/pdf/VAR-Q.pdf#page=6">§3.4 ↗</a></p></div></div></details><div class="ablation-evidence"><div><p class="eyebrow">Controlled evidence · Table 5</p><h3>Both axes earn their place.</h3><p>Removing the channel axis sharply degrades generation. Keeping channels but removing block boundaries also loses quality—on both a next-scale and a next-frame model.</p></div><div class="table-wrap"><table><caption>Grouping ablation · INT4 KV cache</caption><thead><tr><th scope="col">Grouping</th><th scope="col">VAR-d30<br/><small>FID ↓</small></th><th scope="col">Self-Forcing<br/><small>VBench Total ↑</small></th></tr></thead><tbody><tr class="highlight"><th scope="row">Channel × block</th><td>1.97</td><td>80.99</td></tr><tr><th scope="row">Without block axis</th><td>2.83</td><td>79.38</td></tr><tr><th scope="row">Without channel axis</th><td>12.07</td><td>67.22</td></tr></tbody></table><p class="small-note">Metrics are compared within each column. <a href="/assets/pdf/VAR-Q.pdf#page=9">Full ablation →</a></p></div></div>
-
+</div><details class="evidence-table"><summary>Reconstruction and attention errors improve along both axes · Table 1</summary><div aria-label="Table 1 · Infinity-2B · INT4 · relative errors (%)" class="metrics-scroll" role="region" tabindex="0"><table><caption>Table 1 · Infinity-2B · INT4 · relative errors (%)</caption><thead><tr><th scope="col">Grouping</th><th scope="col">K error ↓</th><th scope="col">V error ↓</th><th scope="col">Attention error ↓</th><th scope="col">Output error ↓</th></tr></thead><tbody><tr><th scope="row">Per-tensor</th><td>24.01</td><td>43.54</td><td>29.20</td><td>32.32</td></tr><tr><th scope="row">Per-block</th><td>21.59</td><td>32.93</td><td>26.36</td><td>22.78</td></tr><tr><th scope="row">Per-channel</th><td>12.11</td><td>18.07</td><td>16.17</td><td>13.13</td></tr><tr class="highlight"><th scope="row">Channel × block</th><td>10.04</td><td>15.28</td><td>13.38</td><td>10.13</td></tr></tbody></table></div><p>Relative Frobenius error: ε<sub>X</sub> = ‖X − X′‖<sub>F</sub> / ‖X‖<sub>F</sub>. Joint grouping gives the lowest error in all four columns. <a href="/assets/pdf/VAR-Q.pdf#page=4">Source ↗</a></p></details><details class="algorithm-details"><summary>Algorithm details: scale factors, block boundaries, and the sub-block ratio</summary><div class="algorithm-grid"><div><h4>The quantization unit</h4><p>For block <em>b</em> and feature channel <em>c</em>, VAR-Q applies uniform symmetric quantization to the tokens in that group, with one scale factor. The same grouping rule is used for K and V.</p><p class="math-line">K = {K<sup>(b)</sup>}<sub>b=1…B</sub>,   K<sup>(b)</sup> ∈ ℝ<sup>n<sub>b</sub> × D</sup></p></div><div><h4>Optional finer groups</h4><p>The default sub-block ratio is <strong>r = 1</strong>. A block of length L is split into ⌈L / (r L<sub>max</sub>)⌉ sub-blocks. Smaller r refines grouping within existing boundaries.</p><p>In next-scale decoding, the largest scales are affected first; in next-frame decoding, equal-size blocks are partitioned uniformly. <a href="/assets/pdf/VAR-Q.pdf#page=6">§3.4 ↗</a></p></div></div></details><div class="ablation-evidence"><div><p class="eyebrow">Controlled evidence · Table 5</p><h3>Both axes earn their place.</h3><p>Removing the channel axis sharply degrades generation. Keeping channels but removing block boundaries also loses quality—on both a next-scale and a next-frame model.</p></div><div class="table-wrap"><table><caption>Grouping ablation · INT4 KV cache</caption><thead><tr><th scope="col">Grouping</th><th scope="col">VAR-d30<br/><small>FID ↓</small></th><th scope="col">Self-Forcing<br/><small>VBench Total ↑</small></th></tr></thead><tbody><tr class="highlight"><th scope="row">Channel × block</th><td>1.97</td><td>80.99</td></tr><tr><th scope="row">Without block axis</th><td>2.83</td><td>79.38</td></tr><tr><th scope="row">Without channel axis</th><td>12.07</td><td>67.22</td></tr></tbody></table><p class="small-note">Metrics are compared within each column. <a href="/assets/pdf/VAR-Q.pdf#page=9">Full ablation →</a></p></div></div><details class="evidence-table"><summary>Full grouping and boundary-alignment ablations · Tables 5–6</summary><div aria-label="Table 5 · INT4 · VAR-d30 (VAR) and Self-Forcing (SF)" class="metrics-scroll" role="region" tabindex="0"><table><caption>Table 5 · INT4 · VAR-d30 (VAR) and Self-Forcing (SF)</caption><thead><tr><th scope="col">Grouping</th><th scope="col">VAR FID ↓</th><th scope="col">IS ↑</th><th scope="col">PSNR ↑</th><th scope="col">SSIM ↑</th><th scope="col">LPIPS ↓</th><th scope="col">VAR KV (GB) ↓</th><th scope="col">SF Subject ↑</th><th scope="col">Dynamic ↑</th><th scope="col">Aesthetic ↑</th><th scope="col">Total ↑</th><th scope="col">SF KV (GB) ↓</th></tr></thead><tbody><tr><th scope="row">Without block axis</th><td>2.83</td><td>292.13</td><td>12.07</td><td>0.257</td><td>0.538</td><td>9.45</td><td>88.49</td><td>69.00</td><td>54.51</td><td>79.38</td><td>16.90</td></tr><tr><th scope="row">Without channel axis</th><td>12.07</td><td>159.52</td><td>10.42</td><td>0.198</td><td>0.645</td><td>9.34</td><td>79.17</td><td>27.00</td><td>33.86</td><td>67.22</td><td>16.87</td></tr><tr><th scope="row">Per-token &amp; per-head</th><td>2.21</td><td>292.12</td><td>11.97</td><td>0.261</td><td>0.545</td><td>10.51</td><td>90.18</td><td>67.00</td><td>54.96</td><td>79.46</td><td>17.93</td></tr><tr><th scope="row">Per-token</th><td>7.13</td><td>203.50</td><td>10.51</td><td>0.208</td><td>0.635</td><td>9.38</td><td>78.55</td><td>25.50</td><td>39.51</td><td>67.72</td><td>16.96</td></tr><tr class="highlight"><th scope="row">VAR-Q (full)</th><td>1.97</td><td>323.67</td><td>13.54</td><td>0.312</td><td>0.437</td><td>10.44</td><td>91.28</td><td>75.50</td><td>57.40</td><td>80.99</td><td>16.95</td></tr></tbody></table></div><p>Same number and sizes of groups, shifted by half a block: misalignment lowers Self-Forcing quality by 0.45 points in this controlled experiment.</p><div aria-label="Table 6 · Boundary alignment ablation" class="metrics-scroll" role="region" tabindex="0"><table><caption>Table 6 · Boundary alignment ablation</caption><thead><tr><th scope="col">Boundary placement</th><th scope="col">Subject ↑</th><th scope="col">Dynamic ↑</th><th scope="col">Aesthetic ↑</th><th scope="col">Quality ↑</th></tr></thead><tbody><tr><th scope="row">Misaligned</th><td>90.80</td><td>73.50</td><td>56.75</td><td>80.46</td></tr><tr class="highlight"><th scope="row">Aligned</th><td>91.23</td><td>74.50</td><td>57.41</td><td>80.91</td></tr></tbody></table></div><p>Table 6 is a separate alignment experiment; its aligned score is not substituted for Table 5’s full-method score. <a href="/assets/pdf/VAR-Q.pdf#page=9">Source ↗</a></p></details>
 <div class="pipeline">
 <div>
 <p class="eyebrow">From algorithm to memory savings</p>
@@ -332,7 +331,7 @@
                   (left). Paired channel maxima swap magnitude while the pair envelope stays approximately flat (right). Figure 7.
                 </figcaption>
 </figure>
-</article>
+</article><details class="evidence-table"><summary>Where to quantize: after RoPE · Table 7</summary><div aria-label="Table 7 · Self-Forcing · Quantization before vs. after RoPE" class="metrics-scroll" role="region" tabindex="0"><table><caption>Table 7 · Self-Forcing · Quantization before vs. after RoPE</caption><thead><tr><th scope="col">Quantization point</th><th scope="col">Precision</th><th scope="col">Subject ↑</th><th scope="col">Background ↑</th><th scope="col">Dynamic ↑</th><th scope="col">Aesthetic ↑</th><th scope="col">Quality ↑</th><th scope="col">KV (GB) ↓</th></tr></thead><tbody><tr><th scope="row">Pre-RoPE</th><td>INT6</td><td>93.63</td><td>93.97</td><td>74.50</td><td>60.00</td><td>82.93</td><td>27.50</td></tr><tr class="highlight"><th scope="row">Post-RoPE</th><td>INT6</td><td>93.96</td><td>94.76</td><td>76.50</td><td>61.25</td><td>83.34</td><td>27.50</td></tr></tbody></table></div><p>At the same memory footprint (59.25% below BF16), post-RoPE quantization scores higher on every metric reported in this ablation. <a href="/assets/pdf/VAR-Q.pdf#page=19">Appendix F ↗</a></p></details>
 <div class="attribution-conclusion">
 <span aria-hidden="true" class="conclusion-mark">↳</span>
 <div>
@@ -345,86 +344,13 @@
 </div>
 </div>
 </section>
-
-<section aria-labelledby="benchmarks-title" class="section wrap" id="benchmarks">
-<div class="section-heading">
+<section aria-labelledby="benchmarks-title" class="section wrap" id="benchmarks"><div class="section-heading">
 <div>
 <p class="eyebrow">04 / Quantitative evidence</p>
 <h2 id="benchmarks-title">Quality, alongside<br/>the memory it costs.</h2>
 </div>
 <p>Reported quality and cache memory,<br/>with the configuration kept in view.</p>
-</div>
-<div class="benchmark-controls">
-<label class="select-label">Benchmark<select id="benchmark-model">
-<option value="infinity">Next-scale · Infinity-8B · INT4</option>
-<option value="infinitystar">Next-scale · InfinityStar-8B · INT3</option>
-<option value="selfforcing">Next-frame · Self-Forcing-1.3B · INT4</option>
-<option value="longlive">Next-frame · LongLive-1.3B · INT4</option>
-</select></label>
-<p aria-live="polite" id="benchmark-setting">Next-scale image · batch size 6 · Table 2</p>
-</div>
-<div class="benchmark-panel">
-<div class="memory-chart">
-<span class="chart-title">KV cache memory <span>GB · lower is better</span></span>
-<div class="bar-label"><span>BF16 reference</span><strong id="memory-base">67.43 GB</strong></div>
-<div class="bar-track"><div class="bar baseline" style="width: 100%"></div></div>
-<div class="bar-label">
-<span>VAR-Q <span id="memory-bits">INT4</span></span><strong id="memory-ours">17.03 GB</strong>
-</div>
-<div class="bar-track"><div class="bar quantized" id="memory-bar" style="width: 25.25%"></div></div>
-<p class="saving"><strong id="memory-saving">74.75%</strong> less KV cache memory</p>
-<p class="small-note">Cache memory at the same batch size. These figures are not total GPU memory or an inference speedup.</p>
-</div>
-<div class="table-wrap">
-<table>
-<caption id="quality-caption">
-                DPG score ↑ · Infinity-8B
-              </caption>
-<thead>
-<tr>
-<th scope="col">Method</th>
-<th scope="col">Precision</th>
-<th scope="col">Quality ↑</th>
-<th scope="col">KV (GB) ↓</th>
-</tr>
-</thead>
-<tbody id="benchmark-rows">
-<tr>
-<th scope="row">Reference</th>
-<td>BF16</td>
-<td>85.72</td>
-<td>67.43</td>
-</tr>
-<tr>
-<th scope="row">FlexGen</th>
-<td>INT4</td>
-<td>84.58</td>
-<td>17.38</td>
-</tr>
-<tr>
-<th scope="row">KIVI</th>
-<td>INT4</td>
-<td>85.74</td>
-<td>17.69</td>
-</tr>
-<tr class="highlight">
-<th scope="row">VAR-Q</th>
-<td>INT4</td>
-<td>85.90</td>
-<td>17.03</td>
-</tr>
-</tbody>
-</table>
-<p class="small-note" id="quality-note">
-              DPG measures prompt alignment. VAR-Q also scores 83.67 on GenEval, compared with 83.54 for BF16.
-            </p>
-</div>
-</div>
-<p class="benchmark-footnote">
-          All values are reported in Tables 2–4 of the linked paper. Metrics differ across tasks and should be compared within a configuration.
-          <a href="/assets/pdf/VAR-Q.pdf#page=7">Read full results ↗</a>
-</p>
-</section>
+</div><div class="result-highlights"><article><span>Next-scale · 720p · INT3</span><strong>79.15% <small>less KV memory</small></strong><p>InfinityStar: 80.59 VBench vs. 82.33 BF16.</p></article><article><span>Next-frame · 30 s · INT6</span><strong>59.25% <small>less KV memory</small></strong><p>LongLive: 80.94 VBench vs. 80.92 BF16.</p></article><article><span>Next-frame · 5 s · INT4</span><strong>74.88% <small>less KV memory</small></strong><p>Self-Forcing: 80.99 VBench vs. 82.94 BF16.</p></article></div><div class="results-explorer"><div class="explorer-top"><div><p class="eyebrow">Tables 2–4 · 9 configurations · 64 reported rows</p><h3>Explore the complete results.</h3></div><a class="inline-link" download="" href="results-data.json">Download data ↧</a></div><div class="results-filters"><label>Model &amp; setting<select disabled="" id="result-model"><option>Loading results…</option></select></label><label>KV precision<select disabled="" id="result-precision"><option>—</option></select></label><label>Quality metric<select disabled="" id="result-metric"><option>—</option></select></label></div><div class="results-context"><p id="result-setting"></p><a href="/assets/pdf/VAR-Q.pdf#page=8" id="result-source">Paper table ↗</a></div><div class="result-reading"><span>KV memory <small>GB · lower is better</small></span><span id="result-metric-label">Quality</span><span>Δ vs. BF16</span></div><div aria-live="polite" id="result-bars"></div><div class="results-notes"><p>Memory includes scale-factor overhead at the listed batch size. Δ is the raw metric difference from BF16; arrows indicate whether higher or lower is better. Missing configurations were not reported.</p><button class="copy-button" disabled="" id="result-csv" type="button">Export this model · CSV ↧</button></div><details class="full-metrics" open=""><summary>All reported metrics for this model</summary><p class="small-note">Use the precision filter above; scroll horizontally to inspect every metric. BF16 remains visible as the reference.</p><div aria-label="All reported metrics, horizontally scrollable" class="metrics-scroll" role="region" tabindex="0"><table id="result-table"></table></div></details><p class="small-note" id="result-status" role="status">Loading the paper’s numerical results…</p><noscript><p><a href="results-data.json">Download all 64 result rows</a> or <a href="/assets/pdf/VAR-Q.pdf#page=7">read Tables 2–4 in the paper</a>.</p></noscript></div></section>
 <section aria-labelledby="code-title" class="section code-section" id="code">
 <div class="wrap code-grid">
 <div>
