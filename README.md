@@ -1,42 +1,27 @@
-# VARQ — Project Page
+# VAR-Q · NeurIPS 2026
 
-Demo / project page for **VARQ: Training-Free KV-Cache Quantization for Visual Autoregressive Generation**.
+Project page for **VAR-Q: Tuning-free KV Cache Quantization for Visual Autoregressive Image and Video Generation**.
 
 Live site: https://boxunxu.top/VARQ/
 
 ## Structure
 
-```
-VARQ/
-├── index.html          # Main page
-├── manifest.json       # Auto-generated gallery index (models × methods × bits × samples)
-├── static/
-│   ├── style.css       # Styles
-│   └── gallery.js      # Interactive comparison gallery (reads manifest.json)
-├── samples/            # Media, laid out as Model/Method/qbits/<file>
-│   ├── VAR_d20 … VAR_d30
-│   ├── Infinity2B / Infinity8B
-│   ├── InfinityStar480p / InfinityStar720p
-│   └── self_forcing / longlive
-└── README.md
-```
+- `index.html`, `style.css`, `app.js`: research page, interactive paper figures, attribution, grouping diagram, benchmark selector, and citation.
+- `gallery.js`: model / precision / sample gallery with shared video playback, seeking, restart, and speed controls.
+- `assets/`: figures extracted from the paper and the site favicon.
+- `manifest.json`: original project sample index.
+- `samples/`: original images and MP4 videos; existing media is preserved.
+- `gen_manifest.py`: regenerate the sample index from the existing sample layout.
+- `static/`: retained legacy gallery assets.
 
-## What it shows
+## Preview
 
-An interactive **qualitative comparison** gallery. Pick a model and a KV-cache
-bit-width; the page renders each sample as a side-by-side row comparing
-**Baseline (FP)**, prior post-hoc quantizers (**KIVI**, **FlexGen/GPTQ**), and
-**VARQ (Ours)**. Images render inline; videos autoplay with a playback-speed control.
-
-## Regenerating the manifest
-
-Media lives under `samples/<Model>/<Method>/<qbits>/`. `manifest.json` is produced
-by the generator script (`gen_manifest.py`) which walks that tree, aligns samples
-across methods, and attaches prompts / PSNR margins from the source `_metadata`.
-
-## Local preview
-
-```bash
+```sh
 python3 -m http.server 8000
-# open http://localhost:8000
 ```
+
+Open http://localhost:8000. The project uses plain static HTML, CSS, and JavaScript. No build step is required. Root-relative paper and homepage links resolve against boxunxu.top when published.
+
+## Content maintenance
+
+Update model metrics in `app.js` with the corresponding paper table and configuration. The attribution figures and claims come from Section 3.3, Figures 5–7. Keep the NeurIPS citation, author list, and personal website bibliography consistent. This repository independently publishes `/VARQ/`; personal homepage content is maintained in `brucexu09.github.io`.
