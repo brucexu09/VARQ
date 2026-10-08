@@ -137,3 +137,12 @@ document.querySelectorAll("[data-copy]").forEach((button) => {
     }
   });
 });
+
+// Deep links to supplementary tables also open their disclosure panel.
+function revealLinkedTable() {
+  const id = window.location.hash.slice(1);
+  const target = id ? document.getElementById(id) : null;
+  if (target?.tagName === "DETAILS") target.open = true;
+}
+window.addEventListener("hashchange", revealLinkedTable);
+revealLinkedTable();

@@ -43,7 +43,7 @@
       memory.className = "result-memory";
       const label = document.createElement("span");
       label.className = "result-bar-label";
-      label.textContent = `${r.method} · ${r.precision}`;
+      label.textContent = r.method === "BF16" ? "BF16 reference" : `${r.method} · ${r.precision}`;
       const track = document.createElement("span");
       track.className = "result-track";
       const bar = document.createElement("span");
@@ -77,13 +77,11 @@
       const tr = document.createElement("tr");
       if (r.method === "VAR-Q") tr.className = "highlight";
       tableCell(tr, r.method, "th");
-      [r.precision, ...r.values, r.kv, r === base ? "—" : `${((1 - Number(r.kv) / Number(base.kv)) * 100).toFixed(2)}%`].forEach((v) =>
-        tableCell(tr, v),
-      );
+      [r.precision, ...r.values, r.kv, r === base ? "—" : `${r.saving}%`].forEach((v) => tableCell(tr, v));
       body.append(tr);
     });
     table.append(body);
-    status.textContent = `${rows.length} rows shown. KV savings are recomputed from the paper’s rounded GB values; last-decimal differences from printed percentages are possible.`;
+    status.textContent = `${rows.length} rows shown. All metric, memory, and savings values reproduce the paper tables. Use All reported precisions to reveal every row.`;
   }
   function setModel() {
     const d = current();

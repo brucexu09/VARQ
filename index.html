@@ -329,7 +329,7 @@
               <div class="matrix-legend"><span>Low magnitude</span><span class="color-scale"></span><span>High magnitude</span></div>
             </div>
           </div>
-          <details class="evidence-table">
+          <details class="evidence-table" id="table-1">
             <summary>Reconstruction and attention errors improve along both axes · Table 1</summary>
             <div aria-label="Table 1 · Infinity-2B · INT4 · relative errors (%)" class="metrics-scroll" role="region" tabindex="0">
               <table>
@@ -450,7 +450,7 @@
               <p class="small-note">Metrics are compared within each column. <a href="/assets/pdf/VAR-Q.pdf#page=9">Full ablation →</a></p>
             </div>
           </div>
-          <details class="evidence-table">
+          <details class="evidence-table" id="tables-5-6">
             <summary>Full grouping and boundary-alignment ablations · Tables 5–6</summary>
             <div aria-label="Table 5 · INT4 · VAR-d30 (VAR) and Self-Forcing (SF)" class="metrics-scroll" role="region" tabindex="0">
               <table>
@@ -934,7 +934,7 @@
             </figcaption>
           </figure>
         </article>
-        <details class="evidence-table">
+        <details class="evidence-table" id="table-7">
           <summary>Where to quantize: after RoPE · Table 7</summary>
           <div aria-label="Table 7 · Self-Forcing · Quantization before vs. after RoPE" class="metrics-scroll" role="region" tabindex="0">
             <table>
@@ -1002,6 +1002,11 @@
           </div>
           <p>Reported quality and cache memory,<br />with the configuration kept in view.</p>
         </div>
+        <nav aria-label="Paper table index" class="table-directory">
+          <span>All paper tables</span><a href="#table-1">1 · Quantization errors</a><a href="#tables-2-4">2–4 · Generation results</a
+          ><a href="#tables-5-6">5–6 · Grouping &amp; alignment</a><a href="#table-7">7 · RoPE placement</a
+          ><a href="/assets/pdf/VAR-Q.pdf#page=38">8 · Evaluation prompts ↗</a>
+        </nav>
         <div class="result-highlights">
           <article>
             <span>Next-scale · 720p · INT3</span><strong>79.15% <small>less KV memory</small></strong>
@@ -1016,7 +1021,7 @@
             <p>Self-Forcing: 80.99 VBench vs. 82.94 BF16.</p>
           </article>
         </div>
-        <div class="results-explorer">
+        <div class="results-explorer" id="tables-2-4">
           <div class="explorer-top">
             <div>
               <p class="eyebrow">Tables 2–4 · 9 configurations · 64 reported rows</p>

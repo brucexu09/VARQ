@@ -6,7 +6,9 @@ Live site: https://boxunxu.top/VARQ/
 
 ## Structure
 
-- `index.html`, `style.css`, `app.js`: research page, interactive paper figures, attribution, grouping diagram, benchmark selector, and citation.
+- `index.html`, `style.css`, `research.css`, `app.js`: research page, responsive diagrams, paper figures, attribution, and citation.
+- `showcase.js`, `showcase-data.json`: curated BF16 / VAR-Q video pairs; synchronized playback, visible-only loading, and reduced-motion support.
+- `results.js`, `results-data.json`: all 64 rows from Tables 2–4 across nine configurations, with precision / metric filters and CSV export.
 - `gallery.js`: model / precision / sample gallery with shared video playback, seeking, restart, and speed controls.
 - `assets/`: figures extracted from the paper and the site favicon.
 - `manifest.json`: original project sample index.
@@ -24,4 +26,4 @@ Open http://localhost:8000. The project uses plain static HTML, CSS, and JavaScr
 
 ## Content maintenance
 
-Update model metrics in `app.js` with the corresponding paper table and configuration. The attribution figures and claims come from Section 3.3, Figures 5–7. Keep the NeurIPS citation, author list, and personal website bibliography consistent. This repository independently publishes `/VARQ/`; personal homepage content is maintained in `brucexu09.github.io`.
+Update model metrics and printed KV savings in `results-data.json` with the corresponding paper table and configuration. Tables 1 and 5–7 are reproduced in their relevant sections of `index.html`; Table 8 links to the full evaluation prompt list. The 64 main result rows were checked as complete numerical sequences against the supplied paper. The attribution figures and claims come from Section 3.3, Figures 5–7. Video examples retain their actual sample precision: InfinityStar INT3 and Self-Forcing / LongLive INT6. Posters are first frames from the original files; playback does not crop, retime, or re-encode the source videos. Keep the NeurIPS citation, author list, and personal website bibliography consistent. This repository independently publishes `/VARQ/`; personal homepage content is maintained in `brucexu09.github.io`.
