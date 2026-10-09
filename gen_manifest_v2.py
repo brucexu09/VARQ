@@ -18,16 +18,21 @@ MODEL_META = {  # id -> (label, type, task)
     "longlive": ("LongLive", "video", "Long-horizon autoregressive video (30 s, 832×480)"),
     "Infinity8B": ("Infinity-8B", "image", "Text-to-Image generation (1024×1024)"),
 }
+BIT_ORDER = {"self_forcing": ["q6", "q4"], "longlive": ["q6", "q4"], "Infinity8B": ["q4", "q6", "q3", "q2", "q8"]}
 MODEL_ORDER = ["self_forcing", "longlive", "Infinity8B", "InfinityStar480p", "InfinityStar720p",
                "Infinity2B", "VAR_d30", "VAR_d24", "VAR_d20"]
 
 # (model, qbits) -> source root, method dir names, file stem, extension, optional index selection
 NEW = {
     ("self_forcing", "q4"): dict(src=f"{SRC}/self_forcing", dirs={"Baseline": "Baseline", "VARQ": "VARQr8", "KIVI": "KIVI", "FlexGen": "FlexGen"}, stem="prompt", ext="mp4", caption=False),
-    ("longlive", "q4"): dict(src=f"{SRC}/longlive", dirs={"Baseline": "Baseline", "VARQ": "VARQr8", "KIVI": "KIVI", "FlexGen": "FLexGen"}, stem="prompt", ext="mp4", caption=False),
-    ("Infinity8B", "q2"): dict(src=f"{SRC}/infinity8b", dirs={"Baseline": "Baseline", "VARQ": "VARQ", "KIVI": "KIVI", "FlexGen": "FlexGen"}, stem="idx", ext="jpg"),
+    ("self_forcing", "q6"): dict(src=f"{SRC}/self_forcing", dirs={"Baseline": "Baseline", "VARQ": "VARQ", "KIVI": "KIVI", "FlexGen": "FlexGen"}, stem="prompt", ext="mp4", caption=False),
+    ("longlive", "q6"): dict(src=f"{SRC}/longlive", dirs={"Baseline": "Baseline", "VARQ": "VARQ", "KIVI": "KIVI", "FlexGen": "FLexGen"}, stem="prompt", ext="mp4", caption=False),
     ("Infinity8B", "q3"): dict(src=f"{SRC}/infinity8b", dirs={"Baseline": "Baseline", "VARQ": "VARQ", "KIVI": "KIVI", "FlexGen": "FlexGen"}, stem="idx", ext="jpg"),
+    ("Infinity8B", "q4"): dict(src=f"{SRC}/infinity8b", dirs={"Baseline": "Baseline", "VARQ": "VARQ", "KIVI": "KIVI", "FlexGen": "FlexGen"}, stem="idx", ext="jpg"),
+    ("Infinity8B", "q6"): dict(src=f"{SRC}/infinity8b", dirs={"Baseline": "Baseline", "VARQ": "VARQ", "KIVI": "KIVI", "FlexGen": "FlexGen"}, stem="idx", ext="jpg"),
 }
+# (model, qbits) tabs to remove from the site entirely (kept only under /data1)
+DROP = {("Infinity8B", "q2"), ("longlive", "q4")}
 SELECT_FILE = os.path.join(REPO, "selection.json")  # {"self_forcing/q4": [3, 7, ...], ...}; absent -> all
 
 
@@ -76,22 +81,36 @@ def main():
     manifest = json.load(open(os.path.join(REPO, "manifest.json")))
     by_id = {m["id"]: m for m in manifest["models"]}
     select = json.load(open(SELECT_FILE)) if os.path.exists(SELECT_FILE) else {}
+    for mid, q in DROP:
+        if mid in by_id and q in by_id[mid]["samples"]:
+            del by_id[mid]["samples"][q]
+        for meth in METHOD_ORDER:
+            d = os.path.join(SAMP, mid, meth, q)
+            if os.path.isdir(d):
+                shutil.rmtree(d)
     for (mid, q), spec in NEW.items():
         samples = build_samples(mid, q, spec, select.get(f"{mid}/{q}"))
         if not samples:
             print(f"[skip] {mid}/{q}: no complete samples"); continue
-        # drop stale copies of this (model, qbits) on disk that are not in the new set
-        keep = {os.path.basename(p) for s in samples for p in s["media"].values()}
-        for meth in spec["dirs"]:
-            d = os.path.join(SAMP, mid, meth, q)
-            if os.path.isdir(d):
-                for fn in os.listdir(d):
-                    if fn not in keep: os.remove(os.path.join(d, fn))
         label, mtype, task = MODEL_META[mid]
         entry = by_id.get(mid) or {"id": mid, "samples": {}}
         entry.update({"label": label, "type": mtype, "task": task})
-        entry["samples"][q] = samples
+        if spec.get("merge") == "append":
+            old_samples = [s for s in entry["samples"].get(q, []) if not any(os.path.basename(p).startswith(spec["stem"]) for p in s["media"].values())]
+            entry["samples"][q] = old_samples + samples
+        else:
+            # drop stale copies of this (model, qbits) on disk that are not in the new set
+            keep = {os.path.basename(p) for s in samples for p in s["media"].values()}
+            for meth in spec["dirs"]:
+                d = os.path.join(SAMP, mid, meth, q)
+                if os.path.isdir(d):
+                    for fn in os.listdir(d):
+                        if fn not in keep: os.remove(os.path.join(d, fn))
+            entry["samples"][q] = samples
         entry["bits"] = sorted(entry["samples"], key=lambda x: int(re.match(r"q(\d+)", x).group(1)))
+        if mid in BIT_ORDER:
+            pref = [b for b in BIT_ORDER[mid] if b in entry["bits"]]
+            entry["bits"] = pref + [b for b in entry["bits"] if b not in pref]
         entry["bitLabels"] = {b: qlabel(b) for b in entry["bits"]}
         entry["methodsByBit"] = {b: [m for m in METHOD_ORDER if any(m in s["media"] for s in entry["samples"][b])] for b in entry["bits"]}
         entry["methods"] = [m for m in METHOD_ORDER if any(m in ms for ms in entry["methodsByBit"].values())]

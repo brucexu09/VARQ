@@ -18,125 +18,145 @@
     "VARQ": "VARQ (Ours)"
    },
    "bits": [
-    "q4",
-    "q6"
+    "q6",
+    "q4"
    ],
    "bitLabels": {
-    "q4": "4-bit",
-    "q6": "6-bit"
+    "q6": "6-bit",
+    "q4": "4-bit"
    },
    "samples": {
     "q6": [
      {
-      "prompt": "a giant duck walks through the streets in Boston",
+      "prompt": "A crystal ball sitting on a table, with sunlight streaming through it and casting a circle of rainbow colors on the floor.",
       "caption": null,
       "media": {
-       "Baseline": "samples/self_forcing/Baseline/q6/group02_prompt079_s01.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q6/group02_prompt079_s01.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q6/group02_prompt079_s01.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q6/group02_prompt079_s01.mp4"
+       "Baseline": "samples/self_forcing/Baseline/q6/prompt07.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q6/prompt07.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q6/prompt07.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q6/prompt07.mp4"
       }
      },
      {
-      "prompt": "A little boy is riding a dragon in the sky to a castle",
+      "prompt": "New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York.",
       "caption": null,
       "media": {
-       "Baseline": "samples/self_forcing/Baseline/q6/group02_prompt101_s02.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q6/group02_prompt101_s02.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q6/group02_prompt101_s02.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q6/group02_prompt101_s02.mp4"
+       "Baseline": "samples/self_forcing/Baseline/q6/prompt14.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q6/prompt14.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q6/prompt14.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q6/prompt14.mp4"
       }
      },
      {
-      "prompt": "Cinematic trailer for a group of adventurous puppies exploring ruins in the sky",
+      "prompt": "A person rowing a boat through a river of liquid gold, with shimmering banks.",
       "caption": null,
       "media": {
-       "Baseline": "samples/self_forcing/Baseline/q6/group01_prompt032_s02.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q6/group01_prompt032_s02.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q6/group01_prompt032_s02.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q6/group01_prompt032_s02.mp4"
+       "Baseline": "samples/self_forcing/Baseline/q6/prompt16.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q6/prompt16.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q6/prompt16.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q6/prompt16.mp4"
       }
      },
      {
-      "prompt": "A person on a scooter colliding with a park bench, the scooter tipping over.",
+      "prompt": "Several giant wooly mammoths approach treading through a snowy meadow, their long wooly fur lightly blows in the wind as they walk, snow covered trees and dramatic snow capped mountains in the distance, mid afternoon light with wispy clouds and a sun high in the distance creates a warm glow, the low camera view is stunning capturing the large furry mammal with beautiful photography, depth of field.",
       "caption": null,
       "media": {
-       "Baseline": "samples/self_forcing/Baseline/q6/group03_prompt167_s02.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q6/group03_prompt167_s02.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q6/group03_prompt167_s02.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q6/group03_prompt167_s02.mp4"
+       "Baseline": "samples/self_forcing/Baseline/q6/prompt18.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q6/prompt18.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q6/prompt18.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q6/prompt18.mp4"
       }
      },
      {
-      "prompt": "A man pushes away a huge stone with superhuman strength.",
+      "prompt": "A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon.",
       "caption": null,
       "media": {
-       "Baseline": "samples/self_forcing/Baseline/q6/group03_prompt188_s03.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q6/group03_prompt188_s03.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q6/group03_prompt188_s03.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q6/group03_prompt188_s03.mp4"
+       "Baseline": "samples/self_forcing/Baseline/q6/prompt00.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q6/prompt00.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q6/prompt00.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q6/prompt00.mp4"
       }
      },
      {
-      "prompt": "A push-in through a garden archway, revealing a secret, tranquil garden filled with blooming flowers.",
+      "prompt": "A panda in a scientist's lab coat, conducting experiments with beakers and test tubes.",
       "caption": null,
       "media": {
-       "Baseline": "samples/self_forcing/Baseline/q6/group01_prompt047_s03.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q6/group01_prompt047_s03.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q6/group01_prompt047_s03.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q6/group01_prompt047_s03.mp4"
+       "Baseline": "samples/self_forcing/Baseline/q6/prompt08.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q6/prompt08.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q6/prompt08.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q6/prompt08.mp4"
       }
      },
      {
-      "prompt": "A peacock wearing a crown, sitting on a throne and holding court with other animals.",
+      "prompt": "A pan left across a serene beach at sunrise, moving from the darkened shore to the brightening horizon.",
       "caption": null,
       "media": {
-       "Baseline": "samples/self_forcing/Baseline/q6/group03_prompt138_s01.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q6/group03_prompt138_s01.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q6/group03_prompt138_s01.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q6/group03_prompt138_s01.mp4"
+       "Baseline": "samples/self_forcing/Baseline/q6/prompt05.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q6/prompt05.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q6/prompt05.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q6/prompt05.mp4"
       }
      },
      {
-      "prompt": "A truck right through a tranquil garden, moving past blooming flowers, trees, and a small fountain.",
+      "prompt": "A zoom-in on a drop of morning dew on a leaf, showing the reflection of the surrounding world within it.",
       "caption": null,
       "media": {
-       "Baseline": "samples/self_forcing/Baseline/q6/group02_prompt111_s03.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q6/group02_prompt111_s03.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q6/group02_prompt111_s03.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q6/group02_prompt111_s03.mp4"
+       "Baseline": "samples/self_forcing/Baseline/q6/prompt15.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q6/prompt15.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q6/prompt15.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q6/prompt15.mp4"
+      }
+     },
+     {
+      "prompt": "A deep underground cave filled with glowing crystals and hidden treasures.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q6/prompt04.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q6/prompt04.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q6/prompt04.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q6/prompt04.mp4"
+      }
+     },
+     {
+      "prompt": "A spaceship being pulled into a blackhole.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q6/prompt20.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q6/prompt20.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q6/prompt20.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q6/prompt20.mp4"
       }
      },
      {
       "prompt": "a toy robot wearing a green dress and a sun hat taking a pleasant stroll in Antarctica during a beautiful sunset",
       "caption": null,
       "media": {
-       "Baseline": "samples/self_forcing/Baseline/q6/group01_prompt018_s01.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q6/group01_prompt018_s01.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q6/group01_prompt018_s01.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q6/group01_prompt018_s01.mp4"
+       "Baseline": "samples/self_forcing/Baseline/q6/prompt09.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q6/prompt09.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q6/prompt09.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q6/prompt09.mp4"
+      }
+     },
+     {
+      "prompt": "An aerial shot of a field of blooming wildflowers, creating a patchwork of colors in the landscape.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q6/prompt22.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q6/prompt22.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q6/prompt22.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q6/prompt22.mp4"
       }
      }
     ],
     "q4": [
      {
-      "prompt": "Five gray wolf pups frolicking and chasing each other around a remote gravel road, surrounded by grass. The pups run and leap, chasing each other, and nipping at each other, playing.",
+      "prompt": "A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon.",
       "caption": null,
       "media": {
-       "Baseline": "samples/self_forcing/Baseline/q4/prompt01.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt01.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt01.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt01.mp4"
-      }
-     },
-     {
-      "prompt": "A stylish woman walks down a Tokyo street filled with warm glowing neon and animated city signage. She wears a black leather jacket, a long red dress, and black boots, and carries a black purse. She wears sunglasses and red lipstick. She walks confidently and casually. The street is damp and reflective, creating a mirror effect of the colorful lights. Many pedestrians walk about.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/self_forcing/Baseline/q4/prompt17.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt17.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt17.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt17.mp4"
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt00.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt00.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt00.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt00.mp4"
       }
      },
      {
@@ -150,46 +170,6 @@
       }
      },
      {
-      "prompt": "A tracking shot following a skateboarder performing tricks down a city street, keeping pace with their fluid movements.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/self_forcing/Baseline/q4/prompt06.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt06.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt06.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt06.mp4"
-      }
-     },
-     {
-      "prompt": "A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/self_forcing/Baseline/q4/prompt00.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt00.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt00.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt00.mp4"
-      }
-     },
-     {
-      "prompt": "A bear wearing a superhero cape, flying through the sky over a bustling city.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/self_forcing/Baseline/q4/prompt13.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt13.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt13.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt13.mp4"
-      }
-     },
-     {
-      "prompt": "A little boy is riding a dragon in the sky to a castle",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/self_forcing/Baseline/q4/prompt12.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt12.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt12.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt12.mp4"
-      }
-     },
-     {
       "prompt": "Several giant wooly mammoths approach treading through a snowy meadow, their long wooly fur lightly blows in the wind as they walk, snow covered trees and dramatic snow capped mountains in the distance, mid afternoon light with wispy clouds and a sun high in the distance creates a warm glow, the low camera view is stunning capturing the large furry mammal with beautiful photography, depth of field.",
       "caption": null,
       "media": {
@@ -197,16 +177,6 @@
        "VARQ": "samples/self_forcing/VARQ/q4/prompt18.mp4",
        "KIVI": "samples/self_forcing/KIVI/q4/prompt18.mp4",
        "FlexGen": "samples/self_forcing/FlexGen/q4/prompt18.mp4"
-      }
-     },
-     {
-      "prompt": "A crystal ball sitting on a table, with sunlight streaming through it and casting a circle of rainbow colors on the floor.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/self_forcing/Baseline/q4/prompt07.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt07.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt07.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt07.mp4"
       }
      },
      {
@@ -218,37 +188,17 @@
        "KIVI": "samples/self_forcing/KIVI/q4/prompt09.mp4",
        "FlexGen": "samples/self_forcing/FlexGen/q4/prompt09.mp4"
       }
-     },
-     {
-      "prompt": "A spaceship being pulled into a blackhole.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/self_forcing/Baseline/q4/prompt20.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt20.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt20.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt20.mp4"
-      }
-     },
-     {
-      "prompt": "A goat operating a food truck, serving gourmet grilled cheese sandwiches to a line of animals.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/self_forcing/Baseline/q4/prompt23.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt23.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt23.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt23.mp4"
-      }
      }
     ]
    },
    "methodsByBit": {
-    "q4": [
+    "q6": [
      "Baseline",
      "FlexGen",
      "KIVI",
      "VARQ"
     ],
-    "q6": [
+    "q4": [
      "Baseline",
      "FlexGen",
      "KIVI",
@@ -274,216 +224,96 @@
     "VARQ": "VARQ (Ours)"
    },
    "bits": [
-    "q4",
     "q6"
    ],
    "bitLabels": {
-    "q4": "4-bit",
     "q6": "6-bit"
    },
    "samples": {
     "q6": [
      {
-      "prompt": "A cook flipping pancakes on a griddle.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/longlive/Baseline/q6/group02_prompt081_s01.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q6/group02_prompt081_s01.mp4",
-       "KIVI": "samples/longlive/KIVI/q6/group02_prompt081_s01.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/group02_prompt081_s01.mp4"
-      }
-     },
-     {
-      "prompt": "A bear wearing a superhero cape, flying through the sky over a bustling city.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/longlive/Baseline/q6/group03_prompt165_s02.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q6/group03_prompt165_s02.mp4",
-       "KIVI": "samples/longlive/KIVI/q6/group03_prompt165_s02.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/group03_prompt165_s02.mp4"
-      }
-     },
-     {
-      "prompt": "New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/longlive/Baseline/q6/group03_prompt153_s01.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q6/group03_prompt153_s01.mp4",
-       "KIVI": "samples/longlive/KIVI/q6/group03_prompt153_s01.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/group03_prompt153_s01.mp4"
-      }
-     },
-     {
-      "prompt": "a man BASE jumping over tropical hawaii waters. His pet macaw flies alongside him",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/longlive/Baseline/q6/group01_prompt041_s02.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q6/group01_prompt041_s02.mp4",
-       "KIVI": "samples/longlive/KIVI/q6/group01_prompt041_s02.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/group01_prompt041_s02.mp4"
-      }
-     },
-     {
-      "prompt": "An aerial shot of a field of blooming wildflowers, creating a patchwork of colors in the landscape.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/longlive/Baseline/q6/group01_prompt052_s03.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q6/group01_prompt052_s03.mp4",
-       "KIVI": "samples/longlive/KIVI/q6/group01_prompt052_s03.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/group01_prompt052_s03.mp4"
-      }
-     },
-     {
-      "prompt": "A goat operating a food truck, serving gourmet grilled cheese sandwiches to a line of animals.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/longlive/Baseline/q6/group03_prompt190_s03.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q6/group03_prompt190_s03.mp4",
-       "KIVI": "samples/longlive/KIVI/q6/group03_prompt190_s03.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/group03_prompt190_s03.mp4"
-      }
-     },
-     {
-      "prompt": "A middle-aged sad bald man becomes happy as a wig of curly hair and sunglasses fall suddenly on his head.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/longlive/Baseline/q6/group01_prompt009_s01.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q6/group01_prompt009_s01.mp4",
-       "KIVI": "samples/longlive/KIVI/q6/group01_prompt009_s01.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/group01_prompt009_s01.mp4"
-      }
-     },
-     {
-      "prompt": "In an ancient library, books float and glow as they drift through the air, occasionally landing softly on the tables, where curious individuals reach out to read their contents.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/longlive/Baseline/q6/group02_prompt122_s03.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q6/group02_prompt122_s03.mp4",
-       "KIVI": "samples/longlive/KIVI/q6/group02_prompt122_s03.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/group02_prompt122_s03.mp4"
-      }
-     },
-     {
-      "prompt": "A slow cinematic push in on an ostrich standing in a 1980s kitchen.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/longlive/Baseline/q6/group02_prompt092_s02.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q6/group02_prompt092_s02.mp4",
-       "KIVI": "samples/longlive/KIVI/q6/group02_prompt092_s02.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/group02_prompt092_s02.mp4"
-      }
-     }
-    ],
-    "q4": [
-     {
-      "prompt": "A stylish woman walks down a Tokyo street filled with warm glowing neon and animated city signage. She wears a black leather jacket, a long red dress, and black boots, and carries a black purse. She wears sunglasses and red lipstick. She walks confidently and casually. The street is damp and reflective, creating a mirror effect of the colorful lights. Many pedestrians walk about.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/longlive/Baseline/q4/prompt03.mp4",
-       "VARQ": "samples/longlive/VARQ/q4/prompt03.mp4",
-       "KIVI": "samples/longlive/KIVI/q4/prompt03.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q4/prompt03.mp4"
-      }
-     },
-     {
-      "prompt": "New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/longlive/Baseline/q4/prompt06.mp4",
-       "VARQ": "samples/longlive/VARQ/q4/prompt06.mp4",
-       "KIVI": "samples/longlive/KIVI/q4/prompt06.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q4/prompt06.mp4"
-      }
-     },
-     {
       "prompt": "A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon.",
       "caption": null,
       "media": {
-       "Baseline": "samples/longlive/Baseline/q4/prompt00.mp4",
-       "VARQ": "samples/longlive/VARQ/q4/prompt00.mp4",
-       "KIVI": "samples/longlive/KIVI/q4/prompt00.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q4/prompt00.mp4"
-      }
-     },
-     {
-      "prompt": "Five gray wolf pups frolicking and chasing each other around a remote gravel road, surrounded by grass. The pups run and leap, chasing each other, and nipping at each other, playing.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/longlive/Baseline/q4/prompt01.mp4",
-       "VARQ": "samples/longlive/VARQ/q4/prompt01.mp4",
-       "KIVI": "samples/longlive/KIVI/q4/prompt01.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q4/prompt01.mp4"
-      }
-     },
-     {
-      "prompt": "Several giant wooly mammoths approach treading through a snowy meadow, their long wooly fur lightly blows in the wind as they walk, snow covered trees and dramatic snow capped mountains in the distance, mid afternoon light with wispy clouds and a sun high in the distance creates a warm glow, the low camera view is stunning capturing the large furry mammal with beautiful photography, depth of field.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/longlive/Baseline/q4/prompt04.mp4",
-       "VARQ": "samples/longlive/VARQ/q4/prompt04.mp4",
-       "KIVI": "samples/longlive/KIVI/q4/prompt04.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q4/prompt04.mp4"
-      }
-     },
-     {
-      "prompt": "A bear wearing a superhero cape, flying through the sky over a bustling city.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/longlive/Baseline/q4/prompt05.mp4",
-       "VARQ": "samples/longlive/VARQ/q4/prompt05.mp4",
-       "KIVI": "samples/longlive/KIVI/q4/prompt05.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q4/prompt05.mp4"
-      }
-     },
-     {
-      "prompt": "Cinematic trailer for a group of adventurous puppies exploring ruins in the sky",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/longlive/Baseline/q4/prompt09.mp4",
-       "VARQ": "samples/longlive/VARQ/q4/prompt09.mp4",
-       "KIVI": "samples/longlive/KIVI/q4/prompt09.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q4/prompt09.mp4"
-      }
-     },
-     {
-      "prompt": "a toy robot wearing a green dress and a sun hat taking a pleasant stroll in Antarctica during a beautiful sunset",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/longlive/Baseline/q4/prompt10.mp4",
-       "VARQ": "samples/longlive/VARQ/q4/prompt10.mp4",
-       "KIVI": "samples/longlive/KIVI/q4/prompt10.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q4/prompt10.mp4"
-      }
-     },
-     {
-      "prompt": "A cook flipping pancakes on a griddle.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/longlive/Baseline/q4/prompt11.mp4",
-       "VARQ": "samples/longlive/VARQ/q4/prompt11.mp4",
-       "KIVI": "samples/longlive/KIVI/q4/prompt11.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q4/prompt11.mp4"
+       "Baseline": "samples/longlive/Baseline/q6/prompt00.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/prompt00.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/prompt00.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/prompt00.mp4"
       }
      },
      {
       "prompt": "A quaint village nestled in a valley is surrounded by blooming cherry blossoms, with petals drifting through the air as villagers go about their daily activities, adding life to the scene.",
       "caption": null,
       "media": {
-       "Baseline": "samples/longlive/Baseline/q4/prompt02.mp4",
-       "VARQ": "samples/longlive/VARQ/q4/prompt02.mp4",
-       "KIVI": "samples/longlive/KIVI/q4/prompt02.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q4/prompt02.mp4"
+       "Baseline": "samples/longlive/Baseline/q6/prompt02.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/prompt02.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/prompt02.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/prompt02.mp4"
+      }
+     },
+     {
+      "prompt": "a toy robot wearing a green dress and a sun hat taking a pleasant stroll in Antarctica during a beautiful sunset",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/prompt10.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/prompt10.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/prompt10.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/prompt10.mp4"
+      }
+     },
+     {
+      "prompt": "Cinematic trailer for a group of adventurous puppies exploring ruins in the sky",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/prompt09.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/prompt09.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/prompt09.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/prompt09.mp4"
+      }
+     },
+     {
+      "prompt": "New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/prompt06.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/prompt06.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/prompt06.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/prompt06.mp4"
+      }
+     },
+     {
+      "prompt": "A cook flipping pancakes on a griddle.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/prompt11.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/prompt11.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/prompt11.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/prompt11.mp4"
+      }
+     },
+     {
+      "prompt": "A stylish woman walks down a Tokyo street filled with warm glowing neon and animated city signage. She wears a black leather jacket, a long red dress, and black boots, and carries a black purse. She wears sunglasses and red lipstick. She walks confidently and casually. The street is damp and reflective, creating a mirror effect of the colorful lights. Many pedestrians walk about.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/prompt03.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/prompt03.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/prompt03.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/prompt03.mp4"
+      }
+     },
+     {
+      "prompt": "Several giant wooly mammoths approach treading through a snowy meadow, their long wooly fur lightly blows in the wind as they walk, snow covered trees and dramatic snow capped mountains in the distance, mid afternoon light with wispy clouds and a sun high in the distance creates a warm glow, the low camera view is stunning capturing the large furry mammal with beautiful photography, depth of field.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/prompt04.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/prompt04.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/prompt04.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/prompt04.mp4"
       }
      }
     ]
    },
    "methodsByBit": {
-    "q4": [
-     "Baseline",
-     "FlexGen",
-     "KIVI",
-     "VARQ"
-    ],
     "q6": [
      "Baseline",
      "FlexGen",
@@ -510,198 +340,18 @@
     "VARQ": "VARQ (Ours)"
    },
    "bits": [
-    "q2",
+    "q4",
+    "q6",
     "q3",
     "q8"
    ],
    "bitLabels": {
-    "q2": "2-bit",
+    "q4": "4-bit",
+    "q6": "6-bit",
     "q3": "3-bit",
     "q8": "8-bit"
    },
    "samples": {
-    "q2": [
-     {
-      "prompt": "A red fox standing in fresh snow at dawn, soft pink light, fine fur detail, wildlife photography.",
-      "caption": "VARQ <b>19.4 dB</b> &nbsp;·&nbsp; KIVI 14.4 &nbsp;·&nbsp; FlexGen 11.7 &nbsp;<span class='pos'>(+5.0 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q2/idx01.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q2/idx01.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q2/idx01.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx01.jpg"
-      }
-     },
-     {
-      "prompt": "A snowy owl in flight against a pale winter sky, wings spread, feather detail.",
-      "caption": "VARQ <b>24.8 dB</b> &nbsp;·&nbsp; KIVI 21.9 &nbsp;·&nbsp; FlexGen 22.0 &nbsp;<span class='pos'>(+2.8 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q2/idx20.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q2/idx20.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q2/idx20.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx20.jpg"
-      }
-     },
-     {
-      "prompt": "An astronaut riding a horse across a desert at sunset, photorealistic.",
-      "caption": "VARQ <b>17.0 dB</b> &nbsp;·&nbsp; KIVI 15.0 &nbsp;·&nbsp; FlexGen 14.4 &nbsp;<span class='pos'>(+2.0 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q2/idx05.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q2/idx05.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q2/idx05.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx05.jpg"
-      }
-     },
-     {
-      "prompt": "A majestic Bengal tiger walking through a misty bamboo forest, National Geographic style.",
-      "caption": "VARQ <b>15.2 dB</b> &nbsp;·&nbsp; KIVI 13.0 &nbsp;·&nbsp; FlexGen 11.9 &nbsp;<span class='pos'>(+2.2 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q2/idx06.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q2/idx06.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q2/idx06.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx06.jpg"
-      }
-     },
-     {
-      "prompt": "A beautiful Chinese woman with graceful features, close-up portrait, long flowing black hair, wearing a traditional silk cheongsam delicately embroidered with floral patterns, face softly illuminated by ambient light, serene expression",
-      "caption": "VARQ <b>15.6 dB</b> &nbsp;·&nbsp; KIVI 11.3 &nbsp;·&nbsp; FlexGen 10.8 &nbsp;<span class='pos'>(+4.2 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q2/idx24.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q2/idx24.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q2/idx24.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx24.jpg"
-      }
-     },
-     {
-      "prompt": "A colorful macaw parrot perched on a branch in a lush rainforest, vibrant feathers, sharp focus.",
-      "caption": "VARQ <b>13.0 dB</b> &nbsp;·&nbsp; KIVI 10.6 &nbsp;·&nbsp; FlexGen 10.9 &nbsp;<span class='pos'>(+2.0 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q2/idx16.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q2/idx16.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q2/idx16.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx16.jpg"
-      }
-     },
-     {
-      "prompt": "A cinematic close-up portrait of an elderly fisherman with weathered skin and a white beard, golden hour light, shallow depth of field, 85mm lens.",
-      "caption": "VARQ <b>14.6 dB</b> &nbsp;·&nbsp; KIVI 13.1 &nbsp;·&nbsp; FlexGen 11.3 &nbsp;<span class='pos'>(+1.5 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q2/idx00.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q2/idx00.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q2/idx00.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx00.jpg"
-      }
-     },
-     {
-      "prompt": "A hot air balloon festival over Cappadocia at sunrise, dozens of colorful balloons, aerial view.",
-      "caption": "VARQ <b>14.3 dB</b> &nbsp;·&nbsp; KIVI 12.6 &nbsp;·&nbsp; FlexGen 13.7 &nbsp;<span class='pos'>(+0.6 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q2/idx09.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q2/idx09.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q2/idx09.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx09.jpg"
-      }
-     },
-     {
-      "prompt": "A corgi wearing sunglasses sitting on a beach chair with a tropical drink, bright summer colors.",
-      "caption": "VARQ <b>12.0 dB</b> &nbsp;·&nbsp; KIVI 10.3 &nbsp;·&nbsp; FlexGen 9.8 &nbsp;<span class='pos'>(+1.7 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q2/idx10.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q2/idx10.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q2/idx10.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx10.jpg"
-      }
-     },
-     {
-      "prompt": "A cozy Scandinavian cabin by a frozen lake under the northern lights, long exposure photograph.",
-      "caption": "VARQ <b>15.2 dB</b> &nbsp;·&nbsp; KIVI 12.5 &nbsp;·&nbsp; FlexGen 12.8 &nbsp;<span class='pos'>(+2.4 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q2/idx02.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q2/idx02.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q2/idx02.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx02.jpg"
-      }
-     },
-     {
-      "prompt": "A steaming bowl of ramen with a soft-boiled egg, chashu pork and scallions on a wooden counter, food photography.",
-      "caption": "VARQ <b>13.8 dB</b> &nbsp;·&nbsp; KIVI 12.3 &nbsp;·&nbsp; FlexGen 12.0 &nbsp;<span class='pos'>(+1.5 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q2/idx03.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q2/idx03.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q2/idx03.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx03.jpg"
-      }
-     },
-     {
-      "prompt": "An underwater photograph of a sea turtle swimming over a coral reef with sun rays.",
-      "caption": "VARQ <b>14.1 dB</b> &nbsp;·&nbsp; KIVI 12.5 &nbsp;·&nbsp; FlexGen 12.9 &nbsp;<span class='pos'>(+1.2 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q2/idx21.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q2/idx21.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q2/idx21.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx21.jpg"
-      }
-     },
-     {
-      "prompt": "A sleek sports car on a coastal highway at golden hour, motion blur, automotive photography.",
-      "caption": "VARQ <b>16.2 dB</b> &nbsp;·&nbsp; KIVI 12.6 &nbsp;·&nbsp; FlexGen 12.9 &nbsp;<span class='pos'>(+3.2 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q2/idx19.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q2/idx19.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q2/idx19.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx19.jpg"
-      }
-     },
-     {
-      "prompt": "a cat holds a board with the text 'diffusion is dead'",
-      "caption": "VARQ <b>14.7 dB</b> &nbsp;·&nbsp; KIVI 11.8 &nbsp;·&nbsp; FlexGen 12.1 &nbsp;<span class='pos'>(+2.6 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q2/idx14.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q2/idx14.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q2/idx14.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx14.jpg"
-      }
-     },
-     {
-      "prompt": "A medieval knight in ornate silver armor standing in a cathedral lit by stained-glass windows.",
-      "caption": "VARQ <b>11.4 dB</b> &nbsp;·&nbsp; KIVI 9.4 &nbsp;·&nbsp; FlexGen 9.2 &nbsp;<span class='pos'>(+2.0 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q2/idx15.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q2/idx15.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q2/idx15.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx15.jpg"
-      }
-     },
-     {
-      "prompt": "An oil painting of a stormy sea with a lighthouse on a cliff, dramatic brushstrokes, Romantic era style.",
-      "caption": "VARQ <b>15.6 dB</b> &nbsp;·&nbsp; KIVI 11.8 &nbsp;·&nbsp; FlexGen 13.1 &nbsp;<span class='pos'>(+2.5 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q2/idx11.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q2/idx11.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q2/idx11.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx11.jpg"
-      }
-     },
-     {
-      "prompt": "A golden retriever puppy sitting in a field of sunflowers, bright blue sky, joyful expression.",
-      "caption": "VARQ <b>13.3 dB</b> &nbsp;·&nbsp; KIVI 11.4 &nbsp;·&nbsp; FlexGen 10.7 &nbsp;<span class='pos'>(+1.9 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q2/idx25.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q2/idx25.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q2/idx25.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx25.jpg"
-      }
-     },
-     {
-      "prompt": "A chef plating a gourmet dessert with raspberries and gold leaf, restaurant kitchen, bokeh.",
-      "caption": "VARQ <b>13.5 dB</b> &nbsp;·&nbsp; KIVI 10.2 &nbsp;·&nbsp; FlexGen 10.3 &nbsp;<span class='pos'>(+3.3 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q2/idx22.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q2/idx22.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q2/idx22.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx22.jpg"
-      }
-     }
-    ],
     "q3": [
      {
       "prompt": "A red fox standing in fresh snow at dawn, soft pink light, fine fur detail, wildlife photography.",
@@ -734,16 +384,6 @@
       }
      },
      {
-      "prompt": "A majestic Bengal tiger walking through a misty bamboo forest, National Geographic style.",
-      "caption": "VARQ <b>17.7 dB</b> &nbsp;·&nbsp; KIVI 16.4 &nbsp;·&nbsp; FlexGen 15.6 &nbsp;<span class='pos'>(+1.3 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q3/idx06.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q3/idx06.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q3/idx06.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q3/idx06.jpg"
-      }
-     },
-     {
       "prompt": "A beautiful Chinese woman with graceful features, close-up portrait, long flowing black hair, wearing a traditional silk cheongsam delicately embroidered with floral patterns, face softly illuminated by ambient light, serene expression",
       "caption": "VARQ <b>18.7 dB</b> &nbsp;·&nbsp; KIVI 14.6 &nbsp;·&nbsp; FlexGen 14.1 &nbsp;<span class='pos'>(+4.1 dB PSNR)</span>",
       "media": {
@@ -751,76 +391,6 @@
        "VARQ": "samples/Infinity8B/VARQ/q3/idx24.jpg",
        "KIVI": "samples/Infinity8B/KIVI/q3/idx24.jpg",
        "FlexGen": "samples/Infinity8B/FlexGen/q3/idx24.jpg"
-      }
-     },
-     {
-      "prompt": "A colorful macaw parrot perched on a branch in a lush rainforest, vibrant feathers, sharp focus.",
-      "caption": "VARQ <b>14.8 dB</b> &nbsp;·&nbsp; KIVI 13.2 &nbsp;·&nbsp; FlexGen 12.3 &nbsp;<span class='pos'>(+1.7 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q3/idx16.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q3/idx16.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q3/idx16.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q3/idx16.jpg"
-      }
-     },
-     {
-      "prompt": "A cinematic close-up portrait of an elderly fisherman with weathered skin and a white beard, golden hour light, shallow depth of field, 85mm lens.",
-      "caption": "VARQ <b>16.8 dB</b> &nbsp;·&nbsp; KIVI 15.1 &nbsp;·&nbsp; FlexGen 15.3 &nbsp;<span class='pos'>(+1.5 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q3/idx00.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q3/idx00.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q3/idx00.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q3/idx00.jpg"
-      }
-     },
-     {
-      "prompt": "A hot air balloon festival over Cappadocia at sunrise, dozens of colorful balloons, aerial view.",
-      "caption": "VARQ <b>15.1 dB</b> &nbsp;·&nbsp; KIVI 14.6 &nbsp;·&nbsp; FlexGen 13.7 &nbsp;<span class='pos'>(+0.5 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q3/idx09.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q3/idx09.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q3/idx09.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q3/idx09.jpg"
-      }
-     },
-     {
-      "prompt": "A corgi wearing sunglasses sitting on a beach chair with a tropical drink, bright summer colors.",
-      "caption": "VARQ <b>14.2 dB</b> &nbsp;·&nbsp; KIVI 11.8 &nbsp;·&nbsp; FlexGen 11.5 &nbsp;<span class='pos'>(+2.5 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q3/idx10.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q3/idx10.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q3/idx10.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q3/idx10.jpg"
-      }
-     },
-     {
-      "prompt": "A cozy Scandinavian cabin by a frozen lake under the northern lights, long exposure photograph.",
-      "caption": "VARQ <b>17.8 dB</b> &nbsp;·&nbsp; KIVI 16.4 &nbsp;·&nbsp; FlexGen 15.5 &nbsp;<span class='pos'>(+1.3 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q3/idx02.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q3/idx02.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q3/idx02.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q3/idx02.jpg"
-      }
-     },
-     {
-      "prompt": "A steaming bowl of ramen with a soft-boiled egg, chashu pork and scallions on a wooden counter, food photography.",
-      "caption": "VARQ <b>16.0 dB</b> &nbsp;·&nbsp; KIVI 13.9 &nbsp;·&nbsp; FlexGen 13.1 &nbsp;<span class='pos'>(+2.1 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q3/idx03.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q3/idx03.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q3/idx03.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q3/idx03.jpg"
-      }
-     },
-     {
-      "prompt": "An underwater photograph of a sea turtle swimming over a coral reef with sun rays.",
-      "caption": "VARQ <b>15.5 dB</b> &nbsp;·&nbsp; KIVI 14.0 &nbsp;·&nbsp; FlexGen 14.1 &nbsp;<span class='pos'>(+1.4 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q3/idx21.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q3/idx21.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q3/idx21.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q3/idx21.jpg"
       }
      },
      {
@@ -834,23 +404,33 @@
       }
      },
      {
-      "prompt": "a cat holds a board with the text 'diffusion is dead'",
-      "caption": "VARQ <b>16.2 dB</b> &nbsp;·&nbsp; KIVI 14.7 &nbsp;·&nbsp; FlexGen 13.6 &nbsp;<span class='pos'>(+1.5 dB PSNR)</span>",
+      "prompt": "A cozy Scandinavian cabin by a frozen lake under the northern lights, long exposure photograph.",
+      "caption": "VARQ <b>17.8 dB</b> &nbsp;·&nbsp; KIVI 16.4 &nbsp;·&nbsp; FlexGen 15.5 &nbsp;<span class='pos'>(+1.3 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q3/idx14.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q3/idx14.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q3/idx14.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q3/idx14.jpg"
+       "Baseline": "samples/Infinity8B/Baseline/q3/idx02.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q3/idx02.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q3/idx02.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q3/idx02.jpg"
       }
      },
      {
-      "prompt": "A medieval knight in ornate silver armor standing in a cathedral lit by stained-glass windows.",
-      "caption": "VARQ <b>12.7 dB</b> &nbsp;·&nbsp; KIVI 11.5 &nbsp;·&nbsp; FlexGen 11.0 &nbsp;<span class='pos'>(+1.2 dB PSNR)</span>",
+      "prompt": "A majestic Bengal tiger walking through a misty bamboo forest, National Geographic style.",
+      "caption": "VARQ <b>17.7 dB</b> &nbsp;·&nbsp; KIVI 16.4 &nbsp;·&nbsp; FlexGen 15.6 &nbsp;<span class='pos'>(+1.3 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q3/idx15.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q3/idx15.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q3/idx15.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q3/idx15.jpg"
+       "Baseline": "samples/Infinity8B/Baseline/q3/idx06.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q3/idx06.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q3/idx06.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q3/idx06.jpg"
+      }
+     },
+     {
+      "prompt": "A cinematic close-up portrait of an elderly fisherman with weathered skin and a white beard, golden hour light, shallow depth of field, 85mm lens.",
+      "caption": "VARQ <b>16.8 dB</b> &nbsp;·&nbsp; KIVI 15.1 &nbsp;·&nbsp; FlexGen 15.3 &nbsp;<span class='pos'>(+1.5 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q3/idx00.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q3/idx00.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q3/idx00.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q3/idx00.jpg"
       }
      },
      {
@@ -864,13 +444,13 @@
       }
      },
      {
-      "prompt": "A golden retriever puppy sitting in a field of sunflowers, bright blue sky, joyful expression.",
-      "caption": "VARQ <b>15.8 dB</b> &nbsp;·&nbsp; KIVI 14.6 &nbsp;·&nbsp; FlexGen 13.7 &nbsp;<span class='pos'>(+1.2 dB PSNR)</span>",
+      "prompt": "A glass of iced coffee with condensation droplets on a marble table, morning sunlight, product photography.",
+      "caption": "VARQ <b>16.9 dB</b> &nbsp;·&nbsp; KIVI 12.2 &nbsp;·&nbsp; FlexGen 12.2 &nbsp;<span class='pos'>(+4.7 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q3/idx25.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q3/idx25.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q3/idx25.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q3/idx25.jpg"
+       "Baseline": "samples/Infinity8B/Baseline/q3/idx12.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q3/idx12.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q3/idx12.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q3/idx12.jpg"
       }
      },
      {
@@ -881,6 +461,16 @@
        "VARQ": "samples/Infinity8B/VARQ/q3/idx22.jpg",
        "KIVI": "samples/Infinity8B/KIVI/q3/idx22.jpg",
        "FlexGen": "samples/Infinity8B/FlexGen/q3/idx22.jpg"
+      }
+     },
+     {
+      "prompt": "A macro photograph of a honeybee covered in pollen landing on a purple lavender flower.",
+      "caption": "VARQ <b>16.7 dB</b> &nbsp;·&nbsp; KIVI 13.9 &nbsp;·&nbsp; FlexGen 13.9 &nbsp;<span class='pos'>(+2.8 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q3/idx08.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q3/idx08.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q3/idx08.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q3/idx08.jpg"
       }
      }
     ],
@@ -909,10 +499,360 @@
        "VARQ": "samples/Infinity8B/VARQ/q8/group03_idx00717.png"
       }
      }
+    ],
+    "q4": [
+     {
+      "prompt": "A red fox standing in fresh snow at dawn, soft pink light, fine fur detail, wildlife photography.",
+      "caption": "VARQ <b>24.6 dB</b> &nbsp;·&nbsp; KIVI 21.4 &nbsp;·&nbsp; FlexGen 19.8 &nbsp;<span class='pos'>(+3.1 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx01.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx01.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx01.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx01.jpg"
+      }
+     },
+     {
+      "prompt": "A snowy owl in flight against a pale winter sky, wings spread, feather detail.",
+      "caption": "VARQ <b>26.8 dB</b> &nbsp;·&nbsp; KIVI 25.4 &nbsp;·&nbsp; FlexGen 24.2 &nbsp;<span class='pos'>(+1.3 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx20.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx20.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx20.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx20.jpg"
+      }
+     },
+     {
+      "prompt": "An astronaut riding a horse across a desert at sunset, photorealistic.",
+      "caption": "VARQ <b>21.3 dB</b> &nbsp;·&nbsp; KIVI 18.2 &nbsp;·&nbsp; FlexGen 18.5 &nbsp;<span class='pos'>(+2.8 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx05.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx05.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx05.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx05.jpg"
+      }
+     },
+     {
+      "prompt": "A majestic Bengal tiger walking through a misty bamboo forest, National Geographic style.",
+      "caption": "VARQ <b>18.7 dB</b> &nbsp;·&nbsp; KIVI 17.4 &nbsp;·&nbsp; FlexGen 16.7 &nbsp;<span class='pos'>(+1.3 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx06.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx06.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx06.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx06.jpg"
+      }
+     },
+     {
+      "prompt": "A beautiful Chinese woman with graceful features, close-up portrait, long flowing black hair, wearing a traditional silk cheongsam delicately embroidered with floral patterns, face softly illuminated by ambient light, serene expression",
+      "caption": "VARQ <b>20.3 dB</b> &nbsp;·&nbsp; KIVI 17.4 &nbsp;·&nbsp; FlexGen 16.3 &nbsp;<span class='pos'>(+2.9 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx24.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx24.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx24.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx24.jpg"
+      }
+     },
+     {
+      "prompt": "A colorful macaw parrot perched on a branch in a lush rainforest, vibrant feathers, sharp focus.",
+      "caption": "VARQ <b>17.0 dB</b> &nbsp;·&nbsp; KIVI 14.7 &nbsp;·&nbsp; FlexGen 14.1 &nbsp;<span class='pos'>(+2.4 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx16.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx16.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx16.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx16.jpg"
+      }
+     },
+     {
+      "prompt": "A cinematic close-up portrait of an elderly fisherman with weathered skin and a white beard, golden hour light, shallow depth of field, 85mm lens.",
+      "caption": "VARQ <b>17.9 dB</b> &nbsp;·&nbsp; KIVI 17.4 &nbsp;·&nbsp; FlexGen 15.1 &nbsp;<span class='pos'>(+0.5 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx00.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx00.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx00.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx00.jpg"
+      }
+     },
+     {
+      "prompt": "A hot air balloon festival over Cappadocia at sunrise, dozens of colorful balloons, aerial view.",
+      "caption": "VARQ <b>16.0 dB</b> &nbsp;·&nbsp; KIVI 15.0 &nbsp;·&nbsp; FlexGen 14.8 &nbsp;<span class='pos'>(+1.0 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx09.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx09.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx09.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx09.jpg"
+      }
+     },
+     {
+      "prompt": "A corgi wearing sunglasses sitting on a beach chair with a tropical drink, bright summer colors.",
+      "caption": "VARQ <b>16.4 dB</b> &nbsp;·&nbsp; KIVI 13.1 &nbsp;·&nbsp; FlexGen 12.6 &nbsp;<span class='pos'>(+3.2 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx10.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx10.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx10.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx10.jpg"
+      }
+     },
+     {
+      "prompt": "A cozy Scandinavian cabin by a frozen lake under the northern lights, long exposure photograph.",
+      "caption": "VARQ <b>18.4 dB</b> &nbsp;·&nbsp; KIVI 16.9 &nbsp;·&nbsp; FlexGen 16.3 &nbsp;<span class='pos'>(+1.5 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx02.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx02.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx02.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx02.jpg"
+      }
+     },
+     {
+      "prompt": "A steaming bowl of ramen with a soft-boiled egg, chashu pork and scallions on a wooden counter, food photography.",
+      "caption": "VARQ <b>17.1 dB</b> &nbsp;·&nbsp; KIVI 16.3 &nbsp;·&nbsp; FlexGen 15.3 &nbsp;<span class='pos'>(+0.8 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx03.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx03.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx03.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx03.jpg"
+      }
+     },
+     {
+      "prompt": "A sleek sports car on a coastal highway at golden hour, motion blur, automotive photography.",
+      "caption": "VARQ <b>20.0 dB</b> &nbsp;·&nbsp; KIVI 16.7 &nbsp;·&nbsp; FlexGen 17.6 &nbsp;<span class='pos'>(+2.4 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx19.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx19.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx19.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx19.jpg"
+      }
+     },
+     {
+      "prompt": "a cat holds a board with the text 'diffusion is dead'",
+      "caption": "VARQ <b>18.9 dB</b> &nbsp;·&nbsp; KIVI 17.7 &nbsp;·&nbsp; FlexGen 15.7 &nbsp;<span class='pos'>(+1.1 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx14.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx14.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx14.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx14.jpg"
+      }
+     },
+     {
+      "prompt": "A medieval knight in ornate silver armor standing in a cathedral lit by stained-glass windows.",
+      "caption": "VARQ <b>13.5 dB</b> &nbsp;·&nbsp; KIVI 12.2 &nbsp;·&nbsp; FlexGen 11.7 &nbsp;<span class='pos'>(+1.3 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx15.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx15.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx15.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx15.jpg"
+      }
+     },
+     {
+      "prompt": "An oil painting of a stormy sea with a lighthouse on a cliff, dramatic brushstrokes, Romantic era style.",
+      "caption": "VARQ <b>17.4 dB</b> &nbsp;·&nbsp; KIVI 16.4 &nbsp;·&nbsp; FlexGen 16.1 &nbsp;<span class='pos'>(+1.0 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx11.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx11.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx11.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx11.jpg"
+      }
+     },
+     {
+      "prompt": "A golden retriever puppy sitting in a field of sunflowers, bright blue sky, joyful expression.",
+      "caption": "VARQ <b>17.6 dB</b> &nbsp;·&nbsp; KIVI 14.9 &nbsp;·&nbsp; FlexGen 14.2 &nbsp;<span class='pos'>(+2.7 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx25.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx25.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx25.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx25.jpg"
+      }
+     },
+     {
+      "prompt": "A chef plating a gourmet dessert with raspberries and gold leaf, restaurant kitchen, bokeh.",
+      "caption": "VARQ <b>17.4 dB</b> &nbsp;·&nbsp; KIVI 14.4 &nbsp;·&nbsp; FlexGen 12.9 &nbsp;<span class='pos'>(+2.9 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx22.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx22.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx22.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx22.jpg"
+      }
+     }
+    ],
+    "q6": [
+     {
+      "prompt": "A red fox standing in fresh snow at dawn, soft pink light, fine fur detail, wildlife photography.",
+      "caption": "VARQ <b>25.6 dB</b> &nbsp;·&nbsp; KIVI 24.0 &nbsp;·&nbsp; FlexGen 23.6 &nbsp;<span class='pos'>(+1.6 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx01.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx01.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx01.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx01.jpg"
+      }
+     },
+     {
+      "prompt": "A snowy owl in flight against a pale winter sky, wings spread, feather detail.",
+      "caption": "VARQ <b>26.8 dB</b> &nbsp;·&nbsp; KIVI 29.1 &nbsp;·&nbsp; FlexGen 27.4 &nbsp;<span class='pos'>(-2.4 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx20.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx20.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx20.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx20.jpg"
+      }
+     },
+     {
+      "prompt": "An astronaut riding a horse across a desert at sunset, photorealistic.",
+      "caption": "VARQ <b>22.6 dB</b> &nbsp;·&nbsp; KIVI 21.5 &nbsp;·&nbsp; FlexGen 21.5 &nbsp;<span class='pos'>(+1.1 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx05.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx05.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx05.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx05.jpg"
+      }
+     },
+     {
+      "prompt": "A majestic Bengal tiger walking through a misty bamboo forest, National Geographic style.",
+      "caption": "VARQ <b>19.3 dB</b> &nbsp;·&nbsp; KIVI 18.4 &nbsp;·&nbsp; FlexGen 19.2 &nbsp;<span class='pos'>(+0.1 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx06.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx06.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx06.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx06.jpg"
+      }
+     },
+     {
+      "prompt": "A beautiful Chinese woman with graceful features, close-up portrait, long flowing black hair, wearing a traditional silk cheongsam delicately embroidered with floral patterns, face softly illuminated by ambient light, serene expression",
+      "caption": "VARQ <b>19.6 dB</b> &nbsp;·&nbsp; KIVI 19.7 &nbsp;·&nbsp; FlexGen 18.3 &nbsp;<span class='pos'>(-0.2 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx24.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx24.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx24.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx24.jpg"
+      }
+     },
+     {
+      "prompt": "A colorful macaw parrot perched on a branch in a lush rainforest, vibrant feathers, sharp focus.",
+      "caption": "VARQ <b>16.3 dB</b> &nbsp;·&nbsp; KIVI 16.2 &nbsp;·&nbsp; FlexGen 16.2 &nbsp;<span class='pos'>(+0.2 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx16.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx16.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx16.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx16.jpg"
+      }
+     },
+     {
+      "prompt": "A cinematic close-up portrait of an elderly fisherman with weathered skin and a white beard, golden hour light, shallow depth of field, 85mm lens.",
+      "caption": "VARQ <b>18.7 dB</b> &nbsp;·&nbsp; KIVI 18.0 &nbsp;·&nbsp; FlexGen 18.1 &nbsp;<span class='pos'>(+0.6 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx00.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx00.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx00.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx00.jpg"
+      }
+     },
+     {
+      "prompt": "A hot air balloon festival over Cappadocia at sunrise, dozens of colorful balloons, aerial view.",
+      "caption": "VARQ <b>15.2 dB</b> &nbsp;·&nbsp; KIVI 15.1 &nbsp;·&nbsp; FlexGen 14.9 &nbsp;<span class='pos'>(+0.2 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx09.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx09.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx09.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx09.jpg"
+      }
+     },
+     {
+      "prompt": "A corgi wearing sunglasses sitting on a beach chair with a tropical drink, bright summer colors.",
+      "caption": "VARQ <b>18.7 dB</b> &nbsp;·&nbsp; KIVI 15.0 &nbsp;·&nbsp; FlexGen 15.2 &nbsp;<span class='pos'>(+3.4 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx10.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx10.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx10.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx10.jpg"
+      }
+     },
+     {
+      "prompt": "A cozy Scandinavian cabin by a frozen lake under the northern lights, long exposure photograph.",
+      "caption": "VARQ <b>19.3 dB</b> &nbsp;·&nbsp; KIVI 18.0 &nbsp;·&nbsp; FlexGen 17.5 &nbsp;<span class='pos'>(+1.2 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx02.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx02.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx02.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx02.jpg"
+      }
+     },
+     {
+      "prompt": "A steaming bowl of ramen with a soft-boiled egg, chashu pork and scallions on a wooden counter, food photography.",
+      "caption": "VARQ <b>18.1 dB</b> &nbsp;·&nbsp; KIVI 16.9 &nbsp;·&nbsp; FlexGen 17.3 &nbsp;<span class='pos'>(+0.8 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx03.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx03.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx03.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx03.jpg"
+      }
+     },
+     {
+      "prompt": "A sleek sports car on a coastal highway at golden hour, motion blur, automotive photography.",
+      "caption": "VARQ <b>21.1 dB</b> &nbsp;·&nbsp; KIVI 20.6 &nbsp;·&nbsp; FlexGen 19.0 &nbsp;<span class='pos'>(+0.6 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx19.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx19.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx19.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx19.jpg"
+      }
+     },
+     {
+      "prompt": "a cat holds a board with the text 'diffusion is dead'",
+      "caption": "VARQ <b>21.5 dB</b> &nbsp;·&nbsp; KIVI 18.0 &nbsp;·&nbsp; FlexGen 18.7 &nbsp;<span class='pos'>(+2.8 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx14.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx14.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx14.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx14.jpg"
+      }
+     },
+     {
+      "prompt": "A medieval knight in ornate silver armor standing in a cathedral lit by stained-glass windows.",
+      "caption": "VARQ <b>14.7 dB</b> &nbsp;·&nbsp; KIVI 14.1 &nbsp;·&nbsp; FlexGen 14.3 &nbsp;<span class='pos'>(+0.3 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx15.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx15.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx15.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx15.jpg"
+      }
+     },
+     {
+      "prompt": "An oil painting of a stormy sea with a lighthouse on a cliff, dramatic brushstrokes, Romantic era style.",
+      "caption": "VARQ <b>17.6 dB</b> &nbsp;·&nbsp; KIVI 17.6 &nbsp;·&nbsp; FlexGen 17.3 &nbsp;<span class='pos'>(+0.0 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx11.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx11.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx11.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx11.jpg"
+      }
+     },
+     {
+      "prompt": "A golden retriever puppy sitting in a field of sunflowers, bright blue sky, joyful expression.",
+      "caption": "VARQ <b>16.9 dB</b> &nbsp;·&nbsp; KIVI 16.0 &nbsp;·&nbsp; FlexGen 16.5 &nbsp;<span class='pos'>(+0.4 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx25.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx25.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx25.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx25.jpg"
+      }
+     },
+     {
+      "prompt": "A chef plating a gourmet dessert with raspberries and gold leaf, restaurant kitchen, bokeh.",
+      "caption": "VARQ <b>18.9 dB</b> &nbsp;·&nbsp; KIVI 17.3 &nbsp;·&nbsp; FlexGen 17.7 &nbsp;<span class='pos'>(+1.2 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx22.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx22.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx22.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx22.jpg"
+      }
+     }
     ]
    },
    "methodsByBit": {
-    "q2": [
+    "q4": [
+     "Baseline",
+     "FlexGen",
+     "KIVI",
+     "VARQ"
+    ],
+    "q6": [
      "Baseline",
      "FlexGen",
      "KIVI",

@@ -45,14 +45,14 @@
   "frame": {
     "model": "Self-Forcing",
     "paradigm": "Next-frame",
-    "bits": "4-bit",
+    "bits": "6-bit",
     "clips": [
       {
-        "title": "Wolf pups at play",
-        "prompt": "Five gray wolf pups frolicking and chasing each other around a remote gravel road, surrounded by grass. The pups run and leap, chasing each other, and nipping at each other, playing.",
+        "title": "A crystal ball in sunlight",
+        "prompt": "A crystal ball sitting on a table, with sunlight streaming through it and casting a circle of rainbow colors on the floor.",
         "sources": {
-          "Baseline": "samples/self_forcing/Baseline/q4/prompt01.mp4",
-          "VARQ": "samples/self_forcing/VARQ/q4/prompt01.mp4"
+          "Baseline": "samples/self_forcing/Baseline/q6/prompt07.mp4",
+          "VARQ": "samples/self_forcing/VARQ/q6/prompt07.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/frame-0-Baseline.webp",
@@ -60,11 +60,11 @@
         }
       },
       {
-        "title": "Neon Tokyo stroll",
-        "prompt": "A stylish woman walks down a Tokyo street filled with warm glowing neon and animated city signage. She wears a black leather jacket, a long red dress, and black boots, and carries a black purse. She wears sunglasses and red lipstick. She walks confidently and casually. The street is damp and reflective, creating a mirror effect of the colorful lights. Many pedestrians walk about.",
+        "title": "An underwater New York",
+        "prompt": "New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York.",
         "sources": {
-          "Baseline": "samples/self_forcing/Baseline/q4/prompt17.mp4",
-          "VARQ": "samples/self_forcing/VARQ/q4/prompt17.mp4"
+          "Baseline": "samples/self_forcing/Baseline/q6/prompt14.mp4",
+          "VARQ": "samples/self_forcing/VARQ/q6/prompt14.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/frame-1-Baseline.webp",
@@ -72,11 +72,11 @@
         }
       },
       {
-        "title": "A ride through the sky",
-        "prompt": "A little boy is riding a dragon in the sky to a castle",
+        "title": "A river of liquid gold",
+        "prompt": "A person rowing a boat through a river of liquid gold, with shimmering banks.",
         "sources": {
-          "Baseline": "samples/self_forcing/Baseline/q4/prompt12.mp4",
-          "VARQ": "samples/self_forcing/VARQ/q4/prompt12.mp4"
+          "Baseline": "samples/self_forcing/Baseline/q6/prompt16.mp4",
+          "VARQ": "samples/self_forcing/VARQ/q6/prompt16.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/frame-2-Baseline.webp",
@@ -88,14 +88,14 @@
   "long": {
     "model": "LongLive",
     "paradigm": "Next-frame",
-    "bits": "4-bit",
+    "bits": "6-bit",
     "clips": [
       {
-        "title": "An underwater New York",
-        "prompt": "New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York.",
+        "title": "Lion on the rock",
+        "prompt": "A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon.",
         "sources": {
-          "Baseline": "samples/longlive/Baseline/q4/prompt06.mp4",
-          "VARQ": "samples/longlive/VARQ/q4/prompt06.mp4"
+          "Baseline": "samples/longlive/Baseline/q6/prompt00.mp4",
+          "VARQ": "samples/longlive/VARQ/q6/prompt00.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/long-0-Baseline.webp",
@@ -103,11 +103,11 @@
         }
       },
       {
-        "title": "A walk through Tokyo",
-        "prompt": "A stylish woman walks down a Tokyo street filled with warm glowing neon and animated city signage. She wears a black leather jacket, a long red dress, and black boots, and carries a black purse. She wears sunglasses and red lipstick. She walks confidently and casually. The street is damp and reflective, creating a mirror effect of the colorful lights. Many pedestrians walk about.",
+        "title": "A toy robot in Antarctica",
+        "prompt": "a toy robot wearing a green dress and a sun hat taking a pleasant stroll in Antarctica during a beautiful sunset",
         "sources": {
-          "Baseline": "samples/longlive/Baseline/q4/prompt03.mp4",
-          "VARQ": "samples/longlive/VARQ/q4/prompt03.mp4"
+          "Baseline": "samples/longlive/Baseline/q6/prompt10.mp4",
+          "VARQ": "samples/longlive/VARQ/q6/prompt10.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/long-1-Baseline.webp",
@@ -115,11 +115,11 @@
         }
       },
       {
-        "title": "Lion on the rock",
-        "prompt": "A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon.",
+        "title": "Cherry blossom village",
+        "prompt": "A quaint village nestled in a valley is surrounded by blooming cherry blossoms, with petals drifting through the air as villagers go about their daily activities, adding life to the scene.",
         "sources": {
-          "Baseline": "samples/longlive/Baseline/q4/prompt00.mp4",
-          "VARQ": "samples/longlive/VARQ/q4/prompt00.mp4"
+          "Baseline": "samples/longlive/Baseline/q6/prompt02.mp4",
+          "VARQ": "samples/longlive/VARQ/q6/prompt02.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/long-2-Baseline.webp",
@@ -169,14 +169,14 @@
   "frame-sample-2": {
     "model": "Self-Forcing",
     "paradigm": "Next-frame",
-    "bits": "4-bit",
+    "bits": "6-bit",
     "clips": [
       {
-        "title": "Neon Tokyo stroll",
-        "prompt": "A stylish woman walks down a Tokyo street filled with warm glowing neon and animated city signage. She wears a black leather jacket, a long red dress, and black boots, and carries a black purse. She wears sunglasses and red lipstick. She walks confidently and casually. The street is damp and reflective, creating a mirror effect of the colorful lights. Many pedestrians walk about.",
+        "title": "An underwater New York",
+        "prompt": "New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York.",
         "sources": {
-          "Baseline": "samples/self_forcing/Baseline/q4/prompt17.mp4",
-          "VARQ": "samples/self_forcing/VARQ/q4/prompt17.mp4"
+          "Baseline": "samples/self_forcing/Baseline/q6/prompt14.mp4",
+          "VARQ": "samples/self_forcing/VARQ/q6/prompt14.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/frame-1-Baseline.webp",
@@ -188,14 +188,14 @@
   "frame-sample-3": {
     "model": "Self-Forcing",
     "paradigm": "Next-frame",
-    "bits": "4-bit",
+    "bits": "6-bit",
     "clips": [
       {
-        "title": "A ride through the sky",
-        "prompt": "A little boy is riding a dragon in the sky to a castle",
+        "title": "A river of liquid gold",
+        "prompt": "A person rowing a boat through a river of liquid gold, with shimmering banks.",
         "sources": {
-          "Baseline": "samples/self_forcing/Baseline/q4/prompt12.mp4",
-          "VARQ": "samples/self_forcing/VARQ/q4/prompt12.mp4"
+          "Baseline": "samples/self_forcing/Baseline/q6/prompt16.mp4",
+          "VARQ": "samples/self_forcing/VARQ/q6/prompt16.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/frame-2-Baseline.webp",
@@ -207,14 +207,14 @@
   "long-sample-2": {
     "model": "LongLive",
     "paradigm": "Next-frame",
-    "bits": "4-bit",
+    "bits": "6-bit",
     "clips": [
       {
-        "title": "A walk through Tokyo",
-        "prompt": "A stylish woman walks down a Tokyo street filled with warm glowing neon and animated city signage. She wears a black leather jacket, a long red dress, and black boots, and carries a black purse. She wears sunglasses and red lipstick. She walks confidently and casually. The street is damp and reflective, creating a mirror effect of the colorful lights. Many pedestrians walk about.",
+        "title": "A toy robot in Antarctica",
+        "prompt": "a toy robot wearing a green dress and a sun hat taking a pleasant stroll in Antarctica during a beautiful sunset",
         "sources": {
-          "Baseline": "samples/longlive/Baseline/q4/prompt03.mp4",
-          "VARQ": "samples/longlive/VARQ/q4/prompt03.mp4"
+          "Baseline": "samples/longlive/Baseline/q6/prompt10.mp4",
+          "VARQ": "samples/longlive/VARQ/q6/prompt10.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/long-1-Baseline.webp",
@@ -226,14 +226,14 @@
   "long-sample-3": {
     "model": "LongLive",
     "paradigm": "Next-frame",
-    "bits": "4-bit",
+    "bits": "6-bit",
     "clips": [
       {
-        "title": "Lion on the rock",
-        "prompt": "A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon.",
+        "title": "Cherry blossom village",
+        "prompt": "A quaint village nestled in a valley is surrounded by blooming cherry blossoms, with petals drifting through the air as villagers go about their daily activities, adding life to the scene.",
         "sources": {
-          "Baseline": "samples/longlive/Baseline/q4/prompt00.mp4",
-          "VARQ": "samples/longlive/VARQ/q4/prompt00.mp4"
+          "Baseline": "samples/longlive/Baseline/q6/prompt02.mp4",
+          "VARQ": "samples/longlive/VARQ/q6/prompt02.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/long-2-Baseline.webp",
