@@ -25,11 +25,11 @@ MODEL_ORDER = ["self_forcing", "longlive", "Infinity8B", "InfinityStar480p", "In
 # (model, qbits) -> source root, method dir names, file stem, extension, optional index selection
 NEW = {
     ("self_forcing", "q4"): dict(src=f"{SRC}/self_forcing", dirs={"Baseline": "Baseline", "VARQ": "VARQr8", "KIVI": "KIVI", "FlexGen": "FlexGen"}, stem="prompt", ext="mp4", caption=False),
-    ("self_forcing", "q6"): dict(src=f"{SRC}/self_forcing", dirs={"Baseline": "Baseline", "VARQ": "VARQ", "KIVI": "KIVI", "FlexGen": "FlexGen"}, stem="prompt", ext="mp4", caption=False),
-    ("longlive", "q6"): dict(src=f"{SRC}/longlive", dirs={"Baseline": "Baseline", "VARQ": "VARQ", "KIVI": "KIVI", "FlexGen": "FLexGen"}, stem="prompt", ext="mp4", caption=False),
+    ("self_forcing", "q6"): dict(src=f"{SRC}/v2/self_forcing", dirs={"Baseline": "Baseline", "VARQ": "VARQ", "KIVI": "KIVI", "FlexGen": "FlexGen"}, stem="prompt", ext="mp4", caption=False, pad=3),
+    ("longlive", "q6"): dict(src=f"{SRC}/v2/longlive", dirs={"Baseline": "Baseline", "VARQ": "VARQ", "KIVI": "KIVI", "FlexGen": "FLexGen"}, stem="prompt", ext="mp4", caption=False, pad=3),
     ("Infinity8B", "q3"): dict(src=f"{SRC}/infinity8b", dirs={"Baseline": "Baseline", "VARQ": "VARQ", "KIVI": "KIVI", "FlexGen": "FlexGen"}, stem="idx", ext="jpg"),
-    ("Infinity8B", "q4"): dict(src=f"{SRC}/infinity8b", dirs={"Baseline": "Baseline", "VARQ": "VARQ", "KIVI": "KIVI", "FlexGen": "FlexGen"}, stem="idx", ext="jpg"),
-    ("Infinity8B", "q6"): dict(src=f"{SRC}/infinity8b", dirs={"Baseline": "Baseline", "VARQ": "VARQ", "KIVI": "KIVI", "FlexGen": "FlexGen"}, stem="idx", ext="jpg"),
+    ("Infinity8B", "q4"): dict(src=f"{SRC}/v2/infinity8b", dirs={"Baseline": "Baseline", "VARQ": "VARQ", "KIVI": "KIVI", "FlexGen": "FlexGen"}, stem="idx", ext="jpg", pad=3),
+    ("Infinity8B", "q6"): dict(src=f"{SRC}/v2/infinity8b", dirs={"Baseline": "Baseline", "VARQ": "VARQ", "KIVI": "KIVI", "FlexGen": "FlexGen"}, stem="idx", ext="jpg", pad=3),
 }
 # (model, qbits) tabs to remove from the site entirely (kept only under /data1)
 DROP = {("Infinity8B", "q2"), ("longlive", "q4")}
@@ -57,7 +57,8 @@ def build_samples(mid, q, spec, select):
     if not os.path.exists(mpath):
         return []
     metrics = json.load(open(mpath))
-    idxs = [f"{i:02d}" for i in select] if select else sorted(metrics)
+    pad = int(spec.get("pad", 2))
+    idxs = [f"{i:0{pad}d}" for i in select] if select else sorted(metrics)
     samples = []
     for key in idxs:
         m = metrics[key]; media = {}
@@ -71,7 +72,7 @@ def build_samples(mid, q, spec, select):
             if not os.path.exists(dst) or os.path.getmtime(dst) < os.path.getmtime(srcf):
                 shutil.copy2(srcf, dst)
             media[meth] = f"samples/{mid}/{meth}/{q}/{fn}"
-        if "Baseline" in media and "VARQ" in media:
+        if all(m in media for m in spec["dirs"]):
             cap = caption(m.get("psnr", {})) if spec.get("caption", True) else None
             samples.append({"prompt": m.get("prompt"), "caption": cap, "media": media})
     return samples

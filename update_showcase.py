@@ -9,9 +9,11 @@ import argparse, json, re, os, cv2
 ap = argparse.ArgumentParser(); ap.add_argument("bits"); ap.add_argument("q")
 ap.add_argument("--frame", nargs=3, required=True); ap.add_argument("--long", nargs=3, required=True)
 ap.add_argument("--kv", action="store_true", help="annotate figcaptions with KV memory from kv-memory.json")
+ap.add_argument("--pad", type=int, default=2); ap.add_argument("--long-pad", type=int, default=None)
+ap.add_argument("--ll-prompts", default="/data1/boxunxu/varq_demo/v2/prompts/ll.txt")
 a = ap.parse_args()
-SF = [l.rstrip("\n") for l in open('/data1/boxunxu/varq_demo/prompts/self_forcing_5s.txt') if l.strip()]
-LL = [l.rstrip("\n") for l in open('/data1/boxunxu/varq_demo/prompts/longlive_30s.txt') if l.strip()]
+SF = [l.rstrip("\n") for l in open('/data1/boxunxu/varq_demo/v2/prompts/sf.txt') if l.strip()]
+LL = [l.rstrip("\n") for l in open(a.ll_prompts) if l.strip()]
 def parse(items): return [(int(s.split(":", 1)[0]), s.split(":", 1)[1]) for s in items]
 CLIPS = {"frame": ("self_forcing", "Self-Forcing", parse(a.frame), SF), "long": ("longlive", "LongLive", parse(a.long), LL)}
 data = json.load(open('showcase-data.json'))
@@ -21,7 +23,8 @@ def poster(src, dst):
 for key, (mid, label, clips, prompts) in CLIPS.items():
     entries = []
     for n, (i, title) in enumerate(clips):
-        sources = {m: f"samples/{mid}/{m}/{a.q}/prompt{i:02d}.mp4" for m in ("Baseline", "VARQ")}
+        pad = a.long_pad if (key == "long" and a.long_pad is not None) else a.pad
+        sources = {m: f"samples/{mid}/{m}/{a.q}/prompt{i:0{pad}d}.mp4" for m in ("Baseline", "VARQ")}
         posters = {m: f"assets/posters/{key}-{n}-{m}.webp" for m in ("Baseline", "VARQ")}
         for m in ("Baseline", "VARQ"):
             assert os.path.exists(sources[m]), sources[m]; poster(sources[m], posters[m])
