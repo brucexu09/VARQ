@@ -18,21 +18,21 @@ MODEL_META = {  # id -> (label, type, task)
     "longlive": ("LongLive", "video", "Long-horizon autoregressive video (30 s, 832×480)"),
     "Infinity8B": ("Infinity-8B", "image", "Text-to-Image generation (1024×1024)"),
 }
-BIT_ORDER = {"self_forcing": ["q6", "q4"], "longlive": ["q6", "q4"], "Infinity8B": ["q4", "q6", "q3", "q2", "q8"]}
-MODEL_ORDER = ["self_forcing", "longlive", "Infinity8B", "InfinityStar480p", "InfinityStar720p",
+BIT_ORDER = {"self_forcing": ["q4"], "longlive": ["q4"], "Infinity8B": ["q2"]}
+MODEL_ORDER = ["Infinity8B", "self_forcing", "longlive", "InfinityStar720p", "InfinityStar480p",
                "Infinity2B", "VAR_d30", "VAR_d24", "VAR_d20"]
 
 # (model, qbits) -> source root, method dir names, file stem, extension, optional index selection
 NEW = {
     ("self_forcing", "q4"): dict(src=f"{SRC}/self_forcing", dirs={"Baseline": "Baseline", "VARQ": "VARQr8", "KIVI": "KIVI", "FlexGen": "FlexGen"}, stem="prompt", ext="mp4", caption=False),
-    ("self_forcing", "q6"): dict(src=f"{SRC}/v2/self_forcing", dirs={"Baseline": "Baseline", "VARQ": "VARQ", "KIVI": "KIVI", "FlexGen": "FlexGen"}, stem="prompt", ext="mp4", caption=False, pad=3),
-    ("longlive", "q6"): dict(src=f"{SRC}/v2/longlive", dirs={"Baseline": "Baseline", "VARQ": "VARQ", "KIVI": "KIVI", "FlexGen": "FLexGen"}, stem="prompt", ext="mp4", caption=False, pad=3),
-    ("Infinity8B", "q3"): dict(src=f"{SRC}/infinity8b", dirs={"Baseline": "Baseline", "VARQ": "VARQ", "KIVI": "KIVI", "FlexGen": "FlexGen"}, stem="idx", ext="jpg"),
-    ("Infinity8B", "q4"): dict(src=f"{SRC}/v2/infinity8b", dirs={"Baseline": "Baseline", "VARQ": "VARQ", "KIVI": "KIVI", "FlexGen": "FlexGen"}, stem="idx", ext="jpg", pad=3),
-    ("Infinity8B", "q6"): dict(src=f"{SRC}/v2/infinity8b", dirs={"Baseline": "Baseline", "VARQ": "VARQ", "KIVI": "KIVI", "FlexGen": "FlexGen"}, stem="idx", ext="jpg", pad=3),
+    ("longlive", "q4"): dict(src=f"{SRC}/longlive", dirs={"Baseline": "Baseline", "VARQ": "VARQr8", "KIVI": "KIVI", "FlexGen": "FLexGen"}, stem="prompt", ext="mp4", caption=False),
+    ("Infinity8B", "q2"): dict(src=f"{SRC}/infinity8b", dirs={"Baseline": "Baseline", "VARQ": "VARQ", "KIVI": "KIVI", "FlexGen": "FlexGen"}, stem="idx", ext="jpg"),
 }
 # (model, qbits) tabs to remove from the site entirely (kept only under /data1)
-DROP = {("Infinity8B", "q2"), ("longlive", "q4")}
+DROP = {("Infinity8B", "q3"), ("Infinity8B", "q4"), ("Infinity8B", "q6"), ("Infinity8B", "q8"), ("self_forcing", "q6"), ("longlive", "q6"),
+        ("InfinityStar480p", "q3"), ("InfinityStar480p", "q8"), ("InfinityStar720p", "q3"), ("InfinityStar720p", "q8")}
+REMOVE_MODELS = {"VAR_d30", "VAR_d24", "VAR_d20", "Infinity2B"}
+# (model, qbits) tabs to remove from the site entirely (kept only under /data1)
 SELECT_FILE = os.path.join(REPO, "selection.json")  # {"self_forcing/q4": [3, 7, ...], ...}; absent -> all
 
 
@@ -82,6 +82,11 @@ def main():
     manifest = json.load(open(os.path.join(REPO, "manifest.json")))
     by_id = {m["id"]: m for m in manifest["models"]}
     select = json.load(open(SELECT_FILE)) if os.path.exists(SELECT_FILE) else {}
+    for mid in REMOVE_MODELS:
+        by_id.pop(mid, None)
+        d = os.path.join(SAMP, mid)
+        if os.path.isdir(d):
+            shutil.rmtree(d)
     for mid, q in DROP:
         if mid in by_id and q in by_id[mid]["samples"]:
             del by_id[mid]["samples"][q]
@@ -122,6 +127,11 @@ def main():
             entry["kvMemory"] = kvmap["bits"]
         by_id[mid] = entry
         print(f"[ok] {mid}/{q}: {len(samples)} samples, methods={entry['methodsByBit'][q]}")
+    for mid, entry in by_id.items():
+        entry["bits"] = [b for b in entry["bits"] if b in entry["samples"]]
+        entry["bitLabels"] = {b: entry["bitLabels"][b] for b in entry["bits"]}
+        if "methodsByBit" in entry:
+            entry["methodsByBit"] = {b: entry["methodsByBit"][b] for b in entry["bits"] if b in entry["methodsByBit"]}
     ordered = [by_id[i] for i in MODEL_ORDER if i in by_id] + [m for i, m in by_id.items() if i not in MODEL_ORDER]
     manifest["models"] = ordered
     json.dump(manifest, open(os.path.join(REPO, "manifest.json"), "w"), indent=1, ensure_ascii=False)

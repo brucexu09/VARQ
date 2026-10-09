@@ -9,6 +9,8 @@ import argparse, json, re, os, cv2
 ap = argparse.ArgumentParser(); ap.add_argument("bits"); ap.add_argument("q")
 ap.add_argument("--frame", nargs=3, required=True); ap.add_argument("--long", nargs=3, required=True)
 ap.add_argument("--kv", action="store_true", help="annotate figcaptions with KV memory from kv-memory.json")
+ap.add_argument("--scale", nargs=3, help="InfinityStar720p clips as FILE:Title (q from --scale-q)")
+ap.add_argument("--scale-q", default="q4")
 ap.add_argument("--pad", type=int, default=2); ap.add_argument("--long-pad", type=int, default=None)
 ap.add_argument("--ll-prompts", default="/data1/boxunxu/varq_demo/v2/prompts/ll.txt")
 a = ap.parse_args()
@@ -32,6 +34,22 @@ for key, (mid, label, clips, prompts) in CLIPS.items():
     data[key] = {"model": label, "paradigm": "Next-frame", "bits": a.bits, "clips": entries}
     for n in (2, 3):
         data[f"{key}-sample-{n}"] = {"model": label, "paradigm": "Next-frame", "bits": a.bits, "clips": [entries[n - 1]]}
+if a.scale:
+    man = json.load(open('manifest.json')); star = next(m for m in man["models"] if m["id"] == "InfinityStar720p")
+    prompts_by_file = {os.path.basename(sm["media"]["VARQ"]): sm.get("prompt") for sm in star["samples"].get(a.scale_q, [])}
+    entries = []
+    for n, item in enumerate(a.scale):
+        fn, title = item.split(":", 1)
+        sources = {m: f"samples/InfinityStar720p/{m}/{a.scale_q}/{fn}" for m in ("Baseline", "VARQ")}
+        posters = {m: f"assets/posters/scale-{n}-{m}.webp" for m in ("Baseline", "VARQ")}
+        for m in ("Baseline", "VARQ"):
+            assert os.path.exists(sources[m]), sources[m]; poster(sources[m], posters[m])
+        entries.append({"title": title, "prompt": prompts_by_file.get(fn, title), "sources": sources, "posters": posters})
+    bits_scale = a.scale_q[1:] + "-bit"
+    data["scale"] = {"model": "InfinityStar · 720p", "paradigm": "Next-scale", "bits": bits_scale, "clips": entries}
+    for n in (2, 3):
+        data[f"scale-sample-{n}"] = {"model": "InfinityStar · 720p", "paradigm": "Next-scale", "bits": bits_scale, "clips": [entries[n - 1]]}
+    CLIPS["scale"] = ("InfinityStar720p", "InfinityStar · 720p", [], [])
 json.dump(data, open('showcase-data.json', 'w'), indent=2, ensure_ascii=False); open('showcase-data.json', 'a').write("\n")
 html = open('index.html').read()
 def patch_card(html, key, entry_list, hero):
@@ -43,13 +61,14 @@ def patch_card(html, key, entry_list, hero):
     block = re.sub(r'data-src="samples/[^"]*/VARQ/[^"]*"', f'data-src="{e0["sources"]["VARQ"]}"', block)
     block = re.sub(r'(<noscript><a href=")[^"]*(")', rf'\g<1>{e0["sources"]["VARQ"]}\g<2>', block)
     block = re.sub(r'(aria-label="[^"]*?: )[^"]*"', lambda mm: mm.group(1) + e0["prompt"] + '"', block)
-    block = re.sub(r'\b[2-8]-bit\b', a.bits, block)
+    bits = data[key.split("-")[0]]["bits"]
+    block = re.sub(r'\b[2-8]-bit\b', bits, block)
     if a.kv:
-        kvm = json.load(open('kv-memory.json'))[CLIPS[key.split("-")[0]][0]]["bits"].get(a.q, {})
+        kvm = json.load(open('kv-memory.json')).get(CLIPS[key.split("-")[0]][0], {}).get("bits", {}).get(a.q, {})
         if "Baseline" in kvm and "VARQ" in kvm:
             b, v = kvm["Baseline"], kvm["VARQ"]
             block = re.sub(r'<figcaption>BF16 reference[^<]*</figcaption>', f'<figcaption>BF16 reference · KV cache {b:.1f} GB</figcaption>', block)
-            block = re.sub(r'<figcaption>VAR-Q · [^<]*</figcaption>', f'<figcaption>VAR-Q · {a.bits} · KV cache {v:.1f} GB (−{round((1 - v / b) * 100)}%)</figcaption>', block)
+            block = re.sub(r'<figcaption>VAR-Q · [^<]*</figcaption>', f'<figcaption>VAR-Q · {bits} · KV cache {v:.1f} GB (−{round((1 - v / b) * 100)}%)</figcaption>', block)
     block = re.sub(r'<p class="feature-prompt">.*?</p>', f'<p class="feature-prompt">{e0["prompt"]}</p>', block, flags=re.S)
     opts = "".join(f'\n                  <option value="{n}">{e["title"]}</option>' for n, e in enumerate(entry_list))
     block = re.sub(r'(<select disabled="">).*?(\n\s*</select>)', lambda mm: mm.group(1) + opts + mm.group(2), block, flags=re.S)

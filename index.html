@@ -95,8 +95,8 @@
                 <figcaption>BF16 reference</figcaption>
                 <video
                   aria-describedby="showcase-note"
-                  aria-label="InfinityStar · 720p BF16 reference: A person skydiving from a hot air balloon into a sea of clouds."
-                  data-src="samples/InfinityStar720p/Baseline/q3/group01_prompt129_s02.mp4"
+                  aria-label="InfinityStar · 720p BF16 reference: A person playing chess with a robot on a floating platform above the ocean."
+                  data-src="samples/InfinityStar720p/Baseline/q4/group01_prompt071_s02.mp4"
                   loop=""
                   muted=""
                   playsinline=""
@@ -105,11 +105,11 @@
                 ></video>
               </figure>
               <figure class="feature-video feature-ours">
-                <figcaption>VAR-Q · 3-bit</figcaption>
+                <figcaption>VAR-Q · 4-bit</figcaption>
                 <video
                   aria-describedby="showcase-note"
-                  aria-label="InfinityStar · 720p VAR-Q · 3-bit: A person skydiving from a hot air balloon into a sea of clouds."
-                  data-src="samples/InfinityStar720p/VARQ/q3/group01_prompt129_s02.mp4"
+                  aria-label="InfinityStar · 720p VAR-Q · 4-bit: A person playing chess with a robot on a floating platform above the ocean."
+                  data-src="samples/InfinityStar720p/VARQ/q4/group01_prompt071_s02.mp4"
                   loop=""
                   muted=""
                   playsinline=""
@@ -123,17 +123,17 @@
               ><label class="feature-select"
                 ><span class="sr-only">InfinityStar · 720p sample</span
                 ><select disabled="">
-                  <option value="0">Above the clouds</option>
-                  <option value="1">Rings of Saturn</option>
-                  <option value="2">A snowflake, up close</option>
+                  <option value="0">Chess with a robot</option>
+                  <option value="1">A chimp's backflip</option>
+                  <option value="2">Breaking the board</option>
                 </select></label
               ><output class="feature-time">0.0 s</output>
             </div>
             <label class="sr-only" for="seek-scale">InfinityStar · 720p shared timeline</label
             ><input class="feature-seek" disabled="" id="seek-scale" max="1" min="0" step=".05" type="range" value="0" />
-            <p class="feature-prompt">A person skydiving from a hot air balloon into a sea of clouds.</p>
+            <p class="feature-prompt">A person playing chess with a robot on a floating platform above the ocean.</p>
             <p class="feature-status sr-only" role="status"></p>
-            <noscript><a href="samples/InfinityStar720p/VARQ/q3/group01_prompt129_s02.mp4">Watch the VAR-Q video</a></noscript>
+            <noscript><a href="samples/InfinityStar720p/VARQ/q4/group01_prompt071_s02.mp4">Watch the VAR-Q video</a></noscript>
           </article>
           <article class="feature-card" data-feature="frame">
             <div class="feature-top">
@@ -148,8 +148,8 @@
                 <figcaption>BF16 reference · KV cache 67.5 GB</figcaption>
                 <video
                   aria-describedby="showcase-note"
-                  aria-label="Self-Forcing BF16 reference: A crystal ball sitting on a table, with sunlight streaming through it and casting a circle of rainbow colors on the floor."
-                  data-src="samples/self_forcing/Baseline/q6/prompt007.mp4"
+                  aria-label="Self-Forcing BF16 reference: A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon."
+                  data-src="samples/self_forcing/Baseline/q4/prompt00.mp4"
                   loop=""
                   muted=""
                   playsinline=""
@@ -158,11 +158,11 @@
                 ></video>
               </figure>
               <figure class="feature-video feature-ours">
-                <figcaption>VAR-Q · 6-bit · KV cache 27.5 GB (−59%)</figcaption>
+                <figcaption>VAR-Q · 4-bit · KV cache 16.9 GB (−75%)</figcaption>
                 <video
                   aria-describedby="showcase-note"
-                  aria-label="Self-Forcing VAR-Q · 6-bit: A crystal ball sitting on a table, with sunlight streaming through it and casting a circle of rainbow colors on the floor."
-                  data-src="samples/self_forcing/VARQ/q6/prompt007.mp4"
+                  aria-label="Self-Forcing VAR-Q · 4-bit: A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon."
+                  data-src="samples/self_forcing/VARQ/q4/prompt00.mp4"
                   loop=""
                   muted=""
                   playsinline=""
@@ -176,17 +176,17 @@
               ><label class="feature-select"
                 ><span class="sr-only">Self-Forcing sample</span
                 ><select disabled="">
-                  <option value="0">A crystal ball in sunlight</option>
-                  <option value="1">An ice palace in the light</option>
-                  <option value="2">Otters on the river</option>
+                  <option value="0">Lion on the rock</option>
+                  <option value="1">An underwater New York</option>
+                  <option value="2">A crystal ball in sunlight</option>
                 </select></label
               ><output class="feature-time">0.0 s</output>
             </div>
             <label class="sr-only" for="seek-frame">Self-Forcing shared timeline</label
             ><input class="feature-seek" disabled="" id="seek-frame" max="1" min="0" step=".05" type="range" value="0" />
-            <p class="feature-prompt">A crystal ball sitting on a table, with sunlight streaming through it and casting a circle of rainbow colors on the floor.</p>
+            <p class="feature-prompt">A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon.</p>
             <p class="feature-status sr-only" role="status"></p>
-            <noscript><a href="samples/self_forcing/VARQ/q6/prompt007.mp4">Watch the VAR-Q video</a></noscript>
+            <noscript><a href="samples/self_forcing/VARQ/q4/prompt00.mp4">Watch the VAR-Q video</a></noscript>
           </article>
         </div>
         <div class="showcase-foot">
@@ -2223,7 +2223,7 @@
             <p>
               LongLive extends the next-frame setting to longer sequences. Compare motion and scene consistency with both videos on the same timeline.
             </p>
-            <p class="small-note">These clips use 6-bit KV caches, generated with the public VAR-Q runtime hooks and the same seed as the BF16 reference. The paper reports INT4 and INT6 results.</p>
+            <p class="small-note">These clips use 4-bit KV caches, generated with the public VAR-Q runtime hooks and the same seed as the BF16 reference. The paper reports INT4 and INT6 results.</p>
             <a class="inline-link" href="#benchmarks">See the measured tradeoff ↗</a>
           </div>
           <article class="feature-card" data-feature="long">
@@ -2240,7 +2240,7 @@
                 <video
                   aria-describedby="showcase-note"
                   aria-label="LongLive BF16 reference: A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon."
-                  data-src="samples/longlive/Baseline/q6/prompt000.mp4"
+                  data-src="samples/longlive/Baseline/q4/prompt00.mp4"
                   loop=""
                   muted=""
                   playsinline=""
@@ -2249,11 +2249,11 @@
                 ></video>
               </figure>
               <figure class="feature-video feature-ours">
-                <figcaption>VAR-Q · 6-bit · KV cache 26.2 GB (−59%)</figcaption>
+                <figcaption>VAR-Q · 4-bit · KV cache 16.1 GB (−75%)</figcaption>
                 <video
                   aria-describedby="showcase-note"
-                  aria-label="LongLive VAR-Q · 6-bit: A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon."
-                  data-src="samples/longlive/VARQ/q6/prompt000.mp4"
+                  aria-label="LongLive VAR-Q · 4-bit: A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon."
+                  data-src="samples/longlive/VARQ/q4/prompt00.mp4"
                   loop=""
                   muted=""
                   playsinline=""
@@ -2268,8 +2268,8 @@
                 ><span class="sr-only">LongLive sample</span
                 ><select disabled="">
                   <option value="0">Lion on the rock</option>
-                  <option value="1">Waterfall in the clearing</option>
-                  <option value="2">A tree of golden coins</option>
+                  <option value="1">A toy robot in Antarctica</option>
+                  <option value="2">Puppies in the ruins</option>
                 </select></label
               ><output class="feature-time">0.0 s</output>
             </div>
@@ -2277,7 +2277,7 @@
             ><input class="feature-seek" disabled="" id="seek-long" max="1" min="0" step=".05" type="range" value="0" />
             <p class="feature-prompt">A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon.</p>
             <p class="feature-status sr-only" role="status"></p>
-            <noscript><a href="samples/longlive/VARQ/q6/prompt000.mp4">Watch the VAR-Q video</a></noscript>
+            <noscript><a href="samples/longlive/VARQ/q4/prompt00.mp4">Watch the VAR-Q video</a></noscript>
           </article>
         </div>
         <div class="dense-section" id="more-videos">
@@ -2288,33 +2288,33 @@
             </div>
             <p class="small-note">Same model, prompt and seed in each row. Videos load and play when scrolled into view; click an image to enlarge. KV memory is the paper's measurement at the evaluation batch size.</p>
           </div>
-          <section class="dense-block" data-bit="q6" data-initial="8" data-model="self_forcing" data-step="8">
-            <div class="dense-head"><h4>Self-Forcing · next-frame · 5 s · 6-bit KV cache</h4><span class="dense-count"></span></div>
-            <p class="dense-note">Generated with the public VAR-Q runtime; clips kept only where VAR-Q stays within a few dB of BF16 for the whole clip.</p>
+          <section class="dense-block" data-bit="q2" data-initial="8" data-model="Infinity8B" data-step="8">
+            <div class="dense-head"><h4>Infinity-8B · next-scale · 1024×1024 · 2-bit KV cache</h4><span class="dense-count"></span></div>
+            <p class="dense-note">At 2 bits the KV cache shrinks by 87%; VAR-Q keeps the BF16 subject and layout while KIVI and FlexGen drift or break. PSNR vs BF16 is shown in the browser gallery below.</p>
             <div class="dense-rows"></div>
             <button class="button dense-more" type="button">Show more</button>
           </section>
-          <section class="dense-block" data-bit="q6" data-initial="4" data-model="longlive" data-step="4">
-            <div class="dense-head"><h4>LongLive · next-frame · 30 s · 6-bit KV cache</h4><span class="dense-count"></span></div>
-            <p class="dense-note">Long-horizon streaming generation; trajectories can drift after many seconds for every quantizer, so low-drift clips are shown.</p>
+          <section class="dense-block" data-bit="q4" data-initial="6" data-model="self_forcing" data-step="6">
+            <div class="dense-head"><h4>Self-Forcing · next-frame · 5 s · 4-bit KV cache</h4><span class="dense-count"></span></div>
+            <p class="dense-note">Generated with the public VAR-Q runtime from the same seed as BF16; clips kept where VAR-Q stays close to BF16 for the whole clip.</p>
             <div class="dense-rows"></div>
             <button class="button dense-more" type="button">Show more</button>
           </section>
-          <section class="dense-block" data-bit="q4" data-initial="10" data-model="Infinity8B" data-step="10">
-            <div class="dense-head"><h4>Infinity-8B · next-scale · 1024×1024 · 4-bit KV cache</h4><span class="dense-count"></span></div>
-            <p class="dense-note">PSNR captions are in the browser gallery below; VAR-Q keeps the BF16 composition where KIVI and FlexGen start to change it.</p>
+          <section class="dense-block" data-bit="q4" data-initial="3" data-model="longlive" data-step="3">
+            <div class="dense-head"><h4>LongLive · next-frame · 30 s · 4-bit KV cache</h4><span class="dense-count"></span></div>
+            <p class="dense-note">Long-horizon streaming generation; low-drift clips shown.</p>
             <div class="dense-rows"></div>
             <button class="button dense-more" type="button">Show more</button>
           </section>
-          <section class="dense-block" data-bit="q6" data-initial="6" data-model="Infinity8B" data-step="10">
-            <div class="dense-head"><h4>Infinity-8B · next-scale · 1024×1024 · 6-bit KV cache</h4><span class="dense-count"></span></div>
+          <section class="dense-block" data-bit="q4" data-initial="3" data-model="InfinityStar720p" data-step="3">
+            <div class="dense-head"><h4>InfinityStar · next-scale video · 720p · 4-bit KV cache</h4><span class="dense-count"></span></div>
             <p class="dense-note"></p>
             <div class="dense-rows"></div>
             <button class="button dense-more" type="button">Show more</button>
           </section>
-          <section class="dense-block" data-bit="q3" data-initial="4" data-model="Infinity8B" data-step="8">
-            <div class="dense-head"><h4>Infinity-8B · next-scale · 1024×1024 · 3-bit KV cache</h4><span class="dense-count"></span></div>
-            <p class="dense-note">Curated subset: 3-bit changes fine detail more often, so only prompts that stay close to BF16 are shown.</p>
+          <section class="dense-block" data-bit="q4" data-initial="3" data-model="InfinityStar480p" data-step="3">
+            <div class="dense-head"><h4>InfinityStar · next-scale video · 480p · 4-bit KV cache</h4><span class="dense-count"></span></div>
+            <p class="dense-note"></p>
             <div class="dense-rows"></div>
             <button class="button dense-more" type="button">Show more</button>
           </section>

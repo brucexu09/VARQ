@@ -2,14 +2,14 @@
   "scale": {
     "model": "InfinityStar · 720p",
     "paradigm": "Next-scale",
-    "bits": "3-bit",
+    "bits": "4-bit",
     "clips": [
       {
-        "title": "Above the clouds",
-        "prompt": "A person skydiving from a hot air balloon into a sea of clouds.",
+        "title": "Chess with a robot",
+        "prompt": "A person playing chess with a robot on a floating platform above the ocean.",
         "sources": {
-          "Baseline": "samples/InfinityStar720p/Baseline/q3/group01_prompt129_s02.mp4",
-          "VARQ": "samples/InfinityStar720p/VARQ/q3/group01_prompt129_s02.mp4"
+          "Baseline": "samples/InfinityStar720p/Baseline/q4/group01_prompt071_s02.mp4",
+          "VARQ": "samples/InfinityStar720p/VARQ/q4/group01_prompt071_s02.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/scale-0-Baseline.webp",
@@ -17,11 +17,11 @@
         }
       },
       {
-        "title": "Rings of Saturn",
-        "prompt": "A person playing hopscotch on the rings of Saturn.",
+        "title": "A chimp's backflip",
+        "prompt": "A chimp on the sidewalk doing a backflip on a skateboard.",
         "sources": {
-          "Baseline": "samples/InfinityStar720p/Baseline/q3/group01_prompt195_s03.mp4",
-          "VARQ": "samples/InfinityStar720p/VARQ/q3/group01_prompt195_s03.mp4"
+          "Baseline": "samples/InfinityStar720p/Baseline/q4/group01_prompt057_s01.mp4",
+          "VARQ": "samples/InfinityStar720p/VARQ/q4/group01_prompt057_s01.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/scale-1-Baseline.webp",
@@ -29,11 +29,11 @@
         }
       },
       {
-        "title": "A snowflake, up close",
-        "prompt": "A zoom-out from a detailed shot of an intricate snowflake, pulling back to show a snowy landscape.",
+        "title": "Breaking the board",
+        "prompt": "A martial artist breaking a board with a powerful punch.",
         "sources": {
-          "Baseline": "samples/InfinityStar720p/Baseline/q3/group01_prompt108_s01.mp4",
-          "VARQ": "samples/InfinityStar720p/VARQ/q3/group01_prompt108_s01.mp4"
+          "Baseline": "samples/InfinityStar720p/Baseline/q4/group01_prompt154_s03.mp4",
+          "VARQ": "samples/InfinityStar720p/VARQ/q4/group01_prompt154_s03.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/scale-2-Baseline.webp",
@@ -45,14 +45,14 @@
   "frame": {
     "model": "Self-Forcing",
     "paradigm": "Next-frame",
-    "bits": "6-bit",
+    "bits": "4-bit",
     "clips": [
       {
-        "title": "A crystal ball in sunlight",
-        "prompt": "A crystal ball sitting on a table, with sunlight streaming through it and casting a circle of rainbow colors on the floor.",
+        "title": "Lion on the rock",
+        "prompt": "A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon.",
         "sources": {
-          "Baseline": "samples/self_forcing/Baseline/q6/prompt007.mp4",
-          "VARQ": "samples/self_forcing/VARQ/q6/prompt007.mp4"
+          "Baseline": "samples/self_forcing/Baseline/q4/prompt00.mp4",
+          "VARQ": "samples/self_forcing/VARQ/q4/prompt00.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/frame-0-Baseline.webp",
@@ -60,11 +60,11 @@
         }
       },
       {
-        "title": "An ice palace in the light",
-        "prompt": "A majestic ice palace glistens in the light, its intricate frozen sculptures reflecting and refracting the colors around them, creating a mesmerizing visual display.",
+        "title": "An underwater New York",
+        "prompt": "New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York.",
         "sources": {
-          "Baseline": "samples/self_forcing/Baseline/q6/prompt042.mp4",
-          "VARQ": "samples/self_forcing/VARQ/q6/prompt042.mp4"
+          "Baseline": "samples/self_forcing/Baseline/q4/prompt14.mp4",
+          "VARQ": "samples/self_forcing/VARQ/q4/prompt14.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/frame-1-Baseline.webp",
@@ -72,11 +72,11 @@
         }
       },
       {
-        "title": "Otters on the river",
-        "prompt": "A mother otter floating on her back in a river, cradling her pup on her stomach to keep it safe and warm in the gentle current.",
+        "title": "A crystal ball in sunlight",
+        "prompt": "A crystal ball sitting on a table, with sunlight streaming through it and casting a circle of rainbow colors on the floor.",
         "sources": {
-          "Baseline": "samples/self_forcing/Baseline/q6/prompt043.mp4",
-          "VARQ": "samples/self_forcing/VARQ/q6/prompt043.mp4"
+          "Baseline": "samples/self_forcing/Baseline/q4/prompt07.mp4",
+          "VARQ": "samples/self_forcing/VARQ/q4/prompt07.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/frame-2-Baseline.webp",
@@ -88,14 +88,14 @@
   "long": {
     "model": "LongLive",
     "paradigm": "Next-frame",
-    "bits": "6-bit",
+    "bits": "4-bit",
     "clips": [
       {
         "title": "Lion on the rock",
         "prompt": "A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon.",
         "sources": {
-          "Baseline": "samples/longlive/Baseline/q6/prompt000.mp4",
-          "VARQ": "samples/longlive/VARQ/q6/prompt000.mp4"
+          "Baseline": "samples/longlive/Baseline/q4/prompt00.mp4",
+          "VARQ": "samples/longlive/VARQ/q4/prompt00.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/long-0-Baseline.webp",
@@ -103,11 +103,11 @@
         }
       },
       {
-        "title": "Waterfall in the clearing",
-        "prompt": "In a tranquil forest clearing, a sparkling waterfall cascades down into a clear pool, surrounded by lush greenery and flowers, with occasional birds fluttering by.",
+        "title": "A toy robot in Antarctica",
+        "prompt": "a toy robot wearing a green dress and a sun hat taking a pleasant stroll in Antarctica during a beautiful sunset",
         "sources": {
-          "Baseline": "samples/longlive/Baseline/q6/prompt044.mp4",
-          "VARQ": "samples/longlive/VARQ/q6/prompt044.mp4"
+          "Baseline": "samples/longlive/Baseline/q4/prompt10.mp4",
+          "VARQ": "samples/longlive/VARQ/q4/prompt10.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/long-1-Baseline.webp",
@@ -115,11 +115,11 @@
         }
       },
       {
-        "title": "A tree of golden coins",
-        "prompt": "A tree made of golden coins at sunset, with coins falling off.",
+        "title": "Puppies in the ruins",
+        "prompt": "Cinematic trailer for a group of adventurous puppies exploring ruins in the sky",
         "sources": {
-          "Baseline": "samples/longlive/Baseline/q6/prompt041.mp4",
-          "VARQ": "samples/longlive/VARQ/q6/prompt041.mp4"
+          "Baseline": "samples/longlive/Baseline/q4/prompt09.mp4",
+          "VARQ": "samples/longlive/VARQ/q4/prompt09.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/long-2-Baseline.webp",
@@ -131,14 +131,14 @@
   "scale-sample-2": {
     "model": "InfinityStar · 720p",
     "paradigm": "Next-scale",
-    "bits": "3-bit",
+    "bits": "4-bit",
     "clips": [
       {
-        "title": "Rings of Saturn",
-        "prompt": "A person playing hopscotch on the rings of Saturn.",
+        "title": "A chimp's backflip",
+        "prompt": "A chimp on the sidewalk doing a backflip on a skateboard.",
         "sources": {
-          "Baseline": "samples/InfinityStar720p/Baseline/q3/group01_prompt195_s03.mp4",
-          "VARQ": "samples/InfinityStar720p/VARQ/q3/group01_prompt195_s03.mp4"
+          "Baseline": "samples/InfinityStar720p/Baseline/q4/group01_prompt057_s01.mp4",
+          "VARQ": "samples/InfinityStar720p/VARQ/q4/group01_prompt057_s01.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/scale-1-Baseline.webp",
@@ -150,14 +150,14 @@
   "scale-sample-3": {
     "model": "InfinityStar · 720p",
     "paradigm": "Next-scale",
-    "bits": "3-bit",
+    "bits": "4-bit",
     "clips": [
       {
-        "title": "A snowflake, up close",
-        "prompt": "A zoom-out from a detailed shot of an intricate snowflake, pulling back to show a snowy landscape.",
+        "title": "Breaking the board",
+        "prompt": "A martial artist breaking a board with a powerful punch.",
         "sources": {
-          "Baseline": "samples/InfinityStar720p/Baseline/q3/group01_prompt108_s01.mp4",
-          "VARQ": "samples/InfinityStar720p/VARQ/q3/group01_prompt108_s01.mp4"
+          "Baseline": "samples/InfinityStar720p/Baseline/q4/group01_prompt154_s03.mp4",
+          "VARQ": "samples/InfinityStar720p/VARQ/q4/group01_prompt154_s03.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/scale-2-Baseline.webp",
@@ -169,14 +169,14 @@
   "frame-sample-2": {
     "model": "Self-Forcing",
     "paradigm": "Next-frame",
-    "bits": "6-bit",
+    "bits": "4-bit",
     "clips": [
       {
-        "title": "An ice palace in the light",
-        "prompt": "A majestic ice palace glistens in the light, its intricate frozen sculptures reflecting and refracting the colors around them, creating a mesmerizing visual display.",
+        "title": "An underwater New York",
+        "prompt": "New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York.",
         "sources": {
-          "Baseline": "samples/self_forcing/Baseline/q6/prompt042.mp4",
-          "VARQ": "samples/self_forcing/VARQ/q6/prompt042.mp4"
+          "Baseline": "samples/self_forcing/Baseline/q4/prompt14.mp4",
+          "VARQ": "samples/self_forcing/VARQ/q4/prompt14.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/frame-1-Baseline.webp",
@@ -188,14 +188,14 @@
   "frame-sample-3": {
     "model": "Self-Forcing",
     "paradigm": "Next-frame",
-    "bits": "6-bit",
+    "bits": "4-bit",
     "clips": [
       {
-        "title": "Otters on the river",
-        "prompt": "A mother otter floating on her back in a river, cradling her pup on her stomach to keep it safe and warm in the gentle current.",
+        "title": "A crystal ball in sunlight",
+        "prompt": "A crystal ball sitting on a table, with sunlight streaming through it and casting a circle of rainbow colors on the floor.",
         "sources": {
-          "Baseline": "samples/self_forcing/Baseline/q6/prompt043.mp4",
-          "VARQ": "samples/self_forcing/VARQ/q6/prompt043.mp4"
+          "Baseline": "samples/self_forcing/Baseline/q4/prompt07.mp4",
+          "VARQ": "samples/self_forcing/VARQ/q4/prompt07.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/frame-2-Baseline.webp",
@@ -207,14 +207,14 @@
   "long-sample-2": {
     "model": "LongLive",
     "paradigm": "Next-frame",
-    "bits": "6-bit",
+    "bits": "4-bit",
     "clips": [
       {
-        "title": "Waterfall in the clearing",
-        "prompt": "In a tranquil forest clearing, a sparkling waterfall cascades down into a clear pool, surrounded by lush greenery and flowers, with occasional birds fluttering by.",
+        "title": "A toy robot in Antarctica",
+        "prompt": "a toy robot wearing a green dress and a sun hat taking a pleasant stroll in Antarctica during a beautiful sunset",
         "sources": {
-          "Baseline": "samples/longlive/Baseline/q6/prompt044.mp4",
-          "VARQ": "samples/longlive/VARQ/q6/prompt044.mp4"
+          "Baseline": "samples/longlive/Baseline/q4/prompt10.mp4",
+          "VARQ": "samples/longlive/VARQ/q4/prompt10.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/long-1-Baseline.webp",
@@ -226,14 +226,14 @@
   "long-sample-3": {
     "model": "LongLive",
     "paradigm": "Next-frame",
-    "bits": "6-bit",
+    "bits": "4-bit",
     "clips": [
       {
-        "title": "A tree of golden coins",
-        "prompt": "A tree made of golden coins at sunset, with coins falling off.",
+        "title": "Puppies in the ruins",
+        "prompt": "Cinematic trailer for a group of adventurous puppies exploring ruins in the sky",
         "sources": {
-          "Baseline": "samples/longlive/Baseline/q6/prompt041.mp4",
-          "VARQ": "samples/longlive/VARQ/q6/prompt041.mp4"
+          "Baseline": "samples/longlive/Baseline/q4/prompt09.mp4",
+          "VARQ": "samples/longlive/VARQ/q4/prompt09.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/long-2-Baseline.webp",
