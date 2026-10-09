@@ -8,6 +8,7 @@ Regenerates posters (first frame, 640x369 webp), showcase-data.json and the six 
 import argparse, json, re, os, cv2
 ap = argparse.ArgumentParser(); ap.add_argument("bits"); ap.add_argument("q")
 ap.add_argument("--frame", nargs=3, required=True); ap.add_argument("--long", nargs=3, required=True)
+ap.add_argument("--kv", action="store_true", help="annotate figcaptions with KV memory from kv-memory.json")
 a = ap.parse_args()
 SF = [l.rstrip("\n") for l in open('/data1/boxunxu/varq_demo/prompts/self_forcing_5s.txt') if l.strip()]
 LL = [l.rstrip("\n") for l in open('/data1/boxunxu/varq_demo/prompts/longlive_30s.txt') if l.strip()]
@@ -38,6 +39,12 @@ def patch_card(html, key, entry_list, hero):
     block = re.sub(r'(<noscript><a href=")[^"]*(")', rf'\g<1>{e0["sources"]["VARQ"]}\g<2>', block)
     block = re.sub(r'(aria-label="[^"]*?: )[^"]*"', lambda mm: mm.group(1) + e0["prompt"] + '"', block)
     block = re.sub(r'\b[2-8]-bit\b', a.bits, block)
+    if a.kv:
+        kvm = json.load(open('kv-memory.json'))[CLIPS[key.split("-")[0]][0]]["bits"].get(a.q, {})
+        if "Baseline" in kvm and "VARQ" in kvm:
+            b, v = kvm["Baseline"], kvm["VARQ"]
+            block = re.sub(r'<figcaption>BF16 reference[^<]*</figcaption>', f'<figcaption>BF16 reference · KV cache {b:.1f} GB</figcaption>', block)
+            block = re.sub(r'<figcaption>VAR-Q · [^<]*</figcaption>', f'<figcaption>VAR-Q · {a.bits} · KV cache {v:.1f} GB (−{round((1 - v / b) * 100)}%)</figcaption>', block)
     block = re.sub(r'<p class="feature-prompt">.*?</p>', f'<p class="feature-prompt">{e0["prompt"]}</p>', block, flags=re.S)
     opts = "".join(f'\n                  <option value="{n}">{e["title"]}</option>' for n, e in enumerate(entry_list))
     block = re.sub(r'(<select disabled="">).*?(\n\s*</select>)', lambda mm: mm.group(1) + opts + mm.group(2), block, flags=re.S)

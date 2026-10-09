@@ -204,6 +204,21 @@
      "KIVI",
      "VARQ"
     ]
+   },
+   "kvSetting": "1.3B · 5-second clips · batch 12",
+   "kvMemory": {
+    "q6": {
+     "Baseline": 67.49,
+     "FlexGen": 27.95,
+     "KIVI": 28.22,
+     "VARQ": 27.5
+    },
+    "q4": {
+     "Baseline": 67.49,
+     "FlexGen": 17.4,
+     "KIVI": 17.68,
+     "VARQ": 16.95
+    }
    }
   },
   {
@@ -320,6 +335,21 @@
      "KIVI",
      "VARQ"
     ]
+   },
+   "kvSetting": "1.3B · 30-second clips · batch 20",
+   "kvMemory": {
+    "q6": {
+     "Baseline": 64.28,
+     "FlexGen": 26.62,
+     "KIVI": 26.88,
+     "VARQ": 26.19
+    },
+    "q4": {
+     "Baseline": 64.28,
+     "FlexGen": 16.57,
+     "KIVI": 16.84,
+     "VARQ": 16.15
+    }
    }
   },
   {
@@ -868,6 +898,28 @@
      "Baseline",
      "VARQ"
     ]
+   },
+   "kvSetting": "Text-to-image · batch 6",
+   "kvMemory": {
+    "q8": {
+     "Baseline": 67.43,
+     "VARQ": 33.88
+    },
+    "q4": {
+     "Baseline": 67.43,
+     "FlexGen": 17.38,
+     "KIVI": 17.69,
+     "VARQ": 17.03
+    },
+    "q3": {
+     "Baseline": 67.43,
+     "KIVI": 14.32,
+     "VARQ": 13.65
+    },
+    "q2": {
+     "Baseline": 67.43,
+     "VARQ": 8.6
+    }
    }
   },
   {

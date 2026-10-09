@@ -52,7 +52,7 @@
     document.querySelector("#gallery-playback").hidden = !isVideo;
     document.querySelector("#gallery-task").textContent = `${paradigm(model)} · ${model.label} · ${model.task} · ${
       model.bitLabels[bitSelect.value]
-    } KV cache`;
+    } KV cache${model.kvSetting && model.kvMemory && model.kvMemory[bitSelect.value] ? ` · KV memory measured at ${model.kvSetting}` : ""}`;
     document.querySelector("#gallery-prompt").textContent = sample?.prompt
       ? `“${sample.prompt}”`
       : `${model.task} — sample ${Number(sampleSelect.value) + 1}`;
@@ -79,6 +79,14 @@
           : method === "Baseline"
             ? "BF16 reference"
             : `${model.methodLabels[method]} · ${model.bitLabels[bitSelect.value]}`;
+      const kv = model.kvMemory && model.kvMemory[bitSelect.value] && model.kvMemory[bitSelect.value][method];
+      if (kv) {
+        const base = model.kvMemory[bitSelect.value].Baseline;
+        const tag = document.createElement("span");
+        tag.className = "kv-tag";
+        tag.textContent = method === "Baseline" || !base ? ` · KV ${kv.toFixed(1)} GB` : ` · KV ${kv.toFixed(1)} GB (−${Math.round((1 - kv / base) * 100)}%)`;
+        label.append(tag);
+      }
       cell.append(label);
       if (source && source.startsWith("samples/") && !source.includes("..")) {
         const item = document.createElement(isVideo ? "video" : "img");

@@ -1,0 +1,60 @@
+{
+ "Infinity8B": {
+  "setting": "Text-to-image \u00b7 batch 6",
+  "bits": {
+   "q8": {
+    "Baseline": 67.43,
+    "VARQ": 33.88
+   },
+   "q4": {
+    "Baseline": 67.43,
+    "FlexGen": 17.38,
+    "KIVI": 17.69,
+    "VARQ": 17.03
+   },
+   "q3": {
+    "Baseline": 67.43,
+    "KIVI": 14.32,
+    "VARQ": 13.65
+   },
+   "q2": {
+    "Baseline": 67.43,
+    "VARQ": 8.6
+   }
+  }
+ },
+ "self_forcing": {
+  "setting": "1.3B \u00b7 5-second clips \u00b7 batch 12",
+  "bits": {
+   "q6": {
+    "Baseline": 67.49,
+    "FlexGen": 27.95,
+    "KIVI": 28.22,
+    "VARQ": 27.5
+   },
+   "q4": {
+    "Baseline": 67.49,
+    "FlexGen": 17.4,
+    "KIVI": 17.68,
+    "VARQ": 16.95
+   }
+  }
+ },
+ "longlive": {
+  "setting": "1.3B \u00b7 30-second clips \u00b7 batch 20",
+  "bits": {
+   "q6": {
+    "Baseline": 64.28,
+    "FlexGen": 26.62,
+    "KIVI": 26.88,
+    "VARQ": 26.19
+   },
+   "q4": {
+    "Baseline": 64.28,
+    "FlexGen": 16.57,
+    "KIVI": 16.84,
+    "VARQ": 16.15
+   }
+  }
+ }
+}

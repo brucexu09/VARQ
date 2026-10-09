@@ -115,6 +115,10 @@ def main():
         entry["methodsByBit"] = {b: [m for m in METHOD_ORDER if any(m in s["media"] for s in entry["samples"][b])] for b in entry["bits"]}
         entry["methods"] = [m for m in METHOD_ORDER if any(m in ms for ms in entry["methodsByBit"].values())]
         entry["methodLabels"] = {m: METHOD_LABEL[m] for m in entry["methods"]}
+        kvmap = json.load(open(os.path.join(REPO, "kv-memory.json"))).get(mid)
+        if kvmap:
+            entry["kvSetting"] = kvmap["setting"]
+            entry["kvMemory"] = kvmap["bits"]
         by_id[mid] = entry
         print(f"[ok] {mid}/{q}: {len(samples)} samples, methods={entry['methodsByBit'][q]}")
     ordered = [by_id[i] for i in MODEL_ORDER if i in by_id] + [m for i, m in by_id.items() if i not in MODEL_ORDER]
