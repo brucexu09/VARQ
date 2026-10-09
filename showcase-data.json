@@ -94,8 +94,8 @@
         "title": "Lion on the rock",
         "prompt": "A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon.",
         "sources": {
-          "Baseline": "samples/longlive/Baseline/q6/prompt00.mp4",
-          "VARQ": "samples/longlive/VARQ/q6/prompt00.mp4"
+          "Baseline": "samples/longlive/Baseline/q6/prompt000.mp4",
+          "VARQ": "samples/longlive/VARQ/q6/prompt000.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/long-0-Baseline.webp",
@@ -103,11 +103,11 @@
         }
       },
       {
-        "title": "A toy robot in Antarctica",
-        "prompt": "a toy robot wearing a green dress and a sun hat taking a pleasant stroll in Antarctica during a beautiful sunset",
+        "title": "Waterfall in the clearing",
+        "prompt": "In a tranquil forest clearing, a sparkling waterfall cascades down into a clear pool, surrounded by lush greenery and flowers, with occasional birds fluttering by.",
         "sources": {
-          "Baseline": "samples/longlive/Baseline/q6/prompt10.mp4",
-          "VARQ": "samples/longlive/VARQ/q6/prompt10.mp4"
+          "Baseline": "samples/longlive/Baseline/q6/prompt044.mp4",
+          "VARQ": "samples/longlive/VARQ/q6/prompt044.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/long-1-Baseline.webp",
@@ -115,11 +115,11 @@
         }
       },
       {
-        "title": "Cherry blossom village",
-        "prompt": "A quaint village nestled in a valley is surrounded by blooming cherry blossoms, with petals drifting through the air as villagers go about their daily activities, adding life to the scene.",
+        "title": "A tree of golden coins",
+        "prompt": "A tree made of golden coins at sunset, with coins falling off.",
         "sources": {
-          "Baseline": "samples/longlive/Baseline/q6/prompt02.mp4",
-          "VARQ": "samples/longlive/VARQ/q6/prompt02.mp4"
+          "Baseline": "samples/longlive/Baseline/q6/prompt041.mp4",
+          "VARQ": "samples/longlive/VARQ/q6/prompt041.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/long-2-Baseline.webp",
@@ -210,11 +210,11 @@
     "bits": "6-bit",
     "clips": [
       {
-        "title": "A toy robot in Antarctica",
-        "prompt": "a toy robot wearing a green dress and a sun hat taking a pleasant stroll in Antarctica during a beautiful sunset",
+        "title": "Waterfall in the clearing",
+        "prompt": "In a tranquil forest clearing, a sparkling waterfall cascades down into a clear pool, surrounded by lush greenery and flowers, with occasional birds fluttering by.",
         "sources": {
-          "Baseline": "samples/longlive/Baseline/q6/prompt10.mp4",
-          "VARQ": "samples/longlive/VARQ/q6/prompt10.mp4"
+          "Baseline": "samples/longlive/Baseline/q6/prompt044.mp4",
+          "VARQ": "samples/longlive/VARQ/q6/prompt044.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/long-1-Baseline.webp",
@@ -229,11 +229,11 @@
     "bits": "6-bit",
     "clips": [
       {
-        "title": "Cherry blossom village",
-        "prompt": "A quaint village nestled in a valley is surrounded by blooming cherry blossoms, with petals drifting through the air as villagers go about their daily activities, adding life to the scene.",
+        "title": "A tree of golden coins",
+        "prompt": "A tree made of golden coins at sunset, with coins falling off.",
         "sources": {
-          "Baseline": "samples/longlive/Baseline/q6/prompt02.mp4",
-          "VARQ": "samples/longlive/VARQ/q6/prompt02.mp4"
+          "Baseline": "samples/longlive/Baseline/q6/prompt041.mp4",
+          "VARQ": "samples/longlive/VARQ/q6/prompt041.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/long-2-Baseline.webp",

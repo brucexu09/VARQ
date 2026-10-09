@@ -72,7 +72,7 @@
     } else {
       const p = document.createElement("p");
       p.className = "missing-media";
-      p.textContent = "n/a";
+      p.textContent = "pending";
       fig.append(p);
     }
     fig.append(cap);

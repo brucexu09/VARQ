@@ -960,80 +960,160 @@
       "prompt": "A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon.",
       "caption": null,
       "media": {
-       "Baseline": "samples/longlive/Baseline/q6/prompt00.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/prompt00.mp4",
-       "KIVI": "samples/longlive/KIVI/q6/prompt00.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q6/prompt00.mp4"
+       "Baseline": "samples/longlive/Baseline/q6/prompt000.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/prompt000.mp4"
       }
      },
      {
-      "prompt": "A quaint village nestled in a valley is surrounded by blooming cherry blossoms, with petals drifting through the air as villagers go about their daily activities, adding life to the scene.",
+      "prompt": "A pan right across a field of tall grass swaying gently in the wind, with a setting sun in the background.",
       "caption": null,
       "media": {
-       "Baseline": "samples/longlive/Baseline/q6/prompt02.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/prompt02.mp4",
-       "KIVI": "samples/longlive/KIVI/q6/prompt02.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q6/prompt02.mp4"
+       "Baseline": "samples/longlive/Baseline/q6/prompt019.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/prompt019.mp4"
+      }
+     },
+     {
+      "prompt": "The gentle bubbling and evaporation of water in a natural hot spring, with mist rising and drifting across the surrounding landscape.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/prompt034.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/prompt034.mp4"
+      }
+     },
+     {
+      "prompt": "A video showing the complex patterns of a river meandering through a landscape.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/prompt047.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/prompt047.mp4"
       }
      },
      {
       "prompt": "a toy robot wearing a green dress and a sun hat taking a pleasant stroll in Antarctica during a beautiful sunset",
       "caption": null,
       "media": {
-       "Baseline": "samples/longlive/Baseline/q6/prompt10.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/prompt10.mp4",
-       "KIVI": "samples/longlive/KIVI/q6/prompt10.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q6/prompt10.mp4"
+       "Baseline": "samples/longlive/Baseline/q6/prompt010.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/prompt010.mp4"
+      }
+     },
+     {
+      "prompt": "In a tranquil forest clearing, a sparkling waterfall cascades down into a clear pool, surrounded by lush greenery and flowers, with occasional birds fluttering by.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/prompt044.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/prompt044.mp4"
+      }
+     },
+     {
+      "prompt": "A person fishing for stars in a night sky with a glowing fishing rod.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/prompt022.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/prompt022.mp4"
+      }
+     },
+     {
+      "prompt": "A mother otter floating on her back in a river, cradling her pup on her stomach to keep it safe and warm in the gentle current.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/prompt021.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/prompt021.mp4"
+      }
+     },
+     {
+      "prompt": "Sun rays breaking through a misty morning fog in a dense forest, creating visible beams of light that highlight the dew on the leaves.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/prompt039.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/prompt039.mp4"
       }
      },
      {
       "prompt": "Cinematic trailer for a group of adventurous puppies exploring ruins in the sky",
       "caption": null,
       "media": {
-       "Baseline": "samples/longlive/Baseline/q6/prompt09.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/prompt09.mp4",
-       "KIVI": "samples/longlive/KIVI/q6/prompt09.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q6/prompt09.mp4"
+       "Baseline": "samples/longlive/Baseline/q6/prompt009.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/prompt009.mp4"
       }
      },
      {
-      "prompt": "New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York.",
+      "prompt": "A tree made of golden coins at sunset, with coins falling off.",
       "caption": null,
       "media": {
-       "Baseline": "samples/longlive/Baseline/q6/prompt06.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/prompt06.mp4",
-       "KIVI": "samples/longlive/KIVI/q6/prompt06.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q6/prompt06.mp4"
+       "Baseline": "samples/longlive/Baseline/q6/prompt041.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/prompt041.mp4"
+      }
+     },
+     {
+      "prompt": "A close-up shot of a fashion influencer's face as she poses confidently for a photo shoot in a chic winter outfit.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/prompt049.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/prompt049.mp4"
       }
      },
      {
       "prompt": "A cook flipping pancakes on a griddle.",
       "caption": null,
       "media": {
-       "Baseline": "samples/longlive/Baseline/q6/prompt11.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/prompt11.mp4",
-       "KIVI": "samples/longlive/KIVI/q6/prompt11.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q6/prompt11.mp4"
+       "Baseline": "samples/longlive/Baseline/q6/prompt011.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/prompt011.mp4"
       }
      },
      {
-      "prompt": "A stylish woman walks down a Tokyo street filled with warm glowing neon and animated city signage. She wears a black leather jacket, a long red dress, and black boots, and carries a black purse. She wears sunglasses and red lipstick. She walks confidently and casually. The street is damp and reflective, creating a mirror effect of the colorful lights. Many pedestrians walk about.",
+      "prompt": "A peaceful monastery perches on a mountain cliff, with monks moving silently through the courtyard or sitting in meditation, overlooking a breathtaking view.",
       "caption": null,
       "media": {
-       "Baseline": "samples/longlive/Baseline/q6/prompt03.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/prompt03.mp4",
-       "KIVI": "samples/longlive/KIVI/q6/prompt03.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q6/prompt03.mp4"
+       "Baseline": "samples/longlive/Baseline/q6/prompt025.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/prompt025.mp4"
       }
      },
      {
-      "prompt": "Several giant wooly mammoths approach treading through a snowy meadow, their long wooly fur lightly blows in the wind as they walk, snow covered trees and dramatic snow capped mountains in the distance, mid afternoon light with wispy clouds and a sun high in the distance creates a warm glow, the low camera view is stunning capturing the large furry mammal with beautiful photography, depth of field.",
+      "prompt": "A close-up of honey being drizzled onto pancakes, the thick liquid flowing slowly and smoothly.",
       "caption": null,
       "media": {
-       "Baseline": "samples/longlive/Baseline/q6/prompt04.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/prompt04.mp4",
-       "KIVI": "samples/longlive/KIVI/q6/prompt04.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q6/prompt04.mp4"
+       "Baseline": "samples/longlive/Baseline/q6/prompt023.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/prompt023.mp4"
+      }
+     },
+     {
+      "prompt": "A pan left through a quiet, mist-covered forest, with rays of sunlight breaking through the canopy.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/prompt014.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/prompt014.mp4"
+      }
+     },
+     {
+      "prompt": "A rocket blasting off from the launch pad, accelerating rapidly into the sky.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/prompt013.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/prompt013.mp4"
+      }
+     },
+     {
+      "prompt": "A truck left along the edge of a cliff, revealing the stunning coastal landscape below with waves crashing against the rocks.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/prompt038.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/prompt038.mp4"
+      }
+     },
+     {
+      "prompt": "Camera arc shot. A dog barking at a squirrel.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/prompt018.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/prompt018.mp4"
+      }
+     },
+     {
+      "prompt": "A person surfing on a wave of stars in outer space.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/prompt052.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/prompt052.mp4"
       }
      }
     ]

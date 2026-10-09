@@ -35,7 +35,9 @@ for key, (mid, label, clips, prompts) in CLIPS.items():
 json.dump(data, open('showcase-data.json', 'w'), indent=2, ensure_ascii=False); open('showcase-data.json', 'a').write("\n")
 html = open('index.html').read()
 def patch_card(html, key, entry_list, hero):
-    m = re.search(rf'<article class="feature-card[^"]*" data-feature="{key}">.*?</article>', html, re.S); assert m, key
+    m = re.search(rf'<article class="feature-card[^"]*" data-feature="{key}">.*?</article>', html, re.S)
+    if not m:
+        return html  # card no longer exists on the page (sample cards were replaced by the dense grids)
     block = m.group(0); e0 = entry_list[0]
     block = re.sub(r'data-src="samples/[^"]*/Baseline/[^"]*"', f'data-src="{e0["sources"]["Baseline"]}"', block)
     block = re.sub(r'data-src="samples/[^"]*/VARQ/[^"]*"', f'data-src="{e0["sources"]["VARQ"]}"', block)

@@ -72,7 +72,7 @@ def build_samples(mid, q, spec, select):
             if not os.path.exists(dst) or os.path.getmtime(dst) < os.path.getmtime(srcf):
                 shutil.copy2(srcf, dst)
             media[meth] = f"samples/{mid}/{meth}/{q}/{fn}"
-        if all(m in media for m in spec["dirs"]):
+        if "Baseline" in media and "VARQ" in media:  # other methods may still be pending -> shown as n/a
             cap = caption(m.get("psnr", {})) if spec.get("caption", True) else None
             samples.append({"prompt": m.get("prompt"), "caption": cap, "media": media})
     return samples
@@ -113,7 +113,7 @@ def main():
             pref = [b for b in BIT_ORDER[mid] if b in entry["bits"]]
             entry["bits"] = pref + [b for b in entry["bits"] if b not in pref]
         entry["bitLabels"] = {b: qlabel(b) for b in entry["bits"]}
-        entry["methodsByBit"] = {b: [m for m in METHOD_ORDER if any(m in s["media"] for s in entry["samples"][b])] for b in entry["bits"]}
+        entry["methodsByBit"] = {b: [m for m in METHOD_ORDER if any(m in s["media"] for s in entry["samples"][b]) or (b == q and m in spec["dirs"])] for b in entry["bits"]}
         entry["methods"] = [m for m in METHOD_ORDER if any(m in ms for ms in entry["methodsByBit"].values())]
         entry["methodLabels"] = {m: METHOD_LABEL[m] for m in entry["methods"]}
         kvmap = json.load(open(os.path.join(REPO, "kv-memory.json"))).get(mid)
