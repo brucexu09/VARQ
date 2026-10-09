@@ -712,345 +712,785 @@
     ],
     "q4": [
      {
-      "prompt": "A red fox standing in fresh snow at dawn, soft pink light, fine fur detail, wildlife photography.",
-      "caption": "VARQ <b>24.6 dB</b> &nbsp;·&nbsp; KIVI 21.4 &nbsp;·&nbsp; FlexGen 19.8 &nbsp;<span class='pos'>(+3.1 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q4/idx01.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q4/idx01.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q4/idx01.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx01.jpg"
-      }
-     },
-     {
-      "prompt": "A snowy owl in flight against a pale winter sky, wings spread, feather detail.",
-      "caption": "VARQ <b>26.8 dB</b> &nbsp;·&nbsp; KIVI 25.4 &nbsp;·&nbsp; FlexGen 24.2 &nbsp;<span class='pos'>(+1.3 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q4/idx20.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q4/idx20.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q4/idx20.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx20.jpg"
-      }
-     },
-     {
-      "prompt": "An astronaut riding a horse across a desert at sunset, photorealistic.",
-      "caption": "VARQ <b>21.3 dB</b> &nbsp;·&nbsp; KIVI 18.2 &nbsp;·&nbsp; FlexGen 18.5 &nbsp;<span class='pos'>(+2.8 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q4/idx05.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q4/idx05.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q4/idx05.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx05.jpg"
-      }
-     },
-     {
-      "prompt": "A majestic Bengal tiger walking through a misty bamboo forest, National Geographic style.",
-      "caption": "VARQ <b>18.7 dB</b> &nbsp;·&nbsp; KIVI 17.4 &nbsp;·&nbsp; FlexGen 16.7 &nbsp;<span class='pos'>(+1.3 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q4/idx06.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q4/idx06.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q4/idx06.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx06.jpg"
-      }
-     },
-     {
-      "prompt": "A beautiful Chinese woman with graceful features, close-up portrait, long flowing black hair, wearing a traditional silk cheongsam delicately embroidered with floral patterns, face softly illuminated by ambient light, serene expression",
-      "caption": "VARQ <b>20.3 dB</b> &nbsp;·&nbsp; KIVI 17.4 &nbsp;·&nbsp; FlexGen 16.3 &nbsp;<span class='pos'>(+2.9 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q4/idx24.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q4/idx24.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q4/idx24.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx24.jpg"
-      }
-     },
-     {
-      "prompt": "A colorful macaw parrot perched on a branch in a lush rainforest, vibrant feathers, sharp focus.",
-      "caption": "VARQ <b>17.0 dB</b> &nbsp;·&nbsp; KIVI 14.7 &nbsp;·&nbsp; FlexGen 14.1 &nbsp;<span class='pos'>(+2.4 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q4/idx16.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q4/idx16.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q4/idx16.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx16.jpg"
-      }
-     },
-     {
       "prompt": "A cinematic close-up portrait of an elderly fisherman with weathered skin and a white beard, golden hour light, shallow depth of field, 85mm lens.",
-      "caption": "VARQ <b>17.9 dB</b> &nbsp;·&nbsp; KIVI 17.4 &nbsp;·&nbsp; FlexGen 15.1 &nbsp;<span class='pos'>(+0.5 dB PSNR)</span>",
+      "caption": "VARQ <b>18.3 dB</b> &nbsp;·&nbsp; KIVI 16.8 &nbsp;·&nbsp; FlexGen 15.5 &nbsp;<span class='pos'>(+1.5 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q4/idx00.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q4/idx00.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q4/idx00.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx00.jpg"
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx000.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx000.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx000.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx000.jpg"
       }
      },
      {
-      "prompt": "A hot air balloon festival over Cappadocia at sunrise, dozens of colorful balloons, aerial view.",
-      "caption": "VARQ <b>16.0 dB</b> &nbsp;·&nbsp; KIVI 15.0 &nbsp;·&nbsp; FlexGen 14.8 &nbsp;<span class='pos'>(+1.0 dB PSNR)</span>",
+      "prompt": "A red fox standing in fresh snow at dawn, soft pink light, fine fur detail, wildlife photography.",
+      "caption": "VARQ <b>23.7 dB</b> &nbsp;·&nbsp; KIVI 20.0 &nbsp;·&nbsp; FlexGen 18.6 &nbsp;<span class='pos'>(+3.7 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q4/idx09.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q4/idx09.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q4/idx09.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx09.jpg"
-      }
-     },
-     {
-      "prompt": "A corgi wearing sunglasses sitting on a beach chair with a tropical drink, bright summer colors.",
-      "caption": "VARQ <b>16.4 dB</b> &nbsp;·&nbsp; KIVI 13.1 &nbsp;·&nbsp; FlexGen 12.6 &nbsp;<span class='pos'>(+3.2 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q4/idx10.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q4/idx10.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q4/idx10.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx10.jpg"
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx001.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx001.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx001.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx001.jpg"
       }
      },
      {
       "prompt": "A cozy Scandinavian cabin by a frozen lake under the northern lights, long exposure photograph.",
-      "caption": "VARQ <b>18.4 dB</b> &nbsp;·&nbsp; KIVI 16.9 &nbsp;·&nbsp; FlexGen 16.3 &nbsp;<span class='pos'>(+1.5 dB PSNR)</span>",
+      "caption": "VARQ <b>18.1 dB</b> &nbsp;·&nbsp; KIVI 17.2 &nbsp;·&nbsp; FlexGen 16.2 &nbsp;<span class='pos'>(+0.9 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q4/idx02.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q4/idx02.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q4/idx02.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx02.jpg"
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx002.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx002.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx002.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx002.jpg"
       }
      },
      {
       "prompt": "A steaming bowl of ramen with a soft-boiled egg, chashu pork and scallions on a wooden counter, food photography.",
-      "caption": "VARQ <b>17.1 dB</b> &nbsp;·&nbsp; KIVI 16.3 &nbsp;·&nbsp; FlexGen 15.3 &nbsp;<span class='pos'>(+0.8 dB PSNR)</span>",
+      "caption": "VARQ <b>17.0 dB</b> &nbsp;·&nbsp; KIVI 15.4 &nbsp;·&nbsp; FlexGen 15.2 &nbsp;<span class='pos'>(+1.7 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q4/idx03.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q4/idx03.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q4/idx03.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx03.jpg"
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx003.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx003.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx003.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx003.jpg"
       }
      },
      {
-      "prompt": "A sleek sports car on a coastal highway at golden hour, motion blur, automotive photography.",
-      "caption": "VARQ <b>20.0 dB</b> &nbsp;·&nbsp; KIVI 16.7 &nbsp;·&nbsp; FlexGen 17.6 &nbsp;<span class='pos'>(+2.4 dB PSNR)</span>",
+      "prompt": "An astronaut riding a horse across a desert at sunset, photorealistic.",
+      "caption": "VARQ <b>21.9 dB</b> &nbsp;·&nbsp; KIVI 19.2 &nbsp;·&nbsp; FlexGen 17.5 &nbsp;<span class='pos'>(+2.6 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q4/idx19.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q4/idx19.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q4/idx19.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx19.jpg"
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx005.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx005.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx005.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx005.jpg"
       }
      },
      {
-      "prompt": "a cat holds a board with the text 'diffusion is dead'",
-      "caption": "VARQ <b>18.9 dB</b> &nbsp;·&nbsp; KIVI 17.7 &nbsp;·&nbsp; FlexGen 15.7 &nbsp;<span class='pos'>(+1.1 dB PSNR)</span>",
+      "prompt": "A majestic Bengal tiger walking through a misty bamboo forest, National Geographic style.",
+      "caption": "VARQ <b>17.9 dB</b> &nbsp;·&nbsp; KIVI 17.4 &nbsp;·&nbsp; FlexGen 16.6 &nbsp;<span class='pos'>(+0.5 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q4/idx14.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q4/idx14.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q4/idx14.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx14.jpg"
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx006.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx006.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx006.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx006.jpg"
       }
      },
      {
-      "prompt": "A medieval knight in ornate silver armor standing in a cathedral lit by stained-glass windows.",
-      "caption": "VARQ <b>13.5 dB</b> &nbsp;·&nbsp; KIVI 12.2 &nbsp;·&nbsp; FlexGen 11.7 &nbsp;<span class='pos'>(+1.3 dB PSNR)</span>",
+      "prompt": "A macro photograph of a honeybee covered in pollen landing on a purple lavender flower.",
+      "caption": "VARQ <b>17.1 dB</b> &nbsp;·&nbsp; KIVI 14.7 &nbsp;·&nbsp; FlexGen 13.9 &nbsp;<span class='pos'>(+2.5 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q4/idx15.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q4/idx15.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q4/idx15.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx15.jpg"
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx008.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx008.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx008.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx008.jpg"
+      }
+     },
+     {
+      "prompt": "A hot air balloon festival over Cappadocia at sunrise, dozens of colorful balloons, aerial view.",
+      "caption": "VARQ <b>15.7 dB</b> &nbsp;·&nbsp; KIVI 15.0 &nbsp;·&nbsp; FlexGen 14.9 &nbsp;<span class='pos'>(+0.7 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx009.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx009.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx009.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx009.jpg"
+      }
+     },
+     {
+      "prompt": "A corgi wearing sunglasses sitting on a beach chair with a tropical drink, bright summer colors.",
+      "caption": "VARQ <b>16.4 dB</b> &nbsp;·&nbsp; KIVI 13.6 &nbsp;·&nbsp; FlexGen 13.4 &nbsp;<span class='pos'>(+2.8 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx010.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx010.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx010.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx010.jpg"
       }
      },
      {
       "prompt": "An oil painting of a stormy sea with a lighthouse on a cliff, dramatic brushstrokes, Romantic era style.",
-      "caption": "VARQ <b>17.4 dB</b> &nbsp;·&nbsp; KIVI 16.4 &nbsp;·&nbsp; FlexGen 16.1 &nbsp;<span class='pos'>(+1.0 dB PSNR)</span>",
+      "caption": "VARQ <b>17.2 dB</b> &nbsp;·&nbsp; KIVI 15.6 &nbsp;·&nbsp; FlexGen 15.6 &nbsp;<span class='pos'>(+1.6 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q4/idx11.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q4/idx11.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q4/idx11.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx11.jpg"
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx011.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx011.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx011.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx011.jpg"
       }
      },
      {
-      "prompt": "A golden retriever puppy sitting in a field of sunflowers, bright blue sky, joyful expression.",
-      "caption": "VARQ <b>17.6 dB</b> &nbsp;·&nbsp; KIVI 14.9 &nbsp;·&nbsp; FlexGen 14.2 &nbsp;<span class='pos'>(+2.7 dB PSNR)</span>",
+      "prompt": "A glass of iced coffee with condensation droplets on a marble table, morning sunlight, product photography.",
+      "caption": "VARQ <b>18.5 dB</b> &nbsp;·&nbsp; KIVI 14.1 &nbsp;·&nbsp; FlexGen 13.6 &nbsp;<span class='pos'>(+4.4 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q4/idx25.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q4/idx25.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q4/idx25.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx25.jpg"
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx012.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx012.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx012.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx012.jpg"
+      }
+     },
+     {
+      "prompt": "a cat holds a board with the text 'diffusion is dead'",
+      "caption": "VARQ <b>18.1 dB</b> &nbsp;·&nbsp; KIVI 17.6 &nbsp;·&nbsp; FlexGen 15.1 &nbsp;<span class='pos'>(+0.6 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx014.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx014.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx014.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx014.jpg"
+      }
+     },
+     {
+      "prompt": "A medieval knight in ornate silver armor standing in a cathedral lit by stained-glass windows.",
+      "caption": "VARQ <b>14.6 dB</b> &nbsp;·&nbsp; KIVI 12.0 &nbsp;·&nbsp; FlexGen 12.7 &nbsp;<span class='pos'>(+1.9 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx015.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx015.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx015.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx015.jpg"
+      }
+     },
+     {
+      "prompt": "A colorful macaw parrot perched on a branch in a lush rainforest, vibrant feathers, sharp focus.",
+      "caption": "VARQ <b>15.8 dB</b> &nbsp;·&nbsp; KIVI 14.0 &nbsp;·&nbsp; FlexGen 13.7 &nbsp;<span class='pos'>(+1.8 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx016.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx016.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx016.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx016.jpg"
+      }
+     },
+     {
+      "prompt": "A detailed watercolor illustration of a small cottage surrounded by wildflowers and a white picket fence.",
+      "caption": "VARQ <b>13.9 dB</b> &nbsp;·&nbsp; KIVI 13.5 &nbsp;·&nbsp; FlexGen 13.2 &nbsp;<span class='pos'>(+0.4 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx017.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx017.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx017.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx017.jpg"
+      }
+     },
+     {
+      "prompt": "A sleek sports car on a coastal highway at golden hour, motion blur, automotive photography.",
+      "caption": "VARQ <b>19.7 dB</b> &nbsp;·&nbsp; KIVI 16.7 &nbsp;·&nbsp; FlexGen 17.2 &nbsp;<span class='pos'>(+2.5 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx019.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx019.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx019.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx019.jpg"
+      }
+     },
+     {
+      "prompt": "A snowy owl in flight against a pale winter sky, wings spread, feather detail.",
+      "caption": "VARQ <b>27.1 dB</b> &nbsp;·&nbsp; KIVI 25.6 &nbsp;·&nbsp; FlexGen 23.6 &nbsp;<span class='pos'>(+1.5 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx020.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx020.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx020.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx020.jpg"
+      }
+     },
+     {
+      "prompt": "An underwater photograph of a sea turtle swimming over a coral reef with sun rays.",
+      "caption": "VARQ <b>15.9 dB</b> &nbsp;·&nbsp; KIVI 15.1 &nbsp;·&nbsp; FlexGen 14.7 &nbsp;<span class='pos'>(+0.8 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx021.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx021.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx021.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx021.jpg"
       }
      },
      {
       "prompt": "A chef plating a gourmet dessert with raspberries and gold leaf, restaurant kitchen, bokeh.",
-      "caption": "VARQ <b>17.4 dB</b> &nbsp;·&nbsp; KIVI 14.4 &nbsp;·&nbsp; FlexGen 12.9 &nbsp;<span class='pos'>(+2.9 dB PSNR)</span>",
+      "caption": "VARQ <b>15.4 dB</b> &nbsp;·&nbsp; KIVI 12.7 &nbsp;·&nbsp; FlexGen 12.7 &nbsp;<span class='pos'>(+2.7 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q4/idx22.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q4/idx22.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q4/idx22.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx22.jpg"
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx022.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx022.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx022.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx022.jpg"
+      }
+     },
+     {
+      "prompt": "A Chinese ink painting of misty mountains with pine trees and a small boat on a river.",
+      "caption": "VARQ <b>13.8 dB</b> &nbsp;·&nbsp; KIVI 12.7 &nbsp;·&nbsp; FlexGen 12.0 &nbsp;<span class='pos'>(+1.0 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx023.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx023.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx023.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx023.jpg"
+      }
+     },
+     {
+      "prompt": "A beautiful Chinese woman with graceful features, close-up portrait, long flowing black hair, wearing a traditional silk cheongsam delicately embroidered with floral patterns, face softly illuminated by ambient light, serene expression",
+      "caption": "VARQ <b>20.2 dB</b> &nbsp;·&nbsp; KIVI 16.5 &nbsp;·&nbsp; FlexGen 16.6 &nbsp;<span class='pos'>(+3.7 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx024.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx024.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx024.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx024.jpg"
+      }
+     },
+     {
+      "prompt": "A golden retriever puppy sitting in a field of sunflowers, bright blue sky, joyful expression.",
+      "caption": "VARQ <b>17.0 dB</b> &nbsp;·&nbsp; KIVI 16.2 &nbsp;·&nbsp; FlexGen 15.2 &nbsp;<span class='pos'>(+0.8 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx025.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx025.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx025.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx025.jpg"
+      }
+     },
+     {
+      "prompt": "A vibrant garden scene where two red tulips stand out with their bright petals, surrounded by three white daisies with yellow centers. The flowers are nestled among green leaves and stems, with the red tulips slightly taller than the daisies. The arrangement is set against a backdrop of dark soil, hinting at a well-tended garden bed.",
+      "caption": "VARQ <b>14.6 dB</b> &nbsp;·&nbsp; KIVI 13.1 &nbsp;·&nbsp; FlexGen 11.8 &nbsp;<span class='pos'>(+1.6 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx026.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx026.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx026.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx026.jpg"
+      }
+     },
+     {
+      "prompt": "A large black bear with a thick coat of fur is sprawled out on a rocky outcrop. Its gaze is fixed directly on the camera, giving a sense of direct engagement with the viewer. The rocks where the bear rests are surrounded by a smattering of green foliage, hinting at a forested habitat.",
+      "caption": "VARQ <b>16.5 dB</b> &nbsp;·&nbsp; KIVI 14.4 &nbsp;·&nbsp; FlexGen 13.5 &nbsp;<span class='pos'>(+2.1 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx027.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx027.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx027.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx027.jpg"
+      }
+     },
+     {
+      "prompt": "Three exquisitely crafted violins, with their elegant F-shaped sound holes and smooth, glossy wooden surfaces, rest gently beside a grand piano. The piano's polished ebony finish reflects the soft, gentle curves of the violins that lie on a velvet-lined case. Behind them, the piano's open lid reveals its intricate strings and hammers, inviting a symphony of sounds to be played.",
+      "caption": "VARQ <b>14.5 dB</b> &nbsp;·&nbsp; KIVI 11.2 &nbsp;·&nbsp; FlexGen 12.3 &nbsp;<span class='pos'>(+2.2 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx028.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx028.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx028.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx028.jpg"
+      }
+     },
+     {
+      "prompt": "A sizable panda bear is situated in the center of a bubbling stream, its black and white fur contrasting with the lush greenery that lines the water's edge. In its paws, the bear is holding a glistening, silver-colored trout. The water flows around the bear's legs, creating ripples that reflect the sunlight.",
+      "caption": "VARQ <b>14.2 dB</b> &nbsp;·&nbsp; KIVI 13.1 &nbsp;·&nbsp; FlexGen 12.5 &nbsp;<span class='pos'>(+1.1 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx029.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx029.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx029.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx029.jpg"
+      }
+     },
+     {
+      "prompt": "A vintage rectangular carriage, with intricate metalwork and wooden panels, occupies the foreground, resting on the uneven cobblestone street. Above it, the sky is overcast with dark, billowing clouds that seem to loom ominously. Nearby, a sleek, rounded hoverboard with a glossy finish gracefully glides in circles around the carriage, its futuristic design contrasting sharply with the historical vehicle.",
+      "caption": "VARQ <b>14.2 dB</b> &nbsp;·&nbsp; KIVI 12.8 &nbsp;·&nbsp; FlexGen 12.6 &nbsp;<span class='pos'>(+1.4 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx035.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx035.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx035.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx035.jpg"
+      }
+     },
+     {
+      "prompt": "A whimsical scene at the beach where a pineapple, complete with its spiky green leaves, is balanced atop a vibrant blue wave as if it were surfing. The pineapple's textured, golden-brown skin glistens with droplets of ocean water. In the background, the sandy shore is dotted with colorful beach umbrellas and sunbathers enjoying the sunny day.",
+      "caption": "VARQ <b>16.4 dB</b> &nbsp;·&nbsp; KIVI 15.9 &nbsp;·&nbsp; FlexGen 15.6 &nbsp;<span class='pos'>(+0.6 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx039.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx039.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx039.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx039.jpg"
+      }
+     },
+     {
+      "prompt": "A chilled, transparent bottle of light beer with condensation beads forming on its surface, placed on a wooden table. A bright yellow slice of lemon is wedged onto the rim of the bottle, adding a citrus accent to the beverage. The bottle label is partially obscured by the moisture, but hints of green and gold are visible on the design.",
+      "caption": "VARQ <b>18.1 dB</b> &nbsp;·&nbsp; KIVI 15.5 &nbsp;·&nbsp; FlexGen 14.6 &nbsp;<span class='pos'>(+2.7 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx041.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx041.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx041.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx041.jpg"
+      }
+     },
+     {
+      "prompt": "Two zebras, their black and white stripes creating a dizzying effect, are galloping side by side across the sprawling savanna, tinged golden by the sunlight. The texture of the grass appears rough and dry, a testament to the arid climate. Dust is being kicked up by their hooves, and in the background, sparse acacia trees punctuate the otherwise open landscape.",
+      "caption": "VARQ <b>14.6 dB</b> &nbsp;·&nbsp; KIVI 14.8 &nbsp;·&nbsp; FlexGen 13.8 &nbsp;<span class='pos'>(-0.2 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx044.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx044.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx044.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx044.jpg"
+      }
+     },
+     {
+      "prompt": "A gentleman stands behind a white linen-clad table, donning a sleek black jacket paired with a vibrant green tie. Atop the table lies an elaborately decorated cake with white icing and colorful sprinkles. The man, whose black hat adds a touch of sophistication, carefully holds a silver knife with an ornate handle, poised to slice the festive confection.",
+      "caption": "VARQ <b>19.2 dB</b> &nbsp;·&nbsp; KIVI 17.2 &nbsp;·&nbsp; FlexGen 17.6 &nbsp;<span class='pos'>(+1.6 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx056.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx056.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx056.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx056.jpg"
+      }
+     },
+     {
+      "prompt": "A cozy room featuring a sturdy wooden table at the center. Atop the table, a gray cat is comfortably sprawled out, basking in the tranquility of the space. The table also holds a few scattered papers and a potted plant, adding a touch of lived-in charm to the scene.",
+      "caption": "VARQ <b>20.7 dB</b> &nbsp;·&nbsp; KIVI 17.4 &nbsp;·&nbsp; FlexGen 16.4 &nbsp;<span class='pos'>(+3.3 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx058.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx058.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx058.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx058.jpg"
+      }
+     },
+     {
+      "prompt": "a spectacular display of fireworks illuminates the night sky with bursts of red, white, and blue. the vibrant colors reflect off a nearby lake, creating a mirror image of the aerial spectacle. in the foreground, silhouettes of a small crowd can be seen gathered to watch the show, with some individuals pointing upwards in awe.",
+      "caption": "VARQ <b>13.9 dB</b> &nbsp;·&nbsp; KIVI 13.4 &nbsp;·&nbsp; FlexGen 13.3 &nbsp;<span class='pos'>(+0.5 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx062.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx062.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx062.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx062.jpg"
+      }
+     },
+     {
+      "prompt": "A vivid green iguana is perched motionlessly atop a worn wooden log, its intricate scales exhibiting various shades of green and black. Behind the reptile, a rough-textured wall stands, painted in a faded color, which contrasts with the image's predominantly dark backdrop. The shadows envelop the surroundings, highlighting the iguana as the central focus of this composition.",
+      "caption": "VARQ <b>15.6 dB</b> &nbsp;·&nbsp; KIVI 14.6 &nbsp;·&nbsp; FlexGen 14.5 &nbsp;<span class='pos'>(+1.0 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx075.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx075.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx075.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx075.jpg"
+      }
+     },
+     {
+      "prompt": "an elderly woman with shoulder-length straight gray hair and round metal-rimmed glasses sits comfortably in a plush armchair. She is wearing a lavender cardigan over a white blouse, and a silver necklace can be seen around her neck. In her lap rests an open hardcover book, and beside her, a small wooden side table holds a ceramic teacup and saucer.",
+      "caption": "VARQ <b>18.5 dB</b> &nbsp;·&nbsp; KIVI 17.6 &nbsp;·&nbsp; FlexGen 17.9 &nbsp;<span class='pos'>(+0.6 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx077.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx077.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx077.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx077.jpg"
+      }
+     },
+     {
+      "prompt": "A group of five unique fish with deep blue, almost iridescent bodies, glide gracefully just above the sandy seabed. These aquatic creatures resemble delicate sea bubbles, with their round and translucent appearances. The surrounding waters are a calm shade of blue, casting a serene light on the ocean floor where patches of coral and seashells can be glimpsed.",
+      "caption": "VARQ <b>17.6 dB</b> &nbsp;·&nbsp; KIVI 17.1 &nbsp;·&nbsp; FlexGen 16.1 &nbsp;<span class='pos'>(+0.5 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx079.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx079.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx079.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx079.jpg"
+      }
+     },
+     {
+      "prompt": "A large brown bear is partially submerged in a clear, tranquil body of water. The sun casts a warm glow on the bear's fur, highlighting its texture and creating a serene scene. The water ripples gently around the bear as it sits calmly, enjoying the warmth of the sunlight.",
+      "caption": "VARQ <b>16.1 dB</b> &nbsp;·&nbsp; KIVI 14.8 &nbsp;·&nbsp; FlexGen 13.8 &nbsp;<span class='pos'>(+1.3 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx082.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx082.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx082.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx082.jpg"
+      }
+     },
+     {
+      "prompt": "A whimsical dessert creation, an orange jello molded into the shape of a small man, stands proudly on a white ceramic plate. The jello figure is translucent with a glossy sheen, capturing the light in its wobbly form. Around it, there are scattered mint leaves for decoration, providing a contrast to the vibrant orange color of the gelatin.",
+      "caption": "VARQ <b>20.1 dB</b> &nbsp;·&nbsp; KIVI 17.6 &nbsp;·&nbsp; FlexGen 16.9 &nbsp;<span class='pos'>(+2.5 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx085.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx085.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx085.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx085.jpg"
+      }
+     },
+     {
+      "prompt": "A cozy kitchen scene where a plush teddy bear is seated amongst a bunch of ripe bananas. The bananas are resting on a wooden countertop, which also features a variety of other groceries and kitchen utensils. In the background, a window allows natural light to illuminate the teddy bear's soft fur and the vibrant yellow of the bananas.",
+      "caption": "VARQ <b>14.7 dB</b> &nbsp;·&nbsp; KIVI 12.1 &nbsp;·&nbsp; FlexGen 11.9 &nbsp;<span class='pos'>(+2.6 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q4/idx086.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q4/idx086.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q4/idx086.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q4/idx086.jpg"
       }
      }
     ],
     "q6": [
      {
-      "prompt": "A red fox standing in fresh snow at dawn, soft pink light, fine fur detail, wildlife photography.",
-      "caption": "VARQ <b>25.6 dB</b> &nbsp;·&nbsp; KIVI 24.0 &nbsp;·&nbsp; FlexGen 23.6 &nbsp;<span class='pos'>(+1.6 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q6/idx01.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q6/idx01.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q6/idx01.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx01.jpg"
-      }
-     },
-     {
-      "prompt": "A snowy owl in flight against a pale winter sky, wings spread, feather detail.",
-      "caption": "VARQ <b>26.8 dB</b> &nbsp;·&nbsp; KIVI 29.1 &nbsp;·&nbsp; FlexGen 27.4 &nbsp;<span class='pos'>(-2.4 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q6/idx20.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q6/idx20.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q6/idx20.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx20.jpg"
-      }
-     },
-     {
-      "prompt": "An astronaut riding a horse across a desert at sunset, photorealistic.",
-      "caption": "VARQ <b>22.6 dB</b> &nbsp;·&nbsp; KIVI 21.5 &nbsp;·&nbsp; FlexGen 21.5 &nbsp;<span class='pos'>(+1.1 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q6/idx05.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q6/idx05.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q6/idx05.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx05.jpg"
-      }
-     },
-     {
-      "prompt": "A majestic Bengal tiger walking through a misty bamboo forest, National Geographic style.",
-      "caption": "VARQ <b>19.3 dB</b> &nbsp;·&nbsp; KIVI 18.4 &nbsp;·&nbsp; FlexGen 19.2 &nbsp;<span class='pos'>(+0.1 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q6/idx06.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q6/idx06.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q6/idx06.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx06.jpg"
-      }
-     },
-     {
-      "prompt": "A beautiful Chinese woman with graceful features, close-up portrait, long flowing black hair, wearing a traditional silk cheongsam delicately embroidered with floral patterns, face softly illuminated by ambient light, serene expression",
-      "caption": "VARQ <b>19.6 dB</b> &nbsp;·&nbsp; KIVI 19.7 &nbsp;·&nbsp; FlexGen 18.3 &nbsp;<span class='pos'>(-0.2 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q6/idx24.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q6/idx24.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q6/idx24.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx24.jpg"
-      }
-     },
-     {
-      "prompt": "A colorful macaw parrot perched on a branch in a lush rainforest, vibrant feathers, sharp focus.",
-      "caption": "VARQ <b>16.3 dB</b> &nbsp;·&nbsp; KIVI 16.2 &nbsp;·&nbsp; FlexGen 16.2 &nbsp;<span class='pos'>(+0.2 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q6/idx16.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q6/idx16.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q6/idx16.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx16.jpg"
-      }
-     },
-     {
       "prompt": "A cinematic close-up portrait of an elderly fisherman with weathered skin and a white beard, golden hour light, shallow depth of field, 85mm lens.",
-      "caption": "VARQ <b>18.7 dB</b> &nbsp;·&nbsp; KIVI 18.0 &nbsp;·&nbsp; FlexGen 18.1 &nbsp;<span class='pos'>(+0.6 dB PSNR)</span>",
+      "caption": "VARQ <b>18.5 dB</b> &nbsp;·&nbsp; KIVI 18.4 &nbsp;·&nbsp; FlexGen 18.1 &nbsp;<span class='pos'>(+0.2 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q6/idx00.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q6/idx00.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q6/idx00.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx00.jpg"
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx000.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx000.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx000.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx000.jpg"
       }
      },
      {
-      "prompt": "A hot air balloon festival over Cappadocia at sunrise, dozens of colorful balloons, aerial view.",
-      "caption": "VARQ <b>15.2 dB</b> &nbsp;·&nbsp; KIVI 15.1 &nbsp;·&nbsp; FlexGen 14.9 &nbsp;<span class='pos'>(+0.2 dB PSNR)</span>",
+      "prompt": "A red fox standing in fresh snow at dawn, soft pink light, fine fur detail, wildlife photography.",
+      "caption": "VARQ <b>23.8 dB</b> &nbsp;·&nbsp; KIVI 24.2 &nbsp;·&nbsp; FlexGen 24.7 &nbsp;<span class='pos'>(-0.9 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q6/idx09.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q6/idx09.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q6/idx09.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx09.jpg"
-      }
-     },
-     {
-      "prompt": "A corgi wearing sunglasses sitting on a beach chair with a tropical drink, bright summer colors.",
-      "caption": "VARQ <b>18.7 dB</b> &nbsp;·&nbsp; KIVI 15.0 &nbsp;·&nbsp; FlexGen 15.2 &nbsp;<span class='pos'>(+3.4 dB PSNR)</span>",
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q6/idx10.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q6/idx10.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q6/idx10.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx10.jpg"
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx001.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx001.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx001.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx001.jpg"
       }
      },
      {
       "prompt": "A cozy Scandinavian cabin by a frozen lake under the northern lights, long exposure photograph.",
-      "caption": "VARQ <b>19.3 dB</b> &nbsp;·&nbsp; KIVI 18.0 &nbsp;·&nbsp; FlexGen 17.5 &nbsp;<span class='pos'>(+1.2 dB PSNR)</span>",
+      "caption": "VARQ <b>17.9 dB</b> &nbsp;·&nbsp; KIVI 17.7 &nbsp;·&nbsp; FlexGen 17.7 &nbsp;<span class='pos'>(+0.2 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q6/idx02.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q6/idx02.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q6/idx02.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx02.jpg"
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx002.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx002.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx002.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx002.jpg"
       }
      },
      {
       "prompt": "A steaming bowl of ramen with a soft-boiled egg, chashu pork and scallions on a wooden counter, food photography.",
-      "caption": "VARQ <b>18.1 dB</b> &nbsp;·&nbsp; KIVI 16.9 &nbsp;·&nbsp; FlexGen 17.3 &nbsp;<span class='pos'>(+0.8 dB PSNR)</span>",
+      "caption": "VARQ <b>18.1 dB</b> &nbsp;·&nbsp; KIVI 17.9 &nbsp;·&nbsp; FlexGen 17.6 &nbsp;<span class='pos'>(+0.1 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q6/idx03.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q6/idx03.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q6/idx03.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx03.jpg"
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx003.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx003.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx003.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx003.jpg"
       }
      },
      {
-      "prompt": "A sleek sports car on a coastal highway at golden hour, motion blur, automotive photography.",
-      "caption": "VARQ <b>21.1 dB</b> &nbsp;·&nbsp; KIVI 20.6 &nbsp;·&nbsp; FlexGen 19.0 &nbsp;<span class='pos'>(+0.6 dB PSNR)</span>",
+      "prompt": "An astronaut riding a horse across a desert at sunset, photorealistic.",
+      "caption": "VARQ <b>21.9 dB</b> &nbsp;·&nbsp; KIVI 20.8 &nbsp;·&nbsp; FlexGen 20.5 &nbsp;<span class='pos'>(+1.1 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q6/idx19.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q6/idx19.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q6/idx19.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx19.jpg"
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx005.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx005.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx005.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx005.jpg"
       }
      },
      {
-      "prompt": "a cat holds a board with the text 'diffusion is dead'",
-      "caption": "VARQ <b>21.5 dB</b> &nbsp;·&nbsp; KIVI 18.0 &nbsp;·&nbsp; FlexGen 18.7 &nbsp;<span class='pos'>(+2.8 dB PSNR)</span>",
+      "prompt": "A majestic Bengal tiger walking through a misty bamboo forest, National Geographic style.",
+      "caption": "VARQ <b>19.3 dB</b> &nbsp;·&nbsp; KIVI 18.1 &nbsp;·&nbsp; FlexGen 18.1 &nbsp;<span class='pos'>(+1.1 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q6/idx14.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q6/idx14.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q6/idx14.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx14.jpg"
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx006.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx006.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx006.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx006.jpg"
       }
      },
      {
-      "prompt": "A medieval knight in ornate silver armor standing in a cathedral lit by stained-glass windows.",
-      "caption": "VARQ <b>14.7 dB</b> &nbsp;·&nbsp; KIVI 14.1 &nbsp;·&nbsp; FlexGen 14.3 &nbsp;<span class='pos'>(+0.3 dB PSNR)</span>",
+      "prompt": "A macro photograph of a honeybee covered in pollen landing on a purple lavender flower.",
+      "caption": "VARQ <b>18.0 dB</b> &nbsp;·&nbsp; KIVI 17.1 &nbsp;·&nbsp; FlexGen 16.3 &nbsp;<span class='pos'>(+0.9 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q6/idx15.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q6/idx15.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q6/idx15.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx15.jpg"
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx008.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx008.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx008.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx008.jpg"
+      }
+     },
+     {
+      "prompt": "A hot air balloon festival over Cappadocia at sunrise, dozens of colorful balloons, aerial view.",
+      "caption": "VARQ <b>16.6 dB</b> &nbsp;·&nbsp; KIVI 15.8 &nbsp;·&nbsp; FlexGen 15.4 &nbsp;<span class='pos'>(+0.9 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx009.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx009.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx009.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx009.jpg"
+      }
+     },
+     {
+      "prompt": "A corgi wearing sunglasses sitting on a beach chair with a tropical drink, bright summer colors.",
+      "caption": "VARQ <b>17.3 dB</b> &nbsp;·&nbsp; KIVI 15.5 &nbsp;·&nbsp; FlexGen 15.8 &nbsp;<span class='pos'>(+1.5 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx010.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx010.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx010.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx010.jpg"
       }
      },
      {
       "prompt": "An oil painting of a stormy sea with a lighthouse on a cliff, dramatic brushstrokes, Romantic era style.",
-      "caption": "VARQ <b>17.6 dB</b> &nbsp;·&nbsp; KIVI 17.6 &nbsp;·&nbsp; FlexGen 17.3 &nbsp;<span class='pos'>(+0.0 dB PSNR)</span>",
+      "caption": "VARQ <b>18.1 dB</b> &nbsp;·&nbsp; KIVI 17.5 &nbsp;·&nbsp; FlexGen 17.1 &nbsp;<span class='pos'>(+0.7 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q6/idx11.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q6/idx11.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q6/idx11.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx11.jpg"
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx011.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx011.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx011.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx011.jpg"
       }
      },
      {
-      "prompt": "A golden retriever puppy sitting in a field of sunflowers, bright blue sky, joyful expression.",
-      "caption": "VARQ <b>16.9 dB</b> &nbsp;·&nbsp; KIVI 16.0 &nbsp;·&nbsp; FlexGen 16.5 &nbsp;<span class='pos'>(+0.4 dB PSNR)</span>",
+      "prompt": "A glass of iced coffee with condensation droplets on a marble table, morning sunlight, product photography.",
+      "caption": "VARQ <b>19.6 dB</b> &nbsp;·&nbsp; KIVI 18.0 &nbsp;·&nbsp; FlexGen 15.7 &nbsp;<span class='pos'>(+1.6 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q6/idx25.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q6/idx25.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q6/idx25.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx25.jpg"
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx012.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx012.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx012.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx012.jpg"
+      }
+     },
+     {
+      "prompt": "a cat holds a board with the text 'diffusion is dead'",
+      "caption": "VARQ <b>18.9 dB</b> &nbsp;·&nbsp; KIVI 17.3 &nbsp;·&nbsp; FlexGen 17.3 &nbsp;<span class='pos'>(+1.5 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx014.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx014.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx014.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx014.jpg"
+      }
+     },
+     {
+      "prompt": "A medieval knight in ornate silver armor standing in a cathedral lit by stained-glass windows.",
+      "caption": "VARQ <b>14.4 dB</b> &nbsp;·&nbsp; KIVI 14.7 &nbsp;·&nbsp; FlexGen 14.3 &nbsp;<span class='pos'>(-0.4 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx015.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx015.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx015.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx015.jpg"
+      }
+     },
+     {
+      "prompt": "A colorful macaw parrot perched on a branch in a lush rainforest, vibrant feathers, sharp focus.",
+      "caption": "VARQ <b>15.9 dB</b> &nbsp;·&nbsp; KIVI 16.9 &nbsp;·&nbsp; FlexGen 15.2 &nbsp;<span class='pos'>(-1.0 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx016.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx016.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx016.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx016.jpg"
+      }
+     },
+     {
+      "prompt": "A detailed watercolor illustration of a small cottage surrounded by wildflowers and a white picket fence.",
+      "caption": "VARQ <b>14.3 dB</b> &nbsp;·&nbsp; KIVI 14.3 &nbsp;·&nbsp; FlexGen 13.8 &nbsp;<span class='pos'>(+0.0 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx017.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx017.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx017.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx017.jpg"
+      }
+     },
+     {
+      "prompt": "A sleek sports car on a coastal highway at golden hour, motion blur, automotive photography.",
+      "caption": "VARQ <b>19.1 dB</b> &nbsp;·&nbsp; KIVI 19.0 &nbsp;·&nbsp; FlexGen 19.1 &nbsp;<span class='pos'>(+0.0 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx019.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx019.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx019.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx019.jpg"
+      }
+     },
+     {
+      "prompt": "A snowy owl in flight against a pale winter sky, wings spread, feather detail.",
+      "caption": "VARQ <b>28.6 dB</b> &nbsp;·&nbsp; KIVI 27.0 &nbsp;·&nbsp; FlexGen 26.6 &nbsp;<span class='pos'>(+1.6 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx020.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx020.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx020.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx020.jpg"
+      }
+     },
+     {
+      "prompt": "An underwater photograph of a sea turtle swimming over a coral reef with sun rays.",
+      "caption": "VARQ <b>16.1 dB</b> &nbsp;·&nbsp; KIVI 16.0 &nbsp;·&nbsp; FlexGen 15.6 &nbsp;<span class='pos'>(+0.1 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx021.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx021.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx021.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx021.jpg"
       }
      },
      {
       "prompt": "A chef plating a gourmet dessert with raspberries and gold leaf, restaurant kitchen, bokeh.",
-      "caption": "VARQ <b>18.9 dB</b> &nbsp;·&nbsp; KIVI 17.3 &nbsp;·&nbsp; FlexGen 17.7 &nbsp;<span class='pos'>(+1.2 dB PSNR)</span>",
+      "caption": "VARQ <b>17.9 dB</b> &nbsp;·&nbsp; KIVI 16.1 &nbsp;·&nbsp; FlexGen 15.6 &nbsp;<span class='pos'>(+1.8 dB PSNR)</span>",
       "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q6/idx22.jpg",
-       "VARQ": "samples/Infinity8B/VARQ/q6/idx22.jpg",
-       "KIVI": "samples/Infinity8B/KIVI/q6/idx22.jpg",
-       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx22.jpg"
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx022.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx022.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx022.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx022.jpg"
+      }
+     },
+     {
+      "prompt": "A Chinese ink painting of misty mountains with pine trees and a small boat on a river.",
+      "caption": "VARQ <b>14.1 dB</b> &nbsp;·&nbsp; KIVI 13.5 &nbsp;·&nbsp; FlexGen 13.1 &nbsp;<span class='pos'>(+0.6 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx023.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx023.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx023.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx023.jpg"
+      }
+     },
+     {
+      "prompt": "A beautiful Chinese woman with graceful features, close-up portrait, long flowing black hair, wearing a traditional silk cheongsam delicately embroidered with floral patterns, face softly illuminated by ambient light, serene expression",
+      "caption": "VARQ <b>20.9 dB</b> &nbsp;·&nbsp; KIVI 19.1 &nbsp;·&nbsp; FlexGen 17.4 &nbsp;<span class='pos'>(+1.9 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx024.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx024.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx024.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx024.jpg"
+      }
+     },
+     {
+      "prompt": "A golden retriever puppy sitting in a field of sunflowers, bright blue sky, joyful expression.",
+      "caption": "VARQ <b>19.8 dB</b> &nbsp;·&nbsp; KIVI 17.7 &nbsp;·&nbsp; FlexGen 16.6 &nbsp;<span class='pos'>(+2.1 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx025.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx025.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx025.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx025.jpg"
+      }
+     },
+     {
+      "prompt": "A vibrant garden scene where two red tulips stand out with their bright petals, surrounded by three white daisies with yellow centers. The flowers are nestled among green leaves and stems, with the red tulips slightly taller than the daisies. The arrangement is set against a backdrop of dark soil, hinting at a well-tended garden bed.",
+      "caption": "VARQ <b>15.3 dB</b> &nbsp;·&nbsp; KIVI 13.4 &nbsp;·&nbsp; FlexGen 13.3 &nbsp;<span class='pos'>(+1.9 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx026.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx026.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx026.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx026.jpg"
+      }
+     },
+     {
+      "prompt": "A large black bear with a thick coat of fur is sprawled out on a rocky outcrop. Its gaze is fixed directly on the camera, giving a sense of direct engagement with the viewer. The rocks where the bear rests are surrounded by a smattering of green foliage, hinting at a forested habitat.",
+      "caption": "VARQ <b>16.9 dB</b> &nbsp;·&nbsp; KIVI 16.7 &nbsp;·&nbsp; FlexGen 16.4 &nbsp;<span class='pos'>(+0.1 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx027.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx027.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx027.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx027.jpg"
+      }
+     },
+     {
+      "prompt": "Three exquisitely crafted violins, with their elegant F-shaped sound holes and smooth, glossy wooden surfaces, rest gently beside a grand piano. The piano's polished ebony finish reflects the soft, gentle curves of the violins that lie on a velvet-lined case. Behind them, the piano's open lid reveals its intricate strings and hammers, inviting a symphony of sounds to be played.",
+      "caption": "VARQ <b>15.8 dB</b> &nbsp;·&nbsp; KIVI 13.4 &nbsp;·&nbsp; FlexGen 13.6 &nbsp;<span class='pos'>(+2.2 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx028.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx028.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx028.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx028.jpg"
+      }
+     },
+     {
+      "prompt": "A sizable panda bear is situated in the center of a bubbling stream, its black and white fur contrasting with the lush greenery that lines the water's edge. In its paws, the bear is holding a glistening, silver-colored trout. The water flows around the bear's legs, creating ripples that reflect the sunlight.",
+      "caption": "VARQ <b>14.6 dB</b> &nbsp;·&nbsp; KIVI 14.4 &nbsp;·&nbsp; FlexGen 14.2 &nbsp;<span class='pos'>(+0.3 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx029.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx029.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx029.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx029.jpg"
+      }
+     },
+     {
+      "prompt": "A vintage rectangular carriage, with intricate metalwork and wooden panels, occupies the foreground, resting on the uneven cobblestone street. Above it, the sky is overcast with dark, billowing clouds that seem to loom ominously. Nearby, a sleek, rounded hoverboard with a glossy finish gracefully glides in circles around the carriage, its futuristic design contrasting sharply with the historical vehicle.",
+      "caption": "VARQ <b>15.0 dB</b> &nbsp;·&nbsp; KIVI 14.6 &nbsp;·&nbsp; FlexGen 14.2 &nbsp;<span class='pos'>(+0.3 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx035.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx035.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx035.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx035.jpg"
+      }
+     },
+     {
+      "prompt": "A whimsical scene at the beach where a pineapple, complete with its spiky green leaves, is balanced atop a vibrant blue wave as if it were surfing. The pineapple's textured, golden-brown skin glistens with droplets of ocean water. In the background, the sandy shore is dotted with colorful beach umbrellas and sunbathers enjoying the sunny day.",
+      "caption": "VARQ <b>16.7 dB</b> &nbsp;·&nbsp; KIVI 16.4 &nbsp;·&nbsp; FlexGen 16.2 &nbsp;<span class='pos'>(+0.4 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx039.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx039.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx039.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx039.jpg"
+      }
+     },
+     {
+      "prompt": "A chilled, transparent bottle of light beer with condensation beads forming on its surface, placed on a wooden table. A bright yellow slice of lemon is wedged onto the rim of the bottle, adding a citrus accent to the beverage. The bottle label is partially obscured by the moisture, but hints of green and gold are visible on the design.",
+      "caption": "VARQ <b>19.0 dB</b> &nbsp;·&nbsp; KIVI 18.3 &nbsp;·&nbsp; FlexGen 17.7 &nbsp;<span class='pos'>(+0.7 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx041.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx041.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx041.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx041.jpg"
+      }
+     },
+     {
+      "prompt": "Two zebras, their black and white stripes creating a dizzying effect, are galloping side by side across the sprawling savanna, tinged golden by the sunlight. The texture of the grass appears rough and dry, a testament to the arid climate. Dust is being kicked up by their hooves, and in the background, sparse acacia trees punctuate the otherwise open landscape.",
+      "caption": "VARQ <b>14.9 dB</b> &nbsp;·&nbsp; KIVI 14.2 &nbsp;·&nbsp; FlexGen 14.8 &nbsp;<span class='pos'>(+0.2 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx044.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx044.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx044.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx044.jpg"
+      }
+     },
+     {
+      "prompt": "A gentleman stands behind a white linen-clad table, donning a sleek black jacket paired with a vibrant green tie. Atop the table lies an elaborately decorated cake with white icing and colorful sprinkles. The man, whose black hat adds a touch of sophistication, carefully holds a silver knife with an ornate handle, poised to slice the festive confection.",
+      "caption": "VARQ <b>19.4 dB</b> &nbsp;·&nbsp; KIVI 19.7 &nbsp;·&nbsp; FlexGen 19.2 &nbsp;<span class='pos'>(-0.3 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx056.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx056.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx056.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx056.jpg"
+      }
+     },
+     {
+      "prompt": "A cozy room featuring a sturdy wooden table at the center. Atop the table, a gray cat is comfortably sprawled out, basking in the tranquility of the space. The table also holds a few scattered papers and a potted plant, adding a touch of lived-in charm to the scene.",
+      "caption": "VARQ <b>22.3 dB</b> &nbsp;·&nbsp; KIVI 21.2 &nbsp;·&nbsp; FlexGen 19.6 &nbsp;<span class='pos'>(+1.1 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx058.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx058.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx058.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx058.jpg"
+      }
+     },
+     {
+      "prompt": "a spectacular display of fireworks illuminates the night sky with bursts of red, white, and blue. the vibrant colors reflect off a nearby lake, creating a mirror image of the aerial spectacle. in the foreground, silhouettes of a small crowd can be seen gathered to watch the show, with some individuals pointing upwards in awe.",
+      "caption": "VARQ <b>13.6 dB</b> &nbsp;·&nbsp; KIVI 13.6 &nbsp;·&nbsp; FlexGen 13.8 &nbsp;<span class='pos'>(-0.2 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx062.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx062.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx062.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx062.jpg"
+      }
+     },
+     {
+      "prompt": "A vivid green iguana is perched motionlessly atop a worn wooden log, its intricate scales exhibiting various shades of green and black. Behind the reptile, a rough-textured wall stands, painted in a faded color, which contrasts with the image's predominantly dark backdrop. The shadows envelop the surroundings, highlighting the iguana as the central focus of this composition.",
+      "caption": "VARQ <b>16.0 dB</b> &nbsp;·&nbsp; KIVI 15.5 &nbsp;·&nbsp; FlexGen 15.1 &nbsp;<span class='pos'>(+0.5 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx075.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx075.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx075.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx075.jpg"
+      }
+     },
+     {
+      "prompt": "an elderly woman with shoulder-length straight gray hair and round metal-rimmed glasses sits comfortably in a plush armchair. She is wearing a lavender cardigan over a white blouse, and a silver necklace can be seen around her neck. In her lap rests an open hardcover book, and beside her, a small wooden side table holds a ceramic teacup and saucer.",
+      "caption": "VARQ <b>19.0 dB</b> &nbsp;·&nbsp; KIVI 19.8 &nbsp;·&nbsp; FlexGen 18.1 &nbsp;<span class='pos'>(-0.8 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx077.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx077.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx077.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx077.jpg"
+      }
+     },
+     {
+      "prompt": "A group of five unique fish with deep blue, almost iridescent bodies, glide gracefully just above the sandy seabed. These aquatic creatures resemble delicate sea bubbles, with their round and translucent appearances. The surrounding waters are a calm shade of blue, casting a serene light on the ocean floor where patches of coral and seashells can be glimpsed.",
+      "caption": "VARQ <b>19.3 dB</b> &nbsp;·&nbsp; KIVI 17.9 &nbsp;·&nbsp; FlexGen 17.6 &nbsp;<span class='pos'>(+1.5 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx079.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx079.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx079.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx079.jpg"
+      }
+     },
+     {
+      "prompt": "A large brown bear is partially submerged in a clear, tranquil body of water. The sun casts a warm glow on the bear's fur, highlighting its texture and creating a serene scene. The water ripples gently around the bear as it sits calmly, enjoying the warmth of the sunlight.",
+      "caption": "VARQ <b>17.0 dB</b> &nbsp;·&nbsp; KIVI 15.8 &nbsp;·&nbsp; FlexGen 15.7 &nbsp;<span class='pos'>(+1.2 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx082.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx082.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx082.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx082.jpg"
+      }
+     },
+     {
+      "prompt": "A whimsical dessert creation, an orange jello molded into the shape of a small man, stands proudly on a white ceramic plate. The jello figure is translucent with a glossy sheen, capturing the light in its wobbly form. Around it, there are scattered mint leaves for decoration, providing a contrast to the vibrant orange color of the gelatin.",
+      "caption": "VARQ <b>20.6 dB</b> &nbsp;·&nbsp; KIVI 18.4 &nbsp;·&nbsp; FlexGen 18.7 &nbsp;<span class='pos'>(+1.9 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx085.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx085.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx085.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx085.jpg"
+      }
+     },
+     {
+      "prompt": "A cozy kitchen scene where a plush teddy bear is seated amongst a bunch of ripe bananas. The bananas are resting on a wooden countertop, which also features a variety of other groceries and kitchen utensils. In the background, a window allows natural light to illuminate the teddy bear's soft fur and the vibrant yellow of the bananas.",
+      "caption": "VARQ <b>17.0 dB</b> &nbsp;·&nbsp; KIVI 15.4 &nbsp;·&nbsp; FlexGen 13.9 &nbsp;<span class='pos'>(+1.7 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q6/idx086.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q6/idx086.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q6/idx086.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q6/idx086.jpg"
       }
      }
     ]
