@@ -1,6 +1,6 @@
 {
   "scale": {
-    "model": "InfinityStar \u00b7 720p",
+    "model": "InfinityStar · 720p",
     "paradigm": "Next-scale",
     "bits": "3-bit",
     "clips": [
@@ -114,6 +114,120 @@
           "VARQ": "assets/posters/long-1-VARQ.webp"
         }
       },
+      {
+        "title": "Fields of wildflowers",
+        "prompt": "An aerial shot of a field of blooming wildflowers, creating a patchwork of colors in the landscape.",
+        "sources": {
+          "Baseline": "samples/longlive/Baseline/q6/group01_prompt052_s03.mp4",
+          "VARQ": "samples/longlive/VARQ/q6/group01_prompt052_s03.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/long-2-Baseline.webp",
+          "VARQ": "assets/posters/long-2-VARQ.webp"
+        }
+      }
+    ]
+  },
+  "scale-sample-2": {
+    "model": "InfinityStar · 720p",
+    "paradigm": "Next-scale",
+    "bits": "3-bit",
+    "clips": [
+      {
+        "title": "Rings of Saturn",
+        "prompt": "A person playing hopscotch on the rings of Saturn.",
+        "sources": {
+          "Baseline": "samples/InfinityStar720p/Baseline/q3/group01_prompt195_s03.mp4",
+          "VARQ": "samples/InfinityStar720p/VARQ/q3/group01_prompt195_s03.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/scale-1-Baseline.webp",
+          "VARQ": "assets/posters/scale-1-VARQ.webp"
+        }
+      }
+    ]
+  },
+  "scale-sample-3": {
+    "model": "InfinityStar · 720p",
+    "paradigm": "Next-scale",
+    "bits": "3-bit",
+    "clips": [
+      {
+        "title": "A snowflake, up close",
+        "prompt": "A zoom-out from a detailed shot of an intricate snowflake, pulling back to show a snowy landscape.",
+        "sources": {
+          "Baseline": "samples/InfinityStar720p/Baseline/q3/group01_prompt108_s01.mp4",
+          "VARQ": "samples/InfinityStar720p/VARQ/q3/group01_prompt108_s01.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/scale-2-Baseline.webp",
+          "VARQ": "assets/posters/scale-2-VARQ.webp"
+        }
+      }
+    ]
+  },
+  "frame-sample-2": {
+    "model": "Self-Forcing",
+    "paradigm": "Next-frame",
+    "bits": "6-bit",
+    "clips": [
+      {
+        "title": "A giant duck in Boston",
+        "prompt": "a giant duck walks through the streets in Boston",
+        "sources": {
+          "Baseline": "samples/self_forcing/Baseline/q6/group02_prompt079_s01.mp4",
+          "VARQ": "samples/self_forcing/VARQ/q6/group02_prompt079_s01.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/frame-1-Baseline.webp",
+          "VARQ": "assets/posters/frame-1-VARQ.webp"
+        }
+      }
+    ]
+  },
+  "frame-sample-3": {
+    "model": "Self-Forcing",
+    "paradigm": "Next-frame",
+    "bits": "6-bit",
+    "clips": [
+      {
+        "title": "Through the garden gate",
+        "prompt": "A push-in through a garden archway, revealing a secret, tranquil garden filled with blooming flowers.",
+        "sources": {
+          "Baseline": "samples/self_forcing/Baseline/q6/group01_prompt047_s03.mp4",
+          "VARQ": "samples/self_forcing/VARQ/q6/group01_prompt047_s03.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/frame-2-Baseline.webp",
+          "VARQ": "assets/posters/frame-2-VARQ.webp"
+        }
+      }
+    ]
+  },
+  "long-sample-2": {
+    "model": "LongLive",
+    "paradigm": "Next-frame",
+    "bits": "6-bit",
+    "clips": [
+      {
+        "title": "The floating library",
+        "prompt": "In an ancient library, books float and glow as they drift through the air, occasionally landing softly on the tables, where curious individuals reach out to read their contents.",
+        "sources": {
+          "Baseline": "samples/longlive/Baseline/q6/group02_prompt122_s03.mp4",
+          "VARQ": "samples/longlive/VARQ/q6/group02_prompt122_s03.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/long-1-Baseline.webp",
+          "VARQ": "assets/posters/long-1-VARQ.webp"
+        }
+      }
+    ]
+  },
+  "long-sample-3": {
+    "model": "LongLive",
+    "paradigm": "Next-frame",
+    "bits": "6-bit",
+    "clips": [
       {
         "title": "Fields of wildflowers",
         "prompt": "An aerial shot of a field of blooming wildflowers, creating a patchwork of colors in the landscape.",

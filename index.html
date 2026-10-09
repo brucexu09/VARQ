@@ -21,7 +21,6 @@
     <script defer="" src="gallery.js"></script>
     <link href="research.css" rel="stylesheet" />
     <script defer="" src="showcase.js"></script>
-    <script defer="" src="results.js"></script>
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
@@ -281,6 +280,161 @@
             <p>Self-Forcing: 80.99 VBench vs. 82.94 BF16.</p>
           </article>
         </div>
+        <div class="ready-results" id="tables-2-4">
+          <div class="paper-table-heading">
+            <div>
+              <p class="eyebrow">Quality and memory</p>
+              <h3>Low-bit video generation, side by side</h3>
+            </div>
+            <a download="" href="results-data.json">Download results ↧</a>
+          </div>
+          <p class="table-takeaway">
+            Compare KV memory and VBench Total Quality at the same precision and batch size. BF16 provides the reference for each model.
+          </p>
+          <div class="ready-comparison-grid">
+            <article class="ready-comparison">
+              <p class="eyebrow">Next-scale video · INT3</p>
+              <h4>InfinityStar · 720p</h4>
+              <table>
+                <caption>
+                  8B · 720p · batch 3
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Method</th>
+                    <th scope="col">KV · GB ↓</th>
+                    <th scope="col">VBench ↑</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">BF16</th>
+                    <td>
+                      <span class="memory-mini" style="--memory: 100%"><span>62.72</span></span>
+                    </td>
+                    <td>82.33</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">FlexGen</th>
+                    <td>
+                      <span class="memory-mini" style="--memory: 21.619897959183675%"><span>13.56</span></span>
+                    </td>
+                    <td>79.95</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">KIVI</th>
+                    <td>
+                      <span class="memory-mini" style="--memory: 22.018494897959183%"><span>13.81</span></span>
+                    </td>
+                    <td>75.46</td>
+                  </tr>
+                  <tr class="comparison-ours">
+                    <th scope="row">VAR-Q</th>
+                    <td>
+                      <span class="memory-mini" style="--memory: 20.854591836734695%"><span>13.08</span></span>
+                    </td>
+                    <td>80.59</td>
+                  </tr>
+                </tbody>
+              </table>
+              <a href="#full-table-3">Full metrics and precisions ↗</a>
+            </article>
+            <article class="ready-comparison">
+              <p class="eyebrow">Next-frame video · INT6</p>
+              <h4>Self-Forcing · 5 s</h4>
+              <table>
+                <caption>
+                  1.3B · 5-second clips · batch 12
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Method</th>
+                    <th scope="col">KV · GB ↓</th>
+                    <th scope="col">VBench ↑</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">BF16</th>
+                    <td>
+                      <span class="memory-mini" style="--memory: 100%"><span>67.49</span></span>
+                    </td>
+                    <td>82.94</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">FlexGen</th>
+                    <td>
+                      <span class="memory-mini" style="--memory: 41.41354274707364%"><span>27.95</span></span>
+                    </td>
+                    <td>82.98</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">KIVI</th>
+                    <td>
+                      <span class="memory-mini" style="--memory: 41.81360201511335%"><span>28.22</span></span>
+                    </td>
+                    <td>82.85</td>
+                  </tr>
+                  <tr class="comparison-ours">
+                    <th scope="row">VAR-Q</th>
+                    <td>
+                      <span class="memory-mini" style="--memory: 40.74677730034079%"><span>27.50</span></span>
+                    </td>
+                    <td>83.34</td>
+                  </tr>
+                </tbody>
+              </table>
+              <a href="#full-table-4">Full metrics and precisions ↗</a>
+            </article>
+            <article class="ready-comparison">
+              <p class="eyebrow">Next-frame video · INT6</p>
+              <h4>LongLive · 30 s</h4>
+              <table>
+                <caption>
+                  1.3B · 30-second clips · batch 20
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Method</th>
+                    <th scope="col">KV · GB ↓</th>
+                    <th scope="col">VBench ↑</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">BF16</th>
+                    <td>
+                      <span class="memory-mini" style="--memory: 100%"><span>64.28</span></span>
+                    </td>
+                    <td>80.92</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">FlexGen</th>
+                    <td>
+                      <span class="memory-mini" style="--memory: 41.41257000622278%"><span>26.62</span></span>
+                    </td>
+                    <td>80.60</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">KIVI</th>
+                    <td>
+                      <span class="memory-mini" style="--memory: 41.81705040448039%"><span>26.88</span></span>
+                    </td>
+                    <td>80.65</td>
+                  </tr>
+                  <tr class="comparison-ours">
+                    <th scope="row">VAR-Q</th>
+                    <td>
+                      <span class="memory-mini" style="--memory: 40.743621655258245%"><span>26.19</span></span>
+                    </td>
+                    <td>80.94</td>
+                  </tr>
+                </tbody>
+              </table>
+              <a href="#full-table-4">Full metrics and precisions ↗</a>
+            </article>
+          </div>
+        </div>
         <div class="all-models-overview">
           <div class="paper-table-heading">
             <div>
@@ -472,16 +626,16 @@
                     <th colspan="2" scope="colgroup">KV cache</th>
                   </tr>
                   <tr>
-                    <th scope="col">Subject Consistency ↑</th>
-                    <th scope="col">Background Consistency ↑</th>
-                    <th scope="col">Temporal Flickering ↑</th>
-                    <th scope="col">Motion Smoothness ↑</th>
-                    <th scope="col">Dynamic Degree ↑</th>
-                    <th scope="col">Aesthetic Quality ↑</th>
-                    <th scope="col">Imaging Quality ↑</th>
-                    <th scope="col">Total Quality ↑</th>
-                    <th scope="col">Memory (GB) ↓</th>
-                    <th scope="col">Reduction (%) ↑</th>
+                    <th scope="col">Subject Consistency</th>
+                    <th scope="col">Background Consistency</th>
+                    <th scope="col">Temporal Flickering</th>
+                    <th scope="col">Motion Smoothness</th>
+                    <th scope="col">Dynamic Degree</th>
+                    <th scope="col">Aesthetic Quality</th>
+                    <th scope="col">Imaging Quality</th>
+                    <th scope="col">Total Quality</th>
+                    <th scope="col">Memory (GB) ↓</th>
+                    <th scope="col">Reduction (%) ↑</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -777,17 +931,17 @@
                     <th colspan="2" scope="colgroup">KV cache</th>
                   </tr>
                   <tr>
-                    <th scope="col">Subject Consistency ↑</th>
-                    <th scope="col">Background Consistency ↑</th>
-                    <th scope="col">Motion Smoothness ↑</th>
-                    <th scope="col">Dynamic Degree ↑</th>
-                    <th scope="col">Aesthetic Quality ↑</th>
-                    <th scope="col">Total Quality ↑</th>
-                    <th scope="col">Visual Quality ↑</th>
-                    <th scope="col">Dynamics ↑</th>
-                    <th scope="col">Text Alignment ↑</th>
-                    <th scope="col">Memory (GB) ↓</th>
-                    <th scope="col">Reduction (%) ↑</th>
+                    <th scope="col">Subject Consistency</th>
+                    <th scope="col">Background Consistency</th>
+                    <th scope="col">Motion Smoothness</th>
+                    <th scope="col">Dynamic Degree</th>
+                    <th scope="col">Aesthetic Quality</th>
+                    <th scope="col">Total Quality</th>
+                    <th scope="col">Visual Quality</th>
+                    <th scope="col">Dynamics</th>
+                    <th scope="col">Text Alignment</th>
+                    <th scope="col">Memory (GB) ↓</th>
+                    <th scope="col">Reduction (%) ↑</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -1048,15 +1202,15 @@
                     <th colspan="2" scope="colgroup">KV cache</th>
                   </tr>
                   <tr>
-                    <th scope="col">FID ↓</th>
-                    <th scope="col">IS ↑</th>
-                    <th scope="col">Precision ↑</th>
-                    <th scope="col">Recall ↑</th>
-                    <th scope="col">PSNR ↑</th>
-                    <th scope="col">SSIM ↑</th>
-                    <th scope="col">LPIPS ↓</th>
-                    <th scope="col">Memory (GB) ↓</th>
-                    <th scope="col">Reduction (%) ↑</th>
+                    <th scope="col">FID ↓</th>
+                    <th scope="col">IS ↑</th>
+                    <th scope="col">Precision ↑</th>
+                    <th scope="col">Recall ↑</th>
+                    <th scope="col">PSNR ↑</th>
+                    <th scope="col">SSIM ↑</th>
+                    <th scope="col">LPIPS ↓</th>
+                    <th scope="col">Memory (GB) ↓</th>
+                    <th scope="col">Reduction (%) ↑</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -1381,18 +1535,18 @@
                     <th colspan="2" scope="colgroup">KV cache</th>
                   </tr>
                   <tr>
-                    <th scope="col">Two-Object ↑</th>
-                    <th scope="col">Position ↑</th>
-                    <th scope="col">Color ↑</th>
-                    <th scope="col">Overall ↑</th>
-                    <th scope="col">Entity ↑</th>
-                    <th scope="col">Relation ↑</th>
-                    <th scope="col">Attribute ↑</th>
-                    <th scope="col">Global ↑</th>
-                    <th scope="col">Other ↑</th>
-                    <th scope="col">Overall ↑</th>
-                    <th scope="col">Memory (GB) ↓</th>
-                    <th scope="col">Reduction (%) ↑</th>
+                    <th scope="col">Two-Object</th>
+                    <th scope="col">Position</th>
+                    <th scope="col">Color</th>
+                    <th scope="col">Overall</th>
+                    <th scope="col">Entity</th>
+                    <th scope="col">Relation</th>
+                    <th scope="col">Attribute</th>
+                    <th scope="col">Global</th>
+                    <th scope="col">Other</th>
+                    <th scope="col">Overall</th>
+                    <th scope="col">Memory (GB) ↓</th>
+                    <th scope="col">Reduction (%) ↑</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -1654,61 +1808,7 @@
             </p>
           </article>
         </div>
-        <div class="results-explorer" id="tables-2-4">
-          <div class="explorer-top">
-            <div>
-              <p class="eyebrow">Interactive comparison · metric selection &amp; CSV export</p>
-              <h3>Explore individual metrics</h3>
-            </div>
-            <a class="inline-link" download="" href="results-data.json">Download data ↧</a>
-          </div>
-          <div class="results-filters">
-            <label
-              >Model &amp; setting<select disabled="" id="result-model">
-                <option>Loading results…</option>
-              </select></label
-            ><label
-              >KV precision<select disabled="" id="result-precision">
-                <option>—</option>
-              </select></label
-            ><label
-              >Quality metric<select disabled="" id="result-metric">
-                <option>—</option>
-              </select></label
-            >
-          </div>
-          <div class="results-context">
-            <p id="result-setting"></p>
-            <a href="/assets/pdf/VAR-Q.pdf#page=8" id="result-source">Paper table ↗</a>
-          </div>
-          <div class="result-reading">
-            <span>KV memory <small>GB · lower is better</small></span
-            ><span id="result-metric-label">Quality</span><span>Δ vs. BF16</span>
-          </div>
-          <div aria-live="polite" id="result-bars"></div>
-          <div class="results-notes">
-            <p>
-              Memory includes scale-factor overhead at the listed batch size. Δ is the raw metric difference from BF16; arrows indicate whether higher
-              or lower is better. Missing configurations were not reported.
-            </p>
-            <button class="copy-button" disabled="" id="result-csv" type="button">Export this model · CSV ↧</button>
-          </div>
-          <details class="full-metrics" open="">
-            <summary>All reported metrics for this model</summary>
-            <p class="small-note">
-              Use the precision filter above; scroll horizontally to inspect every metric. BF16 remains visible as the reference.
-            </p>
-            <div aria-label="All reported metrics, horizontally scrollable" class="metrics-scroll" role="region" tabindex="0">
-              <table id="result-table"></table>
-            </div>
-          </details>
-          <p class="small-note" id="result-status" role="status">Loading the paper’s numerical results…</p>
-          <noscript
-            ><p>
-              <a href="results-data.json">Download all 64 result rows</a> or <a href="/assets/pdf/VAR-Q.pdf#page=7">read Tables 2–4 in the paper</a>.
-            </p></noscript
-          >
-        </div>
+
         <details class="protocol-details">
           <summary>Evaluation protocol and metric guide</summary>
           <div class="protocol-grid">
@@ -2177,6 +2277,322 @@
             <p class="feature-prompt">
               New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York.
             </p>
+            <p class="feature-status sr-only" role="status"></p>
+            <noscript><a href="samples/longlive/VARQ/q6/group03_prompt153_s01.mp4">Watch the VAR-Q video</a></noscript>
+          </article>
+        </div>
+        <div class="more-video-heading" id="more-videos">
+          <p class="eyebrow">More generated videos</p>
+          <h3>Different scenes, the same low-bit cache</h3>
+          <p>Six more BF16 / VAR-Q comparisons, ready to play. InfinityStar uses INT3; Self-Forcing and LongLive use INT6.</p>
+        </div>
+        <div class="more-video-grid">
+          <article class="feature-card direct-demo" data-feature="scale-sample-2">
+            <div class="feature-top">
+              <div>
+                <span class="paradigm-tag scale">Next-scale</span>
+                <h3>Rings of Saturn</h3>
+              </div>
+              <span class="feature-index">InfinityStar · 720p</span>
+            </div>
+            <div class="feature-pair">
+              <figure class="feature-video">
+                <figcaption>BF16 reference</figcaption>
+                <video
+                  aria-describedby="showcase-note"
+                  aria-label="InfinityStar · 720p BF16: A person playing hopscotch on the rings of Saturn."
+                  data-src="samples/InfinityStar720p/Baseline/q3/group01_prompt195_s03.mp4"
+                  loop=""
+                  muted=""
+                  playsinline=""
+                  poster="assets/posters/scale-1-Baseline.webp"
+                  preload="none"
+                ></video>
+              </figure>
+              <figure class="feature-video feature-ours">
+                <figcaption>VAR-Q · 3-bit</figcaption>
+                <video
+                  aria-describedby="showcase-note"
+                  aria-label="InfinityStar · 720p VAR-Q 3-bit: A person playing hopscotch on the rings of Saturn."
+                  data-src="samples/InfinityStar720p/VARQ/q3/group01_prompt195_s03.mp4"
+                  loop=""
+                  muted=""
+                  playsinline=""
+                  poster="assets/posters/scale-1-VARQ.webp"
+                  preload="none"
+                ></video>
+              </figure>
+            </div>
+            <div class="feature-controls">
+              <button aria-label="Play InfinityStar · 720p comparison" class="feature-play" disabled="" type="button">Play pair</button
+              ><label class="feature-select" hidden=""
+                ><span class="sr-only">InfinityStar · 720p sample</span
+                ><select disabled="">
+                  <option value="0">Rings of Saturn</option>
+                </select></label
+              ><output class="feature-time">0.0 s</output>
+            </div>
+            <label class="sr-only" for="seek-scale-scale-sample-2">InfinityStar · 720p shared timeline</label
+            ><input class="feature-seek" disabled="" id="seek-scale-scale-sample-2" max="1" min="0" step=".05" type="range" value="0" />
+            <p class="feature-prompt">A person playing hopscotch on the rings of Saturn.</p>
+            <p class="feature-status sr-only" role="status"></p>
+            <noscript><a href="samples/InfinityStar720p/VARQ/q3/group01_prompt129_s02.mp4">Watch the VAR-Q video</a></noscript>
+          </article>
+          <article class="feature-card direct-demo" data-feature="scale-sample-3">
+            <div class="feature-top">
+              <div>
+                <span class="paradigm-tag scale">Next-scale</span>
+                <h3>A snowflake, up close</h3>
+              </div>
+              <span class="feature-index">InfinityStar · 720p</span>
+            </div>
+            <div class="feature-pair">
+              <figure class="feature-video">
+                <figcaption>BF16 reference</figcaption>
+                <video
+                  aria-describedby="showcase-note"
+                  aria-label="InfinityStar · 720p BF16: A zoom-out from a detailed shot of an intricate snowflake, pulling back to show a snowy landscape."
+                  data-src="samples/InfinityStar720p/Baseline/q3/group01_prompt108_s01.mp4"
+                  loop=""
+                  muted=""
+                  playsinline=""
+                  poster="assets/posters/scale-2-Baseline.webp"
+                  preload="none"
+                ></video>
+              </figure>
+              <figure class="feature-video feature-ours">
+                <figcaption>VAR-Q · 3-bit</figcaption>
+                <video
+                  aria-describedby="showcase-note"
+                  aria-label="InfinityStar · 720p VAR-Q 3-bit: A zoom-out from a detailed shot of an intricate snowflake, pulling back to show a snowy landscape."
+                  data-src="samples/InfinityStar720p/VARQ/q3/group01_prompt108_s01.mp4"
+                  loop=""
+                  muted=""
+                  playsinline=""
+                  poster="assets/posters/scale-2-VARQ.webp"
+                  preload="none"
+                ></video>
+              </figure>
+            </div>
+            <div class="feature-controls">
+              <button aria-label="Play InfinityStar · 720p comparison" class="feature-play" disabled="" type="button">Play pair</button
+              ><label class="feature-select" hidden=""
+                ><span class="sr-only">InfinityStar · 720p sample</span
+                ><select disabled="">
+                  <option value="0">A snowflake, up close</option>
+                </select></label
+              ><output class="feature-time">0.0 s</output>
+            </div>
+            <label class="sr-only" for="seek-scale-scale-sample-3">InfinityStar · 720p shared timeline</label
+            ><input class="feature-seek" disabled="" id="seek-scale-scale-sample-3" max="1" min="0" step=".05" type="range" value="0" />
+            <p class="feature-prompt">A zoom-out from a detailed shot of an intricate snowflake, pulling back to show a snowy landscape.</p>
+            <p class="feature-status sr-only" role="status"></p>
+            <noscript><a href="samples/InfinityStar720p/VARQ/q3/group01_prompt129_s02.mp4">Watch the VAR-Q video</a></noscript>
+          </article>
+          <article class="feature-card direct-demo" data-feature="frame-sample-2">
+            <div class="feature-top">
+              <div>
+                <span class="paradigm-tag frame">Next-frame</span>
+                <h3>A giant duck in Boston</h3>
+              </div>
+              <span class="feature-index">Self-Forcing</span>
+            </div>
+            <div class="feature-pair">
+              <figure class="feature-video">
+                <figcaption>BF16 reference</figcaption>
+                <video
+                  aria-describedby="showcase-note"
+                  aria-label="Self-Forcing BF16: a giant duck walks through the streets in Boston"
+                  data-src="samples/self_forcing/Baseline/q6/group02_prompt079_s01.mp4"
+                  loop=""
+                  muted=""
+                  playsinline=""
+                  poster="assets/posters/frame-1-Baseline.webp"
+                  preload="none"
+                ></video>
+              </figure>
+              <figure class="feature-video feature-ours">
+                <figcaption>VAR-Q · 6-bit</figcaption>
+                <video
+                  aria-describedby="showcase-note"
+                  aria-label="Self-Forcing VAR-Q 6-bit: a giant duck walks through the streets in Boston"
+                  data-src="samples/self_forcing/VARQ/q6/group02_prompt079_s01.mp4"
+                  loop=""
+                  muted=""
+                  playsinline=""
+                  poster="assets/posters/frame-1-VARQ.webp"
+                  preload="none"
+                ></video>
+              </figure>
+            </div>
+            <div class="feature-controls">
+              <button aria-label="Play Self-Forcing comparison" class="feature-play" disabled="" type="button">Play pair</button
+              ><label class="feature-select" hidden=""
+                ><span class="sr-only">Self-Forcing sample</span
+                ><select disabled="">
+                  <option value="0">A giant duck in Boston</option>
+                </select></label
+              ><output class="feature-time">0.0 s</output>
+            </div>
+            <label class="sr-only" for="seek-frame-frame-sample-2">Self-Forcing shared timeline</label
+            ><input class="feature-seek" disabled="" id="seek-frame-frame-sample-2" max="1" min="0" step=".05" type="range" value="0" />
+            <p class="feature-prompt">a giant duck walks through the streets in Boston</p>
+            <p class="feature-status sr-only" role="status"></p>
+            <noscript><a href="samples/self_forcing/VARQ/q6/group02_prompt101_s02.mp4">Watch the VAR-Q video</a></noscript>
+          </article>
+          <article class="feature-card direct-demo" data-feature="frame-sample-3">
+            <div class="feature-top">
+              <div>
+                <span class="paradigm-tag frame">Next-frame</span>
+                <h3>Through the garden gate</h3>
+              </div>
+              <span class="feature-index">Self-Forcing</span>
+            </div>
+            <div class="feature-pair">
+              <figure class="feature-video">
+                <figcaption>BF16 reference</figcaption>
+                <video
+                  aria-describedby="showcase-note"
+                  aria-label="Self-Forcing BF16: A push-in through a garden archway, revealing a secret, tranquil garden filled with blooming flowers."
+                  data-src="samples/self_forcing/Baseline/q6/group01_prompt047_s03.mp4"
+                  loop=""
+                  muted=""
+                  playsinline=""
+                  poster="assets/posters/frame-2-Baseline.webp"
+                  preload="none"
+                ></video>
+              </figure>
+              <figure class="feature-video feature-ours">
+                <figcaption>VAR-Q · 6-bit</figcaption>
+                <video
+                  aria-describedby="showcase-note"
+                  aria-label="Self-Forcing VAR-Q 6-bit: A push-in through a garden archway, revealing a secret, tranquil garden filled with blooming flowers."
+                  data-src="samples/self_forcing/VARQ/q6/group01_prompt047_s03.mp4"
+                  loop=""
+                  muted=""
+                  playsinline=""
+                  poster="assets/posters/frame-2-VARQ.webp"
+                  preload="none"
+                ></video>
+              </figure>
+            </div>
+            <div class="feature-controls">
+              <button aria-label="Play Self-Forcing comparison" class="feature-play" disabled="" type="button">Play pair</button
+              ><label class="feature-select" hidden=""
+                ><span class="sr-only">Self-Forcing sample</span
+                ><select disabled="">
+                  <option value="0">Through the garden gate</option>
+                </select></label
+              ><output class="feature-time">0.0 s</output>
+            </div>
+            <label class="sr-only" for="seek-frame-frame-sample-3">Self-Forcing shared timeline</label
+            ><input class="feature-seek" disabled="" id="seek-frame-frame-sample-3" max="1" min="0" step=".05" type="range" value="0" />
+            <p class="feature-prompt">A push-in through a garden archway, revealing a secret, tranquil garden filled with blooming flowers.</p>
+            <p class="feature-status sr-only" role="status"></p>
+            <noscript><a href="samples/self_forcing/VARQ/q6/group02_prompt101_s02.mp4">Watch the VAR-Q video</a></noscript>
+          </article>
+          <article class="feature-card direct-demo" data-feature="long-sample-2">
+            <div class="feature-top">
+              <div>
+                <span class="paradigm-tag long">Next-frame</span>
+                <h3>The floating library</h3>
+              </div>
+              <span class="feature-index">LongLive</span>
+            </div>
+            <div class="feature-pair">
+              <figure class="feature-video">
+                <figcaption>BF16 reference</figcaption>
+                <video
+                  aria-describedby="showcase-note"
+                  aria-label="LongLive BF16: In an ancient library, books float and glow as they drift through the air, occasionally landing softly on the tables, where curious individuals reach out to read their contents."
+                  data-src="samples/longlive/Baseline/q6/group02_prompt122_s03.mp4"
+                  loop=""
+                  muted=""
+                  playsinline=""
+                  poster="assets/posters/long-1-Baseline.webp"
+                  preload="none"
+                ></video>
+              </figure>
+              <figure class="feature-video feature-ours">
+                <figcaption>VAR-Q · 6-bit</figcaption>
+                <video
+                  aria-describedby="showcase-note"
+                  aria-label="LongLive VAR-Q 6-bit: In an ancient library, books float and glow as they drift through the air, occasionally landing softly on the tables, where curious individuals reach out to read their contents."
+                  data-src="samples/longlive/VARQ/q6/group02_prompt122_s03.mp4"
+                  loop=""
+                  muted=""
+                  playsinline=""
+                  poster="assets/posters/long-1-VARQ.webp"
+                  preload="none"
+                ></video>
+              </figure>
+            </div>
+            <div class="feature-controls">
+              <button aria-label="Play LongLive comparison" class="feature-play" disabled="" type="button">Play pair</button
+              ><label class="feature-select" hidden=""
+                ><span class="sr-only">LongLive sample</span
+                ><select disabled="">
+                  <option value="0">The floating library</option>
+                </select></label
+              ><output class="feature-time">0.0 s</output>
+            </div>
+            <label class="sr-only" for="seek-long-long-sample-2">LongLive shared timeline</label
+            ><input class="feature-seek" disabled="" id="seek-long-long-sample-2" max="1" min="0" step=".05" type="range" value="0" />
+            <p class="feature-prompt">
+              In an ancient library, books float and glow as they drift through the air, occasionally landing softly on the tables, where curious
+              individuals reach out to read their contents.
+            </p>
+            <p class="feature-status sr-only" role="status"></p>
+            <noscript><a href="samples/longlive/VARQ/q6/group03_prompt153_s01.mp4">Watch the VAR-Q video</a></noscript>
+          </article>
+          <article class="feature-card direct-demo" data-feature="long-sample-3">
+            <div class="feature-top">
+              <div>
+                <span class="paradigm-tag long">Next-frame</span>
+                <h3>Fields of wildflowers</h3>
+              </div>
+              <span class="feature-index">LongLive</span>
+            </div>
+            <div class="feature-pair">
+              <figure class="feature-video">
+                <figcaption>BF16 reference</figcaption>
+                <video
+                  aria-describedby="showcase-note"
+                  aria-label="LongLive BF16: An aerial shot of a field of blooming wildflowers, creating a patchwork of colors in the landscape."
+                  data-src="samples/longlive/Baseline/q6/group01_prompt052_s03.mp4"
+                  loop=""
+                  muted=""
+                  playsinline=""
+                  poster="assets/posters/long-2-Baseline.webp"
+                  preload="none"
+                ></video>
+              </figure>
+              <figure class="feature-video feature-ours">
+                <figcaption>VAR-Q · 6-bit</figcaption>
+                <video
+                  aria-describedby="showcase-note"
+                  aria-label="LongLive VAR-Q 6-bit: An aerial shot of a field of blooming wildflowers, creating a patchwork of colors in the landscape."
+                  data-src="samples/longlive/VARQ/q6/group01_prompt052_s03.mp4"
+                  loop=""
+                  muted=""
+                  playsinline=""
+                  poster="assets/posters/long-2-VARQ.webp"
+                  preload="none"
+                ></video>
+              </figure>
+            </div>
+            <div class="feature-controls">
+              <button aria-label="Play LongLive comparison" class="feature-play" disabled="" type="button">Play pair</button
+              ><label class="feature-select" hidden=""
+                ><span class="sr-only">LongLive sample</span
+                ><select disabled="">
+                  <option value="0">Fields of wildflowers</option>
+                </select></label
+              ><output class="feature-time">0.0 s</output>
+            </div>
+            <label class="sr-only" for="seek-long-long-sample-3">LongLive shared timeline</label
+            ><input class="feature-seek" disabled="" id="seek-long-long-sample-3" max="1" min="0" step=".05" type="range" value="0" />
+            <p class="feature-prompt">An aerial shot of a field of blooming wildflowers, creating a patchwork of colors in the landscape.</p>
             <p class="feature-status sr-only" role="status"></p>
             <noscript><a href="samples/longlive/VARQ/q6/group03_prompt153_s01.mp4">Watch the VAR-Q video</a></noscript>
           </article>
