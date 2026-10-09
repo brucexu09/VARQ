@@ -961,7 +961,9 @@
       "caption": null,
       "media": {
        "Baseline": "samples/longlive/Baseline/q6/prompt000.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/prompt000.mp4"
+       "VARQ": "samples/longlive/VARQ/q6/prompt000.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/prompt000.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/prompt000.mp4"
       }
      },
      {
@@ -969,7 +971,9 @@
       "caption": null,
       "media": {
        "Baseline": "samples/longlive/Baseline/q6/prompt019.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/prompt019.mp4"
+       "VARQ": "samples/longlive/VARQ/q6/prompt019.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/prompt019.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/prompt019.mp4"
       }
      },
      {
@@ -977,7 +981,9 @@
       "caption": null,
       "media": {
        "Baseline": "samples/longlive/Baseline/q6/prompt034.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/prompt034.mp4"
+       "VARQ": "samples/longlive/VARQ/q6/prompt034.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/prompt034.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/prompt034.mp4"
       }
      },
      {
@@ -985,7 +991,9 @@
       "caption": null,
       "media": {
        "Baseline": "samples/longlive/Baseline/q6/prompt047.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/prompt047.mp4"
+       "VARQ": "samples/longlive/VARQ/q6/prompt047.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/prompt047.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/prompt047.mp4"
       }
      },
      {
@@ -993,7 +1001,9 @@
       "caption": null,
       "media": {
        "Baseline": "samples/longlive/Baseline/q6/prompt010.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/prompt010.mp4"
+       "VARQ": "samples/longlive/VARQ/q6/prompt010.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/prompt010.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/prompt010.mp4"
       }
      },
      {
@@ -1001,7 +1011,9 @@
       "caption": null,
       "media": {
        "Baseline": "samples/longlive/Baseline/q6/prompt044.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/prompt044.mp4"
+       "VARQ": "samples/longlive/VARQ/q6/prompt044.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/prompt044.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/prompt044.mp4"
       }
      },
      {
@@ -1009,7 +1021,9 @@
       "caption": null,
       "media": {
        "Baseline": "samples/longlive/Baseline/q6/prompt022.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/prompt022.mp4"
+       "VARQ": "samples/longlive/VARQ/q6/prompt022.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/prompt022.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/prompt022.mp4"
       }
      },
      {
@@ -1017,7 +1031,9 @@
       "caption": null,
       "media": {
        "Baseline": "samples/longlive/Baseline/q6/prompt021.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/prompt021.mp4"
+       "VARQ": "samples/longlive/VARQ/q6/prompt021.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/prompt021.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/prompt021.mp4"
       }
      },
      {
@@ -1025,7 +1041,9 @@
       "caption": null,
       "media": {
        "Baseline": "samples/longlive/Baseline/q6/prompt039.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/prompt039.mp4"
+       "VARQ": "samples/longlive/VARQ/q6/prompt039.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/prompt039.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/prompt039.mp4"
       }
      },
      {
@@ -1033,7 +1051,9 @@
       "caption": null,
       "media": {
        "Baseline": "samples/longlive/Baseline/q6/prompt009.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/prompt009.mp4"
+       "VARQ": "samples/longlive/VARQ/q6/prompt009.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/prompt009.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/prompt009.mp4"
       }
      },
      {
@@ -1041,7 +1061,9 @@
       "caption": null,
       "media": {
        "Baseline": "samples/longlive/Baseline/q6/prompt041.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/prompt041.mp4"
+       "VARQ": "samples/longlive/VARQ/q6/prompt041.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/prompt041.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/prompt041.mp4"
       }
      },
      {
@@ -1049,7 +1071,9 @@
       "caption": null,
       "media": {
        "Baseline": "samples/longlive/Baseline/q6/prompt049.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/prompt049.mp4"
+       "VARQ": "samples/longlive/VARQ/q6/prompt049.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/prompt049.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/prompt049.mp4"
       }
      },
      {
@@ -1057,7 +1081,9 @@
       "caption": null,
       "media": {
        "Baseline": "samples/longlive/Baseline/q6/prompt011.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/prompt011.mp4"
+       "VARQ": "samples/longlive/VARQ/q6/prompt011.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/prompt011.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/prompt011.mp4"
       }
      },
      {
@@ -1065,7 +1091,9 @@
       "caption": null,
       "media": {
        "Baseline": "samples/longlive/Baseline/q6/prompt025.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/prompt025.mp4"
+       "VARQ": "samples/longlive/VARQ/q6/prompt025.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/prompt025.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/prompt025.mp4"
       }
      },
      {
@@ -1073,7 +1101,9 @@
       "caption": null,
       "media": {
        "Baseline": "samples/longlive/Baseline/q6/prompt023.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/prompt023.mp4"
+       "VARQ": "samples/longlive/VARQ/q6/prompt023.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/prompt023.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/prompt023.mp4"
       }
      },
      {
@@ -1081,7 +1111,9 @@
       "caption": null,
       "media": {
        "Baseline": "samples/longlive/Baseline/q6/prompt014.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/prompt014.mp4"
+       "VARQ": "samples/longlive/VARQ/q6/prompt014.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/prompt014.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/prompt014.mp4"
       }
      },
      {
@@ -1089,7 +1121,9 @@
       "caption": null,
       "media": {
        "Baseline": "samples/longlive/Baseline/q6/prompt013.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/prompt013.mp4"
+       "VARQ": "samples/longlive/VARQ/q6/prompt013.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/prompt013.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/prompt013.mp4"
       }
      },
      {
@@ -1097,7 +1131,9 @@
       "caption": null,
       "media": {
        "Baseline": "samples/longlive/Baseline/q6/prompt038.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/prompt038.mp4"
+       "VARQ": "samples/longlive/VARQ/q6/prompt038.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/prompt038.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/prompt038.mp4"
       }
      },
      {
@@ -1105,7 +1141,9 @@
       "caption": null,
       "media": {
        "Baseline": "samples/longlive/Baseline/q6/prompt018.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/prompt018.mp4"
+       "VARQ": "samples/longlive/VARQ/q6/prompt018.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/prompt018.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/prompt018.mp4"
       }
      },
      {
@@ -1113,7 +1151,9 @@
       "caption": null,
       "media": {
        "Baseline": "samples/longlive/Baseline/q6/prompt052.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/prompt052.mp4"
+       "VARQ": "samples/longlive/VARQ/q6/prompt052.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/prompt052.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/prompt052.mp4"
       }
      }
     ]
