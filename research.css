@@ -2119,3 +2119,27 @@ select {
 #more-videos {
   scroll-margin-top: 90px;
 }
+
+/* Dense qualitative grids (one row per prompt, all methods side by side) */
+.dense-section { margin-top: 48px; }
+.dense-section > .subsection-heading { margin-bottom: 8px; }
+.dense-block { margin: 34px 0 10px; }
+.dense-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; margin-bottom: 12px; }
+.dense-head h4 { margin: 0; font-size: 19px; }
+.dense-head .dense-count { font-size: 12px; color: var(--muted); }
+.dense-note { font-size: 12px; color: var(--muted); margin: 0 0 12px; }
+.dense-rows { display: grid; gap: 16px; }
+.dense-row { display: grid; gap: 4px; }
+.dense-prompt { margin: 0; font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.dense-cells { display: grid; grid-template-columns: repeat(var(--cols, 4), minmax(0, 1fr)); gap: 6px; }
+.dense-cell { margin: 0; min-width: 0; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: var(--soft); }
+.dense-cell video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #182034; cursor: pointer; }
+.dense-cell img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; cursor: zoom-in; }
+.dense-cell figcaption { padding: 5px 8px; font-size: 11px; font-weight: 600; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.dense-ours { border-color: var(--accent); }
+.dense-ours figcaption { background: var(--accent); color: #fff; }
+.dense-more { margin-top: 14px; }
+@media (max-width: 760px) {
+  .dense-cells { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dense-prompt { white-space: normal; }
+}

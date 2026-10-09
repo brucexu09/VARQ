@@ -21,6 +21,7 @@
     <script defer="" src="gallery.js"></script>
     <link href="research.css" rel="stylesheet" />
     <script defer="" src="showcase.js"></script>
+    <script defer="" src="dense.js"></script>
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
@@ -2279,318 +2280,44 @@
             <noscript><a href="samples/longlive/VARQ/q6/prompt00.mp4">Watch the VAR-Q video</a></noscript>
           </article>
         </div>
-        <div class="more-video-heading" id="more-videos">
-          <p class="eyebrow">More generated videos</p>
-          <h3>Different scenes, the same low-bit cache</h3>
-          <p>Six more BF16 / VAR-Q comparisons, ready to play. InfinityStar uses INT3; Self-Forcing and LongLive use INT6.</p>
-        </div>
-        <div class="more-video-grid">
-          <article class="feature-card direct-demo" data-feature="scale-sample-2">
-            <div class="feature-top">
-              <div>
-                <span class="paradigm-tag scale">Next-scale</span>
-                <h3>Rings of Saturn</h3>
-              </div>
-              <span class="feature-index">InfinityStar · 720p</span>
+        <div class="dense-section" id="more-videos">
+          <div class="subsection-heading">
+            <div>
+              <p class="eyebrow">All curated samples</p>
+              <h3>One row per prompt, every KV-cache quantizer side by side</h3>
             </div>
-            <div class="feature-pair">
-              <figure class="feature-video">
-                <figcaption>BF16 reference</figcaption>
-                <video
-                  aria-describedby="showcase-note"
-                  aria-label="InfinityStar · 720p BF16: A person playing hopscotch on the rings of Saturn."
-                  data-src="samples/InfinityStar720p/Baseline/q3/group01_prompt195_s03.mp4"
-                  loop=""
-                  muted=""
-                  playsinline=""
-                  poster="assets/posters/scale-1-Baseline.webp"
-                  preload="none"
-                ></video>
-              </figure>
-              <figure class="feature-video feature-ours">
-                <figcaption>VAR-Q · 3-bit</figcaption>
-                <video
-                  aria-describedby="showcase-note"
-                  aria-label="InfinityStar · 720p VAR-Q 3-bit: A person playing hopscotch on the rings of Saturn."
-                  data-src="samples/InfinityStar720p/VARQ/q3/group01_prompt195_s03.mp4"
-                  loop=""
-                  muted=""
-                  playsinline=""
-                  poster="assets/posters/scale-1-VARQ.webp"
-                  preload="none"
-                ></video>
-              </figure>
-            </div>
-            <div class="feature-controls">
-              <button aria-label="Play InfinityStar · 720p comparison" class="feature-play" disabled="" type="button">Play pair</button
-              ><label class="feature-select" hidden=""
-                ><span class="sr-only">InfinityStar · 720p sample</span
-                ><select disabled="">
-                  <option value="0">Rings of Saturn</option>
-                </select></label
-              ><output class="feature-time">0.0 s</output>
-            </div>
-            <label class="sr-only" for="seek-scale-scale-sample-2">InfinityStar · 720p shared timeline</label
-            ><input class="feature-seek" disabled="" id="seek-scale-scale-sample-2" max="1" min="0" step=".05" type="range" value="0" />
-            <p class="feature-prompt">A person playing hopscotch on the rings of Saturn.</p>
-            <p class="feature-status sr-only" role="status"></p>
-            <noscript><a href="samples/InfinityStar720p/VARQ/q3/group01_prompt129_s02.mp4">Watch the VAR-Q video</a></noscript>
-          </article>
-          <article class="feature-card direct-demo" data-feature="scale-sample-3">
-            <div class="feature-top">
-              <div>
-                <span class="paradigm-tag scale">Next-scale</span>
-                <h3>A snowflake, up close</h3>
-              </div>
-              <span class="feature-index">InfinityStar · 720p</span>
-            </div>
-            <div class="feature-pair">
-              <figure class="feature-video">
-                <figcaption>BF16 reference</figcaption>
-                <video
-                  aria-describedby="showcase-note"
-                  aria-label="InfinityStar · 720p BF16: A zoom-out from a detailed shot of an intricate snowflake, pulling back to show a snowy landscape."
-                  data-src="samples/InfinityStar720p/Baseline/q3/group01_prompt108_s01.mp4"
-                  loop=""
-                  muted=""
-                  playsinline=""
-                  poster="assets/posters/scale-2-Baseline.webp"
-                  preload="none"
-                ></video>
-              </figure>
-              <figure class="feature-video feature-ours">
-                <figcaption>VAR-Q · 3-bit</figcaption>
-                <video
-                  aria-describedby="showcase-note"
-                  aria-label="InfinityStar · 720p VAR-Q 3-bit: A zoom-out from a detailed shot of an intricate snowflake, pulling back to show a snowy landscape."
-                  data-src="samples/InfinityStar720p/VARQ/q3/group01_prompt108_s01.mp4"
-                  loop=""
-                  muted=""
-                  playsinline=""
-                  poster="assets/posters/scale-2-VARQ.webp"
-                  preload="none"
-                ></video>
-              </figure>
-            </div>
-            <div class="feature-controls">
-              <button aria-label="Play InfinityStar · 720p comparison" class="feature-play" disabled="" type="button">Play pair</button
-              ><label class="feature-select" hidden=""
-                ><span class="sr-only">InfinityStar · 720p sample</span
-                ><select disabled="">
-                  <option value="0">A snowflake, up close</option>
-                </select></label
-              ><output class="feature-time">0.0 s</output>
-            </div>
-            <label class="sr-only" for="seek-scale-scale-sample-3">InfinityStar · 720p shared timeline</label
-            ><input class="feature-seek" disabled="" id="seek-scale-scale-sample-3" max="1" min="0" step=".05" type="range" value="0" />
-            <p class="feature-prompt">A zoom-out from a detailed shot of an intricate snowflake, pulling back to show a snowy landscape.</p>
-            <p class="feature-status sr-only" role="status"></p>
-            <noscript><a href="samples/InfinityStar720p/VARQ/q3/group01_prompt129_s02.mp4">Watch the VAR-Q video</a></noscript>
-          </article>
-          <article class="feature-card direct-demo" data-feature="frame-sample-2">
-            <div class="feature-top">
-              <div>
-                <span class="paradigm-tag frame">Next-frame</span>
-                <h3>An ice palace in the light</h3>
-              </div>
-              <span class="feature-index">Self-Forcing</span>
-            </div>
-            <div class="feature-pair">
-              <figure class="feature-video">
-                <figcaption>BF16 reference · KV cache 67.5 GB</figcaption>
-                <video
-                  aria-describedby="showcase-note"
-                  aria-label="Self-Forcing BF16: A majestic ice palace glistens in the light, its intricate frozen sculptures reflecting and refracting the colors around them, creating a mesmerizing visual display."
-                  data-src="samples/self_forcing/Baseline/q6/prompt042.mp4"
-                  loop=""
-                  muted=""
-                  playsinline=""
-                  poster="assets/posters/frame-1-Baseline.webp"
-                  preload="none"
-                ></video>
-              </figure>
-              <figure class="feature-video feature-ours">
-                <figcaption>VAR-Q · 6-bit · KV cache 27.5 GB (−59%)</figcaption>
-                <video
-                  aria-describedby="showcase-note"
-                  aria-label="Self-Forcing VAR-Q 6-bit: A majestic ice palace glistens in the light, its intricate frozen sculptures reflecting and refracting the colors around them, creating a mesmerizing visual display."
-                  data-src="samples/self_forcing/VARQ/q6/prompt042.mp4"
-                  loop=""
-                  muted=""
-                  playsinline=""
-                  poster="assets/posters/frame-1-VARQ.webp"
-                  preload="none"
-                ></video>
-              </figure>
-            </div>
-            <div class="feature-controls">
-              <button aria-label="Play Self-Forcing comparison" class="feature-play" disabled="" type="button">Play pair</button
-              ><label class="feature-select" hidden=""
-                ><span class="sr-only">Self-Forcing sample</span
-                ><select disabled="">
-                  <option value="0">An ice palace in the light</option>
-                </select></label
-              ><output class="feature-time">0.0 s</output>
-            </div>
-            <label class="sr-only" for="seek-frame-frame-sample-2">Self-Forcing shared timeline</label
-            ><input class="feature-seek" disabled="" id="seek-frame-frame-sample-2" max="1" min="0" step=".05" type="range" value="0" />
-            <p class="feature-prompt">A majestic ice palace glistens in the light, its intricate frozen sculptures reflecting and refracting the colors around them, creating a mesmerizing visual display.</p>
-            <p class="feature-status sr-only" role="status"></p>
-            <noscript><a href="samples/self_forcing/VARQ/q6/prompt042.mp4">Watch the VAR-Q video</a></noscript>
-          </article>
-          <article class="feature-card direct-demo" data-feature="frame-sample-3">
-            <div class="feature-top">
-              <div>
-                <span class="paradigm-tag frame">Next-frame</span>
-                <h3>Otters on the river</h3>
-              </div>
-              <span class="feature-index">Self-Forcing</span>
-            </div>
-            <div class="feature-pair">
-              <figure class="feature-video">
-                <figcaption>BF16 reference · KV cache 67.5 GB</figcaption>
-                <video
-                  aria-describedby="showcase-note"
-                  aria-label="Self-Forcing BF16: A mother otter floating on her back in a river, cradling her pup on her stomach to keep it safe and warm in the gentle current."
-                  data-src="samples/self_forcing/Baseline/q6/prompt043.mp4"
-                  loop=""
-                  muted=""
-                  playsinline=""
-                  poster="assets/posters/frame-2-Baseline.webp"
-                  preload="none"
-                ></video>
-              </figure>
-              <figure class="feature-video feature-ours">
-                <figcaption>VAR-Q · 6-bit · KV cache 27.5 GB (−59%)</figcaption>
-                <video
-                  aria-describedby="showcase-note"
-                  aria-label="Self-Forcing VAR-Q 6-bit: A mother otter floating on her back in a river, cradling her pup on her stomach to keep it safe and warm in the gentle current."
-                  data-src="samples/self_forcing/VARQ/q6/prompt043.mp4"
-                  loop=""
-                  muted=""
-                  playsinline=""
-                  poster="assets/posters/frame-2-VARQ.webp"
-                  preload="none"
-                ></video>
-              </figure>
-            </div>
-            <div class="feature-controls">
-              <button aria-label="Play Self-Forcing comparison" class="feature-play" disabled="" type="button">Play pair</button
-              ><label class="feature-select" hidden=""
-                ><span class="sr-only">Self-Forcing sample</span
-                ><select disabled="">
-                  <option value="0">Otters on the river</option>
-                </select></label
-              ><output class="feature-time">0.0 s</output>
-            </div>
-            <label class="sr-only" for="seek-frame-frame-sample-3">Self-Forcing shared timeline</label
-            ><input class="feature-seek" disabled="" id="seek-frame-frame-sample-3" max="1" min="0" step=".05" type="range" value="0" />
-            <p class="feature-prompt">A mother otter floating on her back in a river, cradling her pup on her stomach to keep it safe and warm in the gentle current.</p>
-            <p class="feature-status sr-only" role="status"></p>
-            <noscript><a href="samples/self_forcing/VARQ/q6/prompt043.mp4">Watch the VAR-Q video</a></noscript>
-          </article>
-          <article class="feature-card direct-demo" data-feature="long-sample-2">
-            <div class="feature-top">
-              <div>
-                <span class="paradigm-tag long">Next-frame</span>
-                <h3>A toy robot in Antarctica</h3>
-              </div>
-              <span class="feature-index">LongLive</span>
-            </div>
-            <div class="feature-pair">
-              <figure class="feature-video">
-                <figcaption>BF16 reference · KV cache 64.3 GB</figcaption>
-                <video
-                  aria-describedby="showcase-note"
-                  aria-label="LongLive BF16: a toy robot wearing a green dress and a sun hat taking a pleasant stroll in Antarctica during a beautiful sunset"
-                  data-src="samples/longlive/Baseline/q6/prompt10.mp4"
-                  loop=""
-                  muted=""
-                  playsinline=""
-                  poster="assets/posters/long-1-Baseline.webp"
-                  preload="none"
-                ></video>
-              </figure>
-              <figure class="feature-video feature-ours">
-                <figcaption>VAR-Q · 6-bit · KV cache 26.2 GB (−59%)</figcaption>
-                <video
-                  aria-describedby="showcase-note"
-                  aria-label="LongLive VAR-Q 6-bit: a toy robot wearing a green dress and a sun hat taking a pleasant stroll in Antarctica during a beautiful sunset"
-                  data-src="samples/longlive/VARQ/q6/prompt10.mp4"
-                  loop=""
-                  muted=""
-                  playsinline=""
-                  poster="assets/posters/long-1-VARQ.webp"
-                  preload="none"
-                ></video>
-              </figure>
-            </div>
-            <div class="feature-controls">
-              <button aria-label="Play LongLive comparison" class="feature-play" disabled="" type="button">Play pair</button
-              ><label class="feature-select" hidden=""
-                ><span class="sr-only">LongLive sample</span
-                ><select disabled="">
-                  <option value="0">A toy robot in Antarctica</option>
-                </select></label
-              ><output class="feature-time">0.0 s</output>
-            </div>
-            <label class="sr-only" for="seek-long-long-sample-2">LongLive shared timeline</label
-            ><input class="feature-seek" disabled="" id="seek-long-long-sample-2" max="1" min="0" step=".05" type="range" value="0" />
-            <p class="feature-prompt">a toy robot wearing a green dress and a sun hat taking a pleasant stroll in Antarctica during a beautiful sunset</p>
-            <p class="feature-status sr-only" role="status"></p>
-            <noscript><a href="samples/longlive/VARQ/q6/prompt10.mp4">Watch the VAR-Q video</a></noscript>
-          </article>
-          <article class="feature-card direct-demo" data-feature="long-sample-3">
-            <div class="feature-top">
-              <div>
-                <span class="paradigm-tag long">Next-frame</span>
-                <h3>Cherry blossom village</h3>
-              </div>
-              <span class="feature-index">LongLive</span>
-            </div>
-            <div class="feature-pair">
-              <figure class="feature-video">
-                <figcaption>BF16 reference · KV cache 64.3 GB</figcaption>
-                <video
-                  aria-describedby="showcase-note"
-                  aria-label="LongLive BF16: A quaint village nestled in a valley is surrounded by blooming cherry blossoms, with petals drifting through the air as villagers go about their daily activities, adding life to the scene."
-                  data-src="samples/longlive/Baseline/q6/prompt02.mp4"
-                  loop=""
-                  muted=""
-                  playsinline=""
-                  poster="assets/posters/long-2-Baseline.webp"
-                  preload="none"
-                ></video>
-              </figure>
-              <figure class="feature-video feature-ours">
-                <figcaption>VAR-Q · 6-bit · KV cache 26.2 GB (−59%)</figcaption>
-                <video
-                  aria-describedby="showcase-note"
-                  aria-label="LongLive VAR-Q 6-bit: A quaint village nestled in a valley is surrounded by blooming cherry blossoms, with petals drifting through the air as villagers go about their daily activities, adding life to the scene."
-                  data-src="samples/longlive/VARQ/q6/prompt02.mp4"
-                  loop=""
-                  muted=""
-                  playsinline=""
-                  poster="assets/posters/long-2-VARQ.webp"
-                  preload="none"
-                ></video>
-              </figure>
-            </div>
-            <div class="feature-controls">
-              <button aria-label="Play LongLive comparison" class="feature-play" disabled="" type="button">Play pair</button
-              ><label class="feature-select" hidden=""
-                ><span class="sr-only">LongLive sample</span
-                ><select disabled="">
-                  <option value="0">Cherry blossom village</option>
-                </select></label
-              ><output class="feature-time">0.0 s</output>
-            </div>
-            <label class="sr-only" for="seek-long-long-sample-3">LongLive shared timeline</label
-            ><input class="feature-seek" disabled="" id="seek-long-long-sample-3" max="1" min="0" step=".05" type="range" value="0" />
-            <p class="feature-prompt">A quaint village nestled in a valley is surrounded by blooming cherry blossoms, with petals drifting through the air as villagers go about their daily activities, adding life to the scene.</p>
-            <p class="feature-status sr-only" role="status"></p>
-            <noscript><a href="samples/longlive/VARQ/q6/prompt02.mp4">Watch the VAR-Q video</a></noscript>
-          </article>
+            <p class="small-note">Same model, prompt and seed in each row. Videos load and play when scrolled into view; click an image to enlarge. KV memory is the paper's measurement at the evaluation batch size.</p>
+          </div>
+          <section class="dense-block" data-bit="q6" data-initial="8" data-model="self_forcing" data-step="8">
+            <div class="dense-head"><h4>Self-Forcing · next-frame · 5 s · 6-bit KV cache</h4><span class="dense-count"></span></div>
+            <p class="dense-note">Generated with the public VAR-Q runtime; clips kept only where VAR-Q stays within a few dB of BF16 for the whole clip.</p>
+            <div class="dense-rows"></div>
+            <button class="button dense-more" type="button">Show more</button>
+          </section>
+          <section class="dense-block" data-bit="q6" data-initial="4" data-model="longlive" data-step="4">
+            <div class="dense-head"><h4>LongLive · next-frame · 30 s · 6-bit KV cache</h4><span class="dense-count"></span></div>
+            <p class="dense-note">Long-horizon streaming generation; trajectories can drift after many seconds for every quantizer, so low-drift clips are shown.</p>
+            <div class="dense-rows"></div>
+            <button class="button dense-more" type="button">Show more</button>
+          </section>
+          <section class="dense-block" data-bit="q4" data-initial="10" data-model="Infinity8B" data-step="10">
+            <div class="dense-head"><h4>Infinity-8B · next-scale · 1024×1024 · 4-bit KV cache</h4><span class="dense-count"></span></div>
+            <p class="dense-note">PSNR captions are in the browser gallery below; VAR-Q keeps the BF16 composition where KIVI and FlexGen start to change it.</p>
+            <div class="dense-rows"></div>
+            <button class="button dense-more" type="button">Show more</button>
+          </section>
+          <section class="dense-block" data-bit="q6" data-initial="6" data-model="Infinity8B" data-step="10">
+            <div class="dense-head"><h4>Infinity-8B · next-scale · 1024×1024 · 6-bit KV cache</h4><span class="dense-count"></span></div>
+            <p class="dense-note"></p>
+            <div class="dense-rows"></div>
+            <button class="button dense-more" type="button">Show more</button>
+          </section>
+          <section class="dense-block" data-bit="q3" data-initial="4" data-model="Infinity8B" data-step="8">
+            <div class="dense-head"><h4>Infinity-8B · next-scale · 1024×1024 · 3-bit KV cache</h4><span class="dense-count"></span></div>
+            <p class="dense-note">Curated subset: 3-bit changes fine detail more often, so only prompts that stay close to BF16 are shown.</p>
+            <div class="dense-rows"></div>
+            <button class="button dense-more" type="button">Show more</button>
+          </section>
         </div>
         <div aria-labelledby="gallery-title" class="live-gallery" id="demo">
           <div class="subsection-heading">
