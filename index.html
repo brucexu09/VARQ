@@ -29,8 +29,8 @@
       <nav aria-label="Main navigation" class="nav wrap">
         <a class="wordmark" href="#"><img alt="" class="brand-symbol" height="30" src="assets/varq-symbol.svg" width="30" />VAR-Q</a>
         <div class="nav-links">
-          <a href="#showcase">Videos</a><a href="#overview">Idea</a><a href="#method">Method</a><a href="#attribution">Attribution</a
-          ><a href="#benchmarks">Results</a><a href="#code">Code</a>
+          <a href="#showcase">Videos</a><a href="#overview">Idea</a><a href="#benchmarks">Results</a><a href="#method">Method</a
+          ><a href="#attribution">Attribution</a><a href="#code">Code</a>
         </div>
         <a class="home-link" href="/">Boxun Xu <span aria-hidden="true">↗</span></a>
       </nav>
@@ -78,7 +78,7 @@
       </section>
       <section aria-labelledby="showcase-title" class="showcase wrap" id="showcase">
         <div class="showcase-heading">
-          <h2 id="showcase-title">Two paradigms. In motion.</h2>
+          <h2 id="showcase-title">Next-scale and next-frame generation</h2>
           <p>Original generated videos · synchronized BF16 / VAR-Q pairs</p>
         </div>
         <div class="showcase-grid">
@@ -258,7 +258,7 @@
         <div class="section-heading">
           <div>
             <p class="eyebrow">01 / Quantitative evidence</p>
-            <h2 id="benchmarks-title">Quality, alongside<br />the memory it costs.</h2>
+            <h2 id="benchmarks-title">Generation quality and KV memory</h2>
           </div>
           <p>Reported quality and cache memory,<br />with the configuration kept in view.</p>
         </div>
@@ -284,10 +284,10 @@
         <div class="all-models-overview">
           <div class="paper-table-heading">
             <div>
-              <p class="eyebrow">One rule · all nine configurations</p>
-              <h3>At INT4, across both paradigms.</h3>
+              <p class="eyebrow">Across image and video models</p>
+              <h3>Four-bit KV caches across nine configurations</h3>
             </div>
-            <p>Every model is shown. Compare each metric within its own row.</p>
+            <p>VAR-Q retains competitive generation quality while reducing KV memory by 72–75%.</p>
           </div>
           <div aria-label="INT4 results across all nine configurations" class="metrics-scroll" role="region" tabindex="0">
             <table>
@@ -387,8 +387,8 @@
         </div>
         <div class="full-paper-results" id="complete-results">
           <div class="full-results-intro">
-            <h3>The paper tables, in full.</h3>
-            <p>64 rows. Every reported metric. No model selection required.</p>
+            <h3>Results by model family</h3>
+            <p>Comparisons with BF16, FlexGen, and KIVI.</p>
           </div>
           <nav aria-label="Complete result tables" class="paper-table-tabs">
             <a href="#full-table-3">Table 3 · Next-scale video</a><a href="#full-table-4">Table 4 · Next-frame video</a
@@ -397,24 +397,81 @@
           <article class="paper-result-block" id="full-table-3">
             <div class="paper-table-heading">
               <div>
-                <p class="eyebrow">Table 3 · complete results</p>
-                <h3>Next-scale video: the low-bit gap widens at 720p.</h3>
+                <p class="eyebrow">Table 3</p>
+                <h3>Next-scale video</h3>
               </div>
               <a href="/assets/pdf/VAR-Q.pdf#page=8">Source table ↗</a>
             </div>
             <p class="table-takeaway">
-              At INT3 on InfinityStar-720p, VAR-Q reaches 80.59 VBench Total versus 75.46 for KIVI and 79.95 for FlexGen. Compare all eight reported
-              quality dimensions below.
+              At 720p with INT3 caches, VAR-Q scores 80.59 on VBench Total Quality, compared with 79.95 for FlexGen and 75.46 for KIVI, while reducing
+              KV memory by 79.15% relative to BF16.
             </p>
+            <div class="result-summary">
+              <div aria-label="VAR-Q video quality and memory summary" class="metrics-scroll" role="region" tabindex="0">
+                <table>
+                  <caption>
+                    VAR-Q at a glance · VBench Total Quality and KV memory
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Model</th>
+                      <th scope="col">KV precision</th>
+                      <th scope="col">Total Quality ↑</th>
+                      <th scope="col">Δ vs. BF16</th>
+                      <th scope="col">KV (GB) ↓</th>
+                      <th scope="col">KV reduction</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">InfinityStar 720p</th>
+                      <td data-label="KV precision">INT4</td>
+                      <td data-label="Total Quality ↑">81.66</td>
+                      <td data-label="Δ vs. BF16">-0.67</td>
+                      <td data-label="KV (GB) ↓">16.00</td>
+                      <td data-label="KV reduction">74.49%</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">InfinityStar 720p</th>
+                      <td data-label="KV precision">INT3</td>
+                      <td data-label="Total Quality ↑">80.59</td>
+                      <td data-label="Δ vs. BF16">-1.74</td>
+                      <td data-label="KV (GB) ↓">13.08</td>
+                      <td data-label="KV reduction">79.15%</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">InfinityStar 480p</th>
+                      <td data-label="KV precision">INT4</td>
+                      <td data-label="Total Quality ↑">81.32</td>
+                      <td data-label="Δ vs. BF16">+0.02</td>
+                      <td data-label="KV (GB) ↓">14.60</td>
+                      <td data-label="KV reduction">73.86%</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">InfinityStar 480p</th>
+                      <td data-label="KV precision">INT3</td>
+                      <td data-label="Total Quality ↑">80.98</td>
+                      <td data-label="Δ vs. BF16">-0.32</td>
+                      <td data-label="KV (GB) ↓">12.03</td>
+                      <td data-label="KV reduction">78.47%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
             <div aria-label="Complete paper Table 3" class="metrics-scroll" role="region" tabindex="0">
               <table data-paper-table="3">
                 <caption>
-                  Table 3 · all reported configurations and metrics · horizontal scroll reveals additional columns
+                  Table 3. Next-scale video generation with InfinityStar.
                 </caption>
                 <thead>
+                  <tr class="metric-groups">
+                    <th rowspan="2" scope="col">Method</th>
+                    <th rowspan="2" scope="col">KV precision</th>
+                    <th colspan="8" scope="colgroup">VBench ↑</th>
+                    <th colspan="2" scope="colgroup">KV cache</th>
+                  </tr>
                   <tr>
-                    <th scope="col">Method</th>
-                    <th scope="col">KV precision</th>
                     <th scope="col">Subject Consistency ↑</th>
                     <th scope="col">Background Consistency ↑</th>
                     <th scope="col">Temporal Flickering ↑</th>
@@ -423,16 +480,16 @@
                     <th scope="col">Aesthetic Quality ↑</th>
                     <th scope="col">Imaging Quality ↑</th>
                     <th scope="col">Total Quality ↑</th>
-                    <th scope="col">KV (GB) ↓</th>
-                    <th scope="col">KV saved</th>
+                    <th scope="col">Memory (GB) ↓</th>
+                    <th scope="col">Reduction (%) ↑</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr class="model-divider">
                     <th colspan="12" scope="rowgroup">InfinityStar · Next-scale video · 720p / 8B · 720p · batch 3</th>
                   </tr>
-                  <tr>
-                    <th scope="row">BF16</th>
+                  <tr class="precision-start">
+                    <th scope="row">Baseline</th>
                     <td>BF16</td>
                     <td>93.69</td>
                     <td>94.62</td>
@@ -445,16 +502,16 @@
                     <td>62.72</td>
                     <td>—</td>
                   </tr>
-                  <tr>
+                  <tr class="precision-start">
                     <th scope="row">FlexGen</th>
                     <td>INT4</td>
-                    <td>93.83</td>
-                    <td>94.76</td>
-                    <td>97.83</td>
-                    <td>98.91</td>
+                    <td class="metric-best" title="Best among methods at this precision">93.83</td>
+                    <td class="metric-best" title="Best among methods at this precision">94.76</td>
+                    <td class="metric-best" title="Best among methods at this precision">97.83</td>
+                    <td class="metric-best" title="Best among methods at this precision">98.91</td>
                     <td>63.00</td>
                     <td>55.50</td>
-                    <td>64.80</td>
+                    <td class="metric-best" title="Best among methods at this precision">64.80</td>
                     <td>80.11</td>
                     <td>16.48</td>
                     <td>73.72%</td>
@@ -463,54 +520,54 @@
                     <th scope="row">KIVI</th>
                     <td>INT4</td>
                     <td>92.01</td>
-                    <td>94.61</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">94.61</td>
                     <td>97.27</td>
-                    <td>98.70</td>
-                    <td>68.00</td>
-                    <td>56.12</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">98.70</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">68.00</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">56.12</td>
                     <td>63.60</td>
-                    <td>81.24</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">81.24</td>
                     <td>16.73</td>
                     <td>73.33%</td>
                   </tr>
                   <tr class="highlight">
                     <th scope="row">VAR-Q</th>
                     <td>INT4</td>
-                    <td>92.65</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">92.65</td>
                     <td>94.09</td>
-                    <td>97.37</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">97.37</td>
                     <td>98.59</td>
-                    <td>74.50</td>
-                    <td>56.87</td>
-                    <td>64.35</td>
-                    <td>81.66</td>
+                    <td class="metric-best" title="Best among methods at this precision">74.50</td>
+                    <td class="metric-best" title="Best among methods at this precision">56.87</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">64.35</td>
+                    <td class="metric-best" title="Best among methods at this precision">81.66</td>
                     <td>16.00</td>
                     <td>74.49%</td>
                   </tr>
-                  <tr>
+                  <tr class="precision-start">
                     <th scope="row">FlexGen</th>
                     <td>INT3</td>
                     <td>90.12</td>
-                    <td>92.68</td>
-                    <td>97.84</td>
-                    <td>96.91</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">92.68</td>
+                    <td class="metric-best" title="Best among methods at this precision">97.84</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">96.91</td>
                     <td>62.00</td>
-                    <td>56.01</td>
+                    <td class="metric-best" title="Best among methods at this precision">56.01</td>
                     <td>60.48</td>
-                    <td>79.95</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">79.95</td>
                     <td>13.56</td>
                     <td>78.37%</td>
                   </tr>
                   <tr>
                     <th scope="row">KIVI</th>
                     <td>INT3</td>
-                    <td>90.45</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">90.45</td>
                     <td>90.42</td>
-                    <td>97.65</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">97.65</td>
                     <td>96.79</td>
-                    <td>74.00</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">74.00</td>
                     <td>50.97</td>
-                    <td>61.92</td>
+                    <td class="metric-best" title="Best among methods at this precision">61.92</td>
                     <td>75.46</td>
                     <td>13.81</td>
                     <td>77.99%</td>
@@ -518,22 +575,24 @@
                   <tr class="highlight">
                     <th scope="row">VAR-Q</th>
                     <td>INT3</td>
-                    <td>91.41</td>
-                    <td>93.56</td>
+                    <td class="metric-best" title="Best among methods at this precision">91.41</td>
+                    <td class="metric-best" title="Best among methods at this precision">93.56</td>
                     <td>97.25</td>
-                    <td>98.37</td>
-                    <td>75.00</td>
-                    <td>55.55</td>
-                    <td>61.75</td>
-                    <td>80.59</td>
+                    <td class="metric-best" title="Best among methods at this precision">98.37</td>
+                    <td class="metric-best" title="Best among methods at this precision">75.00</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">55.55</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">61.75</td>
+                    <td class="metric-best" title="Best among methods at this precision">80.59</td>
                     <td>13.08</td>
                     <td>79.15%</td>
                   </tr>
+                </tbody>
+                <tbody>
                   <tr class="model-divider">
                     <th colspan="12" scope="rowgroup">InfinityStar · Next-scale video · 480p / 8B · 480p · batch 6</th>
                   </tr>
-                  <tr>
-                    <th scope="row">BF16</th>
+                  <tr class="precision-start">
+                    <th scope="row">Baseline</th>
                     <td>BF16</td>
                     <td>93.01</td>
                     <td>94.53</td>
@@ -546,14 +605,14 @@
                     <td>55.87</td>
                     <td>—</td>
                   </tr>
-                  <tr>
+                  <tr class="precision-start">
                     <th scope="row">FlexGen</th>
                     <td>INT4</td>
                     <td>90.59</td>
                     <td>94.39</td>
                     <td>95.16</td>
-                    <td>98.64</td>
-                    <td>66.50</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">98.64</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">66.50</td>
                     <td>56.48</td>
                     <td>62.14</td>
                     <td>78.94</td>
@@ -563,55 +622,55 @@
                   <tr>
                     <th scope="row">KIVI</th>
                     <td>INT4</td>
-                    <td>92.44</td>
-                    <td>94.42</td>
-                    <td>96.65</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">92.44</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">94.42</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">96.65</td>
                     <td>97.79</td>
                     <td>64.00</td>
-                    <td>56.97</td>
-                    <td>62.92</td>
-                    <td>80.46</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">56.97</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">62.92</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">80.46</td>
                     <td>15.25</td>
                     <td>72.71%</td>
                   </tr>
                   <tr class="highlight">
                     <th scope="row">VAR-Q</th>
                     <td>INT4</td>
-                    <td>92.75</td>
-                    <td>94.51</td>
-                    <td>97.21</td>
-                    <td>98.67</td>
-                    <td>68.50</td>
-                    <td>57.84</td>
-                    <td>63.62</td>
-                    <td>81.32</td>
+                    <td class="metric-best" title="Best among methods at this precision">92.75</td>
+                    <td class="metric-best" title="Best among methods at this precision">94.51</td>
+                    <td class="metric-best" title="Best among methods at this precision">97.21</td>
+                    <td class="metric-best" title="Best among methods at this precision">98.67</td>
+                    <td class="metric-best" title="Best among methods at this precision">68.50</td>
+                    <td class="metric-best" title="Best among methods at this precision">57.84</td>
+                    <td class="metric-best" title="Best among methods at this precision">63.62</td>
+                    <td class="metric-best" title="Best among methods at this precision">81.32</td>
                     <td>14.60</td>
                     <td>73.86%</td>
                   </tr>
-                  <tr>
+                  <tr class="precision-start">
                     <th scope="row">FlexGen</th>
                     <td>INT3</td>
                     <td>91.89</td>
                     <td>93.91</td>
                     <td>97.24</td>
                     <td>98.62</td>
-                    <td>64.00</td>
-                    <td>57.54</td>
-                    <td>63.69</td>
-                    <td>80.64</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">64.00</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">57.54</td>
+                    <td class="metric-best" title="Best among methods at this precision">63.69</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">80.64</td>
                     <td>12.45</td>
                     <td>77.71%</td>
                   </tr>
                   <tr>
                     <th scope="row">KIVI</th>
                     <td>INT3</td>
-                    <td>93.01</td>
-                    <td>94.46</td>
-                    <td>97.33</td>
-                    <td>98.71</td>
-                    <td>64.00</td>
-                    <td>57.79</td>
-                    <td>63.56</td>
+                    <td class="metric-best" title="Best among methods at this precision">93.01</td>
+                    <td class="metric-best" title="Best among methods at this precision">94.46</td>
+                    <td class="metric-best" title="Best among methods at this precision">97.33</td>
+                    <td class="metric-best" title="Best among methods at this precision">98.71</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">64.00</td>
+                    <td class="metric-best" title="Best among methods at this precision">57.79</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">63.56</td>
                     <td>78.05</td>
                     <td>12.67</td>
                     <td>77.33%</td>
@@ -619,61 +678,124 @@
                   <tr class="highlight">
                     <th scope="row">VAR-Q</th>
                     <td>INT3</td>
-                    <td>92.86</td>
-                    <td>94.30</td>
-                    <td>97.26</td>
-                    <td>98.64</td>
-                    <td>65.50</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">92.86</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">94.30</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">97.26</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">98.64</td>
+                    <td class="metric-best" title="Best among methods at this precision">65.50</td>
                     <td>57.52</td>
                     <td>63.37</td>
-                    <td>80.98</td>
+                    <td class="metric-best" title="Best among methods at this precision">80.98</td>
                     <td>12.03</td>
                     <td>78.47%</td>
                   </tr>
                 </tbody>
               </table>
             </div>
+            <p class="table-note">
+              <strong>Bold</strong> and <span class="metric-second">underline</span> mark the best and second-best quality scores among quantized
+              methods at the same precision, within each model. BF16 is the reference. ↑ Higher is better; ↓ lower is better. Memory reduction is
+              relative to BF16 at the listed batch size.
+            </p>
           </article>
           <article class="paper-result-block" id="full-table-4">
             <div class="paper-table-heading">
               <div>
-                <p class="eyebrow">Table 4 · complete results</p>
-                <h3>Next-frame video: quality and memory at INT6 and INT4.</h3>
+                <p class="eyebrow">Table 4</p>
+                <h3>Next-frame video</h3>
               </div>
               <a href="/assets/pdf/VAR-Q.pdf#page=8">Source table ↗</a>
             </div>
             <p class="table-takeaway">
-              INT6 closely tracks BF16 Total Quality on both durations. INT4 saves more memory, with an explicit quality tradeoff. The VLM-judge
-              columns provide a complementary view.
+              At INT6, VAR-Q stays close to BF16 on VBench Total Quality for both 5-second and 30-second videos. INT4 reduces KV memory by 74.88%,
+              with quality drops of 1.95 and 1.32 points, respectively.
             </p>
+            <div class="result-summary">
+              <div aria-label="VAR-Q video quality and memory summary" class="metrics-scroll" role="region" tabindex="0">
+                <table>
+                  <caption>
+                    VAR-Q at a glance · VBench Total Quality and KV memory
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Model</th>
+                      <th scope="col">KV precision</th>
+                      <th scope="col">Total Quality ↑</th>
+                      <th scope="col">Δ vs. BF16</th>
+                      <th scope="col">KV (GB) ↓</th>
+                      <th scope="col">KV reduction</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Self-Forcing</th>
+                      <td data-label="KV precision">INT6</td>
+                      <td data-label="Total Quality ↑">83.34</td>
+                      <td data-label="Δ vs. BF16">+0.40</td>
+                      <td data-label="KV (GB) ↓">27.50</td>
+                      <td data-label="KV reduction">59.25%</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Self-Forcing</th>
+                      <td data-label="KV precision">INT4</td>
+                      <td data-label="Total Quality ↑">80.99</td>
+                      <td data-label="Δ vs. BF16">-1.95</td>
+                      <td data-label="KV (GB) ↓">16.95</td>
+                      <td data-label="KV reduction">74.88%</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">LongLive</th>
+                      <td data-label="KV precision">INT6</td>
+                      <td data-label="Total Quality ↑">80.94</td>
+                      <td data-label="Δ vs. BF16">+0.02</td>
+                      <td data-label="KV (GB) ↓">26.19</td>
+                      <td data-label="KV reduction">59.25%</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">LongLive</th>
+                      <td data-label="KV precision">INT4</td>
+                      <td data-label="Total Quality ↑">79.60</td>
+                      <td data-label="Δ vs. BF16">-1.32</td>
+                      <td data-label="KV (GB) ↓">16.15</td>
+                      <td data-label="KV reduction">74.88%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
             <div aria-label="Complete paper Table 4" class="metrics-scroll" role="region" tabindex="0">
               <table data-paper-table="4">
                 <caption>
-                  Table 4 · all reported configurations and metrics · horizontal scroll reveals additional columns
+                  Table 4. Next-frame video generation with Self-Forcing and LongLive.
                 </caption>
                 <thead>
+                  <tr class="metric-groups">
+                    <th rowspan="2" scope="col">Method</th>
+                    <th rowspan="2" scope="col">KV precision</th>
+                    <th colspan="6" scope="colgroup">VBench ↑</th>
+                    <th colspan="3" scope="colgroup">Claude Opus 4.7 · VLM judge ↑ (1–5)</th>
+                    <th colspan="2" scope="colgroup">KV cache</th>
+                  </tr>
                   <tr>
-                    <th scope="col">Method</th>
-                    <th scope="col">KV precision</th>
                     <th scope="col">Subject Consistency ↑</th>
                     <th scope="col">Background Consistency ↑</th>
                     <th scope="col">Motion Smoothness ↑</th>
                     <th scope="col">Dynamic Degree ↑</th>
                     <th scope="col">Aesthetic Quality ↑</th>
                     <th scope="col">Total Quality ↑</th>
-                    <th scope="col">Opus Visual ↑</th>
-                    <th scope="col">Opus Dynamic ↑</th>
-                    <th scope="col">Opus Text ↑</th>
-                    <th scope="col">KV (GB) ↓</th>
-                    <th scope="col">KV saved</th>
+                    <th scope="col">Visual Quality ↑</th>
+                    <th scope="col">Dynamics ↑</th>
+                    <th scope="col">Text Alignment ↑</th>
+                    <th scope="col">Memory (GB) ↓</th>
+                    <th scope="col">Reduction (%) ↑</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr class="model-divider">
                     <th colspan="13" scope="rowgroup">Self-Forcing · Next-frame video / 1.3B · 5-second clips · batch 12</th>
                   </tr>
-                  <tr>
-                    <th scope="row">BF16</th>
+                  <tr class="precision-start">
+                    <th scope="row">Baseline</th>
                     <td>BF16</td>
                     <td>93.57</td>
                     <td>94.07</td>
@@ -687,52 +809,52 @@
                     <td>67.49</td>
                     <td>—</td>
                   </tr>
-                  <tr>
+                  <tr class="precision-start">
                     <th scope="row">FlexGen</th>
                     <td>INT6</td>
                     <td>93.52</td>
                     <td>94.11</td>
-                    <td>98.44</td>
-                    <td>76.00</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">98.44</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">76.00</td>
                     <td>60.02</td>
-                    <td>82.98</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">82.98</td>
                     <td>3.79</td>
-                    <td>3.15</td>
-                    <td>3.73</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">3.15</td>
+                    <td class="metric-best" title="Best among methods at this precision">3.73</td>
                     <td>27.95</td>
                     <td>58.59%</td>
                   </tr>
                   <tr>
                     <th scope="row">KIVI</th>
                     <td>INT6</td>
-                    <td>93.58</td>
-                    <td>94.12</td>
-                    <td>98.49</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">93.58</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">94.12</td>
+                    <td class="metric-best" title="Best among methods at this precision">98.49</td>
                     <td>73.00</td>
-                    <td>60.07</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">60.07</td>
                     <td>82.85</td>
-                    <td>3.82</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">3.82</td>
                     <td>3.14</td>
-                    <td>3.63</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">3.63</td>
                     <td>28.22</td>
                     <td>58.18%</td>
                   </tr>
                   <tr class="highlight">
                     <th scope="row">VAR-Q</th>
                     <td>INT6</td>
-                    <td>93.96</td>
-                    <td>94.76</td>
-                    <td>98.49</td>
-                    <td>76.50</td>
-                    <td>61.25</td>
-                    <td>83.34</td>
-                    <td>3.89</td>
-                    <td>3.17</td>
+                    <td class="metric-best" title="Best among methods at this precision">93.96</td>
+                    <td class="metric-best" title="Best among methods at this precision">94.76</td>
+                    <td class="metric-best" title="Best among methods at this precision">98.49</td>
+                    <td class="metric-best" title="Best among methods at this precision">76.50</td>
+                    <td class="metric-best" title="Best among methods at this precision">61.25</td>
+                    <td class="metric-best" title="Best among methods at this precision">83.34</td>
+                    <td class="metric-best" title="Best among methods at this precision">3.89</td>
+                    <td class="metric-best" title="Best among methods at this precision">3.17</td>
                     <td>3.62</td>
                     <td>27.50</td>
                     <td>59.25%</td>
                   </tr>
-                  <tr>
+                  <tr class="precision-start">
                     <th scope="row">FlexGen</th>
                     <td>INT4</td>
                     <td>86.39</td>
@@ -741,47 +863,49 @@
                     <td>73.00</td>
                     <td>57.39</td>
                     <td>75.91</td>
-                    <td>3.60</td>
+                    <td class="metric-best" title="Best among methods at this precision">3.60</td>
                     <td>3.40</td>
-                    <td>3.75</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">3.75</td>
                     <td>17.40</td>
                     <td>74.22%</td>
                   </tr>
                   <tr>
                     <th scope="row">KIVI</th>
                     <td>INT4</td>
-                    <td>90.53</td>
-                    <td>91.86</td>
-                    <td>98.29</td>
-                    <td>74.50</td>
-                    <td>57.64</td>
-                    <td>80.33</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">90.53</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">91.86</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">98.29</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">74.50</td>
+                    <td class="metric-best" title="Best among methods at this precision">57.64</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">80.33</td>
                     <td>3.54</td>
-                    <td>3.44</td>
-                    <td>3.76</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">3.44</td>
+                    <td class="metric-best" title="Best among methods at this precision">3.76</td>
                     <td>17.68</td>
                     <td>73.81%</td>
                   </tr>
                   <tr class="highlight">
                     <th scope="row">VAR-Q</th>
                     <td>INT4</td>
-                    <td>91.28</td>
-                    <td>92.55</td>
-                    <td>98.35</td>
-                    <td>75.50</td>
-                    <td>57.40</td>
-                    <td>80.99</td>
-                    <td>3.55</td>
-                    <td>3.50</td>
+                    <td class="metric-best" title="Best among methods at this precision">91.28</td>
+                    <td class="metric-best" title="Best among methods at this precision">92.55</td>
+                    <td class="metric-best" title="Best among methods at this precision">98.35</td>
+                    <td class="metric-best" title="Best among methods at this precision">75.50</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">57.40</td>
+                    <td class="metric-best" title="Best among methods at this precision">80.99</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">3.55</td>
+                    <td class="metric-best" title="Best among methods at this precision">3.50</td>
                     <td>3.73</td>
                     <td>16.95</td>
                     <td>74.88%</td>
                   </tr>
+                </tbody>
+                <tbody>
                   <tr class="model-divider">
                     <th colspan="13" scope="rowgroup">LongLive · Next-frame video / 1.3B · 30-second clips · batch 20</th>
                   </tr>
-                  <tr>
-                    <th scope="row">BF16</th>
+                  <tr class="precision-start">
+                    <th scope="row">Baseline</th>
                     <td>BF16</td>
                     <td>91.44</td>
                     <td>93.83</td>
@@ -795,18 +919,18 @@
                     <td>64.28</td>
                     <td>—</td>
                   </tr>
-                  <tr>
+                  <tr class="precision-start">
                     <th scope="row">FlexGen</th>
                     <td>INT6</td>
-                    <td>91.33</td>
-                    <td>93.49</td>
-                    <td>98.95</td>
-                    <td>46.50</td>
-                    <td>60.29</td>
+                    <td class="metric-best" title="Best among methods at this precision">91.33</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">93.49</td>
+                    <td class="metric-best" title="Best among methods at this precision">98.95</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">46.50</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">60.29</td>
                     <td>80.60</td>
-                    <td>3.78</td>
-                    <td>3.33</td>
-                    <td>3.78</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">3.78</td>
+                    <td class="metric-best" title="Best among methods at this precision">3.33</td>
+                    <td class="metric-best" title="Best among methods at this precision">3.78</td>
                     <td>26.62</td>
                     <td>58.59%</td>
                   </tr>
@@ -815,10 +939,10 @@
                     <td>INT6</td>
                     <td>91.14</td>
                     <td>93.45</td>
-                    <td>98.94</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">98.94</td>
                     <td>43.50</td>
-                    <td>60.36</td>
-                    <td>80.65</td>
+                    <td class="metric-best" title="Best among methods at this precision">60.36</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">80.65</td>
                     <td>3.73</td>
                     <td>3.27</td>
                     <td>3.70</td>
@@ -828,28 +952,28 @@
                   <tr class="highlight">
                     <th scope="row">VAR-Q</th>
                     <td>INT6</td>
-                    <td>91.26</td>
-                    <td>93.57</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">91.26</td>
+                    <td class="metric-best" title="Best among methods at this precision">93.57</td>
                     <td>98.93</td>
-                    <td>47.50</td>
+                    <td class="metric-best" title="Best among methods at this precision">47.50</td>
                     <td>60.17</td>
-                    <td>80.94</td>
-                    <td>3.84</td>
-                    <td>3.31</td>
-                    <td>3.71</td>
+                    <td class="metric-best" title="Best among methods at this precision">80.94</td>
+                    <td class="metric-best" title="Best among methods at this precision">3.84</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">3.31</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">3.71</td>
                     <td>26.19</td>
                     <td>59.25%</td>
                   </tr>
-                  <tr>
+                  <tr class="precision-start">
                     <th scope="row">FlexGen</th>
                     <td>INT4</td>
-                    <td>86.72</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">86.72</td>
                     <td>90.19</td>
                     <td>95.83</td>
                     <td>45.00</td>
                     <td>55.16</td>
                     <td>76.59</td>
-                    <td>3.48</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">3.48</td>
                     <td>3.48</td>
                     <td>3.77</td>
                     <td>16.57</td>
@@ -859,41 +983,50 @@
                     <th scope="row">KIVI</th>
                     <td>INT4</td>
                     <td>85.83</td>
-                    <td>92.09</td>
-                    <td>97.80</td>
-                    <td>49.50</td>
-                    <td>56.59</td>
-                    <td>78.95</td>
-                    <td>3.48</td>
-                    <td>3.55</td>
-                    <td>3.79</td>
+                    <td class="metric-best" title="Best among methods at this precision">92.09</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">97.80</td>
+                    <td class="metric-best" title="Best among methods at this precision">49.50</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">56.59</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">78.95</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">3.48</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">3.55</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">3.79</td>
                     <td>16.84</td>
                     <td>73.81%</td>
                   </tr>
                   <tr class="highlight">
                     <th scope="row">VAR-Q</th>
                     <td>INT4</td>
-                    <td>88.39</td>
-                    <td>91.97</td>
-                    <td>98.80</td>
-                    <td>47.50</td>
-                    <td>57.11</td>
-                    <td>79.60</td>
-                    <td>3.54</td>
-                    <td>3.57</td>
-                    <td>3.80</td>
+                    <td class="metric-best" title="Best among methods at this precision">88.39</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">91.97</td>
+                    <td class="metric-best" title="Best among methods at this precision">98.80</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">47.50</td>
+                    <td class="metric-best" title="Best among methods at this precision">57.11</td>
+                    <td class="metric-best" title="Best among methods at this precision">79.60</td>
+                    <td class="metric-best" title="Best among methods at this precision">3.54</td>
+                    <td class="metric-best" title="Best among methods at this precision">3.57</td>
+                    <td class="metric-best" title="Best among methods at this precision">3.80</td>
                     <td>16.15</td>
                     <td>74.88%</td>
                   </tr>
                 </tbody>
               </table>
             </div>
+            <p class="table-note">
+              <strong>Bold</strong> and <span class="metric-second">underline</span> mark the best and second-best quality scores among quantized
+              methods at the same precision, within each model. BF16 is the reference. ↑ Higher is better; ↓ lower is better. Memory reduction is
+              relative to BF16 at the listed batch size.
+            </p>
+            <p class="table-note judge-note">
+              VLM evaluation uses Claude Opus 4.7 (Opus4.7-VL in the paper). The judge rates visual quality, dynamics, and text alignment on a 1–5
+              scale using 12 uniformly sampled frames and the generation prompt. These ratings are separate from VBench scores.
+            </p>
           </article>
           <article class="paper-result-block" id="full-table-2a">
             <div class="paper-table-heading">
               <div>
-                <p class="eyebrow">Table 2a · complete results</p>
-                <h3>Next-scale images: distribution quality and fidelity.</h3>
+                <p class="eyebrow">Table 2a</p>
+                <h3>Class-conditional image generation</h3>
               </div>
               <a href="/assets/pdf/VAR-Q.pdf#page=7">Source table ↗</a>
             </div>
@@ -904,12 +1037,17 @@
             <div aria-label="Complete paper Table 2a" class="metrics-scroll" role="region" tabindex="0">
               <table data-paper-table="2a">
                 <caption>
-                  Table 2a · all reported configurations and metrics · horizontal scroll reveals additional columns
+                  Table 2a. Class-conditional image generation with VAR.
                 </caption>
                 <thead>
+                  <tr class="metric-groups">
+                    <th rowspan="2" scope="col">Method</th>
+                    <th rowspan="2" scope="col">KV precision</th>
+                    <th colspan="4" scope="colgroup">Distribution quality</th>
+                    <th colspan="3" scope="colgroup">Fidelity to BF16</th>
+                    <th colspan="2" scope="colgroup">KV cache</th>
+                  </tr>
                   <tr>
-                    <th scope="col">Method</th>
-                    <th scope="col">KV precision</th>
                     <th scope="col">FID ↓</th>
                     <th scope="col">IS ↑</th>
                     <th scope="col">Precision ↑</th>
@@ -917,16 +1055,16 @@
                     <th scope="col">PSNR ↑</th>
                     <th scope="col">SSIM ↑</th>
                     <th scope="col">LPIPS ↓</th>
-                    <th scope="col">KV (GB) ↓</th>
-                    <th scope="col">KV saved</th>
+                    <th scope="col">Memory (GB) ↓</th>
+                    <th scope="col">Reduction (%) ↑</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr class="model-divider">
                     <th colspan="11" scope="rowgroup">VAR-d20 · Next-scale image / 600M · ImageNet 256×256 · batch 128</th>
                   </tr>
-                  <tr>
-                    <th scope="row">BF16</th>
+                  <tr class="precision-start">
+                    <th scope="row">Baseline</th>
                     <td>BF16</td>
                     <td>4.11</td>
                     <td>357.32</td>
@@ -938,15 +1076,15 @@
                     <td>16.60</td>
                     <td>—</td>
                   </tr>
-                  <tr>
+                  <tr class="precision-start">
                     <th scope="row">FlexGen</th>
                     <td>INT4</td>
                     <td>4.03</td>
                     <td>325.39</td>
                     <td>0.8326</td>
                     <td>0.5230</td>
-                    <td>11.84</td>
-                    <td>0.264</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">11.84</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">0.264</td>
                     <td>0.553</td>
                     <td>4.29</td>
                     <td>74.14%</td>
@@ -954,48 +1092,48 @@
                   <tr>
                     <th scope="row">KIVI</th>
                     <td>INT4</td>
-                    <td>3.55</td>
-                    <td>341.52</td>
-                    <td>0.8458</td>
-                    <td>0.5363</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">3.55</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">341.52</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">0.8458</td>
+                    <td class="metric-best" title="Best among methods at this precision">0.5363</td>
                     <td>11.81</td>
                     <td>0.256</td>
-                    <td>0.552</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">0.552</td>
                     <td>4.65</td>
                     <td>71.97%</td>
                   </tr>
                   <tr class="highlight">
                     <th scope="row">VAR-Q</th>
                     <td>INT4</td>
-                    <td>3.44</td>
-                    <td>342.77</td>
-                    <td>0.8502</td>
-                    <td>0.5281</td>
-                    <td>13.22</td>
-                    <td>0.308</td>
-                    <td>0.462</td>
+                    <td class="metric-best" title="Best among methods at this precision">3.44</td>
+                    <td class="metric-best" title="Best among methods at this precision">342.77</td>
+                    <td class="metric-best" title="Best among methods at this precision">0.8502</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">0.5281</td>
+                    <td class="metric-best" title="Best among methods at this precision">13.22</td>
+                    <td class="metric-best" title="Best among methods at this precision">0.308</td>
+                    <td class="metric-best" title="Best among methods at this precision">0.462</td>
                     <td>4.64</td>
                     <td>72.06%</td>
                   </tr>
-                  <tr>
+                  <tr class="precision-start">
                     <th scope="row">FlexGen</th>
                     <td>INT3</td>
                     <td>15.33</td>
                     <td>139.59</td>
                     <td>0.5944</td>
-                    <td>0.6308</td>
-                    <td>10.35</td>
-                    <td>0.212</td>
-                    <td>0.650</td>
+                    <td class="metric-best" title="Best among methods at this precision">0.6308</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">10.35</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">0.212</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">0.650</td>
                     <td>3.46</td>
                     <td>79.14%</td>
                   </tr>
                   <tr>
                     <th scope="row">KIVI</th>
                     <td>INT3</td>
-                    <td>6.36</td>
-                    <td>233.84</td>
-                    <td>0.7260</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">6.36</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">233.84</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">0.7260</td>
                     <td>0.5748</td>
                     <td>9.88</td>
                     <td>0.187</td>
@@ -1006,21 +1144,23 @@
                   <tr class="highlight">
                     <th scope="row">VAR-Q</th>
                     <td>INT3</td>
-                    <td>3.77</td>
-                    <td>262.24</td>
-                    <td>0.7706</td>
-                    <td>0.5767</td>
-                    <td>12.24</td>
-                    <td>0.266</td>
-                    <td>0.538</td>
+                    <td class="metric-best" title="Best among methods at this precision">3.77</td>
+                    <td class="metric-best" title="Best among methods at this precision">262.24</td>
+                    <td class="metric-best" title="Best among methods at this precision">0.7706</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">0.5767</td>
+                    <td class="metric-best" title="Best among methods at this precision">12.24</td>
+                    <td class="metric-best" title="Best among methods at this precision">0.266</td>
+                    <td class="metric-best" title="Best among methods at this precision">0.538</td>
                     <td>3.81</td>
                     <td>77.06%</td>
                   </tr>
+                </tbody>
+                <tbody>
                   <tr class="model-divider">
                     <th colspan="11" scope="rowgroup">VAR-d24 · Next-scale image / 1.0B · ImageNet 256×256 · batch 128</th>
                   </tr>
-                  <tr>
-                    <th scope="row">BF16</th>
+                  <tr class="precision-start">
+                    <th scope="row">Baseline</th>
                     <td>BF16</td>
                     <td>2.97</td>
                     <td>357.24</td>
@@ -1032,13 +1172,13 @@
                     <td>23.91</td>
                     <td>—</td>
                   </tr>
-                  <tr>
+                  <tr class="precision-start">
                     <th scope="row">FlexGen</th>
                     <td>INT4</td>
                     <td>2.74</td>
                     <td>325.69</td>
                     <td>0.8175</td>
-                    <td>0.5816</td>
+                    <td class="metric-best" title="Best among methods at this precision">0.5816</td>
                     <td>11.78</td>
                     <td>0.256</td>
                     <td>0.560</td>
@@ -1048,36 +1188,36 @@
                   <tr>
                     <th scope="row">KIVI</th>
                     <td>INT4</td>
-                    <td>2.56</td>
-                    <td>340.55</td>
-                    <td>0.8295</td>
-                    <td>0.5786</td>
-                    <td>11.92</td>
-                    <td>0.268</td>
-                    <td>0.545</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">2.56</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">340.55</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">0.8295</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">0.5786</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">11.92</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">0.268</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">0.545</td>
                     <td>6.70</td>
                     <td>71.97%</td>
                   </tr>
                   <tr class="highlight">
                     <th scope="row">VAR-Q</th>
                     <td>INT4</td>
-                    <td>2.52</td>
-                    <td>341.60</td>
-                    <td>0.8321</td>
+                    <td class="metric-best" title="Best among methods at this precision">2.52</td>
+                    <td class="metric-best" title="Best among methods at this precision">341.60</td>
+                    <td class="metric-best" title="Best among methods at this precision">0.8321</td>
                     <td>0.5718</td>
-                    <td>13.03</td>
-                    <td>0.296</td>
-                    <td>0.479</td>
+                    <td class="metric-best" title="Best among methods at this precision">13.03</td>
+                    <td class="metric-best" title="Best among methods at this precision">0.296</td>
+                    <td class="metric-best" title="Best among methods at this precision">0.479</td>
                     <td>6.68</td>
                     <td>72.06%</td>
                   </tr>
-                  <tr>
+                  <tr class="precision-start">
                     <th scope="row">FlexGen</th>
                     <td>INT3</td>
                     <td>14.91</td>
                     <td>144.09</td>
                     <td>0.6066</td>
-                    <td>0.6424</td>
+                    <td class="metric-best" title="Best among methods at this precision">0.6424</td>
                     <td>10.63</td>
                     <td>0.201</td>
                     <td>0.643</td>
@@ -1087,34 +1227,36 @@
                   <tr>
                     <th scope="row">KIVI</th>
                     <td>INT3</td>
-                    <td>4.29</td>
-                    <td>239.40</td>
-                    <td>0.7271</td>
-                    <td>0.6340</td>
-                    <td>10.88</td>
-                    <td>0.226</td>
-                    <td>0.631</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">4.29</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">239.40</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">0.7271</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">0.6340</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">10.88</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">0.226</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">0.631</td>
                     <td>5.51</td>
                     <td>76.97%</td>
                   </tr>
                   <tr class="highlight">
                     <th scope="row">VAR-Q</th>
                     <td>INT3</td>
-                    <td>3.60</td>
-                    <td>258.33</td>
-                    <td>0.7477</td>
+                    <td class="metric-best" title="Best among methods at this precision">3.60</td>
+                    <td class="metric-best" title="Best among methods at this precision">258.33</td>
+                    <td class="metric-best" title="Best among methods at this precision">0.7477</td>
                     <td>0.6130</td>
-                    <td>11.90</td>
-                    <td>0.252</td>
-                    <td>0.558</td>
+                    <td class="metric-best" title="Best among methods at this precision">11.90</td>
+                    <td class="metric-best" title="Best among methods at this precision">0.252</td>
+                    <td class="metric-best" title="Best among methods at this precision">0.558</td>
                     <td>5.48</td>
                     <td>77.06%</td>
                   </tr>
+                </tbody>
+                <tbody>
                   <tr class="model-divider">
                     <th colspan="11" scope="rowgroup">VAR-d30 · Next-scale image / 2.0B · ImageNet 256×256 · batch 128</th>
                   </tr>
-                  <tr>
-                    <th scope="row">BF16</th>
+                  <tr class="precision-start">
+                    <th scope="row">Baseline</th>
                     <td>BF16</td>
                     <td>2.07</td>
                     <td>335.10</td>
@@ -1126,13 +1268,13 @@
                     <td>37.35</td>
                     <td>—</td>
                   </tr>
-                  <tr>
+                  <tr class="precision-start">
                     <th scope="row">FlexGen</th>
                     <td>INT4</td>
                     <td>2.00</td>
                     <td>307.92</td>
                     <td>0.8061</td>
-                    <td>0.6006</td>
+                    <td class="metric-best" title="Best among methods at this precision">0.6006</td>
                     <td>12.47</td>
                     <td>0.277</td>
                     <td>0.510</td>
@@ -1142,36 +1284,36 @@
                   <tr>
                     <th scope="row">KIVI</th>
                     <td>INT4</td>
-                    <td>1.99</td>
-                    <td>321.46</td>
-                    <td>0.8162</td>
-                    <td>0.5974</td>
-                    <td>12.86</td>
-                    <td>0.290</td>
-                    <td>0.484</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">1.99</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">321.46</td>
+                    <td class="metric-best" title="Best among methods at this precision">0.8162</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">0.5974</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">12.86</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">0.290</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">0.484</td>
                     <td>10.47</td>
                     <td>71.97%</td>
                   </tr>
                   <tr class="highlight">
                     <th scope="row">VAR-Q</th>
                     <td>INT4</td>
-                    <td>1.97</td>
-                    <td>323.67</td>
-                    <td>0.8156</td>
+                    <td class="metric-best" title="Best among methods at this precision">1.97</td>
+                    <td class="metric-best" title="Best among methods at this precision">323.67</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">0.8156</td>
                     <td>0.5961</td>
-                    <td>13.54</td>
-                    <td>0.312</td>
-                    <td>0.437</td>
+                    <td class="metric-best" title="Best among methods at this precision">13.54</td>
+                    <td class="metric-best" title="Best among methods at this precision">0.312</td>
+                    <td class="metric-best" title="Best among methods at this precision">0.437</td>
                     <td>10.44</td>
                     <td>72.06%</td>
                   </tr>
-                  <tr>
+                  <tr class="precision-start">
                     <th scope="row">FlexGen</th>
                     <td>INT3</td>
                     <td>9.52</td>
                     <td>180.57</td>
                     <td>0.6738</td>
-                    <td>0.6417</td>
+                    <td class="metric-best" title="Best among methods at this precision">0.6417</td>
                     <td>11.33</td>
                     <td>0.232</td>
                     <td>0.597</td>
@@ -1181,74 +1323,84 @@
                   <tr>
                     <th scope="row">KIVI</th>
                     <td>INT3</td>
-                    <td>3.26</td>
-                    <td>264.93</td>
-                    <td>0.7536</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">3.26</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">264.93</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">0.7536</td>
                     <td>0.6189</td>
-                    <td>11.69</td>
-                    <td>0.249</td>
-                    <td>0.573</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">11.69</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">0.249</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">0.573</td>
                     <td>8.60</td>
                     <td>76.97%</td>
                   </tr>
                   <tr class="highlight">
                     <th scope="row">VAR-Q</th>
                     <td>INT3</td>
-                    <td>3.05</td>
-                    <td>268.16</td>
-                    <td>0.7612</td>
-                    <td>0.6307</td>
-                    <td>12.41</td>
-                    <td>0.270</td>
-                    <td>0.517</td>
+                    <td class="metric-best" title="Best among methods at this precision">3.05</td>
+                    <td class="metric-best" title="Best among methods at this precision">268.16</td>
+                    <td class="metric-best" title="Best among methods at this precision">0.7612</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">0.6307</td>
+                    <td class="metric-best" title="Best among methods at this precision">12.41</td>
+                    <td class="metric-best" title="Best among methods at this precision">0.270</td>
+                    <td class="metric-best" title="Best among methods at this precision">0.517</td>
                     <td>8.57</td>
                     <td>77.06%</td>
                   </tr>
                 </tbody>
               </table>
             </div>
+            <p class="table-note">
+              <strong>Bold</strong> and <span class="metric-second">underline</span> mark the best and second-best quality scores among quantized
+              methods at the same precision, within each model. BF16 is the reference. ↑ Higher is better; ↓ lower is better. Memory reduction is
+              relative to BF16 at the listed batch size.
+            </p>
           </article>
           <article class="paper-result-block" id="full-table-2b">
             <div class="paper-table-heading">
               <div>
-                <p class="eyebrow">Table 2b · complete results</p>
-                <h3>Text-to-image: inspect compositional alignment.</h3>
+                <p class="eyebrow">Table 2b</p>
+                <h3>Text-to-image generation</h3>
               </div>
               <a href="/assets/pdf/VAR-Q.pdf#page=7">Source table ↗</a>
             </div>
             <p class="table-takeaway">
-              GenEval and DPG expose different aspects of prompt following. All reported INT8, INT4, INT3, and INT2 configurations are included, where
-              available.
+              GenEval measures compositional prompt following, while DPG evaluates finer-grained alignment. Infinity-8B retains a DPG Overall score of
+              83.83 at INT2, using 8.60 GB of KV memory versus 67.43 GB for BF16.
             </p>
             <div aria-label="Complete paper Table 2b" class="metrics-scroll" role="region" tabindex="0">
               <table data-paper-table="2b">
                 <caption>
-                  Table 2b · all reported configurations and metrics · horizontal scroll reveals additional columns
+                  Table 2b. Text-to-image generation with Infinity.
                 </caption>
                 <thead>
+                  <tr class="metric-groups">
+                    <th rowspan="2" scope="col">Method</th>
+                    <th rowspan="2" scope="col">KV precision</th>
+                    <th colspan="4" scope="colgroup">GenEval ↑</th>
+                    <th colspan="6" scope="colgroup">DPG ↑</th>
+                    <th colspan="2" scope="colgroup">KV cache</th>
+                  </tr>
                   <tr>
-                    <th scope="col">Method</th>
-                    <th scope="col">KV precision</th>
-                    <th scope="col">GenEval Two-Object ↑</th>
-                    <th scope="col">GenEval Position ↑</th>
-                    <th scope="col">GenEval Color ↑</th>
-                    <th scope="col">GenEval Overall ↑</th>
-                    <th scope="col">DPG Entity ↑</th>
-                    <th scope="col">DPG Relation ↑</th>
-                    <th scope="col">DPG Attribute ↑</th>
-                    <th scope="col">DPG Global ↑</th>
-                    <th scope="col">DPG Other ↑</th>
-                    <th scope="col">DPG Overall ↑</th>
-                    <th scope="col">KV (GB) ↓</th>
-                    <th scope="col">KV saved</th>
+                    <th scope="col">Two-Object ↑</th>
+                    <th scope="col">Position ↑</th>
+                    <th scope="col">Color ↑</th>
+                    <th scope="col">Overall ↑</th>
+                    <th scope="col">Entity ↑</th>
+                    <th scope="col">Relation ↑</th>
+                    <th scope="col">Attribute ↑</th>
+                    <th scope="col">Global ↑</th>
+                    <th scope="col">Other ↑</th>
+                    <th scope="col">Overall ↑</th>
+                    <th scope="col">Memory (GB) ↓</th>
+                    <th scope="col">Reduction (%) ↑</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr class="model-divider">
                     <th colspan="14" scope="rowgroup">Infinity-2B · Next-scale image / Text-to-image · batch 8</th>
                   </tr>
-                  <tr>
-                    <th scope="row">BF16</th>
+                  <tr class="precision-start">
+                    <th scope="row">Baseline</th>
                     <td>BF16</td>
                     <td>80.61</td>
                     <td>25.51</td>
@@ -1263,7 +1415,7 @@
                     <td>41.10</td>
                     <td>—</td>
                   </tr>
-                  <tr class="highlight">
+                  <tr class="highlight precision-start">
                     <th scope="row">VAR-Q</th>
                     <td>INT8</td>
                     <td>79.34</td>
@@ -1279,33 +1431,33 @@
                     <td>20.65</td>
                     <td>49.75%</td>
                   </tr>
-                  <tr>
+                  <tr class="precision-start">
                     <th scope="row">FlexGen</th>
                     <td>INT4</td>
                     <td>78.57</td>
-                    <td>24.75</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">24.75</td>
                     <td>54.50</td>
-                    <td>67.75</td>
-                    <td>87.39</td>
-                    <td>91.56</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">67.75</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">87.39</td>
+                    <td class="metric-best" title="Best among methods at this precision">91.56</td>
                     <td>85.38</td>
                     <td>82.24</td>
-                    <td>82.04</td>
-                    <td>81.01</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">82.04</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">81.01</td>
                     <td>10.60</td>
                     <td>74.22%</td>
                   </tr>
                   <tr>
                     <th scope="row">KIVI</th>
                     <td>INT4</td>
-                    <td>80.61</td>
+                    <td class="metric-best" title="Best among methods at this precision">80.61</td>
                     <td>24.49</td>
-                    <td>87.23</td>
+                    <td class="metric-best" title="Best among methods at this precision">87.23</td>
                     <td>67.48</td>
-                    <td>88.18</td>
-                    <td>91.13</td>
-                    <td>86.51</td>
-                    <td>83.18</td>
+                    <td class="metric-best" title="Best among methods at this precision">88.18</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">91.13</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">86.51</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">83.18</td>
                     <td>80.81</td>
                     <td>80.04</td>
                     <td>10.78</td>
@@ -1314,56 +1466,58 @@
                   <tr class="highlight">
                     <th scope="row">VAR-Q</th>
                     <td>INT4</td>
-                    <td>79.34</td>
-                    <td>26.01</td>
-                    <td>86.97</td>
-                    <td>69.35</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">79.34</td>
+                    <td class="metric-best" title="Best among methods at this precision">26.01</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">86.97</td>
+                    <td class="metric-best" title="Best among methods at this precision">69.35</td>
                     <td>87.24</td>
                     <td>89.60</td>
-                    <td>87.43</td>
-                    <td>86.75</td>
-                    <td>90.13</td>
-                    <td>82.02</td>
+                    <td class="metric-best" title="Best among methods at this precision">87.43</td>
+                    <td class="metric-best" title="Best among methods at this precision">86.75</td>
+                    <td class="metric-best" title="Best among methods at this precision">90.13</td>
+                    <td class="metric-best" title="Best among methods at this precision">82.02</td>
                     <td>10.38</td>
                     <td>74.75%</td>
                   </tr>
-                  <tr>
+                  <tr class="precision-start">
                     <th scope="row">KIVI</th>
                     <td>INT3</td>
-                    <td>77.30</td>
-                    <td>26.26</td>
-                    <td>86.70</td>
-                    <td>67.56</td>
-                    <td>87.12</td>
-                    <td>92.39</td>
-                    <td>85.66</td>
-                    <td>82.94</td>
-                    <td>79.31</td>
-                    <td>80.76</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">77.30</td>
+                    <td class="metric-best" title="Best among methods at this precision">26.26</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">86.70</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">67.56</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">87.12</td>
+                    <td class="metric-best" title="Best among methods at this precision">92.39</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">85.66</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">82.94</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">79.31</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">80.76</td>
                     <td>8.73</td>
                     <td>78.76%</td>
                   </tr>
                   <tr class="highlight">
                     <th scope="row">VAR-Q</th>
                     <td>INT3</td>
-                    <td>78.32</td>
-                    <td>24.24</td>
-                    <td>88.03</td>
-                    <td>68.04</td>
-                    <td>87.74</td>
-                    <td>89.92</td>
-                    <td>87.01</td>
-                    <td>85.13</td>
-                    <td>87.01</td>
-                    <td>81.18</td>
+                    <td class="metric-best" title="Best among methods at this precision">78.32</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">24.24</td>
+                    <td class="metric-best" title="Best among methods at this precision">88.03</td>
+                    <td class="metric-best" title="Best among methods at this precision">68.04</td>
+                    <td class="metric-best" title="Best among methods at this precision">87.74</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">89.92</td>
+                    <td class="metric-best" title="Best among methods at this precision">87.01</td>
+                    <td class="metric-best" title="Best among methods at this precision">85.13</td>
+                    <td class="metric-best" title="Best among methods at this precision">87.01</td>
+                    <td class="metric-best" title="Best among methods at this precision">81.18</td>
                     <td>8.32</td>
                     <td>79.75%</td>
                   </tr>
+                </tbody>
+                <tbody>
                   <tr class="model-divider">
                     <th colspan="14" scope="rowgroup">Infinity-8B · Next-scale image / Text-to-image · batch 6</th>
                   </tr>
-                  <tr>
-                    <th scope="row">BF16</th>
+                  <tr class="precision-start">
+                    <th scope="row">Baseline</th>
                     <td>BF16</td>
                     <td>95.41</td>
                     <td>62.12</td>
@@ -1378,7 +1532,7 @@
                     <td>67.43</td>
                     <td>—</td>
                   </tr>
-                  <tr class="highlight">
+                  <tr class="highlight precision-start">
                     <th scope="row">VAR-Q</th>
                     <td>INT8</td>
                     <td>96.43</td>
@@ -1394,18 +1548,18 @@
                     <td>33.88</td>
                     <td>49.75%</td>
                   </tr>
-                  <tr>
+                  <tr class="precision-start">
                     <th scope="row">FlexGen</th>
                     <td>INT4</td>
                     <td>95.41</td>
                     <td>60.89</td>
                     <td>89.02</td>
                     <td>82.45</td>
-                    <td>90.75</td>
-                    <td>92.33</td>
-                    <td>89.15</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">90.75</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">92.33</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">89.15</td>
                     <td>85.04</td>
-                    <td>84.49</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">84.49</td>
                     <td>84.58</td>
                     <td>17.38</td>
                     <td>74.22%</td>
@@ -1413,68 +1567,68 @@
                   <tr>
                     <th scope="row">KIVI</th>
                     <td>INT4</td>
-                    <td>95.66</td>
-                    <td>65.40</td>
-                    <td>91.22</td>
-                    <td>83.26</td>
-                    <td>91.13</td>
-                    <td>94.10</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">95.66</td>
+                    <td class="metric-best" title="Best among methods at this precision">65.40</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">91.22</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">83.26</td>
+                    <td class="metric-best" title="Best among methods at this precision">91.13</td>
+                    <td class="metric-best" title="Best among methods at this precision">94.10</td>
                     <td>88.93</td>
-                    <td>85.67</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">85.67</td>
                     <td>82.04</td>
-                    <td>85.74</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">85.74</td>
                     <td>17.69</td>
                     <td>73.76%</td>
                   </tr>
                   <tr class="highlight">
                     <th scope="row">VAR-Q</th>
                     <td>INT4</td>
-                    <td>95.92</td>
-                    <td>63.64</td>
-                    <td>91.49</td>
-                    <td>83.67</td>
+                    <td class="metric-best" title="Best among methods at this precision">95.92</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">63.64</td>
+                    <td class="metric-best" title="Best among methods at this precision">91.49</td>
+                    <td class="metric-best" title="Best among methods at this precision">83.67</td>
                     <td>90.70</td>
                     <td>91.99</td>
-                    <td>91.07</td>
-                    <td>87.47</td>
-                    <td>89.23</td>
-                    <td>85.90</td>
+                    <td class="metric-best" title="Best among methods at this precision">91.07</td>
+                    <td class="metric-best" title="Best among methods at this precision">87.47</td>
+                    <td class="metric-best" title="Best among methods at this precision">89.23</td>
+                    <td class="metric-best" title="Best among methods at this precision">85.90</td>
                     <td>17.03</td>
                     <td>74.75%</td>
                   </tr>
-                  <tr>
+                  <tr class="precision-start">
                     <th scope="row">KIVI</th>
                     <td>INT3</td>
-                    <td>95.66</td>
-                    <td>63.38</td>
-                    <td>91.49</td>
-                    <td>82.75</td>
-                    <td>87.74</td>
-                    <td>94.33</td>
-                    <td>88.97</td>
-                    <td>84.05</td>
-                    <td>85.71</td>
-                    <td>84.89</td>
+                    <td class="metric-best" title="Best among methods at this precision">95.66</td>
+                    <td class="metric-best" title="Best among methods at this precision">63.38</td>
+                    <td class="metric-best" title="Best among methods at this precision">91.49</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">82.75</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">87.74</td>
+                    <td class="metric-best" title="Best among methods at this precision">94.33</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">88.97</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">84.05</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">85.71</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">84.89</td>
                     <td>14.32</td>
                     <td>78.76%</td>
                   </tr>
                   <tr class="highlight">
                     <th scope="row">VAR-Q</th>
                     <td>INT3</td>
-                    <td>95.41</td>
-                    <td>63.13</td>
-                    <td>90.69</td>
-                    <td>83.28</td>
-                    <td>89.65</td>
-                    <td>88.84</td>
-                    <td>90.82</td>
-                    <td>89.16</td>
-                    <td>91.80</td>
-                    <td>85.89</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">95.41</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">63.13</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">90.69</td>
+                    <td class="metric-best" title="Best among methods at this precision">83.28</td>
+                    <td class="metric-best" title="Best among methods at this precision">89.65</td>
+                    <td class="metric-second" title="Second-best among methods at this precision">88.84</td>
+                    <td class="metric-best" title="Best among methods at this precision">90.82</td>
+                    <td class="metric-best" title="Best among methods at this precision">89.16</td>
+                    <td class="metric-best" title="Best among methods at this precision">91.80</td>
+                    <td class="metric-best" title="Best among methods at this precision">85.89</td>
                     <td>13.65</td>
                     <td>79.75%</td>
                   </tr>
-                  <tr class="highlight">
+                  <tr class="highlight precision-start">
                     <th scope="row">VAR-Q</th>
                     <td>INT2</td>
                     <td>85.97</td>
@@ -1493,13 +1647,18 @@
                 </tbody>
               </table>
             </div>
+            <p class="table-note">
+              <strong>Bold</strong> and <span class="metric-second">underline</span> mark the best and second-best quality scores among quantized
+              methods at the same precision, within each model. BF16 is the reference. ↑ Higher is better; ↓ lower is better. Memory reduction is
+              relative to BF16 at the listed batch size.
+            </p>
           </article>
         </div>
         <div class="results-explorer" id="tables-2-4">
           <div class="explorer-top">
             <div>
               <p class="eyebrow">Interactive comparison · metric selection &amp; CSV export</p>
-              <h3>Focus on one configuration.</h3>
+              <h3>Explore individual metrics</h3>
             </div>
             <a class="inline-link" download="" href="results-data.json">Download data ↧</a>
           </div>
@@ -1591,7 +1750,7 @@
           <div class="section-heading">
             <div>
               <p class="eyebrow">02 / The method</p>
-              <h2 id="method-title">Quantize where the structure is.</h2>
+              <h2 id="method-title">Quantization aligned with visual autoregression</h2>
             </div>
             <p>A channel × block view of the KV cache<br />explains where quantization groups belong.</p>
           </div>
@@ -1952,7 +2111,7 @@
         <div class="section-heading">
           <div>
             <p class="eyebrow">03 / Qualitative evidence</p>
-            <h2 id="results-title">Inspect generation, in motion.</h2>
+            <h2 id="results-title">Generated samples</h2>
           </div>
           <p>Next-scale images and video. Next-frame video.<br />Compare low-bit caches with BF16 across both paradigms.</p>
         </div>
@@ -2026,7 +2185,7 @@
           <div class="subsection-heading">
             <div>
               <p class="eyebrow">Explore the samples</p>
-              <h3 id="gallery-title">Compare every method, on the same timeline.</h3>
+              <h3 id="gallery-title">Compare generation across methods</h3>
             </div>
             <p class="small-note">Original project samples · BF16 reference and low-bit methods</p>
           </div>
@@ -2140,7 +2299,7 @@
       <section aria-labelledby="attribution-title" class="section wrap attribution-section" id="attribution">
         <div class="attribution-heading">
           <p class="eyebrow">04 / Mechanistic attribution · §3.3</p>
-          <h2 id="attribution-title">From observations to mechanisms.</h2>
+          <h2 id="attribution-title">What creates the channel × block structure?</h2>
           <p>
             Why does the channel × block pattern emerge? Three experiments separate prompt-dependent outliers, persistent channel imbalance, and
             position-dependent magnitude shifts.
@@ -2333,7 +2492,6 @@
           </div>
         </div>
       </section>
-
       <section aria-labelledby="context-title" class="section wrap related-section" id="context">
         <div class="section-heading">
           <div>
@@ -2396,7 +2554,7 @@
         <div class="wrap code-grid">
           <div>
             <p class="eyebrow">Implementation</p>
-            <h2 id="code-title">Bring VAR-Q<br />to your pipeline.</h2>
+            <h2 id="code-title">Code and implementation</h2>
             <p>
               The public repository provides the core quantization and packing utilities, plus VAR and Infinity examples. Start with the
               model-specific notebooks and follow the repository’s environment and checkpoint instructions.

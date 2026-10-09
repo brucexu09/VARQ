@@ -1537,9 +1537,9 @@ select {
   .nav-links a {
     display: block !important;
   }
-  .nav-links a:nth-child(2),
-  .nav-links a:nth-child(4),
-  .nav-links a:nth-child(6) {
+  .nav-links a[href="#overview"],
+  .nav-links a[href="#attribution"],
+  .nav-links a[href="#code"] {
     display: none !important;
   }
   .nav-links {
@@ -1787,5 +1787,163 @@ select {
   .paper-result-block .metrics-scroll td {
     font-size: 10px;
     padding: 8px 10px;
+  }
+}
+/* Scientific tables: grouped headers, aligned numbers, restrained emphasis. */
+.metrics-scroll table {
+  font-variant-numeric: tabular-nums;
+}
+.paper-result-block .metrics-scroll table {
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+.paper-result-block .metrics-scroll td {
+  text-align: right;
+}
+.paper-result-block .metrics-scroll th {
+  text-align: left;
+}
+.metrics-scroll thead .metric-groups th[scope="colgroup"] {
+  text-align: center;
+  border-bottom: 1px solid #b9b7c0;
+  letter-spacing: 0.01em;
+}
+.metrics-scroll thead tr:nth-child(2) th:first-child {
+  position: static;
+}
+.paper-result-block .metrics-scroll thead th {
+  min-width: 74px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.paper-result-block .metrics-scroll thead th[scope="colgroup"] {
+  max-width: none;
+}
+.paper-result-block .metrics-scroll tbody .model-divider th {
+  background: #f2f1ee !important;
+  border-top: 1px solid #aaa6b0;
+}
+.paper-result-block .metrics-scroll tbody .precision-start td,
+.paper-result-block .metrics-scroll tbody .precision-start th {
+  border-top: 1px solid #cbc8d0;
+}
+.paper-result-block .metrics-scroll tr.highlight td {
+  font-weight: 400;
+  color: var(--ink);
+  background: #f7f5fa;
+}
+.paper-result-block .metrics-scroll tr.highlight th {
+  color: var(--accent);
+  background: #f7f5fa;
+  font-weight: 600;
+}
+.paper-result-block .metrics-scroll td.metric-best {
+  font-weight: 700 !important;
+}
+.metric-second {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.table-note {
+  font-size: 11px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin-top: 12px;
+  max-width: 940px;
+}
+.judge-note {
+  padding-left: 14px;
+  border-left: 2px solid #c4bdd5;
+}
+.result-summary {
+  margin: 22px 0 32px;
+}
+.result-summary .metrics-scroll table {
+  min-width: 580px;
+  width: 100%;
+}
+.paper-result-block .result-summary .metrics-scroll td,
+.paper-result-block .result-summary .metrics-scroll th {
+  font-size: 12px;
+  padding: 10px 12px;
+}
+.result-summary tbody th {
+  font-weight: 500;
+}
+.result-summary caption {
+  font-size: 12px;
+  color: var(--ink);
+}
+@media (max-width: 700px) {
+  .table-note {
+    font-size: 11px;
+  }
+  .paper-result-block .result-summary .metrics-scroll td,
+  .paper-result-block .result-summary .metrics-scroll th {
+    font-size: 11px;
+    padding: 9px;
+  }
+}
+.paper-result-block .metrics-scroll thead tr:nth-child(2) th,
+.paper-result-block .result-summary .metrics-scroll thead th:not(:first-child) {
+  text-align: right;
+}
+@media (max-width: 700px) {
+  .result-summary .metrics-scroll {
+    overflow: visible;
+  }
+  .result-summary .metrics-scroll table {
+    display: block;
+    min-width: 0;
+    border: 0;
+  }
+  .result-summary .metrics-scroll caption {
+    display: block;
+    white-space: normal;
+    padding: 0 0 14px;
+  }
+  .result-summary thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+  .result-summary tbody {
+    display: grid;
+    gap: 14px;
+  }
+  .result-summary tbody tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--line);
+    padding: 12px;
+    background: #fff;
+  }
+  .paper-result-block .result-summary .metrics-scroll tbody th {
+    grid-column: 1 / -1;
+    position: static;
+    padding: 0 0 9px;
+    border-bottom: 1px solid var(--line);
+    background: transparent;
+    font-size: 13px;
+  }
+  .paper-result-block .result-summary .metrics-scroll tbody td {
+    display: block;
+    padding: 9px 0 0;
+    text-align: left;
+    border: 0;
+    font-size: 14px;
+    white-space: normal;
+    background: transparent;
+  }
+  .result-summary tbody td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--muted);
+    margin-bottom: 3px;
   }
 }

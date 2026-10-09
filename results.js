@@ -68,20 +68,32 @@
     caption.textContent = `${d.label} · Table ${d.table} · ${precision.value === "all" ? "all reported precisions" : precision.value + " and BF16"}`;
     table.append(caption);
     const head = document.createElement("thead");
+    const groupRow = document.createElement("tr");
+    groupRow.className = "metric-groups";
+    head.append(groupRow);
+    ["Method", "KV precision"].forEach((label) => {
+      tableCell(groupRow, label, "th");
+      groupRow.lastElementChild.rowSpan = 2;
+    });
+    [...d.metricGroups, ["KV cache", 2]].forEach(([label, count]) => {
+      tableCell(groupRow, label, "th");
+      groupRow.lastElementChild.colSpan = count;
+      groupRow.lastElementChild.scope = "colgroup";
+    });
     const hr = document.createElement("tr");
     head.append(hr);
-    ["Method", "Precision", ...d.metrics, "KV (GB) ↓", "KV saving vs. BF16"].forEach((v) => tableCell(hr, v, "th"));
+    [...d.tableLabels, "Memory (GB) ↓", "Reduction (%) ↑"].forEach((v) => tableCell(hr, v, "th"));
     table.append(head);
     const body = document.createElement("tbody");
     rows.forEach((r) => {
       const tr = document.createElement("tr");
       if (r.method === "VAR-Q") tr.className = "highlight";
-      tableCell(tr, r.method, "th");
+      tableCell(tr, r.method === "BF16" ? "Baseline" : r.method, "th");
       [r.precision, ...r.values, r.kv, r === base ? "—" : `${r.saving}%`].forEach((v) => tableCell(tr, v));
       body.append(tr);
     });
     table.append(body);
-    status.textContent = `${rows.length} rows shown. All metric, memory, and savings values reproduce the paper tables. Use All reported precisions to reveal every row.`;
+    status.textContent = `${rows.length} configurations · Table ${d.table}. BF16 is included as the reference.`;
   }
   function setModel() {
     const d = current();

@@ -1,18 +1,18 @@
 {
-  "source": "VAR-Q Tables 2\u20134",
+  "source": "VAR-Q Tables 2–4",
   "datasets": [
     {
       "id": "var20",
-      "label": "VAR-d20 \u00b7 Next-scale image",
+      "label": "VAR-d20 · Next-scale image",
       "table": "2a",
       "page": 7,
-      "setting": "600M \u00b7 ImageNet 256\u00d7256 \u00b7 batch 128",
-      "metrics": ["FID \u2193", "IS \u2191", "Precision \u2191", "Recall \u2191", "PSNR \u2191", "SSIM \u2191", "LPIPS \u2193"],
+      "setting": "600M · ImageNet 256×256 · batch 128",
+      "metrics": ["FID ↓", "IS ↑", "Precision ↑", "Recall ↑", "PSNR ↑", "SSIM ↑", "LPIPS ↓"],
       "rows": [
         {
           "method": "BF16",
           "precision": "BF16",
-          "values": ["4.11", "357.32", "0.8650", "0.5160", "\u2014", "\u2014", "\u2014"],
+          "values": ["4.11", "357.32", "0.8650", "0.5160", "—", "—", "—"],
           "kv": "16.60",
           "saving": null
         },
@@ -60,20 +60,25 @@
         }
       ],
       "defaultMetric": 0,
-      "defaultPrecision": "INT3"
+      "defaultPrecision": "INT3",
+      "metricGroups": [
+        ["Distribution quality", 4],
+        ["Fidelity to BF16", 3]
+      ],
+      "tableLabels": ["FID ↓", "IS ↑", "Precision ↑", "Recall ↑", "PSNR ↑", "SSIM ↑", "LPIPS ↓"]
     },
     {
       "id": "var24",
-      "label": "VAR-d24 \u00b7 Next-scale image",
+      "label": "VAR-d24 · Next-scale image",
       "table": "2a",
       "page": 7,
-      "setting": "1.0B \u00b7 ImageNet 256\u00d7256 \u00b7 batch 128",
-      "metrics": ["FID \u2193", "IS \u2191", "Precision \u2191", "Recall \u2191", "PSNR \u2191", "SSIM \u2191", "LPIPS \u2193"],
+      "setting": "1.0B · ImageNet 256×256 · batch 128",
+      "metrics": ["FID ↓", "IS ↑", "Precision ↑", "Recall ↑", "PSNR ↑", "SSIM ↑", "LPIPS ↓"],
       "rows": [
         {
           "method": "BF16",
           "precision": "BF16",
-          "values": ["2.97", "357.24", "0.8444", "0.5605", "\u2014", "\u2014", "\u2014"],
+          "values": ["2.97", "357.24", "0.8444", "0.5605", "—", "—", "—"],
           "kv": "23.91",
           "saving": null
         },
@@ -121,20 +126,25 @@
         }
       ],
       "defaultMetric": 0,
-      "defaultPrecision": "INT3"
+      "defaultPrecision": "INT3",
+      "metricGroups": [
+        ["Distribution quality", 4],
+        ["Fidelity to BF16", 3]
+      ],
+      "tableLabels": ["FID ↓", "IS ↑", "Precision ↑", "Recall ↑", "PSNR ↑", "SSIM ↑", "LPIPS ↓"]
     },
     {
       "id": "var30",
-      "label": "VAR-d30 \u00b7 Next-scale image",
+      "label": "VAR-d30 · Next-scale image",
       "table": "2a",
       "page": 7,
-      "setting": "2.0B \u00b7 ImageNet 256\u00d7256 \u00b7 batch 128",
-      "metrics": ["FID \u2193", "IS \u2191", "Precision \u2191", "Recall \u2191", "PSNR \u2191", "SSIM \u2191", "LPIPS \u2193"],
+      "setting": "2.0B · ImageNet 256×256 · batch 128",
+      "metrics": ["FID ↓", "IS ↑", "Precision ↑", "Recall ↑", "PSNR ↑", "SSIM ↑", "LPIPS ↓"],
       "rows": [
         {
           "method": "BF16",
           "precision": "BF16",
-          "values": ["2.07", "335.10", "0.8260", "0.5812", "\u2014", "\u2014", "\u2014"],
+          "values": ["2.07", "335.10", "0.8260", "0.5812", "—", "—", "—"],
           "kv": "37.35",
           "saving": null
         },
@@ -182,25 +192,30 @@
         }
       ],
       "defaultMetric": 0,
-      "defaultPrecision": "INT3"
+      "defaultPrecision": "INT3",
+      "metricGroups": [
+        ["Distribution quality", 4],
+        ["Fidelity to BF16", 3]
+      ],
+      "tableLabels": ["FID ↓", "IS ↑", "Precision ↑", "Recall ↑", "PSNR ↑", "SSIM ↑", "LPIPS ↓"]
     },
     {
       "id": "infinity2",
-      "label": "Infinity-2B \u00b7 Next-scale image",
+      "label": "Infinity-2B · Next-scale image",
       "table": "2b",
       "page": 7,
-      "setting": "Text-to-image \u00b7 batch 8",
+      "setting": "Text-to-image · batch 8",
       "metrics": [
-        "GenEval Two-Object \u2191",
-        "GenEval Position \u2191",
-        "GenEval Color \u2191",
-        "GenEval Overall \u2191",
-        "DPG Entity \u2191",
-        "DPG Relation \u2191",
-        "DPG Attribute \u2191",
-        "DPG Global \u2191",
-        "DPG Other \u2191",
-        "DPG Overall \u2191"
+        "GenEval Two-Object ↑",
+        "GenEval Position ↑",
+        "GenEval Color ↑",
+        "GenEval Overall ↑",
+        "DPG Entity ↑",
+        "DPG Relation ↑",
+        "DPG Attribute ↑",
+        "DPG Global ↑",
+        "DPG Other ↑",
+        "DPG Overall ↑"
       ],
       "rows": [
         {
@@ -254,25 +269,41 @@
         }
       ],
       "defaultMetric": 3,
-      "defaultPrecision": "INT4"
+      "defaultPrecision": "INT4",
+      "metricGroups": [
+        ["GenEval ↑", 4],
+        ["DPG ↑", 6]
+      ],
+      "tableLabels": [
+        "Two-Object ↑",
+        "Position ↑",
+        "Color ↑",
+        "Overall ↑",
+        "Entity ↑",
+        "Relation ↑",
+        "Attribute ↑",
+        "Global ↑",
+        "Other ↑",
+        "Overall ↑"
+      ]
     },
     {
       "id": "infinity8",
-      "label": "Infinity-8B \u00b7 Next-scale image",
+      "label": "Infinity-8B · Next-scale image",
       "table": "2b",
       "page": 7,
-      "setting": "Text-to-image \u00b7 batch 6",
+      "setting": "Text-to-image · batch 6",
       "metrics": [
-        "GenEval Two-Object \u2191",
-        "GenEval Position \u2191",
-        "GenEval Color \u2191",
-        "GenEval Overall \u2191",
-        "DPG Entity \u2191",
-        "DPG Relation \u2191",
-        "DPG Attribute \u2191",
-        "DPG Global \u2191",
-        "DPG Other \u2191",
-        "DPG Overall \u2191"
+        "GenEval Two-Object ↑",
+        "GenEval Position ↑",
+        "GenEval Color ↑",
+        "GenEval Overall ↑",
+        "DPG Entity ↑",
+        "DPG Relation ↑",
+        "DPG Attribute ↑",
+        "DPG Global ↑",
+        "DPG Other ↑",
+        "DPG Overall ↑"
       ],
       "rows": [
         {
@@ -333,23 +364,39 @@
         }
       ],
       "defaultMetric": 3,
-      "defaultPrecision": "INT4"
+      "defaultPrecision": "INT4",
+      "metricGroups": [
+        ["GenEval ↑", 4],
+        ["DPG ↑", 6]
+      ],
+      "tableLabels": [
+        "Two-Object ↑",
+        "Position ↑",
+        "Color ↑",
+        "Overall ↑",
+        "Entity ↑",
+        "Relation ↑",
+        "Attribute ↑",
+        "Global ↑",
+        "Other ↑",
+        "Overall ↑"
+      ]
     },
     {
       "id": "star720",
-      "label": "InfinityStar \u00b7 Next-scale video \u00b7 720p",
+      "label": "InfinityStar · Next-scale video · 720p",
       "table": "3",
       "page": 8,
-      "setting": "8B \u00b7 720p \u00b7 batch 3",
+      "setting": "8B · 720p · batch 3",
       "metrics": [
-        "Subject Consistency \u2191",
-        "Background Consistency \u2191",
-        "Temporal Flickering \u2191",
-        "Motion Smoothness \u2191",
-        "Dynamic Degree \u2191",
-        "Aesthetic Quality \u2191",
-        "Imaging Quality \u2191",
-        "Total Quality \u2191"
+        "Subject Consistency ↑",
+        "Background Consistency ↑",
+        "Temporal Flickering ↑",
+        "Motion Smoothness ↑",
+        "Dynamic Degree ↑",
+        "Aesthetic Quality ↑",
+        "Imaging Quality ↑",
+        "Total Quality ↑"
       ],
       "rows": [
         {
@@ -403,23 +450,34 @@
         }
       ],
       "defaultMetric": 7,
-      "defaultPrecision": "INT3"
+      "defaultPrecision": "INT3",
+      "metricGroups": [["VBench ↑", 8]],
+      "tableLabels": [
+        "Subject Consistency ↑",
+        "Background Consistency ↑",
+        "Temporal Flickering ↑",
+        "Motion Smoothness ↑",
+        "Dynamic Degree ↑",
+        "Aesthetic Quality ↑",
+        "Imaging Quality ↑",
+        "Total Quality ↑"
+      ]
     },
     {
       "id": "star480",
-      "label": "InfinityStar \u00b7 Next-scale video \u00b7 480p",
+      "label": "InfinityStar · Next-scale video · 480p",
       "table": "3",
       "page": 8,
-      "setting": "8B \u00b7 480p \u00b7 batch 6",
+      "setting": "8B · 480p · batch 6",
       "metrics": [
-        "Subject Consistency \u2191",
-        "Background Consistency \u2191",
-        "Temporal Flickering \u2191",
-        "Motion Smoothness \u2191",
-        "Dynamic Degree \u2191",
-        "Aesthetic Quality \u2191",
-        "Imaging Quality \u2191",
-        "Total Quality \u2191"
+        "Subject Consistency ↑",
+        "Background Consistency ↑",
+        "Temporal Flickering ↑",
+        "Motion Smoothness ↑",
+        "Dynamic Degree ↑",
+        "Aesthetic Quality ↑",
+        "Imaging Quality ↑",
+        "Total Quality ↑"
       ],
       "rows": [
         {
@@ -473,24 +531,35 @@
         }
       ],
       "defaultMetric": 7,
-      "defaultPrecision": "INT3"
+      "defaultPrecision": "INT3",
+      "metricGroups": [["VBench ↑", 8]],
+      "tableLabels": [
+        "Subject Consistency ↑",
+        "Background Consistency ↑",
+        "Temporal Flickering ↑",
+        "Motion Smoothness ↑",
+        "Dynamic Degree ↑",
+        "Aesthetic Quality ↑",
+        "Imaging Quality ↑",
+        "Total Quality ↑"
+      ]
     },
     {
       "id": "self",
-      "label": "Self-Forcing \u00b7 Next-frame video",
+      "label": "Self-Forcing · Next-frame video",
       "table": "4",
       "page": 8,
-      "setting": "1.3B \u00b7 5-second clips \u00b7 batch 12",
+      "setting": "1.3B · 5-second clips · batch 12",
       "metrics": [
-        "Subject Consistency \u2191",
-        "Background Consistency \u2191",
-        "Motion Smoothness \u2191",
-        "Dynamic Degree \u2191",
-        "Aesthetic Quality \u2191",
-        "Total Quality \u2191",
-        "Opus Visual \u2191",
-        "Opus Dynamic \u2191",
-        "Opus Text \u2191"
+        "Subject Consistency ↑",
+        "Background Consistency ↑",
+        "Motion Smoothness ↑",
+        "Dynamic Degree ↑",
+        "Aesthetic Quality ↑",
+        "Total Quality ↑",
+        "Claude Opus 4.7 · Visual Quality ↑ (1–5)",
+        "Claude Opus 4.7 · Dynamics ↑ (1–5)",
+        "Claude Opus 4.7 · Text Alignment ↑ (1–5)"
       ],
       "rows": [
         {
@@ -544,24 +613,39 @@
         }
       ],
       "defaultMetric": 5,
-      "defaultPrecision": "INT6"
+      "defaultPrecision": "INT6",
+      "metricGroups": [
+        ["VBench ↑", 6],
+        ["Claude Opus 4.7 · VLM judge ↑ (1–5)", 3]
+      ],
+      "tableLabels": [
+        "Subject Consistency ↑",
+        "Background Consistency ↑",
+        "Motion Smoothness ↑",
+        "Dynamic Degree ↑",
+        "Aesthetic Quality ↑",
+        "Total Quality ↑",
+        "Visual Quality ↑",
+        "Dynamics ↑",
+        "Text Alignment ↑"
+      ]
     },
     {
       "id": "long",
-      "label": "LongLive \u00b7 Next-frame video",
+      "label": "LongLive · Next-frame video",
       "table": "4",
       "page": 8,
-      "setting": "1.3B \u00b7 30-second clips \u00b7 batch 20",
+      "setting": "1.3B · 30-second clips · batch 20",
       "metrics": [
-        "Subject Consistency \u2191",
-        "Background Consistency \u2191",
-        "Motion Smoothness \u2191",
-        "Dynamic Degree \u2191",
-        "Aesthetic Quality \u2191",
-        "Total Quality \u2191",
-        "Opus Visual \u2191",
-        "Opus Dynamic \u2191",
-        "Opus Text \u2191"
+        "Subject Consistency ↑",
+        "Background Consistency ↑",
+        "Motion Smoothness ↑",
+        "Dynamic Degree ↑",
+        "Aesthetic Quality ↑",
+        "Total Quality ↑",
+        "Claude Opus 4.7 · Visual Quality ↑ (1–5)",
+        "Claude Opus 4.7 · Dynamics ↑ (1–5)",
+        "Claude Opus 4.7 · Text Alignment ↑ (1–5)"
       ],
       "rows": [
         {
@@ -615,7 +699,22 @@
         }
       ],
       "defaultMetric": 5,
-      "defaultPrecision": "INT6"
+      "defaultPrecision": "INT6",
+      "metricGroups": [
+        ["VBench ↑", 6],
+        ["Claude Opus 4.7 · VLM judge ↑ (1–5)", 3]
+      ],
+      "tableLabels": [
+        "Subject Consistency ↑",
+        "Background Consistency ↑",
+        "Motion Smoothness ↑",
+        "Dynamic Degree ↑",
+        "Aesthetic Quality ↑",
+        "Total Quality ↑",
+        "Visual Quality ↑",
+        "Dynamics ↑",
+        "Text Alignment ↑"
+      ]
     }
   ]
 }
