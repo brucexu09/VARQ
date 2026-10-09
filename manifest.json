@@ -1,6 +1,1285 @@
 {
  "models": [
   {
+   "id": "self_forcing",
+   "label": "Self-Forcing",
+   "type": "video",
+   "task": "Streaming autoregressive video (Wan 1.3B, 5 s, 832×480)",
+   "methods": [
+    "Baseline",
+    "FlexGen",
+    "KIVI",
+    "VARQ"
+   ],
+   "methodLabels": {
+    "Baseline": "Baseline (BF16)",
+    "FlexGen": "FlexGen",
+    "KIVI": "KIVI",
+    "VARQ": "VARQ (Ours)"
+   },
+   "bits": [
+    "q4",
+    "q6"
+   ],
+   "bitLabels": {
+    "q4": "4-bit",
+    "q6": "6-bit"
+   },
+   "samples": {
+    "q6": [
+     {
+      "prompt": "a giant duck walks through the streets in Boston",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q6/group02_prompt079_s01.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q6/group02_prompt079_s01.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q6/group02_prompt079_s01.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q6/group02_prompt079_s01.mp4"
+      }
+     },
+     {
+      "prompt": "A little boy is riding a dragon in the sky to a castle",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q6/group02_prompt101_s02.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q6/group02_prompt101_s02.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q6/group02_prompt101_s02.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q6/group02_prompt101_s02.mp4"
+      }
+     },
+     {
+      "prompt": "Cinematic trailer for a group of adventurous puppies exploring ruins in the sky",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q6/group01_prompt032_s02.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q6/group01_prompt032_s02.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q6/group01_prompt032_s02.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q6/group01_prompt032_s02.mp4"
+      }
+     },
+     {
+      "prompt": "A person on a scooter colliding with a park bench, the scooter tipping over.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q6/group03_prompt167_s02.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q6/group03_prompt167_s02.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q6/group03_prompt167_s02.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q6/group03_prompt167_s02.mp4"
+      }
+     },
+     {
+      "prompt": "A man pushes away a huge stone with superhuman strength.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q6/group03_prompt188_s03.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q6/group03_prompt188_s03.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q6/group03_prompt188_s03.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q6/group03_prompt188_s03.mp4"
+      }
+     },
+     {
+      "prompt": "A push-in through a garden archway, revealing a secret, tranquil garden filled with blooming flowers.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q6/group01_prompt047_s03.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q6/group01_prompt047_s03.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q6/group01_prompt047_s03.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q6/group01_prompt047_s03.mp4"
+      }
+     },
+     {
+      "prompt": "A peacock wearing a crown, sitting on a throne and holding court with other animals.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q6/group03_prompt138_s01.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q6/group03_prompt138_s01.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q6/group03_prompt138_s01.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q6/group03_prompt138_s01.mp4"
+      }
+     },
+     {
+      "prompt": "A truck right through a tranquil garden, moving past blooming flowers, trees, and a small fountain.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q6/group02_prompt111_s03.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q6/group02_prompt111_s03.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q6/group02_prompt111_s03.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q6/group02_prompt111_s03.mp4"
+      }
+     },
+     {
+      "prompt": "a toy robot wearing a green dress and a sun hat taking a pleasant stroll in Antarctica during a beautiful sunset",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q6/group01_prompt018_s01.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q6/group01_prompt018_s01.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q6/group01_prompt018_s01.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q6/group01_prompt018_s01.mp4"
+      }
+     }
+    ],
+    "q4": [
+     {
+      "prompt": "Five gray wolf pups frolicking and chasing each other around a remote gravel road, surrounded by grass. The pups run and leap, chasing each other, and nipping at each other, playing.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt01.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt01.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt01.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt01.mp4"
+      }
+     },
+     {
+      "prompt": "A stylish woman walks down a Tokyo street filled with warm glowing neon and animated city signage. She wears a black leather jacket, a long red dress, and black boots, and carries a black purse. She wears sunglasses and red lipstick. She walks confidently and casually. The street is damp and reflective, creating a mirror effect of the colorful lights. Many pedestrians walk about.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt17.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt17.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt17.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt17.mp4"
+      }
+     },
+     {
+      "prompt": "New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt14.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt14.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt14.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt14.mp4"
+      }
+     },
+     {
+      "prompt": "A tracking shot following a skateboarder performing tricks down a city street, keeping pace with their fluid movements.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt06.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt06.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt06.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt06.mp4"
+      }
+     },
+     {
+      "prompt": "A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt00.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt00.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt00.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt00.mp4"
+      }
+     },
+     {
+      "prompt": "A bear wearing a superhero cape, flying through the sky over a bustling city.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt13.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt13.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt13.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt13.mp4"
+      }
+     },
+     {
+      "prompt": "A little boy is riding a dragon in the sky to a castle",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt12.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt12.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt12.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt12.mp4"
+      }
+     },
+     {
+      "prompt": "Several giant wooly mammoths approach treading through a snowy meadow, their long wooly fur lightly blows in the wind as they walk, snow covered trees and dramatic snow capped mountains in the distance, mid afternoon light with wispy clouds and a sun high in the distance creates a warm glow, the low camera view is stunning capturing the large furry mammal with beautiful photography, depth of field.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt18.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt18.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt18.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt18.mp4"
+      }
+     },
+     {
+      "prompt": "A crystal ball sitting on a table, with sunlight streaming through it and casting a circle of rainbow colors on the floor.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt07.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt07.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt07.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt07.mp4"
+      }
+     },
+     {
+      "prompt": "a toy robot wearing a green dress and a sun hat taking a pleasant stroll in Antarctica during a beautiful sunset",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt09.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt09.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt09.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt09.mp4"
+      }
+     },
+     {
+      "prompt": "A spaceship being pulled into a blackhole.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt20.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt20.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt20.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt20.mp4"
+      }
+     },
+     {
+      "prompt": "A goat operating a food truck, serving gourmet grilled cheese sandwiches to a line of animals.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt23.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt23.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt23.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt23.mp4"
+      }
+     }
+    ]
+   },
+   "methodsByBit": {
+    "q4": [
+     "Baseline",
+     "FlexGen",
+     "KIVI",
+     "VARQ"
+    ],
+    "q6": [
+     "Baseline",
+     "FlexGen",
+     "KIVI",
+     "VARQ"
+    ]
+   }
+  },
+  {
+   "id": "longlive",
+   "label": "LongLive",
+   "type": "video",
+   "task": "Long-horizon autoregressive video (30 s, 832×480)",
+   "methods": [
+    "Baseline",
+    "FlexGen",
+    "KIVI",
+    "VARQ"
+   ],
+   "methodLabels": {
+    "Baseline": "Baseline (BF16)",
+    "FlexGen": "FlexGen",
+    "KIVI": "KIVI",
+    "VARQ": "VARQ (Ours)"
+   },
+   "bits": [
+    "q4",
+    "q6"
+   ],
+   "bitLabels": {
+    "q4": "4-bit",
+    "q6": "6-bit"
+   },
+   "samples": {
+    "q6": [
+     {
+      "prompt": "A cook flipping pancakes on a griddle.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/group02_prompt081_s01.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/group02_prompt081_s01.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/group02_prompt081_s01.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/group02_prompt081_s01.mp4"
+      }
+     },
+     {
+      "prompt": "A bear wearing a superhero cape, flying through the sky over a bustling city.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/group03_prompt165_s02.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/group03_prompt165_s02.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/group03_prompt165_s02.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/group03_prompt165_s02.mp4"
+      }
+     },
+     {
+      "prompt": "New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/group03_prompt153_s01.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/group03_prompt153_s01.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/group03_prompt153_s01.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/group03_prompt153_s01.mp4"
+      }
+     },
+     {
+      "prompt": "a man BASE jumping over tropical hawaii waters. His pet macaw flies alongside him",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/group01_prompt041_s02.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/group01_prompt041_s02.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/group01_prompt041_s02.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/group01_prompt041_s02.mp4"
+      }
+     },
+     {
+      "prompt": "An aerial shot of a field of blooming wildflowers, creating a patchwork of colors in the landscape.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/group01_prompt052_s03.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/group01_prompt052_s03.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/group01_prompt052_s03.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/group01_prompt052_s03.mp4"
+      }
+     },
+     {
+      "prompt": "A goat operating a food truck, serving gourmet grilled cheese sandwiches to a line of animals.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/group03_prompt190_s03.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/group03_prompt190_s03.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/group03_prompt190_s03.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/group03_prompt190_s03.mp4"
+      }
+     },
+     {
+      "prompt": "A middle-aged sad bald man becomes happy as a wig of curly hair and sunglasses fall suddenly on his head.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/group01_prompt009_s01.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/group01_prompt009_s01.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/group01_prompt009_s01.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/group01_prompt009_s01.mp4"
+      }
+     },
+     {
+      "prompt": "In an ancient library, books float and glow as they drift through the air, occasionally landing softly on the tables, where curious individuals reach out to read their contents.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/group02_prompt122_s03.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/group02_prompt122_s03.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/group02_prompt122_s03.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/group02_prompt122_s03.mp4"
+      }
+     },
+     {
+      "prompt": "A slow cinematic push in on an ostrich standing in a 1980s kitchen.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q6/group02_prompt092_s02.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q6/group02_prompt092_s02.mp4",
+       "KIVI": "samples/longlive/KIVI/q6/group02_prompt092_s02.mp4",
+       "VARQ": "samples/longlive/VARQ/q6/group02_prompt092_s02.mp4"
+      }
+     }
+    ],
+    "q4": [
+     {
+      "prompt": "A stylish woman walks down a Tokyo street filled with warm glowing neon and animated city signage. She wears a black leather jacket, a long red dress, and black boots, and carries a black purse. She wears sunglasses and red lipstick. She walks confidently and casually. The street is damp and reflective, creating a mirror effect of the colorful lights. Many pedestrians walk about.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q4/prompt03.mp4",
+       "VARQ": "samples/longlive/VARQ/q4/prompt03.mp4",
+       "KIVI": "samples/longlive/KIVI/q4/prompt03.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q4/prompt03.mp4"
+      }
+     },
+     {
+      "prompt": "New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q4/prompt06.mp4",
+       "VARQ": "samples/longlive/VARQ/q4/prompt06.mp4",
+       "KIVI": "samples/longlive/KIVI/q4/prompt06.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q4/prompt06.mp4"
+      }
+     },
+     {
+      "prompt": "A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q4/prompt00.mp4",
+       "VARQ": "samples/longlive/VARQ/q4/prompt00.mp4",
+       "KIVI": "samples/longlive/KIVI/q4/prompt00.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q4/prompt00.mp4"
+      }
+     },
+     {
+      "prompt": "Five gray wolf pups frolicking and chasing each other around a remote gravel road, surrounded by grass. The pups run and leap, chasing each other, and nipping at each other, playing.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q4/prompt01.mp4",
+       "VARQ": "samples/longlive/VARQ/q4/prompt01.mp4",
+       "KIVI": "samples/longlive/KIVI/q4/prompt01.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q4/prompt01.mp4"
+      }
+     },
+     {
+      "prompt": "Several giant wooly mammoths approach treading through a snowy meadow, their long wooly fur lightly blows in the wind as they walk, snow covered trees and dramatic snow capped mountains in the distance, mid afternoon light with wispy clouds and a sun high in the distance creates a warm glow, the low camera view is stunning capturing the large furry mammal with beautiful photography, depth of field.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q4/prompt04.mp4",
+       "VARQ": "samples/longlive/VARQ/q4/prompt04.mp4",
+       "KIVI": "samples/longlive/KIVI/q4/prompt04.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q4/prompt04.mp4"
+      }
+     },
+     {
+      "prompt": "A bear wearing a superhero cape, flying through the sky over a bustling city.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q4/prompt05.mp4",
+       "VARQ": "samples/longlive/VARQ/q4/prompt05.mp4",
+       "KIVI": "samples/longlive/KIVI/q4/prompt05.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q4/prompt05.mp4"
+      }
+     },
+     {
+      "prompt": "Cinematic trailer for a group of adventurous puppies exploring ruins in the sky",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q4/prompt09.mp4",
+       "VARQ": "samples/longlive/VARQ/q4/prompt09.mp4",
+       "KIVI": "samples/longlive/KIVI/q4/prompt09.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q4/prompt09.mp4"
+      }
+     },
+     {
+      "prompt": "a toy robot wearing a green dress and a sun hat taking a pleasant stroll in Antarctica during a beautiful sunset",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q4/prompt10.mp4",
+       "VARQ": "samples/longlive/VARQ/q4/prompt10.mp4",
+       "KIVI": "samples/longlive/KIVI/q4/prompt10.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q4/prompt10.mp4"
+      }
+     },
+     {
+      "prompt": "A cook flipping pancakes on a griddle.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q4/prompt11.mp4",
+       "VARQ": "samples/longlive/VARQ/q4/prompt11.mp4",
+       "KIVI": "samples/longlive/KIVI/q4/prompt11.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q4/prompt11.mp4"
+      }
+     },
+     {
+      "prompt": "A quaint village nestled in a valley is surrounded by blooming cherry blossoms, with petals drifting through the air as villagers go about their daily activities, adding life to the scene.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q4/prompt02.mp4",
+       "VARQ": "samples/longlive/VARQ/q4/prompt02.mp4",
+       "KIVI": "samples/longlive/KIVI/q4/prompt02.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q4/prompt02.mp4"
+      }
+     }
+    ]
+   },
+   "methodsByBit": {
+    "q4": [
+     "Baseline",
+     "FlexGen",
+     "KIVI",
+     "VARQ"
+    ],
+    "q6": [
+     "Baseline",
+     "FlexGen",
+     "KIVI",
+     "VARQ"
+    ]
+   }
+  },
+  {
+   "id": "Infinity8B",
+   "label": "Infinity-8B",
+   "type": "image",
+   "task": "Text-to-Image generation (1024×1024)",
+   "methods": [
+    "Baseline",
+    "FlexGen",
+    "KIVI",
+    "VARQ"
+   ],
+   "methodLabels": {
+    "Baseline": "Baseline (BF16)",
+    "FlexGen": "FlexGen",
+    "KIVI": "KIVI",
+    "VARQ": "VARQ (Ours)"
+   },
+   "bits": [
+    "q2",
+    "q3",
+    "q8"
+   ],
+   "bitLabels": {
+    "q2": "2-bit",
+    "q3": "3-bit",
+    "q8": "8-bit"
+   },
+   "samples": {
+    "q2": [
+     {
+      "prompt": "A red fox standing in fresh snow at dawn, soft pink light, fine fur detail, wildlife photography.",
+      "caption": "VARQ <b>19.4 dB</b> &nbsp;·&nbsp; KIVI 14.4 &nbsp;·&nbsp; FlexGen 11.7 &nbsp;<span class='pos'>(+5.0 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q2/idx01.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q2/idx01.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q2/idx01.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx01.jpg"
+      }
+     },
+     {
+      "prompt": "A snowy owl in flight against a pale winter sky, wings spread, feather detail.",
+      "caption": "VARQ <b>24.8 dB</b> &nbsp;·&nbsp; KIVI 21.9 &nbsp;·&nbsp; FlexGen 22.0 &nbsp;<span class='pos'>(+2.8 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q2/idx20.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q2/idx20.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q2/idx20.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx20.jpg"
+      }
+     },
+     {
+      "prompt": "An astronaut riding a horse across a desert at sunset, photorealistic.",
+      "caption": "VARQ <b>17.0 dB</b> &nbsp;·&nbsp; KIVI 15.0 &nbsp;·&nbsp; FlexGen 14.4 &nbsp;<span class='pos'>(+2.0 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q2/idx05.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q2/idx05.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q2/idx05.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx05.jpg"
+      }
+     },
+     {
+      "prompt": "A majestic Bengal tiger walking through a misty bamboo forest, National Geographic style.",
+      "caption": "VARQ <b>15.2 dB</b> &nbsp;·&nbsp; KIVI 13.0 &nbsp;·&nbsp; FlexGen 11.9 &nbsp;<span class='pos'>(+2.2 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q2/idx06.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q2/idx06.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q2/idx06.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx06.jpg"
+      }
+     },
+     {
+      "prompt": "A beautiful Chinese woman with graceful features, close-up portrait, long flowing black hair, wearing a traditional silk cheongsam delicately embroidered with floral patterns, face softly illuminated by ambient light, serene expression",
+      "caption": "VARQ <b>15.6 dB</b> &nbsp;·&nbsp; KIVI 11.3 &nbsp;·&nbsp; FlexGen 10.8 &nbsp;<span class='pos'>(+4.2 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q2/idx24.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q2/idx24.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q2/idx24.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx24.jpg"
+      }
+     },
+     {
+      "prompt": "A colorful macaw parrot perched on a branch in a lush rainforest, vibrant feathers, sharp focus.",
+      "caption": "VARQ <b>13.0 dB</b> &nbsp;·&nbsp; KIVI 10.6 &nbsp;·&nbsp; FlexGen 10.9 &nbsp;<span class='pos'>(+2.0 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q2/idx16.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q2/idx16.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q2/idx16.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx16.jpg"
+      }
+     },
+     {
+      "prompt": "A cinematic close-up portrait of an elderly fisherman with weathered skin and a white beard, golden hour light, shallow depth of field, 85mm lens.",
+      "caption": "VARQ <b>14.6 dB</b> &nbsp;·&nbsp; KIVI 13.1 &nbsp;·&nbsp; FlexGen 11.3 &nbsp;<span class='pos'>(+1.5 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q2/idx00.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q2/idx00.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q2/idx00.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx00.jpg"
+      }
+     },
+     {
+      "prompt": "A hot air balloon festival over Cappadocia at sunrise, dozens of colorful balloons, aerial view.",
+      "caption": "VARQ <b>14.3 dB</b> &nbsp;·&nbsp; KIVI 12.6 &nbsp;·&nbsp; FlexGen 13.7 &nbsp;<span class='pos'>(+0.6 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q2/idx09.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q2/idx09.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q2/idx09.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx09.jpg"
+      }
+     },
+     {
+      "prompt": "A corgi wearing sunglasses sitting on a beach chair with a tropical drink, bright summer colors.",
+      "caption": "VARQ <b>12.0 dB</b> &nbsp;·&nbsp; KIVI 10.3 &nbsp;·&nbsp; FlexGen 9.8 &nbsp;<span class='pos'>(+1.7 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q2/idx10.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q2/idx10.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q2/idx10.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx10.jpg"
+      }
+     },
+     {
+      "prompt": "A cozy Scandinavian cabin by a frozen lake under the northern lights, long exposure photograph.",
+      "caption": "VARQ <b>15.2 dB</b> &nbsp;·&nbsp; KIVI 12.5 &nbsp;·&nbsp; FlexGen 12.8 &nbsp;<span class='pos'>(+2.4 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q2/idx02.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q2/idx02.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q2/idx02.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx02.jpg"
+      }
+     },
+     {
+      "prompt": "A steaming bowl of ramen with a soft-boiled egg, chashu pork and scallions on a wooden counter, food photography.",
+      "caption": "VARQ <b>13.8 dB</b> &nbsp;·&nbsp; KIVI 12.3 &nbsp;·&nbsp; FlexGen 12.0 &nbsp;<span class='pos'>(+1.5 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q2/idx03.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q2/idx03.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q2/idx03.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx03.jpg"
+      }
+     },
+     {
+      "prompt": "An underwater photograph of a sea turtle swimming over a coral reef with sun rays.",
+      "caption": "VARQ <b>14.1 dB</b> &nbsp;·&nbsp; KIVI 12.5 &nbsp;·&nbsp; FlexGen 12.9 &nbsp;<span class='pos'>(+1.2 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q2/idx21.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q2/idx21.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q2/idx21.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx21.jpg"
+      }
+     },
+     {
+      "prompt": "A sleek sports car on a coastal highway at golden hour, motion blur, automotive photography.",
+      "caption": "VARQ <b>16.2 dB</b> &nbsp;·&nbsp; KIVI 12.6 &nbsp;·&nbsp; FlexGen 12.9 &nbsp;<span class='pos'>(+3.2 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q2/idx19.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q2/idx19.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q2/idx19.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx19.jpg"
+      }
+     },
+     {
+      "prompt": "a cat holds a board with the text 'diffusion is dead'",
+      "caption": "VARQ <b>14.7 dB</b> &nbsp;·&nbsp; KIVI 11.8 &nbsp;·&nbsp; FlexGen 12.1 &nbsp;<span class='pos'>(+2.6 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q2/idx14.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q2/idx14.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q2/idx14.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx14.jpg"
+      }
+     },
+     {
+      "prompt": "A medieval knight in ornate silver armor standing in a cathedral lit by stained-glass windows.",
+      "caption": "VARQ <b>11.4 dB</b> &nbsp;·&nbsp; KIVI 9.4 &nbsp;·&nbsp; FlexGen 9.2 &nbsp;<span class='pos'>(+2.0 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q2/idx15.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q2/idx15.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q2/idx15.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx15.jpg"
+      }
+     },
+     {
+      "prompt": "An oil painting of a stormy sea with a lighthouse on a cliff, dramatic brushstrokes, Romantic era style.",
+      "caption": "VARQ <b>15.6 dB</b> &nbsp;·&nbsp; KIVI 11.8 &nbsp;·&nbsp; FlexGen 13.1 &nbsp;<span class='pos'>(+2.5 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q2/idx11.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q2/idx11.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q2/idx11.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx11.jpg"
+      }
+     },
+     {
+      "prompt": "A golden retriever puppy sitting in a field of sunflowers, bright blue sky, joyful expression.",
+      "caption": "VARQ <b>13.3 dB</b> &nbsp;·&nbsp; KIVI 11.4 &nbsp;·&nbsp; FlexGen 10.7 &nbsp;<span class='pos'>(+1.9 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q2/idx25.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q2/idx25.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q2/idx25.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx25.jpg"
+      }
+     },
+     {
+      "prompt": "A chef plating a gourmet dessert with raspberries and gold leaf, restaurant kitchen, bokeh.",
+      "caption": "VARQ <b>13.5 dB</b> &nbsp;·&nbsp; KIVI 10.2 &nbsp;·&nbsp; FlexGen 10.3 &nbsp;<span class='pos'>(+3.3 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q2/idx22.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q2/idx22.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q2/idx22.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q2/idx22.jpg"
+      }
+     }
+    ],
+    "q3": [
+     {
+      "prompt": "A red fox standing in fresh snow at dawn, soft pink light, fine fur detail, wildlife photography.",
+      "caption": "VARQ <b>22.1 dB</b> &nbsp;·&nbsp; KIVI 16.0 &nbsp;·&nbsp; FlexGen 13.6 &nbsp;<span class='pos'>(+6.1 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q3/idx01.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q3/idx01.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q3/idx01.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q3/idx01.jpg"
+      }
+     },
+     {
+      "prompt": "A snowy owl in flight against a pale winter sky, wings spread, feather detail.",
+      "caption": "VARQ <b>25.6 dB</b> &nbsp;·&nbsp; KIVI 25.0 &nbsp;·&nbsp; FlexGen 23.5 &nbsp;<span class='pos'>(+0.6 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q3/idx20.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q3/idx20.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q3/idx20.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q3/idx20.jpg"
+      }
+     },
+     {
+      "prompt": "An astronaut riding a horse across a desert at sunset, photorealistic.",
+      "caption": "VARQ <b>21.1 dB</b> &nbsp;·&nbsp; KIVI 17.8 &nbsp;·&nbsp; FlexGen 16.6 &nbsp;<span class='pos'>(+3.4 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q3/idx05.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q3/idx05.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q3/idx05.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q3/idx05.jpg"
+      }
+     },
+     {
+      "prompt": "A majestic Bengal tiger walking through a misty bamboo forest, National Geographic style.",
+      "caption": "VARQ <b>17.7 dB</b> &nbsp;·&nbsp; KIVI 16.4 &nbsp;·&nbsp; FlexGen 15.6 &nbsp;<span class='pos'>(+1.3 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q3/idx06.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q3/idx06.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q3/idx06.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q3/idx06.jpg"
+      }
+     },
+     {
+      "prompt": "A beautiful Chinese woman with graceful features, close-up portrait, long flowing black hair, wearing a traditional silk cheongsam delicately embroidered with floral patterns, face softly illuminated by ambient light, serene expression",
+      "caption": "VARQ <b>18.7 dB</b> &nbsp;·&nbsp; KIVI 14.6 &nbsp;·&nbsp; FlexGen 14.1 &nbsp;<span class='pos'>(+4.1 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q3/idx24.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q3/idx24.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q3/idx24.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q3/idx24.jpg"
+      }
+     },
+     {
+      "prompt": "A colorful macaw parrot perched on a branch in a lush rainforest, vibrant feathers, sharp focus.",
+      "caption": "VARQ <b>14.8 dB</b> &nbsp;·&nbsp; KIVI 13.2 &nbsp;·&nbsp; FlexGen 12.3 &nbsp;<span class='pos'>(+1.7 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q3/idx16.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q3/idx16.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q3/idx16.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q3/idx16.jpg"
+      }
+     },
+     {
+      "prompt": "A cinematic close-up portrait of an elderly fisherman with weathered skin and a white beard, golden hour light, shallow depth of field, 85mm lens.",
+      "caption": "VARQ <b>16.8 dB</b> &nbsp;·&nbsp; KIVI 15.1 &nbsp;·&nbsp; FlexGen 15.3 &nbsp;<span class='pos'>(+1.5 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q3/idx00.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q3/idx00.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q3/idx00.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q3/idx00.jpg"
+      }
+     },
+     {
+      "prompt": "A hot air balloon festival over Cappadocia at sunrise, dozens of colorful balloons, aerial view.",
+      "caption": "VARQ <b>15.1 dB</b> &nbsp;·&nbsp; KIVI 14.6 &nbsp;·&nbsp; FlexGen 13.7 &nbsp;<span class='pos'>(+0.5 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q3/idx09.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q3/idx09.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q3/idx09.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q3/idx09.jpg"
+      }
+     },
+     {
+      "prompt": "A corgi wearing sunglasses sitting on a beach chair with a tropical drink, bright summer colors.",
+      "caption": "VARQ <b>14.2 dB</b> &nbsp;·&nbsp; KIVI 11.8 &nbsp;·&nbsp; FlexGen 11.5 &nbsp;<span class='pos'>(+2.5 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q3/idx10.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q3/idx10.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q3/idx10.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q3/idx10.jpg"
+      }
+     },
+     {
+      "prompt": "A cozy Scandinavian cabin by a frozen lake under the northern lights, long exposure photograph.",
+      "caption": "VARQ <b>17.8 dB</b> &nbsp;·&nbsp; KIVI 16.4 &nbsp;·&nbsp; FlexGen 15.5 &nbsp;<span class='pos'>(+1.3 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q3/idx02.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q3/idx02.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q3/idx02.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q3/idx02.jpg"
+      }
+     },
+     {
+      "prompt": "A steaming bowl of ramen with a soft-boiled egg, chashu pork and scallions on a wooden counter, food photography.",
+      "caption": "VARQ <b>16.0 dB</b> &nbsp;·&nbsp; KIVI 13.9 &nbsp;·&nbsp; FlexGen 13.1 &nbsp;<span class='pos'>(+2.1 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q3/idx03.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q3/idx03.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q3/idx03.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q3/idx03.jpg"
+      }
+     },
+     {
+      "prompt": "An underwater photograph of a sea turtle swimming over a coral reef with sun rays.",
+      "caption": "VARQ <b>15.5 dB</b> &nbsp;·&nbsp; KIVI 14.0 &nbsp;·&nbsp; FlexGen 14.1 &nbsp;<span class='pos'>(+1.4 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q3/idx21.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q3/idx21.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q3/idx21.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q3/idx21.jpg"
+      }
+     },
+     {
+      "prompt": "A sleek sports car on a coastal highway at golden hour, motion blur, automotive photography.",
+      "caption": "VARQ <b>18.3 dB</b> &nbsp;·&nbsp; KIVI 16.6 &nbsp;·&nbsp; FlexGen 14.6 &nbsp;<span class='pos'>(+1.7 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q3/idx19.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q3/idx19.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q3/idx19.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q3/idx19.jpg"
+      }
+     },
+     {
+      "prompt": "a cat holds a board with the text 'diffusion is dead'",
+      "caption": "VARQ <b>16.2 dB</b> &nbsp;·&nbsp; KIVI 14.7 &nbsp;·&nbsp; FlexGen 13.6 &nbsp;<span class='pos'>(+1.5 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q3/idx14.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q3/idx14.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q3/idx14.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q3/idx14.jpg"
+      }
+     },
+     {
+      "prompt": "A medieval knight in ornate silver armor standing in a cathedral lit by stained-glass windows.",
+      "caption": "VARQ <b>12.7 dB</b> &nbsp;·&nbsp; KIVI 11.5 &nbsp;·&nbsp; FlexGen 11.0 &nbsp;<span class='pos'>(+1.2 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q3/idx15.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q3/idx15.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q3/idx15.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q3/idx15.jpg"
+      }
+     },
+     {
+      "prompt": "An oil painting of a stormy sea with a lighthouse on a cliff, dramatic brushstrokes, Romantic era style.",
+      "caption": "VARQ <b>16.9 dB</b> &nbsp;·&nbsp; KIVI 15.9 &nbsp;·&nbsp; FlexGen 14.8 &nbsp;<span class='pos'>(+1.0 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q3/idx11.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q3/idx11.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q3/idx11.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q3/idx11.jpg"
+      }
+     },
+     {
+      "prompt": "A golden retriever puppy sitting in a field of sunflowers, bright blue sky, joyful expression.",
+      "caption": "VARQ <b>15.8 dB</b> &nbsp;·&nbsp; KIVI 14.6 &nbsp;·&nbsp; FlexGen 13.7 &nbsp;<span class='pos'>(+1.2 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q3/idx25.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q3/idx25.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q3/idx25.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q3/idx25.jpg"
+      }
+     },
+     {
+      "prompt": "A chef plating a gourmet dessert with raspberries and gold leaf, restaurant kitchen, bokeh.",
+      "caption": "VARQ <b>16.9 dB</b> &nbsp;·&nbsp; KIVI 14.5 &nbsp;·&nbsp; FlexGen 12.9 &nbsp;<span class='pos'>(+2.5 dB PSNR)</span>",
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q3/idx22.jpg",
+       "VARQ": "samples/Infinity8B/VARQ/q3/idx22.jpg",
+       "KIVI": "samples/Infinity8B/KIVI/q3/idx22.jpg",
+       "FlexGen": "samples/Infinity8B/FlexGen/q3/idx22.jpg"
+      }
+     }
+    ],
+    "q8": [
+     {
+      "prompt": "A baffling scene where smoke is inexplicably wafting from the filter end of a cigarette between a person's fingers, rather than the lit end. The cigarette is resting in an ashtray that's placed on a round, glass-topped table. Stray ashes can be seen scattered around the ashtray, highlighting the peculiarity of the situation.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q8/idx00006.png",
+       "VARQ": "samples/Infinity8B/VARQ/q8/group01_idx00006.png"
+      }
+     },
+     {
+      "prompt": "A man with bright red boxing gloves awkwardly attempts to play a glossy black grand piano in the center of a room. Around him, the floor is a polished hardwood, reflecting the soft overhead lighting. Despite the gloves, he appears concentrated, engaged in his unique challenge, with sheet music propped up on the piano's stand.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q8/idx00356.png",
+       "VARQ": "samples/Infinity8B/VARQ/q8/group02_idx00356.png"
+      }
+     },
+     {
+      "prompt": "In the center of a bustling intersection, a large tree with a thick trunk and sprawling branches stands out amidst the concrete. Its green leaves contrast sharply with the grey asphalt roads that converge around it. Traffic lights and street signs are positioned awkwardly around the tree's base, creating an unusual juxtaposition of nature and urban infrastructure.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/Infinity8B/Baseline/q8/idx00717.png",
+       "VARQ": "samples/Infinity8B/VARQ/q8/group03_idx00717.png"
+      }
+     }
+    ]
+   },
+   "methodsByBit": {
+    "q2": [
+     "Baseline",
+     "FlexGen",
+     "KIVI",
+     "VARQ"
+    ],
+    "q3": [
+     "Baseline",
+     "FlexGen",
+     "KIVI",
+     "VARQ"
+    ],
+    "q8": [
+     "Baseline",
+     "VARQ"
+    ]
+   }
+  },
+  {
+   "id": "InfinityStar480p",
+   "label": "InfinityStar-480p",
+   "type": "video",
+   "task": "Text-to-Video generation (480p)",
+   "methods": [
+    "Baseline",
+    "FlexGen",
+    "KIVI",
+    "VARQ"
+   ],
+   "methodLabels": {
+    "Baseline": "Baseline (BF16)",
+    "FlexGen": "FlexGen",
+    "KIVI": "KIVI",
+    "VARQ": "VARQ (Ours)"
+   },
+   "bits": [
+    "q3",
+    "q4",
+    "q8"
+   ],
+   "bitLabels": {
+    "q3": "3-bit",
+    "q4": "4-bit",
+    "q8": "8-bit"
+   },
+   "samples": {
+    "q3": [
+     {
+      "prompt": "A girl is peeling an orange",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar480p/Baseline/q3/group01_prompt043_s01.mp4",
+       "FlexGen": "samples/InfinityStar480p/FlexGen/q3/group01_prompt043_s01.mp4",
+       "KIVI": "samples/InfinityStar480p/KIVI/q3/group01_prompt043_s01.mp4",
+       "VARQ": "samples/InfinityStar480p/VARQ/q3/group01_prompt043_s01.mp4"
+      }
+     },
+     {
+      "prompt": "A person playing hopscotch on the rings of Saturn.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar480p/Baseline/q3/group01_prompt195_s03.mp4",
+       "FlexGen": "samples/InfinityStar480p/FlexGen/q3/group01_prompt195_s03.mp4",
+       "KIVI": "samples/InfinityStar480p/KIVI/q3/group01_prompt195_s03.mp4",
+       "VARQ": "samples/InfinityStar480p/VARQ/q3/group01_prompt195_s03.mp4"
+      }
+     },
+     {
+      "prompt": "The person's mouth twisted in disgust as he tasted something bitter.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar480p/Baseline/q3/group01_prompt109_s02.mp4",
+       "FlexGen": "samples/InfinityStar480p/FlexGen/q3/group01_prompt109_s02.mp4",
+       "KIVI": "samples/InfinityStar480p/KIVI/q3/group01_prompt109_s02.mp4",
+       "VARQ": "samples/InfinityStar480p/VARQ/q3/group01_prompt109_s02.mp4"
+      }
+     }
+    ],
+    "q4": [
+     {
+      "prompt": "A bird made of fresh oranges rushes out of the orange",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar480p/Baseline/q4/group01_prompt164_s03.mp4",
+       "FlexGen": "samples/InfinityStar480p/FlexGen/q4/group01_prompt164_s03.mp4",
+       "KIVI": "samples/InfinityStar480p/KIVI/q4/group01_prompt164_s03.mp4",
+       "VARQ": "samples/InfinityStar480p/VARQ/q4/group01_prompt164_s03.mp4"
+      }
+     },
+     {
+      "prompt": "A man is putting a ring on a woman's finger",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar480p/Baseline/q4/group01_prompt051_s01.mp4",
+       "FlexGen": "samples/InfinityStar480p/FlexGen/q4/group01_prompt051_s01.mp4",
+       "KIVI": "samples/InfinityStar480p/KIVI/q4/group01_prompt051_s01.mp4",
+       "VARQ": "samples/InfinityStar480p/VARQ/q4/group01_prompt051_s01.mp4"
+      }
+     },
+     {
+      "prompt": "A bustling ancient marketplace with merchants selling spices and fabrics.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar480p/Baseline/q4/group01_prompt088_s02.mp4",
+       "FlexGen": "samples/InfinityStar480p/FlexGen/q4/group01_prompt088_s02.mp4",
+       "KIVI": "samples/InfinityStar480p/KIVI/q4/group01_prompt088_s02.mp4",
+       "VARQ": "samples/InfinityStar480p/VARQ/q4/group01_prompt088_s02.mp4"
+      }
+     }
+    ],
+    "q8": [
+     {
+      "prompt": "A quaint village nestled in a valley is surrounded by blooming cherry blossoms, with petals drifting through the air as villagers go about their daily activities, adding life to the scene.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar480p/Baseline/q8/group01_prompt029_s01.mp4",
+       "VARQ": "samples/InfinityStar480p/VARQ/q8/group01_prompt029_s01.mp4"
+      }
+     },
+     {
+      "prompt": "Tiltshift of a construction site filled with workers, equipment, and heavy machinery.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar480p/Baseline/q8/group01_prompt130_s02.mp4",
+       "VARQ": "samples/InfinityStar480p/VARQ/q8/group01_prompt130_s02.mp4"
+      }
+     },
+     {
+      "prompt": "A tilt-down from the towering peak of a mountain to the winding path leading up to it.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar480p/Baseline/q8/group01_prompt169_s03.mp4",
+       "VARQ": "samples/InfinityStar480p/VARQ/q8/group01_prompt169_s03.mp4"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "InfinityStar720p",
+   "label": "InfinityStar-720p",
+   "type": "video",
+   "task": "Text-to-Video generation (720p)",
+   "methods": [
+    "Baseline",
+    "FlexGen",
+    "KIVI",
+    "VARQ"
+   ],
+   "methodLabels": {
+    "Baseline": "Baseline (BF16)",
+    "FlexGen": "FlexGen",
+    "KIVI": "KIVI",
+    "VARQ": "VARQ (Ours)"
+   },
+   "bits": [
+    "q3",
+    "q4",
+    "q8"
+   ],
+   "bitLabels": {
+    "q3": "3-bit",
+    "q4": "4-bit",
+    "q8": "8-bit"
+   },
+   "samples": {
+    "q3": [
+     {
+      "prompt": "A person playing hopscotch on the rings of Saturn.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar720p/Baseline/q3/group01_prompt195_s03.mp4",
+       "FlexGen": "samples/InfinityStar720p/FlexGen/q3/group01_prompt195_s03.mp4",
+       "KIVI": "samples/InfinityStar720p/KIVI/q3/group01_prompt195_s03.mp4",
+       "VARQ": "samples/InfinityStar720p/VARQ/q3/group01_prompt195_s03.mp4"
+      }
+     },
+     {
+      "prompt": "A person skydiving from a hot air balloon into a sea of clouds.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar720p/Baseline/q3/group01_prompt129_s02.mp4",
+       "FlexGen": "samples/InfinityStar720p/FlexGen/q3/group01_prompt129_s02.mp4",
+       "KIVI": "samples/InfinityStar720p/KIVI/q3/group01_prompt129_s02.mp4",
+       "VARQ": "samples/InfinityStar720p/VARQ/q3/group01_prompt129_s02.mp4"
+      }
+     },
+     {
+      "prompt": "A zoom-out from a detailed shot of an intricate snowflake, pulling back to show a snowy landscape.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar720p/Baseline/q3/group01_prompt108_s01.mp4",
+       "FlexGen": "samples/InfinityStar720p/FlexGen/q3/group01_prompt108_s01.mp4",
+       "KIVI": "samples/InfinityStar720p/KIVI/q3/group01_prompt108_s01.mp4",
+       "VARQ": "samples/InfinityStar720p/VARQ/q3/group01_prompt108_s01.mp4"
+      }
+     }
+    ],
+    "q4": [
+     {
+      "prompt": "A person playing chess with a robot on a floating platform above the ocean.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar720p/Baseline/q4/group01_prompt071_s02.mp4",
+       "FlexGen": "samples/InfinityStar720p/FlexGen/q4/group01_prompt071_s02.mp4",
+       "KIVI": "samples/InfinityStar720p/KIVI/q4/group01_prompt071_s02.mp4",
+       "VARQ": "samples/InfinityStar720p/VARQ/q4/group01_prompt071_s02.mp4"
+      }
+     },
+     {
+      "prompt": "A chimp on the sidewalk doing a backflip on a skateboard.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar720p/Baseline/q4/group01_prompt057_s01.mp4",
+       "FlexGen": "samples/InfinityStar720p/FlexGen/q4/group01_prompt057_s01.mp4",
+       "KIVI": "samples/InfinityStar720p/KIVI/q4/group01_prompt057_s01.mp4",
+       "VARQ": "samples/InfinityStar720p/VARQ/q4/group01_prompt057_s01.mp4"
+      }
+     },
+     {
+      "prompt": "A martial artist breaking a board with a powerful punch.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar720p/Baseline/q4/group01_prompt154_s03.mp4",
+       "FlexGen": "samples/InfinityStar720p/FlexGen/q4/group01_prompt154_s03.mp4",
+       "KIVI": "samples/InfinityStar720p/KIVI/q4/group01_prompt154_s03.mp4",
+       "VARQ": "samples/InfinityStar720p/VARQ/q4/group01_prompt154_s03.mp4"
+      }
+     }
+    ],
+    "q8": [
+     {
+      "prompt": "a woman wearing blue jeans and a white t shirt taking a pleasant stroll in Mumbai India during a beautiful sunset",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar720p/Baseline/q8/group01_prompt012_s01.mp4",
+       "VARQ": "samples/InfinityStar720p/VARQ/q8/group01_prompt012_s01.mp4"
+      }
+     },
+     {
+      "prompt": "Tiltshift of a construction site filled with workers, equipment, and heavy machinery.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar720p/Baseline/q8/group01_prompt130_s02.mp4",
+       "VARQ": "samples/InfinityStar720p/VARQ/q8/group01_prompt130_s02.mp4"
+      }
+     },
+     {
+      "prompt": "A tilt-down from the towering peak of a mountain to the winding path leading up to it.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar720p/Baseline/q8/group01_prompt169_s03.mp4",
+       "VARQ": "samples/InfinityStar720p/VARQ/q8/group01_prompt169_s03.mp4"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "Infinity2B",
+   "label": "Infinity-2B",
+   "type": "image",
+   "task": "Text-to-Image generation",
+   "methods": [
+    "Baseline",
+    "KIVI",
+    "VARQ"
+   ],
+   "methodLabels": {
+    "Baseline": "Baseline (BF16)",
+    "KIVI": "KIVI",
+    "VARQ": "VARQ (Ours)"
+   },
+   "bits": [
+    "q3",
+    "q4",
+    "q8"
+   ],
+   "bitLabels": {
+    "q3": "3-bit",
+    "q4": "4-bit",
+    "q8": "8-bit"
+   },
+   "samples": {
+    "q3": [
+     {
+      "prompt": "a futuristic spaceship with a design reminiscent of the iconic Sydney Opera House, featuring multiple white, shell-like structures that form its hull. The vessel hovers above the ground, with a slight iridescent sheen on its surface that reflects the light of a distant sun. It is surrounded by a barren landscape, which contrasts sharply with the spaceship's smooth, curved architecture.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/Infinity2B/Baseline/q3/idx00142.png",
+       "KIVI": "samples/Infinity2B/KIVI/q3/group01_idx00142.png",
+       "VARQ": "samples/Infinity2B/VARQ/q3/group01_idx00142.png"
+      }
+     },
+     {
+      "prompt": "A detailed vector illustration showcasing four separate square compositions, each highlighting different aspects of waste management and recycling processes. The vibrant images feature a variety of flat design icons and pictograms that represent sorting bins, recycling symbols, and cleaning equipment. Each square has a distinct color palette to categorize the type of waste, ranging from organic to plastic, metal, and paper, emphasizing the importance of recycling and proper disposal.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/Infinity2B/Baseline/q3/idx00635.png",
+       "KIVI": "samples/Infinity2B/KIVI/q3/group02_idx00635.png",
+       "VARQ": "samples/Infinity2B/VARQ/q3/group02_idx00635.png"
+      }
+     },
+     {
+      "prompt": "A figure depicted with a dynamic pose: its left arm extends forward while the right arm is elongated back, parallel with its spine. Both legs are positioned closely together in a near vertical line, with the right leg gracefully stacked atop the left. The silhouette reflects a ballet dancer's poise during a challenging balancing act.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/Infinity2B/Baseline/q3/idx01006.png",
+       "KIVI": "samples/Infinity2B/KIVI/q3/group03_idx01006.png",
+       "VARQ": "samples/Infinity2B/VARQ/q3/group03_idx01006.png"
+      }
+     }
+    ],
+    "q4": [
+     {
+      "prompt": "a futuristic spaceship with a design reminiscent of the iconic Sydney Opera House, featuring multiple white, shell-like structures that form its hull. The vessel hovers above the ground, with a slight iridescent sheen on its surface that reflects the light of a distant sun. It is surrounded by a barren landscape, which contrasts sharply with the spaceship's smooth, curved architecture.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/Infinity2B/Baseline/q4/idx00142.png",
+       "VARQ": "samples/Infinity2B/VARQ/q4/group01_idx00142.png"
+      }
+     },
+     {
+      "prompt": "A detailed vector illustration showcasing four separate square compositions, each highlighting different aspects of waste management and recycling processes. The vibrant images feature a variety of flat design icons and pictograms that represent sorting bins, recycling symbols, and cleaning equipment. Each square has a distinct color palette to categorize the type of waste, ranging from organic to plastic, metal, and paper, emphasizing the importance of recycling and proper disposal.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/Infinity2B/Baseline/q4/idx00635.png",
+       "VARQ": "samples/Infinity2B/VARQ/q4/group02_idx00635.png"
+      }
+     },
+     {
+      "prompt": "A figure depicted with a dynamic pose: its left arm extends forward while the right arm is elongated back, parallel with its spine. Both legs are positioned closely together in a near vertical line, with the right leg gracefully stacked atop the left. The silhouette reflects a ballet dancer's poise during a challenging balancing act.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/Infinity2B/Baseline/q4/idx01006.png",
+       "VARQ": "samples/Infinity2B/VARQ/q4/group03_idx01006.png"
+      }
+     }
+    ],
+    "q8": [
+     {
+      "prompt": "a futuristic spaceship with a design reminiscent of the iconic Sydney Opera House, featuring multiple white, shell-like structures that form its hull. The vessel hovers above the ground, with a slight iridescent sheen on its surface that reflects the light of a distant sun. It is surrounded by a barren landscape, which contrasts sharply with the spaceship's smooth, curved architecture.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/Infinity2B/Baseline/q8/idx00142.png",
+       "VARQ": "samples/Infinity2B/VARQ/q8/group01_idx00142.png"
+      }
+     },
+     {
+      "prompt": "A detailed vector illustration showcasing four separate square compositions, each highlighting different aspects of waste management and recycling processes. The vibrant images feature a variety of flat design icons and pictograms that represent sorting bins, recycling symbols, and cleaning equipment. Each square has a distinct color palette to categorize the type of waste, ranging from organic to plastic, metal, and paper, emphasizing the importance of recycling and proper disposal.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/Infinity2B/Baseline/q8/idx00635.png",
+       "VARQ": "samples/Infinity2B/VARQ/q8/group02_idx00635.png"
+      }
+     },
+     {
+      "prompt": "A figure depicted with a dynamic pose: its left arm extends forward while the right arm is elongated back, parallel with its spine. Both legs are positioned closely together in a near vertical line, with the right leg gracefully stacked atop the left. The silhouette reflects a ballet dancer's poise during a challenging balancing act.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/Infinity2B/Baseline/q8/idx01006.png",
+       "VARQ": "samples/Infinity2B/VARQ/q8/group03_idx01006.png"
+      }
+     }
+    ]
+   }
+  },
+  {
    "id": "VAR_d30",
    "label": "VAR-d30",
    "type": "image",
@@ -451,695 +1730,6 @@
        "FlexGen": "samples/VAR_d20/FlexGen/q4/iters572_img12.png",
        "KIVI": "samples/VAR_d20/KIVI/q4/iters572_img12.png",
        "VARQ": "samples/VAR_d20/VARQ/q4/iters572_img12.png"
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "Infinity2B",
-   "label": "Infinity-2B",
-   "type": "image",
-   "task": "Text-to-Image generation",
-   "methods": [
-    "Baseline",
-    "KIVI",
-    "VARQ"
-   ],
-   "methodLabels": {
-    "Baseline": "Baseline (BF16)",
-    "KIVI": "KIVI",
-    "VARQ": "VARQ (Ours)"
-   },
-   "bits": [
-    "q3",
-    "q4",
-    "q8"
-   ],
-   "bitLabels": {
-    "q3": "3-bit",
-    "q4": "4-bit",
-    "q8": "8-bit"
-   },
-   "samples": {
-    "q3": [
-     {
-      "prompt": "a futuristic spaceship with a design reminiscent of the iconic Sydney Opera House, featuring multiple white, shell-like structures that form its hull. The vessel hovers above the ground, with a slight iridescent sheen on its surface that reflects the light of a distant sun. It is surrounded by a barren landscape, which contrasts sharply with the spaceship's smooth, curved architecture.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/Infinity2B/Baseline/q3/idx00142.png",
-       "KIVI": "samples/Infinity2B/KIVI/q3/group01_idx00142.png",
-       "VARQ": "samples/Infinity2B/VARQ/q3/group01_idx00142.png"
-      }
-     },
-     {
-      "prompt": "A detailed vector illustration showcasing four separate square compositions, each highlighting different aspects of waste management and recycling processes. The vibrant images feature a variety of flat design icons and pictograms that represent sorting bins, recycling symbols, and cleaning equipment. Each square has a distinct color palette to categorize the type of waste, ranging from organic to plastic, metal, and paper, emphasizing the importance of recycling and proper disposal.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/Infinity2B/Baseline/q3/idx00635.png",
-       "KIVI": "samples/Infinity2B/KIVI/q3/group02_idx00635.png",
-       "VARQ": "samples/Infinity2B/VARQ/q3/group02_idx00635.png"
-      }
-     },
-     {
-      "prompt": "A figure depicted with a dynamic pose: its left arm extends forward while the right arm is elongated back, parallel with its spine. Both legs are positioned closely together in a near vertical line, with the right leg gracefully stacked atop the left. The silhouette reflects a ballet dancer's poise during a challenging balancing act.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/Infinity2B/Baseline/q3/idx01006.png",
-       "KIVI": "samples/Infinity2B/KIVI/q3/group03_idx01006.png",
-       "VARQ": "samples/Infinity2B/VARQ/q3/group03_idx01006.png"
-      }
-     }
-    ],
-    "q4": [
-     {
-      "prompt": "a futuristic spaceship with a design reminiscent of the iconic Sydney Opera House, featuring multiple white, shell-like structures that form its hull. The vessel hovers above the ground, with a slight iridescent sheen on its surface that reflects the light of a distant sun. It is surrounded by a barren landscape, which contrasts sharply with the spaceship's smooth, curved architecture.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/Infinity2B/Baseline/q4/idx00142.png",
-       "VARQ": "samples/Infinity2B/VARQ/q4/group01_idx00142.png"
-      }
-     },
-     {
-      "prompt": "A detailed vector illustration showcasing four separate square compositions, each highlighting different aspects of waste management and recycling processes. The vibrant images feature a variety of flat design icons and pictograms that represent sorting bins, recycling symbols, and cleaning equipment. Each square has a distinct color palette to categorize the type of waste, ranging from organic to plastic, metal, and paper, emphasizing the importance of recycling and proper disposal.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/Infinity2B/Baseline/q4/idx00635.png",
-       "VARQ": "samples/Infinity2B/VARQ/q4/group02_idx00635.png"
-      }
-     },
-     {
-      "prompt": "A figure depicted with a dynamic pose: its left arm extends forward while the right arm is elongated back, parallel with its spine. Both legs are positioned closely together in a near vertical line, with the right leg gracefully stacked atop the left. The silhouette reflects a ballet dancer's poise during a challenging balancing act.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/Infinity2B/Baseline/q4/idx01006.png",
-       "VARQ": "samples/Infinity2B/VARQ/q4/group03_idx01006.png"
-      }
-     }
-    ],
-    "q8": [
-     {
-      "prompt": "a futuristic spaceship with a design reminiscent of the iconic Sydney Opera House, featuring multiple white, shell-like structures that form its hull. The vessel hovers above the ground, with a slight iridescent sheen on its surface that reflects the light of a distant sun. It is surrounded by a barren landscape, which contrasts sharply with the spaceship's smooth, curved architecture.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/Infinity2B/Baseline/q8/idx00142.png",
-       "VARQ": "samples/Infinity2B/VARQ/q8/group01_idx00142.png"
-      }
-     },
-     {
-      "prompt": "A detailed vector illustration showcasing four separate square compositions, each highlighting different aspects of waste management and recycling processes. The vibrant images feature a variety of flat design icons and pictograms that represent sorting bins, recycling symbols, and cleaning equipment. Each square has a distinct color palette to categorize the type of waste, ranging from organic to plastic, metal, and paper, emphasizing the importance of recycling and proper disposal.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/Infinity2B/Baseline/q8/idx00635.png",
-       "VARQ": "samples/Infinity2B/VARQ/q8/group02_idx00635.png"
-      }
-     },
-     {
-      "prompt": "A figure depicted with a dynamic pose: its left arm extends forward while the right arm is elongated back, parallel with its spine. Both legs are positioned closely together in a near vertical line, with the right leg gracefully stacked atop the left. The silhouette reflects a ballet dancer's poise during a challenging balancing act.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/Infinity2B/Baseline/q8/idx01006.png",
-       "VARQ": "samples/Infinity2B/VARQ/q8/group03_idx01006.png"
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "Infinity8B",
-   "label": "Infinity-8B",
-   "type": "image",
-   "task": "Text-to-Image generation",
-   "methods": [
-    "Baseline",
-    "VARQ"
-   ],
-   "methodLabels": {
-    "Baseline": "Baseline (BF16)",
-    "VARQ": "VARQ (Ours)"
-   },
-   "bits": [
-    "q2",
-    "q3",
-    "q8"
-   ],
-   "bitLabels": {
-    "q2": "2-bit",
-    "q3": "3-bit",
-    "q8": "8-bit"
-   },
-   "samples": {
-    "q2": [
-     {
-      "prompt": "A baffling scene where smoke is inexplicably wafting from the filter end of a cigarette between a person's fingers, rather than the lit end. The cigarette is resting in an ashtray that's placed on a round, glass-topped table. Stray ashes can be seen scattered around the ashtray, highlighting the peculiarity of the situation.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q2/idx00006.png",
-       "VARQ": "samples/Infinity8B/VARQ/q2/group01_idx00006.png"
-      }
-     },
-     {
-      "prompt": "A man with bright red boxing gloves awkwardly attempts to play a glossy black grand piano in the center of a room. Around him, the floor is a polished hardwood, reflecting the soft overhead lighting. Despite the gloves, he appears concentrated, engaged in his unique challenge, with sheet music propped up on the piano's stand.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q2/idx00356.png",
-       "VARQ": "samples/Infinity8B/VARQ/q2/group02_idx00356.png"
-      }
-     },
-     {
-      "prompt": "In the center of a bustling intersection, a large tree with a thick trunk and sprawling branches stands out amidst the concrete. Its green leaves contrast sharply with the grey asphalt roads that converge around it. Traffic lights and street signs are positioned awkwardly around the tree's base, creating an unusual juxtaposition of nature and urban infrastructure.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q2/idx00717.png",
-       "VARQ": "samples/Infinity8B/VARQ/q2/group03_idx00717.png"
-      }
-     }
-    ],
-    "q3": [
-     {
-      "prompt": "A baffling scene where smoke is inexplicably wafting from the filter end of a cigarette between a person's fingers, rather than the lit end. The cigarette is resting in an ashtray that's placed on a round, glass-topped table. Stray ashes can be seen scattered around the ashtray, highlighting the peculiarity of the situation.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q3/idx00006.png",
-       "VARQ": "samples/Infinity8B/VARQ/q3/group01_idx00006.png"
-      }
-     },
-     {
-      "prompt": "A man with bright red boxing gloves awkwardly attempts to play a glossy black grand piano in the center of a room. Around him, the floor is a polished hardwood, reflecting the soft overhead lighting. Despite the gloves, he appears concentrated, engaged in his unique challenge, with sheet music propped up on the piano's stand.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q3/idx00356.png",
-       "VARQ": "samples/Infinity8B/VARQ/q3/group02_idx00356.png"
-      }
-     },
-     {
-      "prompt": "In the center of a bustling intersection, a large tree with a thick trunk and sprawling branches stands out amidst the concrete. Its green leaves contrast sharply with the grey asphalt roads that converge around it. Traffic lights and street signs are positioned awkwardly around the tree's base, creating an unusual juxtaposition of nature and urban infrastructure.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q3/idx00717.png",
-       "VARQ": "samples/Infinity8B/VARQ/q3/group03_idx00717.png"
-      }
-     }
-    ],
-    "q8": [
-     {
-      "prompt": "A baffling scene where smoke is inexplicably wafting from the filter end of a cigarette between a person's fingers, rather than the lit end. The cigarette is resting in an ashtray that's placed on a round, glass-topped table. Stray ashes can be seen scattered around the ashtray, highlighting the peculiarity of the situation.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q8/idx00006.png",
-       "VARQ": "samples/Infinity8B/VARQ/q8/group01_idx00006.png"
-      }
-     },
-     {
-      "prompt": "A man with bright red boxing gloves awkwardly attempts to play a glossy black grand piano in the center of a room. Around him, the floor is a polished hardwood, reflecting the soft overhead lighting. Despite the gloves, he appears concentrated, engaged in his unique challenge, with sheet music propped up on the piano's stand.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q8/idx00356.png",
-       "VARQ": "samples/Infinity8B/VARQ/q8/group02_idx00356.png"
-      }
-     },
-     {
-      "prompt": "In the center of a bustling intersection, a large tree with a thick trunk and sprawling branches stands out amidst the concrete. Its green leaves contrast sharply with the grey asphalt roads that converge around it. Traffic lights and street signs are positioned awkwardly around the tree's base, creating an unusual juxtaposition of nature and urban infrastructure.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/Infinity8B/Baseline/q8/idx00717.png",
-       "VARQ": "samples/Infinity8B/VARQ/q8/group03_idx00717.png"
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "InfinityStar480p",
-   "label": "InfinityStar-480p",
-   "type": "video",
-   "task": "Text-to-Video generation (480p)",
-   "methods": [
-    "Baseline",
-    "FlexGen",
-    "KIVI",
-    "VARQ"
-   ],
-   "methodLabels": {
-    "Baseline": "Baseline (BF16)",
-    "FlexGen": "FlexGen",
-    "KIVI": "KIVI",
-    "VARQ": "VARQ (Ours)"
-   },
-   "bits": [
-    "q3",
-    "q4",
-    "q8"
-   ],
-   "bitLabels": {
-    "q3": "3-bit",
-    "q4": "4-bit",
-    "q8": "8-bit"
-   },
-   "samples": {
-    "q3": [
-     {
-      "prompt": "A girl is peeling an orange",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/InfinityStar480p/Baseline/q3/group01_prompt043_s01.mp4",
-       "FlexGen": "samples/InfinityStar480p/FlexGen/q3/group01_prompt043_s01.mp4",
-       "KIVI": "samples/InfinityStar480p/KIVI/q3/group01_prompt043_s01.mp4",
-       "VARQ": "samples/InfinityStar480p/VARQ/q3/group01_prompt043_s01.mp4"
-      }
-     },
-     {
-      "prompt": "A person playing hopscotch on the rings of Saturn.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/InfinityStar480p/Baseline/q3/group01_prompt195_s03.mp4",
-       "FlexGen": "samples/InfinityStar480p/FlexGen/q3/group01_prompt195_s03.mp4",
-       "KIVI": "samples/InfinityStar480p/KIVI/q3/group01_prompt195_s03.mp4",
-       "VARQ": "samples/InfinityStar480p/VARQ/q3/group01_prompt195_s03.mp4"
-      }
-     },
-     {
-      "prompt": "The person's mouth twisted in disgust as he tasted something bitter.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/InfinityStar480p/Baseline/q3/group01_prompt109_s02.mp4",
-       "FlexGen": "samples/InfinityStar480p/FlexGen/q3/group01_prompt109_s02.mp4",
-       "KIVI": "samples/InfinityStar480p/KIVI/q3/group01_prompt109_s02.mp4",
-       "VARQ": "samples/InfinityStar480p/VARQ/q3/group01_prompt109_s02.mp4"
-      }
-     }
-    ],
-    "q4": [
-     {
-      "prompt": "A bird made of fresh oranges rushes out of the orange",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/InfinityStar480p/Baseline/q4/group01_prompt164_s03.mp4",
-       "FlexGen": "samples/InfinityStar480p/FlexGen/q4/group01_prompt164_s03.mp4",
-       "KIVI": "samples/InfinityStar480p/KIVI/q4/group01_prompt164_s03.mp4",
-       "VARQ": "samples/InfinityStar480p/VARQ/q4/group01_prompt164_s03.mp4"
-      }
-     },
-     {
-      "prompt": "A man is putting a ring on a woman's finger",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/InfinityStar480p/Baseline/q4/group01_prompt051_s01.mp4",
-       "FlexGen": "samples/InfinityStar480p/FlexGen/q4/group01_prompt051_s01.mp4",
-       "KIVI": "samples/InfinityStar480p/KIVI/q4/group01_prompt051_s01.mp4",
-       "VARQ": "samples/InfinityStar480p/VARQ/q4/group01_prompt051_s01.mp4"
-      }
-     },
-     {
-      "prompt": "A bustling ancient marketplace with merchants selling spices and fabrics.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/InfinityStar480p/Baseline/q4/group01_prompt088_s02.mp4",
-       "FlexGen": "samples/InfinityStar480p/FlexGen/q4/group01_prompt088_s02.mp4",
-       "KIVI": "samples/InfinityStar480p/KIVI/q4/group01_prompt088_s02.mp4",
-       "VARQ": "samples/InfinityStar480p/VARQ/q4/group01_prompt088_s02.mp4"
-      }
-     }
-    ],
-    "q8": [
-     {
-      "prompt": "A quaint village nestled in a valley is surrounded by blooming cherry blossoms, with petals drifting through the air as villagers go about their daily activities, adding life to the scene.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/InfinityStar480p/Baseline/q8/group01_prompt029_s01.mp4",
-       "VARQ": "samples/InfinityStar480p/VARQ/q8/group01_prompt029_s01.mp4"
-      }
-     },
-     {
-      "prompt": "Tiltshift of a construction site filled with workers, equipment, and heavy machinery.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/InfinityStar480p/Baseline/q8/group01_prompt130_s02.mp4",
-       "VARQ": "samples/InfinityStar480p/VARQ/q8/group01_prompt130_s02.mp4"
-      }
-     },
-     {
-      "prompt": "A tilt-down from the towering peak of a mountain to the winding path leading up to it.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/InfinityStar480p/Baseline/q8/group01_prompt169_s03.mp4",
-       "VARQ": "samples/InfinityStar480p/VARQ/q8/group01_prompt169_s03.mp4"
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "InfinityStar720p",
-   "label": "InfinityStar-720p",
-   "type": "video",
-   "task": "Text-to-Video generation (720p)",
-   "methods": [
-    "Baseline",
-    "FlexGen",
-    "KIVI",
-    "VARQ"
-   ],
-   "methodLabels": {
-    "Baseline": "Baseline (BF16)",
-    "FlexGen": "FlexGen",
-    "KIVI": "KIVI",
-    "VARQ": "VARQ (Ours)"
-   },
-   "bits": [
-    "q3",
-    "q4",
-    "q8"
-   ],
-   "bitLabels": {
-    "q3": "3-bit",
-    "q4": "4-bit",
-    "q8": "8-bit"
-   },
-   "samples": {
-    "q3": [
-     {
-      "prompt": "A person playing hopscotch on the rings of Saturn.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/InfinityStar720p/Baseline/q3/group01_prompt195_s03.mp4",
-       "FlexGen": "samples/InfinityStar720p/FlexGen/q3/group01_prompt195_s03.mp4",
-       "KIVI": "samples/InfinityStar720p/KIVI/q3/group01_prompt195_s03.mp4",
-       "VARQ": "samples/InfinityStar720p/VARQ/q3/group01_prompt195_s03.mp4"
-      }
-     },
-     {
-      "prompt": "A person skydiving from a hot air balloon into a sea of clouds.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/InfinityStar720p/Baseline/q3/group01_prompt129_s02.mp4",
-       "FlexGen": "samples/InfinityStar720p/FlexGen/q3/group01_prompt129_s02.mp4",
-       "KIVI": "samples/InfinityStar720p/KIVI/q3/group01_prompt129_s02.mp4",
-       "VARQ": "samples/InfinityStar720p/VARQ/q3/group01_prompt129_s02.mp4"
-      }
-     },
-     {
-      "prompt": "A zoom-out from a detailed shot of an intricate snowflake, pulling back to show a snowy landscape.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/InfinityStar720p/Baseline/q3/group01_prompt108_s01.mp4",
-       "FlexGen": "samples/InfinityStar720p/FlexGen/q3/group01_prompt108_s01.mp4",
-       "KIVI": "samples/InfinityStar720p/KIVI/q3/group01_prompt108_s01.mp4",
-       "VARQ": "samples/InfinityStar720p/VARQ/q3/group01_prompt108_s01.mp4"
-      }
-     }
-    ],
-    "q4": [
-     {
-      "prompt": "A person playing chess with a robot on a floating platform above the ocean.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/InfinityStar720p/Baseline/q4/group01_prompt071_s02.mp4",
-       "FlexGen": "samples/InfinityStar720p/FlexGen/q4/group01_prompt071_s02.mp4",
-       "KIVI": "samples/InfinityStar720p/KIVI/q4/group01_prompt071_s02.mp4",
-       "VARQ": "samples/InfinityStar720p/VARQ/q4/group01_prompt071_s02.mp4"
-      }
-     },
-     {
-      "prompt": "A chimp on the sidewalk doing a backflip on a skateboard.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/InfinityStar720p/Baseline/q4/group01_prompt057_s01.mp4",
-       "FlexGen": "samples/InfinityStar720p/FlexGen/q4/group01_prompt057_s01.mp4",
-       "KIVI": "samples/InfinityStar720p/KIVI/q4/group01_prompt057_s01.mp4",
-       "VARQ": "samples/InfinityStar720p/VARQ/q4/group01_prompt057_s01.mp4"
-      }
-     },
-     {
-      "prompt": "A martial artist breaking a board with a powerful punch.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/InfinityStar720p/Baseline/q4/group01_prompt154_s03.mp4",
-       "FlexGen": "samples/InfinityStar720p/FlexGen/q4/group01_prompt154_s03.mp4",
-       "KIVI": "samples/InfinityStar720p/KIVI/q4/group01_prompt154_s03.mp4",
-       "VARQ": "samples/InfinityStar720p/VARQ/q4/group01_prompt154_s03.mp4"
-      }
-     }
-    ],
-    "q8": [
-     {
-      "prompt": "a woman wearing blue jeans and a white t shirt taking a pleasant stroll in Mumbai India during a beautiful sunset",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/InfinityStar720p/Baseline/q8/group01_prompt012_s01.mp4",
-       "VARQ": "samples/InfinityStar720p/VARQ/q8/group01_prompt012_s01.mp4"
-      }
-     },
-     {
-      "prompt": "Tiltshift of a construction site filled with workers, equipment, and heavy machinery.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/InfinityStar720p/Baseline/q8/group01_prompt130_s02.mp4",
-       "VARQ": "samples/InfinityStar720p/VARQ/q8/group01_prompt130_s02.mp4"
-      }
-     },
-     {
-      "prompt": "A tilt-down from the towering peak of a mountain to the winding path leading up to it.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/InfinityStar720p/Baseline/q8/group01_prompt169_s03.mp4",
-       "VARQ": "samples/InfinityStar720p/VARQ/q8/group01_prompt169_s03.mp4"
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "self_forcing",
-   "label": "Self-Forcing",
-   "type": "video",
-   "task": "Streaming autoregressive video",
-   "methods": [
-    "Baseline",
-    "FlexGen",
-    "KIVI",
-    "VARQ"
-   ],
-   "methodLabels": {
-    "Baseline": "Baseline (BF16)",
-    "FlexGen": "FlexGen",
-    "KIVI": "KIVI",
-    "VARQ": "VARQ (Ours)"
-   },
-   "bits": [
-    "q6"
-   ],
-   "bitLabels": {
-    "q6": "6-bit"
-   },
-   "samples": {
-    "q6": [
-     {
-      "prompt": "a giant duck walks through the streets in Boston",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/self_forcing/Baseline/q6/group02_prompt079_s01.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q6/group02_prompt079_s01.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q6/group02_prompt079_s01.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q6/group02_prompt079_s01.mp4"
-      }
-     },
-     {
-      "prompt": "A little boy is riding a dragon in the sky to a castle",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/self_forcing/Baseline/q6/group02_prompt101_s02.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q6/group02_prompt101_s02.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q6/group02_prompt101_s02.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q6/group02_prompt101_s02.mp4"
-      }
-     },
-     {
-      "prompt": "Cinematic trailer for a group of adventurous puppies exploring ruins in the sky",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/self_forcing/Baseline/q6/group01_prompt032_s02.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q6/group01_prompt032_s02.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q6/group01_prompt032_s02.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q6/group01_prompt032_s02.mp4"
-      }
-     },
-     {
-      "prompt": "A person on a scooter colliding with a park bench, the scooter tipping over.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/self_forcing/Baseline/q6/group03_prompt167_s02.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q6/group03_prompt167_s02.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q6/group03_prompt167_s02.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q6/group03_prompt167_s02.mp4"
-      }
-     },
-     {
-      "prompt": "A man pushes away a huge stone with superhuman strength.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/self_forcing/Baseline/q6/group03_prompt188_s03.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q6/group03_prompt188_s03.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q6/group03_prompt188_s03.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q6/group03_prompt188_s03.mp4"
-      }
-     },
-     {
-      "prompt": "A push-in through a garden archway, revealing a secret, tranquil garden filled with blooming flowers.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/self_forcing/Baseline/q6/group01_prompt047_s03.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q6/group01_prompt047_s03.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q6/group01_prompt047_s03.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q6/group01_prompt047_s03.mp4"
-      }
-     },
-     {
-      "prompt": "A peacock wearing a crown, sitting on a throne and holding court with other animals.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/self_forcing/Baseline/q6/group03_prompt138_s01.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q6/group03_prompt138_s01.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q6/group03_prompt138_s01.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q6/group03_prompt138_s01.mp4"
-      }
-     },
-     {
-      "prompt": "A truck right through a tranquil garden, moving past blooming flowers, trees, and a small fountain.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/self_forcing/Baseline/q6/group02_prompt111_s03.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q6/group02_prompt111_s03.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q6/group02_prompt111_s03.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q6/group02_prompt111_s03.mp4"
-      }
-     },
-     {
-      "prompt": "a toy robot wearing a green dress and a sun hat taking a pleasant stroll in Antarctica during a beautiful sunset",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/self_forcing/Baseline/q6/group01_prompt018_s01.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q6/group01_prompt018_s01.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q6/group01_prompt018_s01.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q6/group01_prompt018_s01.mp4"
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "longlive",
-   "label": "LongLive",
-   "type": "video",
-   "task": "Long-horizon video generation",
-   "methods": [
-    "Baseline",
-    "FlexGen",
-    "KIVI",
-    "VARQ"
-   ],
-   "methodLabels": {
-    "Baseline": "Baseline (BF16)",
-    "FlexGen": "FlexGen",
-    "KIVI": "KIVI",
-    "VARQ": "VARQ (Ours)"
-   },
-   "bits": [
-    "q6"
-   ],
-   "bitLabels": {
-    "q6": "6-bit"
-   },
-   "samples": {
-    "q6": [
-     {
-      "prompt": "A cook flipping pancakes on a griddle.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/longlive/Baseline/q6/group02_prompt081_s01.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q6/group02_prompt081_s01.mp4",
-       "KIVI": "samples/longlive/KIVI/q6/group02_prompt081_s01.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/group02_prompt081_s01.mp4"
-      }
-     },
-     {
-      "prompt": "A bear wearing a superhero cape, flying through the sky over a bustling city.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/longlive/Baseline/q6/group03_prompt165_s02.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q6/group03_prompt165_s02.mp4",
-       "KIVI": "samples/longlive/KIVI/q6/group03_prompt165_s02.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/group03_prompt165_s02.mp4"
-      }
-     },
-     {
-      "prompt": "New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/longlive/Baseline/q6/group03_prompt153_s01.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q6/group03_prompt153_s01.mp4",
-       "KIVI": "samples/longlive/KIVI/q6/group03_prompt153_s01.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/group03_prompt153_s01.mp4"
-      }
-     },
-     {
-      "prompt": "a man BASE jumping over tropical hawaii waters. His pet macaw flies alongside him",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/longlive/Baseline/q6/group01_prompt041_s02.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q6/group01_prompt041_s02.mp4",
-       "KIVI": "samples/longlive/KIVI/q6/group01_prompt041_s02.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/group01_prompt041_s02.mp4"
-      }
-     },
-     {
-      "prompt": "An aerial shot of a field of blooming wildflowers, creating a patchwork of colors in the landscape.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/longlive/Baseline/q6/group01_prompt052_s03.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q6/group01_prompt052_s03.mp4",
-       "KIVI": "samples/longlive/KIVI/q6/group01_prompt052_s03.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/group01_prompt052_s03.mp4"
-      }
-     },
-     {
-      "prompt": "A goat operating a food truck, serving gourmet grilled cheese sandwiches to a line of animals.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/longlive/Baseline/q6/group03_prompt190_s03.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q6/group03_prompt190_s03.mp4",
-       "KIVI": "samples/longlive/KIVI/q6/group03_prompt190_s03.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/group03_prompt190_s03.mp4"
-      }
-     },
-     {
-      "prompt": "A middle-aged sad bald man becomes happy as a wig of curly hair and sunglasses fall suddenly on his head.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/longlive/Baseline/q6/group01_prompt009_s01.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q6/group01_prompt009_s01.mp4",
-       "KIVI": "samples/longlive/KIVI/q6/group01_prompt009_s01.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/group01_prompt009_s01.mp4"
-      }
-     },
-     {
-      "prompt": "In an ancient library, books float and glow as they drift through the air, occasionally landing softly on the tables, where curious individuals reach out to read their contents.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/longlive/Baseline/q6/group02_prompt122_s03.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q6/group02_prompt122_s03.mp4",
-       "KIVI": "samples/longlive/KIVI/q6/group02_prompt122_s03.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/group02_prompt122_s03.mp4"
-      }
-     },
-     {
-      "prompt": "A slow cinematic push in on an ostrich standing in a 1980s kitchen.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/longlive/Baseline/q6/group02_prompt092_s02.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q6/group02_prompt092_s02.mp4",
-       "KIVI": "samples/longlive/KIVI/q6/group02_prompt092_s02.mp4",
-       "VARQ": "samples/longlive/VARQ/q6/group02_prompt092_s02.mp4"
       }
      }
     ]

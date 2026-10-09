@@ -147,8 +147,8 @@
                 <figcaption>BF16 reference</figcaption>
                 <video
                   aria-describedby="showcase-note"
-                  aria-label="Self-Forcing BF16 reference: A little boy is riding a dragon in the sky to a castle"
-                  data-src="samples/self_forcing/Baseline/q6/group02_prompt101_s02.mp4"
+                  aria-label="Self-Forcing BF16 reference: Five gray wolf pups frolicking and chasing each other around a remote gravel road, surrounded by grass. The pups run and leap, chasing each other, and nipping at each other, playing."
+                  data-src="samples/self_forcing/Baseline/q4/prompt01.mp4"
                   loop=""
                   muted=""
                   playsinline=""
@@ -157,11 +157,11 @@
                 ></video>
               </figure>
               <figure class="feature-video feature-ours">
-                <figcaption>VAR-Q · 6-bit</figcaption>
+                <figcaption>VAR-Q · 4-bit</figcaption>
                 <video
                   aria-describedby="showcase-note"
-                  aria-label="Self-Forcing VAR-Q · 6-bit: A little boy is riding a dragon in the sky to a castle"
-                  data-src="samples/self_forcing/VARQ/q6/group02_prompt101_s02.mp4"
+                  aria-label="Self-Forcing VAR-Q · 4-bit: Five gray wolf pups frolicking and chasing each other around a remote gravel road, surrounded by grass. The pups run and leap, chasing each other, and nipping at each other, playing."
+                  data-src="samples/self_forcing/VARQ/q4/prompt01.mp4"
                   loop=""
                   muted=""
                   playsinline=""
@@ -175,17 +175,17 @@
               ><label class="feature-select"
                 ><span class="sr-only">Self-Forcing sample</span
                 ><select disabled="">
-                  <option value="0">A ride through the sky</option>
-                  <option value="1">A giant duck in Boston</option>
-                  <option value="2">Through the garden gate</option>
+                  <option value="0">Wolf pups at play</option>
+                  <option value="1">Neon Tokyo stroll</option>
+                  <option value="2">A ride through the sky</option>
                 </select></label
               ><output class="feature-time">0.0 s</output>
             </div>
             <label class="sr-only" for="seek-frame">Self-Forcing shared timeline</label
             ><input class="feature-seek" disabled="" id="seek-frame" max="1" min="0" step=".05" type="range" value="0" />
-            <p class="feature-prompt">A little boy is riding a dragon in the sky to a castle</p>
+            <p class="feature-prompt">Five gray wolf pups frolicking and chasing each other around a remote gravel road, surrounded by grass. The pups run and leap, chasing each other, and nipping at each other, playing.</p>
             <p class="feature-status sr-only" role="status"></p>
-            <noscript><a href="samples/self_forcing/VARQ/q6/group02_prompt101_s02.mp4">Watch the VAR-Q video</a></noscript>
+            <noscript><a href="samples/self_forcing/VARQ/q4/prompt01.mp4">Watch the VAR-Q video</a></noscript>
           </article>
         </div>
         <div class="showcase-foot">
@@ -2222,7 +2222,7 @@
             <p>
               LongLive extends the next-frame setting to longer sequences. Compare motion and scene consistency with both videos on the same timeline.
             </p>
-            <p class="small-note">These clips use 6-bit KV caches. The paper separately reports INT4 and INT6 results.</p>
+            <p class="small-note">These clips use 4-bit KV caches, generated with the public VAR-Q runtime hooks. The paper reports INT4 and INT6 results.</p>
             <a class="inline-link" href="#benchmarks">See the measured tradeoff ↗</a>
           </div>
           <article class="feature-card" data-feature="long">
@@ -2239,7 +2239,7 @@
                 <video
                   aria-describedby="showcase-note"
                   aria-label="LongLive BF16 reference: New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York."
-                  data-src="samples/longlive/Baseline/q6/group03_prompt153_s01.mp4"
+                  data-src="samples/longlive/Baseline/q4/prompt06.mp4"
                   loop=""
                   muted=""
                   playsinline=""
@@ -2248,11 +2248,11 @@
                 ></video>
               </figure>
               <figure class="feature-video feature-ours">
-                <figcaption>VAR-Q · 6-bit</figcaption>
+                <figcaption>VAR-Q · 4-bit</figcaption>
                 <video
                   aria-describedby="showcase-note"
-                  aria-label="LongLive VAR-Q · 6-bit: New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York."
-                  data-src="samples/longlive/VARQ/q6/group03_prompt153_s01.mp4"
+                  aria-label="LongLive VAR-Q · 4-bit: New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York."
+                  data-src="samples/longlive/VARQ/q4/prompt06.mp4"
                   loop=""
                   muted=""
                   playsinline=""
@@ -2267,24 +2267,22 @@
                 ><span class="sr-only">LongLive sample</span
                 ><select disabled="">
                   <option value="0">An underwater New York</option>
-                  <option value="1">The floating library</option>
-                  <option value="2">Fields of wildflowers</option>
+                  <option value="1">A walk through Tokyo</option>
+                  <option value="2">Lion on the rock</option>
                 </select></label
               ><output class="feature-time">0.0 s</output>
             </div>
             <label class="sr-only" for="seek-long">LongLive shared timeline</label
             ><input class="feature-seek" disabled="" id="seek-long" max="1" min="0" step=".05" type="range" value="0" />
-            <p class="feature-prompt">
-              New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York.
-            </p>
+            <p class="feature-prompt">New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York.</p>
             <p class="feature-status sr-only" role="status"></p>
-            <noscript><a href="samples/longlive/VARQ/q6/group03_prompt153_s01.mp4">Watch the VAR-Q video</a></noscript>
+            <noscript><a href="samples/longlive/VARQ/q4/prompt06.mp4">Watch the VAR-Q video</a></noscript>
           </article>
         </div>
         <div class="more-video-heading" id="more-videos">
           <p class="eyebrow">More generated videos</p>
           <h3>Different scenes, the same low-bit cache</h3>
-          <p>Six more BF16 / VAR-Q comparisons, ready to play. InfinityStar uses INT3; Self-Forcing and LongLive use INT6.</p>
+          <p>Six more BF16 / VAR-Q comparisons, ready to play. InfinityStar uses INT3; Self-Forcing and LongLive use INT4.</p>
         </div>
         <div class="more-video-grid">
           <article class="feature-card direct-demo" data-feature="scale-sample-2">
@@ -2393,7 +2391,7 @@
             <div class="feature-top">
               <div>
                 <span class="paradigm-tag frame">Next-frame</span>
-                <h3>A giant duck in Boston</h3>
+                <h3>Neon Tokyo stroll</h3>
               </div>
               <span class="feature-index">Self-Forcing</span>
             </div>
@@ -2402,8 +2400,8 @@
                 <figcaption>BF16 reference</figcaption>
                 <video
                   aria-describedby="showcase-note"
-                  aria-label="Self-Forcing BF16: a giant duck walks through the streets in Boston"
-                  data-src="samples/self_forcing/Baseline/q6/group02_prompt079_s01.mp4"
+                  aria-label="Self-Forcing BF16: A stylish woman walks down a Tokyo street filled with warm glowing neon and animated city signage. She wears a black leather jacket, a long red dress, and black boots, and carries a black purse. She wears sunglasses and red lipstick. She walks confidently and casually. The street is damp and reflective, creating a mirror effect of the colorful lights. Many pedestrians walk about."
+                  data-src="samples/self_forcing/Baseline/q4/prompt17.mp4"
                   loop=""
                   muted=""
                   playsinline=""
@@ -2412,11 +2410,11 @@
                 ></video>
               </figure>
               <figure class="feature-video feature-ours">
-                <figcaption>VAR-Q · 6-bit</figcaption>
+                <figcaption>VAR-Q · 4-bit</figcaption>
                 <video
                   aria-describedby="showcase-note"
-                  aria-label="Self-Forcing VAR-Q 6-bit: a giant duck walks through the streets in Boston"
-                  data-src="samples/self_forcing/VARQ/q6/group02_prompt079_s01.mp4"
+                  aria-label="Self-Forcing VAR-Q 4-bit: A stylish woman walks down a Tokyo street filled with warm glowing neon and animated city signage. She wears a black leather jacket, a long red dress, and black boots, and carries a black purse. She wears sunglasses and red lipstick. She walks confidently and casually. The street is damp and reflective, creating a mirror effect of the colorful lights. Many pedestrians walk about."
+                  data-src="samples/self_forcing/VARQ/q4/prompt17.mp4"
                   loop=""
                   muted=""
                   playsinline=""
@@ -2430,21 +2428,21 @@
               ><label class="feature-select" hidden=""
                 ><span class="sr-only">Self-Forcing sample</span
                 ><select disabled="">
-                  <option value="0">A giant duck in Boston</option>
+                  <option value="0">Neon Tokyo stroll</option>
                 </select></label
               ><output class="feature-time">0.0 s</output>
             </div>
             <label class="sr-only" for="seek-frame-frame-sample-2">Self-Forcing shared timeline</label
             ><input class="feature-seek" disabled="" id="seek-frame-frame-sample-2" max="1" min="0" step=".05" type="range" value="0" />
-            <p class="feature-prompt">a giant duck walks through the streets in Boston</p>
+            <p class="feature-prompt">A stylish woman walks down a Tokyo street filled with warm glowing neon and animated city signage. She wears a black leather jacket, a long red dress, and black boots, and carries a black purse. She wears sunglasses and red lipstick. She walks confidently and casually. The street is damp and reflective, creating a mirror effect of the colorful lights. Many pedestrians walk about.</p>
             <p class="feature-status sr-only" role="status"></p>
-            <noscript><a href="samples/self_forcing/VARQ/q6/group02_prompt101_s02.mp4">Watch the VAR-Q video</a></noscript>
+            <noscript><a href="samples/self_forcing/VARQ/q4/prompt17.mp4">Watch the VAR-Q video</a></noscript>
           </article>
           <article class="feature-card direct-demo" data-feature="frame-sample-3">
             <div class="feature-top">
               <div>
                 <span class="paradigm-tag frame">Next-frame</span>
-                <h3>Through the garden gate</h3>
+                <h3>A ride through the sky</h3>
               </div>
               <span class="feature-index">Self-Forcing</span>
             </div>
@@ -2453,8 +2451,8 @@
                 <figcaption>BF16 reference</figcaption>
                 <video
                   aria-describedby="showcase-note"
-                  aria-label="Self-Forcing BF16: A push-in through a garden archway, revealing a secret, tranquil garden filled with blooming flowers."
-                  data-src="samples/self_forcing/Baseline/q6/group01_prompt047_s03.mp4"
+                  aria-label="Self-Forcing BF16: A little boy is riding a dragon in the sky to a castle"
+                  data-src="samples/self_forcing/Baseline/q4/prompt12.mp4"
                   loop=""
                   muted=""
                   playsinline=""
@@ -2463,11 +2461,11 @@
                 ></video>
               </figure>
               <figure class="feature-video feature-ours">
-                <figcaption>VAR-Q · 6-bit</figcaption>
+                <figcaption>VAR-Q · 4-bit</figcaption>
                 <video
                   aria-describedby="showcase-note"
-                  aria-label="Self-Forcing VAR-Q 6-bit: A push-in through a garden archway, revealing a secret, tranquil garden filled with blooming flowers."
-                  data-src="samples/self_forcing/VARQ/q6/group01_prompt047_s03.mp4"
+                  aria-label="Self-Forcing VAR-Q 4-bit: A little boy is riding a dragon in the sky to a castle"
+                  data-src="samples/self_forcing/VARQ/q4/prompt12.mp4"
                   loop=""
                   muted=""
                   playsinline=""
@@ -2481,21 +2479,21 @@
               ><label class="feature-select" hidden=""
                 ><span class="sr-only">Self-Forcing sample</span
                 ><select disabled="">
-                  <option value="0">Through the garden gate</option>
+                  <option value="0">A ride through the sky</option>
                 </select></label
               ><output class="feature-time">0.0 s</output>
             </div>
             <label class="sr-only" for="seek-frame-frame-sample-3">Self-Forcing shared timeline</label
             ><input class="feature-seek" disabled="" id="seek-frame-frame-sample-3" max="1" min="0" step=".05" type="range" value="0" />
-            <p class="feature-prompt">A push-in through a garden archway, revealing a secret, tranquil garden filled with blooming flowers.</p>
+            <p class="feature-prompt">A little boy is riding a dragon in the sky to a castle</p>
             <p class="feature-status sr-only" role="status"></p>
-            <noscript><a href="samples/self_forcing/VARQ/q6/group02_prompt101_s02.mp4">Watch the VAR-Q video</a></noscript>
+            <noscript><a href="samples/self_forcing/VARQ/q4/prompt12.mp4">Watch the VAR-Q video</a></noscript>
           </article>
           <article class="feature-card direct-demo" data-feature="long-sample-2">
             <div class="feature-top">
               <div>
                 <span class="paradigm-tag long">Next-frame</span>
-                <h3>The floating library</h3>
+                <h3>A walk through Tokyo</h3>
               </div>
               <span class="feature-index">LongLive</span>
             </div>
@@ -2504,8 +2502,8 @@
                 <figcaption>BF16 reference</figcaption>
                 <video
                   aria-describedby="showcase-note"
-                  aria-label="LongLive BF16: In an ancient library, books float and glow as they drift through the air, occasionally landing softly on the tables, where curious individuals reach out to read their contents."
-                  data-src="samples/longlive/Baseline/q6/group02_prompt122_s03.mp4"
+                  aria-label="LongLive BF16: A stylish woman walks down a Tokyo street filled with warm glowing neon and animated city signage. She wears a black leather jacket, a long red dress, and black boots, and carries a black purse. She wears sunglasses and red lipstick. She walks confidently and casually. The street is damp and reflective, creating a mirror effect of the colorful lights. Many pedestrians walk about."
+                  data-src="samples/longlive/Baseline/q4/prompt03.mp4"
                   loop=""
                   muted=""
                   playsinline=""
@@ -2514,11 +2512,11 @@
                 ></video>
               </figure>
               <figure class="feature-video feature-ours">
-                <figcaption>VAR-Q · 6-bit</figcaption>
+                <figcaption>VAR-Q · 4-bit</figcaption>
                 <video
                   aria-describedby="showcase-note"
-                  aria-label="LongLive VAR-Q 6-bit: In an ancient library, books float and glow as they drift through the air, occasionally landing softly on the tables, where curious individuals reach out to read their contents."
-                  data-src="samples/longlive/VARQ/q6/group02_prompt122_s03.mp4"
+                  aria-label="LongLive VAR-Q 4-bit: A stylish woman walks down a Tokyo street filled with warm glowing neon and animated city signage. She wears a black leather jacket, a long red dress, and black boots, and carries a black purse. She wears sunglasses and red lipstick. She walks confidently and casually. The street is damp and reflective, creating a mirror effect of the colorful lights. Many pedestrians walk about."
+                  data-src="samples/longlive/VARQ/q4/prompt03.mp4"
                   loop=""
                   muted=""
                   playsinline=""
@@ -2532,24 +2530,21 @@
               ><label class="feature-select" hidden=""
                 ><span class="sr-only">LongLive sample</span
                 ><select disabled="">
-                  <option value="0">The floating library</option>
+                  <option value="0">A walk through Tokyo</option>
                 </select></label
               ><output class="feature-time">0.0 s</output>
             </div>
             <label class="sr-only" for="seek-long-long-sample-2">LongLive shared timeline</label
             ><input class="feature-seek" disabled="" id="seek-long-long-sample-2" max="1" min="0" step=".05" type="range" value="0" />
-            <p class="feature-prompt">
-              In an ancient library, books float and glow as they drift through the air, occasionally landing softly on the tables, where curious
-              individuals reach out to read their contents.
-            </p>
+            <p class="feature-prompt">A stylish woman walks down a Tokyo street filled with warm glowing neon and animated city signage. She wears a black leather jacket, a long red dress, and black boots, and carries a black purse. She wears sunglasses and red lipstick. She walks confidently and casually. The street is damp and reflective, creating a mirror effect of the colorful lights. Many pedestrians walk about.</p>
             <p class="feature-status sr-only" role="status"></p>
-            <noscript><a href="samples/longlive/VARQ/q6/group03_prompt153_s01.mp4">Watch the VAR-Q video</a></noscript>
+            <noscript><a href="samples/longlive/VARQ/q4/prompt03.mp4">Watch the VAR-Q video</a></noscript>
           </article>
           <article class="feature-card direct-demo" data-feature="long-sample-3">
             <div class="feature-top">
               <div>
                 <span class="paradigm-tag long">Next-frame</span>
-                <h3>Fields of wildflowers</h3>
+                <h3>Lion on the rock</h3>
               </div>
               <span class="feature-index">LongLive</span>
             </div>
@@ -2558,8 +2553,8 @@
                 <figcaption>BF16 reference</figcaption>
                 <video
                   aria-describedby="showcase-note"
-                  aria-label="LongLive BF16: An aerial shot of a field of blooming wildflowers, creating a patchwork of colors in the landscape."
-                  data-src="samples/longlive/Baseline/q6/group01_prompt052_s03.mp4"
+                  aria-label="LongLive BF16: A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon."
+                  data-src="samples/longlive/Baseline/q4/prompt00.mp4"
                   loop=""
                   muted=""
                   playsinline=""
@@ -2568,11 +2563,11 @@
                 ></video>
               </figure>
               <figure class="feature-video feature-ours">
-                <figcaption>VAR-Q · 6-bit</figcaption>
+                <figcaption>VAR-Q · 4-bit</figcaption>
                 <video
                   aria-describedby="showcase-note"
-                  aria-label="LongLive VAR-Q 6-bit: An aerial shot of a field of blooming wildflowers, creating a patchwork of colors in the landscape."
-                  data-src="samples/longlive/VARQ/q6/group01_prompt052_s03.mp4"
+                  aria-label="LongLive VAR-Q 4-bit: A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon."
+                  data-src="samples/longlive/VARQ/q4/prompt00.mp4"
                   loop=""
                   muted=""
                   playsinline=""
@@ -2586,15 +2581,15 @@
               ><label class="feature-select" hidden=""
                 ><span class="sr-only">LongLive sample</span
                 ><select disabled="">
-                  <option value="0">Fields of wildflowers</option>
+                  <option value="0">Lion on the rock</option>
                 </select></label
               ><output class="feature-time">0.0 s</output>
             </div>
             <label class="sr-only" for="seek-long-long-sample-3">LongLive shared timeline</label
             ><input class="feature-seek" disabled="" id="seek-long-long-sample-3" max="1" min="0" step=".05" type="range" value="0" />
-            <p class="feature-prompt">An aerial shot of a field of blooming wildflowers, creating a patchwork of colors in the landscape.</p>
+            <p class="feature-prompt">A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon.</p>
             <p class="feature-status sr-only" role="status"></p>
-            <noscript><a href="samples/longlive/VARQ/q6/group03_prompt153_s01.mp4">Watch the VAR-Q video</a></noscript>
+            <noscript><a href="samples/longlive/VARQ/q4/prompt00.mp4">Watch the VAR-Q video</a></noscript>
           </article>
         </div>
         <div aria-labelledby="gallery-title" class="live-gallery" id="demo">

@@ -66,8 +66,9 @@
       status.textContent = "No samples are available for this configuration.";
       return;
     }
-    media.dataset.columns = String(model.methods.length);
-    model.methods.forEach((method) => {
+    const methods = (model.methodsByBit && model.methodsByBit[bitSelect.value]) || model.methods;
+    media.dataset.columns = String(methods.length);
+    methods.forEach((method) => {
       const source = sample.media[method];
       const cell = document.createElement("figure");
       cell.className = `gallery-cell${method === "VARQ" ? " gallery-ours" : ""}`;
