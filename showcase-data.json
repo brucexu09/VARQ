@@ -91,11 +91,11 @@
     "bits": "4-bit",
     "clips": [
       {
-        "title": "Lion on the rock",
-        "prompt": "A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon.",
+        "title": "A pan right across a",
+        "prompt": "A pan right across a field of tall grass swaying gently in the wind, with a setting sun in the background.",
         "sources": {
-          "Baseline": "samples/longlive/Baseline/q4/prompt00.mp4",
-          "VARQ": "samples/longlive/VARQ/q4/prompt00.mp4"
+          "Baseline": "samples/longlive/Baseline/q4/prompt019.mp4",
+          "VARQ": "samples/longlive/VARQ/q4/prompt019.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/long-0-Baseline.webp",
@@ -103,11 +103,11 @@
         }
       },
       {
-        "title": "A toy robot in Antarctica",
-        "prompt": "a toy robot wearing a green dress and a sun hat taking a pleasant stroll in Antarctica during a beautiful sunset",
+        "title": "A person fishing for stars",
+        "prompt": "A person fishing for stars in a night sky with a glowing fishing rod.",
         "sources": {
-          "Baseline": "samples/longlive/Baseline/q4/prompt10.mp4",
-          "VARQ": "samples/longlive/VARQ/q4/prompt10.mp4"
+          "Baseline": "samples/longlive/Baseline/q4/prompt022.mp4",
+          "VARQ": "samples/longlive/VARQ/q4/prompt022.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/long-1-Baseline.webp",
@@ -115,11 +115,11 @@
         }
       },
       {
-        "title": "Puppies in the ruins",
-        "prompt": "Cinematic trailer for a group of adventurous puppies exploring ruins in the sky",
+        "title": "Sun rays breaking through a",
+        "prompt": "Sun rays breaking through a misty morning fog in a dense forest, creating visible beams of light that highlight the dew on the leaves.",
         "sources": {
-          "Baseline": "samples/longlive/Baseline/q4/prompt09.mp4",
-          "VARQ": "samples/longlive/VARQ/q4/prompt09.mp4"
+          "Baseline": "samples/longlive/Baseline/q4/prompt039.mp4",
+          "VARQ": "samples/longlive/VARQ/q4/prompt039.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/long-2-Baseline.webp",
@@ -210,11 +210,11 @@
     "bits": "4-bit",
     "clips": [
       {
-        "title": "A toy robot in Antarctica",
-        "prompt": "a toy robot wearing a green dress and a sun hat taking a pleasant stroll in Antarctica during a beautiful sunset",
+        "title": "A person fishing for stars",
+        "prompt": "A person fishing for stars in a night sky with a glowing fishing rod.",
         "sources": {
-          "Baseline": "samples/longlive/Baseline/q4/prompt10.mp4",
-          "VARQ": "samples/longlive/VARQ/q4/prompt10.mp4"
+          "Baseline": "samples/longlive/Baseline/q4/prompt022.mp4",
+          "VARQ": "samples/longlive/VARQ/q4/prompt022.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/long-1-Baseline.webp",
@@ -229,11 +229,11 @@
     "bits": "4-bit",
     "clips": [
       {
-        "title": "Puppies in the ruins",
-        "prompt": "Cinematic trailer for a group of adventurous puppies exploring ruins in the sky",
+        "title": "Sun rays breaking through a",
+        "prompt": "Sun rays breaking through a misty morning fog in a dense forest, creating visible beams of light that highlight the dew on the leaves.",
         "sources": {
-          "Baseline": "samples/longlive/Baseline/q4/prompt09.mp4",
-          "VARQ": "samples/longlive/VARQ/q4/prompt09.mp4"
+          "Baseline": "samples/longlive/Baseline/q4/prompt039.mp4",
+          "VARQ": "samples/longlive/VARQ/q4/prompt039.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/long-2-Baseline.webp",

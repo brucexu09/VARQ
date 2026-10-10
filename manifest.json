@@ -1195,63 +1195,153 @@
    "samples": {
     "q4": [
      {
-      "prompt": "A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon.",
+      "prompt": "A pan right across a field of tall grass swaying gently in the wind, with a setting sun in the background.",
       "caption": null,
       "media": {
-       "Baseline": "samples/longlive/Baseline/q4/prompt00.mp4",
-       "VARQ": "samples/longlive/VARQ/q4/prompt00.mp4",
-       "KIVI": "samples/longlive/KIVI/q4/prompt00.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q4/prompt00.mp4"
+       "Baseline": "samples/longlive/Baseline/q4/prompt019.mp4",
+       "VARQ": "samples/longlive/VARQ/q4/prompt019.mp4",
+       "KIVI": "samples/longlive/KIVI/q4/prompt019.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q4/prompt019.mp4"
       }
      },
      {
-      "prompt": "a toy robot wearing a green dress and a sun hat taking a pleasant stroll in Antarctica during a beautiful sunset",
+      "prompt": "A person fishing for stars in a night sky with a glowing fishing rod.",
       "caption": null,
       "media": {
-       "Baseline": "samples/longlive/Baseline/q4/prompt10.mp4",
-       "VARQ": "samples/longlive/VARQ/q4/prompt10.mp4",
-       "KIVI": "samples/longlive/KIVI/q4/prompt10.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q4/prompt10.mp4"
+       "Baseline": "samples/longlive/Baseline/q4/prompt022.mp4",
+       "VARQ": "samples/longlive/VARQ/q4/prompt022.mp4",
+       "KIVI": "samples/longlive/KIVI/q4/prompt022.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q4/prompt022.mp4"
+      }
+     },
+     {
+      "prompt": "Sun rays breaking through a misty morning fog in a dense forest, creating visible beams of light that highlight the dew on the leaves.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q4/prompt039.mp4",
+       "VARQ": "samples/longlive/VARQ/q4/prompt039.mp4",
+       "KIVI": "samples/longlive/KIVI/q4/prompt039.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q4/prompt039.mp4"
+      }
+     },
+     {
+      "prompt": "The gentle bubbling and evaporation of water in a natural hot spring, with mist rising and drifting across the surrounding landscape.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q4/prompt034.mp4",
+       "VARQ": "samples/longlive/VARQ/q4/prompt034.mp4",
+       "KIVI": "samples/longlive/KIVI/q4/prompt034.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q4/prompt034.mp4"
+      }
+     },
+     {
+      "prompt": "A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q4/prompt000.mp4",
+       "VARQ": "samples/longlive/VARQ/q4/prompt000.mp4",
+       "KIVI": "samples/longlive/KIVI/q4/prompt000.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q4/prompt000.mp4"
+      }
+     },
+     {
+      "prompt": "A close-up of honey being drizzled onto pancakes, the thick liquid flowing slowly and smoothly.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q4/prompt023.mp4",
+       "VARQ": "samples/longlive/VARQ/q4/prompt023.mp4",
+       "KIVI": "samples/longlive/KIVI/q4/prompt023.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q4/prompt023.mp4"
       }
      },
      {
       "prompt": "Cinematic trailer for a group of adventurous puppies exploring ruins in the sky",
       "caption": null,
       "media": {
-       "Baseline": "samples/longlive/Baseline/q4/prompt09.mp4",
-       "VARQ": "samples/longlive/VARQ/q4/prompt09.mp4",
-       "KIVI": "samples/longlive/KIVI/q4/prompt09.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q4/prompt09.mp4"
+       "Baseline": "samples/longlive/Baseline/q4/prompt009.mp4",
+       "VARQ": "samples/longlive/VARQ/q4/prompt009.mp4",
+       "KIVI": "samples/longlive/KIVI/q4/prompt009.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q4/prompt009.mp4"
+      }
+     },
+     {
+      "prompt": "A video showing the complex patterns of a river meandering through a landscape.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q4/prompt047.mp4",
+       "VARQ": "samples/longlive/VARQ/q4/prompt047.mp4",
+       "KIVI": "samples/longlive/KIVI/q4/prompt047.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q4/prompt047.mp4"
+      }
+     },
+     {
+      "prompt": "A tree made of golden coins at sunset, with coins falling off.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q4/prompt041.mp4",
+       "VARQ": "samples/longlive/VARQ/q4/prompt041.mp4",
+       "KIVI": "samples/longlive/KIVI/q4/prompt041.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q4/prompt041.mp4"
+      }
+     },
+     {
+      "prompt": "A peaceful monastery perches on a mountain cliff, with monks moving silently through the courtyard or sitting in meditation, overlooking a breathtaking view.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q4/prompt025.mp4",
+       "VARQ": "samples/longlive/VARQ/q4/prompt025.mp4",
+       "KIVI": "samples/longlive/KIVI/q4/prompt025.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q4/prompt025.mp4"
+      }
+     },
+     {
+      "prompt": "A mother otter floating on her back in a river, cradling her pup on her stomach to keep it safe and warm in the gentle current.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q4/prompt021.mp4",
+       "VARQ": "samples/longlive/VARQ/q4/prompt021.mp4",
+       "KIVI": "samples/longlive/KIVI/q4/prompt021.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q4/prompt021.mp4"
+      }
+     },
+     {
+      "prompt": "a toy robot wearing a green dress and a sun hat taking a pleasant stroll in Antarctica during a beautiful sunset",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q4/prompt010.mp4",
+       "VARQ": "samples/longlive/VARQ/q4/prompt010.mp4",
+       "KIVI": "samples/longlive/KIVI/q4/prompt010.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q4/prompt010.mp4"
+      }
+     },
+     {
+      "prompt": "In a tranquil forest clearing, a sparkling waterfall cascades down into a clear pool, surrounded by lush greenery and flowers, with occasional birds fluttering by.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/longlive/Baseline/q4/prompt044.mp4",
+       "VARQ": "samples/longlive/VARQ/q4/prompt044.mp4",
+       "KIVI": "samples/longlive/KIVI/q4/prompt044.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q4/prompt044.mp4"
       }
      },
      {
       "prompt": "A cook flipping pancakes on a griddle.",
       "caption": null,
       "media": {
-       "Baseline": "samples/longlive/Baseline/q4/prompt11.mp4",
-       "VARQ": "samples/longlive/VARQ/q4/prompt11.mp4",
-       "KIVI": "samples/longlive/KIVI/q4/prompt11.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q4/prompt11.mp4"
+       "Baseline": "samples/longlive/Baseline/q4/prompt011.mp4",
+       "VARQ": "samples/longlive/VARQ/q4/prompt011.mp4",
+       "KIVI": "samples/longlive/KIVI/q4/prompt011.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q4/prompt011.mp4"
       }
      },
      {
-      "prompt": "A quaint village nestled in a valley is surrounded by blooming cherry blossoms, with petals drifting through the air as villagers go about their daily activities, adding life to the scene.",
+      "prompt": "A rocket blasting off from the launch pad, accelerating rapidly into the sky.",
       "caption": null,
       "media": {
-       "Baseline": "samples/longlive/Baseline/q4/prompt02.mp4",
-       "VARQ": "samples/longlive/VARQ/q4/prompt02.mp4",
-       "KIVI": "samples/longlive/KIVI/q4/prompt02.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q4/prompt02.mp4"
-      }
-     },
-     {
-      "prompt": "New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/longlive/Baseline/q4/prompt06.mp4",
-       "VARQ": "samples/longlive/VARQ/q4/prompt06.mp4",
-       "KIVI": "samples/longlive/KIVI/q4/prompt06.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q4/prompt06.mp4"
+       "Baseline": "samples/longlive/Baseline/q4/prompt013.mp4",
+       "VARQ": "samples/longlive/VARQ/q4/prompt013.mp4",
+       "KIVI": "samples/longlive/KIVI/q4/prompt013.mp4",
+       "FlexGen": "samples/longlive/FlexGen/q4/prompt013.mp4"
       }
      }
     ]
