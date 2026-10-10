@@ -774,123 +774,373 @@
    "samples": {
     "q4": [
      {
-      "prompt": "A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/self_forcing/Baseline/q4/prompt00.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt00.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt00.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt00.mp4"
-      }
-     },
-     {
-      "prompt": "A pan left across a serene beach at sunrise, moving from the darkened shore to the brightening horizon.",
-      "caption": null,
-      "media": {
-       "Baseline": "samples/self_forcing/Baseline/q4/prompt05.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt05.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt05.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt05.mp4"
-      }
-     },
-     {
       "prompt": "A crystal ball sitting on a table, with sunlight streaming through it and casting a circle of rainbow colors on the floor.",
       "caption": null,
       "media": {
-       "Baseline": "samples/self_forcing/Baseline/q4/prompt07.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt07.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt07.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt07.mp4"
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt007.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt007.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt007.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt007.mp4"
       }
      },
      {
-      "prompt": "New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York.",
+      "prompt": "A tilt-down from a starry night sky, revealing a quiet forest clearing bathed in moonlight.",
       "caption": null,
       "media": {
-       "Baseline": "samples/self_forcing/Baseline/q4/prompt14.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt14.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt14.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt14.mp4"
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt194.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt194.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt194.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt194.mp4"
       }
      },
      {
-      "prompt": "Several giant wooly mammoths approach treading through a snowy meadow, their long wooly fur lightly blows in the wind as they walk, snow covered trees and dramatic snow capped mountains in the distance, mid afternoon light with wispy clouds and a sun high in the distance creates a warm glow, the low camera view is stunning capturing the large furry mammal with beautiful photography, depth of field.",
+      "prompt": "the scene transitions from huge waves into a snowy mountain at sunset",
       "caption": null,
       "media": {
-       "Baseline": "samples/self_forcing/Baseline/q4/prompt18.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt18.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt18.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt18.mp4"
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt163.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt163.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt163.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt163.mp4"
       }
      },
      {
       "prompt": "A deep underground cave filled with glowing crystals and hidden treasures.",
       "caption": null,
       "media": {
-       "Baseline": "samples/self_forcing/Baseline/q4/prompt04.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt04.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt04.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt04.mp4"
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt004.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt004.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt004.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt004.mp4"
       }
      },
      {
-      "prompt": "A zoom-in on a drop of morning dew on a leaf, showing the reflection of the surrounding world within it.",
+      "prompt": "A pan right across a field of tall grass swaying gently in the wind, with a setting sun in the background.",
       "caption": null,
       "media": {
-       "Baseline": "samples/self_forcing/Baseline/q4/prompt15.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt15.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt15.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt15.mp4"
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt039.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt039.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt039.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt039.mp4"
       }
      },
      {
-      "prompt": "A push-in through a garden archway, revealing a secret, tranquil garden filled with blooming flowers.",
+      "prompt": "A zoom-out from a single person standing in the middle of a desert, revealing the expansive, empty sand dunes around them.",
       "caption": null,
       "media": {
-       "Baseline": "samples/self_forcing/Baseline/q4/prompt03.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt03.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt03.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt03.mp4"
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt228.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt228.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt228.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt228.mp4"
       }
      },
      {
-      "prompt": "a toy robot wearing a green dress and a sun hat taking a pleasant stroll in Antarctica during a beautiful sunset",
+      "prompt": "A llama sits in a cozy reading nook, surrounded by plush pillows and soft blankets. Warm, golden lighting from a floor lamp creates a welcoming atmosphere. The llama reads a picture book aloud, using expressive voices for the characters. The camera captures the llama's animated face and the illustrations in the book.",
       "caption": null,
       "media": {
-       "Baseline": "samples/self_forcing/Baseline/q4/prompt09.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt09.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt09.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt09.mp4"
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt158.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt158.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt158.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt158.mp4"
+      }
+     },
+     {
+      "prompt": "A peaceful monastery perches on a mountain cliff, with monks moving silently through the courtyard or sitting in meditation, overlooking a breathtaking view.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt058.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt058.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt058.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt058.mp4"
+      }
+     },
+     {
+      "prompt": "Smoke rises from the chimney of a cozy log cabin nestled in the woods, with soft light glowing from the windows, suggesting a warm and inviting atmosphere.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt035.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt035.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt035.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt035.mp4"
+      }
+     },
+     {
+      "prompt": "A pan left across a serene beach at sunrise, moving from the darkened shore to the brightening horizon.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt005.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt005.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt005.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt005.mp4"
+      }
+     },
+     {
+      "prompt": "A time-lapse video of a river delta, showing the formation of new channels and sediment patterns.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt153.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt153.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt153.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt153.mp4"
+      }
+     },
+     {
+      "prompt": "A woman is playing a soft melody on his lute while sitting by the fountain in the castle courtyard.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt100.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt100.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt100.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt100.mp4"
+      }
+     },
+     {
+      "prompt": "The slow melting of a snowman, with water trickling down its sides and puddles forming around its base as the temperature warms.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt175.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt175.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt175.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt175.mp4"
       }
      },
      {
       "prompt": "A person rowing a boat through a river of liquid gold, with shimmering banks.",
       "caption": null,
       "media": {
-       "Baseline": "samples/self_forcing/Baseline/q4/prompt16.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt16.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt16.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt16.mp4"
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt016.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt016.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt016.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt016.mp4"
       }
      },
      {
-      "prompt": "A panda in a scientist's lab coat, conducting experiments with beakers and test tubes.",
+      "prompt": "A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon.",
       "caption": null,
       "media": {
-       "Baseline": "samples/self_forcing/Baseline/q4/prompt08.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt08.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt08.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt08.mp4"
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt000.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt000.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt000.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt000.mp4"
       }
      },
      {
-      "prompt": "A spaceship being pulled into a blackhole.",
+      "prompt": "A droplet of water falling onto a hot surface, instantly evaporating into a wisp of steam that swirls gracefully into the air.",
       "caption": null,
       "media": {
-       "Baseline": "samples/self_forcing/Baseline/q4/prompt20.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt20.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt20.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt20.mp4"
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt103.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt103.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt103.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt103.mp4"
+      }
+     },
+     {
+      "prompt": "A princess blowing out birthday candles on a cake.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt143.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt143.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt143.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt143.mp4"
+      }
+     },
+     {
+      "prompt": "A thin sheet of ice on a lake cracking and breaking as the sun warms it, creating a mosaic of shifting patterns.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt166.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt166.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt166.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt166.mp4"
+      }
+     },
+     {
+      "prompt": "A thin layer of oil on a puddle, creating a swirling pattern of iridescent colors as light reflects off its surface.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt078.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt078.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt078.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt078.mp4"
+      }
+     },
+     {
+      "prompt": "A bunny is eating the moon in the sky. The scene becomes darker and darker as the bunny eats the moon from start to finish.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt210.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt210.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt210.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt210.mp4"
+      }
+     },
+     {
+      "prompt": "Sun rays breaking through a misty morning fog in a dense forest, creating visible beams of light that highlight the dew on the leaves.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt116.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt116.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt116.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt116.mp4"
+      }
+     },
+     {
+      "prompt": "A person fishing for stars in a night sky with a glowing fishing rod.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt048.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt048.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt048.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt048.mp4"
+      }
+     },
+     {
+      "prompt": "a toy robot wearing a green dress and a sun hat taking a pleasant stroll in Antarctica during a beautiful sunset",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt009.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt009.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt009.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt009.mp4"
+      }
+     },
+     {
+      "prompt": "A mother otter floating on her back in a river, cradling her pup on her stomach to keep it safe and warm in the gentle current.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt043.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt043.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt043.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt043.mp4"
+      }
+     },
+     {
+      "prompt": "An explorer walks through a mysterious cave, shining a flashlight on ancient paintings as they slowly move forward, revealing new sections of the artwork with each step.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt120.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt120.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt120.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt120.mp4"
+      }
+     },
+     {
+      "prompt": "A zoom-in on a drop of morning dew on a leaf, showing the reflection of the surrounding world within it.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt015.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt015.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt015.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt015.mp4"
+      }
+     },
+     {
+      "prompt": "The gentle bubbling and evaporation of water in a natural hot spring, with mist rising and drifting across the surrounding landscape.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt086.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt086.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt086.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt086.mp4"
+      }
+     },
+     {
+      "prompt": "Snow gently falls outside as someone stokes the roaring fireplace in a cozy mountain lodge, adding logs to keep the flames dancing and casting flickering shadows across the room.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt212.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt212.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt212.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt212.mp4"
+      }
+     },
+     {
+      "prompt": "A video of a river rapid, showing the turbulent and fast-moving water.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt192.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt192.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt192.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt192.mp4"
+      }
+     },
+     {
+      "prompt": "A person holding an umbrella that turns rain into colorful confetti.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt234.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt234.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt234.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt234.mp4"
+      }
+     },
+     {
+      "prompt": "A push through an ocean research outpost.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt056.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt056.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt056.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt056.mp4"
+      }
+     },
+     {
+      "prompt": "A majestic ice palace glistens in the light, its intricate frozen sculptures reflecting and refracting the colors around them, creating a mesmerizing visual display.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt042.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt042.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt042.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt042.mp4"
+      }
+     },
+     {
+      "prompt": "A building collapsing into a puddle of lava.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt098.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt098.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt098.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt098.mp4"
+      }
+     },
+     {
+      "prompt": "In a tranquil forest clearing, a sparkling waterfall cascades down into a clear pool, surrounded by lush greenery and flowers, with occasional birds fluttering by.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt124.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt124.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt124.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt124.mp4"
+      }
+     },
+     {
+      "prompt": "A serene meadow filled with wildflowers and butterflies.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt136.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt136.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt136.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt136.mp4"
+      }
+     },
+     {
+      "prompt": "A pedestal up from the edge of a canyon, gradually revealing the expansive landscape and river below.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt208.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt208.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt208.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt208.mp4"
+      }
+     },
+     {
+      "prompt": "A mother dog gently picks up a piece of meat and carefully places it in her puppy's bowl, her eyes filled with warmth and care as she watches her little one eat.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/self_forcing/Baseline/q4/prompt137.mp4",
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt137.mp4",
+       "KIVI": "samples/self_forcing/KIVI/q4/prompt137.mp4",
+       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt137.mp4"
       }
      }
     ]

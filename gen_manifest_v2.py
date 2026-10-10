@@ -24,8 +24,8 @@ MODEL_ORDER = ["Infinity8B", "self_forcing", "longlive", "InfinityStar720p", "In
 
 # (model, qbits) -> source root, method dir names, file stem, extension, optional index selection
 NEW = {
-    ("self_forcing", "q4"): dict(src=f"{SRC}/self_forcing", dirs={"Baseline": "Baseline", "VARQ": "VARQr8", "KIVI": "KIVI", "FlexGen": "FlexGen"}, stem="prompt", ext="mp4", caption=False),
-    ("longlive", "q4"): dict(src=f"{SRC}/longlive", dirs={"Baseline": "Baseline", "VARQ": "VARQr8", "KIVI": "KIVI", "FlexGen": "FLexGen"}, stem="prompt", ext="mp4", caption=False),
+    ("self_forcing", "q4"): dict(src=f"{SRC}/v3/self_forcing", dirs={"Baseline": "Baseline", "VARQ": "VARQr8", "KIVI": "KIVI", "FlexGen": "FlexGen"}, stem="prompt", ext="mp4", caption=False, pad=3),
+    ("longlive", "q4"): dict(src=f"{SRC}/v3/longlive", dirs={"Baseline": "Baseline", "VARQ": "VARQr8", "KIVI": "KIVI", "FlexGen": "FLexGen"}, stem="prompt", ext="mp4", caption=False, pad=3),
     ("Infinity8B", "q2"): dict(src=f"{SRC}/v2/infinity8b", dirs={"Baseline": "Baseline", "VARQ": "VARQ", "KIVI": "KIVI", "FlexGen": "FlexGen"}, stem="idx", ext="jpg", pad=3),
 }
 # (model, qbits) tabs to remove from the site entirely (kept only under /data1)

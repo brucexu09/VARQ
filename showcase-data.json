@@ -48,11 +48,11 @@
     "bits": "4-bit",
     "clips": [
       {
-        "title": "Lion on the rock",
-        "prompt": "A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon.",
+        "title": "A crystal ball in sunlight",
+        "prompt": "A crystal ball sitting on a table, with sunlight streaming through it and casting a circle of rainbow colors on the floor.",
         "sources": {
-          "Baseline": "samples/self_forcing/Baseline/q4/prompt00.mp4",
-          "VARQ": "samples/self_forcing/VARQ/q4/prompt00.mp4"
+          "Baseline": "samples/self_forcing/Baseline/q4/prompt007.mp4",
+          "VARQ": "samples/self_forcing/VARQ/q4/prompt007.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/frame-0-Baseline.webp",
@@ -60,11 +60,11 @@
         }
       },
       {
-        "title": "An underwater New York",
-        "prompt": "New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York.",
+        "title": "A glowing crystal cave",
+        "prompt": "A deep underground cave filled with glowing crystals and hidden treasures.",
         "sources": {
-          "Baseline": "samples/self_forcing/Baseline/q4/prompt14.mp4",
-          "VARQ": "samples/self_forcing/VARQ/q4/prompt14.mp4"
+          "Baseline": "samples/self_forcing/Baseline/q4/prompt004.mp4",
+          "VARQ": "samples/self_forcing/VARQ/q4/prompt004.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/frame-1-Baseline.webp",
@@ -72,11 +72,11 @@
         }
       },
       {
-        "title": "A crystal ball in sunlight",
-        "prompt": "A crystal ball sitting on a table, with sunlight streaming through it and casting a circle of rainbow colors on the floor.",
+        "title": "Lion on the rock",
+        "prompt": "A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon.",
         "sources": {
-          "Baseline": "samples/self_forcing/Baseline/q4/prompt07.mp4",
-          "VARQ": "samples/self_forcing/VARQ/q4/prompt07.mp4"
+          "Baseline": "samples/self_forcing/Baseline/q4/prompt000.mp4",
+          "VARQ": "samples/self_forcing/VARQ/q4/prompt000.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/frame-2-Baseline.webp",
@@ -172,11 +172,11 @@
     "bits": "4-bit",
     "clips": [
       {
-        "title": "An underwater New York",
-        "prompt": "New York City submerged like Atlantis. Fish, whales, sea turtles and sharks swim through the streets of New York.",
+        "title": "A glowing crystal cave",
+        "prompt": "A deep underground cave filled with glowing crystals and hidden treasures.",
         "sources": {
-          "Baseline": "samples/self_forcing/Baseline/q4/prompt14.mp4",
-          "VARQ": "samples/self_forcing/VARQ/q4/prompt14.mp4"
+          "Baseline": "samples/self_forcing/Baseline/q4/prompt004.mp4",
+          "VARQ": "samples/self_forcing/VARQ/q4/prompt004.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/frame-1-Baseline.webp",
@@ -191,11 +191,11 @@
     "bits": "4-bit",
     "clips": [
       {
-        "title": "A crystal ball in sunlight",
-        "prompt": "A crystal ball sitting on a table, with sunlight streaming through it and casting a circle of rainbow colors on the floor.",
+        "title": "Lion on the rock",
+        "prompt": "A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon.",
         "sources": {
-          "Baseline": "samples/self_forcing/Baseline/q4/prompt07.mp4",
-          "VARQ": "samples/self_forcing/VARQ/q4/prompt07.mp4"
+          "Baseline": "samples/self_forcing/Baseline/q4/prompt000.mp4",
+          "VARQ": "samples/self_forcing/VARQ/q4/prompt000.mp4"
         },
         "posters": {
           "Baseline": "assets/posters/frame-2-Baseline.webp",
