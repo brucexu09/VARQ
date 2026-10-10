@@ -91,7 +91,7 @@
     "bits": "4-bit",
     "clips": [
       {
-        "title": "A pan right across a",
+        "title": "Grass field at sunset",
         "prompt": "A pan right across a field of tall grass swaying gently in the wind, with a setting sun in the background.",
         "sources": {
           "Baseline": "samples/longlive/Baseline/q4/prompt019.mp4",
@@ -103,7 +103,7 @@
         }
       },
       {
-        "title": "A person fishing for stars",
+        "title": "Fishing for stars",
         "prompt": "A person fishing for stars in a night sky with a glowing fishing rod.",
         "sources": {
           "Baseline": "samples/longlive/Baseline/q4/prompt022.mp4",
@@ -115,7 +115,7 @@
         }
       },
       {
-        "title": "Sun rays breaking through a",
+        "title": "Sun rays in the forest",
         "prompt": "Sun rays breaking through a misty morning fog in a dense forest, creating visible beams of light that highlight the dew on the leaves.",
         "sources": {
           "Baseline": "samples/longlive/Baseline/q4/prompt039.mp4",
@@ -210,7 +210,7 @@
     "bits": "4-bit",
     "clips": [
       {
-        "title": "A person fishing for stars",
+        "title": "Fishing for stars",
         "prompt": "A person fishing for stars in a night sky with a glowing fishing rod.",
         "sources": {
           "Baseline": "samples/longlive/Baseline/q4/prompt022.mp4",
@@ -229,7 +229,7 @@
     "bits": "4-bit",
     "clips": [
       {
-        "title": "Sun rays breaking through a",
+        "title": "Sun rays in the forest",
         "prompt": "Sun rays breaking through a misty morning fog in a dense forest, creating visible beams of light that highlight the dew on the leaves.",
         "sources": {
           "Baseline": "samples/longlive/Baseline/q4/prompt039.mp4",
