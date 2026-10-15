@@ -2143,3 +2143,13 @@ select {
   .dense-cells { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .dense-prompt { white-space: normal; }
 }
+
+/* Showcase: every clip as its own BF16 / VAR-Q pair (no dropdown) */
+.showcase-group { margin-top: 26px; }
+.showcase-group + .showcase-group { margin-top: 44px; }
+.showcase-group-head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin: 0 0 14px; }
+.showcase-group-head h3 { margin: 0; font-size: 20px; }
+.showcase-group-count { font-size: 12px; color: var(--muted); }
+.showcase-group .more-video-grid { margin-bottom: 0; }
+.long-showcase.stacked { grid-template-columns: 1fr; margin-bottom: 20px; }
+.long-showcase.stacked .long-intro h3 { font-size: 26px; }

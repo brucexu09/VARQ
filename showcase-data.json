@@ -293,10 +293,445 @@
           "Baseline": "assets/posters/long-2-Baseline.webp",
           "VARQ": "assets/posters/long-2-VARQ.webp"
         }
+      },
+      {
+        "title": "A bubbling hot spring",
+        "prompt": "The gentle bubbling and evaporation of water in a natural hot spring, with mist rising and drifting across the surrounding landscape.",
+        "sources": {
+          "Baseline": "samples/longlive/Baseline/q4/prompt034.mp4",
+          "VARQ": "samples/longlive/VARQ/q4/prompt034.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/long-3-Baseline.webp",
+          "VARQ": "assets/posters/long-3-VARQ.webp"
+        }
+      },
+      {
+        "title": "Lion on the rock",
+        "prompt": "A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon.",
+        "sources": {
+          "Baseline": "samples/longlive/Baseline/q4/prompt000.mp4",
+          "VARQ": "samples/longlive/VARQ/q4/prompt000.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/long-4-Baseline.webp",
+          "VARQ": "assets/posters/long-4-VARQ.webp"
+        }
+      },
+      {
+        "title": "Honey on pancakes",
+        "prompt": "A close-up of honey being drizzled onto pancakes, the thick liquid flowing slowly and smoothly.",
+        "sources": {
+          "Baseline": "samples/longlive/Baseline/q4/prompt023.mp4",
+          "VARQ": "samples/longlive/VARQ/q4/prompt023.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/long-5-Baseline.webp",
+          "VARQ": "assets/posters/long-5-VARQ.webp"
+        }
       }
     ]
   },
-  "long-sample-2": {
+  "scale-00": {
+    "model": "InfinityStar · 720p",
+    "paradigm": "Next-scale",
+    "bits": "4-bit",
+    "clips": [
+      {
+        "title": "A crystal ball in sunlight",
+        "prompt": "A crystal ball sitting on a table, with sunlight streaming through it and casting a circle of rainbow colors on the floor.",
+        "sources": {
+          "Baseline": "samples/InfinityStar720p/Baseline/q4/prompt042.mp4",
+          "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt042.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/scale-0-Baseline.webp",
+          "VARQ": "assets/posters/scale-0-VARQ.webp"
+        }
+      }
+    ]
+  },
+  "scale-01": {
+    "model": "InfinityStar · 720p",
+    "paradigm": "Next-scale",
+    "bits": "4-bit",
+    "clips": [
+      {
+        "title": "Beach at sunrise",
+        "prompt": "A pan left across a serene beach at sunrise, moving from the darkened shore to the brightening horizon.",
+        "sources": {
+          "Baseline": "samples/InfinityStar720p/Baseline/q4/prompt027.mp4",
+          "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt027.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/scale-1-Baseline.webp",
+          "VARQ": "assets/posters/scale-1-VARQ.webp"
+        }
+      }
+    ]
+  },
+  "scale-02": {
+    "model": "InfinityStar · 720p",
+    "paradigm": "Next-scale",
+    "bits": "4-bit",
+    "clips": [
+      {
+        "title": "Figure on a foggy cliff",
+        "prompt": "A push-in towards a lone figure standing at the edge of a cliff, overlooking a vast, fog-covered valley.",
+        "sources": {
+          "Baseline": "samples/InfinityStar720p/Baseline/q4/prompt080.mp4",
+          "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt080.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/scale-2-Baseline.webp",
+          "VARQ": "assets/posters/scale-2-VARQ.webp"
+        }
+      }
+    ]
+  },
+  "scale-03": {
+    "model": "InfinityStar · 720p",
+    "paradigm": "Next-scale",
+    "bits": "4-bit",
+    "clips": [
+      {
+        "title": "Pouring milk",
+        "prompt": "Carefully pouring the milk into the cup, the milk flowed smoothly and the cup was gradually filled with a milky white color",
+        "sources": {
+          "Baseline": "samples/InfinityStar720p/Baseline/q4/prompt158.mp4",
+          "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt158.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/scale-3-Baseline.webp",
+          "VARQ": "assets/posters/scale-3-VARQ.webp"
+        }
+      }
+    ]
+  },
+  "scale-04": {
+    "model": "InfinityStar · 720p",
+    "paradigm": "Next-scale",
+    "bits": "4-bit",
+    "clips": [
+      {
+        "title": "A chameleon changing colour",
+        "prompt": "This close-up shot of a chameleon showcases its striking color changing capabilities. The background is blurred, drawing attention to the animal’s striking appearance.",
+        "sources": {
+          "Baseline": "samples/InfinityStar720p/Baseline/q4/prompt075.mp4",
+          "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt075.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/scale-4-Baseline.webp",
+          "VARQ": "assets/posters/scale-4-VARQ.webp"
+        }
+      }
+    ]
+  },
+  "scale-05": {
+    "model": "InfinityStar · 720p",
+    "paradigm": "Next-scale",
+    "bits": "4-bit",
+    "clips": [
+      {
+        "title": "Lone tree at dawn",
+        "prompt": "An arc shot around a lone tree in a vast, foggy field at dawn, revealing the changing light and shadows.",
+        "sources": {
+          "Baseline": "samples/InfinityStar720p/Baseline/q4/prompt058.mp4",
+          "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt058.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/scale-5-Baseline.webp",
+          "VARQ": "assets/posters/scale-5-VARQ.webp"
+        }
+      }
+    ]
+  },
+  "scale-06": {
+    "model": "InfinityStar · 720p",
+    "paradigm": "Next-scale",
+    "bits": "4-bit",
+    "clips": [
+      {
+        "title": "Yoga on a lily pad",
+        "prompt": "A person doing yoga on top of a giant lily pad in the middle of a serene pond.",
+        "sources": {
+          "Baseline": "samples/InfinityStar720p/Baseline/q4/prompt193.mp4",
+          "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt193.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/scale-6-Baseline.webp",
+          "VARQ": "assets/posters/scale-6-VARQ.webp"
+        }
+      }
+    ]
+  },
+  "scale-07": {
+    "model": "InfinityStar · 720p",
+    "paradigm": "Next-scale",
+    "bits": "4-bit",
+    "clips": [
+      {
+        "title": "Lion on the rock",
+        "prompt": "A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon.",
+        "sources": {
+          "Baseline": "samples/InfinityStar720p/Baseline/q4/prompt014.mp4",
+          "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt014.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/scale-7-Baseline.webp",
+          "VARQ": "assets/posters/scale-7-VARQ.webp"
+        }
+      }
+    ]
+  },
+  "scale-08": {
+    "model": "InfinityStar · 720p",
+    "paradigm": "Next-scale",
+    "bits": "4-bit",
+    "clips": [
+      {
+        "title": "Dolphins from above",
+        "prompt": "An aerial perspective of a group of dolphins swimming near the surface of a crystal-clear ocean, their movements synchronized.",
+        "sources": {
+          "Baseline": "samples/InfinityStar720p/Baseline/q4/prompt143.mp4",
+          "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt143.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/scale-8-Baseline.webp",
+          "VARQ": "assets/posters/scale-8-VARQ.webp"
+        }
+      }
+    ]
+  },
+  "scale-09": {
+    "model": "InfinityStar · 720p",
+    "paradigm": "Next-scale",
+    "bits": "4-bit",
+    "clips": [
+      {
+        "title": "A curious cat",
+        "prompt": "A curious cat peering out from a cozy hiding spot.",
+        "sources": {
+          "Baseline": "samples/InfinityStar720p/Baseline/q4/prompt162.mp4",
+          "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt162.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/scale-9-Baseline.webp",
+          "VARQ": "assets/posters/scale-9-VARQ.webp"
+        }
+      }
+    ]
+  },
+  "frame-00": {
+    "model": "Self-Forcing",
+    "paradigm": "Next-frame",
+    "bits": "4-bit",
+    "clips": [
+      {
+        "title": "A crystal ball in sunlight",
+        "prompt": "A crystal ball sitting on a table, with sunlight streaming through it and casting a circle of rainbow colors on the floor.",
+        "sources": {
+          "Baseline": "samples/self_forcing/Baseline/q4/prompt007.mp4",
+          "VARQ": "samples/self_forcing/VARQ/q4/prompt007.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/frame-0-Baseline.webp",
+          "VARQ": "assets/posters/frame-0-VARQ.webp"
+        }
+      }
+    ]
+  },
+  "frame-01": {
+    "model": "Self-Forcing",
+    "paradigm": "Next-frame",
+    "bits": "4-bit",
+    "clips": [
+      {
+        "title": "A glowing crystal cave",
+        "prompt": "A deep underground cave filled with glowing crystals and hidden treasures.",
+        "sources": {
+          "Baseline": "samples/self_forcing/Baseline/q4/prompt004.mp4",
+          "VARQ": "samples/self_forcing/VARQ/q4/prompt004.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/frame-1-Baseline.webp",
+          "VARQ": "assets/posters/frame-1-VARQ.webp"
+        }
+      }
+    ]
+  },
+  "frame-02": {
+    "model": "Self-Forcing",
+    "paradigm": "Next-frame",
+    "bits": "4-bit",
+    "clips": [
+      {
+        "title": "Lion on the rock",
+        "prompt": "A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon.",
+        "sources": {
+          "Baseline": "samples/self_forcing/Baseline/q4/prompt000.mp4",
+          "VARQ": "samples/self_forcing/VARQ/q4/prompt000.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/frame-2-Baseline.webp",
+          "VARQ": "assets/posters/frame-2-VARQ.webp"
+        }
+      }
+    ]
+  },
+  "frame-03": {
+    "model": "Self-Forcing",
+    "paradigm": "Next-frame",
+    "bits": "4-bit",
+    "clips": [
+      {
+        "title": "Stars over a forest clearing",
+        "prompt": "A tilt-down from a starry night sky, revealing a quiet forest clearing bathed in moonlight.",
+        "sources": {
+          "Baseline": "samples/self_forcing/Baseline/q4/prompt194.mp4",
+          "VARQ": "samples/self_forcing/VARQ/q4/prompt194.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/frame-3-Baseline.webp",
+          "VARQ": "assets/posters/frame-3-VARQ.webp"
+        }
+      }
+    ]
+  },
+  "frame-04": {
+    "model": "Self-Forcing",
+    "paradigm": "Next-frame",
+    "bits": "4-bit",
+    "clips": [
+      {
+        "title": "Waves to snowy peaks at sunset",
+        "prompt": "the scene transitions from huge waves into a snowy mountain at sunset",
+        "sources": {
+          "Baseline": "samples/self_forcing/Baseline/q4/prompt163.mp4",
+          "VARQ": "samples/self_forcing/VARQ/q4/prompt163.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/frame-4-Baseline.webp",
+          "VARQ": "assets/posters/frame-4-VARQ.webp"
+        }
+      }
+    ]
+  },
+  "frame-05": {
+    "model": "Self-Forcing",
+    "paradigm": "Next-frame",
+    "bits": "4-bit",
+    "clips": [
+      {
+        "title": "Grass field at sunset",
+        "prompt": "A pan right across a field of tall grass swaying gently in the wind, with a setting sun in the background.",
+        "sources": {
+          "Baseline": "samples/self_forcing/Baseline/q4/prompt039.mp4",
+          "VARQ": "samples/self_forcing/VARQ/q4/prompt039.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/frame-5-Baseline.webp",
+          "VARQ": "assets/posters/frame-5-VARQ.webp"
+        }
+      }
+    ]
+  },
+  "frame-06": {
+    "model": "Self-Forcing",
+    "paradigm": "Next-frame",
+    "bits": "4-bit",
+    "clips": [
+      {
+        "title": "Alone in the desert",
+        "prompt": "A zoom-out from a single person standing in the middle of a desert, revealing the expansive, empty sand dunes around them.",
+        "sources": {
+          "Baseline": "samples/self_forcing/Baseline/q4/prompt228.mp4",
+          "VARQ": "samples/self_forcing/VARQ/q4/prompt228.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/frame-6-Baseline.webp",
+          "VARQ": "assets/posters/frame-6-VARQ.webp"
+        }
+      }
+    ]
+  },
+  "frame-07": {
+    "model": "Self-Forcing",
+    "paradigm": "Next-frame",
+    "bits": "4-bit",
+    "clips": [
+      {
+        "title": "A llama's reading nook",
+        "prompt": "A llama sits in a cozy reading nook, surrounded by plush pillows and soft blankets. Warm, golden lighting from a floor lamp creates a welcoming atmosphere. The llama reads a picture book aloud, using expressive voices for the characters. The camera captures the llama's animated face and the illustrations in the book.",
+        "sources": {
+          "Baseline": "samples/self_forcing/Baseline/q4/prompt158.mp4",
+          "VARQ": "samples/self_forcing/VARQ/q4/prompt158.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/frame-7-Baseline.webp",
+          "VARQ": "assets/posters/frame-7-VARQ.webp"
+        }
+      }
+    ]
+  },
+  "frame-08": {
+    "model": "Self-Forcing",
+    "paradigm": "Next-frame",
+    "bits": "4-bit",
+    "clips": [
+      {
+        "title": "Mountain monastery",
+        "prompt": "A peaceful monastery perches on a mountain cliff, with monks moving silently through the courtyard or sitting in meditation, overlooking a breathtaking view.",
+        "sources": {
+          "Baseline": "samples/self_forcing/Baseline/q4/prompt058.mp4",
+          "VARQ": "samples/self_forcing/VARQ/q4/prompt058.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/frame-8-Baseline.webp",
+          "VARQ": "assets/posters/frame-8-VARQ.webp"
+        }
+      }
+    ]
+  },
+  "frame-09": {
+    "model": "Self-Forcing",
+    "paradigm": "Next-frame",
+    "bits": "4-bit",
+    "clips": [
+      {
+        "title": "A cabin in the woods",
+        "prompt": "Smoke rises from the chimney of a cozy log cabin nestled in the woods, with soft light glowing from the windows, suggesting a warm and inviting atmosphere.",
+        "sources": {
+          "Baseline": "samples/self_forcing/Baseline/q4/prompt035.mp4",
+          "VARQ": "samples/self_forcing/VARQ/q4/prompt035.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/frame-9-Baseline.webp",
+          "VARQ": "assets/posters/frame-9-VARQ.webp"
+        }
+      }
+    ]
+  },
+  "long-00": {
+    "model": "LongLive",
+    "paradigm": "Next-frame",
+    "bits": "4-bit",
+    "clips": [
+      {
+        "title": "Grass field at sunset",
+        "prompt": "A pan right across a field of tall grass swaying gently in the wind, with a setting sun in the background.",
+        "sources": {
+          "Baseline": "samples/longlive/Baseline/q4/prompt019.mp4",
+          "VARQ": "samples/longlive/VARQ/q4/prompt019.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/long-0-Baseline.webp",
+          "VARQ": "assets/posters/long-0-VARQ.webp"
+        }
+      }
+    ]
+  },
+  "long-01": {
     "model": "LongLive",
     "paradigm": "Next-frame",
     "bits": "4-bit",
@@ -315,7 +750,7 @@
       }
     ]
   },
-  "long-sample-3": {
+  "long-02": {
     "model": "LongLive",
     "paradigm": "Next-frame",
     "bits": "4-bit",
@@ -330,6 +765,63 @@
         "posters": {
           "Baseline": "assets/posters/long-2-Baseline.webp",
           "VARQ": "assets/posters/long-2-VARQ.webp"
+        }
+      }
+    ]
+  },
+  "long-03": {
+    "model": "LongLive",
+    "paradigm": "Next-frame",
+    "bits": "4-bit",
+    "clips": [
+      {
+        "title": "A bubbling hot spring",
+        "prompt": "The gentle bubbling and evaporation of water in a natural hot spring, with mist rising and drifting across the surrounding landscape.",
+        "sources": {
+          "Baseline": "samples/longlive/Baseline/q4/prompt034.mp4",
+          "VARQ": "samples/longlive/VARQ/q4/prompt034.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/long-3-Baseline.webp",
+          "VARQ": "assets/posters/long-3-VARQ.webp"
+        }
+      }
+    ]
+  },
+  "long-04": {
+    "model": "LongLive",
+    "paradigm": "Next-frame",
+    "bits": "4-bit",
+    "clips": [
+      {
+        "title": "Lion on the rock",
+        "prompt": "A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon.",
+        "sources": {
+          "Baseline": "samples/longlive/Baseline/q4/prompt000.mp4",
+          "VARQ": "samples/longlive/VARQ/q4/prompt000.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/long-4-Baseline.webp",
+          "VARQ": "assets/posters/long-4-VARQ.webp"
+        }
+      }
+    ]
+  },
+  "long-05": {
+    "model": "LongLive",
+    "paradigm": "Next-frame",
+    "bits": "4-bit",
+    "clips": [
+      {
+        "title": "Honey on pancakes",
+        "prompt": "A close-up of honey being drizzled onto pancakes, the thick liquid flowing slowly and smoothly.",
+        "sources": {
+          "Baseline": "samples/longlive/Baseline/q4/prompt023.mp4",
+          "VARQ": "samples/longlive/VARQ/q4/prompt023.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/long-5-Baseline.webp",
+          "VARQ": "assets/posters/long-5-VARQ.webp"
         }
       }
     ]
