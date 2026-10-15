@@ -17,6 +17,8 @@ MODEL_META = {  # id -> (label, type, task)
     "self_forcing": ("Self-Forcing", "video", "Streaming autoregressive video (Wan 1.3B, 5 s, 832×480)"),
     "longlive": ("LongLive", "video", "Long-horizon autoregressive video (30 s, 832×480)"),
     "Infinity8B": ("Infinity-8B", "image", "Text-to-Image generation (1024×1024)"),
+    "InfinityStar720p": ("InfinityStar-720p", "video", "Next-scale text-to-video (720p, 5 s)"),
+    "InfinityStar480p": ("InfinityStar-480p", "video", "Next-scale text-to-video (480p, 5 s)"),
 }
 BIT_ORDER = {"self_forcing": ["q4"], "longlive": ["q4"], "Infinity8B": ["q2"]}
 MODEL_ORDER = ["Infinity8B", "self_forcing", "longlive", "InfinityStar720p", "InfinityStar480p",
@@ -27,6 +29,8 @@ NEW = {
     ("self_forcing", "q4"): dict(src=f"{SRC}/v3/self_forcing", dirs={"Baseline": "Baseline", "VARQ": "VARQr8", "KIVI": "KIVI", "FlexGen": "FlexGen"}, stem="prompt", ext="mp4", caption=False, pad=3),
     ("longlive", "q4"): dict(src=f"{SRC}/v3/longlive", dirs={"Baseline": "Baseline", "VARQ": "VARQr8", "KIVI": "KIVI", "FlexGen": "FLexGen"}, stem="prompt", ext="mp4", caption=False, pad=3),
     ("Infinity8B", "q2"): dict(src=f"{SRC}/v2/infinity8b", dirs={"Baseline": "Baseline", "VARQ": "VARQ", "KIVI": "KIVI", "FlexGen": "FlexGen"}, stem="idx", ext="jpg", pad=3),
+    ("InfinityStar720p", "q4"): dict(src=f"{SRC}/istar/720p", dirs={"Baseline": "Baseline", "VARQ": "VARQ", "KIVI": "KIVI", "FlexGen": "FlexGen"}, stem="prompt", ext="mp4", caption=False, pad=3),
+    ("InfinityStar480p", "q4"): dict(src=f"{SRC}/istar/480p", dirs={"Baseline": "Baseline", "VARQ": "VARQ", "KIVI": "KIVI", "FlexGen": "FlexGen"}, stem="prompt", ext="mp4", caption=False, pad=3),
 }
 # (model, qbits) tabs to remove from the site entirely (kept only under /data1)
 DROP = {("Infinity8B", "q3"), ("Infinity8B", "q4"), ("Infinity8B", "q6"), ("Infinity8B", "q8"), ("self_forcing", "q6"), ("longlive", "q6"),

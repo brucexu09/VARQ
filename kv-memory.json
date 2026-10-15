@@ -56,5 +56,39 @@
     "VARQ": 16.15
    }
   }
+ },
+ "InfinityStar720p": {
+  "setting": "8B \u00b7 720p \u00b7 batch 3",
+  "bits": {
+   "q4": {
+    "Baseline": 62.72,
+    "FlexGen": 16.48,
+    "KIVI": 16.73,
+    "VARQ": 16.0
+   },
+   "q3": {
+    "Baseline": 62.72,
+    "FlexGen": 13.56,
+    "KIVI": 13.81,
+    "VARQ": 13.08
+   }
+  }
+ },
+ "InfinityStar480p": {
+  "setting": "8B \u00b7 480p \u00b7 batch 6",
+  "bits": {
+   "q4": {
+    "Baseline": 55.87,
+    "FlexGen": 15.03,
+    "KIVI": 15.25,
+    "VARQ": 14.6
+   },
+   "q3": {
+    "Baseline": 55.87,
+    "FlexGen": 12.45,
+    "KIVI": 12.67,
+    "VARQ": 12.03
+   }
+  }
  }
 }

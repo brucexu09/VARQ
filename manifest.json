@@ -1374,7 +1374,7 @@
    "id": "InfinityStar720p",
    "label": "InfinityStar-720p",
    "type": "video",
-   "task": "Text-to-Video generation (720p)",
+   "task": "Next-scale text-to-video (720p, 5 s)",
    "methods": [
     "Baseline",
     "FlexGen",
@@ -1396,43 +1396,136 @@
    "samples": {
     "q4": [
      {
-      "prompt": "A person playing chess with a robot on a floating platform above the ocean.",
+      "prompt": "A crystal ball sitting on a table, with sunlight streaming through it and casting a circle of rainbow colors on the floor.",
       "caption": null,
       "media": {
-       "Baseline": "samples/InfinityStar720p/Baseline/q4/group01_prompt071_s02.mp4",
-       "FlexGen": "samples/InfinityStar720p/FlexGen/q4/group01_prompt071_s02.mp4",
-       "KIVI": "samples/InfinityStar720p/KIVI/q4/group01_prompt071_s02.mp4",
-       "VARQ": "samples/InfinityStar720p/VARQ/q4/group01_prompt071_s02.mp4"
+       "Baseline": "samples/InfinityStar720p/Baseline/q4/prompt042.mp4",
+       "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt042.mp4",
+       "KIVI": "samples/InfinityStar720p/KIVI/q4/prompt042.mp4",
+       "FlexGen": "samples/InfinityStar720p/FlexGen/q4/prompt042.mp4"
       }
      },
      {
-      "prompt": "A chimp on the sidewalk doing a backflip on a skateboard.",
+      "prompt": "A pan left across a serene beach at sunrise, moving from the darkened shore to the brightening horizon.",
       "caption": null,
       "media": {
-       "Baseline": "samples/InfinityStar720p/Baseline/q4/group01_prompt057_s01.mp4",
-       "FlexGen": "samples/InfinityStar720p/FlexGen/q4/group01_prompt057_s01.mp4",
-       "KIVI": "samples/InfinityStar720p/KIVI/q4/group01_prompt057_s01.mp4",
-       "VARQ": "samples/InfinityStar720p/VARQ/q4/group01_prompt057_s01.mp4"
+       "Baseline": "samples/InfinityStar720p/Baseline/q4/prompt027.mp4",
+       "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt027.mp4",
+       "KIVI": "samples/InfinityStar720p/KIVI/q4/prompt027.mp4",
+       "FlexGen": "samples/InfinityStar720p/FlexGen/q4/prompt027.mp4"
       }
      },
      {
-      "prompt": "A martial artist breaking a board with a powerful punch.",
+      "prompt": "A push-in towards a lone figure standing at the edge of a cliff, overlooking a vast, fog-covered valley.",
       "caption": null,
       "media": {
-       "Baseline": "samples/InfinityStar720p/Baseline/q4/group01_prompt154_s03.mp4",
-       "FlexGen": "samples/InfinityStar720p/FlexGen/q4/group01_prompt154_s03.mp4",
-       "KIVI": "samples/InfinityStar720p/KIVI/q4/group01_prompt154_s03.mp4",
-       "VARQ": "samples/InfinityStar720p/VARQ/q4/group01_prompt154_s03.mp4"
+       "Baseline": "samples/InfinityStar720p/Baseline/q4/prompt080.mp4",
+       "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt080.mp4",
+       "KIVI": "samples/InfinityStar720p/KIVI/q4/prompt080.mp4",
+       "FlexGen": "samples/InfinityStar720p/FlexGen/q4/prompt080.mp4"
+      }
+     },
+     {
+      "prompt": "Carefully pouring the milk into the cup, the milk flowed smoothly and the cup was gradually filled with a milky white color",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar720p/Baseline/q4/prompt158.mp4",
+       "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt158.mp4",
+       "KIVI": "samples/InfinityStar720p/KIVI/q4/prompt158.mp4",
+       "FlexGen": "samples/InfinityStar720p/FlexGen/q4/prompt158.mp4"
+      }
+     },
+     {
+      "prompt": "This close-up shot of a chameleon showcases its striking color changing capabilities. The background is blurred, drawing attention to the animal’s striking appearance.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar720p/Baseline/q4/prompt075.mp4",
+       "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt075.mp4",
+       "KIVI": "samples/InfinityStar720p/KIVI/q4/prompt075.mp4",
+       "FlexGen": "samples/InfinityStar720p/FlexGen/q4/prompt075.mp4"
+      }
+     },
+     {
+      "prompt": "An arc shot around a lone tree in a vast, foggy field at dawn, revealing the changing light and shadows.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar720p/Baseline/q4/prompt058.mp4",
+       "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt058.mp4",
+       "KIVI": "samples/InfinityStar720p/KIVI/q4/prompt058.mp4",
+       "FlexGen": "samples/InfinityStar720p/FlexGen/q4/prompt058.mp4"
+      }
+     },
+     {
+      "prompt": "A person doing yoga on top of a giant lily pad in the middle of a serene pond.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar720p/Baseline/q4/prompt193.mp4",
+       "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt193.mp4",
+       "KIVI": "samples/InfinityStar720p/KIVI/q4/prompt193.mp4",
+       "FlexGen": "samples/InfinityStar720p/FlexGen/q4/prompt193.mp4"
+      }
+     },
+     {
+      "prompt": "A low-angle view of a majestic lion standing on a rocky outcrop, looking regal and powerful against the horizon.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar720p/Baseline/q4/prompt014.mp4",
+       "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt014.mp4",
+       "KIVI": "samples/InfinityStar720p/KIVI/q4/prompt014.mp4",
+       "FlexGen": "samples/InfinityStar720p/FlexGen/q4/prompt014.mp4"
+      }
+     },
+     {
+      "prompt": "An aerial perspective of a group of dolphins swimming near the surface of a crystal-clear ocean, their movements synchronized.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar720p/Baseline/q4/prompt143.mp4",
+       "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt143.mp4",
+       "KIVI": "samples/InfinityStar720p/KIVI/q4/prompt143.mp4",
+       "FlexGen": "samples/InfinityStar720p/FlexGen/q4/prompt143.mp4"
+      }
+     },
+     {
+      "prompt": "A curious cat peering out from a cozy hiding spot.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar720p/Baseline/q4/prompt162.mp4",
+       "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt162.mp4",
+       "KIVI": "samples/InfinityStar720p/KIVI/q4/prompt162.mp4",
+       "FlexGen": "samples/InfinityStar720p/FlexGen/q4/prompt162.mp4"
       }
      }
     ]
+   },
+   "methodsByBit": {
+    "q4": [
+     "Baseline",
+     "FlexGen",
+     "KIVI",
+     "VARQ"
+    ]
+   },
+   "kvSetting": "8B · 720p · batch 3",
+   "kvMemory": {
+    "q4": {
+     "Baseline": 62.72,
+     "FlexGen": 16.48,
+     "KIVI": 16.73,
+     "VARQ": 16.0
+    },
+    "q3": {
+     "Baseline": 62.72,
+     "FlexGen": 13.56,
+     "KIVI": 13.81,
+     "VARQ": 13.08
+    }
    }
   },
   {
    "id": "InfinityStar480p",
    "label": "InfinityStar-480p",
    "type": "video",
-   "task": "Text-to-Video generation (480p)",
+   "task": "Next-scale text-to-video (480p, 5 s)",
    "methods": [
     "Baseline",
     "FlexGen",
@@ -1454,36 +1547,129 @@
    "samples": {
     "q4": [
      {
-      "prompt": "A bird made of fresh oranges rushes out of the orange",
+      "prompt": "A tilt-down from the towering peak of a mountain to the winding path leading up to it.",
       "caption": null,
       "media": {
-       "Baseline": "samples/InfinityStar480p/Baseline/q4/group01_prompt164_s03.mp4",
-       "FlexGen": "samples/InfinityStar480p/FlexGen/q4/group01_prompt164_s03.mp4",
-       "KIVI": "samples/InfinityStar480p/KIVI/q4/group01_prompt164_s03.mp4",
-       "VARQ": "samples/InfinityStar480p/VARQ/q4/group01_prompt164_s03.mp4"
+       "Baseline": "samples/InfinityStar480p/Baseline/q4/prompt169.mp4",
+       "VARQ": "samples/InfinityStar480p/VARQ/q4/prompt169.mp4",
+       "KIVI": "samples/InfinityStar480p/KIVI/q4/prompt169.mp4",
+       "FlexGen": "samples/InfinityStar480p/FlexGen/q4/prompt169.mp4"
       }
      },
      {
-      "prompt": "A man is putting a ring on a woman's finger",
+      "prompt": "Carefully pouring the milk into the cup, the milk flowed smoothly and the cup was gradually filled with a milky white color",
       "caption": null,
       "media": {
-       "Baseline": "samples/InfinityStar480p/Baseline/q4/group01_prompt051_s01.mp4",
-       "FlexGen": "samples/InfinityStar480p/FlexGen/q4/group01_prompt051_s01.mp4",
-       "KIVI": "samples/InfinityStar480p/KIVI/q4/group01_prompt051_s01.mp4",
-       "VARQ": "samples/InfinityStar480p/VARQ/q4/group01_prompt051_s01.mp4"
+       "Baseline": "samples/InfinityStar480p/Baseline/q4/prompt158.mp4",
+       "VARQ": "samples/InfinityStar480p/VARQ/q4/prompt158.mp4",
+       "KIVI": "samples/InfinityStar480p/KIVI/q4/prompt158.mp4",
+       "FlexGen": "samples/InfinityStar480p/FlexGen/q4/prompt158.mp4"
       }
      },
      {
-      "prompt": "A bustling ancient marketplace with merchants selling spices and fabrics.",
+      "prompt": "A girl is peeling an orange",
       "caption": null,
       "media": {
-       "Baseline": "samples/InfinityStar480p/Baseline/q4/group01_prompt088_s02.mp4",
-       "FlexGen": "samples/InfinityStar480p/FlexGen/q4/group01_prompt088_s02.mp4",
-       "KIVI": "samples/InfinityStar480p/KIVI/q4/group01_prompt088_s02.mp4",
-       "VARQ": "samples/InfinityStar480p/VARQ/q4/group01_prompt088_s02.mp4"
+       "Baseline": "samples/InfinityStar480p/Baseline/q4/prompt043.mp4",
+       "VARQ": "samples/InfinityStar480p/VARQ/q4/prompt043.mp4",
+       "KIVI": "samples/InfinityStar480p/KIVI/q4/prompt043.mp4",
+       "FlexGen": "samples/InfinityStar480p/FlexGen/q4/prompt043.mp4"
+      }
+     },
+     {
+      "prompt": "a cactus with googly eyes dancing in the breeze",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar480p/Baseline/q4/prompt061.mp4",
+       "VARQ": "samples/InfinityStar480p/VARQ/q4/prompt061.mp4",
+       "KIVI": "samples/InfinityStar480p/KIVI/q4/prompt061.mp4",
+       "FlexGen": "samples/InfinityStar480p/FlexGen/q4/prompt061.mp4"
+      }
+     },
+     {
+      "prompt": "A curious cat peering out from a cozy hiding spot.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar480p/Baseline/q4/prompt162.mp4",
+       "VARQ": "samples/InfinityStar480p/VARQ/q4/prompt162.mp4",
+       "KIVI": "samples/InfinityStar480p/KIVI/q4/prompt162.mp4",
+       "FlexGen": "samples/InfinityStar480p/FlexGen/q4/prompt162.mp4"
+      }
+     },
+     {
+      "prompt": "The slow crystallization of a water droplet turning into ice on a frosty morning, with delicate patterns forming across its surface.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar480p/Baseline/q4/prompt099.mp4",
+       "VARQ": "samples/InfinityStar480p/VARQ/q4/prompt099.mp4",
+       "KIVI": "samples/InfinityStar480p/KIVI/q4/prompt099.mp4",
+       "FlexGen": "samples/InfinityStar480p/FlexGen/q4/prompt099.mp4"
+      }
+     },
+     {
+      "prompt": "A grandmother with neatly combed grey hair stands behind a colorful birthday cake with numerous candles at a wood dining room table, expression is one of pure joy and happiness, with a happy glow in her eye. She leans forward and blows out the candles with a gentle puff, the cake has pink frosting and sprinkles and the candles cease to flicker, the grandmother wears a light blue blouse adorned with floral patterns, several happy friends and family sitting at the table can be seen celebrating, out of focus. The scene is beautifully captured, cinematic, showing a 3/4 view of the grandmother and the dining room. Warm color tones and soft lighting enhance the mood.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar480p/Baseline/q4/prompt140.mp4",
+       "VARQ": "samples/InfinityStar480p/VARQ/q4/prompt140.mp4",
+       "KIVI": "samples/InfinityStar480p/KIVI/q4/prompt140.mp4",
+       "FlexGen": "samples/InfinityStar480p/FlexGen/q4/prompt140.mp4"
+      }
+     },
+     {
+      "prompt": "pov footage of an ant navigating the inside of an ant nest",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar480p/Baseline/q4/prompt107.mp4",
+       "VARQ": "samples/InfinityStar480p/VARQ/q4/prompt107.mp4",
+       "KIVI": "samples/InfinityStar480p/KIVI/q4/prompt107.mp4",
+       "FlexGen": "samples/InfinityStar480p/FlexGen/q4/prompt107.mp4"
+      }
+     },
+     {
+      "prompt": "A slow cinematic push in on an ostrich standing in a 1980s kitchen.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar480p/Baseline/q4/prompt092.mp4",
+       "VARQ": "samples/InfinityStar480p/VARQ/q4/prompt092.mp4",
+       "KIVI": "samples/InfinityStar480p/KIVI/q4/prompt092.mp4",
+       "FlexGen": "samples/InfinityStar480p/FlexGen/q4/prompt092.mp4"
+      }
+     },
+     {
+      "prompt": "A person playing hopscotch on the rings of Saturn.",
+      "caption": null,
+      "media": {
+       "Baseline": "samples/InfinityStar480p/Baseline/q4/prompt195.mp4",
+       "VARQ": "samples/InfinityStar480p/VARQ/q4/prompt195.mp4",
+       "KIVI": "samples/InfinityStar480p/KIVI/q4/prompt195.mp4",
+       "FlexGen": "samples/InfinityStar480p/FlexGen/q4/prompt195.mp4"
       }
      }
     ]
+   },
+   "methodsByBit": {
+    "q4": [
+     "Baseline",
+     "FlexGen",
+     "KIVI",
+     "VARQ"
+    ]
+   },
+   "kvSetting": "8B · 480p · batch 6",
+   "kvMemory": {
+    "q4": {
+     "Baseline": 55.87,
+     "FlexGen": 15.03,
+     "KIVI": 15.25,
+     "VARQ": 14.6
+    },
+    "q3": {
+     "Baseline": 55.87,
+     "FlexGen": 12.45,
+     "KIVI": 12.67,
+     "VARQ": 12.03
+    }
    }
   }
  ]
