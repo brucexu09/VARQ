@@ -93,7 +93,7 @@
       body.append(tr);
     });
     table.append(body);
-    status.textContent = `${rows.length} configurations · Table ${d.table}. BF16 is included as the reference.`;
+    status.textContent = `${rows.length} rows · Table ${d.table}. BF16 is included as the reference.`;
   }
   function setModel() {
     const d = current();

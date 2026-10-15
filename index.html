@@ -6,7 +6,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title>VAR-Q · Tuning-free KV Cache Quantization for Visual Generation</title>
     <meta
-      content="Tuning-free KV cache quantization for autoregressive image and video generation. One channel × block grouping rule across next-scale and next-frame generation, evaluated on nine visual AR models."
+      content="Tuning-free KV cache quantization for autoregressive image and video generation. One channel × block grouping rule across next-scale and next-frame generation, evaluated across five visual AR model families: VAR, Infinity, InfinityStar, Self-Forcing and LongLive."
       name="description"
     />
     <meta content="#f8f9fc" name="theme-color" />
@@ -47,7 +47,7 @@
             </p>
             <div class="actions">
               <a class="button primary" href="/assets/pdf/VAR-Q.pdf">Read the paper <span aria-hidden="true">↗</span></a
-              ><a class="button" href="https://github.com/lujiaji/VAR-Q">View code <span aria-hidden="true">↗</span></a
+              ><a class="button" href="https://github.com/lujiaji/VAR-Q/tree/varq_official">View code <span aria-hidden="true">↗</span></a
               ><a class="button text-button" href="#citation">Cite this work <span aria-hidden="true">↓</span></a>
             </div>
           </div>
@@ -55,7 +55,7 @@
             <span class="margin-label">The paper</span>
             <h1 id="paper-title">VAR-Q: Tuning-free KV Cache Quantization for Visual Autoregressive Image and Video Generation</h1>
             <p class="authors">
-              <a href="/">Boxun Xu<sup>1,†</sup></a
+              <a class="author-lead" href="/" title="Boxun Xu · project lead and corresponding author">Boxun Xu<sup>1,†</sup></a
               ><span>Jiaji Lu<sup>1,†</sup></span
               ><span>Yuxuan Yin<sup>1</sup></span
               ><span>Zihu Wang<sup>1</sup></span
@@ -67,7 +67,7 @@
             <p class="affiliations">
               <span><sup>1</sup> University of California, Santa Barbara</span><span><sup>2</sup> University of Minnesota</span>
             </p>
-            <p class="equal">† Equal contribution</p>
+            <p class="equal">† Equal contribution · Correspondence: <a href="mailto:boxunxu@ucsb.edu">boxunxu@ucsb.edu</a></p>
             <div class="paper-scope">
               <span>Next-scale <small>Images + video</small></span
               ><span>Next-frame <small>Video</small></span>
@@ -682,8 +682,8 @@
         </div>
         <!-- /showcase:groups -->
         <div class="showcase-foot">
-          <p id="showcase-note">Same model, prompt and seed within each pair. Precision labels describe the KV cache; KV memory is the paper's measurement at the evaluation batch size (12 clips for Self-Forcing, 20 for LongLive, 6 images for Infinity-8B).</p>
-          <a href="#demo">Explore all models &amp; baselines ↗</a>
+          <p id="showcase-note">Same model, prompt and seed within each pair; only the KV cache is quantized. KV memory is the paper's measurement at the evaluation batch size (3 clips for InfinityStar 720p, 12 for Self-Forcing, 20 for LongLive).</p>
+          <a href="#comparison">Browse every curated sample ↗</a>
         </div>
       </section>
       <div aria-label="Paper highlights" class="stats wrap research-stats">
@@ -692,8 +692,8 @@
           <p>visual AR paradigms</p>
         </div>
         <div>
-          <strong>9</strong>
-          <p>model configurations</p>
+          <strong>5</strong>
+          <p>model families · 9 checkpoints<br />VAR · Infinity · InfinityStar · Self-Forcing · LongLive</p>
         </div>
         <div>
           <strong>74.88<span>%</span></strong>
@@ -705,7 +705,7 @@
         </div>
       </div>
       <p class="metric-note wrap">
-        Self-Forcing and LongLive at INT4, at the same batch sizes as BF16. Quality tradeoffs and all configurations are available in the
+        KV-memory saving measured on Self-Forcing and LongLive at INT4, at the same batch sizes as BF16. Quality for every checkpoint and precision is in the
         <a href="#benchmarks">results explorer ↗</a>.
       </p>
       <section aria-labelledby="overview-title" class="section intro-section" id="overview">
@@ -932,11 +932,11 @@
           <div class="paper-table-heading">
             <div>
               <p class="eyebrow">Across image and video models</p>
-              <h3>Four-bit KV caches across nine configurations</h3>
+              <h3>Four-bit KV caches across all nine evaluated checkpoints</h3>
             </div>
-            <p>VAR-Q retains competitive generation quality while reducing KV memory by 72–75%.</p>
+            <p>Five model families, nine checkpoints: VAR-d20/d24/d30, Infinity-2B/8B, InfinityStar 480p/720p, Self-Forcing and LongLive. VAR-Q retains competitive generation quality while reducing KV memory by 72–75%.</p>
           </div>
-          <div aria-label="INT4 results across all nine configurations" class="metrics-scroll" role="region" tabindex="0">
+          <div aria-label="INT4 results across all nine evaluated checkpoints" class="metrics-scroll" role="region" tabindex="0">
             <table>
               <caption>
                 Tables 2–4 · VAR-Q INT4 vs. BF16 · KV memory at the batch sizes reported in the paper
@@ -2904,7 +2904,7 @@
           </div>
         </div>
         <!-- /showcase:long -->
-        <div class="dense-section" id="more-videos">
+        <div class="dense-section" id="comparison">
           <div class="subsection-heading">
             <div>
               <p class="eyebrow">Against prior KV-cache quantizers</p>
@@ -2925,7 +2925,7 @@
               <p class="eyebrow">Explore the samples</p>
               <h3 id="gallery-title">Compare generation across methods</h3>
             </div>
-            <p class="small-note">Original project samples · BF16 reference and low-bit methods</p>
+            <p class="small-note">Curated samples generated with the public VAR-Q runtime · BF16 reference and low-bit KV caches</p>
           </div>
           <div class="gallery-selectors">
             <label class="select-label"
@@ -3040,10 +3040,31 @@
           <h2 id="attribution-title">What creates the channel × block structure?</h2>
           <p>
             Why does the channel × block pattern emerge? Three experiments separate prompt-dependent outliers, persistent channel imbalance, and
-            position-dependent magnitude shifts.
+            position-dependent magnitude shifts. Together they explain why one grouping rule, channel × block, transfers across every model family
+            in the paper.
           </p>
         </div>
-        <article class="attribution-row persistence-row">
+        <div aria-label="Three findings" class="attribution-findings">
+          <a href="#attr-persistence">
+            <span class="finding-index">01</span>
+            <strong>53–62<span>%</span></strong>
+            <p>of the top-1% <b>K</b> outlier channels persist across all 10 prompts. For <b>V</b>, only 7–14% do.</p>
+            <em>The channel pattern is architectural, not prompt-driven</em>
+          </a>
+          <a href="#attr-channel">
+            <span class="finding-index">02</span>
+            <strong>55–63<span>×</span></strong>
+            <p>random recall of final K outliers from weights alone, chaining W<sub>K</sub> → γ<sub>K</sub> → RoPE. The W<sub>V</sub> control reaches 5–6×.</p>
+            <em>Which channels blow up is predictable from the K projection chain</em>
+          </a>
+          <a href="#attr-rope">
+            <span class="finding-index">03</span>
+            <strong>+0.41</strong>
+            <p>VBench Total Quality from quantizing after RoPE instead of before, at the same 27.5 GB footprint (82.93 → 83.34).</p>
+            <em>RoPE moves magnitude across blocks, so groups must follow blocks</em>
+          </a>
+        </div>
+        <article class="attribution-row persistence-row" id="attr-persistence">
           <div class="attribution-copy">
             <p class="evidence-label">01 / Architecture or input?</p>
             <h3>K and V share a structure,<br />but not the same source.</h3>
@@ -3071,7 +3092,7 @@
             </figcaption>
           </figure>
         </article>
-        <article class="attribution-channel">
+        <article class="attribution-channel" id="attr-channel">
           <div class="attribution-row channel-intro">
             <div class="attribution-copy">
               <p class="evidence-label">02 / The channel axis</p>
@@ -3132,7 +3153,7 @@
             </figure>
           </div>
         </article>
-        <article class="attribution-row rope-row">
+        <article class="attribution-row rope-row" id="attr-rope">
           <div class="attribution-copy">
             <p class="evidence-label">03 / The block axis</p>
             <h3>RoPE moves magnitude<br />between channels over time.</h3>
@@ -3294,23 +3315,24 @@
             <p class="eyebrow">Implementation</p>
             <h2 id="code-title">Code and implementation</h2>
             <p>
-              The public repository provides the core quantization and packing utilities, plus VAR and Infinity examples. Start with the
-              model-specific notebooks and follow the repository’s environment and checkpoint instructions.
+              The public repository attaches VAR-Q at runtime to unmodified VAR, Infinity, InfinityStar, Self-Forcing, LongLive and LiveTalk
+              checkouts, with packed INT2–INT8 CUDA kernels and fused dequant-attention. Every sample on this page was generated with these
+              public launchers and the curated JSON configs.
             </p>
-            <a class="button primary" href="https://github.com/lujiaji/VAR-Q">Explore the repository <span aria-hidden="true">↗</span></a>
+            <a class="button primary" href="https://github.com/lujiaji/VAR-Q/tree/varq_official">Explore the repository <span aria-hidden="true">↗</span></a>
           </div>
           <div class="code-card">
             <div class="code-top"><span>Get the code</span><button class="copy-button" data-copy="clone-code" type="button">Copy</button></div>
             <pre><code id="clone-code">git clone https://github.com/lujiaji/VAR-Q.git
-cd VAR-Q</code></pre>
+cd VAR-Q &amp;&amp; git checkout varq_official
+pip install -e .</code></pre>
             <div class="notebook-links">
-              <a href="https://github.com/lujiaji/VAR-Q/blob/main/scripts/inference_single_VAR.ipynb">VAR inference notebook <span>↗</span></a
-              ><a href="https://github.com/lujiaji/VAR-Q/blob/main/scripts/inference_single_Infinity.ipynb"
-                >Infinity inference notebook <span>↗</span></a
-              ><a href="https://github.com/lujiaji/VAR-Q/tree/main/VAR_Q">Quantization &amp; packing utilities <span>↗</span></a>
+              <a href="https://github.com/lujiaji/VAR-Q/tree/varq_official/scripts">Launchers: VAR · Infinity · InfinityStar · Self-Forcing · LongLive · LiveTalk <span>↗</span></a
+              ><a href="https://github.com/lujiaji/VAR-Q/tree/varq_official/configs">Curated JSON configs (2–8 bit) <span>↗</span></a
+              ><a href="https://github.com/lujiaji/VAR-Q/tree/varq_official/VAR_Q">Runtime hooks, CUDA kernels &amp; packing <span>↗</span></a>
             </div>
             <p class="small-note">
-              The paper evaluates image and video models. The linked public quick-start currently documents VAR and Infinity image generation.
+              Checkpoints are loaded by each upstream repository; VAR-Q never forks their source.
             </p>
           </div>
         </div>

@@ -61,7 +61,7 @@
     document.querySelector("#gallery-time").textContent = "0.0 s";
     status.textContent = isVideo
       ? "Use Play all to start the paired videos together. The shared timeline controls every method."
-      : "Paired outputs from the project’s original sample collection. Baseline uses BF16; other methods use the selected KV precision.";
+      : "Paired outputs generated with the public VAR-Q runtime from the same seed. Baseline uses BF16; the other columns use the selected KV precision.";
     if (!sample) {
       status.textContent = "No samples are available for this configuration.";
       return;
