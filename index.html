@@ -2907,38 +2907,14 @@
         <div class="dense-section" id="more-videos">
           <div class="subsection-heading">
             <div>
-              <p class="eyebrow">All curated samples</p>
-              <h3>One row per prompt, every KV-cache quantizer side by side</h3>
+              <p class="eyebrow">Against prior KV-cache quantizers</p>
+              <h3>Infinity-8B at 2 bits: BF16, FlexGen, KIVI and VAR-Q side by side</h3>
             </div>
-            <p class="small-note">Same model, prompt and seed in each row. Videos load and play when scrolled into view; click an image to enlarge. KV memory is the paper's measurement at the evaluation batch size.</p>
+            <p class="small-note">Same prompt and seed in each row; only the KV-cache quantizer differs. Click an image to enlarge. KV memory is the paper's measurement at the evaluation batch size.</p>
           </div>
           <section class="dense-block" data-bit="q2" data-initial="8" data-model="Infinity8B" data-step="8">
             <div class="dense-head"><h4>Infinity-8B · next-scale · 1024×1024 · 2-bit KV cache</h4><span class="dense-count"></span></div>
             <p class="dense-note">At 2 bits the KV cache shrinks by 87%; VAR-Q keeps the BF16 subject and layout while KIVI and FlexGen drift or break. PSNR vs BF16 is shown in the browser gallery below.</p>
-            <div class="dense-rows"></div>
-            <button class="button dense-more" type="button">Show more</button>
-          </section>
-          <section class="dense-block" data-bit="q4" data-initial="6" data-model="self_forcing" data-step="6">
-            <div class="dense-head"><h4>Self-Forcing · next-frame · 5 s · 4-bit KV cache</h4><span class="dense-count"></span></div>
-            <p class="dense-note">Generated with the public VAR-Q runtime from the same seed as BF16; clips kept where VAR-Q stays close to BF16 for the whole clip.</p>
-            <div class="dense-rows"></div>
-            <button class="button dense-more" type="button">Show more</button>
-          </section>
-          <section class="dense-block" data-bit="q4" data-initial="3" data-model="longlive" data-step="3">
-            <div class="dense-head"><h4>LongLive · next-frame · 30 s · 4-bit KV cache</h4><span class="dense-count"></span></div>
-            <p class="dense-note">Long-horizon streaming generation; low-drift clips shown.</p>
-            <div class="dense-rows"></div>
-            <button class="button dense-more" type="button">Show more</button>
-          </section>
-          <section class="dense-block" data-bit="q4" data-initial="10" data-model="InfinityStar720p" data-step="10">
-            <div class="dense-head"><h4>InfinityStar · next-scale video · 720p · 4-bit KV cache</h4><span class="dense-count"></span></div>
-            <p class="dense-note"></p>
-            <div class="dense-rows"></div>
-            <button class="button dense-more" type="button">Show more</button>
-          </section>
-          <section class="dense-block" data-bit="q4" data-initial="10" data-model="InfinityStar480p" data-step="10">
-            <div class="dense-head"><h4>InfinityStar · next-scale video · 480p · 4-bit KV cache</h4><span class="dense-count"></span></div>
-            <p class="dense-note"></p>
             <div class="dense-rows"></div>
             <button class="button dense-more" type="button">Show more</button>
           </section>

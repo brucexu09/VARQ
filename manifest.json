@@ -755,14 +755,10 @@
    "task": "Streaming autoregressive video (Wan 1.3B, 5 s, 832×480)",
    "methods": [
     "Baseline",
-    "FlexGen",
-    "KIVI",
     "VARQ"
    ],
    "methodLabels": {
     "Baseline": "Baseline (BF16)",
-    "FlexGen": "FlexGen",
-    "KIVI": "KIVI",
     "VARQ": "VARQ (Ours)"
    },
    "bits": [
@@ -778,9 +774,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt007.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt007.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt007.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt007.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt007.mp4"
       }
      },
      {
@@ -788,9 +782,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt194.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt194.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt194.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt194.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt194.mp4"
       }
      },
      {
@@ -798,9 +790,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt163.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt163.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt163.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt163.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt163.mp4"
       }
      },
      {
@@ -808,9 +798,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt004.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt004.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt004.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt004.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt004.mp4"
       }
      },
      {
@@ -818,9 +806,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt039.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt039.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt039.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt039.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt039.mp4"
       }
      },
      {
@@ -828,9 +814,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt228.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt228.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt228.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt228.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt228.mp4"
       }
      },
      {
@@ -838,9 +822,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt158.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt158.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt158.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt158.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt158.mp4"
       }
      },
      {
@@ -848,9 +830,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt058.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt058.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt058.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt058.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt058.mp4"
       }
      },
      {
@@ -858,9 +838,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt035.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt035.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt035.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt035.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt035.mp4"
       }
      },
      {
@@ -868,9 +846,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt005.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt005.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt005.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt005.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt005.mp4"
       }
      },
      {
@@ -878,9 +854,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt153.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt153.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt153.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt153.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt153.mp4"
       }
      },
      {
@@ -888,9 +862,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt100.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt100.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt100.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt100.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt100.mp4"
       }
      },
      {
@@ -898,9 +870,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt175.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt175.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt175.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt175.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt175.mp4"
       }
      },
      {
@@ -908,9 +878,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt016.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt016.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt016.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt016.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt016.mp4"
       }
      },
      {
@@ -918,9 +886,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt000.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt000.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt000.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt000.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt000.mp4"
       }
      },
      {
@@ -928,9 +894,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt103.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt103.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt103.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt103.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt103.mp4"
       }
      },
      {
@@ -938,9 +902,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt143.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt143.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt143.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt143.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt143.mp4"
       }
      },
      {
@@ -948,9 +910,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt166.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt166.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt166.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt166.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt166.mp4"
       }
      },
      {
@@ -958,9 +918,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt078.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt078.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt078.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt078.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt078.mp4"
       }
      },
      {
@@ -968,9 +926,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt210.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt210.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt210.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt210.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt210.mp4"
       }
      },
      {
@@ -978,9 +934,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt116.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt116.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt116.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt116.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt116.mp4"
       }
      },
      {
@@ -988,9 +942,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt048.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt048.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt048.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt048.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt048.mp4"
       }
      },
      {
@@ -998,9 +950,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt009.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt009.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt009.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt009.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt009.mp4"
       }
      },
      {
@@ -1008,9 +958,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt043.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt043.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt043.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt043.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt043.mp4"
       }
      },
      {
@@ -1018,9 +966,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt120.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt120.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt120.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt120.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt120.mp4"
       }
      },
      {
@@ -1028,9 +974,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt015.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt015.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt015.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt015.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt015.mp4"
       }
      },
      {
@@ -1038,9 +982,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt086.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt086.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt086.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt086.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt086.mp4"
       }
      },
      {
@@ -1048,9 +990,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt212.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt212.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt212.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt212.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt212.mp4"
       }
      },
      {
@@ -1058,9 +998,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt192.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt192.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt192.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt192.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt192.mp4"
       }
      },
      {
@@ -1068,9 +1006,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt234.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt234.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt234.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt234.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt234.mp4"
       }
      },
      {
@@ -1078,9 +1014,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt056.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt056.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt056.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt056.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt056.mp4"
       }
      },
      {
@@ -1088,9 +1022,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt042.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt042.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt042.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt042.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt042.mp4"
       }
      },
      {
@@ -1098,9 +1030,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt098.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt098.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt098.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt098.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt098.mp4"
       }
      },
      {
@@ -1108,9 +1038,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt124.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt124.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt124.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt124.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt124.mp4"
       }
      },
      {
@@ -1118,9 +1046,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt136.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt136.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt136.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt136.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt136.mp4"
       }
      },
      {
@@ -1128,9 +1054,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt208.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt208.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt208.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt208.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt208.mp4"
       }
      },
      {
@@ -1138,9 +1062,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/self_forcing/Baseline/q4/prompt137.mp4",
-       "VARQ": "samples/self_forcing/VARQ/q4/prompt137.mp4",
-       "KIVI": "samples/self_forcing/KIVI/q4/prompt137.mp4",
-       "FlexGen": "samples/self_forcing/FlexGen/q4/prompt137.mp4"
+       "VARQ": "samples/self_forcing/VARQ/q4/prompt137.mp4"
       }
      }
     ]
@@ -1148,8 +1070,6 @@
    "methodsByBit": {
     "q4": [
      "Baseline",
-     "FlexGen",
-     "KIVI",
      "VARQ"
     ]
    },
@@ -1176,14 +1096,10 @@
    "task": "Long-horizon autoregressive video (30 s, 832×480)",
    "methods": [
     "Baseline",
-    "FlexGen",
-    "KIVI",
     "VARQ"
    ],
    "methodLabels": {
     "Baseline": "Baseline (BF16)",
-    "FlexGen": "FlexGen",
-    "KIVI": "KIVI",
     "VARQ": "VARQ (Ours)"
    },
    "bits": [
@@ -1199,9 +1115,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/longlive/Baseline/q4/prompt019.mp4",
-       "VARQ": "samples/longlive/VARQ/q4/prompt019.mp4",
-       "KIVI": "samples/longlive/KIVI/q4/prompt019.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q4/prompt019.mp4"
+       "VARQ": "samples/longlive/VARQ/q4/prompt019.mp4"
       }
      },
      {
@@ -1209,9 +1123,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/longlive/Baseline/q4/prompt022.mp4",
-       "VARQ": "samples/longlive/VARQ/q4/prompt022.mp4",
-       "KIVI": "samples/longlive/KIVI/q4/prompt022.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q4/prompt022.mp4"
+       "VARQ": "samples/longlive/VARQ/q4/prompt022.mp4"
       }
      },
      {
@@ -1219,9 +1131,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/longlive/Baseline/q4/prompt039.mp4",
-       "VARQ": "samples/longlive/VARQ/q4/prompt039.mp4",
-       "KIVI": "samples/longlive/KIVI/q4/prompt039.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q4/prompt039.mp4"
+       "VARQ": "samples/longlive/VARQ/q4/prompt039.mp4"
       }
      },
      {
@@ -1229,9 +1139,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/longlive/Baseline/q4/prompt034.mp4",
-       "VARQ": "samples/longlive/VARQ/q4/prompt034.mp4",
-       "KIVI": "samples/longlive/KIVI/q4/prompt034.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q4/prompt034.mp4"
+       "VARQ": "samples/longlive/VARQ/q4/prompt034.mp4"
       }
      },
      {
@@ -1239,9 +1147,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/longlive/Baseline/q4/prompt000.mp4",
-       "VARQ": "samples/longlive/VARQ/q4/prompt000.mp4",
-       "KIVI": "samples/longlive/KIVI/q4/prompt000.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q4/prompt000.mp4"
+       "VARQ": "samples/longlive/VARQ/q4/prompt000.mp4"
       }
      },
      {
@@ -1249,9 +1155,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/longlive/Baseline/q4/prompt023.mp4",
-       "VARQ": "samples/longlive/VARQ/q4/prompt023.mp4",
-       "KIVI": "samples/longlive/KIVI/q4/prompt023.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q4/prompt023.mp4"
+       "VARQ": "samples/longlive/VARQ/q4/prompt023.mp4"
       }
      },
      {
@@ -1259,9 +1163,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/longlive/Baseline/q4/prompt009.mp4",
-       "VARQ": "samples/longlive/VARQ/q4/prompt009.mp4",
-       "KIVI": "samples/longlive/KIVI/q4/prompt009.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q4/prompt009.mp4"
+       "VARQ": "samples/longlive/VARQ/q4/prompt009.mp4"
       }
      },
      {
@@ -1269,9 +1171,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/longlive/Baseline/q4/prompt047.mp4",
-       "VARQ": "samples/longlive/VARQ/q4/prompt047.mp4",
-       "KIVI": "samples/longlive/KIVI/q4/prompt047.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q4/prompt047.mp4"
+       "VARQ": "samples/longlive/VARQ/q4/prompt047.mp4"
       }
      },
      {
@@ -1279,9 +1179,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/longlive/Baseline/q4/prompt041.mp4",
-       "VARQ": "samples/longlive/VARQ/q4/prompt041.mp4",
-       "KIVI": "samples/longlive/KIVI/q4/prompt041.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q4/prompt041.mp4"
+       "VARQ": "samples/longlive/VARQ/q4/prompt041.mp4"
       }
      },
      {
@@ -1289,9 +1187,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/longlive/Baseline/q4/prompt025.mp4",
-       "VARQ": "samples/longlive/VARQ/q4/prompt025.mp4",
-       "KIVI": "samples/longlive/KIVI/q4/prompt025.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q4/prompt025.mp4"
+       "VARQ": "samples/longlive/VARQ/q4/prompt025.mp4"
       }
      },
      {
@@ -1299,9 +1195,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/longlive/Baseline/q4/prompt021.mp4",
-       "VARQ": "samples/longlive/VARQ/q4/prompt021.mp4",
-       "KIVI": "samples/longlive/KIVI/q4/prompt021.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q4/prompt021.mp4"
+       "VARQ": "samples/longlive/VARQ/q4/prompt021.mp4"
       }
      },
      {
@@ -1309,9 +1203,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/longlive/Baseline/q4/prompt010.mp4",
-       "VARQ": "samples/longlive/VARQ/q4/prompt010.mp4",
-       "KIVI": "samples/longlive/KIVI/q4/prompt010.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q4/prompt010.mp4"
+       "VARQ": "samples/longlive/VARQ/q4/prompt010.mp4"
       }
      },
      {
@@ -1319,9 +1211,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/longlive/Baseline/q4/prompt044.mp4",
-       "VARQ": "samples/longlive/VARQ/q4/prompt044.mp4",
-       "KIVI": "samples/longlive/KIVI/q4/prompt044.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q4/prompt044.mp4"
+       "VARQ": "samples/longlive/VARQ/q4/prompt044.mp4"
       }
      },
      {
@@ -1329,9 +1219,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/longlive/Baseline/q4/prompt011.mp4",
-       "VARQ": "samples/longlive/VARQ/q4/prompt011.mp4",
-       "KIVI": "samples/longlive/KIVI/q4/prompt011.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q4/prompt011.mp4"
+       "VARQ": "samples/longlive/VARQ/q4/prompt011.mp4"
       }
      },
      {
@@ -1339,9 +1227,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/longlive/Baseline/q4/prompt013.mp4",
-       "VARQ": "samples/longlive/VARQ/q4/prompt013.mp4",
-       "KIVI": "samples/longlive/KIVI/q4/prompt013.mp4",
-       "FlexGen": "samples/longlive/FlexGen/q4/prompt013.mp4"
+       "VARQ": "samples/longlive/VARQ/q4/prompt013.mp4"
       }
      }
     ]
@@ -1349,8 +1235,6 @@
    "methodsByBit": {
     "q4": [
      "Baseline",
-     "FlexGen",
-     "KIVI",
      "VARQ"
     ]
    },
@@ -1377,14 +1261,10 @@
    "task": "Next-scale text-to-video (720p, 5 s)",
    "methods": [
     "Baseline",
-    "FlexGen",
-    "KIVI",
     "VARQ"
    ],
    "methodLabels": {
     "Baseline": "Baseline (BF16)",
-    "FlexGen": "FlexGen",
-    "KIVI": "KIVI",
     "VARQ": "VARQ (Ours)"
    },
    "bits": [
@@ -1400,9 +1280,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/InfinityStar720p/Baseline/q4/prompt042.mp4",
-       "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt042.mp4",
-       "KIVI": "samples/InfinityStar720p/KIVI/q4/prompt042.mp4",
-       "FlexGen": "samples/InfinityStar720p/FlexGen/q4/prompt042.mp4"
+       "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt042.mp4"
       }
      },
      {
@@ -1410,9 +1288,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/InfinityStar720p/Baseline/q4/prompt027.mp4",
-       "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt027.mp4",
-       "KIVI": "samples/InfinityStar720p/KIVI/q4/prompt027.mp4",
-       "FlexGen": "samples/InfinityStar720p/FlexGen/q4/prompt027.mp4"
+       "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt027.mp4"
       }
      },
      {
@@ -1420,9 +1296,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/InfinityStar720p/Baseline/q4/prompt080.mp4",
-       "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt080.mp4",
-       "KIVI": "samples/InfinityStar720p/KIVI/q4/prompt080.mp4",
-       "FlexGen": "samples/InfinityStar720p/FlexGen/q4/prompt080.mp4"
+       "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt080.mp4"
       }
      },
      {
@@ -1430,9 +1304,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/InfinityStar720p/Baseline/q4/prompt158.mp4",
-       "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt158.mp4",
-       "KIVI": "samples/InfinityStar720p/KIVI/q4/prompt158.mp4",
-       "FlexGen": "samples/InfinityStar720p/FlexGen/q4/prompt158.mp4"
+       "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt158.mp4"
       }
      },
      {
@@ -1440,9 +1312,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/InfinityStar720p/Baseline/q4/prompt075.mp4",
-       "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt075.mp4",
-       "KIVI": "samples/InfinityStar720p/KIVI/q4/prompt075.mp4",
-       "FlexGen": "samples/InfinityStar720p/FlexGen/q4/prompt075.mp4"
+       "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt075.mp4"
       }
      },
      {
@@ -1450,9 +1320,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/InfinityStar720p/Baseline/q4/prompt058.mp4",
-       "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt058.mp4",
-       "KIVI": "samples/InfinityStar720p/KIVI/q4/prompt058.mp4",
-       "FlexGen": "samples/InfinityStar720p/FlexGen/q4/prompt058.mp4"
+       "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt058.mp4"
       }
      },
      {
@@ -1460,9 +1328,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/InfinityStar720p/Baseline/q4/prompt193.mp4",
-       "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt193.mp4",
-       "KIVI": "samples/InfinityStar720p/KIVI/q4/prompt193.mp4",
-       "FlexGen": "samples/InfinityStar720p/FlexGen/q4/prompt193.mp4"
+       "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt193.mp4"
       }
      },
      {
@@ -1470,9 +1336,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/InfinityStar720p/Baseline/q4/prompt014.mp4",
-       "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt014.mp4",
-       "KIVI": "samples/InfinityStar720p/KIVI/q4/prompt014.mp4",
-       "FlexGen": "samples/InfinityStar720p/FlexGen/q4/prompt014.mp4"
+       "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt014.mp4"
       }
      },
      {
@@ -1480,9 +1344,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/InfinityStar720p/Baseline/q4/prompt143.mp4",
-       "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt143.mp4",
-       "KIVI": "samples/InfinityStar720p/KIVI/q4/prompt143.mp4",
-       "FlexGen": "samples/InfinityStar720p/FlexGen/q4/prompt143.mp4"
+       "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt143.mp4"
       }
      },
      {
@@ -1490,9 +1352,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/InfinityStar720p/Baseline/q4/prompt162.mp4",
-       "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt162.mp4",
-       "KIVI": "samples/InfinityStar720p/KIVI/q4/prompt162.mp4",
-       "FlexGen": "samples/InfinityStar720p/FlexGen/q4/prompt162.mp4"
+       "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt162.mp4"
       }
      }
     ]
@@ -1500,8 +1360,6 @@
    "methodsByBit": {
     "q4": [
      "Baseline",
-     "FlexGen",
-     "KIVI",
      "VARQ"
     ]
    },
@@ -1528,14 +1386,10 @@
    "task": "Next-scale text-to-video (480p, 5 s)",
    "methods": [
     "Baseline",
-    "FlexGen",
-    "KIVI",
     "VARQ"
    ],
    "methodLabels": {
     "Baseline": "Baseline (BF16)",
-    "FlexGen": "FlexGen",
-    "KIVI": "KIVI",
     "VARQ": "VARQ (Ours)"
    },
    "bits": [
@@ -1551,9 +1405,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/InfinityStar480p/Baseline/q4/prompt169.mp4",
-       "VARQ": "samples/InfinityStar480p/VARQ/q4/prompt169.mp4",
-       "KIVI": "samples/InfinityStar480p/KIVI/q4/prompt169.mp4",
-       "FlexGen": "samples/InfinityStar480p/FlexGen/q4/prompt169.mp4"
+       "VARQ": "samples/InfinityStar480p/VARQ/q4/prompt169.mp4"
       }
      },
      {
@@ -1561,9 +1413,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/InfinityStar480p/Baseline/q4/prompt158.mp4",
-       "VARQ": "samples/InfinityStar480p/VARQ/q4/prompt158.mp4",
-       "KIVI": "samples/InfinityStar480p/KIVI/q4/prompt158.mp4",
-       "FlexGen": "samples/InfinityStar480p/FlexGen/q4/prompt158.mp4"
+       "VARQ": "samples/InfinityStar480p/VARQ/q4/prompt158.mp4"
       }
      },
      {
@@ -1571,9 +1421,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/InfinityStar480p/Baseline/q4/prompt043.mp4",
-       "VARQ": "samples/InfinityStar480p/VARQ/q4/prompt043.mp4",
-       "KIVI": "samples/InfinityStar480p/KIVI/q4/prompt043.mp4",
-       "FlexGen": "samples/InfinityStar480p/FlexGen/q4/prompt043.mp4"
+       "VARQ": "samples/InfinityStar480p/VARQ/q4/prompt043.mp4"
       }
      },
      {
@@ -1581,9 +1429,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/InfinityStar480p/Baseline/q4/prompt061.mp4",
-       "VARQ": "samples/InfinityStar480p/VARQ/q4/prompt061.mp4",
-       "KIVI": "samples/InfinityStar480p/KIVI/q4/prompt061.mp4",
-       "FlexGen": "samples/InfinityStar480p/FlexGen/q4/prompt061.mp4"
+       "VARQ": "samples/InfinityStar480p/VARQ/q4/prompt061.mp4"
       }
      },
      {
@@ -1591,9 +1437,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/InfinityStar480p/Baseline/q4/prompt162.mp4",
-       "VARQ": "samples/InfinityStar480p/VARQ/q4/prompt162.mp4",
-       "KIVI": "samples/InfinityStar480p/KIVI/q4/prompt162.mp4",
-       "FlexGen": "samples/InfinityStar480p/FlexGen/q4/prompt162.mp4"
+       "VARQ": "samples/InfinityStar480p/VARQ/q4/prompt162.mp4"
       }
      },
      {
@@ -1601,9 +1445,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/InfinityStar480p/Baseline/q4/prompt099.mp4",
-       "VARQ": "samples/InfinityStar480p/VARQ/q4/prompt099.mp4",
-       "KIVI": "samples/InfinityStar480p/KIVI/q4/prompt099.mp4",
-       "FlexGen": "samples/InfinityStar480p/FlexGen/q4/prompt099.mp4"
+       "VARQ": "samples/InfinityStar480p/VARQ/q4/prompt099.mp4"
       }
      },
      {
@@ -1611,9 +1453,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/InfinityStar480p/Baseline/q4/prompt140.mp4",
-       "VARQ": "samples/InfinityStar480p/VARQ/q4/prompt140.mp4",
-       "KIVI": "samples/InfinityStar480p/KIVI/q4/prompt140.mp4",
-       "FlexGen": "samples/InfinityStar480p/FlexGen/q4/prompt140.mp4"
+       "VARQ": "samples/InfinityStar480p/VARQ/q4/prompt140.mp4"
       }
      },
      {
@@ -1621,9 +1461,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/InfinityStar480p/Baseline/q4/prompt107.mp4",
-       "VARQ": "samples/InfinityStar480p/VARQ/q4/prompt107.mp4",
-       "KIVI": "samples/InfinityStar480p/KIVI/q4/prompt107.mp4",
-       "FlexGen": "samples/InfinityStar480p/FlexGen/q4/prompt107.mp4"
+       "VARQ": "samples/InfinityStar480p/VARQ/q4/prompt107.mp4"
       }
      },
      {
@@ -1631,9 +1469,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/InfinityStar480p/Baseline/q4/prompt092.mp4",
-       "VARQ": "samples/InfinityStar480p/VARQ/q4/prompt092.mp4",
-       "KIVI": "samples/InfinityStar480p/KIVI/q4/prompt092.mp4",
-       "FlexGen": "samples/InfinityStar480p/FlexGen/q4/prompt092.mp4"
+       "VARQ": "samples/InfinityStar480p/VARQ/q4/prompt092.mp4"
       }
      },
      {
@@ -1641,9 +1477,7 @@
       "caption": null,
       "media": {
        "Baseline": "samples/InfinityStar480p/Baseline/q4/prompt195.mp4",
-       "VARQ": "samples/InfinityStar480p/VARQ/q4/prompt195.mp4",
-       "KIVI": "samples/InfinityStar480p/KIVI/q4/prompt195.mp4",
-       "FlexGen": "samples/InfinityStar480p/FlexGen/q4/prompt195.mp4"
+       "VARQ": "samples/InfinityStar480p/VARQ/q4/prompt195.mp4"
       }
      }
     ]
@@ -1651,8 +1485,6 @@
    "methodsByBit": {
     "q4": [
      "Baseline",
-     "FlexGen",
-     "KIVI",
      "VARQ"
     ]
    },

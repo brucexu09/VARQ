@@ -26,11 +26,11 @@ MODEL_ORDER = ["Infinity8B", "self_forcing", "longlive", "InfinityStar720p", "In
 
 # (model, qbits) -> source root, method dir names, file stem, extension, optional index selection
 NEW = {
-    ("self_forcing", "q4"): dict(src=f"{SRC}/v3/self_forcing", dirs={"Baseline": "Baseline", "VARQ": "VARQr8", "KIVI": "KIVI", "FlexGen": "FlexGen"}, stem="prompt", ext="mp4", caption=False, pad=3),
-    ("longlive", "q4"): dict(src=f"{SRC}/v3/longlive", dirs={"Baseline": "Baseline", "VARQ": "VARQr8", "KIVI": "KIVI", "FlexGen": "FLexGen"}, stem="prompt", ext="mp4", caption=False, pad=3),
+    ("self_forcing", "q4"): dict(src=f"{SRC}/v3/self_forcing", dirs={"Baseline": "Baseline", "VARQ": "VARQr8"}, stem="prompt", ext="mp4", caption=False, pad=3),
+    ("longlive", "q4"): dict(src=f"{SRC}/v3/longlive", dirs={"Baseline": "Baseline", "VARQ": "VARQr8"}, stem="prompt", ext="mp4", caption=False, pad=3),
     ("Infinity8B", "q2"): dict(src=f"{SRC}/v2/infinity8b", dirs={"Baseline": "Baseline", "VARQ": "VARQ", "KIVI": "KIVI", "FlexGen": "FlexGen"}, stem="idx", ext="jpg", pad=3),
-    ("InfinityStar720p", "q4"): dict(src=f"{SRC}/istar/720p", dirs={"Baseline": "Baseline", "VARQ": "VARQ", "KIVI": "KIVI", "FlexGen": "FlexGen"}, stem="prompt", ext="mp4", caption=False, pad=3),
-    ("InfinityStar480p", "q4"): dict(src=f"{SRC}/istar/480p", dirs={"Baseline": "Baseline", "VARQ": "VARQ", "KIVI": "KIVI", "FlexGen": "FlexGen"}, stem="prompt", ext="mp4", caption=False, pad=3),
+    ("InfinityStar720p", "q4"): dict(src=f"{SRC}/istar/720p", dirs={"Baseline": "Baseline", "VARQ": "VARQ"}, stem="prompt", ext="mp4", caption=False, pad=3),
+    ("InfinityStar480p", "q4"): dict(src=f"{SRC}/istar/480p", dirs={"Baseline": "Baseline", "VARQ": "VARQ"}, stem="prompt", ext="mp4", caption=False, pad=3),
 }
 # (model, qbits) tabs to remove from the site entirely (kept only under /data1)
 DROP = {("Infinity8B", "q3"), ("Infinity8B", "q4"), ("Infinity8B", "q6"), ("Infinity8B", "q8"), ("self_forcing", "q6"), ("longlive", "q6"),
@@ -86,6 +86,11 @@ def main():
     manifest = json.load(open(os.path.join(REPO, "manifest.json")))
     by_id = {m["id"]: m for m in manifest["models"]}
     select = json.load(open(SELECT_FILE)) if os.path.exists(SELECT_FILE) else {}
+    for mid in ("self_forcing", "longlive", "InfinityStar720p", "InfinityStar480p"):
+        for meth in ("KIVI", "FlexGen"):  # videos are published as BF16 vs VAR-Q pairs only
+            d = os.path.join(SAMP, mid, meth)
+            if os.path.isdir(d):
+                shutil.rmtree(d)
     for mid in REMOVE_MODELS:
         by_id.pop(mid, None)
         d = os.path.join(SAMP, mid)
