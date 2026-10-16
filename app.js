@@ -1,41 +1,5 @@
 "use strict";
 
-const videos = {
-  selfforcing: {
-    file: "selfforcing-int4",
-    caption: "Self-Forcing · Next-frame generation · INT4 KV cache · Figure 39.",
-    width: 2000,
-    height: 1195,
-    alt: "Four sampled frames for BF16, FlexGen, KIVI and VAR-Q: skyscrapers transform into a robot.",
-  },
-  infinitystar: {
-    file: "infinitystar-int3",
-    caption: "InfinityStar-8B · Next-scale generation · 720p · INT3 KV cache · Figure 32.",
-    width: 2000,
-    height: 1172,
-    alt: "InfinityStar 720p INT3 comparison of sampled video frames for BF16, FlexGen, KIVI and VAR-Q.",
-  },
-  longlive: {
-    file: "longlive-int4",
-    caption: "LongLive-1.3B · Next-frame generation · INT4 KV cache · Figure 45.",
-    width: 2000,
-    height: 862,
-    alt: "LongLive INT4 comparison of sampled video frames for BF16, FlexGen, KIVI and VAR-Q.",
-  },
-};
-document.querySelector("#video-model").addEventListener("change", (event) => {
-  const data = videos[event.target.value];
-  const img = document.querySelector("#video-figure");
-  img.src = `assets/${data.file}.webp`;
-  img.alt = data.alt;
-  img.width = data.width;
-  img.height = data.height;
-  const link = document.querySelector("#video-link");
-  link.href = img.src;
-  link.dataset.caption = data.caption;
-  document.querySelector("#video-caption").textContent = data.caption;
-});
-
 const matrix = document.querySelector("#cache-matrix");
 const magnitudes = [0.08, 0.12, 0.18, 0.78, 0.16, 0.12, 0.1, 0.18, 0.3, 0.87, 0.17, 0.13, 0.23, 0.12, 0.7, 0.14];
 for (let row = 0; row < 12; row += 1) {

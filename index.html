@@ -29,8 +29,8 @@
       <nav aria-label="Main navigation" class="nav wrap">
         <a class="wordmark" href="#"><img alt="" class="brand-symbol" height="30" src="assets/varq-symbol.svg" width="30" />VAR-Q</a>
         <div class="nav-links">
-          <a href="#showcase">Comparisons</a><a href="#overview">Overview</a><a href="#method">Method</a><a href="#benchmarks">Results</a
-          ><a href="#attribution">Analysis</a><a href="#examples">Examples</a><a href="#citation">Code &amp; cite</a>
+          <a href="#showcase">Comparisons</a><a href="#overview">Overview</a><a href="#attribution">Analysis</a><a href="#method">Method</a
+          ><a href="#benchmarks">Results</a><a href="#examples">Examples</a><a href="#citation">Code &amp; cite</a>
         </div>
         <a class="home-link" href="/">Boxun Xu <span aria-hidden="true">↗</span></a>
       </nav>
@@ -39,7 +39,7 @@
       <section aria-labelledby="paper-title" class="hero wrap">
         <div class="hero-grid">
           <div class="hero-text">
-            <p class="hero-venue"><span>NeurIPS 2026 · To appear</span> · KV-cache quantization for visual autoregressive generation</p>
+            <p class="hero-venue">NeurIPS 2026 · To appear</p>
             <h1 id="paper-title">VAR-Q: Tuning-free KV Cache Quantization for Visual Autoregressive Image and Video Generation</h1>
             <p class="authors">
               <a class="author-lead" href="/" title="Boxun Xu · project lead and corresponding author">Boxun Xu<sup>1,†</sup></a
@@ -70,11 +70,11 @@
               <div class="feature-pair">
                 <figure class="feature-video">
                   <figcaption>BF16 reference</figcaption>
-                  <video aria-describedby="hero-note" aria-label="InfinityStar 720p BF16: A crystal ball sitting on a table, with sunlight streaming through it and casting a circle of rainbow colors on the floor." data-src="samples/InfinityStar720p/Baseline/q4/prompt042.mp4" loop="" muted="" playsinline="" poster="assets/posters/scale-0-Baseline.webp" preload="none"></video>
+                  <video aria-describedby="showcase-note" aria-label="InfinityStar 720p BF16: A crystal ball sitting on a table, with sunlight streaming through it and casting a circle of rainbow colors on the floor." data-src="samples/InfinityStar720p/Baseline/q4/prompt042.mp4" loop="" muted="" playsinline="" poster="assets/posters/scale-0-Baseline.webp" preload="none"></video>
                 </figure>
                 <figure class="feature-video feature-ours">
                   <figcaption>VAR-Q · 4-bit</figcaption>
-                  <video aria-describedby="hero-note" aria-label="InfinityStar 720p VAR-Q 4-bit: A crystal ball sitting on a table, with sunlight streaming through it and casting a circle of rainbow colors on the floor." data-src="samples/InfinityStar720p/VARQ/q4/prompt042.mp4" loop="" muted="" playsinline="" poster="assets/posters/scale-0-VARQ.webp" preload="none"></video>
+                  <video aria-describedby="showcase-note" aria-label="InfinityStar 720p VAR-Q 4-bit: A crystal ball sitting on a table, with sunlight streaming through it and casting a circle of rainbow colors on the floor." data-src="samples/InfinityStar720p/VARQ/q4/prompt042.mp4" loop="" muted="" playsinline="" poster="assets/posters/scale-0-VARQ.webp" preload="none"></video>
                 </figure>
               </div>
               <div class="feature-controls">
@@ -88,7 +88,6 @@
               <p class="feature-status sr-only" role="status"></p>
               <noscript><a href="samples/InfinityStar720p/VARQ/q4/prompt042.mp4">Watch the VAR-Q video</a></noscript>
             </article>
-            <figcaption id="hero-note">Representative comparison, InfinityStar 720p: the BF16 reference and VAR-Q with a 4-bit KV cache (16.0 GB vs. 62.7 GB at batch 3), same prompt and seed. All paired generations are below.</figcaption>
           </figure>
         </div>
         <div class="hero-lede">
@@ -108,7 +107,7 @@
       </section>
       <section aria-labelledby="showcase-title" class="showcase wrap" id="showcase">
         <div class="showcase-heading">
-          <h2 id="showcase-title">Paired generations: BF16 vs. VAR-Q</h2>
+          <h2 id="showcase-title">Paired generations: BF16 vs. <span class="nowrap">VAR-Q</span></h2>
           <p>Same prompt and seed in every pair; only the KV cache is quantized. Each pair plays in sync when scrolled into view.</p>
         </div>
         <!-- showcase:groups -->
@@ -905,21 +904,22 @@
       <section aria-labelledby="overview-title" class="section intro-section" id="overview">
         <div class="wrap intro-grid">
           <div>
-            <p class="eyebrow">Overview</p>
-            <h2 id="overview-title">A shared KV-cache structure across next-scale and next-frame generation</h2>
+            <h2 id="overview-title">Next-block prediction: one view of next-scale and next-frame generation</h2>
           </div>
           <div class="intro-copy">
             <p>
-              <strong>Visual autoregression advances in blocks.</strong> Next-scale models predict a resolution scale at a time; next-frame models
-              extend a video through time. VAR-Q uses the blocks supplied by each model’s generation loop.
+              <strong>Visual autoregression is next-block prediction.</strong> A block is the set of visual tokens emitted at one decoding step:
+              a resolution scale in next-scale models (VAR, Infinity, InfinityStar), a frame in next-frame models (Self-Forcing, LongLive).
+              Every block attends to the KV cache of all blocks before it.
             </p>
             <p>
-              Across both paradigms, KV magnitudes have a shared <strong>channel × block structure</strong>: a small set of channels carries large
-              values, and their magnitudes shift between blocks. Quantization groups should follow both axes.
+              Seen this way, both paradigms leave behind the same object: a KV cache indexed by feature channel and generation block. Its
+              magnitudes share a <strong>channel × block structure</strong>: a small set of channels carries large values, and their
+              magnitudes shift from block to block.
             </p>
             <p class="formulation-note">
-              <strong>The next-block view.</strong> A block denotes the visual tokens emitted at one decoding step. Here, it unifies the scale and
-              frame settings evaluated in the paper.
+              <strong>Why it matters for quantization.</strong> VAR-Q assigns one scale factor per channel within each block, reusing the block
+              boundaries the generation loop already provides. No outlier detection, no calibration data, no retraining.
             </p>
           </div>
         </div>
@@ -939,34 +939,165 @@
             Conceptual schematic of the grouping rule in §3.4. Block sizes and colors are illustrative; measured cache magnitudes appear below.
           </figcaption>
         </figure>
-      <div aria-label="Paper highlights" class="stats wrap research-stats">
-        <div>
-          <strong>2</strong>
-          <p>visual AR paradigms</p>
+      </section>
+      <section aria-labelledby="attribution-title" class="section wrap attribution-section" id="attribution">
+        <div class="attribution-heading">
+          <h2 id="attribution-title">Origin of the channel × block structure</h2>
+          <p>
+            Why does the channel × block pattern emerge? Three experiments separate prompt-dependent outliers, persistent channel imbalance, and
+            position-dependent magnitude shifts. Together they explain why one grouping rule, channel × block, transfers across every model family
+            in the paper.
+          </p>
         </div>
-        <div>
-          <strong>5</strong>
-          <p>model families · 9 checkpoints<br />VAR · Infinity · InfinityStar · Self-Forcing · LongLive</p>
+        <div aria-label="Three findings" class="attribution-findings">
+          <a href="#attr-persistence">
+            <span class="finding-index">01</span>
+            <strong>53–62<span>%</span></strong>
+            <p>of the top-1% <b>K</b> outlier channels persist across all 10 prompts. For <b>V</b>, only 7–14% do.</p>
+            <em>The channel pattern is architectural, not prompt-driven</em>
+          </a>
+          <a href="#attr-channel">
+            <span class="finding-index">02</span>
+            <strong>55–63<span>×</span></strong>
+            <p>random recall of final K outliers from weights alone, chaining W<sub>K</sub> → γ<sub>K</sub> → RoPE. The W<sub>V</sub> control reaches 5–6×.</p>
+            <em>Outlier channel identity is predictable from the K projection chain</em>
+          </a>
+          <a href="#attr-rope">
+            <span class="finding-index">03</span>
+            <strong>+0.41</strong>
+            <p>VBench Total Quality from quantizing after RoPE instead of before, at the same 27.5 GB footprint (82.93 → 83.34).</p>
+            <em>RoPE moves magnitude across blocks, so groups must follow blocks</em>
+          </a>
         </div>
-        <div>
-          <strong>74.88<span>%</span></strong>
-          <p>less KV memory · next-frame INT4</p>
-        </div>
-        <div>
-          <strong>0</strong>
-          <p>calibration or retraining steps</p>
-        </div>
-      </div>
-      <p class="metric-note wrap">
-        KV-memory saving measured on Self-Forcing and LongLive at INT4, at the same batch sizes as BF16. Quality for every checkpoint and precision is in the
-        <a href="#benchmarks">key results ↗</a>.
-      </p>
+        <article class="attribution-row persistence-row" id="attr-persistence">
+          <div class="attribution-copy">
+            <p class="evidence-label">01 / Architecture or input?</p>
+            <h3>Outlier channels persist across prompts in K, far less in V</h3>
+            <p>
+              If outlier channels are tied to the architecture, they should recur across different prompts. Among the top 1% of channels,
+              <strong>53–62% of K outliers persist across all 10 prompts</strong>, compared with only <strong>7–14% for V</strong>.
+            </p>
+            <p>
+              This supports a persistent architectural component in K. V outlier identity changes much more with the input. The remaining experiments
+              trace this architectural component through the K projection chain.
+            </p>
+          </div>
+          <figure class="attribution-figure persistence-figure">
+            <a data-caption="Cross-prompt outlier persistence in K and V · Figure 5" data-zoom="" href="assets/attribution-persistence.webp"
+              ><img
+                alt="At ten prompts, K versus V outlier persistence is 0.54 versus 0.14 on Self-Forcing, 0.53 versus 0.12 on LongLive, and 0.62 versus 0.07 on InfinityStar."
+                height="532"
+                loading="lazy"
+                src="assets/attribution-persistence.webp"
+                width="840"
+            /></a>
+            <figcaption>
+              <strong>Cross-prompt persistence.</strong> Fraction of one prompt’s top-1% outlier channels that remain outliers under every prompt.
+              Figure 5.
+            </figcaption>
+          </figure>
+        </article>
+        <article class="attribution-channel" id="attr-channel">
+          <div class="attribution-row channel-intro">
+            <div class="attribution-copy">
+              <p class="evidence-label">02 / The channel axis</p>
+              <h3>The K projection chain predicts outlier channels</h3>
+            </div>
+            <p class="channel-intro-copy">
+              Projection weights seed the imbalance. Normalization gains can amplify it. RoPE redistributes it between paired channels. Each stage
+              contributes to predicting which channels become outliers.
+            </p>
+          </div>
+          <div aria-label="Key projection attribution chain" class="projection-chain">
+            <div>
+              <span class="chain-symbol">W<sub>K</sub></span>
+              <h4>Seed</h4>
+              <p>Heavy-tailed row norms in the key projection create an initial channel-magnitude imbalance.</p>
+            </div>
+            <span aria-hidden="true" class="chain-arrow">→</span>
+            <div>
+              <span class="chain-symbol">γ<sub>K</sub></span>
+              <h4>Amplify</h4>
+              <p>Where post-projection RMSNorm is present, its learned channel gains amplify this imbalance.</p>
+            </div>
+            <span aria-hidden="true" class="chain-arrow">→</span>
+            <div>
+              <span class="chain-symbol">RoPE</span>
+              <h4>Redistribute</h4>
+              <p>Rotation scatters magnitude between paired channels while preserving each pair’s ℓ<sub>2</sub> norm.</p>
+            </div>
+          </div>
+          <div class="attribution-row channel-evidence">
+            <div class="attribution-copy">
+              <p class="evidence-label">The evidence</p>
+              <p>
+                At the top 1%, <strong>W<sub>K</sub> alone recovers 35–42% of final K outliers</strong>. Adding γ<sub>K</sub> improves recall;
+                including RoPE scattering brings the full chain to <strong>55–63× random recall</strong>.
+              </p>
+              <p>
+                As a control, W<sub>V</sub> predicts V outliers at only 5–6× random recall. Weight structure explains much more of K’s outlier
+                identity than V’s.
+              </p>
+            </div>
+            <figure class="attribution-figure">
+              <a
+                data-caption="Progressive attribution of K outliers: projection weights, RMSNorm gain, and RoPE scattering · Figure 6"
+                data-zoom=""
+                href="assets/attribution-channel.webp"
+                ><img
+                  alt="Outlier recall across Self-Forcing, LongLive, and InfinityStar increases as key projection weights, normalization gains and RoPE scattering are included. Full-chain recall at the top 1 percent is 57, 55, and 63 times random."
+                  height="656"
+                  loading="lazy"
+                  src="assets/attribution-channel.webp"
+                  width="1912"
+              /></a>
+              <figcaption>
+                <strong>Progressive attribution.</strong> Recall of final outlier channels as projection-chain components are added; W<sub>V</sub>
+                is the control. Multipliers are relative to random recall at the same selection rate. Figure 6.
+              </figcaption>
+            </figure>
+          </div>
+        </article>
+        <article class="attribution-row rope-row" id="attr-rope">
+          <div class="attribution-copy">
+            <p class="evidence-label">03 / The block axis</p>
+            <h3>RoPE redistributes magnitude across blocks</h3>
+            <p>
+              RoPE’s angle changes with position. For a paired set of K channels, this produces cosine and sine modulation: one channel can become
+              large while its partner becomes small, even without a change in the underlying input amplitude.
+            </p>
+            <div aria-label="Paired channel magnitudes are M times the absolute cosine and sine of theta" class="rope-equations">
+              <span>|K<sub>2i</sub>| = M |cos θ|</span><span>|K<sub>2i+1</sub>| = M |sin θ|</span
+              ><small>θ = bω<sub>i</sub> + φ · b is the block index</small>
+            </div>
+            <p>
+              The pair’s per-token ℓ<sub>2</sub> norm is conserved. Individual channel magnitudes are not.
+              <strong>Fast-rotating pairs produce stronger cross-block swings</strong>; slow pairs remain comparatively stable.
+            </p>
+          </div>
+          <figure class="attribution-figure">
+            <a
+              data-caption="RoPE-attributable block outliers and paired-channel magnitude trajectories on Self-Forcing · Figure 7"
+              data-zoom=""
+              href="assets/attribution-rope.webp"
+              ><img
+                alt="Self-Forcing: RoPE-attributable outliers concentrate in low-index fast-rotating channel pairs. The two channel magnitudes oscillate in anti-phase across frames while their pair envelope remains approximately flat."
+                height="616"
+                loading="lazy"
+                src="assets/attribution-rope.webp"
+                width="1912"
+            /></a>
+            <figcaption>
+              <strong>RoPE isolates a block-axis mechanism.</strong> On Self-Forcing, attributable outliers concentrate in fast-rotating pairs (left).
+              Paired channel maxima swap magnitude while the pair envelope stays approximately flat (right). Figure 7.
+            </figcaption>
+          </figure>
+        </article>
       </section>
       <section aria-labelledby="method-title" class="section method-section" id="method">
         <div class="wrap">
           <div class="section-heading">
             <div>
-              <p class="eyebrow">Method</p>
               <h2 id="method-title">Channel × block KV-cache quantization</h2>
             </div>
             <p>A channel × block view of the KV cache<br />explains where quantization groups belong.</p>
@@ -1010,7 +1141,7 @@
           </figure>
           <div class="grouping-demo">
             <div>
-              <p class="eyebrow">Explore the grouping</p>
+              <h3>Explore the grouping</h3>
               <p aria-live="polite" id="group-description">
                 VAR-Q separates feature channels and generation blocks, so each group follows both axes of the cache.
               </p>
@@ -1093,35 +1224,8 @@
               columns. <a href="/assets/pdf/VAR-Q.pdf#page=4">Source ↗</a>
             </p>
           </section>
-          <details class="algorithm-details">
-            <summary>Algorithm details: scale factors, block boundaries, and the sub-block ratio</summary>
-            <div class="algorithm-grid">
-              <div>
-                <h4>The quantization unit</h4>
-                <p>
-                  For block <em>b</em> and feature channel <em>c</em>, VAR-Q applies uniform symmetric quantization to the tokens in that group, with
-                  one scale factor. The same grouping rule is used for K and V.
-                </p>
-                <p class="math-line">
-                  K = {K<sup>(b)</sup>}<sub>b=1…B</sub>,   K<sup>(b)</sup> ∈ ℝ<sup>n<sub>b</sub> × D</sup>
-                </p>
-              </div>
-              <div>
-                <h4>Optional finer groups</h4>
-                <p>
-                  The default sub-block ratio is <strong>r = 1</strong>. A block of length L is split into ⌈L / (r L<sub>max</sub>)⌉ sub-blocks.
-                  Smaller r refines grouping within existing boundaries.
-                </p>
-                <p>
-                  In next-scale decoding, the largest scales are affected first; in next-frame decoding, equal-size blocks are partitioned uniformly.
-                  <a href="/assets/pdf/VAR-Q.pdf#page=6">§3.4 ↗</a>
-                </p>
-              </div>
-            </div>
-          </details>
           <div class="ablation-evidence">
             <div>
-              <p class="eyebrow">Controlled evidence · Table 5</p>
               <h3>Ablation: channel × block grouping</h3>
               <p>
                 Removing the channel axis sharply degrades generation. Keeping channels but removing block boundaries also loses quality—on both a
@@ -1301,7 +1405,6 @@
           </section>
           <div class="pipeline">
             <div>
-              <p class="eyebrow">From algorithm to memory savings</p>
               <h3>Quantization, bit packing, and retrieval</h3>
               <p>
                 VAR-Q quantizes the cache per channel and block, then packs low-bit values into INT32 storage. Before attention, cached values are
@@ -1326,7 +1429,6 @@
       <section aria-labelledby="benchmarks-title" class="section wrap" id="benchmarks">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">Tables 2–4</p>
             <h2 id="benchmarks-title">Key results</h2>
           </div>
           <p>Quality and KV memory as reported in the paper, with batch size and precision stated next to every number.</p>
@@ -1353,7 +1455,6 @@
         <div class="ready-results" id="tables-2-4">
           <div class="paper-table-heading">
             <div>
-              <p class="eyebrow">Video models</p>
               <h3>Video generation with low-bit KV caches (Tables 2–4)</h3>
             </div>
             <a download="" href="results-data.json">Download results ↧</a>
@@ -1508,7 +1609,6 @@
         <div class="all-models-overview">
           <div class="paper-table-heading">
             <div>
-              <p class="eyebrow">Across image and video models</p>
               <h3>Four-bit KV caches across all nine evaluated checkpoints</h3>
             </div>
             <p>Five model families, nine checkpoints: VAR-d20/d24/d30, Infinity-2B/8B, InfinityStar 480p/720p, Self-Forcing and LongLive. VAR-Q retains competitive generation quality while reducing KV memory by 72–75%.</p>
@@ -2879,255 +2979,26 @@
           </article>
         </div>
 
-        <details class="protocol-details">
-          <summary>Evaluation protocol and metric guide</summary>
-          <div class="protocol-grid">
-            <article>
-              <h4>Generation quality vs. sample fidelity</h4>
-              <p>
-                VAR uses FID, IS, Precision, and Recall for distribution-level quality. PSNR, SSIM, and LPIPS compare against matched-seed BF16
-                outputs. Infinity uses GenEval and DPG for compositional and prompt alignment.
-              </p>
-            </article>
-            <article>
-              <h4>Video quality</h4>
-              <p>
-                VBench reports temporal, perceptual, and consistency dimensions. Tables 3 and 4 expose the dimensions reported for each model. Table 4
-                additionally includes visual, dynamic, and text-alignment ratings from Claude Opus 4.7 as a VLM judge.
-              </p>
-            </article>
-            <article>
-              <h4>A shared memory comparison</h4>
-              <p>
-                All compared quantization methods use the same packing kernels. Reported KV memory includes scale factors. Experiments use NVIDIA A100
-                80 GB; cache savings and batch capacity are distinct from inference speed.
-              </p>
-            </article>
-            <article>
-              <h4>Prompts and reproducibility</h4>
-              <p>
-                The video evaluation uses MovieGen prompts. The paper lists all 200 evaluation prompts with their original line IDs in Appendix H,
-                Table 8. The website’s clips are selected qualitative examples.
-              </p>
-              <a href="/assets/pdf/VAR-Q.pdf#page=38">Read the complete prompt list ↗</a>
-            </article>
-          </div>
-          <p class="small-note"><a href="/assets/pdf/VAR-Q.pdf#page=6">Experimental setup · §4 ↗</a></p>
-        </details>
-      </section>
-      <section aria-labelledby="attribution-title" class="section wrap attribution-section" id="attribution">
-        <div class="attribution-heading">
-          <p class="eyebrow">Mechanistic analysis · §3.3</p>
-          <h2 id="attribution-title">Origin of the channel × block structure</h2>
-          <p>
-            Why does the channel × block pattern emerge? Three experiments separate prompt-dependent outliers, persistent channel imbalance, and
-            position-dependent magnitude shifts. Together they explain why one grouping rule, channel × block, transfers across every model family
-            in the paper.
-          </p>
-        </div>
-        <div aria-label="Three findings" class="attribution-findings">
-          <a href="#attr-persistence">
-            <span class="finding-index">01</span>
-            <strong>53–62<span>%</span></strong>
-            <p>of the top-1% <b>K</b> outlier channels persist across all 10 prompts. For <b>V</b>, only 7–14% do.</p>
-            <em>The channel pattern is architectural, not prompt-driven</em>
-          </a>
-          <a href="#attr-channel">
-            <span class="finding-index">02</span>
-            <strong>55–63<span>×</span></strong>
-            <p>random recall of final K outliers from weights alone, chaining W<sub>K</sub> → γ<sub>K</sub> → RoPE. The W<sub>V</sub> control reaches 5–6×.</p>
-            <em>Outlier channel identity is predictable from the K projection chain</em>
-          </a>
-          <a href="#attr-rope">
-            <span class="finding-index">03</span>
-            <strong>+0.41</strong>
-            <p>VBench Total Quality from quantizing after RoPE instead of before, at the same 27.5 GB footprint (82.93 → 83.34).</p>
-            <em>RoPE moves magnitude across blocks, so groups must follow blocks</em>
-          </a>
-        </div>
-        <article class="attribution-row persistence-row" id="attr-persistence">
-          <div class="attribution-copy">
-            <p class="evidence-label">01 / Architecture or input?</p>
-            <h3>Outlier channels persist across prompts in K, far less in V</h3>
-            <p>
-              If outlier channels are tied to the architecture, they should recur across different prompts. Among the top 1% of channels,
-              <strong>53–62% of K outliers persist across all 10 prompts</strong>, compared with only <strong>7–14% for V</strong>.
-            </p>
-            <p>
-              This supports a persistent architectural component in K. V outlier identity changes much more with the input. The remaining experiments
-              trace this architectural component through the K projection chain.
-            </p>
-          </div>
-          <figure class="attribution-figure persistence-figure">
-            <a data-caption="Cross-prompt outlier persistence in K and V · Figure 5" data-zoom="" href="assets/attribution-persistence.webp"
-              ><img
-                alt="At ten prompts, K versus V outlier persistence is 0.54 versus 0.14 on Self-Forcing, 0.53 versus 0.12 on LongLive, and 0.62 versus 0.07 on InfinityStar."
-                height="532"
-                loading="lazy"
-                src="assets/attribution-persistence.webp"
-                width="840"
-            /></a>
-            <figcaption>
-              <strong>Cross-prompt persistence.</strong> Fraction of one prompt’s top-1% outlier channels that remain outliers under every prompt.
-              Figure 5.
-            </figcaption>
-          </figure>
-        </article>
-        <article class="attribution-channel" id="attr-channel">
-          <div class="attribution-row channel-intro">
-            <div class="attribution-copy">
-              <p class="evidence-label">02 / The channel axis</p>
-              <h3>The K projection chain predicts outlier channels</h3>
-            </div>
-            <p class="channel-intro-copy">
-              Projection weights seed the imbalance. Normalization gains can amplify it. RoPE redistributes it between paired channels. Each stage
-              contributes to predicting which channels become outliers.
-            </p>
-          </div>
-          <div aria-label="Key projection attribution chain" class="projection-chain">
-            <div>
-              <span class="chain-symbol">W<sub>K</sub></span>
-              <h4>Seed</h4>
-              <p>Heavy-tailed row norms in the key projection create an initial channel-magnitude imbalance.</p>
-            </div>
-            <span aria-hidden="true" class="chain-arrow">→</span>
-            <div>
-              <span class="chain-symbol">γ<sub>K</sub></span>
-              <h4>Amplify</h4>
-              <p>Where post-projection RMSNorm is present, its learned channel gains amplify this imbalance.</p>
-            </div>
-            <span aria-hidden="true" class="chain-arrow">→</span>
-            <div>
-              <span class="chain-symbol">RoPE</span>
-              <h4>Redistribute</h4>
-              <p>Rotation scatters magnitude between paired channels while preserving each pair’s ℓ<sub>2</sub> norm.</p>
-            </div>
-          </div>
-          <div class="attribution-row channel-evidence">
-            <div class="attribution-copy">
-              <p class="evidence-label">The evidence</p>
-              <p>
-                At the top 1%, <strong>W<sub>K</sub> alone recovers 35–42% of final K outliers</strong>. Adding γ<sub>K</sub> improves recall;
-                including RoPE scattering brings the full chain to <strong>55–63× random recall</strong>.
-              </p>
-              <p>
-                As a control, W<sub>V</sub> predicts V outliers at only 5–6× random recall. Weight structure explains much more of K’s outlier
-                identity than V’s.
-              </p>
-            </div>
-            <figure class="attribution-figure">
-              <a
-                data-caption="Progressive attribution of K outliers: projection weights, RMSNorm gain, and RoPE scattering · Figure 6"
-                data-zoom=""
-                href="assets/attribution-channel.webp"
-                ><img
-                  alt="Outlier recall across Self-Forcing, LongLive, and InfinityStar increases as key projection weights, normalization gains and RoPE scattering are included. Full-chain recall at the top 1 percent is 57, 55, and 63 times random."
-                  height="656"
-                  loading="lazy"
-                  src="assets/attribution-channel.webp"
-                  width="1912"
-              /></a>
-              <figcaption>
-                <strong>Progressive attribution.</strong> Recall of final outlier channels as projection-chain components are added; W<sub>V</sub>
-                is the control. Multipliers are relative to random recall at the same selection rate. Figure 6.
-              </figcaption>
-            </figure>
-          </div>
-        </article>
-        <article class="attribution-row rope-row" id="attr-rope">
-          <div class="attribution-copy">
-            <p class="evidence-label">03 / The block axis</p>
-            <h3>RoPE redistributes magnitude across blocks</h3>
-            <p>
-              RoPE’s angle changes with position. For a paired set of K channels, this produces cosine and sine modulation: one channel can become
-              large while its partner becomes small, even without a change in the underlying input amplitude.
-            </p>
-            <div aria-label="Paired channel magnitudes are M times the absolute cosine and sine of theta" class="rope-equations">
-              <span>|K<sub>2i</sub>| = M |cos θ|</span><span>|K<sub>2i+1</sub>| = M |sin θ|</span
-              ><small>θ = bω<sub>i</sub> + φ · b is the block index</small>
-            </div>
-            <p>
-              The pair’s per-token ℓ<sub>2</sub> norm is conserved. Individual channel magnitudes are not.
-              <strong>Fast-rotating pairs produce stronger cross-block swings</strong>; slow pairs remain comparatively stable.
-            </p>
-          </div>
-          <figure class="attribution-figure">
-            <a
-              data-caption="RoPE-attributable block outliers and paired-channel magnitude trajectories on Self-Forcing · Figure 7"
-              data-zoom=""
-              href="assets/attribution-rope.webp"
-              ><img
-                alt="Self-Forcing: RoPE-attributable outliers concentrate in low-index fast-rotating channel pairs. The two channel magnitudes oscillate in anti-phase across frames while their pair envelope remains approximately flat."
-                height="616"
-                loading="lazy"
-                src="assets/attribution-rope.webp"
-                width="1912"
-            /></a>
-            <figcaption>
-              <strong>RoPE isolates a block-axis mechanism.</strong> On Self-Forcing, attributable outliers concentrate in fast-rotating pairs (left).
-              Paired channel maxima swap magnitude while the pair envelope stays approximately flat (right). Figure 7.
-            </figcaption>
-          </figure>
-        </article>
       </section>
       <section aria-labelledby="results-title" class="section wrap" id="examples">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">Images and paper figures</p>
             <h2 id="results-title">Examples</h2>
           </div>
-          <p>Infinity-8B at a 2-bit KV cache against FlexGen and KIVI, and sampled video frames from the paper. Paired BF16 vs. VAR-Q videos are in the <a href="#showcase">comparisons</a> at the top of the page.</p>
+          <p>Infinity-8B at a 2-bit KV cache: BF16, FlexGen, KIVI and VAR-Q from the same prompt and seed. Click an image to enlarge. Paired BF16 vs. VAR-Q videos are in the <a href="#showcase">comparisons</a> at the top of the page.</p>
         </div>
         <div class="dense-section" id="comparison">
-          <div class="subsection-heading">
-            <div>
-              <p class="eyebrow">Prior KV-cache quantizers</p>
-              <h3>Infinity-8B at INT2: comparison with FlexGen and KIVI</h3>
-            </div>
-            <p class="small-note">Same prompt and seed in each row; only the KV-cache quantizer differs. Click an image to enlarge. KV memory is the paper's measurement at the evaluation batch size.</p>
-          </div>
           <section class="dense-block" data-bit="q2" data-initial="8" data-model="Infinity8B" data-step="8">
             <div class="dense-head"><h4>Infinity-8B · next-scale · 1024×1024 · 2-bit KV cache</h4><span class="dense-count"></span></div>
-            <p class="dense-note">At 2 bits the KV cache shrinks by 87%; VAR-Q keeps the BF16 subject and layout while KIVI and FlexGen drift or break.</p>
+            <p class="dense-note">At 2 bits the KV cache shrinks by 87%; VAR-Q keeps the BF16 subject and layout while KIVI and FlexGen drift or break. KV memory is the paper's measurement at the evaluation batch size.</p>
             <div class="dense-rows"></div>
             <button class="button dense-more" type="button">Show more</button>
           </section>
-        </div>
-        <div class="video-section" id="paper-figures">
-            <div class="subsection-heading">
-              <div>
-                <p class="eyebrow">From the paper</p>
-                <h3>Sampled video frames: BF16, FlexGen, KIVI, VAR-Q</h3>
-              </div>
-              <label class="select-label"
-                >Video model<select id="video-model">
-                  <option value="selfforcing">Self-Forcing · INT4</option>
-                  <option value="infinitystar">InfinityStar · INT3</option>
-                  <option value="longlive">LongLive · INT4</option>
-                </select></label
-              >
-            </div>
-            <figure class="paper-figure">
-              <a data-caption="Self-Forcing at INT4 · Figure 39" data-zoom="" href="assets/selfforcing-int4.webp" id="video-link"
-                ><img
-                  alt="Self-Forcing INT4: four sampled frames for BF16, FlexGen, KIVI and VAR-Q, showing skyscrapers transforming into a robot."
-                  height="1195"
-                  id="video-figure"
-                  loading="lazy"
-                  src="assets/selfforcing-int4.webp"
-                  width="2000"
-              /></a>
-              <figcaption>
-                <span id="video-caption">Self-Forcing · Next-frame generation · INT4 KV cache · Figure 39.</span> Sampled video frames from the paper;
-                select the figure to enlarge.
-              </figcaption>
-            </figure>
         </div>
       </section>
       <section aria-labelledby="citation-title" class="section wrap citation-section" id="citation">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">Code and citation</p>
             <h2 id="citation-title">Code and citation</h2>
           </div>
           <p>The runtime hooks, packed low-bit kernels and curated configs are public. Please cite the paper if VAR-Q is useful in your research. <a href="mailto:boxunxu@ucsb.edu">Contact the authors ↗</a></p>
