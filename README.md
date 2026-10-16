@@ -1,4 +1,4 @@
-# VAR-Q · NeurIPS 2026
+# VAR-Q · NeurIPS 2026 (to appear)
 
 Project page for **VAR-Q: Tuning-free KV Cache Quantization for Visual Autoregressive Image and Video Generation**.
 
