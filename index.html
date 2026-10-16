@@ -37,8 +37,7 @@
     </header>
     <main id="main">
       <section aria-labelledby="paper-title" class="hero wrap">
-        <div class="hero-grid">
-          <div class="hero-text">
+        <div class="hero-head">
             <p class="hero-venue">NeurIPS 2026 · To appear</p>
             <h1 id="paper-title">VAR-Q: Tuning-free KV Cache Quantization for Visual Autoregressive Image and Video Generation</h1>
             <p class="authors">
@@ -60,35 +59,6 @@
               ><a class="button" href="https://github.com/lujiaji/VAR-Q/tree/varq_official">Code <span aria-hidden="true">↗</span></a
               ><a class="button text-button" href="#citation">BibTeX</a>
             </div>
-          </div>
-          <figure class="hero-figure">
-            <article class="feature-card direct-demo" data-feature="hero">
-              <div class="feature-top">
-                <div><span class="paradigm-tag scale">Next-scale</span><h3>A crystal ball in sunlight</h3></div>
-                <span class="feature-index">InfinityStar · 720p</span>
-              </div>
-              <div class="feature-pair">
-                <figure class="feature-video">
-                  <figcaption>BF16 reference</figcaption>
-                  <video aria-describedby="showcase-note" aria-label="InfinityStar 720p BF16: A crystal ball sitting on a table, with sunlight streaming through it and casting a circle of rainbow colors on the floor." data-src="samples/InfinityStar720p/Baseline/q4/prompt042.mp4" loop="" muted="" playsinline="" poster="assets/posters/scale-0-Baseline.webp" preload="none"></video>
-                </figure>
-                <figure class="feature-video feature-ours">
-                  <figcaption>VAR-Q · 4-bit</figcaption>
-                  <video aria-describedby="showcase-note" aria-label="InfinityStar 720p VAR-Q 4-bit: A crystal ball sitting on a table, with sunlight streaming through it and casting a circle of rainbow colors on the floor." data-src="samples/InfinityStar720p/VARQ/q4/prompt042.mp4" loop="" muted="" playsinline="" poster="assets/posters/scale-0-VARQ.webp" preload="none"></video>
-                </figure>
-              </div>
-              <div class="feature-controls">
-                <button aria-label="Play InfinityStar comparison" class="feature-play" disabled="" type="button">Play pair</button
-                ><label class="feature-select" hidden=""><span class="sr-only">Sample</span><select disabled=""><option value="0">A crystal ball in sunlight</option></select></label
-                ><output class="feature-time">0.0 s</output>
-              </div>
-              <label class="sr-only" for="seek-hero">Shared timeline</label
-              ><input class="feature-seek" disabled="" id="seek-hero" max="1" min="0" step=".05" type="range" value="0" />
-              <p class="feature-prompt">A crystal ball sitting on a table, with sunlight streaming through it and casting a circle of rainbow colors on the floor.</p>
-              <p class="feature-status sr-only" role="status"></p>
-              <noscript><a href="samples/InfinityStar720p/VARQ/q4/prompt042.mp4">Watch the VAR-Q video</a></noscript>
-            </article>
-          </figure>
         </div>
         <div class="hero-lede">
             <p class="hero-abstract">
@@ -1711,19 +1681,12 @@
         </div>
         <div class="full-paper-results" id="complete-results">
           <div class="full-results-intro">
-            <h3>Results by model family</h3>
-            <p>Comparisons with BF16, FlexGen, and KIVI.</p>
+            <h3>Complete tables</h3>
+            <p>Every precision, metric and baseline (BF16, FlexGen, KIVI) from Tables 2–4. Open a table to expand it.</p>
           </div>
-          <nav aria-label="Complete result tables" class="paper-table-tabs">
-            <a href="#full-table-3">Table 3 · Next-scale video</a><a href="#full-table-4">Table 4 · Next-frame video</a
-            ><a href="#full-table-2a">Table 2a · VAR images</a><a href="#full-table-2b">Table 2b · Infinity images</a>
-          </nav>
-          <article class="paper-result-block" id="full-table-3">
+          <details class="paper-result-block" id="full-table-3">
+            <summary><span class="eyebrow">Table 3</span>Next-scale video</summary>
             <div class="paper-table-heading">
-              <div>
-                <p class="eyebrow">Table 3</p>
-                <h3>Next-scale video</h3>
-              </div>
               <a href="/assets/pdf/VAR-Q.pdf#page=8">Source table ↗</a>
             </div>
             <p class="table-takeaway">
@@ -2021,13 +1984,10 @@
               methods at the same precision, within each model. BF16 is the reference. ↑ Higher is better; ↓ lower is better. Memory reduction is
               relative to BF16 at the listed batch size.
             </p>
-          </article>
-          <article class="paper-result-block" id="full-table-4">
+          </details>
+          <details class="paper-result-block" id="full-table-4">
+            <summary><span class="eyebrow">Table 4</span>Next-frame video</summary>
             <div class="paper-table-heading">
-              <div>
-                <p class="eyebrow">Table 4</p>
-                <h3>Next-frame video</h3>
-              </div>
               <a href="/assets/pdf/VAR-Q.pdf#page=8">Source table ↗</a>
             </div>
             <p class="table-takeaway">
@@ -2345,13 +2305,10 @@
               VLM evaluation uses Claude Opus 4.7 (Opus4.7-VL in the paper). The judge rates visual quality, dynamics, and text alignment on a 1–5
               scale using 12 uniformly sampled frames and the generation prompt. These ratings are separate from VBench scores.
             </p>
-          </article>
-          <article class="paper-result-block" id="full-table-2a">
+          </details>
+          <details class="paper-result-block" id="full-table-2a">
+            <summary><span class="eyebrow">Table 2a</span>Class-conditional image generation</summary>
             <div class="paper-table-heading">
-              <div>
-                <p class="eyebrow">Table 2a</p>
-                <h3>Class-conditional image generation</h3>
-              </div>
               <a href="/assets/pdf/VAR-Q.pdf#page=7">Source table ↗</a>
             </div>
             <p class="table-takeaway">
@@ -2678,13 +2635,10 @@
               methods at the same precision, within each model. BF16 is the reference. ↑ Higher is better; ↓ lower is better. Memory reduction is
               relative to BF16 at the listed batch size.
             </p>
-          </article>
-          <article class="paper-result-block" id="full-table-2b">
+          </details>
+          <details class="paper-result-block" id="full-table-2b">
+            <summary><span class="eyebrow">Table 2b</span>Text-to-image generation</summary>
             <div class="paper-table-heading">
-              <div>
-                <p class="eyebrow">Table 2b</p>
-                <h3>Text-to-image generation</h3>
-              </div>
               <a href="/assets/pdf/VAR-Q.pdf#page=7">Source table ↗</a>
             </div>
             <p class="table-takeaway">
@@ -2976,7 +2930,7 @@
               methods at the same precision, within each model. BF16 is the reference. ↑ Higher is better; ↓ lower is better. Memory reduction is
               relative to BF16 at the listed batch size.
             </p>
-          </article>
+          </details>
         </div>
 
       </section>
