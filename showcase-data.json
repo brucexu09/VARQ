@@ -124,7 +124,8 @@
           "VARQ": "assets/posters/scale-9-VARQ.webp"
         }
       }
-    ]
+    ],
+    "label": "InfinityStar 720p · next-scale video · 4-bit KV cache"
   },
   "frame": {
     "model": "Self-Forcing",
@@ -251,7 +252,8 @@
           "VARQ": "assets/posters/frame-9-VARQ.webp"
         }
       }
-    ]
+    ],
+    "label": "Self-Forcing · next-frame video, 5 s · 4-bit KV cache"
   },
   "long": {
     "model": "LongLive",
@@ -328,6 +330,27 @@
         "posters": {
           "Baseline": "assets/posters/long-5-Baseline.webp",
           "VARQ": "assets/posters/long-5-VARQ.webp"
+        }
+      }
+    ],
+    "label": "LongLive · long-horizon video generation, 30 s · 4-bit KV cache",
+    "note": "LongLive extends the next-frame setting to 30-second sequences; motion and scene consistency can be compared on the shared timeline."
+  },
+  "hero": {
+    "model": "InfinityStar · 720p",
+    "paradigm": "Next-scale",
+    "bits": "4-bit",
+    "clips": [
+      {
+        "title": "A crystal ball in sunlight",
+        "prompt": "A crystal ball sitting on a table, with sunlight streaming through it and casting a circle of rainbow colors on the floor.",
+        "sources": {
+          "Baseline": "samples/InfinityStar720p/Baseline/q4/prompt042.mp4",
+          "VARQ": "samples/InfinityStar720p/VARQ/q4/prompt042.mp4"
+        },
+        "posters": {
+          "Baseline": "assets/posters/scale-0-Baseline.webp",
+          "VARQ": "assets/posters/scale-0-VARQ.webp"
         }
       }
     ]

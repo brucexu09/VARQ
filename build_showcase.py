@@ -50,13 +50,14 @@ def group(key, cfg):
     cfg["captions"] = {"Baseline": m.group(1), "VARQ": m.group(2)} if m else {}
     cards = "".join(card(key, n, cfg, c) for n, c in enumerate(cfg["clips"]))
     tag, cls = GROUPS[key]
+    note = f'          <p class="showcase-group-note">{H.escape(cfg["note"])}</p>\n' if cfg.get("note") else ""
     head = f'''        <div class="showcase-group">
           <div class="showcase-group-head">
             <span class="paradigm-tag {cls}">{tag}</span>
-            <h3>{H.escape(cfg["model"])} · {cfg["bits"]} KV cache</h3>
+            <h3>{H.escape(cfg.get("label", cfg["model"] + " · " + cfg["bits"] + " KV cache"))}</h3>
             <span class="showcase-group-count">{len(cfg["clips"])} prompts · BF16 vs VAR-Q, same seed</span>
           </div>
-          <div class="more-video-grid">
+{note}          <div class="more-video-grid">
 {cards}          </div>
         </div>
 '''

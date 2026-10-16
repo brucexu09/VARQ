@@ -6,7 +6,7 @@ Live site: https://boxunxu.top/VARQ/
 
 ## Structure
 
-- `index.html`, `style.css`, `research.css`, `app.js`: research page, responsive diagrams, paper figures, attribution, and citation.
+- `index.html`, `style.css`, `research.css`, `editorial.css`, `app.js`: research page (editorial typography layer in `editorial.css`, loaded last), responsive diagrams, paper figures, attribution, and citation.
 - `showcase.js`, `showcase-data.json`: curated BF16 / VAR-Q video pairs (10 InfinityStar 720p, 10 Self-Forcing, 6 LongLive, all 4-bit); `update_showcase.py` picks clips and posters, `build_showcase.py` renders one synchronized card per clip.
 - `dense.js`: Infinity-8B 2-bit grid (BF16 / FlexGen / KIVI / VAR-Q per prompt) driven by `manifest.json`.
 - `results.js`, `results-data.json`: all 64 rows from Tables 2–4 (nine checkpoints across five model families), with precision / metric filters and CSV export.
