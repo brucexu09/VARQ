@@ -1,21 +1,5 @@
 "use strict";
 
-const compareNames = { varq: "VAR-Q", kivi: "KIVI", flexgen: "FlexGen" };
-const compareImage = document.querySelector(".compare-image");
-document.querySelector("#comparison-range").addEventListener("input", (event) => {
-  compareImage.style.setProperty("--split", `${event.target.value}%`);
-});
-document.querySelectorAll("[data-compare]").forEach((button) => {
-  button.addEventListener("click", () => {
-    const key = button.dataset.compare;
-    document.querySelectorAll("[data-compare]").forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
-    const img = document.querySelector("#compare-target");
-    img.src = `assets/cats-${key}.webp`;
-    img.alt = `${compareNames[key]} at INT2`;
-    document.querySelector("#compare-name").textContent = `${compareNames[key]} · INT2`;
-  });
-});
-
 const videos = {
   selfforcing: {
     file: "selfforcing-int4",
