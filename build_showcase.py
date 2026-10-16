@@ -9,18 +9,24 @@ import json, re, html as H
 data = json.load(open("showcase-data.json")); page = open("index.html").read()
 GROUPS = {"scale": ("Next-scale", "scale"), "frame": ("Next-frame", "frame"), "long": ("Next-frame", "long")}
 
+KV = json.load(open("kv-memory.json"))
+KV_MODEL = {"scale": "InfinityStar720p", "frame": "self_forcing", "long": "longlive"}
+
+def kv_for(key, bits):
+    q = "q" + bits.split("-")[0]
+    entry = KV.get(KV_MODEL[key], {}).get("bits", {}).get(q, {})
+    if "Baseline" in entry and "VARQ" in entry:
+        b, v = entry["Baseline"], entry["VARQ"]
+        return b, v, round((1 - v / b) * 100)
+    return None
+
 def card(key, n, cfg, clip):
     k = f"{key}-{n:02d}"; model = cfg["model"]; bits = cfg["bits"]; prompt = H.escape(clip["prompt"], quote=True)
-    cap_b, cap_v = cfg.get("captions", {}).get("Baseline", "BF16 reference"), cfg.get("captions", {}).get("VARQ", f"VAR-Q · {bits}")
-    tag, cls = GROUPS[key]
+    kv = kv_for(key, bits); prec = "INT" + bits.split("-")[0]
+    cap_b = f"<b>BF16</b><br>{kv[0]:.1f} GB" if kv else "<b>BF16</b>"
+    cap_v = f"<b>VAR-Q {prec}</b><br>{kv[1]:.1f} GB · −{kv[2]}%" if kv else f"<b>VAR-Q {prec}</b>"
     return f'''          <article class="feature-card direct-demo" data-feature="{k}">
-            <div class="feature-top">
-              <div>
-                <span class="paradigm-tag {cls}">{tag}</span>
-                <h3>{H.escape(clip["title"])}</h3>
-              </div>
-              <span class="feature-index">{H.escape(model)}</span>
-            </div>
+            <h3 class="feature-title" title="{prompt}">{H.escape(clip["title"])}</h3>
             <div class="feature-pair">
               <figure class="feature-video">
                 <figcaption>{cap_b}</figcaption>
@@ -28,26 +34,17 @@ def card(key, n, cfg, clip):
               </figure>
               <figure class="feature-video feature-ours">
                 <figcaption>{cap_v}</figcaption>
-                <video aria-describedby="showcase-note" aria-label="{H.escape(model)} VAR-Q {bits}: {prompt}" data-src="{clip["sources"]["VARQ"]}" loop="" muted="" playsinline="" poster="{clip["posters"]["VARQ"]}" preload="none"></video>
+                <video aria-describedby="showcase-note" aria-label="{H.escape(model)} VAR-Q {prec}: {prompt}" data-src="{clip["sources"]["VARQ"]}" loop="" muted="" playsinline="" poster="{clip["posters"]["VARQ"]}" preload="none"></video>
               </figure>
             </div>
-            <div class="feature-controls">
-              <button aria-label="Play {H.escape(model)} comparison" class="feature-play" disabled="" type="button">Play pair</button
-              ><label class="feature-select" hidden=""><span class="sr-only">{H.escape(model)} sample</span><select disabled=""><option value="0">{H.escape(clip["title"])}</option></select></label
-              ><output class="feature-time">0.0 s</output>
-            </div>
-            <label class="sr-only" for="seek-{k}">{H.escape(model)} shared timeline</label
-            ><input class="feature-seek" disabled="" id="seek-{k}" max="1" min="0" step=".05" type="range" value="0" />
-            <p class="feature-prompt">{prompt}</p>
             <p class="feature-status sr-only" role="status"></p>
             <noscript><a href="{clip["sources"]["VARQ"]}">Watch the VAR-Q video</a></noscript>
           </article>
 '''
 
 def group(key, cfg):
-    # captions with KV memory come from the master card figcaptions already rendered in index.html by update_showcase.py
-    m = re.search(rf'data-feature="{key}">.*?<figcaption>([^<]*)</figcaption>.*?<figcaption>([^<]*)</figcaption>', page, re.S)
-    cfg["captions"] = {"Baseline": m.group(1), "VARQ": m.group(2)} if m else {}
+    kv = kv_for(key, cfg["bits"])
+    kvline = f" · KV cache {kv[0]:.1f} → {kv[1]:.1f} GB (−{kv[2]}%)" if kv else ""
     cards = "".join(card(key, n, cfg, c) for n, c in enumerate(cfg["clips"]))
     tag, cls = GROUPS[key]
     note = f'          <p class="showcase-group-note">{H.escape(cfg["note"])}</p>\n' if cfg.get("note") else ""
@@ -55,7 +52,7 @@ def group(key, cfg):
           <div class="showcase-group-head">
             <span class="paradigm-tag {cls}">{tag}</span>
             <h3>{H.escape(cfg.get("label", cfg["model"] + " · " + cfg["bits"] + " KV cache"))}</h3>
-            <span class="showcase-group-count">{len(cfg["clips"])} prompts · BF16 vs VAR-Q, same seed</span>
+            <span class="showcase-group-count">{len(cfg["clips"])} prompts · same seed{kvline}</span>
           </div>
 {note}          <div class="more-video-grid">
 {cards}          </div>
@@ -81,8 +78,6 @@ else:
     s = page.index('        <div class="long-showcase">'); e = page.index('        <div class="dense-section"')
     intro = re.search(r'          <div class="long-intro">.*?\n          </div>\n', page[s:e], re.S).group(0)
     page = page[:s] + '        <div class="long-showcase stacked">\n' + intro + '        </div>\n' + longblock + page[e:]
-for k in ("scale", "frame", "long"):
-    data[k].pop("captions", None)
 open("index.html", "w").write(page)
 json.dump(data, open("showcase-data.json", "w"), indent=2, ensure_ascii=False); open("showcase-data.json", "a").write("\n")
 print({k: len(v["clips"]) for k, v in data.items() if k in GROUPS}, "cards:", page.count('class="feature-card direct-demo"'))

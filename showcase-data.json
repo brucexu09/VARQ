@@ -334,7 +334,7 @@
       }
     ],
     "label": "LongLive · long-horizon video generation, 30 s · 4-bit KV cache",
-    "note": "LongLive extends the next-frame setting to 30-second sequences; motion and scene consistency can be compared on the shared timeline."
+    "note": "LongLive extends the next-frame setting to 30-second sequences; compare motion and scene consistency over the full clip."
   },
   "hero": {
     "model": "InfinityStar · 720p",
