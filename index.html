@@ -16,12 +16,12 @@
     <meta content="https://boxunxu.top/VARQ/" property="og:url" />
     <meta content="website" property="og:type" />
     <link href="assets/favicon.svg" rel="icon" type="image/svg+xml" />
-    <link href="style.css?v=20261016b" rel="stylesheet" />
-    <script defer="" src="app.js?v=20261016b"></script>
-    <link href="research.css?v=20261016b" rel="stylesheet" />
-    <link href="editorial.css?v=20261016b" rel="stylesheet" />
-    <script defer="" src="showcase.js?v=20261016b"></script>
-    <script defer="" src="dense.js?v=20261016b"></script>
+    <link href="style.css?v=20261017a" rel="stylesheet" />
+    <script defer="" src="app.js?v=20261017a"></script>
+    <link href="research.css?v=20261017a" rel="stylesheet" />
+    <link href="editorial.css?v=20261017a" rel="stylesheet" />
+    <script defer="" src="showcase.js?v=20261017a"></script>
+    <script defer="" src="dense.js?v=20261017a"></script>
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
@@ -30,7 +30,7 @@
         <a class="wordmark" href="#"><img alt="" class="brand-symbol" height="30" src="assets/varq-symbol.svg" width="30" />VAR-Q</a>
         <div class="nav-links">
           <a href="#showcase">Comparisons</a><a href="#overview">Overview</a><a href="#attribution">Analysis</a><a href="#method">Method</a
-          ><a href="#benchmarks">Results</a><a href="#examples">Examples</a><a href="#citation">Code &amp; cite</a>
+          ><a href="#examples">Examples</a><a href="#benchmarks">Results</a><a href="#citation">Code &amp; cite</a>
         </div>
         <a class="home-link" href="/">Boxun Xu <span aria-hidden="true">↗</span></a>
       </nav>
@@ -1032,6 +1032,20 @@
           </div>
         </div>
       </section>
+      <section aria-labelledby="results-title" class="section wrap" id="examples">
+        <div class="section-heading">
+          <div>
+            <h2 id="results-title">Examples</h2>
+          </div>
+          <p>Infinity-8B at a 2-bit KV cache: BF16, FlexGen, KIVI and VAR-Q from the same prompt and seed. Click an image to enlarge. Paired BF16 vs. VAR-Q videos are in the <a href="#showcase">comparisons</a> at the top of the page.</p>
+        </div>
+        <div class="dense-section" id="comparison">
+          <section class="dense-block" data-bit="q2" data-initial="8" data-model="Infinity8B" data-step="8">
+            <div class="dense-head"><h4>Infinity-8B · next-scale · 1024×1024 · 2-bit KV cache</h4><span class="dense-count"></span></div>
+            <p class="dense-note">At 2 bits the KV cache shrinks by 87%; VAR-Q keeps the BF16 subject and layout while KIVI and FlexGen drift or break. KV memory is the paper's measurement at the evaluation batch size.</p>
+            <div class="dense-rows"></div>
+            <button class="button dense-more" type="button">Show more</button>
+          </section>
       <section aria-labelledby="benchmarks-title" class="section wrap" id="benchmarks">
         <div class="section-heading">
           <div>
@@ -2570,20 +2584,6 @@
         </div>
 
       </section>
-      <section aria-labelledby="results-title" class="section wrap" id="examples">
-        <div class="section-heading">
-          <div>
-            <h2 id="results-title">Examples</h2>
-          </div>
-          <p>Infinity-8B at a 2-bit KV cache: BF16, FlexGen, KIVI and VAR-Q from the same prompt and seed. Click an image to enlarge. Paired BF16 vs. VAR-Q videos are in the <a href="#showcase">comparisons</a> at the top of the page.</p>
-        </div>
-        <div class="dense-section" id="comparison">
-          <section class="dense-block" data-bit="q2" data-initial="8" data-model="Infinity8B" data-step="8">
-            <div class="dense-head"><h4>Infinity-8B · next-scale · 1024×1024 · 2-bit KV cache</h4><span class="dense-count"></span></div>
-            <p class="dense-note">At 2 bits the KV cache shrinks by 87%; VAR-Q keeps the BF16 subject and layout while KIVI and FlexGen drift or break. KV memory is the paper's measurement at the evaluation batch size.</p>
-            <div class="dense-rows"></div>
-            <button class="button dense-more" type="button">Show more</button>
-          </section>
         </div>
       </section>
       <section aria-labelledby="citation-title" class="section wrap citation-section" id="citation">
