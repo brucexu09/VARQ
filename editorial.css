@@ -128,8 +128,8 @@ select, input[type="range"] { accent-color: var(--accent); }
 .takeaway-figure.narrow a { max-width: 640px; }
 .takeaway-figure figcaption { margin-top: 10px; font-size: 12.5px; line-height: 1.6; color: var(--muted); max-width: 96ch; }
 .takeaway-figure figcaption strong { color: var(--ink); }
-.takeaway-box { margin: 18px 0 28px; padding: 16px 22px; background: var(--lavender); border-left: 3px solid var(--accent); border-radius: 0 2px 2px 0; font-size: 15.5px; line-height: 1.65; color: var(--ink); max-width: 92ch; }
-.takeaway-box strong { color: var(--accent-dark); font-weight: 600; }
+.takeaway-box { margin: 22px 0 30px; padding: 18px 22px; background: #f3f1fb; border: 1px solid #d6d1ee; border-left: 4px solid var(--accent); border-radius: 8px; font-size: 16px; line-height: 1.65; color: var(--ink); max-width: 92ch; }
+.takeaway-box strong { color: var(--accent-dark); font-weight: 700; }
 .takeaway-block .projection-chain { margin: 8px 0 18px; }
 .takeaway-figure.medium a { max-width: 900px; }
 .attribution-findings.five { grid-template-columns: repeat(5, minmax(0, 1fr)); }
@@ -152,9 +152,8 @@ select, input[type="range"] { accent-color: var(--accent); }
 .attribution-findings a:first-child { border-left: 0; padding-left: 0; }
 .attribution-findings a:hover { box-shadow: none; }
 .attribution-findings strong { font: 500 34px/1.1 var(--serif); letter-spacing: 0; color: var(--ink); }
-.attribution-findings em { font-style: normal; color: var(--accent-dark); font-weight: 600; }
 .attribution-findings strong span { font-size: 20px; color: var(--muted); }
-.attribution-findings em { color: var(--ink); font-weight: 500; border-top: 0; padding-top: 4px; }
+.attribution-findings em { font-style: normal; color: var(--accent-dark); font-weight: 600; border-top: 0; padding-top: 4px; }
 .attribution-copy h3 { padding-left: 0; }
 .attribution-copy h3::before { display: none; }
 .attribution-copy p strong { color: var(--ink); }
