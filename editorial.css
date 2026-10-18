@@ -117,14 +117,28 @@ select, input[type="range"] { accent-color: var(--accent); }
 .grouping-demo #group-description { font-size: 15px; color: var(--ink); min-height: 0; margin: 0 0 20px; }
 #examples .video-section { margin-top: 44px; padding-top: 28px; border-top: 1px solid var(--line); }
 .attribution-section { background: none; padding: 56px 0 24px; margin-top: 0; border-radius: 0; border-top: 0; }
-.attribution-row { padding-block: 24px; }
 .attribution-heading { margin-bottom: 28px; }
+.takeaway-block { padding: 36px 0 8px; border-top: 1px solid var(--line); }
+.takeaway-block > h3 { font-size: 27px; line-height: 1.25; margin: 6px 0 14px; max-width: 40ch; }
+.takeaway-block > p { font-size: 15.5px; line-height: 1.7; max-width: 78ch; color: var(--muted); margin: 0 0 14px; }
+.takeaway-block > p strong { color: var(--ink); font-weight: 600; }
+.takeaway-figure { margin: 22px 0 20px; }
+.takeaway-figure a { display: block; border: 1px solid var(--line); background: #fff; padding: 16px; border-radius: 2px; }
+.takeaway-figure img { display: block; width: 100%; height: auto; }
+.takeaway-figure.narrow a { max-width: 640px; }
+.takeaway-figure figcaption { margin-top: 10px; font-size: 12.5px; line-height: 1.6; color: var(--muted); max-width: 96ch; }
+.takeaway-figure figcaption strong { color: var(--ink); }
+.takeaway-box { margin: 18px 0 28px; padding: 16px 22px; background: var(--lavender); border-left: 3px solid var(--accent); border-radius: 0 2px 2px 0; font-size: 15.5px; line-height: 1.65; color: var(--ink); max-width: 92ch; }
+.takeaway-box strong { color: var(--accent-dark); font-weight: 600; }
+.takeaway-block .projection-chain { margin: 8px 0 18px; }
+.takeaway-block .rope-equations { margin: 4px 0 16px; }
 .attribution-heading { border-top: 2px solid var(--rule); padding-top: 18px; }
 .attribution-findings { gap: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-bottom: 40px; }
 .attribution-findings a { background: none; border: 0; border-left: 1px solid var(--line); padding: 20px 24px; transform: none !important; }
 .attribution-findings a:first-child { border-left: 0; padding-left: 0; }
 .attribution-findings a:hover { box-shadow: none; }
 .attribution-findings strong { font: 500 34px/1.1 var(--serif); letter-spacing: 0; color: var(--ink); }
+.attribution-findings em { font-style: normal; color: var(--accent-dark); font-weight: 600; }
 .attribution-findings strong span { font-size: 20px; color: var(--muted); }
 .attribution-findings em { color: var(--ink); font-weight: 500; border-top: 0; padding-top: 4px; }
 .attribution-copy h3 { padding-left: 0; }
