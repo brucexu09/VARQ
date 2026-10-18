@@ -16,12 +16,12 @@
     <meta content="https://boxunxu.top/VARQ/" property="og:url" />
     <meta content="website" property="og:type" />
     <link href="assets/favicon.svg" rel="icon" type="image/svg+xml" />
-    <link href="style.css?v=20261018a" rel="stylesheet" />
-    <script defer="" src="app.js?v=20261018a"></script>
-    <link href="research.css?v=20261018a" rel="stylesheet" />
-    <link href="editorial.css?v=20261018a" rel="stylesheet" />
-    <script defer="" src="showcase.js?v=20261018a"></script>
-    <script defer="" src="dense.js?v=20261018a"></script>
+    <link href="style.css?v=20261018b" rel="stylesheet" />
+    <script defer="" src="app.js?v=20261018b"></script>
+    <link href="research.css?v=20261018b" rel="stylesheet" />
+    <link href="editorial.css?v=20261018b" rel="stylesheet" />
+    <script defer="" src="showcase.js?v=20261018b"></script>
+    <script defer="" src="dense.js?v=20261018b"></script>
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
@@ -548,14 +548,15 @@
       </section>
       <section aria-labelledby="attribution-title" class="section wrap attribution-section" id="attribution">
         <div class="attribution-heading">
-          <h2 id="attribution-title">Origin of the channel × block structure</h2>
+          <h2 id="attribution-title">Five takeaways from the KV-cache analysis</h2>
           <p>
-            Why does the channel × block pattern emerge? Three experiments trace it to the architecture: the outlier channels are fixed by the
-            checkpoint, their identity is readable from the K projection chain, and RoPE moves magnitude between blocks. Each result pins down one
-            design decision in VAR-Q.
+            Where does the channel × block pattern come from, and is it the same for K and V? Five results from §3.3 and Appendices A–C: the
+            outlier channels are fixed by the checkpoint, their identity is readable from the K projection chain, RoPE moves magnitude between
+            blocks, V outliers are input-driven where K outliers are architectural, and the tensor that carries the load flips between image and
+            video generation. Each one pins down a design decision in VAR-Q.
           </p>
         </div>
-        <div aria-label="Three findings" class="attribution-findings">
+        <div aria-label="Five findings" class="attribution-findings five">
           <a href="#attr-persistence">
             <span class="finding-index">01</span>
             <strong>53–62<span>%</span></strong>
@@ -573,6 +574,18 @@
             <strong>+0.41</strong>
             <p>VBench Total Quality from quantizing after RoPE instead of before, at the same 27.5 GB footprint (82.93 → 83.34).</p>
             <em>Takeaway 3 · RoPE moves magnitude across blocks, so groups follow blocks</em>
+          </a>
+          <a href="#attr-kv">
+            <span class="finding-index">04</span>
+            <strong>0.31–0.35</strong>
+            <p>V outlier persistence after a single added prompt; K keeps 0.77–0.82 and plateaus.</p>
+            <em>Takeaway 4 · K outliers are architectural, V outliers follow the input</em>
+          </a>
+          <a href="#attr-modality">
+            <span class="finding-index">05</span>
+            <strong>61<span>×</span></strong>
+            <p>K-over-V damage ratio on LongLive video; Infinity-2B images sit at 0.79–0.87×, the opposite side of K = V.</p>
+            <em>Takeaway 5 · Video is K-dominant, image is V-dominant</em>
           </a>
         </div>
         <article class="takeaway-block" id="attr-persistence">
@@ -599,9 +612,8 @@
           </figure>
           <div class="takeaway-box">
             <strong>Takeaway 1 — The channel axis is architectural.</strong> Because the same K channels are outliers for every prompt, a
-            per-channel scale factor is the right unit for K, and it needs no calibration set: the channel structure is a property of the
-            checkpoint. V shows the same two-axis magnitude pattern with a weaker architectural signature, so VAR-Q applies one grouping rule to
-            both caches.
+            per-channel scale factor is the right unit along the channel axis, and it needs no calibration set: the channel structure is a
+            property of the checkpoint, not of the input.
           </div>
         </article>
         <article class="takeaway-block" id="attr-channel">
@@ -692,10 +704,149 @@
               (right). Figure 7 of the paper.
             </figcaption>
           </figure>
+          <div class="proof-block">
+            <p class="proof-title"><span>Appendix C</span>Why the pair envelope stays flat: approximate ℓ<sub>2</sub> invariance of channel maxima under RoPE</p>
+            <p>
+              Within one block of <i>T</i> tokens, let the pair (<i>c<sub>t</sub></i>, <i>d<sub>t</sub></i>) at token <i>t</i> have pre-RoPE amplitude
+              <i>M<sub>t</sub></i> = √(<i>c<sub>t</sub></i><sup>2</sup> + <i>d<sub>t</sub></i><sup>2</sup>), with order statistics
+              <i>M</i><sub>(1)</sub> ≥ <i>M</i><sub>(2)</sub> ≥ ⋯ ≥ <i>M</i><sub>(<i>T</i>)</sub>. After RoPE rotation by the shared block angle θ, write
+              <i>a<sub>t</sub></i> = <i>M<sub>t</sub></i> cos(θ + φ<sub>t</sub>) and <i>b<sub>t</sub></i> = <i>M<sub>t</sub></i> sin(θ + φ<sub>t</sub>),
+              where φ<sub>t</sub> is the per-token pre-RoPE angle. The pair of channel maxima satisfies
+            </p>
+            <p class="proof-eq"><i>M</i><sub>(1)</sub><sup>2</sup> ≤ ‖<i>a</i>‖<sub>∞</sub><sup>2</sup> + ‖<i>b</i>‖<sub>∞</sub><sup>2</sup> ≤ <i>M</i><sub>(1)</sub><sup>2</sup> + <i>M</i><sub>(2)</sub><sup>2</sup>.<span class="eq-number">(4)</span></p>
+            <p>
+              <b>Lower bound.</b> Let <i>t</i><sup>⋆</sup> = arg max<sub><i>t</i></sub> <i>M<sub>t</sub></i>. Per-token RoPE invariance gives
+              <i>a</i><sub><i>t</i>⋆</sub><sup>2</sup> + <i>b</i><sub><i>t</i>⋆</sub><sup>2</sup> = <i>M</i><sub>(1)</sub><sup>2</sup>. Since
+              ‖<i>a</i>‖<sub>∞</sub> ≥ |<i>a</i><sub><i>t</i>⋆</sub>| and ‖<i>b</i>‖<sub>∞</sub> ≥ |<i>b</i><sub><i>t</i>⋆</sub>|, the sum is at least
+              <i>M</i><sub>(1)</sub><sup>2</sup>.
+            </p>
+            <p>
+              <b>Upper bound.</b> Let <i>t<sub>a</sub></i> = arg max<sub><i>t</i></sub> |<i>a<sub>t</sub></i>| and <i>t<sub>b</sub></i> = arg max<sub><i>t</i></sub> |<i>b<sub>t</sub></i>|.
+              Per token, |<i>a<sub>t</sub></i>|, |<i>b<sub>t</sub></i>| ≤ <i>M<sub>t</sub></i>, so ‖<i>a</i>‖<sub>∞</sub><sup>2</sup> ≤ <i>M</i><sub><i>t<sub>a</sub></i></sub><sup>2</sup>
+              and ‖<i>b</i>‖<sub>∞</sub><sup>2</sup> ≤ <i>M</i><sub><i>t<sub>b</sub></i></sub><sup>2</sup>. If <i>t<sub>a</sub></i> = <i>t<sub>b</sub></i>, the sum equals
+              <i>M</i><sub><i>t<sub>a</sub></i></sub><sup>2</sup> ≤ <i>M</i><sub>(1)</sub><sup>2</sup>. If <i>t<sub>a</sub></i> ≠ <i>t<sub>b</sub></i>, at least one of them is
+              not <i>t</i><sup>⋆</sup>, so min(<i>M</i><sub><i>t<sub>a</sub></i></sub>, <i>M</i><sub><i>t<sub>b</sub></i></sub>) ≤ <i>M</i><sub>(2)</sub> and the sum is at most
+              <i>M</i><sub>(1)</sub><sup>2</sup> + <i>M</i><sub>(2)</sub><sup>2</sup>. ∎
+            </p>
+            <p>
+              <b>Massive-value regime.</b> When pre-RoPE amplitudes are heavy-tailed within the block, <i>M</i><sub>(2)</sub><sup>2</sup> ≪ <i>M</i><sub>(1)</sub><sup>2</sup>
+              and the two bounds collapse: the channel-max pair ℓ<sub>2</sub> is approximately invariant under RoPE rotation. This is the mathematical
+              basis for the flat envelope in Figure 7(b), while the individual maxima ‖<i>a</i>‖<sub>∞</sub> and ‖<i>b</i>‖<sub>∞</sub> trade magnitude as
+              θ advances from block to block.
+            </p>
+          </div>
           <div class="takeaway-box">
             <strong>Takeaway 3 — Groups must be block-aligned.</strong> Magnitude shifts between generation blocks are a positional effect, not
             noise, so a scale factor must not straddle a block boundary. Aligning boundaries to the model’s own blocks (Table 6) and quantizing
             after RoPE instead of before (+0.41 VBench Total Quality at the same 27.5 GB footprint) both follow directly from this mechanism.
+          </div>
+        </article>
+        <article class="takeaway-block" id="attr-kv">
+          <p class="evidence-label">Takeaway 4 · K versus V</p>
+          <h3>K outliers are architectural; V outliers follow the input</h3>
+          <p>
+            Persistence@N is the fraction of one prompt’s top-1% outlier channels that stay in the top 1% under all <i>N</i> prompts. The K and V
+            curves differ in shape, not just in level. <strong>V collapses on the first added prompt</strong>: a single second prompt removes
+            about two-thirds of its outlier channels (Persistence@2 = 0.31–0.35 on Self-Forcing, LongLive and InfinityStar), and the curve keeps
+            decaying to 0.07–0.14. <strong>K bends gently and plateaus</strong>, retaining 0.77–0.82 at <i>N</i> = 2 and settling at 0.53–0.62. The
+            gap is already 2.3× at <i>N</i> = 2 and widens with every prompt.
+          </p>
+          <figure class="takeaway-figure medium">
+            <a data-caption="Outlier persistence across different numbers of prompts, K versus V · Figure 13" data-zoom="" href="assets/attribution-persistence-curves.webp"
+              ><img
+                alt="Persistence at N for N from 1 to 10 on Self-Forcing, LongLive and InfinityStar. K curves (solid) decay gently from 1.0 to about 0.55 to 0.62. V curves (dashed) drop to about 0.3 at N equals 2 and continue down to 0.07 to 0.14."
+                height="661"
+                loading="lazy"
+                src="assets/attribution-persistence-curves.webp"
+                width="1144"
+            /></a>
+            <figcaption>
+              <strong>Two different decay laws.</strong> K (solid) plateaus: most outlier channels survive every additional prompt. V (dashed)
+              crashes: each new prompt is a fresh sample of token amplitudes, and the V outlier identity tracks those samples. Figure 13 of the
+              paper; Figure 5 is the <i>N</i> = 10 cross-section.
+            </figcaption>
+          </figure>
+          <p>
+            The projection chain tells the same story from the weights: W<sub>K</sub> → γ<sub>K</sub> → RoPE predicts the final K outliers at
+            <strong>55–63× random recall</strong>, whereas W<sub>V</sub> predicts V outliers at only <strong>5–6× random</strong> on every model
+            (Figure 6). V’s magnitude still forms the same channel stripes and block bands as K (Figure 4); what is weaker is only how much of
+            that pattern the architecture alone explains.
+          </p>
+          <div class="takeaway-box">
+            <strong>Takeaway 4 — Same structure, different origin.</strong> K outliers are selected by the static projection chain and can be
+            treated as a fixed property of the checkpoint; V outliers are re-drawn by every input. Both caches nevertheless share the two-axis
+            magnitude layout, so VAR-Q applies the same channel × block groups to V without a V-specific mechanism, and because the groups are
+            computed at run time per block, the input-dependent V pattern is captured as it appears rather than from a calibration set.
+          </div>
+        </article>
+        <article class="takeaway-block" id="attr-modality">
+          <p class="evidence-label">Takeaway 5 · K/V asymmetry across generation paradigms</p>
+          <h3>Video generation is K-dominant, image generation is V-dominant</h3>
+          <p>
+            Masking K and V outlier channels separately (Appendix A) splits the joint ablation of §3.1 into two very different stories.
+            <strong>Image AR is V-dominant</strong>: on Infinity-2B at <i>p</i> = 5%, V-only masking drives ΔLPIPS to 0.20 against 0.08 for
+            K-only, and the LAION aesthetic score drops by 1.3 under V-only against near zero under K-only. <strong>Video AR reverses the
+            direction</strong>: on LongLive-30s at <i>p</i> = 5%, K-only masking drives ΔLPIPS<sub>mid</sub> to 0.40 against 0.14 for V-only, and
+            InfinityStar-720p follows the same pattern. Random and inlier masks stay within noise of the baseline in every case.
+          </p>
+          <figure class="takeaway-figure medium">
+            <a data-caption="K-over-V damage ratio at p = 0.5%, image AR, video AR and LLaMA-3-8B · Figure 12" data-zoom="" href="assets/attribution-kv-ratio.webp"
+              ><img
+                alt="Log-scale bar chart of the K-over-V damage ratio at a 0.5 percent prune. Infinity-2B and Infinity-8B image models sit at 0.79 to 1 times, below the K equals V line. LongLive and InfinityStar video models sit at 2.5 to 61 times. LLaMA-3-8B reaches 6.9 to 320 times."
+                height="502"
+                loading="lazy"
+                src="assets/attribution-kv-ratio.webp"
+                width="1251"
+            /></a>
+            <figcaption>
+              <strong>Which tensor carries the load.</strong> Δ<sub>K</sub>/Δ<sub>V</sub> damage ratio at <i>p</i> = 0.5% (log scale). Bars below
+              the dashed K = V line are V-dominant, bars above are K-dominant: image AR sits at or below 1×, video AR ranges from 2.5× to 61×, and
+              LLaMA-3-8B reaches 320× on perplexity. Figure 12 of the paper.
+            </figcaption>
+          </figure>
+          <figure class="takeaway-figure">
+            <a data-caption="Generation under K-only, V-only and joint K+V outlier masking on Infinity-2B and LongLive-1.3B · Figure 11" data-zoom="" href="assets/attribution-kv-samples.webp"
+              ><img
+                alt="Left, Infinity-2B images at a 5 percent mask: V-only masking turns the scenes into textures and symmetric patterns while K-only masking looks like the baseline. Right, LongLive-1.3B frames over 30 seconds at a 0.5 percent mask: K-only masking collapses frames into solid colour and chroma stripes while V-only masking keeps the scene layout."
+                height="588"
+                loading="lazy"
+                src="assets/attribution-kv-samples.webp"
+                width="1644"
+            /></a>
+            <figcaption>
+              <strong>The same contrast at the sample level.</strong> (a) Infinity-2B at <i>p</i> = 5%: V-only masking erases recognisable content,
+              K-only masking is nearly invisible. (b) LongLive-1.3B at <i>p</i> = 0.5%: K-only masking collapses frames into uniform colour, V-only
+              masking keeps the layout with degraded texture. The joint K+V mask tracks the more damaging single tensor. Figure 11 of the paper.
+            </figcaption>
+          </figure>
+          <figure class="takeaway-figure">
+            <a data-caption="K-only versus V-only outlier ablation across image AR, video AR and LLaMA-3-8B, nine metrics · Figure 10" data-zoom="" href="assets/attribution-kv-grid.webp"
+              ><img
+                alt="Three-by-three grid of ablation curves. Top row, image models on LPIPS, DINOv2 distance and HPSv2: the blue V-only curves show the larger damage. Middle row, video models on MUSIQ, ViCLIP consistency and CLIP score: the red K-only curves show the larger damage. Bottom row, LLaMA-3-8B on perplexity, MMLU and GSM8K: red K-only dominates strongly."
+                height="1404"
+                loading="lazy"
+                src="assets/attribution-kv-grid.webp"
+                width="1644"
+            /></a>
+            <figcaption>
+              <strong>Nine metrics, three regimes.</strong> K-only (red) versus V-only (blue) outlier ablation as the prune ratio grows. Top: image AR
+              on perceptual and aesthetic metrics. Middle: video AR on perceptual and VBench metrics. Bottom: LLaMA-3-8B-Instruct on language
+              benchmarks. All metrics are oriented so that higher means worse; the dominant colour flips between image and video. Figure 10 of the
+              paper.
+            </figcaption>
+          </figure>
+          <p>
+            Mechanistically, <strong>K decides which cached positions are attended to and V decides what content is retrieved</strong>. Video
+            generation therefore depends on precise temporal addressing into the cache, while image generation tolerates coarser addressing but
+            depends on the fidelity of the retrieved content. The same ablation on LLaMA-3-8B reproduces the K-dominance reported for LLM KV caches,
+            only more sharply (a 0.5% K mask raises WikiText-2 perplexity about 10×, a V mask 1.4×): video AR sits close to the LLM regime, and
+            image AR is the one setting where V carries the bulk of the load.
+          </p>
+          <div class="takeaway-box">
+            <strong>Takeaway 5 — The load-bearing tensor depends on the modality, so neither cache can be the cheap one.</strong> LLM KV
+            quantizers were designed in a K-dominant regime, and image AR is the opposite case. VAR-Q quantizes K and V with the same channel ×
+            block groups and the same precision, so the dominant tensor is protected whether it is K (video, LLM) or V (image), without a
+            per-modality rule.
           </div>
         </article>
       </section>
