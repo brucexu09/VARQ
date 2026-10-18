@@ -132,11 +132,11 @@ select, input[type="range"] { accent-color: var(--accent); }
 .takeaway-box strong { color: var(--accent-dark); font-weight: 700; }
 .takeaway-block .projection-chain { margin: 8px 0 18px; }
 .takeaway-figure.medium a { max-width: 900px; }
-.attribution-findings.five { grid-template-columns: repeat(5, minmax(0, 1fr)); }
-.attribution-findings.five a { padding: 18px 18px; }
-.attribution-findings.five strong { font-size: 30px; }
-.attribution-findings.five p { font-size: 12.5px; }
-.attribution-findings.five em { font-size: 12.5px; }
+.attribution-findings.compact { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.attribution-findings.compact a { padding: 18px 18px; }
+.attribution-findings.compact strong { font-size: 30px; }
+.attribution-findings.compact p { font-size: 12.5px; }
+.attribution-findings.compact em { font-size: 12.5px; }
 .proof-block { margin: 20px 0 22px; padding: 20px 24px 8px; border: 1px solid var(--line); background: #fff; border-radius: 2px; max-width: 92ch; }
 .proof-block .proof-title { margin: 0 0 12px; font: 500 16px/1.35 var(--serif); color: var(--ink); }
 .proof-block .proof-title span { display: inline-block; margin-right: 10px; font: 500 11px var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); vertical-align: 2px; }
@@ -247,12 +247,12 @@ select, input[type="range"] { accent-color: var(--accent); }
   .code-cite-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 1000px) {
-  .attribution-findings.five { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .attribution-findings.five a { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); }
-  .attribution-findings.five a:first-child { border-top: 0; }
+  .attribution-findings.compact { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .attribution-findings.compact a { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); }
+  .attribution-findings.compact a:first-child { border-top: 0; }
 }
 @media (max-width: 760px) {
-  .attribution-findings.five { grid-template-columns: 1fr; }
+  .attribution-findings.compact { grid-template-columns: 1fr; }
   .wrap { width: min(1120px, calc(100% - 32px)); }
   .more-video-grid { grid-template-columns: 1fr; }
   .nav-links a { white-space: nowrap; }
