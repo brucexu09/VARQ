@@ -16,12 +16,12 @@
     <meta content="https://boxunxu.top/VARQ/" property="og:url" />
     <meta content="website" property="og:type" />
     <link href="assets/favicon.svg" rel="icon" type="image/svg+xml" />
-    <link href="style.css?v=20261018c" rel="stylesheet" />
-    <script defer="" src="app.js?v=20261018c"></script>
-    <link href="research.css?v=20261018c" rel="stylesheet" />
-    <link href="editorial.css?v=20261018c" rel="stylesheet" />
-    <script defer="" src="showcase.js?v=20261018c"></script>
-    <script defer="" src="dense.js?v=20261018c"></script>
+    <link href="style.css?v=20261018d" rel="stylesheet" />
+    <script defer="" src="app.js?v=20261018d"></script>
+    <link href="research.css?v=20261018d" rel="stylesheet" />
+    <link href="editorial.css?v=20261018d" rel="stylesheet" />
+    <script defer="" src="showcase.js?v=20261018d"></script>
+    <script defer="" src="dense.js?v=20261018d"></script>
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
@@ -561,25 +561,25 @@
             <span class="finding-index">01</span>
             <strong>53–62<span>%</span></strong>
             <p>of the top-1% <b>K</b> outlier channels persist across all 10 prompts. For <b>V</b>, only 7–14% do.</p>
-            <em>Takeaway 1 · The channel axis is architectural, not prompt-driven</em>
+            <em>Takeaway 1 · K outlier channels are architectural, not prompt-specific</em>
           </a>
           <a href="#attr-channel">
             <span class="finding-index">02</span>
             <strong>55–63<span>×</span></strong>
             <p>random recall of final K outliers from weights alone, chaining W<sub>K</sub> → γ<sub>K</sub> → RoPE. The W<sub>V</sub> control reaches 5–6×.</p>
-            <em>Takeaway 2 · Outlier identity is readable from the weights</em>
+            <em>Takeaway 2 · The K projection chain predicts the outlier channels</em>
           </a>
           <a href="#attr-rope">
             <span class="finding-index">03</span>
             <strong>+0.41</strong>
             <p>VBench Total Quality from quantizing after RoPE instead of before, at the same 27.5 GB footprint (82.93 → 83.34).</p>
-            <em>Takeaway 3 · RoPE moves magnitude across blocks, so groups follow blocks</em>
+            <em>Takeaway 3 · RoPE creates the block axis; groups must follow block boundaries</em>
           </a>
           <a href="#attr-kv">
             <span class="finding-index">04</span>
             <strong>0.31–0.35</strong>
             <p>V outlier persistence after a single added prompt; K keeps 0.77–0.82 and plateaus.</p>
-            <em>Takeaway 4 · K outliers are architectural, V outliers follow the input</em>
+            <em>Takeaway 4 · K and V outliers have different origins</em>
           </a>
           <a href="#attr-modality">
             <span class="finding-index">05</span>
@@ -590,11 +590,11 @@
         </div>
         <article class="takeaway-block" id="attr-persistence">
           <p class="evidence-label">Takeaway 1 · The channel axis</p>
-          <h3>Outlier channels are a property of the architecture, not of the prompt</h3>
+          <h3>The same K channels are outliers for every prompt</h3>
           <p>
             If outlier channels were driven by the input, they would move from prompt to prompt. They do not: among the top 1% of channels,
             <strong>53–62% of K outliers persist across all 10 prompts</strong> on Self-Forcing, LongLive and InfinityStar, compared with only
-            <strong>7–14% for V</strong>. The channel pattern is fixed by the network and can be measured once.
+            <strong>7–14% for V</strong>. The K channel pattern is a property of the network; the V pattern is not (Takeaway 4).
           </p>
           <figure class="takeaway-figure narrow">
             <a data-caption="Cross-prompt outlier persistence in K and V · Figure 5" data-zoom="" href="assets/attribution-persistence.webp"
@@ -611,9 +611,9 @@
             </figcaption>
           </figure>
           <div class="takeaway-box">
-            <strong>Takeaway 1 — The channel axis is architectural.</strong> Because the same K channels are outliers for every prompt, a
-            per-channel scale factor is the right unit along the channel axis, and it needs no calibration set: the channel structure is a
-            property of the checkpoint, not of the input.
+            <strong>Takeaway 1 — K outlier channels are architectural, not prompt-specific.</strong> At the top 1%, 53–62% of one prompt’s
+            K outlier channels remain outliers under all 10 prompts (Figure 5). The persistent channel stripes that per-channel grouping targets
+            (§3.2, Table 1) are therefore a fixed property of the model, not of the input.
           </div>
         </article>
         <article class="takeaway-block" id="attr-channel">
@@ -666,9 +666,9 @@
             </figcaption>
           </figure>
           <div class="takeaway-box">
-            <strong>Takeaway 2 — Outlier identity is readable from the weights.</strong> The K outlier set is determined by
-            W<sub>K</sub> → γ<sub>K</sub> → RoPE before any input arrives, at 55–63× the recall of a random guess. This is why VAR-Q needs no outlier
-            detection at run time and no calibration data: the structure it exploits is already in the checkpoint.
+            <strong>Takeaway 2 — The K projection chain predicts the outlier channels.</strong> Chaining W<sub>K</sub> → γ<sub>K</sub> → RoPE
+            recovers the final K outliers at 55–63× random recall (W<sub>K</sub> alone: 35–42%), while the W<sub>V</sub> control reaches only 5–6×
+            (Figure 6). The channel-axis outliers in K are the compound effect of three static operations in the architecture.
           </div>
         </article>
         <article class="takeaway-block" id="attr-rope">
@@ -736,9 +736,11 @@
             </p>
           </div>
           <div class="takeaway-box">
-            <strong>Takeaway 3 — Groups must be block-aligned.</strong> Magnitude shifts between generation blocks are a positional effect, not
-            noise, so a scale factor must not straddle a block boundary. Aligning boundaries to the model’s own blocks (Table 6) and quantizing
-            after RoPE instead of before (+0.41 VBench Total Quality at the same 27.5 GB footprint) both follow directly from this mechanism.
+            <strong>Takeaway 3 — RoPE creates the block axis, so groups must follow block boundaries.</strong> Within a block every token
+            shares one rotation angle, so magnitudes are stationary inside a block and shift at block boundaries; the swing is largest for
+            fast-rotating pairs, and the pair ℓ<sub>2</sub> envelope stays flat (Figure 7, Appendix C). Consistent with this, shifting the same
+            groups by half a block lowers Self-Forcing Total Quality by 0.45 (Table 6), and quantizing the post-RoPE cache instead of the pre-RoPE
+            cache gains +0.41 at the same 27.5 GB (Table 7).
           </div>
         </article>
         <article class="takeaway-block" id="attr-kv">
@@ -773,10 +775,11 @@
             that pattern the architecture alone explains.
           </p>
           <div class="takeaway-box">
-            <strong>Takeaway 4 — Same structure, different origin.</strong> K outliers are selected by the static projection chain and can be
-            treated as a fixed property of the checkpoint; V outliers are re-drawn by every input. Both caches nevertheless share the two-axis
-            magnitude layout, so VAR-Q applies the same channel × block groups to V without a V-specific mechanism, and because the groups are
-            computed at run time per block, the input-dependent V pattern is captured as it appears rather than from a calibration set.
+            <strong>Takeaway 4 — K and V outliers have different origins.</strong> K: Persistence@N plateaus at 0.53–0.62 and the outliers are
+            predicted by the static projection chain. V: persistence drops to 0.31–0.35 after a single added prompt and to 0.07–0.14 at
+            <i>N</i> = 10, and W<sub>V</sub> predicts V outliers at only 5–6× random, so V outlier identity is set by the input. V nevertheless
+            shows the same channel × block magnitude structure with weaker per-axis attribution, which the paper takes as sufficient to apply the
+            same grouping rule to V without a separate mechanism.
           </div>
         </article>
         <article class="takeaway-block" id="attr-modality">
@@ -843,10 +846,11 @@
             image AR is the one setting where V carries the bulk of the load.
           </p>
           <div class="takeaway-box">
-            <strong>Takeaway 5 — The load-bearing tensor depends on the modality, so neither cache can be the cheap one.</strong> LLM KV
-            quantizers were designed in a K-dominant regime, and image AR is the opposite case. VAR-Q quantizes K and V with the same channel ×
-            block groups and the same precision, so the dominant tensor is protected whether it is K (video, LLM) or V (image), without a
-            per-modality rule.
+            <strong>Takeaway 5 — Which tensor carries the load flips with the modality.</strong> Masking 0.5% of outlier channels in K versus V:
+            image AR is V-dominant (Infinity-2B/8B, Δ<sub>K</sub>/Δ<sub>V</sub> = 0.79–1×), video AR is K-dominant (LongLive, InfinityStar:
+            2.5–61×), and LLaMA-3-8B is K-dominant by 320× on perplexity (Figure 12). K determines which past tokens are attended to and V what
+            content is retrieved, so video generation depends on precise temporal addressing while image generation depends on the fidelity of the
+            retrieved content. Video AR sits close to the LLM regime; image AR is the one setting where V carries the bulk of the load.
           </div>
         </article>
       </section>
