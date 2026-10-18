@@ -16,12 +16,12 @@
     <meta content="https://boxunxu.top/VARQ/" property="og:url" />
     <meta content="website" property="og:type" />
     <link href="assets/favicon.svg" rel="icon" type="image/svg+xml" />
-    <link href="style.css?v=20261018e" rel="stylesheet" />
-    <script defer="" src="app.js?v=20261018e"></script>
-    <link href="research.css?v=20261018e" rel="stylesheet" />
-    <link href="editorial.css?v=20261018e" rel="stylesheet" />
-    <script defer="" src="showcase.js?v=20261018e"></script>
-    <script defer="" src="dense.js?v=20261018e"></script>
+    <link href="style.css?v=20261018f" rel="stylesheet" />
+    <script defer="" src="app.js?v=20261018f"></script>
+    <link href="research.css?v=20261018f" rel="stylesheet" />
+    <link href="editorial.css?v=20261018f" rel="stylesheet" />
+    <script defer="" src="showcase.js?v=20261018f"></script>
+    <script defer="" src="dense.js?v=20261018f"></script>
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
@@ -548,9 +548,9 @@
       </section>
       <section aria-labelledby="attribution-title" class="section wrap attribution-section" id="attribution">
         <div class="attribution-heading">
-          <h2 id="attribution-title">Five insights from the KV-cache analysis</h2>
+          <h2 id="attribution-title">Observations and insights from the KV-cache analysis</h2>
           <p>
-            Where does the channel × block pattern come from, and is it the same for K and V? Five results from §3.3 and Appendices A–C: the
+            Where does the channel × block pattern come from, and is it the same for K and V? Two measured observations and three mechanistic insights from §3.3 and Appendices A–C: the
             outlier channels are fixed by the checkpoint, their identity is readable from the K projection chain, RoPE moves magnitude between
             blocks, V outliers are input-driven where K outliers are architectural, and the tensor that carries the load flips between image and
             video generation. Each one pins down a design decision in VAR-Q.
@@ -561,40 +561,40 @@
             <span class="finding-index">01</span>
             <strong>53–62<span>%</span></strong>
             <p>of the top-1% <b>K</b> outlier channels persist across all 10 prompts. For <b>V</b>, only 7–14% do.</p>
-            <em>Insight 1 · K outlier channels are architectural, not prompt-specific</em>
+            <em>Observation · K outlier channels are architectural, not prompt-specific</em>
           </a>
           <a href="#attr-channel">
             <span class="finding-index">02</span>
             <strong>55–63<span>×</span></strong>
             <p>random recall of final K outliers from weights alone, chaining W<sub>K</sub> → γ<sub>K</sub> → RoPE. The W<sub>V</sub> control reaches 5–6×.</p>
-            <em>Insight 2 · The K projection chain predicts the outlier channels</em>
+            <em>Insight · The K projection chain predicts the outlier channels</em>
           </a>
           <a href="#attr-rope">
             <span class="finding-index">03</span>
             <strong>+0.41</strong>
             <p>VBench Total Quality from quantizing after RoPE instead of before, at the same 27.5 GB footprint (82.93 → 83.34).</p>
-            <em>Insight 3 · RoPE creates the block axis; groups must follow block boundaries</em>
+            <em>Insight · RoPE creates the block axis; groups must follow block boundaries</em>
           </a>
           <a href="#attr-kv">
             <span class="finding-index">04</span>
             <strong>0.31–0.35</strong>
             <p>V outlier persistence after a single added prompt; K keeps 0.77–0.82 and plateaus.</p>
-            <em>Insight 4 · K and V outliers have different origins</em>
+            <em>Insight · K and V outliers have different origins</em>
           </a>
           <a href="#attr-modality">
             <span class="finding-index">05</span>
             <strong>61<span>×</span></strong>
             <p>K-over-V damage ratio on LongLive video; Infinity-2B images sit at 0.79–0.87×, the opposite side of K = V.</p>
-            <em>Insight 5 · Video is K-dominant, image is V-dominant</em>
+            <em>Observation · Video is K-dominant, image is V-dominant</em>
           </a>
         </div>
         <article class="takeaway-block" id="attr-persistence">
-          <p class="evidence-label">Insight 1 · The channel axis</p>
+          <p class="evidence-label">01 · Observation · The channel axis</p>
           <h3>The same K channels are outliers for every prompt</h3>
           <p>
             If outlier channels were driven by the input, they would move from prompt to prompt. They do not: among the top 1% of channels,
             <strong>53–62% of K outliers persist across all 10 prompts</strong> on Self-Forcing, LongLive and InfinityStar, compared with only
-            <strong>7–14% for V</strong>. The K channel pattern is a property of the network; the V pattern is not (Insight 4).
+            <strong>7–14% for V</strong>. The K channel pattern is a property of the network; the V pattern is not (Insight 04).
           </p>
           <figure class="takeaway-figure narrow">
             <a data-caption="Cross-prompt outlier persistence in K and V · Figure 5" data-zoom="" href="assets/attribution-persistence.webp"
@@ -611,13 +611,13 @@
             </figcaption>
           </figure>
           <div class="takeaway-box">
-            <strong>Insight 1 — K outlier channels are architectural, not prompt-specific.</strong> At the top 1%, 53–62% of one prompt’s
+            <strong>Observation 01 — K outlier channels are architectural, not prompt-specific.</strong> At the top 1%, 53–62% of one prompt’s
             K outlier channels remain outliers under all 10 prompts (Figure 5). The persistent channel stripes that per-channel grouping targets
             (§3.2, Table 1) are therefore a fixed property of the model, not of the input.
           </div>
         </article>
         <article class="takeaway-block" id="attr-channel">
-          <p class="evidence-label">Insight 2 · Where the channel pattern comes from</p>
+          <p class="evidence-label">02 · Insight · Where the channel pattern comes from</p>
           <h3>The K projection chain predicts which channels become outliers</h3>
           <p>
             Three stages of the key path explain the pattern. Heavy-tailed row norms in <strong>W<sub>K</sub></strong> seed an initial channel
@@ -666,13 +666,13 @@
             </figcaption>
           </figure>
           <div class="takeaway-box">
-            <strong>Insight 2 — The K projection chain predicts the outlier channels.</strong> Chaining W<sub>K</sub> → γ<sub>K</sub> → RoPE
+            <strong>Insight 02 — The K projection chain predicts the outlier channels.</strong> Chaining W<sub>K</sub> → γ<sub>K</sub> → RoPE
             recovers the final K outliers at 55–63× random recall (W<sub>K</sub> alone: 35–42%), while the W<sub>V</sub> control reaches only 5–6×
             (Figure 6). The channel-axis outliers in K are the compound effect of three static operations in the architecture.
           </div>
         </article>
         <article class="takeaway-block" id="attr-rope">
-          <p class="evidence-label">Insight 3 · The block axis</p>
+          <p class="evidence-label">03 · Insight · The block axis</p>
           <h3>RoPE moves magnitude across blocks, so quantization groups must follow blocks</h3>
           <p>
             RoPE’s rotation angle grows with position. For a pair of K channels this is cosine–sine modulation: one channel grows large while its
@@ -736,7 +736,7 @@
             </p>
           </div>
           <div class="takeaway-box">
-            <strong>Insight 3 — RoPE creates the block axis, so groups must follow block boundaries.</strong> Within a block every token
+            <strong>Insight 03 — RoPE creates the block axis, so groups must follow block boundaries.</strong> Within a block every token
             shares one rotation angle, so magnitudes are stationary inside a block and shift at block boundaries; the swing is largest for
             fast-rotating pairs, and the pair ℓ<sub>2</sub> envelope stays flat (Figure 7, Appendix C). Consistent with this, shifting the same
             groups by half a block lowers Self-Forcing Total Quality by 0.45 (Table 6), and quantizing the post-RoPE cache instead of the pre-RoPE
@@ -744,7 +744,7 @@
           </div>
         </article>
         <article class="takeaway-block" id="attr-kv">
-          <p class="evidence-label">Insight 4 · K versus V</p>
+          <p class="evidence-label">04 · Insight · K versus V</p>
           <h3>K outliers are architectural; V outliers follow the input</h3>
           <p>
             Persistence@N is the fraction of one prompt’s top-1% outlier channels that stay in the top 1% under all <i>N</i> prompts. The K and V
@@ -775,7 +775,7 @@
             that pattern the architecture alone explains.
           </p>
           <div class="takeaway-box">
-            <strong>Insight 4 — K and V outliers have different origins.</strong> K: Persistence@N plateaus at 0.53–0.62 and the outliers are
+            <strong>Insight 04 — K and V outliers have different origins.</strong> K: Persistence@N plateaus at 0.53–0.62 and the outliers are
             predicted by the static projection chain. V: persistence drops to 0.31–0.35 after a single added prompt and to 0.07–0.14 at
             <i>N</i> = 10, and W<sub>V</sub> predicts V outliers at only 5–6× random, so V outlier identity is set by the input. V nevertheless
             shows the same channel × block magnitude structure with weaker per-axis attribution, which the paper takes as sufficient to apply the
@@ -783,7 +783,7 @@
           </div>
         </article>
         <article class="takeaway-block" id="attr-modality">
-          <p class="evidence-label">Insight 5 · K/V asymmetry across generation paradigms</p>
+          <p class="evidence-label">05 · Observation · K/V asymmetry across generation paradigms</p>
           <h3>Video generation is K-dominant, image generation is V-dominant</h3>
           <p>
             Masking K and V outlier channels separately (Appendix A) splits the joint ablation of §3.1 into two very different stories.
@@ -846,7 +846,7 @@
             image AR is the one setting where V carries the bulk of the load.
           </p>
           <div class="takeaway-box">
-            <strong>Insight 5 — Which tensor carries the load flips with the modality.</strong> Masking 0.5% of outlier channels in K versus V:
+            <strong>Observation 05 — Which tensor carries the load flips with the modality.</strong> Masking 0.5% of outlier channels in K versus V:
             image AR is V-dominant (Infinity-2B/8B, Δ<sub>K</sub>/Δ<sub>V</sub> = 0.79–1×), video AR is K-dominant (LongLive, InfinityStar:
             2.5–61×), and LLaMA-3-8B is K-dominant by 320× on perplexity (Figure 12). K determines which past tokens are attended to and V what
             content is retrieved, so video generation depends on precise temporal addressing while image generation depends on the fidelity of the
